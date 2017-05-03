@@ -56,7 +56,7 @@ if(!is_dragging)
 	if(mouse_check_button_pressed(mb_middle)){
 		var i = ((mouse_x - 16) div 32);
 		var j = ((mouse_y - 16) div 32);
-		scr_add_base_tile(i, j);
+		scr_add_base_tile_with_walls(i, j);
 	}
 }
 else if(mouse_check_button_released(mb_left))

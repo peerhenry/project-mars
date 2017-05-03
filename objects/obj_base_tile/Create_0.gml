@@ -1,8 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-i = (x - 16) div 32;
-j = (y - 16) div 32;
+// rc to gi: room coordinate to grid index.
+i = scr_rc_to_gi(x);
+j = scr_rc_to_gi(y);
 mp_grid_clear_cell( global.grid_inside, i, j );
 mp_grid_add_cell( global.grid_map, i, j );
 

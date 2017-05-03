@@ -1,12 +1,13 @@
 audio_stop_sound(song_menu);
 audio_stop_sound(song_work);
 global.music_is_playing = false;
-index = 1;
 current_song = -1;
 
-if(!global.music_is_playing)
-{
+var start_with_music = false; // you want music?
+index = 0; // set initial song
 
+if(!global.music_is_playing && start_with_music)
+{
 	switch(index)
 	{
 		case 0:
@@ -19,6 +20,5 @@ if(!global.music_is_playing)
 			break;
 	}
 
-	
 	global.music_is_playing = true;
 }

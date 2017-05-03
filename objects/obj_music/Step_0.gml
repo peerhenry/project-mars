@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+if(global.music_is_playing)
+{
 if index == 0
 {
 	if (!audio_is_playing(current_song)) // song is finished
@@ -18,4 +19,5 @@ else if(index == 1)
 		index = 0;
 		current_song = song_work;
 	}
+}
 }

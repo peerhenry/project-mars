@@ -4,8 +4,8 @@
 var i = argument0;
 var j = argument1;
 
-var targetX = (i+1)*32;
-var targetY = (j+1)*32;
+var targetX = scr_gi_to_rc(i);
+var targetY = scr_gi_to_rc(j);
 		
 var blid = layer_get_id("base");
 instance_create_layer(targetX, targetY, blid, obj_base_tile);
@@ -19,13 +19,13 @@ while(wall_id != noone)
 }
 
 // add walls around tile	
-scr_add_wall(i-1, j-1, 0);	// NW
-scr_add_wall(i, j-1, 1);	// N
-scr_add_wall(i+1, j-1, 2);	// NE
+scr_add_outside_wall(i-1, j-1);	// NW
+scr_add_outside_wall(i, j-1);	// N
+scr_add_outside_wall(i+1, j-1);	// NE
 	
-scr_add_wall(i-1, j, 3);	// W
-scr_add_wall(i+1, j, 4);	// E
+scr_add_outside_wall(i-1, j);	// W
+scr_add_outside_wall(i+1, j);	// E
 	
-scr_add_wall(i-1, j+1, 5);	// SW
-scr_add_wall(i, j+1, 6);	// S
-scr_add_wall(i+1, j+1, 7);	// SE
+scr_add_outside_wall(i-1, j+1);	// SW
+scr_add_outside_wall(i, j+1);	// S
+scr_add_outside_wall(i+1, j+1);	// SE

@@ -1,10 +1,7 @@
-// wall				_
-// edge				,
-// corner			|_
-// double wall		=
-// double edge		,`
-// cove				|_|
-// surround			|=|
+i = scr_rc_to_gi(x);
+j = scr_rc_to_gi(y);
 
-sprite_index = spr_wall;
-orientation = 0;
+mp_grid_add_cell( global.grid_map, i, j );
+mp_grid_add_cell( global.grid_inside, i, j );
+
+adjacentcy_numer = 0;
