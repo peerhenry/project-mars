@@ -1,21 +1,34 @@
 var i = argument0;
 var j = argument1;
+var play_sound = false; // argument?
+
 var target_x = scr_gi_to_rc(i);
 var target_y = scr_gi_to_rc(j);
 
-var isfree = mp_grid_get_cell(global.grid_map, i, j) == 0;
-if(!isfree) // might be occupied by walls, delete walls if so.
+// either grid is free and there is no base tile, or its a wall
+var thunderbirds_are_go = false;
+
+grid_is_free = mp_grid_get_cell(global.grid_map, i, j) == 0;
+
+var existing_base_tile = instance_position(target_x, target_y, obj_base_tile);
+if(grid_is_free && existing_base_tile == noone)
 {
+	thunderbirds_are_go = true;
+}
+else{
 	var wall_id = instance_position(target_x, target_y, obj_wall);
-	while(wall_id != noone)
+	if((wall_id != noone))
 	{
 		with(wall_id) instance_destroy();
-		wall_id = instance_position(target_x, target_y, obj_wall);
+		if(existing_base_tile != noone)
+		{
+			with(existing_base_tile) instance_destroy();
+		}
+		thunderbirds_are_go = true;
 	}
-	isfree = mp_grid_get_cell(global.grid_map, i, j) == 0;
 }
 
-if(isfree){
+if(thunderbirds_are_go){
 	
 	// if tile contains wall, remove wall
 		
@@ -34,6 +47,7 @@ if(isfree){
 	walls[6] = scr_add_outside_wall(i, j+1);	// S
 	walls[7] = scr_add_outside_wall(i+1, j+1);	// SE
 	
+	// extra walls to update
 	walls[8] = instance_position(target_x+64, target_y+32, obj_wall);
 	walls[9] = instance_position(target_x+64, target_y, obj_wall);
 	walls[10] = instance_position(target_x+64, target_y-32, obj_wall);
@@ -53,12 +67,15 @@ if(isfree){
 		if(walls[s] != noone) scr_wall_update_state(walls[s]);
 	}
 	
-	var s = irandom(4);
-	switch s{
-		case 0: audio_play_sound(sound_fx_build_1,1,false); break;
-		case 1: audio_play_sound(sound_fx_build_2,1,false); break;
-		case 2:	audio_play_sound(sound_fx_build_3,1,false);	break;
-		case 3:	audio_play_sound(sound_fx_build_4,1,false);	break;
-		case 4:	audio_play_sound(sound_fx_build_5,1,false);	break;
+	if(play_sound)
+	{
+		var s = irandom(4);
+		switch s{
+			case 0: audio_play_sound(sound_fx_build_1,1,false); break;
+			case 1: audio_play_sound(sound_fx_build_2,1,false); break;
+			case 2:	audio_play_sound(sound_fx_build_3,1,false);	break;
+			case 3:	audio_play_sound(sound_fx_build_4,1,false);	break;
+			case 4:	audio_play_sound(sound_fx_build_5,1,false);	break;
+		}
 	}
 }

@@ -12,7 +12,6 @@ var max_loop = 100;
 var counter = 0;
 
 var grid_to_use = global.grid_map;
-if(is_inside) grid_to_use = global.grid_inside;
 
 // cell must be cleared before checking if path can be found.
 mp_grid_clear_cell(grid_to_use, occ_i, occ_j);

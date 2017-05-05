@@ -13,16 +13,20 @@ with(wall_id)
 // 1. calculate adjacency number
 adjacentcy_numer = 0;
 var wall_north_id = instance_position(x, y-32, obj_wall);
-var wall_east_id = instance_position(x+32, y, obj_wall);
-var wall_south_id = instance_position(x, y+32, obj_wall);
-var wall_west_id = instance_position(x-32, y, obj_wall);
 
-if(wall_west_id != noone){
+var wall_east_id = instance_position(x+32, y, obj_wall);
+var door_east_id = instance_position(x+32, y, obj_door);
+
+var wall_south_id = instance_position(x, y+32, obj_wall);
+
+var wall_west_id = instance_position(x-32, y, obj_wall);
+var door_west_id = instance_position(x-32, y, obj_door);
+
+if(wall_west_id != noone || door_west_id != noone){
 	adjacentcy_numer += 1;
 	with(wall_west_id){ 
 		adjacentcy_numer += 4;
 	}
-	//scr_wall_update_state(wall_west_id);
 }
 
 if(wall_north_id != noone){
@@ -30,15 +34,13 @@ if(wall_north_id != noone){
 	with(wall_north_id){
 		adjacentcy_numer += 8;
 	}
-	//scr_wall_update_state(wall_north_id);
 }
 
-if(wall_east_id != noone){
+if(wall_east_id != noone || door_east_id != noone){
 	adjacentcy_numer += 4;
 	with(wall_east_id){
 		adjacentcy_numer += 1;
 	}
-	//scr_wall_update_state(wall_east_id);
 }
 
 if(wall_south_id != noone){
@@ -46,7 +48,6 @@ if(wall_south_id != noone){
 	with(wall_south_id){
 		adjacentcy_numer += 2;
 	}
-	//scr_wall_update_state(wall_south_id);
 }
 
 // adj:		00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15

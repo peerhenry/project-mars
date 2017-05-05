@@ -9,7 +9,7 @@
         "af0f4ebc-dbb7-434f-9331-c4813953a4ac"
     ],
     "filterType": "GMSprite",
-    "folderName": "world",
+    "folderName": "GAME",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

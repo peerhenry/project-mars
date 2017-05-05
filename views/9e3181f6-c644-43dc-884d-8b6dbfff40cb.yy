@@ -4,11 +4,10 @@
     "mvc": "1.1",
     "name": "9e3181f6-c644-43dc-884d-8b6dbfff40cb",
     "children": [
-        "37f13ff7-93f0-4e32-bfb0-db7a644918bc",
-        "96959605-9cf1-412e-af09-b1ee18cd71b2",
-        "811bed48-aba4-4454-87df-dd8b8e44b7d2",
-        "aea6e6eb-b276-4994-9a0d-dc1907e156da",
-        "6ea8ca4d-ba14-4a25-8ee9-1e6400a83f85"
+        "ab6ed9d2-6e6c-44b0-b776-70c06068b7a1",
+        "022566ab-41f5-4fbb-9b48-607bc02e0921",
+        "59bac3e9-4365-4189-ab2b-0950b57a0951",
+        "1f6db08f-f998-4cb7-b55b-4a9b907956be"
     ],
     "filterType": "GMScript",
     "folderName": "CONSTRUCTION",

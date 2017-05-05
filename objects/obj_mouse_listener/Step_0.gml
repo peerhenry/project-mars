@@ -1,12 +1,49 @@
-// handle mouse clicks in map.
+if(global.hovering_over_HUD) return; // HUD clicks must not propagate here.
+
+// CONSTRUCTION INPUT
+
+if(global.construct != noone)
+{
+	if(mouse_check_button_pressed(mb_left))
+	{
+		switch(global.construct){
+			case global.wall:
+				scr_construct_wall(mouse_x, mouse_y);
+				break;
+			case global.door:
+				scr_construct_door(mouse_x, mouse_y);
+				break;
+			case global.basetile:
+				scr_construct_basetile(mouse_x, mouse_y);
+				break;
+		}
+	}
+	
+	if(mouse_check_button_pressed(mb_right))
+	{
+		global.construct = noone;
+		// reset the HUD button
+		with(global.construct_button)
+		{
+			btn_bg_color_idle = global.btn_bg_color;
+			btn_bg_color_hover = global.btn_bg_color_hover;
+			btn_bg_color = btn_bg_color_idle;
+		}
+	}
+	
+	return;
+}
+
+// ASTRONAUT SELECT/ORDERS INPUT
+
 var any_selected = false;
 var orders_given = false;
 if(!is_dragging)
-{	
+{
 	// LEFT CLICK
 	if(mouse_check_button_pressed(mb_left))
 	{
-		// set click origin
+		// set click origin for selection rectangle
 		click_x = mouse_x;
 		click_y = mouse_y;
 	}
@@ -50,6 +87,7 @@ if(!is_dragging)
 				orders_given = true;
 			}
 		}
+		global.construct = noone;
 	}
 	
 	// MIDDLE CLICK
