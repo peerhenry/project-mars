@@ -1,15 +1,18 @@
 var target_x = argument0;
 var target_y = argument1;
 
-var target_i = scr_rc_to_gi(target_x);
-var target_j = scr_rc_to_gi(target_y);
-var clamped_x = scr_gi_to_rc(target_i);
-var clamped_y = scr_gi_to_rc(target_j);
+var clamped_x = scr_rc_clamp_center(target_x);
+var clamped_y = scr_rc_clamp_center(target_y);
+
+var can_build = scr_validate(clamped_x, clamped_y, global.wall);
+if(!can_build) return false;
+
 var blid = layer_get_id("base");
 var new_wall = instance_create_layer(clamped_x, clamped_y, blid, obj_wall);
 
-// decrease resource cost.
+// todo: decrease resource cost.
 
+// update self and adjacent walls
 var wall_east = instance_position(clamped_x+32, clamped_y, obj_wall);
 var wall_north = instance_position(clamped_x, clamped_y-32, obj_wall);
 var wall_west = instance_position(clamped_x-32, clamped_y, obj_wall);
@@ -21,3 +24,4 @@ scr_wall_update_state(wall_west);
 scr_wall_update_state(wall_south);
 
 scr_wall_update_state(new_wall);
+return true;

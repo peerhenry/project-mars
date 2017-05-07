@@ -1,4 +1,11 @@
 is_open = !is_open;
-// play animation;
-if(is_open) mp_grid_clear_cell(global.grid_map, i,j);
-else mp_grid_add_cell(global.grid_map, i,j);
+
+if(is_open){
+	target_frame = 4;
+	image_speed = 1;
+} else {
+	target_frame = 0;
+	image_speed = -1;
+}
+
+// play sound

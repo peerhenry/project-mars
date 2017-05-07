@@ -8,7 +8,7 @@
         "0020fe13-5a4d-41a5-bc9e-de962b5e8328"
     ],
     "filterType": "GMSprite",
-    "folderName": "MENU",
+    "folderName": "main_menu",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

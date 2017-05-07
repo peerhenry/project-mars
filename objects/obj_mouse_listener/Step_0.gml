@@ -6,17 +6,7 @@ if(global.construct != noone)
 {
 	if(mouse_check_button_pressed(mb_left))
 	{
-		switch(global.construct){
-			case global.wall:
-				scr_construct_wall(mouse_x, mouse_y);
-				break;
-			case global.door:
-				scr_construct_door(mouse_x, mouse_y);
-				break;
-			case global.basetile:
-				scr_construct_basetile(mouse_x, mouse_y);
-				break;
-		}
+		scr_construct(global.construct);
 	}
 	
 	if(mouse_check_button_pressed(mb_right))

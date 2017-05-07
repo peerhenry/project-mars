@@ -13,14 +13,14 @@ if(wall_id != noone)
 	return wall_id;
 }
 
-// check if there is a basetile or door
+// check if there is a basetile or hatch
 var base_tile_id = instance_position(target_x, target_y, obj_base_tile);
-var door_id = instance_position(target_x, target_y, obj_door);
-if(door_id == noone)
+var hatch_id = instance_position(target_x, target_y, obj_hatch);
+if(hatch_id == noone) // if there is no hatch, there may be a setup hatch object.
 {
-	door_id = instance_position(target_x, target_y, obj_door_setup);
+	hatch_id = instance_position(target_x, target_y, obj_setup_hatch);
 }
-if(base_tile_id  == noone && door_id == noone){
+if(base_tile_id  == noone && hatch_id == noone){
 	var blid = layer_get_id("base");
 	return instance_create_layer(target_x, target_y, blid, obj_wall);
 }

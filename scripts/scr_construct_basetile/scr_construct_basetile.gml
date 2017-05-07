@@ -4,6 +4,11 @@ var target_y = argument1;
 var target_i = scr_rc_to_gi(target_x);
 var target_j = scr_rc_to_gi(target_y);
 
-scr_add_base_tile_with_walls(target_i, target_j);
+var can_build = scr_validate(target_x, target_y, global.basetile);
 
-// decrease resource cost.
+if(!can_build) return false;
+
+scr_add_base_tile_with_walls(target_i, target_j);
+return true;
+
+// todo, decrease resource cost.
