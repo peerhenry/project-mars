@@ -13,9 +13,7 @@ switch(object_type)
 		// assuming outside nav grid is the same as construction freedom
 		return !has_basetile && scr_grid_cell_at_rc(arg_x, arg_y) == 0;
 	case global.wall:	// basetile && no obstructions
-		var no_wall = instance_position(arg_x, arg_y, obj_wall) == noone;
-		var no_door = instance_position(arg_x, arg_y, obj_door) == noone;
-		return has_basetile && no_wall && no_door;
+		return has_basetile && scr_validate_wall(arg_x, arg_y);
 	case global.door:	// basetile && straight wall
 		var w_type = scr_get_wall_type(arg_x, arg_y);
 		var wall_is_straight = w_type == wall_type.horizontal || w_type == wall_type.vertical; // or vertical

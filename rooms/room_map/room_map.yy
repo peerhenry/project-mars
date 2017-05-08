@@ -901,10 +901,36 @@
         },
         {
             "__type": "GMRInstanceLayer_Model:#YoYoStudio.MVCFormat",
+            "id": "a4f34c77-bbb7-4013-94f0-e68f233b84e7",
+            "modelName": "GMRInstanceLayer",
+            "mvc": "1.0",
+            "depth": 333,
+            "grid_x": 32,
+            "grid_y": 32,
+            "hierarchyFrozen": false,
+            "hierarchyVisible": true,
+            "inheritLayerDepth": false,
+            "inheritLayerSettings": false,
+            "inheritSubLayers": false,
+            "inheritVisibility": false,
+            "layers": [
+                
+            ],
+            "m_parentID": "00000000-0000-0000-0000-000000000000",
+            "m_serialiseFrozen": false,
+            "name": "rooms",
+            "userdefined_depth": false,
+            "visible": true,
+            "instances": [
+                
+            ]
+        },
+        {
+            "__type": "GMRInstanceLayer_Model:#YoYoStudio.MVCFormat",
             "id": "73395ead-7c13-4ed2-8877-ad67dd16b8a8",
             "modelName": "GMRInstanceLayer",
             "mvc": "1.0",
-            "depth": 350,
+            "depth": 366,
             "grid_x": 32,
             "grid_y": 32,
             "hierarchyFrozen": false,
@@ -66590,7 +66616,7 @@
         "mvc": "1.0",
         "PhysicsWorld": false,
         "PhysicsWorldGravityX": 0,
-        "PhysicsWorldGravityY": 10,
+        "PhysicsWorldGravityY": 0,
         "PhysicsWorldPixToMeters": 0.1,
         "inheritPhysicsSettings": false
     },

@@ -16,3 +16,6 @@ enum wall_type {
 	other,
 	none
 }
+
+// DEBUG
+global.draw_room_bb = true;

@@ -1,8 +1,8 @@
 {
-    "id": "35e4dcd3-ada0-4e05-be89-1abbd085bae8",
+    "id": "b3178338-a2ed-4625-827e-8fa566eab161",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_construct_hatch",
+    "name": "scr_rc_clamp_origin",
     "IsCompatibility": false,
     "IsDnD": false
 }

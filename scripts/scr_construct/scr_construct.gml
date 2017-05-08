@@ -1,22 +1,26 @@
-var constructed = false;
+/// call specifix construction script, call room logic, play sound
 
-switch(argument0){
+var construct_type = argument0;
+var new_instance = noone;
+
+switch(construct_type){
 	case global.basetile:
-		constructed = scr_construct_basetile(mouse_x, mouse_y);
+		new_instance = scr_construct_basetile(mouse_x, mouse_y);
 		break;
 	case global.wall:
-		constructed = scr_construct_wall(mouse_x, mouse_y);
+		new_instance = scr_construct_wall(mouse_x, mouse_y);
 		break;
 	case global.door:
-		constructed = scr_construct_door(mouse_x, mouse_y);
+		new_instance = scr_construct_gate(mouse_x, mouse_y, global.door);
 		break;
 	case global.hatch:
-		constructed = scr_construct_hatch(mouse_x, mouse_y);
+		new_instance = scr_construct_gate(mouse_x, mouse_y, global.hatch);
 		break;
 }
 
-if(constructed)
+if(new_instance != noone)
 {
+	scr_room_logic(construct_type, new_instance);
 	var s = irandom(4);
 	switch s{
 		case 0: audio_play_sound(sound_fx_build_1, 1, false); break;

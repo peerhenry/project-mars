@@ -5,7 +5,7 @@ var clamped_x = scr_rc_clamp_center(target_x);
 var clamped_y = scr_rc_clamp_center(target_y);
 
 var can_build = scr_validate(clamped_x, clamped_y, global.wall);
-if(!can_build) return false;
+if(!can_build) return noone;
 
 var blid = layer_get_id("base");
 var new_wall = instance_create_layer(clamped_x, clamped_y, blid, obj_wall);
@@ -24,4 +24,4 @@ scr_wall_update_state(wall_west);
 scr_wall_update_state(wall_south);
 
 scr_wall_update_state(new_wall);
-return true;
+return new_wall;

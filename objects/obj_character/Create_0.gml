@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+// 1. movement and drawing
 path = path_add();
 is_walking = false;
 prev_x = x;
@@ -20,4 +19,13 @@ movement_speed = 3;
 image_speed = 1.2;
 
 is_selected = false;
-is_inside = false;
+
+// 2. health and oxygen
+o2_depletion_speed = 0.005;
+suffocation_speed = 0.1;
+oxygen_bar_color = make_color_rgb(55, 55, 255);
+health = 100;
+oxygen = 100;
+
+is_outside = true;
+inside_room = noone;

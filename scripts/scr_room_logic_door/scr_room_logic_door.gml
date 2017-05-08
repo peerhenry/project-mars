@@ -1,0 +1,1 @@
+var new_door = argument0;

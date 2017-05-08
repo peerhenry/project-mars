@@ -72,5 +72,6 @@ if(is_selected)
 	draw_sprite(spr_selection, 0, x, y);
 }
 
-draw_healthbar(x - 12, y - 17, x + 12, y - 15, 100, c_black, c_red, c_lime, 0, true, false)
+draw_healthbar(x - 12, y - 17, x + 12, y - 15, health, c_black, c_red, c_lime, 0, true, false)
+draw_healthbar(x - 12, y - 15, x + 12, y - 13, oxygen, c_black, oxygen_bar_color, oxygen_bar_color, 0, true, false)
 draw_self();

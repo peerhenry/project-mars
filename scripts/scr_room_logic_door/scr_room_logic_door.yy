@@ -1,8 +1,8 @@
 {
-    "id": "1f6db08f-f998-4cb7-b55b-4a9b907956be",
+    "id": "bd1cf1f1-c90f-4240-9a01-88d7ee858ccd",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_construct_door",
+    "name": "scr_room_logic_door",
     "IsCompatibility": false,
     "IsDnD": false
 }

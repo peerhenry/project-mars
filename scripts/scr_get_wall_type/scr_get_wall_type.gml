@@ -1,4 +1,5 @@
 /// checks if there is a straight wall at coordinates x, y
+// used in scr_validate for doors and hatches.
 var wall_id = instance_position(argument0, argument1, obj_wall);
 if(wall_id == noone) return wall_type.none;
 with(wall_id){

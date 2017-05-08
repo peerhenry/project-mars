@@ -1,3 +1,4 @@
+/// adds basetile, adds outside walls if necessary, updates all adjacent walls.
 var i = argument0;
 var j = argument1;
 
@@ -15,7 +16,7 @@ if((wall_id != noone))
 
 // 2. add the basetile
 var basetile_layer = layer_get_id("basetiles");
-instance_create_layer(target_x, target_y, basetile_layer, obj_base_tile);
+var new_basetile = instance_create_layer(target_x, target_y, basetile_layer, obj_base_tile);
 
 // 3. add walls around tile
 walls[0] = scr_add_outside_wall(i-1, j-1);	// NW
@@ -49,3 +50,5 @@ for(s=0; s<20; s++)
 {
 	if(walls[s] != noone) scr_wall_update_state(walls[s]);
 }
+
+return new_basetile;

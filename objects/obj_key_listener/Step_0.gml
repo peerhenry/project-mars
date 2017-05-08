@@ -12,3 +12,8 @@ if(keyboard_check_pressed(ord("P"))){
 		camera_set_view_size(view_camera[0], 1920, 1080);
 	}
 }
+
+if(keyboard_check_pressed(ord("R")))
+{
+	global.draw_room_bb = !global.draw_room_bb;
+}
