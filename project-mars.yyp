@@ -919,14 +919,6 @@
             }
         },
         {
-            "Key": "cd77671a-f312-4f90-9e25-8f388841582e",
-            "Value": {
-                "id": "a6cb52de-da59-4040-83cb-c21f30e2e02c",
-                "resourcePath": "sprites\\spr_character_walk_right_1\\spr_character_walk_right_1.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "d0f30b9d-76e4-47fa-8e2a-6a33dbe80b01",
             "Value": {
                 "id": "bc279559-cef0-493c-bd46-48494295e069",
