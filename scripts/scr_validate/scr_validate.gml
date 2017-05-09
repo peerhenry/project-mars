@@ -18,10 +18,9 @@ switch(object_type)
 		var w_type = scr_get_wall_type(arg_x, arg_y);
 		var wall_is_straight = w_type == wall_type.horizontal || w_type == wall_type.vertical; // or vertical
 		return (has_basetile && wall_is_straight);
-	case global.hatch:	// no basetile && straight wall
-		var w_type = scr_get_wall_type(arg_x, arg_y);
-		var wall_is_straight = w_type == wall_type.horizontal || w_type == wall_type.vertical; // or vertical
-		return (!has_basetile && wall_is_straight);
+	case global.hatch:	// no basetile && one side outside && straight wall
+		if(has_basetile) return false;
+		return scr_validate_hatch(arg_x, arg_y);
 }
 
 return false;

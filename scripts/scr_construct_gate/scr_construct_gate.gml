@@ -13,9 +13,9 @@ if(!can_build) return noone;
 
 // if there is a wall, remove the wall
 wall_id = instance_position(argument0, argument1, obj_wall);
-var is_vertical = false;
+var walls_are_north_south = false;
 with(wall_id){
-	is_vertical = adjacentcy_numer == 10;
+	walls_are_north_south = adjacentcy_numer == 10;
 }
 with(wall_id) instance_destroy();
 
@@ -24,6 +24,7 @@ var gate_object = obj_door;
 if(gate_type == global.hatch) gate_object = obj_hatch;
 var new_gate = instance_create_layer(clamped_x, clamped_y, blid, gate_object);
 with(new_gate){
-	if(is_vertical) image_angle = 270;
+	if(walls_are_north_south) image_angle = 270;
+	else image_angle = 0;
 }
 return new_gate;

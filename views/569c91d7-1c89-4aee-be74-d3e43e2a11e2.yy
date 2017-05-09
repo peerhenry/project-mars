@@ -10,7 +10,9 @@
         "a052d55b-f0af-405d-9e27-659e1ebfb268",
         "e9e5cedf-1fbd-47f7-a345-6f9de7206d28",
         "d4b6da13-ca56-48ed-97e7-f0ce35a4a540",
-        "f43aae76-43a3-4db2-8efe-b22bef7a1a4a"
+        "f43aae76-43a3-4db2-8efe-b22bef7a1a4a",
+        "8d07d7cc-4912-4fe2-ad01-b3d8a37f46db",
+        "09d8bc00-2deb-470c-8318-e964e232d16e"
     ],
     "filterType": "GMScript",
     "folderName": "room manipulation",

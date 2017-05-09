@@ -1,4 +1,5 @@
-/// Call this script after succesful construction of something that can affect rooms.
+/// Room logic happens after construction.
+// This is the main entry script behind which all other scripts inside the room logic folder are called.
 
 var construct_type = argument0;
 var new_instance = argument1;

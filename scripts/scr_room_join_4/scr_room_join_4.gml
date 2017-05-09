@@ -74,17 +74,27 @@ else	// four distinct rooms
 		}
 		
 		// add doors
-		for(var n=0; n<ds_list_size(room1.doors); n++) {
-			ds_list_add(doors, ds_list_find_value(room1.doors, n));
-		}
+		ds_list_copy(doors, room1.doors);
 		for(var n=0; n<ds_list_size(room2.doors); n++) {
-			ds_list_add(doors, ds_list_find_value(room2.doors, n));
+			var next_door = ds_list_find_value(room2.doors, n);
+			if(ds_list_find_index(doors, next_door ) == -1)
+			{
+				ds_list_add(doors, next_door);
+			}
 		}
 		for(var n=0; n<ds_list_size(room3.doors); n++) {
-			ds_list_add(doors, ds_list_find_value(room3.doors, n));
+			var next_door = ds_list_find_value(room3.doors, n);
+			if(ds_list_find_index(doors, next_door ) == -1)
+			{
+				ds_list_add(doors, next_door);
+			}
 		}
 		for(var n=0; n<ds_list_size(room4.doors); n++) {
-			ds_list_add(doors, ds_list_find_value(room4.doors, n));
+			var next_door = ds_list_find_value(room4.doors, n);
+			if(ds_list_find_index(doors, next_door ) == -1)
+			{
+				ds_list_add(doors, next_door);
+			}
 		}
 		
 		// add hatches
@@ -107,4 +117,6 @@ else	// four distinct rooms
 	with(room2) instance_destroy();
 	with(room3) instance_destroy();
 	with(room4) instance_destroy();
+	
+	scr_room_reconnect_doors(new_room);
 }

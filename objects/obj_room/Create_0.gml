@@ -11,8 +11,8 @@ bb_top = 0;
 bb_bottom = 0;
 
 oxygen_level = 100;	// 100%
+oxygen_is_leaking = false;
 oxygen_is_replenishing = true; // only if there is no oxygen drainage
 temperature = 20; // 20 degrees celsius
-hatch_o2_drainage_for_one_tile = 50;
+hatch_o2_drainage_for_one_tile = global.gate_drainage_speed;
 o2_replenishment = 0.1;
-o2_max_alpha = 0.33;

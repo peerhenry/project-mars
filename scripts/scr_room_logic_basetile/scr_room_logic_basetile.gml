@@ -3,10 +3,10 @@ var arg_y = argument1;
 
 var adj_rooms = ds_list_create();
 
-scr_add_room_to_list_if_basetile(arg_x+32, arg_y, adj_rooms);
-scr_add_room_to_list_if_basetile(arg_x-32, arg_y, adj_rooms);
-scr_add_room_to_list_if_basetile(arg_x, arg_y+32, adj_rooms);
-scr_add_room_to_list_if_basetile(arg_x, arg_y-32, adj_rooms);
+scr_add_room_at(arg_x+32, arg_y, adj_rooms);
+scr_add_room_at(arg_x-32, arg_y, adj_rooms);
+scr_add_room_at(arg_x, arg_y+32, adj_rooms);
+scr_add_room_at(arg_x, arg_y-32, adj_rooms);
 
 var count = ds_list_size(adj_rooms); // maximum amount of distinct rooms
 
@@ -23,8 +23,8 @@ switch(count)
 	case 2:
 		scr_room_join(
 			arg_x, arg_y,
-			ds_list_find_value(adj_rooms, 0), // room1
-			ds_list_find_value(adj_rooms, 1));// room2
+			ds_list_find_value(adj_rooms, 0),
+			ds_list_find_value(adj_rooms, 1));
 		break;
 	case 3:
 		scr_room_join_3(
@@ -42,3 +42,5 @@ switch(count)
 			ds_list_find_value(adj_rooms, 3));
 		break;
 }
+
+ds_list_destroy(adj_rooms);

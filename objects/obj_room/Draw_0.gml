@@ -32,7 +32,7 @@ if(global.draw_room_bb)
 
 if(oxygen_level < 100){
 
-	var o2_alpha = ((100-oxygen_level)/100)*o2_max_alpha;
+	var o2_alpha = ((100-oxygen_level)/100)*global.oxygen_max_alpha;
 	var tile_count = ds_list_size(tiles);
 	for(n=0; n<tile_count; n++){
 		//var xx = (ds_list_find_value(tiles, n*2)+1)*32;
@@ -41,8 +41,8 @@ if(oxygen_level < 100){
 		var yy = (scr_room_get_j_at(n)+1)*32;
 		draw_set_alpha(o2_alpha);
 		draw_set_color(c_red);
-		draw_rectangle(xx-16, yy-16, xx+16, yy+16, false);
-		if(oxygen_level < 1){
+		draw_rectangle(xx-16, yy-16, xx+15, yy+15, false);
+		if(oxygen_level < global.oxygen_empty_level){
 			draw_sprite(spr_oxygen_depleted, -1, xx, yy);
 		}
 	}
