@@ -17,7 +17,10 @@ switch(construct_type){
 		new_instance = scr_construct_gate(mouse_x, mouse_y, global.hatch);
 		break;
 	case global.suit_closet:
-		new_instance = scr_construct_suit_closet(mouse_x, mouse_y);
+		new_instance = scr_construct_suit_closet(mouse_x, mouse_y, false);
+		break;
+	case global.suit_closet_empty:
+		new_instance = scr_construct_suit_closet(mouse_x, mouse_y, true);
 		break;
 }
 

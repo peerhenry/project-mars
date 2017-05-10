@@ -1,5 +1,6 @@
 var arg_x = argument0;
 var arg_y = argument1;
+var empty = argument2;
 
 var target_i = scr_rc_to_gi(arg_x);
 var target_j = scr_rc_to_gi(arg_y);
@@ -31,4 +32,10 @@ with(new_closet)
 	{
 		image_index = 3;
 	}
+	if(empty){
+		holds_suit = false;
+		image_index += 4;
+	}
 }
+
+return new_closet;

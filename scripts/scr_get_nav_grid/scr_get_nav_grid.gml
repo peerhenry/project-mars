@@ -1,0 +1,1 @@
+return global.grid_map;

@@ -1,15 +1,6 @@
-/// @description Insert description here
-// You can write your code in this editor
-if(image_index == target_frame){
-	image_speed = 0;
-}
+event_inherited();
 
 if(is_open){
-	if(auto_close){
-		var astronaut = collision_rectangle(x-15, y-15, x+15, y+15, obj_character, false, true);
-		if(astronaut == noone)	scr_door_toggle();	
-	}
-	
 	// transfer oxygen
 	if(room1 != noone && room2 != noone && room1.oxygen_level != room2.oxygen_level)
 	{
@@ -55,13 +46,5 @@ if(is_open){
 			if(room2.oxygen_level > 100) room2.oxygen_level = 100;
 			else if(room2.oxygen_level < 0) room2.oxygen_level = 0;
 		}
-	}
-	
-} else {
-	if(!locked){
-		var astronaut = collision_rectangle(x-15, y-15, x+15, y+15, obj_character, false, true);
-		if(astronaut != noone){
-			scr_door_toggle();
-		}	
 	}
 }

@@ -15,6 +15,8 @@ var bottom = top + 32;
 var can_build = true;
 
 var sprite = noone;
+var frame = 0;
+
 switch(global.construct)
 {
 	case global.basetile:
@@ -42,11 +44,16 @@ switch(global.construct)
 		sprite = spr_suit_closet;
 		can_build = scr_validate(clamped_x, clamped_y, global.suit_closet);
 		break;
+	case global.suit_closet_empty:
+		sprite = spr_suit_closet;
+		frame = 4;
+		can_build = scr_validate(clamped_x, clamped_y, global.suit_closet);
+		break;
 }
 
 if(can_build) draw_set_color(c_lime);
 else draw_set_color(c_red);
 draw_set_alpha(0.5);
 draw_rectangle(left, top, right, bottom, false);
-draw_sprite(sprite, 0, clamped_x, clamped_y)
+draw_sprite(sprite, frame, clamped_x, clamped_y)
 draw_set_alpha(1);

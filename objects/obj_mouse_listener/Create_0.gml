@@ -3,3 +3,4 @@
 click_x = 0;
 click_y= 0;
 is_dragging = false;
+any_astronauts_selected = false;

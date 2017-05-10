@@ -8,7 +8,7 @@
         "986c676f-d487-4015-8f81-d2c6d7683ae9"
     ],
     "filterType": "GMScript",
-    "folderName": "doors",
+    "folderName": "gates",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

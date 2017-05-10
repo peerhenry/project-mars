@@ -1,0 +1,1 @@
+if(is_assigned) draw_sprite(spr_assigned, image_index, x, y);

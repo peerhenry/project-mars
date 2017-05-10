@@ -8,7 +8,7 @@
         "f9a23b70-3ea0-4bc0-8f20-2873ed14cd33"
     ],
     "filterType": "GMObject",
-    "folderName": "base objects",
+    "folderName": "parent objects",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

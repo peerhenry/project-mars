@@ -1,4 +1,4 @@
-/// Checks if a baseroom exists at coordinates and returns id.
+/// Checks if a baseroom exists at coordinates and returns id or noone.
 var arg_x = argument0;
 var arg_y = argument1;
 

@@ -12,4 +12,4 @@ btn_bottom = 32 + n*(32 + 16);
 btn_center_x = (btn_left + btn_right)/2;
 btn_center_y = (btn_top + btn_bottom)/2;
 
-construct = global.suit_closet;
+construct = global.suit_closet_empty;

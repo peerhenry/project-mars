@@ -26,8 +26,8 @@ if(global.construct != noone)
 
 // ASTRONAUT SELECT/ORDERS INPUT
 
-var any_selected = false;
 var orders_given = false;
+var just_selected = false;
 if(!is_dragging)
 {
 	// LEFT CLICK
@@ -57,11 +57,12 @@ if(!is_dragging)
 		{
 			if(mouse_x < x + 15 && mouse_x > x - 15 && mouse_y < y + 15 && mouse_y > y -15)
 			{
+				just_selected = true;
 				is_selected = true;
-				any_selected = true;
 			}
 			else
 			{
+				// important! astronauts must be deselectable.
 				is_selected = false;
 			}
 		}
@@ -70,21 +71,11 @@ if(!is_dragging)
 	// RIGHT CLICK
 	if(mouse_check_button_pressed(mb_right))
 	{
-		with(obj_character)
+		if(any_astronauts_selected)
 		{
-			if(is_selected){
-				scr_navigate(mouse_x, mouse_y);
-				orders_given = true;
-			}
+			scr_command();
 		}
 		global.construct = noone;
-	}
-	
-	// MIDDLE CLICK
-	if(mouse_check_button_pressed(mb_middle)){
-		var i = ((mouse_x - 16) div 32);
-		var j = ((mouse_y - 16) div 32);
-		scr_add_base_tile_with_walls(i, j);
 	}
 }
 else if(mouse_check_button_released(mb_left))
@@ -104,7 +95,7 @@ else if(mouse_check_button_released(mb_left))
 				y >= rec_top && y <= rec_bottom)
 			{
 				is_selected = true;
-				any_selected = true;
+				just_selected = true;
 			}
 			else{
 				is_selected = false;
@@ -120,7 +111,7 @@ else if(mouse_check_button_released(mb_left))
 				rec_top > y - 15 && rec_bottom < y + 15)
 			{
 				is_selected = true;
-				any_selected = true;
+				just_selected = true;
 			}
 			else{
 				is_selected = false;
@@ -133,21 +124,13 @@ else if(mouse_check_button_released(mb_left))
 
 
 // play selection sounds
-if(any_selected)
+if(just_selected)
 {
+	any_astronauts_selected = true;
 	var s = irandom(2);
 	switch s{
 		case 0: audio_play_sound(sound_cmd_yes,1,false); break;
 		case 1: audio_play_sound(sound_cmd_commands,1,false); break;
 		case 2:	audio_play_sound(sound_cmd_orders,1,false);	break;
-	}
-}
-else if(orders_given)
-{
-	var s = irandom(2);
-	switch s{
-		case 0: audio_play_sound(sound_cmd_yep,1,false); break;
-		case 1: audio_play_sound(sound_cmd_understood,1,false); break;
-		case 2:	audio_play_sound(sound_cmd_acknowledged,1,false); break;
 	}
 }
