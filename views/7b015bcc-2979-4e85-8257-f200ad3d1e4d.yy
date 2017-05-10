@@ -9,7 +9,8 @@
         "95104b91-aeb1-4a8c-996b-43323024c1e5",
         "24d6f4f8-489c-4b94-8099-d7a636769ae8",
         "c84b2b4f-8a99-48bf-b319-08ddb6feba39",
-        "18a2ba76-fad5-49b0-8346-4d96a6ecdd3e"
+        "18a2ba76-fad5-49b0-8346-4d96a6ecdd3e",
+        "34d57614-c080-4238-a06c-3d7d39910b0b"
     ],
     "filterType": "GMScript",
     "folderName": "validation",

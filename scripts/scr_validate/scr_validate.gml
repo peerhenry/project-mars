@@ -21,6 +21,8 @@ switch(object_type)
 	case global.hatch:	// no basetile && one side outside && straight wall
 		if(has_basetile) return false;
 		return scr_validate_hatch(arg_x, arg_y);
+	case global.suit_closet:
+		return has_basetile && scr_can_attach_to_wall(arg_x, arg_y);
 }
 
 return false;

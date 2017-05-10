@@ -6,6 +6,7 @@ global.outer_wall = 2;
 global.wall = 3;
 global.door = 4;
 global.hatch = 5;
+global.suit_closet = 6;
 
 // selected handle for construction
 global.construct = noone;

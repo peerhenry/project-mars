@@ -38,6 +38,10 @@ switch(global.construct)
 		sprite = spr_hatch;
 		can_build = scr_validate(clamped_x, clamped_y, global.hatch);
 		break;
+	case global.suit_closet:
+		sprite = spr_suit_closet;
+		can_build = scr_validate(clamped_x, clamped_y, global.suit_closet);
+		break;
 }
 
 if(can_build) draw_set_color(c_lime);
