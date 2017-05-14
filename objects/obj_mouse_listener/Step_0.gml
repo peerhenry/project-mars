@@ -6,7 +6,25 @@ if(global.construct != noone)
 {
 	if(mouse_check_button_pressed(mb_left))
 	{
-		scr_construct(global.construct);
+		click_x = mouse_x;
+		click_y = mouse_y;
+	}
+	
+	if(mouse_check_button(mb_left))
+	{
+		if(mouse_x != click_x && mouse_y != click_y)
+		{
+			is_dragging	= true;
+		}
+		else {
+			is_dragging	= false;
+		}
+	}
+	
+	if(mouse_check_button_released(mb_left))
+	{
+		//scr_construct(global.construct);
+		scr_build(mouse_x, mouse_y, global.construct, global.build_rotation);
 	}
 	
 	if(mouse_check_button_pressed(mb_right))

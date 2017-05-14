@@ -15,5 +15,21 @@ if(keyboard_check_pressed(ord("P"))){
 
 if(keyboard_check_pressed(ord("R")))
 {
+	global.build_rotation++;
+	if(global.build_rotation == 4) global.build_rotation = 0;
+}
+
+if(keyboard_check_pressed(ord("Q")))
+{
 	global.draw_room_bb = !global.draw_room_bb;
+}
+
+if(keyboard_check_pressed(ord("T")))
+{
+	scr_run_tests();
+}
+
+if(keyboard_check_pressed(ord("B")))
+{
+	scr_debug_buffers();
 }

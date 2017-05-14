@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(is_dragging){
+if(is_dragging && global.construct == noone){
 	draw_set_colour(c_aqua);
 	draw_rectangle(click_x, click_y, mouse_x, mouse_y, true);
 }
@@ -14,5 +14,5 @@ if(global.construct != noone){
 	draw_set_alpha(0.5);
 	draw_rectangle(left, top, right, bottom, false);
 	draw_set_alpha(1);*/
-	scr_draw_ghost(mouse_x, mouse_y);
+	scr_draw_ghost(mouse_x, mouse_y, global.construct, global.build_rotation);
 }

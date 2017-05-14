@@ -8,7 +8,7 @@ if(room1 != noone && room1.oxygen_level < 100)
 	draw_set_color(c_red);
 	var right = x+15;
 	var bottom = y-1;
-	if(image_angle != 0)
+	if(image_angle != 0 && image_angle != 180)
 	{
 		right = x-1;
 		bottom = y+15;
@@ -26,7 +26,7 @@ if(room2 != noone && room2.oxygen_level < 100)
 	draw_set_color(c_red);
 	var left = x-16;
 	var top = y;
-	if(image_angle != 0)
+	if(image_angle != 0 && image_angle != 180)
 	{
 		left = x;
 		top = y-16;

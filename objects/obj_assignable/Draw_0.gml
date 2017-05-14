@@ -1,1 +1,10 @@
-if(is_assigned) draw_sprite(spr_assigned, image_index, x, y);
+if(is_assigned)
+{
+	frame_counter++;
+	if(frame_counter == frames)
+	{
+		frame_counter = 0;
+		i_index = (i_index + 1) mod 4;
+	}
+	draw_sprite(spr_assigned, i_index, x, y)
+}

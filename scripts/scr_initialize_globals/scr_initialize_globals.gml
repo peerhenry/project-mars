@@ -1,13 +1,12 @@
-// todo: initialize nav grid here
+/// Initialize gamewide globals
+
+// DEBUG settings
+global.draw_room_bb = true;
+global.debug_start_messages = true;
+global.debug_gameplay_messages = true;
 
 // constructions
-global.basetile = 1;
-global.outer_wall = 2;
-global.wall = 3;
-global.door = 4;
-global.hatch = 5;
-global.suit_closet = 6;
-global.suit_closet_empty = 7;
+scr_initialize_constructions();
 
 // selected handle for construction
 global.construct = noone;
@@ -20,7 +19,7 @@ enum wall_type {
 }
 
 // oxygen stuff
-global.oxygen_bar_color = make_color_rgb(55, 55, 255);;
+global.oxygen_bar_color = make_color_rgb(55, 55, 255);
 global.gate_drainage_speed = 25; // percentage of oxygen of 1 tile being drained by an open hatch per step.
 global.oxygen_empty_level = 1; // if oxygen_level falls below this number, red stripes are drawn.
 global.oxygen_max_alpha = 0.33; // for rendering low oxygen levels
@@ -39,6 +38,3 @@ enum task
 	sleep,
 	attack
 }
-
-// DEBUG settings
-global.draw_room_bb = false;
