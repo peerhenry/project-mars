@@ -30,13 +30,6 @@ if(global.construct != noone)
 	if(mouse_check_button_pressed(mb_right))
 	{
 		global.construct = noone;
-		// reset the HUD button
-		with(global.construct_button)
-		{
-			btn_bg_color_idle = global.btn_bg_color;
-			btn_bg_color_hover = global.btn_bg_color_hover;
-			btn_bg_color = btn_bg_color_idle;
-		}
 	}
 	
 	return;

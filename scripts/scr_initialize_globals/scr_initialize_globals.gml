@@ -1,7 +1,7 @@
 /// Initialize gamewide globals
 
 // DEBUG settings
-global.draw_room_bb = true;
+global.draw_room_bb = false;
 global.debug_start_messages = true;
 global.debug_gameplay_messages = true;
 

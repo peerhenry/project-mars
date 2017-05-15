@@ -23,11 +23,7 @@
         "ce56f684-41d9-4d1a-88a2-3b52f90e1166",
         "46e02e54-91c6-4a2d-9851-71a520554337",
         "2b00165d-5e89-48b9-9b45-7baf29b2ef3f",
-        "9fcfb602-bca2-4ac8-8382-14e827806fe3",
-        "4e119ae2-9200-4da9-b705-85214ff10976",
-        "cba9cc84-45a5-420a-992c-c3ab9e3f01e1",
-        "6fa9f305-8dce-4a93-9b6e-4399f4334544",
-        "9a6b4731-aeea-472f-9c61-9562cb27776c"
+        "dcb81488-9ee7-4596-9e8b-e970f7964f9e"
     ],
     "layers": [
         {
@@ -102,88 +98,16 @@
                     "scaleY": 1
                 },
                 {
-                    "id": "9fcfb602-bca2-4ac8-8382-14e827806fe3",
+                    "id": "dcb81488-9ee7-4596-9e8b-e970f7964f9e",
                     "modelName": "GMRInstance",
                     "mvc": "1.0",
                     "ignore": false,
                     "inheritItemSettings": false,
                     "m_originalParentID": "00000000-0000-0000-0000-000000000000",
                     "m_serialiseFrozen": false,
-                    "name": "inst_6B835B97",
-                    "x": 1920,
-                    "y": 1920,
-                    "IsDnD": false,
-                    "colour": {
-                        "Value": 4294967295
-                    },
-                    "creationCodeFile": "",
-                    "creationCodeType": "",
-                    "inheritCode": false,
-                    "name_with_no_file_rename": "inst_6B835B97",
-                    "objId": "4c94a332-c885-439e-9241-f121e052138e",
-                    "rotation": 0,
-                    "scaleX": 1,
-                    "scaleY": 1
-                },
-                {
-                    "id": "4e119ae2-9200-4da9-b705-85214ff10976",
-                    "modelName": "GMRInstance",
-                    "mvc": "1.0",
-                    "ignore": false,
-                    "inheritItemSettings": false,
-                    "m_originalParentID": "00000000-0000-0000-0000-000000000000",
-                    "m_serialiseFrozen": false,
-                    "name": "inst_3D64CD73",
-                    "x": 1888,
-                    "y": 1952,
-                    "IsDnD": false,
-                    "colour": {
-                        "Value": 4294967295
-                    },
-                    "creationCodeFile": "",
-                    "creationCodeType": "",
-                    "inheritCode": false,
-                    "name_with_no_file_rename": "inst_3D64CD73",
-                    "objId": "b4beb581-e923-49f1-9b36-1a7fdae314c7",
-                    "rotation": 0,
-                    "scaleX": 1,
-                    "scaleY": 1
-                },
-                {
-                    "id": "cba9cc84-45a5-420a-992c-c3ab9e3f01e1",
-                    "modelName": "GMRInstance",
-                    "mvc": "1.0",
-                    "ignore": false,
-                    "inheritItemSettings": false,
-                    "m_originalParentID": "00000000-0000-0000-0000-000000000000",
-                    "m_serialiseFrozen": false,
-                    "name": "inst_BE0F20A",
-                    "x": 1920,
-                    "y": 1952,
-                    "IsDnD": false,
-                    "colour": {
-                        "Value": 4294967295
-                    },
-                    "creationCodeFile": "",
-                    "creationCodeType": "",
-                    "inheritCode": false,
-                    "name_with_no_file_rename": "inst_BE0F20A",
-                    "objId": "87ba9c34-a20b-4ca8-a344-44704439fb7b",
-                    "rotation": 0,
-                    "scaleX": 1,
-                    "scaleY": 1
-                },
-                {
-                    "id": "9a6b4731-aeea-472f-9c61-9562cb27776c",
-                    "modelName": "GMRInstance",
-                    "mvc": "1.0",
-                    "ignore": false,
-                    "inheritItemSettings": false,
-                    "m_originalParentID": "00000000-0000-0000-0000-000000000000",
-                    "m_serialiseFrozen": false,
-                    "name": "inst_1CD92E84",
+                    "name": "inst_56A1558E",
                     "x": 1952,
-                    "y": 1952,
+                    "y": 1824,
                     "IsDnD": false,
                     "colour": {
                         "Value": 4294967295
@@ -191,8 +115,8 @@
                     "creationCodeFile": "",
                     "creationCodeType": "",
                     "inheritCode": false,
-                    "name_with_no_file_rename": "inst_1CD92E84",
-                    "objId": "457985a1-177c-460c-a55b-ce34492fad62",
+                    "name_with_no_file_rename": "inst_56A1558E",
+                    "objId": "cd1768eb-94a3-4278-9cf0-7024c42b7b27",
                     "rotation": 0,
                     "scaleX": 1,
                     "scaleY": 1
@@ -649,30 +573,7 @@
             "userdefined_depth": false,
             "visible": true,
             "instances": [
-                {
-                    "id": "6fa9f305-8dce-4a93-9b6e-4399f4334544",
-                    "modelName": "GMRInstance",
-                    "mvc": "1.0",
-                    "ignore": false,
-                    "inheritItemSettings": false,
-                    "m_originalParentID": "00000000-0000-0000-0000-000000000000",
-                    "m_serialiseFrozen": false,
-                    "name": "inst_C1D1EA",
-                    "x": 1920,
-                    "y": 1888,
-                    "IsDnD": false,
-                    "colour": {
-                        "Value": 4294967295
-                    },
-                    "creationCodeFile": "",
-                    "creationCodeType": "",
-                    "inheritCode": false,
-                    "name_with_no_file_rename": "inst_C1D1EA",
-                    "objId": "dd95f139-492e-4717-857f-58690e7a3e0c",
-                    "rotation": 0,
-                    "scaleX": 1,
-                    "scaleY": 1
-                }
+                
             ]
         },
         {

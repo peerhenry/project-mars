@@ -1,15 +1,6 @@
 /// Initialize constructions
 
-// NOTE: to add a new construction, follow the numbers
-
 global.build_rotation = 0;
-
-// map buffer
-/* OBSOLETE
-global.inside = 1;
-global.reserved = 2;
-global.occupied = 4;
-*/
 
 global.build_tile_counts = ds_map_create();
 global.build_action_counts = ds_map_create();
