@@ -64,7 +64,7 @@ for(var s = 0; s< ds_list_size(global.construction_list); s++)
 			var d_j = buffer_read(global.big_bad_buffer, buffer_s32);
 			var validation_i = buffer_read(global.big_bad_buffer, buffer_u32);
 			var validation_o = buffer_read(global.big_bad_buffer, buffer_u32);
-			var b_image_index = buffer_read(global.big_bad_buffer, buffer_u32);
+			var b_image_index = buffer_read(global.big_bad_buffer, buffer_s32);
 			var map_buffer_action = buffer_read(global.big_bad_buffer, buffer_u32);
 			var b_layer = buffer_read(global.big_bad_buffer, buffer_s32);
 			var object_to_add = buffer_read(global.big_bad_buffer, buffer_s32);
@@ -84,7 +84,7 @@ for(var s = 0; s< ds_list_size(global.construction_list); s++)
 			
 			buffer_write(global.build_action_buffer, buffer_u32, validation_i);
 			buffer_write(global.build_action_buffer, buffer_u32, validation_o);
-			buffer_write(global.build_action_buffer, buffer_u32, b_image_index);
+			buffer_write(global.build_action_buffer, buffer_s32, b_image_index);
 			buffer_write(global.build_action_buffer, buffer_u32, map_buffer_action);
 			buffer_write(global.build_action_buffer, buffer_s32, b_layer);
 			buffer_write(global.build_action_buffer, buffer_s32, object_to_add);

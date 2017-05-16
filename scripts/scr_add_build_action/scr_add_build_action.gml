@@ -49,7 +49,7 @@ buffer_write(global.big_bad_buffer, buffer_s32, arg_d_i);
 buffer_write(global.big_bad_buffer, buffer_s32, arg_d_j);
 buffer_write(global.big_bad_buffer, buffer_u32, arg_validation_i);
 buffer_write(global.big_bad_buffer, buffer_u32, arg_validation_o);
-buffer_write(global.big_bad_buffer, buffer_u32, arg_image_index);
+buffer_write(global.big_bad_buffer, buffer_s32, arg_image_index);
 buffer_write(global.big_bad_buffer, buffer_u32, arg_map_buffer_action);
 buffer_write(global.big_bad_buffer, buffer_s32, arg_layer);
 buffer_write(global.big_bad_buffer, buffer_s32, arg_object_to_add);

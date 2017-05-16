@@ -122,7 +122,7 @@ scr_add_build_action(
 	global.hatch,
 	0,	// di
 	-1,	// dj
-	build_validation_i.any,
+	build_validation_i.inside,
 	build_validation_o.unoccupied,
 	0,
 	map_buffer_action.reserve,
@@ -135,7 +135,7 @@ scr_add_build_action(
 	global.hatch,
 	0,	// di
 	1,	// dj
-	build_validation_i.any,
+	build_validation_i.outside,
 	build_validation_o.unoccupied,
 	0,
 	map_buffer_action.reserve,
@@ -287,7 +287,7 @@ scr_add_build_action(
 	0,	// dj
 	build_validation_i.inside,
 	build_validation_o.vacant,
-	0,
+	4,
 	map_buffer_action.occupy,
 	base_layer,
 	obj_suit_closet,

@@ -12,7 +12,7 @@ with(obj_character)
 var el_assignable = instance_position(mouse_x, mouse_y, obj_assignable);
 if(el_assignable != noone)
 {
-	// task the closest selected astronaut that can interact with the closet to interact with the closet.
+	// from all selected astronauts, get the one closest to the assignable
 	var d_min = 100000000;
 	var assigned_astronaut = noone;
 	with(obj_character)
@@ -28,7 +28,6 @@ if(el_assignable != noone)
 	
 	if(assigned_astronaut != noone)
 	{
-		//show_message("mah boy: " + string(assigned_astronaut.suit_oxygen));
 		var el_task = task.suit_closet;
 		orders_given = scr_assign(el_assignable, assigned_astronaut, el_task);
 	}

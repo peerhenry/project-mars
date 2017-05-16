@@ -60,7 +60,7 @@ for(var n = 0; n < tile_count; n++)// loop over build tiles
 		buffer_seek(global.build_action_buffer, buffer_seek_start, action_offset + m*global.props_per_action*4);
 		var validation_i = buffer_read(global.build_action_buffer, buffer_u32);
 		var validation_o = buffer_read(global.build_action_buffer, buffer_u32);
-		var b_image_index = buffer_read(global.build_action_buffer, buffer_u32);
+		var b_image_index = buffer_read(global.build_action_buffer, buffer_s32);
 		var map_buffer_action = buffer_read(global.build_action_buffer, buffer_u32);
 		var b_layer = buffer_read(global.build_action_buffer, buffer_s32);
 		var object_to_add = buffer_read(global.build_action_buffer, buffer_s32);

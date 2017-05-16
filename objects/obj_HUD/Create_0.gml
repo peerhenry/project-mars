@@ -17,7 +17,7 @@ for(var n = 0; n < build_count; n++)
 	var next_sprite = scr_hud_sprite_for_build(next_build);
 	var next_image_index = scr_hud_image_for_build(next_build);
 	var next_state = button_state.none;
-	var second_u32 = next_state << 8 + next_image_index;
+	var second_u32 = (next_state << 8) + next_image_index;
 	buffer_write(build_button_buffer, buffer_s32, next_sprite);	// b, t, v	
 	buffer_write(build_button_buffer, buffer_u32, second_u32);
 }

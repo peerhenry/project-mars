@@ -2,7 +2,7 @@
 
 // 1. kill if health reached zero
 if(has_died) return;
-else if(astronaut_health == 0)
+else if(astronaut_health <= 0)
 {
 	is_walking = false;
 	path_end();
@@ -13,7 +13,7 @@ else if(astronaut_health == 0)
 	return;
 }
 
-// 2. Set sprite & room
+// 2. Set sprite & do room and gate logic
 if(is_walking){
 	image_speed = 1.2;
 	dx = x - prev_x;
@@ -101,7 +101,7 @@ if(path_position > 0.001 && path_position < 0.999)
 }
 else
 {
-	if(is_walking)
+	if(is_walking) // path end reached.
 	{
 		prev_x = x;
 		prev_y = y;
@@ -109,11 +109,11 @@ else
 		image_speed = 0;
 		image_index = 0;
 		path_end();
-		
-		if(assigned_object != noone)
-		{
-			scr_perform(assigned_object);
-		}
+	}
+	
+	if(assigned_object != noone) // there is a task to perform at the end of the path.
+	{
+		scr_perform(assigned_object);
 	}
 }
 
@@ -133,8 +133,19 @@ switch(state)
 	case 0: // no suit, no oxygen
 		astronaut_health -= global.suffocation_speed; // suffocate
 		break;
-	case 1: // no suit, oxygen
-		// no problem
+	case 1: // no suit, oxygen around
+		if(!is_moving_through_gate)
+		{
+			if(inside_room.oxygen_level < 50)
+			{
+				astronaut_health -= global.suffocation_speed*(1 - inside_room.oxygen_level/100)*0.25; // health drainage is linear to 25% of O2 shortage
+				if(astronaut_health < 0) astronaut_health = 0;
+			}
+			else if(astronaut_health < 100 && inside_room.oxygen_level > 90) // good oxygen, astronaut will slowly regenerate
+			{
+				astronaut_health += global.regeneration_speed;
+			}
+		}
 		break;
 	case 2: // suit, no oxygen
 		if(suit_oxygen > 0) // check suit
@@ -145,6 +156,7 @@ switch(state)
 		else
 		{
 			astronaut_health -= global.suffocation_speed; // suffocate
+			if(astronaut_health < 0) astronaut_health = 0;
 		}
 		break;
 	case 3: // suit, oxygen

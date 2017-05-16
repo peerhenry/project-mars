@@ -1,3 +1,4 @@
+// ### MENU BUTTON
 // box
 draw_set_color(global.btn_bg_color);
 draw_rectangle(btn_left, btn_top, btn_right, btn_bottom, false);
@@ -10,6 +11,7 @@ draw_set_font(font_hud);
 draw_set_color(global.btn_color);
 draw_text(btn_center_x, btn_center_y, "Menu");
 
+// ### BUILD PANEL
 // draw background
 draw_set_color(c_black);
 // draw_rectangle(x_offset, y_offset, x_offset + 31, y_offset + (32 + y_spacing)*build_count - y_spacing, false);
@@ -20,7 +22,17 @@ draw_rectangle(
 	y_offset + (32 + y_spacing)*build_count - y_spacing + 12, 
 	false);
 
-// draw build buttons
+draw_set_color(c_teal);
+draw_set_alpha(0.3);
+draw_rectangle(
+	2, 
+	y_offset - 10, 
+	x_offset + 31 + 10, 
+	y_offset + (32 + y_spacing)*build_count - y_spacing + 10, 
+	false);
+draw_set_alpha(1);
+
+// ### BUILD BUTTONS
 buffer_seek(build_button_buffer, buffer_seek_start, 0);
 for(var n = 0; n < build_count; n++)
 {
@@ -29,25 +41,23 @@ for(var n = 0; n < build_count; n++)
 	var next_image_index = next_u32 & 255;
 	var b_state = (next_u32 >> 8) & 255; // second byte is state
 	
-	// draw sprite
-	draw_sprite(next_sprite, next_image_index, x_offset + 16, y_offset + 16 + (32 + y_spacing)*n);
-	
-	// draw overlay
 	var left = x_offset;
 	var top = y_offset + (32 + y_spacing)*n;
 	var right = x_offset + 31;
 	var bottom = y_offset + (32 + y_spacing)*n + 31;
-	if(b_state == button_state.hover)
+	
+	// draw sprite
+	draw_sprite(next_sprite, next_image_index, x_offset + 16, y_offset + 16 + (32 + y_spacing)*n);
+	draw_set_alpha(0.3);
+	draw_set_color(c_aqua);
+	draw_rectangle(left, top, right, bottom, false);
+	draw_set_alpha(1);
+	
+	// draw overlay
+	if(b_state == button_state.hover || b_state == button_state.selected)
 	{
 		draw_set_alpha(0.3);
 		draw_set_color(c_white);
-		draw_rectangle(left, top, right, bottom, false);
-		draw_set_alpha(1);
-	}
-	else if(b_state == button_state.selected)
-	{
-		draw_set_alpha(0.3);
-		draw_set_color(c_aqua);
 		draw_rectangle(left, top, right, bottom, false);
 		draw_set_alpha(1);
 	}

@@ -43,3 +43,8 @@ if(room2 != noone && room2.oxygen_level < 100)
 draw_set_alpha(1);
 
 draw_self();
+
+if(locked)
+{
+	draw_sprite(spr_locked, 0, x, y);
+}

@@ -2,6 +2,7 @@
 var window_mouse_x = window_mouse_get_x();
 var window_mouse_y = window_mouse_get_y();
 var clicked = mouse_check_button_released(mb_left);
+var right_clicked = mouse_check_button_released(mb_right);
 
 global.hovering_over_HUD = false;
 
@@ -42,7 +43,7 @@ for(var n = 0; n < build_count; n++)
 			buffer_seek(build_button_buffer, buffer_seek_start, offset);
 			buffer_write(build_button_buffer, buffer_u32, new_val);
 		}
-		else if(clicked && b_state == button_state.selected){
+		else if((clicked || right_clicked) && b_state == button_state.selected){
 			var new_val = (button_state.none<<8) + next_image_index;
 			buffer_seek(build_button_buffer, buffer_seek_start, offset);
 			buffer_write(build_button_buffer, buffer_u32, new_val);
