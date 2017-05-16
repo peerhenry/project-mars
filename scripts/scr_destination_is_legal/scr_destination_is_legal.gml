@@ -3,7 +3,7 @@ var arg_y = argument1;
 var arg_i = scr_rc_to_gi(arg_x);
 var arg_j = scr_rc_to_gi(arg_y);
 
-with(obj_character)
+with(obj_astronaut)
 {
 	if(arg_i == occ_i && arg_j == occ_j) return false;
 }

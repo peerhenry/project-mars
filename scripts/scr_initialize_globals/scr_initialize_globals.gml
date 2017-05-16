@@ -18,7 +18,7 @@ enum wall_type {
 	none
 }
 
-// oxygen stuff
+// gameplay stuff
 global.oxygen_bar_color = make_color_rgb(55, 55, 255);
 global.gate_drainage_speed = 25; // percentage of oxygen of 1 tile being drained by an open hatch per step.
 global.oxygen_empty_level = 1; // if oxygen_level falls below this number, red stripes are drawn.
@@ -27,7 +27,10 @@ global.suit_o2_depletion_speed = 0.01;
 global.suffocation_speed = 0.5; // how fast is health drained from suffocation
 global.suit_closet_replenishment = 0.2; // how fast is suit oxygen replenishing in suit closet
 
+global.astronaut_move_speed = 3;
 global.regeneration_speed = 0.01;
+global.projectile_speed = 30;
+global.projectile_damage = 10;
 
 // astronaut tasks
 

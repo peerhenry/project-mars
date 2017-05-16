@@ -3,7 +3,7 @@
 var orders_given = false; // boolean for sound
 
 // 1. cancel active task for selected astronauts
-with(obj_character)
+with(obj_astronaut_playable)
 {
 	if(is_selected && assigned_object != noone) scr_unassign_task(assigned_object);
 }
@@ -15,7 +15,7 @@ if(el_assignable != noone)
 	// from all selected astronauts, get the one closest to the assignable
 	var d_min = 100000000;
 	var assigned_astronaut = noone;
-	with(obj_character)
+	with(obj_astronaut_playable)
 	{
 		if(is_selected){
 			var ds = scr_d_squared(id, el_assignable);	
@@ -34,7 +34,7 @@ if(el_assignable != noone)
 }
 else if( !position_meeting(mouse_x, mouse_y, obj_gate) ){
 	// 3. just navigation
-	with(obj_character)
+	with(obj_astronaut_playable)
 	{
 		if(is_selected){
 			orders_given = scr_navigate(id, mouse_x, mouse_y);

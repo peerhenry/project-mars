@@ -64,7 +64,7 @@ if(!is_dragging)
 	// LEFT RELEASE
 	if(mouse_check_button_released(mb_left))
 	{
-		with(obj_character)
+		with(obj_astronaut_playable)
 		{
 			if(mouse_x < x + 15 && mouse_x > x - 15 && mouse_y < y + 15 && mouse_y > y -15)
 			{
@@ -99,7 +99,7 @@ else if(mouse_check_button_released(mb_left))
 	// selection rectangle must contain a tile center
 	if(rec_right - rec_left > 15 || rec_bottom - rec_top > 15)
 	{
-		with(obj_character)
+		with(obj_astronaut_playable)
 		{
 			if(
 				x >= rec_left && x <= rec_right &&
@@ -115,7 +115,7 @@ else if(mouse_check_button_released(mb_left))
 	}
 	else // selection rectangle is so small, it only selects if its contained
 	{
-		with(obj_character)
+		with(obj_astronaut_playable)
 		{
 			if(
 				rec_left > x - 15  && rec_right < x + 15 &&

@@ -15,7 +15,7 @@ var counter = 0;
 var navigation_grid = scr_get_nav_grid();
 
 // clear all character cells before trying to navigate
-with(obj_character)
+with(obj_astronaut)
 {
 	mp_grid_clear_cell(navigation_grid, occ_i, occ_j);
 }
@@ -54,7 +54,7 @@ if(path_found)
 }*/
 
 // reset all navgrid cells at astronaut positions.
-with(obj_character)
+with(obj_astronaut)
 {
 	mp_grid_add_cell(navigation_grid, occ_i, occ_j);
 }
