@@ -12,3 +12,5 @@ with(new_projectile)
 	mp_linear_path(path, target_x, target_y, global.projectile_speed, false);
 	path_start(path, global.projectile_speed, path_action_stop, false);	// false: don't go along an absolute path, go relative to your position	
 }
+
+audio_play_sound(sound_fx_laser, 0, 0);

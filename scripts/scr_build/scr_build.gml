@@ -81,18 +81,6 @@ for(var n = 0; n < tile_count; n++)// loop over build tiles
 			var valid_o = scr_validate_o(validation_o, map_o, target_i, target_j);
 			if(valid_i && valid_o && map_buffer_action != map_buffer_action.nothing)
 			{
-				if(global.debug_gameplay_messages) // DEBUG
-				{
-					show_debug_message("build action found: " + string(m));
-					show_debug_message("map_buffer_action: " + string(map_buffer_action));
-					show_debug_message("validation_i: " + string(validation_i));
-					show_debug_message("map_i: " + string(map_i));
-					show_debug_message("validation_o: " + string(validation_o));
-					show_debug_message("map_o: " + string(map_o));
-					show_debug_message("map_value: " + string(map_value));
-					show_debug_message("delta: " + string(rot_i) + ", " + string(rot_j));
-					show_debug_message("");
-				}
 				skip_it = false;
 				action_to_execute = m;
 				break;
@@ -111,60 +99,12 @@ for(var n = 0; n < tile_count; n++)// loop over build tiles
 	var b_layer = buffer_read(global.build_action_buffer, buffer_s32);
 	var object_to_add = buffer_read(global.build_action_buffer, buffer_s32);
 	var object_to_remove = buffer_read(global.build_action_buffer, buffer_s32);
+	var metal_cost = buffer_read(global.build_action_buffer, buffer_s32);
 	
-	// modify map_buffer
-	switch(map_buffer_action)
+	var added_object = scr_build_action_perform(map_buffer_action, map_r, map_i, target_i, target_j, object_to_remove, object_to_add, b_layer, metal_cost);
+	if(rot_i == 0 && rot_j == 0) // assuming the center tile is the relevant instance for wall logic and room logic.
 	{
-		case map_buffer_action.clear:
-			var new_value = (map_r << 8) + (global.vacant << 1) + map_i;
-			scr_map_buffer_set_cell(target_i, target_j, new_value);
-			break;
-		case map_buffer_action.nothing:
-			break;
-		case map_buffer_action.reserve:
-			var new_value = (map_r << 8) + (global.reserved << 1) + map_i;
-			scr_map_buffer_set_cell(target_i, target_j, new_value);
-			break;
-		case map_buffer_action.occupy:
-			var new_value = (map_r << 8) + (global.occupied << 1) + map_i;
-			scr_map_buffer_set_cell(target_i, target_j, new_value);
-			break;
-		case map_buffer_action.wall_like:
-			var new_value = (map_r << 8) + (global.wall_like << 1) + map_i;
-			scr_map_buffer_set_cell(target_i, target_j, new_value);
-			break;
-		case map_buffer_action.wall:
-			var new_value = (map_r << 8) + (global.wall_pure << 1) + map_i;
-			scr_map_buffer_set_cell(target_i, target_j, new_value);
-			break;
-		case map_buffer_action.inside:
-			var new_value = (map_r << 8) + (global.vacant << 1) + 1;
-			scr_map_buffer_set_cell(target_i, target_j, new_value);
-			break;
-	}
-	
-	var target_x = clamped_x + 32*rot_i;
-	var target_y = clamped_y + 32*rot_j;
-	
-	// remove object
-	if(object_to_remove != noone)
-	{
-		var instance = instance_position(target_x, target_y, object_to_remove);
-		with(instance) instance_destroy();
-	}
-	
-	// add object
-	if(object_to_add != noone)
-	{
-		if(global.debug_gameplay_messages){ // DEBUG
-			if(object_to_add == obj_wall) show_debug_message("Now adding wall!");
-		}
-			
-		var instance_created = instance_create_layer(target_x, target_y, b_layer, object_to_add);
-		if(rot_i == 0 && rot_j == 0) // assuming the center tile is the relevant instance for wall logic and room logic.
-		{
-			new_instance = instance_created;
-		}
+		new_instance = added_object;
 	}
 }
 

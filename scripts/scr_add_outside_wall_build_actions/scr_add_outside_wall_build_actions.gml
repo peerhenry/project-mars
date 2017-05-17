@@ -12,7 +12,8 @@ scr_add_build_action(
 	map_buffer_action.wall,
 	base_layer,
 	obj_wall,
-	noone
+	noone,
+	100
 );
 
 scr_add_build_action(
@@ -25,7 +26,8 @@ scr_add_build_action(
 	map_buffer_action.nothing,
 	noone,
 	noone,
-	noone
+	noone,
+	0
 );
 
 scr_add_build_action(
@@ -38,5 +40,6 @@ scr_add_build_action(
 	map_buffer_action.nothing,
 	noone,
 	noone,
-	noone
+	noone,
+	0
 );

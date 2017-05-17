@@ -18,6 +18,11 @@ enum wall_type {
 	none
 }
 
+enum resource {
+	water,
+	metal
+}
+
 // gameplay stuff
 global.oxygen_bar_color = make_color_rgb(55, 55, 255);
 global.gate_drainage_speed = 25; // percentage of oxygen of 1 tile being drained by an open hatch per step.
@@ -29,8 +34,12 @@ global.suit_closet_replenishment = 0.2; // how fast is suit oxygen replenishing 
 
 global.astronaut_move_speed = 3;
 global.regeneration_speed = 0.01;
+global.time_to_shoot = 1;
 global.projectile_speed = 30;
 global.projectile_damage = 10;
+global.shooting_range_squared = 10*10;
+
+global.resource_amount_metal = 20000;
 
 // astronaut tasks
 

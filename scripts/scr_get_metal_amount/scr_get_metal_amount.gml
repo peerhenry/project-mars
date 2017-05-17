@@ -1,0 +1,1 @@
+return global.resource_amount_metal;

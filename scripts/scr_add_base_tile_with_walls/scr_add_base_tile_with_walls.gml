@@ -1,5 +1,5 @@
 /// adds basetile, adds outside walls if necessary, updates all adjacent walls.
-var i = argument0;
+/*var i = argument0;
 var j = argument1;
 
 var target_x = scr_gi_to_rc(i);
@@ -51,4 +51,4 @@ for(s=0; s<20; s++)
 	if(walls[s] != noone) scr_wall_update_state(walls[s]);
 }
 
-return new_basetile;
+return new_basetile;*/

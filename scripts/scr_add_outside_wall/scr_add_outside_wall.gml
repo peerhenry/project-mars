@@ -1,5 +1,5 @@
 ///Adds wall and returns id, or returns id of existing wall.
-
+/*
 var i = argument0;
 var j = argument1;
 
@@ -23,4 +23,4 @@ if(hatch_id == noone) // if there is no hatch, there may be a setup hatch object
 if(base_tile_id  == noone && hatch_id == noone){
 	var blid = layer_get_id("base");
 	return instance_create_layer(target_x, target_y, blid, obj_wall);
-}
+}*/

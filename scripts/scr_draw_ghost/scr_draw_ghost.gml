@@ -6,9 +6,6 @@ var arg_rotation = argument3;
 var arg_i = scr_rc_to_gi(arg_x);
 var arg_j = scr_rc_to_gi(arg_y);
 
-var clamped_x = scr_rc_clamp_center(arg_x);
-var clamped_y = scr_rc_clamp_center(arg_y);
-
 var tile_count = ds_map_find_value(global.build_tile_counts, arg_build);
 var tile_offset = ds_map_find_value(global.build_tile_offsets, arg_build);
 
@@ -44,67 +41,37 @@ for(var n = 0; n < tile_count; n++)// loop over build tiles
 	
 	var target_i = arg_i + rot_i;
 	var target_j = arg_j + rot_j;
-	var map_value = scr_map_buffer_get_cell(target_i, target_j);
-	var map_i = (map_value & 1);
-	var map_o = (map_value >> 1) & 127; // next 7 bytes store o
 	
-	var tile_is_valid = false;
-	var sprite_for_ghost = noone;
-	var there_is_a_drawable = false;
-	var there_is_a_valid_nondrawable = false;
-	
-	for(var m = 0; m < action_count; m++) // loop over build actions
+	if(arg_build == global.basetile && (di != 0 || dj != 0))
 	{
-		// read from buffer
-		var action_is_valid = false;
-		buffer_seek(global.build_action_buffer, buffer_seek_start, action_offset + m*global.props_per_action*4);
-		var validation_i = buffer_read(global.build_action_buffer, buffer_u32);
-		var validation_o = buffer_read(global.build_action_buffer, buffer_u32);
-		var b_image_index = buffer_read(global.build_action_buffer, buffer_s32);
-		var map_buffer_action = buffer_read(global.build_action_buffer, buffer_u32);
-		var b_layer = buffer_read(global.build_action_buffer, buffer_s32);
-		var object_to_add = buffer_read(global.build_action_buffer, buffer_s32);
-		var object_to_remove = buffer_read(global.build_action_buffer, buffer_s32);
-		
-		// do shit with buffer data
-		if(scr_validate_i(validation_i, map_i) && scr_validate_o(validation_o, map_o, target_i, target_j))
+		var sprite = spr_wall_straight;
+		var angle = 0;
+		var nr = (dj)*3 + di + 4;
+		switch(nr)
 		{
-			action_is_valid = true;
-			tile_is_valid = true;
+			case 0:		// di = -1, dj = -1
+				sprite = spr_wall_edge;
+				angle = 90;
+				break;
+			case 2:		// di = 1, dj = -1
+				sprite = spr_wall_edge;
+				break;
+			case 3:		// di = -1, dj = 0
+			case 5:		// di = 1, dj = 0
+				angle = 90;
+				break;
+			case 6:		// di = -1, dj = 1
+				sprite = spr_wall_edge;
+				angle = 180;
+				break;
+			case 8:		// di = 1, dj = 1
+				sprite = spr_wall_edge;
+				angle = 270;
+				break;
 		}
-		
-		if(map_buffer_action != map_buffer_action.nothing && map_buffer_action != map_buffer_action.reserve)
-		{
-			there_is_a_drawable = true;
-			if(object_to_add != noone){
-				sprite_for_ghost = object_get_sprite(object_to_add);
-			}
-		}
-		else if(action_is_valid)
-		{
-			there_is_a_valid_nondrawable = true;
-		}
-		else
-		{
-			// we should draw this invalid tile.
-			there_is_a_drawable = true;
-		}
+		scr_draw_tile_ghost_override(target_i, target_j, action_offset, action_count, arg_rotation, validation_alpha, sprite, angle);
 	}
-	
-	if(!tile_is_valid) global.construction_is_valid = false;
-	
-	if(!there_is_a_valid_nondrawable && there_is_a_drawable)
-	{
-		var target_x = clamped_x + 32*rot_i;
-		var target_y = clamped_y + 32*rot_j;
-		if(sprite_for_ghost >= 0){
-			draw_sprite_ext( sprite_for_ghost, b_image_index, target_x, target_y, 1, 1, 90*arg_rotation, c_white, validation_alpha );
-			//draw_sprite(sprite_for_ghost, b_image_index, target_x, target_y);
-		}
-		if(tile_is_valid) draw_set_color(c_lime);
-		else draw_set_color(c_red);
-		draw_rectangle(target_x-16, target_y-16, target_x+15, target_y+15, false);
-	}
+	else scr_draw_tile_ghost(target_i, target_j, action_offset, action_count, arg_rotation, validation_alpha);
 }
 
 draw_set_alpha(1);

@@ -31,6 +31,13 @@ btn_left = 4;
 btn_top = 4;
 btn_right = 128;
 btn_bottom = 32;
-
 btn_center_x = (btn_left + btn_right)/2;
 btn_center_y = (btn_top + btn_bottom)/2;
+
+// coords for resource panel
+resources_left = 480;
+resources_top = 4;
+resources_right = 800;
+resources_bottom = 32;
+resources_center_x = (resources_left + resources_right)/2;
+resources_center_y = (resources_top + resources_bottom)/2;

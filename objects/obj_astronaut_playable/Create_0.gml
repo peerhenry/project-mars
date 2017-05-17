@@ -1,4 +1,4 @@
 event_inherited();
 
 is_selected = false;
-alarm[0] = 60;
+enemy_object = obj_astronaut_enemy;

@@ -37,6 +37,12 @@ has_died = false;
 assigned_object = noone;
 
 // 5. combat
-target = noone
+target = noone;
 auto_attack = true;
-alarm[0] = 60; // shoot every 60 updates/every 2 seconds
+alarm[0] = 30*global.time_to_shoot; // shoot every 60 updates/every 2 seconds
+enemy_object = noone;
+
+// active sprites
+sprite_walk_down = sprite_down;
+sprite_walk_right = sprite_right;
+sprite_walk_up = sprite_up;

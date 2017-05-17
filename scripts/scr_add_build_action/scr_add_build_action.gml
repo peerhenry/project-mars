@@ -8,6 +8,7 @@ var arg_map_buffer_action = argument6;
 var arg_layer = argument7;
 var arg_object_to_add = argument8;
 var arg_object_to_remove = argument9;
+var arg_metal_cost = argument10;
 
 if(ds_map_exists(global.build_tile_counts, arg_construction)) // construction exists
 {
@@ -54,3 +55,4 @@ buffer_write(global.big_bad_buffer, buffer_u32, arg_map_buffer_action);
 buffer_write(global.big_bad_buffer, buffer_s32, arg_layer);
 buffer_write(global.big_bad_buffer, buffer_s32, arg_object_to_add);
 buffer_write(global.big_bad_buffer, buffer_s32, arg_object_to_remove);
+buffer_write(global.big_bad_buffer, buffer_s32, arg_metal_cost);

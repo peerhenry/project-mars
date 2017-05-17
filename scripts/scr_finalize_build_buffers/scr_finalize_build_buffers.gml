@@ -40,7 +40,7 @@ var build_tile_id = 1;
 // 3. create buffers
 global.props_per_build_tile = 4;
 global.build_tile_buffer = buffer_create(4*global.props_per_build_tile*build_tile_count, buffer_fixed, 4);
-global.props_per_action = 7;
+global.props_per_action = 8;
 global.build_action_buffer = buffer_create(4*global.props_per_action*build_action_count, buffer_fixed, 4);
 global.build_tile_offsets = ds_map_create();
 
@@ -69,6 +69,7 @@ for(var s = 0; s< ds_list_size(global.construction_list); s++)
 			var b_layer = buffer_read(global.big_bad_buffer, buffer_s32);
 			var object_to_add = buffer_read(global.big_bad_buffer, buffer_s32);
 			var object_to_remove = buffer_read(global.big_bad_buffer, buffer_s32);
+			var metal_cost = buffer_read(global.big_bad_buffer, buffer_s32);
 			
 			if(m == 0){ // add a build tile for each first action
 				var action_offset = buffer_tell(global.build_action_buffer);
@@ -89,6 +90,7 @@ for(var s = 0; s< ds_list_size(global.construction_list); s++)
 			buffer_write(global.build_action_buffer, buffer_s32, b_layer);
 			buffer_write(global.build_action_buffer, buffer_s32, object_to_add);
 			buffer_write(global.build_action_buffer, buffer_s32, object_to_remove);
+			buffer_write(global.build_action_buffer, buffer_s32, metal_cost);
 		}
 		build_tile_id++;
 	}

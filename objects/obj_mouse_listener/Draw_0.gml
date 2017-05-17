@@ -14,5 +14,6 @@ if(global.construct != noone){
 	draw_set_alpha(0.5);
 	draw_rectangle(left, top, right, bottom, false);
 	draw_set_alpha(1);*/
-	scr_draw_ghost(mouse_x, mouse_y, global.construct, global.build_rotation);
+	if(is_dragging) scr_draw_ghost_dragging(click_x, click_y, mouse_x, mouse_y, global.construct, global.build_rotation);
+	else scr_draw_ghost(mouse_x, mouse_y, global.construct, global.build_rotation);
 }

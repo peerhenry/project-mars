@@ -23,8 +23,9 @@ if(global.construct != noone)
 	
 	if(mouse_check_button_released(mb_left))
 	{
-		//scr_construct(global.construct);
-		scr_build(mouse_x, mouse_y, global.construct, global.build_rotation);
+		if(is_dragging) scr_build_dragging(click_x, click_y, mouse_x, mouse_y, global.construct, global.build_rotation);
+		else scr_build(mouse_x, mouse_y, global.construct, global.build_rotation);
+		is_dragging	= false;
 	}
 	
 	if(mouse_check_button_pressed(mb_right))
