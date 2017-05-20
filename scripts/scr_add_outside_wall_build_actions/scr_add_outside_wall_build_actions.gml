@@ -3,7 +3,7 @@ var arg_d_j = argument1;
 var base_layer = layer_get_id("base");
 
 scr_add_build_action(
-	global.basetile,
+	build.basetile,
 	arg_d_i,
 	arg_d_j,
 	build_validation_i.outside,
@@ -17,7 +17,7 @@ scr_add_build_action(
 );
 
 scr_add_build_action(
-	global.basetile,
+	build.basetile,
 	arg_d_i,
 	arg_d_j,
 	build_validation_i.outside,
@@ -31,7 +31,7 @@ scr_add_build_action(
 );
 
 scr_add_build_action(
-	global.basetile,
+	build.basetile,
 	arg_d_i,
 	arg_d_j,
 	build_validation_i.inside,

@@ -52,3 +52,5 @@ enum task
 	sleep,
 	attack
 }
+
+global.task_queue = ds_queue_create();

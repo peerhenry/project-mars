@@ -10,16 +10,16 @@ with(new_instance){
 }
 
 switch(construct_type){
-	case global.basetile:
+	case build.basetile:
 		scr_room_logic_basetile(target_x, target_y);
 		break;
-	case global.wall:
+	case build.wall:
 		scr_room_logic_wall(new_instance);
 		break;
-	case global.door:
+	case build.door:
 		scr_room_logic_door(new_instance);
 		break;
-	case global.hatch:
+	case build.hatch:
 		scr_room_logic_hatch(new_instance);
 		break;
 }

@@ -1,3 +1,4 @@
+/// Add build action to big bad buffer, and update maps for acion counts and tile counts
 var arg_construction = argument0;		// what construction is this tile for
 var arg_d_i = argument1;				//
 var arg_d_j = argument2;				//

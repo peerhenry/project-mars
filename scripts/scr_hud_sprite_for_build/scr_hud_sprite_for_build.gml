@@ -2,18 +2,18 @@ arg_build = argument0;
 
 switch(arg_build)
 {
-	case global.basetile:
+	case build.basetile:
 		return spr_base_tile;
-	case global.wall:
+	case build.wall:
 		return spr_wall;
-	case global.door:
+	case build.door:
 		return spr_door;
-	case global.hatch:
+	case build.hatch:
 		return spr_hatch;
-	case global.suit_closet:
-	case global.suit_closet_empty:
+	case build.suit_closet:
+	case build.suit_closet_empty:
 		return spr_suit_closet;
-	case global.sensor:
+	case build.sensor:
 		return spr_sensor;
 }
 

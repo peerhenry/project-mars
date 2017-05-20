@@ -42,7 +42,7 @@ for(var n = 0; n < tile_count; n++)// loop over build tiles
 	var target_i = arg_i + rot_i;
 	var target_j = arg_j + rot_j;
 	
-	if(arg_build == global.basetile && (di != 0 || dj != 0))
+	if(arg_build == build.basetile && (di != 0 || dj != 0))
 	{
 		var sprite = spr_wall_straight;
 		var angle = 0;

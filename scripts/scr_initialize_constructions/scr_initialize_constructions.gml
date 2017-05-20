@@ -36,12 +36,25 @@ enum map_buffer_action {
 	inside
 }
 
+// used for map buffer
 global.vacant = 0;
 global.reserved = 1;
 global.occupied = 2;
 global.wall_like = 3;
 global.wall_pure = 4;
+global.under_construction = 5;
 
+enum build{
+	basetile,
+	wall,
+	door,
+	hatch,
+	suit_closet,
+	suit_closet_empty,
+	sensor
+}
+
+/*
 global.basetile = 1;
 global.outer_wall = 2;
 global.wall = 3;
@@ -49,8 +62,7 @@ global.door = 4;
 global.hatch = 5;
 global.suit_closet = 6;
 global.suit_closet_empty = 7;
-
-global.sensor = 8;
+global.sensor = 8;*/
 
 var base_layer = layer_get_id("base");
 var basetile_layer = layer_get_id("basetiles");
@@ -58,7 +70,7 @@ var basetile_layer = layer_get_id("basetiles");
 // basetile
 
 scr_add_build_action(
-	global.basetile,
+	build.basetile,
 	0,	// di
 	0,	// dj
 	build_validation_i.outside,
@@ -71,7 +83,7 @@ scr_add_build_action(
 	100
 );
 scr_add_build_action(
-	global.basetile,
+	build.basetile,
 	0,	// di
 	0,	// dj
 	build_validation_i.outside,
@@ -95,7 +107,7 @@ scr_add_outside_wall_build_actions(1,1);
 // wall
 
 scr_add_build_action(
-	global.wall,
+	build.wall,
 	0,	// di
 	0,	// dj
 	build_validation_i.inside,
@@ -111,7 +123,7 @@ scr_add_build_action(
 // hatch
 
 scr_add_build_action(
-	global.hatch,
+	build.hatch,
 	0,	// di
 	0,	// dj
 	build_validation_i.outside,
@@ -125,7 +137,7 @@ scr_add_build_action(
 );
 
 scr_add_build_action(
-	global.hatch,
+	build.hatch,
 	0,	// di
 	-1,	// dj
 	build_validation_i.inside,
@@ -139,7 +151,7 @@ scr_add_build_action(
 );
 
 scr_add_build_action(
-	global.hatch,
+	build.hatch,
 	0,	// di
 	1,	// dj
 	build_validation_i.outside,
@@ -153,7 +165,7 @@ scr_add_build_action(
 );
 
 scr_add_build_action(
-	global.hatch,
+	build.hatch,
 	-1,	// di
 	0,	// dj
 	build_validation_i.outside,
@@ -167,7 +179,7 @@ scr_add_build_action(
 );
 
 scr_add_build_action(
-	global.hatch,
+	build.hatch,
 	1,	// di
 	0,	// dj
 	build_validation_i.outside,
@@ -184,7 +196,7 @@ scr_add_build_action(
 // door
 
 scr_add_build_action(
-	global.door,
+	build.door,
 	0,	// di
 	0,	// dj
 	build_validation_i.inside,
@@ -198,7 +210,7 @@ scr_add_build_action(
 );
 
 scr_add_build_action(
-	global.door,
+	build.door,
 	0,	// di
 	0,	// dj
 	build_validation_i.inside,
@@ -212,7 +224,7 @@ scr_add_build_action(
 );
 
 scr_add_build_action(
-	global.door,
+	build.door,
 	0,	// di
 	-1,	// dj
 	build_validation_i.inside,
@@ -226,7 +238,7 @@ scr_add_build_action(
 );
 
 scr_add_build_action(
-	global.door,
+	build.door,
 	0,	// di
 	1,	// dj
 	build_validation_i.inside,
@@ -240,7 +252,7 @@ scr_add_build_action(
 );
 
 scr_add_build_action(
-	global.door,
+	build.door,
 	-1,	// di
 	0,	// dj
 	build_validation_i.any,
@@ -254,7 +266,7 @@ scr_add_build_action(
 );
 
 scr_add_build_action(
-	global.door,
+	build.door,
 	1,	// di
 	0,	// dj
 	build_validation_i.any,
@@ -270,7 +282,7 @@ scr_add_build_action(
 // closet
 
 scr_add_build_action(
-	global.suit_closet,
+	build.suit_closet,
 	0,	// di
 	0,	// dj
 	build_validation_i.inside,
@@ -284,7 +296,7 @@ scr_add_build_action(
 );
 
 scr_add_build_action(
-	global.suit_closet,
+	build.suit_closet,
 	1,	// di
 	0,	// dj
 	build_validation_i.inside,
@@ -300,7 +312,7 @@ scr_add_build_action(
 // closet empty
 
 scr_add_build_action(
-	global.suit_closet_empty,
+	build.suit_closet_empty,
 	0,	// di
 	0,	// dj
 	build_validation_i.inside,
@@ -314,7 +326,7 @@ scr_add_build_action(
 );
 
 scr_add_build_action(
-	global.suit_closet_empty,
+	build.suit_closet_empty,
 	1,	// di
 	0,	// dj
 	build_validation_i.inside,
@@ -330,7 +342,7 @@ scr_add_build_action(
 // sensor
 
 scr_add_build_action(
-	global.sensor,
+	build.sensor,
 	0,
 	0,
 	build_validation_i.outside,

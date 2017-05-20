@@ -9,10 +9,16 @@ if(!arg_astronaut.wears_suit && arg_closet.holds_suit){
 	
 	with(arg_astronaut)
 	{
+		switch(sprite_index)
+		{
+			case sprite_walk_down: sprite_index = sprite_down; break;
+			case sprite_walk_right: sprite_index = sprite_right; break;
+			case sprite_walk_up: sprite_index = sprite_up; break;
+		}
 		sprite_walk_down = sprite_down;
 		sprite_walk_right = sprite_right;
 		sprite_walk_up = sprite_up;
 	}
+	
+	audio_play_sound(sound_fx_suit_pressure, 0, 0);
 }
-
-audio_play_sound(sound_fx_suit_pressure, 0, 0);

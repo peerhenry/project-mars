@@ -8,7 +8,8 @@
         "1016c579-bd23-4667-bc30-9a35b8d02870",
         "af75cd70-438a-40cb-b77b-48fdb74c5944",
         "ebd09f80-eee6-42b2-a5c1-75e921aa968a",
-        "d1e8ac4e-e7dd-4767-91a9-8728775fd243"
+        "d1e8ac4e-e7dd-4767-91a9-8728775fd243",
+        "805c5116-cb04-4783-82fd-d1879d1d6959"
     ],
     "filterType": "GMObject",
     "folderName": "GAME",

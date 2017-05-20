@@ -17,14 +17,14 @@ var abs_diff_j = abs(diff_j);
 
 var diff_is_significant = abs_diff_i  > 0 || abs_diff_j > 0;
 
-if(!diff_is_significant || arg_build != global.wall || !arg_build == global.basetile)
+if(!diff_is_significant || arg_build != build.wall || !arg_build == build.basetile)
 {
 	scr_draw_ghost(arg_x, arg_y, arg_build, arg_rotation);
 }
 
 var validation_alpha = 0.42;
 draw_set_alpha(validation_alpha);
-if(arg_build == global.wall)
+if(arg_build == build.wall)
 {
 	var tile_count = ds_map_find_value(global.build_tile_counts, arg_build);
 	var tile_offset = ds_map_find_value(global.build_tile_offsets, arg_build);
@@ -57,7 +57,7 @@ if(arg_build == global.wall)
 		}
 	}
 }
-else if(arg_build == global.basetile)
+else if(arg_build == build.basetile)
 {
 	var tile_count = ds_map_find_value(global.build_tile_counts, arg_build);
 	var tile_offset = ds_map_find_value(global.build_tile_offsets, arg_build);

@@ -19,7 +19,7 @@ var diff_is_significant = abs_diff_i  > 0 || abs_diff_j > 0;
 
 if(diff_is_significant)
 {
-	if(arg_build == global.basetile)
+	if(arg_build == build.basetile)
 	{
 		for(var ni = min(0, diff_i); ni <= max(0, diff_i); ni++)
 		{
@@ -31,7 +31,7 @@ if(diff_is_significant)
 			}
 		}
 	}
-	else if(arg_build == global.wall)
+	else if(arg_build == build.wall)
 	{
 		if(abs_diff_i > abs_diff_j)
 		{

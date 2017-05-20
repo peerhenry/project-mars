@@ -51,37 +51,37 @@ if(is_walking){
 		if(inside_room == noone) is_outside = true;
 		else is_outside = false;
 	}
-}
-
-switch(moveDir)
-{
-	case up:
+	
+	switch(moveDir)
 	{
-		if(sprite_index != sprite_walk_up) sprite_index = sprite_walk_up;
-		break;
-	}
-	case down:
-	{
-		if(sprite_index != sprite_walk_down) sprite_index = sprite_walk_down;
-		break;
-	}
-	case left:
-	{
-		if(sprite_index != sprite_walk_right || image_xscale != -1)
+		case up:
 		{
-			sprite_index = sprite_walk_right;
-			image_xscale = -1;
+			if(sprite_index != sprite_walk_up) sprite_index = sprite_walk_up;
+			break;
 		}
-		break;
-	}
-	case right:
-	{
-		if(sprite_index != sprite_walk_right || image_xscale != 1)
+		case down:
 		{
-			sprite_index = sprite_walk_right;
-			image_xscale = 1;
+			if(sprite_index != sprite_walk_down) sprite_index = sprite_walk_down;
+			break;
 		}
-		break;
+		case left:
+		{
+			if(sprite_index != sprite_walk_right || image_xscale != -1)
+			{
+				sprite_index = sprite_walk_right;
+				image_xscale = -1;
+			}
+			break;
+		}
+		case right:
+		{
+			if(sprite_index != sprite_walk_right || image_xscale != 1)
+			{
+				sprite_index = sprite_walk_right;
+				image_xscale = 1;
+			}
+			break;
+		}
 	}
 }
 

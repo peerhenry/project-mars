@@ -6,16 +6,13 @@ var construction_is_valid = global.construction_is_valid;
 if(!construction_is_valid) return;
 
 if(global.debug_gameplay_messages){
-show_debug_message("");
-show_debug_message("=== constructing: " + string(arg_build));
-show_debug_message("");
+	show_debug_message("");
+	show_debug_message("=== constructing: " + string(arg_build));
+	show_debug_message("");
 }
 
 var arg_i = scr_rc_to_gi(arg_x);
 var arg_j = scr_rc_to_gi(arg_y);
-
-var clamped_x = scr_rc_clamp_center(arg_x);
-var clamped_y = scr_rc_clamp_center(arg_y);
 
 var tile_count = ds_map_find_value(global.build_tile_counts, arg_build);
 var tile_offset = ds_map_find_value(global.build_tile_offsets, arg_build);
