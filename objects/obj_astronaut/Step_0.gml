@@ -8,7 +8,7 @@ else if(astronaut_health <= 0)
 	path_end();
 	if(assigned_object != noone) scr_unassign_task(assigned_object);
 	// die
-	scr_kill(id);
+	scr_kill(id); // destroys astronaut and replaces it with a corpse object.
 	has_died = true;
 	return;
 }
@@ -85,7 +85,7 @@ if(is_walking){
 	}
 }
 
-// 3. update path
+// 3. update from path
 if(path_position > 0.001 && path_position < 0.999)
 {
 	if(!is_walking) is_walking = true;

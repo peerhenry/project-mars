@@ -2,7 +2,7 @@
 
 // DEBUG settings
 global.draw_room_bb = false;
-global.debug_start_messages = true;
+global.debug_start_messages = false;
 global.debug_gameplay_messages = true;
 
 // constructions

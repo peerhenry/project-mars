@@ -6,5 +6,5 @@ if(is_assigned)
 		frame_counter = 0;
 		i_index = (i_index + 1) mod 4;
 	}
-	draw_sprite(spr_assigned, i_index, x, y)
+	draw_sprite(spr_assigned, i_index, x, y);
 }

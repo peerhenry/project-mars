@@ -1,0 +1,37 @@
+
+### Terminology explanation for construction logic ###
+
+There are a number of terms which have specific meaning in throughout the scripts for construction.
+- build
+- build tile
+- build action
+- build stack
+- build cell
+- construction queue
+- construction
+- construction cell
+
+
+When the player clicks on the HUD to build something, the construction will be validated on the map while hovering.
+
+The construction is set in the global "BUILD" variable.
+Each BUILD has one or more "BUILD TILES".
+A BUILD TILE contains the relative position to the origin of the construction in grid index coordinates.
+Each BUILD TILE has one or more "BUILD ACTIONS".
+A "BUILD ACTION" contains:
+- The validations in order for action to be executed.
+- The action to perform on the map_buffer.
+- The object to add (and to which layer).
+- The object that should be removed.
+
+While the mouse hovers over the map, or the player is dragging the mouse, a "BUILD GHOST" is drawn that shows which BUILD TILES pass or fail validation.
+A BUILD TILE passes validation if it has at least one BUILD ACTION that passes its validation.
+If all BUILD TILES pass, the flag global.construction_is_valid, is set to true. Otherwise it is set to false.
+
+While all BUILD TILES are being validated, the results are put on the BUILD STACK; For each BUILD TILE that can result in a executable action, a BUILD CELL 
+is created and put on the BUILD STACK.
+
+When the player releases the mouse on the map to do a construction and construction is valid, A number of things happen:
+- A new CONSTRUCTION will be created and put on the BUILD QUEUE.
+- The contents of the BUILD STACK will be read.
+- For each BUILD CELL on the BUILD STACK, a CONSTRUCTION CELL will be created and associated with the new CONSTRUCTION

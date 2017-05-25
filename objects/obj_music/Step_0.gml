@@ -1,23 +1,17 @@
-/// @description Insert description here
-// You can write your code in this editor
 if(global.music_is_playing)
-{
-if index == 0
 {
 	if (!audio_is_playing(global.current_song)) // song is finished
 	{
-		audio_play_sound(song_explore, 1, false);
-		index = 1;
-		global.current_song = song_explore;
+		index = ( index + 1 ) % 4; // modulo song count
+		var next_song = 0;
+		switch(index)
+		{
+			case 0: next_song = song_work; break;
+			case 1: next_song = song_explore; break;
+			case 2: next_song = song_dig; break;
+			case 3: next_song = song_claim; break;
+		}
+		audio_play_sound(next_song, 1, false);
+		global.current_song = next_song;
 	}
-}
-else if(index == 1)
-{
-	if !audio_is_playing(global.current_song)
-	{
-		audio_play_sound(song_work, 1, false);
-		index = 0;
-		global.current_song = song_work;
-	}
-}
 }

@@ -1,6 +1,5 @@
-var arg_x = argument0;
-var arg_y = argument1;
+/// @param wall_instance
+var arg_wall_instance = argument0;
 
-scr_update_adjacent_walls(arg_x, arg_y);
-var wall = instance_position(arg_x, arg_y, obj_wall);
-with(wall) scr_wall_update_state(wall);
+scr_update_adjacent_walls(arg_wall_instance.x, arg_wall_instance.y);
+scr_wall_update_state(arg_wall_instance);

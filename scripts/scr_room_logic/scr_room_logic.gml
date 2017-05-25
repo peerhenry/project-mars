@@ -1,4 +1,6 @@
-/// Room logic happens after construction.
+/// @description Room logic happens after construction.
+/// @param construct_type
+/// @param new_instance
 // This is the main entry script behind which all other scripts inside the room logic folder are called.
 
 var construct_type = argument0;
@@ -14,7 +16,7 @@ switch(construct_type){
 		scr_room_logic_basetile(target_x, target_y);
 		break;
 	case build.wall:
-		scr_room_logic_wall(new_instance);
+		scr_room_remove_tile_and_part(target_x, target_y);
 		break;
 	case build.door:
 		scr_room_logic_door(new_instance);

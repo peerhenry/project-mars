@@ -1,5 +1,5 @@
 {
-    "id": "9ef1720c-80ae-491d-9f5c-7e2c5f5cee63",
+    "id": "267286f3-4869-4764-b769-fba9a71f748e",
     "modelName": "GMScript",
     "mvc": "1.0",
     "name": "scr_draw_ghost",

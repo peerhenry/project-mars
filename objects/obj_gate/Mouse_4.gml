@@ -1,4 +1,8 @@
 /// @description Open/close
+if(under_construction)
+{
+	exit;
+}
 if(!is_open && !locked){
 	auto_close = false;
 	scr_gate_toggle();

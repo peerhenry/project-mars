@@ -1,3 +1,7 @@
+// 1. reset target
+target = noone;
+
+// 2. acquire target
 if(!is_walking)
 {
 	target = instance_nearest(x, y, enemy_object);
@@ -12,6 +16,7 @@ if(!is_walking)
 	}
 }
 
+// 3. shoot at target
 if(target != noone)
 {
 	scr_shoot(id, target);

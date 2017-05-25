@@ -1,4 +1,2 @@
-#macro UC (completion != 100);
-completion = 0;
+under_construction = true;
 damage = 0;
-under_construction = UC;

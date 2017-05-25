@@ -77,8 +77,8 @@
                     "colour": {
                         "Value": 4294967295
                     },
-                    "creationCodeFile": "",
-                    "creationCodeType": "",
+                    "creationCodeFile": "InstanceCreationCode_inst_5662FD0C.gml",
+                    "creationCodeType": ".gml",
                     "inheritCode": false,
                     "name_with_no_file_rename": "inst_5662FD0C",
                     "objId": "aa0a734f-cf6f-49b6-a0c8-e52f496377ad",

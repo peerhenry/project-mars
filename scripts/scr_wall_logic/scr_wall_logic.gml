@@ -1,19 +1,15 @@
-var arg_x = argument0;
-var arg_y = argument1;
-var arg_build = argument2;
+///@param instance
+// wall logic only sets correct sprites and angles for walls.
+var arg_instance = argument0;
 
-switch(arg_build)
+with(arg_instance)
 {
-	case build.basetile:
-		scr_update_walls_around_new_basetile(arg_x, arg_y);
-		break;
-	case build.wall:
-		scr_update_wall_and_adjacents(arg_x, arg_y);
-		break;
-	case build.door:
-		scr_update_adjacent_walls(arg_x, arg_y);
-		break;
-	case build.hatch:
-		scr_update_adjacent_walls(arg_x, arg_y);
-		break;
+	if(object_index == obj_wall)
+	{
+		scr_update_wall_and_adjacents(arg_instance);
+	}
+	else if(object_index == obj_door)
+	{
+		scr_update_adjacent_walls(x, y);
+	}
 }

@@ -3,7 +3,9 @@ var target_j = argument1;
 var action_offset = argument2;
 var action_count = argument3;
 var arg_rotation = argument4;
-var validation_alpha = argument5;
+var arg_validation_alpha = argument5;
+var arg_sprite_override = argument6;
+var arg_angle_override = argument7;
 
 var map_value = scr_map_buffer_get_cell(target_i, target_j);
 var map_i = (map_value & 1);
@@ -14,32 +16,63 @@ var sprite_for_ghost = noone;
 var there_is_a_drawable = false;
 var there_is_a_valid_nondrawable = false;
 	
+var build_action_buffer = global.build_action_buffer;
+var props_per_action = global.props_per_action;
 for(var m = 0; m < action_count; m++) // loop over build actions
 {
 	// read from buffer
 	var action_is_valid = false;
-	buffer_seek(global.build_action_buffer, buffer_seek_start, action_offset + m*global.props_per_action*4);
-	var validation_i = buffer_read(global.build_action_buffer, buffer_u32);
-	var validation_o = buffer_read(global.build_action_buffer, buffer_u32);
-	var b_image_index = buffer_read(global.build_action_buffer, buffer_s32);
-	var map_buffer_action = buffer_read(global.build_action_buffer, buffer_u32);
-	var b_layer = buffer_read(global.build_action_buffer, buffer_s32);
-	var object_to_add = buffer_read(global.build_action_buffer, buffer_s32);
-	var object_to_remove = buffer_read(global.build_action_buffer, buffer_s32);
-	var metal_cost = buffer_read(global.build_action_buffer, buffer_s32);
+	buffer_seek(build_action_buffer, buffer_seek_start, action_offset + m*props_per_action*4);
+	var validation_i = buffer_read(build_action_buffer, buffer_u32);
+	var validation_o = buffer_read(build_action_buffer, buffer_u32);
+	var b_image_index = buffer_read(build_action_buffer, buffer_s32);
+	var map_buffer_action = buffer_read(build_action_buffer, buffer_u32);
+	var b_layer = buffer_read(build_action_buffer, buffer_s32);
+	var object_to_add = buffer_read(build_action_buffer, buffer_s32);
+	var object_to_remove = buffer_read(build_action_buffer, buffer_s32);
+	var metal_cost = buffer_read(build_action_buffer, buffer_s32);
 	
-	// do shit with buffer data
-	if(scr_validate_i(validation_i, map_i) && scr_validate_o(validation_o, map_o, target_i, target_j))
+	// validate
+	var i_is_valid = scr_validate_i(validation_i, map_i);
+	var o_is_valid = scr_validate_o(validation_o, map_o, target_i, target_j);
+	var validation_passed = i_is_valid && o_is_valid;
+	
+	if(validation_passed)
 	{
 		action_is_valid = true;
-		tile_is_valid = true;
+		if(!tile_is_valid)
+		{
+			// first valid action is the chosen one.
+			if(map_buffer_action != map_buffer_action.nothing)
+			{
+				var angle = 0;
+				if(arg_angle_override >= 0) angle = arg_angle_override;
+				else angle = 90*arg_rotation;
+				var new_build_cell = scr_create_build_cell(
+					target_i, target_j,
+					map_buffer_action,
+					b_layer,
+					object_to_add,
+					object_to_remove,
+					metal_cost,
+					arg_sprite_override,
+					b_image_index,
+					angle
+				);
+				ds_stack_push(global.build_stack, new_build_cell);
+			}
+			tile_is_valid = true;
+		}
 	}
-		
-	if(map_buffer_action != map_buffer_action.nothing && map_buffer_action != map_buffer_action.reserve)
+	
+	// determine if tile should be drawn	
+	if(map_buffer_action != map_buffer_action.nothing && map_buffer_action != map_buffer_action.reserve)	// these actions will not be drawn
 	{
 		there_is_a_drawable = true;
-		if(object_to_add != noone){
-			sprite_for_ghost = object_get_sprite(object_to_add);
+		if(object_to_add != noone)
+		{
+			if(arg_sprite_override > 0) sprite_for_ghost = arg_sprite_override;
+			else sprite_for_ghost = object_get_sprite(object_to_add);
 		}
 	}
 	else if(action_is_valid)
@@ -48,20 +81,23 @@ for(var m = 0; m < action_count; m++) // loop over build actions
 	}
 	else
 	{
-		// we should draw this invalid tile.
 		there_is_a_drawable = true;
 	}
 }
-	
+
 if(!tile_is_valid) global.construction_is_valid = false;
 	
 if(!there_is_a_valid_nondrawable && there_is_a_drawable)
 {
 	var target_x = scr_gi_to_rc(target_i);
 	var target_y = scr_gi_to_rc(target_j);
-	if(sprite_for_ghost >= 0){
-		draw_sprite_ext( sprite_for_ghost, b_image_index, target_x, target_y, 1, 1, 90*arg_rotation, c_white, validation_alpha );
-		//draw_sprite(sprite_for_ghost, b_image_index, target_x, target_y);
+	if(sprite_for_ghost >= 0)
+	{
+		var angle = 0;
+		if(arg_angle_override >= 0) angle = arg_angle_override;
+		else angle = 90*arg_rotation;
+		
+		draw_sprite_ext( sprite_for_ghost, b_image_index, target_x, target_y, 1, 1, angle, c_white, arg_validation_alpha );
 	}
 	if(tile_is_valid) draw_set_color(c_lime);
 	else draw_set_color(c_red);

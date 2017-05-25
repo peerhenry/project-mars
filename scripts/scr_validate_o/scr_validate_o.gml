@@ -1,3 +1,4 @@
+// validate occupation: is there a required occupation on the cell?
 validation_o = argument0;
 map_o = argument1;
 arg_i = argument2;
@@ -15,4 +16,6 @@ switch(validation_o)
 		return true;
 	case build_validation_o.wall:
 		return map_o == global.wall_pure;
+	default:
+		return false;
 }

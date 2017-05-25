@@ -1,0 +1,23 @@
+
+# INTRODUCTION
+Code may deviate in some places.
+
+
+# RESOURCES
+resources are prefixed as follows:
+Resource	Prefix
+Sprites		spr_
+Scripts		scr_
+Objects		obj_
+
+
+# SCRIPTS
+
+- script arguments are prefixed with arg_
+
+- If a script requires coordinate parameters (either x,y or i,j), they are passed as the first arguments, ie:
+var arg_x = argument0;
+var arg_y = argument1;
+
+- to avoid copying arrays on write, always use the character @ when writing to an array.
+my_array[@22] = 139;

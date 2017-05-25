@@ -1,8 +1,11 @@
-if(global.hovering_over_HUD) return; // HUD clicks must not propagate here.
+if(global.hovering_over_HUD){
+	is_dragging	= false;
+	exit; // HUD clicks must not propagate here.
+}
 
 // CONSTRUCTION INPUT
 
-if(global.construct != noone)
+if(global.construct != noone) // BUILD MODE
 {
 	if(mouse_check_button_pressed(mb_left))
 	{
@@ -20,11 +23,19 @@ if(global.construct != noone)
 			is_dragging	= false;
 		}
 	}
+	else
+	{
+		is_dragging	= false;
+	}
 	
 	if(mouse_check_button_released(mb_left))
 	{
-		if(is_dragging) scr_build_dragging(click_x, click_y, mouse_x, mouse_y, global.construct, global.build_rotation);
-		else scr_build(mouse_x, mouse_y, global.construct, global.build_rotation);
+		// old
+		//if(is_dragging) scr_build_dragging(click_x, click_y, mouse_x, mouse_y, global.construct, global.build_rotation);
+		//else scr_build(mouse_x, mouse_y, global.construct, global.build_rotation);
+		
+		scr_build_new();
+		
 		is_dragging	= false;
 	}
 	
