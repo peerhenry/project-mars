@@ -24,6 +24,9 @@ for(var n = 0; n < cell_count; n++)
 	
 	if(map_buffer_action == map_buffer_action.nothing) continue; // skip rest in loop scope this iteration
 	
+	// pay
+	global.resource_amount_metal -= cost;
+	
 	// 2. create object instance
 	var new_instance = noone;
 	if(object_to_add != noone)
@@ -37,6 +40,7 @@ for(var n = 0; n < cell_count; n++)
 			if(sprite > 0) sprite_index = sprite;
 			if(image > 0) image_index = image;
 			depth = layer_get_depth(add_layer) - 1;
+			scr_post_creation_logic(global.construct, new_instance);
 		}
 	}
 	
@@ -57,5 +61,6 @@ if(cell_count > 0)
 	new_construction[construction_build_type] = global.construct;
 	new_construction[construction_build_state] = build_state.ready; // ready to be picked up
 	new_construction[construction_completion] = 0; // start out at 0% complete
-	ds_list_add(global.construction_queue, new_construction);	
+	ds_list_add(global.construction_queue, new_construction);
+	scr_recalculate_paths();
 }

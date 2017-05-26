@@ -6,6 +6,7 @@ var arg_construction = argument1;
 #macro MAX_NAV_D 30000000
 
 var d_min = MAX_NAV_D;
+var d_pixel = MAX_NAV_D;
 var found_x = 0;
 var found_y = 0;
 var adj_x = 0;
@@ -26,9 +27,16 @@ for(var n = 0; n < cell_count; n++)
 	// check left
 	adj_x = cell_x - 32;
 	adj_y = cell_y;
+	d_pixel = abs(adj_x - arg_astronaut.x) + abs(adj_y - arg_astronaut.y);
+	if(d_pixel < 2)
+	{
+		arg_construction[@construction_build_state] = build_state.picked_up;
+		arg_astronaut.construction = arg_construction;
+		arg_astronaut.current_action = astronaut_action.constructing;
+		return true;
+	}
 	if(scr_navigation_is_possible(arg_astronaut, adj_x, adj_y))
-	{ 
-		var d_pixel = abs(adj_x - arg_astronaut.x) + abs(adj_y - arg_astronaut.y); 
+	{	
 		if(d_pixel < d_min)
 		{ 
 			d_min = d_pixel;
@@ -40,9 +48,16 @@ for(var n = 0; n < cell_count; n++)
 	// check top
 	adj_x = cell_x;
 	adj_y = cell_y - 32;
-		if(scr_navigation_is_possible(arg_astronaut, adj_x, adj_y))
-	{ 
-		var d_pixel = abs(adj_x - arg_astronaut.x) + abs(adj_y - arg_astronaut.y); 
+	d_pixel = abs(adj_x - arg_astronaut.x) + abs(adj_y - arg_astronaut.y);
+	if(d_pixel < 2)
+	{
+		arg_construction[@construction_build_state] = build_state.picked_up;
+		arg_astronaut.construction = arg_construction;
+		arg_astronaut.current_action = astronaut_action.constructing;
+		return true;
+	}
+	if(scr_navigation_is_possible(arg_astronaut, adj_x, adj_y))
+	{	
 		if(d_pixel < d_min)
 		{ 
 			d_min = d_pixel;
@@ -54,9 +69,16 @@ for(var n = 0; n < cell_count; n++)
 	// check right
 	adj_x = cell_x + 32;
 	adj_y = cell_y;
+	d_pixel = abs(adj_x - arg_astronaut.x) + abs(adj_y - arg_astronaut.y);
+	if(d_pixel < 2)
+	{
+		arg_construction[@construction_build_state] = build_state.picked_up;
+		arg_astronaut.construction = arg_construction;
+		arg_astronaut.current_action = astronaut_action.constructing;
+		return true;
+	}
 	if(scr_navigation_is_possible(arg_astronaut, adj_x, adj_y))
-	{ 
-		var d_pixel = abs(adj_x - arg_astronaut.x) + abs(adj_y - arg_astronaut.y); 
+	{	
 		if(d_pixel < d_min)
 		{ 
 			d_min = d_pixel;
@@ -68,9 +90,16 @@ for(var n = 0; n < cell_count; n++)
 	// check bottom
 	adj_x = cell_x;
 	adj_y = cell_y + 32;
-		if(scr_navigation_is_possible(arg_astronaut, adj_x, adj_y))
-	{ 
-		var d_pixel = abs(adj_x - arg_astronaut.x) + abs(adj_y - arg_astronaut.y); 
+	d_pixel = abs(adj_x - arg_astronaut.x) + abs(adj_y - arg_astronaut.y);
+	if(d_pixel < 2)
+	{
+		arg_construction[@construction_build_state] = build_state.picked_up;
+		arg_astronaut.construction = arg_construction;
+		arg_astronaut.current_action = astronaut_action.constructing;
+		return true;
+	}
+	if(scr_navigation_is_possible(arg_astronaut, adj_x, adj_y))
+	{	
 		if(d_pixel < d_min)
 		{ 
 			d_min = d_pixel;
@@ -83,6 +112,9 @@ for(var n = 0; n < cell_count; n++)
 if(d_min < MAX_NAV_D)
 {
 	scr_navigate_once(arg_astronaut, found_x, found_y);
+	arg_construction[@construction_build_state] = build_state.picked_up;
+	arg_astronaut.construction = arg_construction;
+	arg_astronaut.current_action = astronaut_action.moving_to_construction;
 	return true;
 }
 

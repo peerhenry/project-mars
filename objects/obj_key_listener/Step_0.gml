@@ -1,13 +1,17 @@
-if(keyboard_check_pressed(vk_escape)){
-	room_goto(0);
+if(keyboard_check_pressed(vk_escape))
+{
+	room_goto(0); // should use fade shit
 }
-if(keyboard_check_pressed(ord("P"))){
+
+if(keyboard_check_pressed(ord("P")))
+{
 	zoomed_in = !zoomed_in;
+	var cam = view_camera[0];
 	if(zoomed_in){
-		camera_set_view_size(view_camera[0], 960, 540);
+		camera_set_view_size(cam, 960, 540);
 	}
 	else{
-		camera_set_view_size(view_camera[0], 1920, 1080);
+		camera_set_view_size(cam, 1920, 1080);
 	}
 }
 

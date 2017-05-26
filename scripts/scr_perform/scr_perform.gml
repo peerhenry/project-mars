@@ -1,6 +1,6 @@
 var assignable = argument0;
 
-switch(assignable.object_instance)
+switch(assignable.object_index)
 {
 	case obj_suit_closet:
 		if(assignable.holds_suit) scr_closet_take_suit(assignable, assignable.assigned_astronaut);

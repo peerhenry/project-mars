@@ -10,14 +10,8 @@ if(!is_walking && current_action = astronaut_action.idle)
 		var build_state = next_construction[construction_build_state];
 		if(build_state == build_state.ready)
 		{
-			var can_go_to_construction = scr_navigate_to_construction(id, next_construction);
-			if(can_go_to_construction)
-			{
-				next_construction[@construction_build_state] = build_state.picked_up;
-				construction = next_construction;
-				current_action = astronaut_action.moving_to_construction;
-			}
-			break;
+			var picked_up = scr_navigate_to_construction(id, next_construction);
+			if(picked_up) break;
 		}
 	}
 	

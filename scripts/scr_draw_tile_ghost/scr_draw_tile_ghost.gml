@@ -93,11 +93,19 @@ if(!there_is_a_valid_nondrawable && there_is_a_drawable)
 	var target_y = scr_gi_to_rc(target_j);
 	if(sprite_for_ghost >= 0)
 	{
-		var angle = 0;
-		if(arg_angle_override >= 0) angle = arg_angle_override;
-		else angle = 90*arg_rotation;
-		
-		draw_sprite_ext( sprite_for_ghost, b_image_index, target_x, target_y, 1, 1, angle, c_white, arg_validation_alpha );
+		if(sprite_for_ghost == spr_suit_closet)
+		{
+			// use sprite index for orientation
+			var ii = (b_image_index + arg_rotation) % 8;
+			draw_sprite_ext( sprite_for_ghost, ii, target_x, target_y, 1, 1, 0, c_white, arg_validation_alpha );
+		}
+		else
+		{
+			var angle = 0;
+			if(arg_angle_override >= 0) angle = arg_angle_override;
+			else angle = 90*arg_rotation;
+			draw_sprite_ext( sprite_for_ghost, b_image_index, target_x, target_y, 1, 1, angle, c_white, arg_validation_alpha );
+		}
 	}
 	if(tile_is_valid) draw_set_color(c_lime);
 	else draw_set_color(c_red);

@@ -50,3 +50,7 @@ enum astronaut_action
 	moving_to_construction,
 	constructing
 }
+
+// initialize audio groups
+audio_group_load(audiogroup_music);
+audio_group_load(audiogroup_sfx);

@@ -6,8 +6,10 @@ if(!arg_assignable.is_assigned)
 {
 	if(arg_assignable.object_index == obj_suit_closet)
 	{
-		if(arg_astronaut.wears_suit == arg_assignable.holds_suit)
-		{
+		if(
+			arg_astronaut.wears_suit == arg_assignable.holds_suit 
+			|| arg_assignable.under_construction
+		){
 			return false;
 			// play sound "can't put/take suit there."
 		}
@@ -16,11 +18,12 @@ if(!arg_assignable.is_assigned)
 		var astro_i = scr_rc_to_gi(arg_astronaut.x);
 		var astro_j = scr_rc_to_gi(arg_astronaut.y);
 		var needs_to_navigate = true;
-			
-		if(
-			(astro_i == ass_i && abs(astro_j - ass_j) == 1)
-			|| (astro_j == ass_j && abs(astro_i - ass_i) == 1)
-		){
+		
+		var already_adjacent = (astro_i == ass_i && abs(astro_j - ass_j) == 1)
+			|| (astro_j == ass_j && abs(astro_i - ass_i) == 1);
+		
+		if(already_adjacent)
+		{
 			can_assign = true; // no need to navigate
 		}
 		else { // need to navigate

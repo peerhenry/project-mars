@@ -29,6 +29,7 @@ if(el_assignable != noone)
 	if(assigned_astronaut != noone)
 	{
 		orders_given = scr_assign(el_assignable, assigned_astronaut);
+		// cancel construction
 		if(orders_given)
 		{
 			with(assigned_astronaut)

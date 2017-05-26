@@ -1,23 +1,19 @@
+/// @param build
+/// @param instance
+
 var arg_build = argument0;
 var arg_instance = argument1;
 
-if(arg_build == build.door || arg_build == build.hatch)
+if(arg_instance.object_index == obj_suit_closet)
 {
-	with(arg_instance){
-		image_angle = global.build_rotation*90;
-	}
-}
-else if(arg_build == build.suit_closet || arg_build == build.suit_closet_empty)
-{
-	with(arg_instance){
-		image_index = global.build_rotation;
-	}
-	
-	if(arg_build == build.suit_closet_empty)
+	with(arg_instance)
 	{
-		with(arg_instance){
+		var rotation = image_angle div 90;
+		image_angle = 0;
+		image_index += rotation;
+		if(arg_build == build.suit_closet_empty)
+		{
 			holds_suit = false;
-			image_index += 4;
 		}
 	}
 }

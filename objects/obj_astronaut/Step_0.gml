@@ -111,9 +111,9 @@ if(path_position > 0 && path_position < 1)
 }
 else
 {
-	if(is_walking) // path end reached.
+	if(is_walking && path_position == 1) // path end reached.
 	{
-		prev_x = x;
+		prev_x = x; // used for sprite orientation
 		prev_y = y;
 		is_walking = false;
 		image_speed = 0;
@@ -124,9 +124,17 @@ else
 		{
 			scr_perform(assigned_object);
 		}
-		else if(current_action == astronaut_action.moving_to_construction)
+		else
 		{
-			current_action = astronaut_action.constructing;
+			switch(current_action)
+			{
+				case astronaut_action.moving_to_construction:
+					current_action = astronaut_action.constructing;
+					break;
+				case astronaut_action.moving_by_command:
+					current_action = astronaut_action.idle;
+					break;
+			}
 		}
 	}
 }

@@ -21,7 +21,7 @@ with(obj_astronaut)
 }
 var path_found = false;
 
-if(scr_destination_is_legal(snap_end_x, snap_end_y))
+if(scr_destination_is_legal(snap_end_x, snap_end_y, astronaut))
 {
 	path_found = mp_grid_path(navigation_grid, astronaut.path, start_x, start_y, snap_end_x, snap_end_y, true);
 }
@@ -33,7 +33,7 @@ while ( !path_found && counter < max_loop )
 	
 	snap_end_x = (end_i + 1)*32;
 	snap_end_y = (end_j + 1)*32;
-	if(scr_destination_is_legal(snap_end_x, snap_end_y))
+	if(scr_destination_is_legal(snap_end_x, snap_end_y, astronaut))
 	{
 		path_found = mp_grid_path(navigation_grid, astronaut.path, start_x, start_y, snap_end_x, snap_end_y, true);
 	}
