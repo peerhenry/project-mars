@@ -39,8 +39,11 @@ for(var n = 0; n < cell_count; n++)
 			if(angle >= 0) image_angle = angle;
 			if(sprite > 0) sprite_index = sprite;
 			if(image > 0) image_index = image;
-			depth = layer_get_depth(add_layer) - 1;
+			
+			//depth = layer_get_depth(add_layer) - 1;
+			depth = -200; // under construction drawing has priority
 			scr_post_creation_logic(global.construct, new_instance);
+			under_construction = true;
 		}
 	}
 	

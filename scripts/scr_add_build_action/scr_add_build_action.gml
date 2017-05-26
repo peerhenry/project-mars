@@ -1,3 +1,15 @@
+/// @param construction
+/// @param di
+/// @param dj
+/// @param validation_i
+/// @param validation_0
+/// @param image_index
+/// @param map_buffer_action
+/// @param layer
+/// @param object_to_add
+/// @param object_to_remove
+/// @param metal_cost
+
 /// Add build action to big bad buffer, and update maps for acion counts and tile counts
 var arg_construction = argument0;		// what construction is this tile for
 var arg_d_i = argument1;				//
@@ -46,14 +58,15 @@ else // new construction
 	ds_map_add(global.build_action_counts, global.last_build_tile_key, 1);
 }
 
-buffer_write(global.big_bad_buffer, buffer_u32, arg_construction);
-buffer_write(global.big_bad_buffer, buffer_s32, arg_d_i);
-buffer_write(global.big_bad_buffer, buffer_s32, arg_d_j);
-buffer_write(global.big_bad_buffer, buffer_u32, arg_validation_i);
-buffer_write(global.big_bad_buffer, buffer_u32, arg_validation_o);
-buffer_write(global.big_bad_buffer, buffer_s32, arg_image_index);
-buffer_write(global.big_bad_buffer, buffer_u32, arg_map_buffer_action);
-buffer_write(global.big_bad_buffer, buffer_s32, arg_layer);
-buffer_write(global.big_bad_buffer, buffer_s32, arg_object_to_add);
-buffer_write(global.big_bad_buffer, buffer_s32, arg_object_to_remove);
-buffer_write(global.big_bad_buffer, buffer_s32, arg_metal_cost);
+var big_bad_buffer = global.big_bad_buffer;
+buffer_write(big_bad_buffer, buffer_u32, arg_construction);
+buffer_write(big_bad_buffer, buffer_s32, arg_d_i);
+buffer_write(big_bad_buffer, buffer_s32, arg_d_j);
+buffer_write(big_bad_buffer, buffer_u32, arg_validation_i);
+buffer_write(big_bad_buffer, buffer_u32, arg_validation_o);
+buffer_write(big_bad_buffer, buffer_s32, arg_image_index);
+buffer_write(big_bad_buffer, buffer_u32, arg_map_buffer_action);
+buffer_write(big_bad_buffer, buffer_s32, arg_layer);
+buffer_write(big_bad_buffer, buffer_s32, arg_object_to_add);
+buffer_write(big_bad_buffer, buffer_s32, arg_object_to_remove);
+buffer_write(big_bad_buffer, buffer_s32, arg_metal_cost);

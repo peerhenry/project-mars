@@ -1,15 +1,22 @@
 ///@param instance
-// wall logic only sets correct sprites and angles for walls.
+// wall logic sets correct sprites and angles for walls
+// also solidifies walls and gates (so astronauts can't shoot through them)
 var arg_instance = argument0;
 
 with(arg_instance)
 {
-	if(object_index == obj_wall)
+	switch(object_index)
 	{
-		scr_update_wall_and_adjacents(arg_instance);
-	}
-	else if(object_index == obj_door)
-	{
-		scr_update_adjacent_walls(x, y);
+		case obj_wall:
+			solid = true;
+			scr_update_wall_and_adjacents(arg_instance);
+			break;
+		case obj_door:
+			solid = true;
+			scr_update_adjacent_walls(x, y);
+			break;
+		case obj_hatch:
+			solid = true;
+			break;
 	}
 }

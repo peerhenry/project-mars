@@ -5,10 +5,16 @@ var lid = layer_get_id("astronauts");
 var new_projectile = instance_create_layer(shooter.x, shooter.y, lid, obj_projectile);
 with(new_projectile)
 {
-	mp_linear_path(path, target.x, target.y, global.projectile_speed, false);
+	var can_shoot = mp_linear_path(path, target.x, target.y, global.projectile_speed, false);
+	if(!can_shoot)
+	{
+		instance_destroy();
+		return false;
+	}
 	path_start(path, global.projectile_speed, path_action_stop, false);	// false: don't go along an absolute path, go relative to your position	
 }
 
+// orient shooter towards target
 with(shooter)
 {
 	var dx = target.x - x;
@@ -44,3 +50,4 @@ with(shooter)
 }
 
 audio_play_sound(sound_fx_laser, 0, 0);
+return true;

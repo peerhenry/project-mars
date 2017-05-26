@@ -52,7 +52,8 @@ for(var n = 0; n < count; n++) // loop over tiles
 	with(added_instance)
 	{
 		under_construction = false;
-		depth = depth + 1;
+		depth = layer_get_depth(layer);
+		show_message("layer depth: " + string(layer_get_depth(layer)) + ", instance depth: " + string(depth));
 		
 		// set instance to perform room logic on.
 		switch(build_type)

@@ -1,0 +1,1 @@
+scr_map_buffer_set_resource(argument0, argument1, resource.water);

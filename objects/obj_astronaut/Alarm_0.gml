@@ -19,7 +19,15 @@ if(!is_walking)
 // 3. shoot at target
 if(target != noone)
 {
-	scr_shoot(id, target);
+	var can_shoot = scr_shoot(id, target);
+	if(can_shoot)
+	{
+		if(current_action == astronaut_action.constructing || current_action == astronaut_action.moving_to_construction)
+		{
+			construction[@construction_build_state] = build_state.ready;
+		}
+		current_action = astronaut_action.in_combat;
+	}
 }
 
 alarm[0] = 30*global.time_to_shoot + round(random_range(-5,5));

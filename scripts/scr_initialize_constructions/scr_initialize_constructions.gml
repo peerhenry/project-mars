@@ -98,11 +98,13 @@ enum build
 	hatch,
 	suit_closet,
 	suit_closet_empty,
-	sensor
+	sensor,
+	drill
 }
 
 var base_layer = layer_get_id("base");
 var basetile_layer = layer_get_id("basetiles");
+var base_tall_layer = layer_get_id("base_tall");
 
 // basetile
 
@@ -127,6 +129,19 @@ scr_add_build_action(
 	build_validation_o.wall,
 	0,
 	map_buffer_action.inside,
+	basetile_layer,
+	obj_base_tile,
+	obj_wall,
+	0
+);
+scr_add_build_action(
+	build.basetile,
+	0,	// di
+	0,	// dj
+	build_validation_i.inside,
+	build_validation_o.any,
+	0,
+	map_buffer_action.nothing,
 	basetile_layer,
 	obj_base_tile,
 	obj_wall,
@@ -377,7 +392,6 @@ scr_add_build_action(
 );
 
 // sensor
-
 scr_add_build_action(
 	build.sensor,
 	0,
@@ -386,8 +400,23 @@ scr_add_build_action(
 	build_validation_o.vacant,
 	0,
 	map_buffer_action.occupy,
-	base_layer,
+	base_tall_layer,
 	obj_sensor,
+	noone,
+	500
+);
+
+// drill
+scr_add_build_action(
+	build.drill,
+	0,	// di
+	0,	// dj
+	build_validation_i.outside,
+	build_validation_o.vacant,
+	0,
+	map_buffer_action.occupy,
+	base_tall_layer,
+	obj_drill,
 	noone,
 	500
 );

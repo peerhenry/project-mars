@@ -49,7 +49,8 @@ enum astronaut_action
 	moving_by_command,
 	moving_to_construction,
 	constructing,
-	executing_assignment
+	executing_assignment,
+	in_combat
 }
 
 // initialize audio groups

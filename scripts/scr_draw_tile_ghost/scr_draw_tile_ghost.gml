@@ -60,6 +60,7 @@ for(var m = 0; m < action_count; m++) // loop over build actions
 					angle
 				);
 				ds_stack_push(global.build_stack, new_build_cell);
+				global.total_cost += metal_cost;
 			}
 			tile_is_valid = true;
 		}

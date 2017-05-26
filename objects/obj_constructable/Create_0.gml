@@ -1,2 +1,2 @@
-under_construction = true;
+under_construction = false;
 damage = 0;
