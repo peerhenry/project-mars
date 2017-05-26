@@ -38,7 +38,7 @@ if(el_assignable != noone)
 				{
 					construction[@construction_build_state] = build_state.ready;
 				}
-				current_action = astronaut_action.moving_by_command;
+				current_action = astronaut_action.executing_assignment;
 			}
 		}
 	}
@@ -65,8 +65,8 @@ if(orders_given)
 {
 	var s = irandom(2);
 	switch s{
-		case 0: audio_play_sound(sound_cmd_yep,1,false); break;
-		case 1: audio_play_sound(sound_cmd_understood,1,false); break;
-		case 2:	audio_play_sound(sound_cmd_acknowledged,1,false); break;
+		case 0: audio_play_sound(sound_cmd_yep, 1, false); break;
+		case 1: audio_play_sound(sound_cmd_understood, 1, false); break;
+		case 2:	audio_play_sound(sound_cmd_acknowledged, 1, false); break;
 	}
 }

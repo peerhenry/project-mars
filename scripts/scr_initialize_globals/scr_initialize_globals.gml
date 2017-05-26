@@ -48,7 +48,8 @@ enum astronaut_action
 	idle,
 	moving_by_command,
 	moving_to_construction,
-	constructing
+	constructing,
+	executing_assignment
 }
 
 // initialize audio groups

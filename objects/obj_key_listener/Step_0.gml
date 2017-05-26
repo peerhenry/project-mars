@@ -11,7 +11,21 @@ if(keyboard_check_pressed(ord("P")))
 		camera_set_view_size(cam, 960, 540);
 	}
 	else{
-		camera_set_view_size(cam, 1920, 1080);
+		var camx = camera_get_view_x(cam);
+		var camy = camera_get_view_y(cam);
+		var camW = 1920;
+		var camH = 1080;
+		// prevent cam zooming out from going out of bounds
+		if(camy + camH > room_height)
+		{
+			camy = room_height - camH;
+			camera_set_view_pos(cam, camx, camy);
+		}
+		if(camx + camW > room_width)
+		{
+			camera_set_view_pos(cam, room_width - camW, camy);
+		}
+		camera_set_view_size(cam, camW, camH);
 	}
 }
 

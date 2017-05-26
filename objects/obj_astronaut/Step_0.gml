@@ -137,6 +137,13 @@ else
 			}
 		}
 	}
+	else
+	{
+		if(assigned_object != noone) // astronaut is adjacent to assigned task
+		{
+			scr_perform(assigned_object);
+		}
+	}
 }
 
 // 6. update health and oxygen.

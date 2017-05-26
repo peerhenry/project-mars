@@ -5,6 +5,8 @@ var camx = camera_get_view_x(cam);
 var camy = camera_get_view_y(cam);
 var camW = camera_get_view_width(cam);
 var camH = camera_get_view_height(cam);
+var viewW = view_wport[0];
+var viewH = view_hport[0];
 
 scroll_speed = 32;
 var dx = 0;
@@ -18,14 +20,14 @@ if(moveUp && camy >= scroll_speed ){
 
 
 // down
-var moveDown = device_mouse_y_to_gui(0) > (camH - scroll_border) || keyboard_check(ord("S"));
+var moveDown = device_mouse_y_to_gui(0) > (viewH - scroll_border) || keyboard_check(ord("S"));
 if(moveDown && camy + camH < room_height - scroll_speed ){
 	dy += scroll_speed;
 }
 
 
 // right
-var moveRight = device_mouse_x_to_gui(0) > (camW-  scroll_border) || keyboard_check(ord("D"));
+var moveRight = device_mouse_x_to_gui(0) > (viewW-  scroll_border) || keyboard_check(ord("D"));
 if(moveRight && camx + camW < room_width - scroll_speed ){
 	dx += scroll_speed;
 }
