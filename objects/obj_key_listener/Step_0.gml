@@ -1,5 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
 if(keyboard_check_pressed(vk_escape)){
 	room_goto(0);
 }
@@ -15,8 +13,7 @@ if(keyboard_check_pressed(ord("P"))){
 
 if(keyboard_check_pressed(ord("R")))
 {
-	global.build_rotation++;
-	if(global.build_rotation == 4) global.build_rotation = 0;
+	scr_increment_build_rotation(1);
 }
 
 if(keyboard_check_pressed(ord("Q")))

@@ -1,8 +1,8 @@
 var assignable = argument0;
 
-switch(assignable.assigned_task)
+switch(assignable.object_instance)
 {
-	case task.suit_closet:
+	case obj_suit_closet:
 		if(assignable.holds_suit) scr_closet_take_suit(assignable, assignable.assigned_astronaut);
 		else scr_closet_put_suit(assignable, assignable.assigned_astronaut);
 		break;

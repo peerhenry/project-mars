@@ -28,8 +28,18 @@ if(el_assignable != noone)
 	
 	if(assigned_astronaut != noone)
 	{
-		var el_task = task.suit_closet;
-		orders_given = scr_assign(el_assignable, assigned_astronaut, el_task);
+		orders_given = scr_assign(el_assignable, assigned_astronaut);
+		if(orders_given)
+		{
+			with(assigned_astronaut)
+			{
+				if(current_action = astronaut_action.constructing || current_action = astronaut_action.moving_to_construction)
+				{
+					construction[@construction_build_state] = build_state.ready;
+				}
+				current_action = astronaut_action.moving_by_command;
+			}
+		}
 	}
 }
 else if( !position_meeting(mouse_x, mouse_y, obj_gate) ){
@@ -38,6 +48,14 @@ else if( !position_meeting(mouse_x, mouse_y, obj_gate) ){
 	{
 		if(is_selected){
 			orders_given = scr_navigate(id, mouse_x, mouse_y);
+			if(orders_given)
+			{
+				if(current_action = astronaut_action.constructing || current_action = astronaut_action.moving_to_construction)
+				{
+					construction[@construction_build_state] = build_state.ready;
+				}
+				current_action = astronaut_action.moving_by_command;
+			}
 		}
 	}
 }

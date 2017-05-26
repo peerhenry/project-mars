@@ -1,3 +1,4 @@
+/// @param construction
 var arg_construction = argument0;
 
 var build_type = arg_construction[construction_build_type];

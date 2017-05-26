@@ -45,7 +45,6 @@ if(path_found)
 {
 	astronaut.occ_i = end_i;
 	astronaut.occ_j = end_j;
-	// mp_grid_add_cell(navigation_grid, end_i, end_j);
 	with(astronaut)	path_start(astronaut.path, astronaut.movement_speed, path_action_stop, false); // path, speed, end action, absolute
 }
 /*else

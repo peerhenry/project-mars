@@ -22,8 +22,7 @@ enum build_state
 {
 	not_ready,		// not ready to be constructed.
 	ready,			// construction is ready to be picked up
-	assigned,		// an astronaut picked up this construction task
-	in_progress,	// an astronaut is constructing
+	picked_up,		// an astronaut picked up this construction task
 	done
 }
 

@@ -1,3 +1,6 @@
+/// @param astronaut
+/// @param x
+/// @param y
 var astronaut = argument0;
 var end_x = argument1;
 var end_y = argument2;

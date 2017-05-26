@@ -43,14 +43,10 @@ global.resource_amount_metal = 20000;
 
 // astronaut tasks
 
-enum task
+enum astronaut_action
 {
-	none,
-	suit_closet,
-	repair,
-	construct,
-	sleep,
-	attack
+	idle,
+	moving_by_command,
+	moving_to_construction,
+	constructing
 }
-
-global.task_queue = ds_queue_create();

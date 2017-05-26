@@ -11,6 +11,7 @@ global.construction_is_valid = true;
 var validation_alpha = 0.42;
 draw_set_alpha(validation_alpha);
 var build_tile_buffer = global.build_tile_buffer;
+var valid_tile_count = 0;
 for(var n = 0; n < tile_count; n++)// loop over build tiles
 {
 	buffer_seek(build_tile_buffer, buffer_seek_start, tile_offset + n*global.props_per_build_tile*4);
@@ -69,7 +70,28 @@ for(var n = 0; n < tile_count; n++)// loop over build tiles
 		}
 		scr_draw_tile_ghost(target_i, target_j, action_offset, action_count, arg_rotation, validation_alpha, sprite, angle);
 	}
-	else scr_draw_tile_ghost(target_i, target_j, action_offset, action_count, arg_rotation, validation_alpha, noone, -1);
+	else
+	{
+		var tile_is_valid = scr_draw_tile_ghost(target_i, target_j, action_offset, action_count, arg_rotation, validation_alpha, noone, -1);
+		if(tile_is_valid) valid_tile_count++;
+	}
 }
 
 draw_set_alpha(1);
+
+// auto rotate door or hatch
+if(arg_build == build.hatch)
+{
+	if(valid_tile_count == 3)
+	{
+		scr_increment_build_rotation(2);
+	}
+	else if(valid_tile_count == 1)
+	{
+		scr_increment_build_rotation(1);
+	}
+}
+else if(arg_build == build.door && valid_tile_count == 1)
+{
+	scr_increment_build_rotation(1);
+}

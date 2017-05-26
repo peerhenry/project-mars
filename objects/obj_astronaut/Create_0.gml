@@ -35,11 +35,13 @@ has_died = false;
 
 // 4. task
 assigned_object = noone;
+current_action = astronaut_action.idle;
+construction = 0;
 
 // 5. combat
 target = noone;
 auto_attack = true;
-alarm[0] = 30*global.time_to_shoot; // shoot every 60 updates/every 2 seconds
+alarm[0] = 30*global.time_to_shoot + round(random_range(-5,5));
 enemy_object = noone;
 
 // active sprites

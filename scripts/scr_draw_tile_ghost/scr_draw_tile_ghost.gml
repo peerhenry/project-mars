@@ -103,3 +103,5 @@ if(!there_is_a_valid_nondrawable && there_is_a_drawable)
 	else draw_set_color(c_red);
 	draw_rectangle(target_x-16, target_y-16, target_x+15, target_y+15, false);
 }
+
+return tile_is_valid;

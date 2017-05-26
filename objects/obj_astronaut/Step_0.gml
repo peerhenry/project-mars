@@ -13,8 +13,12 @@ else if(astronaut_health <= 0)
 	return;
 }
 
-// 2. Set sprite & do room and gate logic
-if(is_walking){
+// 2. 
+// - Set move direction sprite 
+// - check if going through gate
+// - set the room
+if(is_walking)
+{
 	image_speed = 1.2;
 	dx = x - prev_x;
 	dy = y - prev_y;
@@ -84,9 +88,24 @@ if(is_walking){
 		}
 	}
 }
+else
+{
+	// 3. update whatever it is astronaut is doing.
+	
+	// constructing
+	if(current_action = astronaut_action.constructing)
+	{
+		construction[@construction_completion] = construction[construction_completion] + 1;
+		if(construction[construction_completion] >= 100)
+		{
+			scr_build_complete(construction);
+			current_action = astronaut_action.idle;
+		}
+	}
+}
 
-// 3. update from path
-if(path_position > 0.001 && path_position < 0.999)
+// 4. update from path
+if(path_position > 0 && path_position < 1)
 {
 	if(!is_walking) is_walking = true;
 }
@@ -100,16 +119,19 @@ else
 		image_speed = 0;
 		image_index = 0;
 		path_end();
-	}
-	
-	if(assigned_object != noone) // there is a task to perform at the end of the path.
-	{
-		scr_perform(assigned_object);
+		
+		if(assigned_object != noone) // there is a task to perform at the end of the path.
+		{
+			scr_perform(assigned_object);
+		}
+		else if(current_action == astronaut_action.moving_to_construction)
+		{
+			current_action = astronaut_action.constructing;
+		}
 	}
 }
 
-
-// 4. update health and oxygen.
+// 6. update health and oxygen.
 var oxygen_around = !is_outside;
 if(!is_moving_through_gate){
 	var inside_room = scr_room_at(x, y);
