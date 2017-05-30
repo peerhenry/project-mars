@@ -1,8 +1,8 @@
 {
-    "id": "7a8ea620-0add-4c7b-87df-44c72b87973d",
+    "id": "d7dcfc03-f6de-4eec-9d20-c42da4058e9a",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_draw_ghost_dragging",
+    "name": "scr_update_ghost_dragging",
     "IsCompatibility": false,
     "IsDnD": false
 }

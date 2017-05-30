@@ -1,5 +1,7 @@
-var construction_is_valid = global.construction_is_valid;
-if(!construction_is_valid) return;
+var can_construct = global.construction_is_valid && global.can_pay_for_construction;
+if(!global.construction_is_valid) scr_alert_player("Invalid construction.");
+if(!global.can_pay_for_construction) scr_alert_player("Insufficient building materials.");
+if(!can_construct) return;
 
 // read from the build stack
 var build_stack = global.build_stack;
@@ -40,8 +42,8 @@ for(var n = 0; n < cell_count; n++)
 			if(sprite > 0) sprite_index = sprite;
 			if(image > 0) image_index = image;
 			
-			//depth = layer_get_depth(add_layer) - 1;
-			depth = -200; // under construction drawing has priority
+			// depth = layer_get_depth(add_layer) - 1;
+			// depth = -200; // under construction drawing has priority
 			scr_post_creation_logic(global.construct, new_instance);
 			under_construction = true;
 		}

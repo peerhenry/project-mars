@@ -15,6 +15,10 @@ switch(arg_build)
 		return spr_suit_closet;
 	case build.sensor:
 		return spr_sensor;
+	case build.drill:
+		return spr_drill_bottom;
+	case build.pump:
+		return spr_pump;
 }
 
 return noone;

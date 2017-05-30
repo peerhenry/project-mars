@@ -13,3 +13,5 @@ sprite_walk_up = sprite_up;
 
 target = noone;
 enemy_object = obj_astronaut_playable;
+
+mask_color = [1, 0.5, 0.5, 1];

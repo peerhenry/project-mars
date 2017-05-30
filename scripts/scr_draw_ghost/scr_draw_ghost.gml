@@ -1,49 +1,73 @@
-var arg_origin_x = argument0;
-var arg_origin_y = argument1;
-var arg_mouse_x = argument2;
-var arg_mouse_y = argument3;
-var arg_build = argument4;
-var arg_rotation = argument5;
-var arg_is_dragging = argument6;
+// read from the build stack
+var build_stack = global.build_stack;
+var cell_count = ds_stack_size(build_stack);
+var build_stack_copy = ds_stack_create();
+ds_stack_copy(build_stack_copy, build_stack);
 
-var end_i = scr_rc_to_gi(arg_mouse_x);
-var end_j = scr_rc_to_gi(arg_mouse_y);
+// loop vars
+var action_is_drawable = false;
+var sprite_for_ghost = noone;
 
-// clear the build stack
-ds_stack_clear(global.build_stack);
-global.total_cost = 0;
+draw_set_alpha(0.42);
+draw_set_color(c_lime);
+if(!global.can_pay_for_construction) draw_set_color(c_red);
 
-if(!arg_is_dragging)
+for(var n = 0; n < cell_count; n++)
 {
-	scr_draw_ghost_single(end_i, end_j, arg_build, arg_rotation);
-}
-else
-{
-	var origin_i = scr_rc_to_gi(arg_origin_x);
-	var origin_j = scr_rc_to_gi(arg_origin_y);
-	var diff_i = end_i - origin_i;
-	var diff_j = end_j - origin_j;
-	var abs_diff_i = abs(diff_i);
-	var abs_diff_j = abs(diff_j);
-	var diff_is_significant = abs_diff_i  > 0 || abs_diff_j > 0;
-
-	if(diff_is_significant && scr_build_is_draggable(arg_build))
+	// 1. read next cell from stack
+	var next_build_cell = ds_stack_pop(build_stack_copy);
+	var cell_i = next_build_cell[build_cell_i];
+	var cell_j = next_build_cell[build_cell_j];
+	var add_layer = next_build_cell[build_cell_layer];
+	var object_to_add = next_build_cell[build_cell_object_to_add];
+	var object_to_remove = next_build_cell[build_cell_object_to_remove];
+	var map_buffer_action = next_build_cell[build_cell_map_buffer_action];
+	var cost = next_build_cell[build_cell_cost];
+	var sprite = next_build_cell[build_cell_object_sprite];
+	var image = next_build_cell[build_cell_object_image];
+	var angle = next_build_cell[build_cell_object_angle];
+	
+	if(map_buffer_action == map_buffer_action.nothing) continue;
+	
+	
+	// determine if cell should be drawn	
+	if(map_buffer_action != map_buffer_action.nothing && map_buffer_action != map_buffer_action.reserve)	// these actions will not be drawn
 	{
-		scr_draw_ghost_dragging(
-			end_i, end_j, 
-			origin_i, origin_j, 
-			diff_i, diff_j,
-			abs_diff_i, abs_diff_j,
-			arg_build, arg_rotation
-		);
+		action_is_drawable = true;
+		if(object_to_add != noone)
+		{
+			if(sprite > 0) sprite_for_ghost = sprite;
+			else sprite_for_ghost = object_get_sprite(object_to_add);
+		}
 	}
-	else
+	
+	// perform draw
+	if(action_is_drawable)
 	{
-		scr_draw_ghost_single(end_i, end_j, arg_build, arg_rotation);
+		var target_x = scr_gi_to_rc(cell_i);
+		var target_y = scr_gi_to_rc(cell_j);
+		if(sprite_for_ghost >= 0)
+		{
+			draw_sprite_ext( sprite_for_ghost, image, target_x, target_y, 1, 1, angle, c_white, 0.42 );
+		}
+		draw_rectangle(target_x-16, target_y-16, target_x+15, target_y+15, false);
 	}
 }
 
-if(global.total_cost > global.resource_amount_metal)
+// draw invalid tiles
+var invalid_build_stack = global.invalid_build_stack;
+var invalid_cell_count = ds_stack_size(invalid_build_stack) div 3;
+draw_set_color(c_red);
+repeat(invalid_cell_count)
 {
-	global.construction_is_valid = false;
+	var sprite = ds_stack_pop(invalid_build_stack);
+	var cell_j = ds_stack_pop(invalid_build_stack); // since j is pushed last, it needs to be popped first
+	var cell_i = ds_stack_pop(invalid_build_stack);
+	var target_x = scr_gi_to_rc(cell_i);
+	var target_y = scr_gi_to_rc(cell_j);
+	if(sprite > 0) draw_sprite_ext( sprite, 0, target_x, target_y, 1, 1, 0, c_white, 0.42 );
+	draw_rectangle(target_x-16, target_y-16, target_x+15, target_y+15, false);
 }
+
+draw_set_alpha(1);
+ds_stack_destroy(build_stack_copy);

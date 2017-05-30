@@ -48,3 +48,7 @@ enemy_object = noone;
 sprite_walk_down = sprite_down;
 sprite_walk_right = sprite_right;
 sprite_walk_up = sprite_up;
+
+// shader stuff
+
+mask_color = [1, 1, 1, 1];

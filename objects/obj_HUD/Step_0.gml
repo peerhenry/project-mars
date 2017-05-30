@@ -51,6 +51,7 @@ for(var n = 0; n < build_count; n++)
 				new_state = button_state.selected;
 				global.construct = ds_list_find_value(global.construction_list, n);
 				global.construction_is_valid = false;
+				global.rotated_was_checked = false;	// for auto rotate hatches and doors
 			}
 			var new_val = (new_state<<8) + next_image_index;
 			buffer_seek(build_button_buffer, buffer_seek_start, offset);

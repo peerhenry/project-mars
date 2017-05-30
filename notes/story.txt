@@ -1,0 +1,21 @@
+
+
+2121
+
+# Characters
+Operation director
+Lead scientist
+Lead architect - PLAYER
+... team
+
+# companies
+US: SpaceQ	(Mel Konus)
+Europe: Skybus
+China: 
+Japan: KenKen Maru
+
+# Storyline
+1. Going to mars
+2. Escalation/first conflict
+-- missions
+

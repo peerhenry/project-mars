@@ -30,17 +30,15 @@ if(global.construct != noone) // BUILD MODE
 	
 	if(mouse_check_button_released(mb_left))
 	{
-		// old
-		//if(is_dragging) scr_build_dragging(click_x, click_y, mouse_x, mouse_y, global.construct, global.build_rotation);
-		//else scr_build(mouse_x, mouse_y, global.construct, global.build_rotation);
-		
 		scr_build_new();
-		
 		is_dragging	= false;
 	}
 	
+	scr_update_ghost(click_x, click_y, mouse_x, mouse_y, global.construct, global.build_rotation, is_dragging);
+	
 	if(mouse_check_button_pressed(mb_right))
 	{
+		// exit BUILD MODE
 		global.construct = noone;
 	}
 	

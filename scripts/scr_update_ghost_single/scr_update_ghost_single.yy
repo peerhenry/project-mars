@@ -1,8 +1,8 @@
 {
-    "id": "d50e58bb-7237-4a0d-bf1f-460a2bbf0669",
+    "id": "1b745382-3ded-49f1-84e3-c9da47e7fd7d",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_draw_tile_ghost",
+    "name": "scr_update_ghost_single",
     "IsCompatibility": false,
     "IsDnD": false
 }

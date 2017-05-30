@@ -6,10 +6,6 @@ var arg_rotation = argument3;
 var tile_count = ds_map_find_value(global.build_tile_counts, arg_build);
 var tile_offset = ds_map_find_value(global.build_tile_offsets, arg_build);
 
-global.construction_is_valid = true;
-
-var validation_alpha = 0.42;
-draw_set_alpha(validation_alpha);
 var build_tile_buffer = global.build_tile_buffer;
 var valid_tile_count = 0;
 for(var n = 0; n < tile_count; n++)// loop over build tiles
@@ -68,19 +64,17 @@ for(var n = 0; n < tile_count; n++)// loop over build tiles
 				angle = 270;
 				break;
 		}
-		scr_draw_tile_ghost(target_i, target_j, action_offset, action_count, arg_rotation, validation_alpha, sprite, angle);
+		scr_update_ghost_tile(target_i, target_j, action_offset, action_count, arg_rotation, sprite, angle);
 	}
 	else
 	{
-		var tile_is_valid = scr_draw_tile_ghost(target_i, target_j, action_offset, action_count, arg_rotation, validation_alpha, noone, -1);
+		var tile_is_valid = scr_update_ghost_tile(target_i, target_j, action_offset, action_count, arg_rotation, noone, -1);
 		if(tile_is_valid) valid_tile_count++;
 	}
 }
 
-draw_set_alpha(1);
-
 // auto rotate door or hatch
-if(arg_build == build.hatch)
+if(arg_build == build.hatch && !global.rotated_was_checked)
 {
 	if(valid_tile_count == 3)
 	{
@@ -90,8 +84,10 @@ if(arg_build == build.hatch)
 	{
 		scr_increment_build_rotation(1);
 	}
+	global.rotated_was_checked = true;
 }
-else if(arg_build == build.door && valid_tile_count == 1)
+else if(arg_build == build.door && valid_tile_count == 1 && !global.rotated_was_checked)
 {
 	scr_increment_build_rotation(1);
+	global.rotated_was_checked = true;
 }
