@@ -49,15 +49,19 @@ for(var m = 0; m < action_count; m++) // loop over build actions
 			if(arg_angle_override >= 0) angle = arg_angle_override;
 			else angle = 90*arg_rotation;
 			var bc_image = b_image_index;
-			if(object_to_add == obj_suit_closet)
+			
+			// exceptions
+			switch(object_to_add)
 			{
-				var bc_image = (b_image_index + arg_rotation) % 8;
-				angle = 0;
+				case obj_suit_closet:
+					var bc_image = (b_image_index + arg_rotation) % 8;
+					angle = 0;
+					break;
+				case obj_drill:
+				case obj_cable:
+					angle = 0;
 			}
-			if(object_to_add == obj_drill)
-			{
-				angle = 0;
-			}
+			
 			var new_build_cell = scr_create_build_cell(
 				target_i, target_j,
 				map_buffer_action,

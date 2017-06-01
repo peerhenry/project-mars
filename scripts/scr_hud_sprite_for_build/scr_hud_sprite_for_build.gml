@@ -21,6 +21,8 @@ switch(arg_build)
 		return spr_pump;
 	case build.generator:
 		return spr_generator;
+	case build.cable:
+		return spr_cable;
 }
 
 return noone;

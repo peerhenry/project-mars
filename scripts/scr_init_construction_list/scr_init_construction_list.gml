@@ -345,7 +345,7 @@ scr_add_build_action(
 	build.generator,
 	0,	// di
 	0,	// dj
-	build_validation_i.outside,
+	build_validation_i.any,
 	build_validation_o.vacant,
 	0,
 	map_buffer_action.occupy,
@@ -354,3 +354,17 @@ scr_add_build_action(
 	noone,
 	500
 );
+
+// cable
+scr_add_build_action(
+	build.cable,
+	0,0, // di, dj
+	build_validation_i.outside,
+	build_validation_o.vacant,
+	0, // image_index
+	map_buffer_action.occupy,
+	base_layer,
+	obj_cable,
+	noone,
+	20
+)

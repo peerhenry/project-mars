@@ -112,5 +112,5 @@ enum build
 	oxygen_tank,
 	bed,
 	operating_table,
-	electric_cable
+	cable
 }

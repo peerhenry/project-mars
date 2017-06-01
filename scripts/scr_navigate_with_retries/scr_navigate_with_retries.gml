@@ -19,6 +19,15 @@ with(obj_astronaut)
 {
 	mp_grid_clear_cell(navigation_grid, occ_i, occ_j);
 }
+
+// astronauts without suits may not go through hatches
+if(!astronaut.wears_suit){
+	with(obj_hatch)
+	{
+		mp_grid_add_cell(navigation_grid, occ_i, occ_j);
+	}
+}
+
 var path_found = false;
 
 if(scr_destination_is_legal(snap_end_x, snap_end_y, astronaut))
@@ -47,15 +56,19 @@ if(path_found)
 	astronaut.occ_j = end_j;
 	with(astronaut)	path_start(astronaut.path, astronaut.movement_speed, path_action_stop, false); // path, speed, end action, absolute
 }
-/*else
-{
-	mp_grid_add_cell(navigation_grid, astronaut.occ_i, astronaut.occ_j);
-}*/
 
 // reset all navgrid cells at astronaut positions.
 with(obj_astronaut)
 {
 	mp_grid_add_cell(navigation_grid, occ_i, occ_j);
+}
+
+// free hatches again for navigation
+if(!astronaut.wears_suit){
+	with(obj_hatch)
+	{
+		mp_grid_clear_cell(navigation_grid, occ_i, occ_j);
+	}
 }
 
 return path_found;

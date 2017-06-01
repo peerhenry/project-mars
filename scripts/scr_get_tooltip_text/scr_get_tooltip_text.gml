@@ -22,6 +22,8 @@ switch(arg_build)
 		return "pump";
 	case build.generator:
 		return "generator";
+	case build.cable:
+		return "cable";
 }
 
-return noone;
+return "unkown";
