@@ -74,17 +74,18 @@ for(var n = 0; n < tile_count; n++)// loop over build tiles
 }
 
 // auto rotate door or hatch
-if(arg_build == build.hatch && !global.rotated_was_checked)
+if(arg_build == build.hatch)
 {
-	if(valid_tile_count == 3)
+	if(valid_tile_count == 3 && !global.flip_was_checked)
 	{
 		scr_increment_build_rotation(2);
+		global.flip_was_checked = true;
 	}
-	else if(valid_tile_count == 1)
+	else if(valid_tile_count == 1 && !global.rotated_was_checked)
 	{
 		scr_increment_build_rotation(1);
+		global.rotated_was_checked = true;
 	}
-	global.rotated_was_checked = true;
 }
 else if(arg_build == build.door && valid_tile_count == 1 && !global.rotated_was_checked)
 {

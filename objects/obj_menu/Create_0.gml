@@ -1,12 +1,21 @@
-/// @description Insert description here
-// You can write your code in this editor
-menu_index_start = 0;
-menu_index_options = 1;
-menu_index_quit = 2;
+enum menu_index{
+	game_continue,
+	new_game,
+	tutorial,
+	options,
+	debug,
+	quit
+}
 
-menu[menu_index_start] = "Start";
-menu[menu_index_options] = "Options";
-menu[menu_index_quit] = "Quit";
+// highest index first
+menu[menu_index.quit] = "";
+
+menu[menu_index.game_continue] = "Continue";
+menu[menu_index.new_game] = "New Game";
+menu[menu_index.tutorial] = "Tutorial";
+menu[menu_index.options] = "Options";
+menu[menu_index.debug] = "Debug";
+menu[menu_index.quit] = "Quit";
 menu_index_max = array_length_1d(menu) - 1;
 
 space = 64;

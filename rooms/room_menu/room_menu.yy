@@ -101,8 +101,8 @@
                     "colour": {
                         "Value": 4294967295
                     },
-                    "creationCodeFile": "",
-                    "creationCodeType": "",
+                    "creationCodeFile": "InstanceCreationCode_inst_3A3FBCC8.gml",
+                    "creationCodeType": ".gml",
                     "inheritCode": false,
                     "name_with_no_file_rename": "inst_3A3FBCC8",
                     "objId": "dd2dc63e-8f11-4bd7-bd5f-945f228fcde4",
@@ -141,13 +141,13 @@
             },
             "hspeed": 0,
             "htiled": false,
-            "spriteId": "0020fe13-5a4d-41a5-bc9e-de962b5e8328",
-            "stretch": false,
+            "spriteId": "c467afdb-38ba-4d74-8f7a-5a66a8173fb8",
+            "stretch": true,
             "userdefined_animFPS": false,
             "vspeed": 0,
             "vtiled": false,
-            "x": 1000,
-            "y": 300
+            "x": 0,
+            "y": 0
         },
         {
             "__type": "GMRBackgroundLayer_Model:#YoYoStudio.MVCFormat",

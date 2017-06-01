@@ -10,6 +10,7 @@ scr_initialize_constructions();
 
 // selected handle for construction
 global.construct = noone;
+global.build_time_per_cost = 0.01; // one second for each 100
 
 enum wall_type {
 	horizontal,

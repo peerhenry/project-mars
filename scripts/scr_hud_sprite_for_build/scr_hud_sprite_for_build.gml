@@ -19,6 +19,8 @@ switch(arg_build)
 		return spr_drill_bottom;
 	case build.pump:
 		return spr_pump;
+	case build.generator:
+		return spr_generator;
 }
 
 return noone;

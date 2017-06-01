@@ -8,7 +8,9 @@
         "f4ed8a3e-2cfb-4ba8-98d0-b6c9c2f070a5",
         "b441258f-1c6b-4bd6-aa4e-78d230f7f2a5",
         "bd6cb688-c931-494d-9c6a-d85a790d3837",
-        "35cf87e2-1289-4af8-8428-5fb9fd9a4665"
+        "35cf87e2-1289-4af8-8428-5fb9fd9a4665",
+        "1dfa1c5d-2a51-4917-89ff-e6653db286b1",
+        "e0f458cd-20bb-43b0-8a17-4b54a4e30fbc"
     ],
     "filterType": "GMScript",
     "folderName": "astronauts",

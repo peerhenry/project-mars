@@ -29,7 +29,6 @@ for(var n = 0; n < cell_count; n++)
 	
 	if(map_buffer_action == map_buffer_action.nothing) continue;
 	
-	
 	// determine if cell should be drawn	
 	if(map_buffer_action != map_buffer_action.nothing && map_buffer_action != map_buffer_action.reserve)	// these actions will not be drawn
 	{
@@ -65,7 +64,7 @@ repeat(invalid_cell_count)
 	var cell_i = ds_stack_pop(invalid_build_stack);
 	var target_x = scr_gi_to_rc(cell_i);
 	var target_y = scr_gi_to_rc(cell_j);
-	if(sprite > 0) draw_sprite_ext( sprite, 0, target_x, target_y, 1, 1, 0, c_white, 0.42 );
+	// if(sprite > 0) draw_sprite_ext( sprite, 0, target_x, target_y, 1, 1, 0, c_white, 0.42 );
 	draw_rectangle(target_x-16, target_y-16, target_x+15, target_y+15, false);
 }
 

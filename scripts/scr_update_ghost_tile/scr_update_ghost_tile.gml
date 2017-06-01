@@ -54,6 +54,10 @@ for(var m = 0; m < action_count; m++) // loop over build actions
 				var bc_image = (b_image_index + arg_rotation) % 8;
 				angle = 0;
 			}
+			if(object_to_add == obj_drill)
+			{
+				angle = 0;
+			}
 			var new_build_cell = scr_create_build_cell(
 				target_i, target_j,
 				map_buffer_action,

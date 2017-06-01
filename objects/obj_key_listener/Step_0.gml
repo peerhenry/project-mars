@@ -3,7 +3,7 @@ if(keyboard_check_pressed(vk_escape))
 	room_goto(0); // should use fade shit
 }
 
-if(keyboard_check_pressed(ord("P")))
+if(keyboard_check_pressed(ord("Z")))
 {
 	zoomed_in = !zoomed_in;
 	var cam = view_camera[0];
@@ -86,4 +86,9 @@ if(keyboard_check_pressed(ord("I")))
 	show_debug_message("map_i: " + string(map_i));
 	show_debug_message("map_o: " + string(map_o));
 	show_debug_message("map_r: " + string(map_r));
+}
+
+if(keyboard_check_pressed(ord("M")))
+{
+	global.resource_amount_metal += 10000;
 }

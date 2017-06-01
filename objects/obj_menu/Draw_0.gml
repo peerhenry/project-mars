@@ -6,8 +6,14 @@ draw_set_font(font_menu);
 draw_set_color(c_white);
 
 var m;
-for(m = 0; m <= menu_index_max; m++){
-
+for(m = 0; m <= menu_index_max; m++)
+{
+	if(m == menu_index.debug || m == menu_index.quit)
+	{
+		draw_set_color(c_white);
+	}
+	else draw_set_color(c_gray);
+	
 	str_Name = menu[m];
 	string_width(str_Name + " ");
 	var ox = x + space;
@@ -22,4 +28,4 @@ for(m = 0; m <= menu_index_max; m++){
 	}
 }
 
-draw_sprite(sprite_index, 0, x + 16, y + menu_focus_index * space )
+draw_sprite(sprite_index, image_index, x + 16, y + menu_focus_index * space )

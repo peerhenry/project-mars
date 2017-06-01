@@ -32,6 +32,7 @@ for(var n = 0; n < build_count; n++)
 	var offset = (n*props_per_build + 1)*4;
 	buffer_seek(build_button_buffer, buffer_seek_start, offset);
 	var next_u32 = buffer_read(build_button_buffer, buffer_u32);
+	var construct = buffer_read(build_button_buffer, buffer_s32);
 	var next_image_index = next_u32 & 255;
 	var b_state = (next_u32 >> 8) & 255; // second byte is state
 	
@@ -49,7 +50,7 @@ for(var n = 0; n < build_count; n++)
 			if(clicked)
 			{
 				new_state = button_state.selected;
-				global.construct = ds_list_find_value(global.construction_list, n);
+				global.construct = construct;
 				global.construction_is_valid = false;
 				global.rotated_was_checked = false;	// for auto rotate hatches and doors
 			}

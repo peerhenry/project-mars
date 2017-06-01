@@ -9,11 +9,13 @@ var arg_is_dragging = argument6;
 var end_i = scr_rc_to_gi(arg_mouse_x);
 var end_j = scr_rc_to_gi(arg_mouse_y);
 
-if(end_i != global.ghost_previous_i && end_j != global.ghost_previous_j) // hovering over a new tile.
+var mouse_hovers_over_new_cell = (end_i != global.ghost_previous_i || end_j != global.ghost_previous_j);
+if(mouse_hovers_over_new_cell)
 {
 	global.ghost_previous_i = end_i;
 	global.ghost_previous_j = end_j;
 	global.rotated_was_checked = false;	// for auto rotate hatches and doors
+	global.flip_was_checked = false; // for auto rotate hatch
 }
 
 global.can_pay_for_construction = true;

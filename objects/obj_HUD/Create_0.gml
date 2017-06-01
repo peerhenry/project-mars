@@ -25,7 +25,7 @@ enum button_state
 // ### OBJECT SETTINGS
 
 build_count = ds_list_size(global.construction_list);
-props_per_build = 2;
+props_per_build = 3;
 build_button_buffer = buffer_create(build_count*props_per_build*4, buffer_fixed, 4);
 
 for(var n = 0; n < build_count; n++)
@@ -37,6 +37,7 @@ for(var n = 0; n < build_count; n++)
 	var second_u32 = (next_state << 8) + next_image_index;
 	buffer_write(build_button_buffer, buffer_s32, next_sprite);	// b, t, v	
 	buffer_write(build_button_buffer, buffer_u32, second_u32);
+	buffer_write(build_button_buffer, buffer_s32, next_build);
 }
 
 y_offset = 128; // offset for build buttons

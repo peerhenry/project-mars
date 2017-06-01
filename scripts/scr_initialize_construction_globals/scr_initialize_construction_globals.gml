@@ -49,6 +49,8 @@ enum build_state
 #macro construction_completion 1
 #macro construction_build_type 2
 #macro construction_cells 3
+#macro construction_astronaut 4
+#macro construction_time 5
 
 // properties for construction cells
 #macro c_cell_i 0
@@ -56,6 +58,7 @@ enum build_state
 #macro c_cell_new_instance 2
 #macro c_cell_object_to_remove 3
 #macro c_cell_map_buffer_action 4
+#macro c_cell_layer 5
 
 enum build_validation_i
 {
@@ -104,5 +107,10 @@ enum build
 	suit_closet_empty,
 	sensor,
 	drill,
-	pump
+	pump,
+	generator,
+	oxygen_tank,
+	bed,
+	operating_table,
+	electric_cable
 }

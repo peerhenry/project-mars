@@ -9,7 +9,7 @@ var construction_cells_array = arg_construction[construction_cells];
 var count = array_length_1d(construction_cells_array);
 
 var room_logic_instance = noone;
-
+var i_count = 0;
 for(var n = 0; n < count; n++) // loop over tiles
 {
 	// 1. retrieve data cell
@@ -19,6 +19,7 @@ for(var n = 0; n < count; n++) // loop over tiles
 	var added_instance = next_cell[c_cell_new_instance];
 	var object_to_remove = next_cell[c_cell_object_to_remove];
 	var map_buffer_action = next_cell[c_cell_map_buffer_action];
+	var target_layer = next_cell[c_cell_layer];
 	var cell_x = scr_gi_to_rc(i);
 	var cell_y = scr_gi_to_rc(j);
 	
@@ -51,13 +52,14 @@ for(var n = 0; n < count; n++) // loop over tiles
 	// 5. finalize addad object
 	with(added_instance)
 	{
+		i_count++;
 		under_construction = false;
-		depth = layer_get_depth(layer);
+		depth = layer_get_depth(target_layer);
 		
 		// set instance to perform room logic on.
 		switch(build_type)
 		{
-			case build.basetile:
+			case build.basetile:	// prevents room logic on walls of the basetile.
 				if(object_index == obj_base_tile)
 				{
 					scr_room_logic(build_type, added_instance);
@@ -72,6 +74,8 @@ for(var n = 0; n < count; n++) // loop over tiles
 		}
 		
 		scr_wall_logic(added_instance); // wall logic on each instance.
+		
+		scr_post_completion(added_instance);
 	}
 }
 
@@ -82,3 +86,11 @@ ds_list_delete(construction_queue, index);
 
 // room logic
 if(build_type != build.basetile && build_type != build.wall) scr_room_logic(build_type, room_logic_instance);
+
+// stop astronaut
+var astronaut = arg_construction[construction_astronaut];
+if(astronaut != noone)
+{
+	scr_stop_construcion(astronaut);
+}
+arg_construction[@construction_astronaut] = noone; // astronaut assigned to perform the construction

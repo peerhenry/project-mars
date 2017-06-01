@@ -8,6 +8,8 @@ var build_stack = global.build_stack;
 var cell_count = ds_stack_size(build_stack);
 var new_construction;
 var construction_cell_array;
+var build_time = 2; // minimum construction time is 2 seconds
+var build_time_per_cost = global.build_time_per_cost;
 
 for(var n = 0; n < cell_count; n++)
 {
@@ -28,6 +30,7 @@ for(var n = 0; n < cell_count; n++)
 	
 	// pay
 	global.resource_amount_metal -= cost;
+	build_time += cost*build_time_per_cost;
 	
 	// 2. create object instance
 	var new_instance = noone;
@@ -43,14 +46,14 @@ for(var n = 0; n < cell_count; n++)
 			if(image > 0) image_index = image;
 			
 			// depth = layer_get_depth(add_layer) - 1;
-			// depth = -200; // under construction drawing has priority
+			depth = -200; // under construction drawing has priority
 			scr_post_creation_logic(global.construct, new_instance);
 			under_construction = true;
 		}
 	}
 	
 	// 3. create construction cell
-	var new_construction_cell = scr_create_construction_cell(cell_i, cell_j, map_buffer_action, new_instance, object_to_remove);
+	var new_construction_cell = scr_create_construction_cell(cell_i, cell_j, add_layer, map_buffer_action, new_instance, object_to_remove);
 	var index = (cell_count - 1 - n);
 	construction_cell_array[index] = new_construction_cell;
 	
@@ -62,6 +65,8 @@ for(var n = 0; n < cell_count; n++)
 if(cell_count > 0)
 {
 	// 5. set construction props & add to construction queue
+	new_construction[construction_time] = build_time;
+	new_construction[construction_astronaut] = noone; // astronaut assigned to perform the construction
 	new_construction[construction_cells] = construction_cell_array;
 	new_construction[construction_build_type] = global.construct;
 	new_construction[construction_build_state] = build_state.ready; // ready to be picked up

@@ -339,3 +339,18 @@ scr_add_build_action(
 	noone,
 	500
 );
+
+// generator
+scr_add_build_action(
+	build.generator,
+	0,	// di
+	0,	// dj
+	build_validation_i.outside,
+	build_validation_o.vacant,
+	0,
+	map_buffer_action.occupy,
+	base_layer,
+	obj_generator,
+	noone,
+	500
+);

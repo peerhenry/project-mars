@@ -12,6 +12,10 @@ with(new_projectile)
 		return false;
 	}
 	path_start(path, global.projectile_speed, path_action_stop, false);	// false: don't go along an absolute path, go relative to your position	
+	
+	var pd = point_direction(shooter.x, shooter.y, target.x, target.y);
+	var dd = angle_difference(image_angle, pd);
+	image_angle -= dd;
 }
 
 // orient shooter towards target
