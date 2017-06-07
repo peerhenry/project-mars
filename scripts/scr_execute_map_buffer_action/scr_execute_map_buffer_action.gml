@@ -44,4 +44,8 @@ switch(arg_action)
 		var new_value = (map_r << 8) + (global.under_construction << 1) + map_i;
 		scr_map_buffer_set_cell(arg_i, arg_j, new_value);
 		break;
+	case map_buffer_action.cable:
+		var new_value = (map_r << 8) + (global.cable << 1) + map_i;
+		scr_map_buffer_set_cell(arg_i, arg_j, new_value);
+		break;
 }

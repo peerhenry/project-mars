@@ -85,7 +85,8 @@ enum map_buffer_action
 	wall_like,
 	wall,
 	inside,
-	under_construction
+	under_construction,
+	cable
 }
 
 // used for map buffer
@@ -95,22 +96,23 @@ global.occupied = 2;
 global.wall_like = 3;
 global.wall_pure = 4;
 global.under_construction = 5;
+global.cable = 6;
 
 // the different constructions
 enum build
 {
-	basetile,
-	wall,
-	door,
-	hatch,
-	suit_closet,
-	suit_closet_empty,
-	sensor,
-	drill,
-	pump,
-	generator,
-	oxygen_tank,
-	bed,
-	operating_table,
-	cable
+	basetile,			// carrier
+	wall,				// carrier
+	door,				// NA
+	hatch,				// NA
+	suit_closet,		// NA
+	suit_closet_empty,	// NA
+	sensor,				// consumer
+	drill,				// consumer
+	pump,				// consumer
+	battery,			// source
+	oxygen_tank,		// NA
+	bed,				// NA
+	operating_table,	// consumer
+	cable				// carrier
 }

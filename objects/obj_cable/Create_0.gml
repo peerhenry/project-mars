@@ -2,6 +2,9 @@ event_inherited();
 occ_i = scr_rc_to_gi(x);
 occ_j = scr_rc_to_gi(y);
 
+electric_type = electric.carrier;
+
+// begin === SET ADJACENCY NUMBER AND IMAGE INDEX ===
 #macro east_number 1
 #macro north_number 2
 #macro west_number 4
@@ -9,37 +12,50 @@ occ_j = scr_rc_to_gi(y);
 
 adjacency_number = 0;
 
-var east_cable = instance_position(x+32, y, obj_cable);
-var north_cable = instance_position(x, y-32, obj_cable);
-var west_cable = instance_position(x-32, y, obj_cable);
-var south_cable = instance_position(x, y+32, obj_cable);
+var east_electric = instance_position(x+32, y, obj_electric_component);
+var north_electric = instance_position(x, y-32, obj_electric_component);
+var west_electric = instance_position(x-32, y, obj_electric_component);
+var south_electric = instance_position(x, y+32, obj_electric_component);
 
-if(east_cable != noone)
+if(east_electric != noone)
 {
 	adjacency_number += east_number;
-	east_cable.adjacency_number += west_number;
-	scr_set_cable_image(east_cable);
+	if(east_electric.object_index == obj_cable)
+	{
+		east_electric.adjacency_number += west_number;
+		scr_set_cable_image(east_electric);
+	}
 }
 
-if(north_cable != noone)
+if(north_electric != noone)
 {
 	adjacency_number += north_number;
-	north_cable.adjacency_number += south_number;
-	scr_set_cable_image(north_cable);
+	if(north_electric.object_index == obj_cable)
+	{
+		north_electric.adjacency_number += south_number;
+		scr_set_cable_image(north_electric);
+	}
 }
 
-if(west_cable != noone)
+if(west_electric != noone)
 {
 	adjacency_number += west_number;
-	west_cable.adjacency_number += east_number;
-	scr_set_cable_image(west_cable);
+	if(west_electric.object_index == obj_cable)
+	{
+		west_electric.adjacency_number += east_number;
+		scr_set_cable_image(west_electric);
+	}
 }
 
-if(south_cable != noone)
+if(south_electric != noone)
 {
 	adjacency_number += south_number;
-	south_cable.adjacency_number += north_number
-	scr_set_cable_image(south_cable);
+	if(south_electric.object_index == obj_cable)
+	{
+		south_electric.adjacency_number += north_number;
+		scr_set_cable_image(south_electric);
+	}
 }
 
 scr_set_cable_image(id);
+// end === SET ADJACENCY NUMBER AND IMAGE INDEX ===

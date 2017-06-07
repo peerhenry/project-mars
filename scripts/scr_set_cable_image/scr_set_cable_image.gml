@@ -43,4 +43,13 @@ with(arg_cable)
 			image_index = 20;
 			break;
 	}
+	if(is_array(electric_grid))
+	{
+		if(
+			electric_grid[e_grid_net_power] > 0 
+			|| (electric_grid[e_grid_net_power] == 0 && ds_list_size(electric_grid[e_grid_source_list]) > 0))
+		{
+			image_index += 1;
+		}
+	}
 }

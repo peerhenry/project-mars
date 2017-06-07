@@ -2,7 +2,7 @@
     "id": "5f6be152-e516-4d49-b93f-7b475c36122c",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "spr_generator",
+    "name": "spr_battery",
     "For3D": false,
     "HTile": false,
     "VTile": false,

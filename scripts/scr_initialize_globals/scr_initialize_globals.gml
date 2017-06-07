@@ -1,16 +1,16 @@
-/// Initialize gamewide globals
+/// @description Initialize gamewide globals
 
-// DEBUG settings
+// # DEBUG settings
 global.draw_room_bb = false;
 global.debug_start_messages = false;
 global.debug_gameplay_messages = true;
 
-// constructions
+// # constructions
 scr_initialize_constructions();
 
 // selected handle for construction
 global.construct = noone;
-global.build_time_per_cost = 0.01; // one second for each 100
+global.build_time_per_cost = 0.01; // one second for each 100 resource cost
 
 enum wall_type {
 	horizontal,
@@ -24,7 +24,7 @@ enum resource {
 	metal
 }
 
-// gameplay stuff
+// # gameplay stuff
 global.oxygen_bar_color = make_color_rgb(55, 55, 255);
 global.gate_drainage_speed = 25; // percentage of oxygen of 1 tile being drained by an open hatch per step.
 global.oxygen_empty_level = 1; // if oxygen_level falls below this number, red stripes are drawn.
@@ -42,9 +42,25 @@ global.shooting_range_squared = 10*10;
 
 global.resource_amount_metal = 20000;
 
-// astronaut tasks
+// # electric grid stuff
 
-enum astronaut_action
+enum electric
+{
+	none,
+	carrier,
+	source,
+	consumer
+}
+
+// properties for a grid
+#macro e_grid_carrier_list 0
+#macro e_grid_source_list 1
+#macro e_grid_consumer_list 2
+#macro e_grid_net_power 3
+
+// # astronaut tasks
+
+enum astronaut_action // these are assigned to astronaut objects
 {
 	idle,
 	moving_by_command,
@@ -54,6 +70,6 @@ enum astronaut_action
 	in_combat
 }
 
-// initialize audio groups
+// # initialize audio groups
 audio_group_load(audiogroup_music);
 audio_group_load(audiogroup_sfx);

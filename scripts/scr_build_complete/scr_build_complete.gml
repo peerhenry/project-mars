@@ -43,6 +43,7 @@ for(var n = 0; n < count; n++) // loop over tiles
 		map_buffer_action == map_buffer_action.inside
 		|| map_buffer_action == map_buffer_action.reserve
 		|| map_buffer_action == map_buffer_action.clear
+		|| map_buffer_action == map_buffer_action.cable
 		|| instance_is_gate
 	)
 	{
@@ -74,7 +75,7 @@ for(var n = 0; n < count; n++) // loop over tiles
 		}
 		
 		scr_wall_logic(added_instance); // wall logic on each instance.
-		
+		scr_electric_grid_logic(added_instance);
 		scr_post_completion(added_instance);
 	}
 }

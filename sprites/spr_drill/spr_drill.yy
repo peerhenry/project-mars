@@ -658,7 +658,7 @@
             "mvc": "1.0",
             "SpriteId": "5db407ef-ccc6-4159-a849-9d2db40ebe71",
             "blendMode": 0,
-            "isLocked": true,
+            "isLocked": false,
             "name": "back",
             "opacity": 100,
             "visible": true
@@ -705,7 +705,7 @@
         4284703587,
         4283782485,
         4281742902,
-        4278190080,
+        2483027968,
         4286158839,
         4286688762,
         4287219453,

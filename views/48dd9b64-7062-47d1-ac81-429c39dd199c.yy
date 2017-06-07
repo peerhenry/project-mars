@@ -13,7 +13,7 @@
         "95d73804-7f7e-440a-9ac3-dfb3e3d69faf"
     ],
     "filterType": "GMScript",
-    "folderName": "initialization",
+    "folderName": "INITIALIZATION",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

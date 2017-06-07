@@ -20,8 +20,8 @@ switch(arg_build)
 		return "drill";
 	case build.pump:
 		return "pump";
-	case build.generator:
-		return "generator";
+	case build.battery:
+		return "battery";
 	case build.cable:
 		return "cable";
 }

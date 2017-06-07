@@ -3,7 +3,7 @@ path = path_add();
 is_walking = false;
 prev_x = x;
 prev_y = y;
-
+previous_cell_was_free = true;
 occ_i = (x - 16) div 32;
 occ_j = (y - 16) div 32;
 mp_grid_add_cell(global.grid_map, occ_i, occ_j);
