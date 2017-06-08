@@ -5,10 +5,6 @@ occ_j = scr_rc_to_gi(y);
 electric_type = electric.carrier;
 
 // begin === SET ADJACENCY NUMBER AND IMAGE INDEX ===
-#macro east_number 1
-#macro north_number 2
-#macro west_number 4
-#macro south_number 8
 
 adjacency_number = 0;
 
@@ -19,7 +15,8 @@ var south_electric = instance_position(x, y+32, obj_electric_component);
 
 if(east_electric != noone)
 {
-	adjacency_number += east_number;
+	if(east_electric.y - y < 16) adjacency_number += east_number;
+	
 	if(east_electric.object_index == obj_cable)
 	{
 		east_electric.adjacency_number += west_number;
@@ -29,7 +26,8 @@ if(east_electric != noone)
 
 if(north_electric != noone)
 {
-	adjacency_number += north_number;
+	if(north_electric.y - (y-32) < 16) adjacency_number += north_number;
+	
 	if(north_electric.object_index == obj_cable)
 	{
 		north_electric.adjacency_number += south_number;
@@ -39,7 +37,8 @@ if(north_electric != noone)
 
 if(west_electric != noone)
 {
-	adjacency_number += west_number;
+	if(west_electric.y - y < 16) adjacency_number += west_number;
+	
 	if(west_electric.object_index == obj_cable)
 	{
 		west_electric.adjacency_number += east_number;
@@ -49,7 +48,8 @@ if(west_electric != noone)
 
 if(south_electric != noone)
 {
-	adjacency_number += south_number;
+	if(south_electric.y - (y+32) < 16) adjacency_number += south_number;
+	
 	if(south_electric.object_index == obj_cable)
 	{
 		south_electric.adjacency_number += north_number;

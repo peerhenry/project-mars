@@ -15,6 +15,9 @@ with(arg_instance)
 			solid = true;
 			scr_update_adjacent_walls(x, y);
 			break;
+		case obj_base_tile:
+			scr_update_adjacent_walls(x, y);
+			break;
 		case obj_hatch:
 			solid = true;
 			break;

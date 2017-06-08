@@ -1,0 +1,1 @@
+scr_electric_grid_remove(electric_grid, id);

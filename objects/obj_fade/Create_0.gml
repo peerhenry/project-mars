@@ -1,4 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
-a = 0;
+/// @description set a and fade
+alpha = 0;
 fade = 1; // 1 means fade in, -1 means fade out.
+global.room_is_transitioning = true;

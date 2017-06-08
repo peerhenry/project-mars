@@ -24,6 +24,8 @@ switch(arg_build)
 		return "battery";
 	case build.cable:
 		return "cable";
+	case build.pipe:
+		return "pipe";
 }
 
 return "unkown";

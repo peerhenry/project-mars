@@ -92,3 +92,9 @@ if(keyboard_check_pressed(ord("M")))
 {
 	global.resource_amount_metal += 10000;
 }
+
+if(keyboard_check_pressed(ord("L")))
+{
+	var cable = instance_position(mouse_x, mouse_y, obj_cable);
+	if(cable > 0) show_debug_message("cable adjacency number: " + string(cable.adjacency_number));
+}

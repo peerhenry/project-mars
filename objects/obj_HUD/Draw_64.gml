@@ -8,7 +8,8 @@ draw_rectangle(menu_btn_left, menu_btn_top, menu_btn_right, menu_btn_bottom, fal
 draw_set_color(c_black);
 draw_rectangle(menu_btn_left, menu_btn_top, menu_btn_right, menu_btn_bottom, true);
 // text
-draw_set_halign(fa_middle); draw_set_valign(fa_middle);
+draw_set_halign(fa_center); 
+draw_set_valign(fa_middle);
 draw_set_font(font_hud);
 draw_set_color(global.btn_color);
 draw_text(menu_btn_center_x, menu_btn_center_y, "Menu");
@@ -21,7 +22,8 @@ draw_rectangle(resources_left, resources_top, resources_right, resources_bottom,
 draw_set_color(c_black);
 draw_rectangle(resources_left, resources_top, resources_right, resources_bottom, true);
 // text
-draw_set_halign(fa_middle); draw_set_valign(fa_middle);
+draw_set_halign(fa_center); 
+draw_set_valign(fa_middle);
 draw_set_font(font_hud);
 draw_set_color(global.btn_color);
 draw_text(resources_center_x, resources_center_y, "Metal: " + string(scr_get_metal_amount()));

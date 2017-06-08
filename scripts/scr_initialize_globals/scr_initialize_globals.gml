@@ -8,6 +8,12 @@ global.debug_gameplay_messages = true;
 // # constructions
 scr_initialize_constructions();
 
+// used for adjacency numbers
+#macro east_number 1
+#macro north_number 2
+#macro west_number 4
+#macro south_number 8
+
 // selected handle for construction
 global.construct = noone;
 global.build_time_per_cost = 0.01; // one second for each 100 resource cost

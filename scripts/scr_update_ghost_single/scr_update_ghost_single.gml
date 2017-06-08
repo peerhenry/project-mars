@@ -64,11 +64,11 @@ for(var n = 0; n < tile_count; n++)// loop over build tiles
 				angle = 270;
 				break;
 		}
-		scr_update_ghost_tile(arg_i + di, arg_j + dj, action_offset, action_count, arg_rotation, sprite, angle);
+		scr_update_ghost_tile_with_overrides(arg_i + di, arg_j + dj, action_offset, action_count, arg_rotation, sprite, -1, angle);
 	}
 	else
 	{
-		var tile_is_valid = scr_update_ghost_tile(target_i, target_j, action_offset, action_count, arg_rotation, noone, -1);
+		var tile_is_valid = scr_update_ghost_tile(target_i, target_j, action_offset, action_count, arg_rotation);
 		if(tile_is_valid) valid_tile_count++;
 	}
 }

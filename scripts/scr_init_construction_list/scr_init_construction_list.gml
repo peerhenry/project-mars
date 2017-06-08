@@ -368,3 +368,17 @@ scr_add_build_action(
 	noone,
 	20
 )
+
+// pipe
+scr_add_build_action(
+	build.pipe,
+	0,0, // di, dj
+	build_validation_i.outside,
+	build_validation_o.unoccupied,
+	0, // image_index
+	map_buffer_action.pipe,
+	base_layer,
+	obj_pipe,
+	noone,
+	20
+)

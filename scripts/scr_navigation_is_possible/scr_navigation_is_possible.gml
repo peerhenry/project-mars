@@ -21,8 +21,18 @@ with(obj_astronaut)
 {
 	mp_grid_clear_cell(navigation_grid, occ_i, occ_j);
 }
+
+// for suitless astronauts, hatches are impassable
+if(!arg_astronaut.wears_suit)
+{
+	with(obj_hatch)
+	{
+		mp_grid_add_cell(navigation_grid, occ_i, occ_j);
+	}
+}
 var path_found = false;
 
+// # meat and bones
 if(scr_navgrid_cell_is_free(end_i, end_j) && scr_destination_is_legal(snap_end_x, snap_end_y, arg_astronaut))
 {
 	path_found = mp_grid_path(navigation_grid, arg_astronaut.path, start_x, start_y, snap_end_x, snap_end_y, true);
@@ -32,6 +42,15 @@ if(scr_navgrid_cell_is_free(end_i, end_j) && scr_destination_is_legal(snap_end_x
 with(obj_astronaut)
 {
 	mp_grid_add_cell(navigation_grid, occ_i, occ_j);
+}
+
+// reset hatches passability if astronaut is suitless
+if(!arg_astronaut.wears_suit)
+{
+	with(obj_hatch)
+	{
+		if(!locked) mp_grid_clear_cell(navigation_grid, occ_i, occ_j);
+	}
 }
 
 return path_found;

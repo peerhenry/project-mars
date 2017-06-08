@@ -15,37 +15,37 @@ var map_r = (map_value >> 8) & 255; // another byte for resource
 switch(arg_action)
 {
 	case map_buffer_action.clear:
-		var new_value = (map_r << 8) + (global.vacant << 1) + map_i;
+		var new_value = (map_r << 8) + (map_value_vacant << 1) + map_i;
 		scr_map_buffer_set_cell(arg_i, arg_j, new_value);
 		break;
 	case map_buffer_action.nothing:
 		break;
 	case map_buffer_action.reserve:
-		var new_value = (map_r << 8) + (global.reserved << 1) + map_i;
+		var new_value = (map_r << 8) + (map_value_reserved << 1) + map_i;
 		scr_map_buffer_set_cell(arg_i, arg_j, new_value);
 		break;
 	case map_buffer_action.occupy:
-		var new_value = (map_r << 8) + (global.occupied << 1) + map_i;
+		var new_value = (map_r << 8) + (map_value_occupied << 1) + map_i;
 		scr_map_buffer_set_cell(arg_i, arg_j, new_value);
 		break;
 	case map_buffer_action.wall_like:	// something that connects to walls (like doors)
-		var new_value = (map_r << 8) + (global.wall_like << 1) + map_i;
+		var new_value = (map_r << 8) + (map_value_wall_like << 1) + map_i;
 		scr_map_buffer_set_cell(arg_i, arg_j, new_value);
 		break;
 	case map_buffer_action.wall:
-		var new_value = (map_r << 8) + (global.wall_pure << 1) + map_i;
+		var new_value = (map_r << 8) + (map_value_wall_pure << 1) + map_i;
 		scr_map_buffer_set_cell(arg_i, arg_j, new_value);
 		break;
 	case map_buffer_action.inside:
-		var new_value = (map_r << 8) + (global.vacant << 1) + 1;
+		var new_value = (map_r << 8) + (map_value_vacant << 1) + 1;
 		scr_map_buffer_set_cell(arg_i, arg_j, new_value);
 		break;
 	case map_buffer_action.under_construction:
-		var new_value = (map_r << 8) + (global.under_construction << 1) + map_i;
+		var new_value = (map_r << 8) + (map_value_under_construction << 1) + map_i;
 		scr_map_buffer_set_cell(arg_i, arg_j, new_value);
 		break;
 	case map_buffer_action.cable:
-		var new_value = (map_r << 8) + (global.cable << 1) + map_i;
+		var new_value = (map_r << 8) + (map_value_cable << 1) + map_i;
 		scr_map_buffer_set_cell(arg_i, arg_j, new_value);
 		break;
 }

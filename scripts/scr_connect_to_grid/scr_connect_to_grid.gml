@@ -6,7 +6,7 @@ var grid_adj_number = 0;
 
 var comp_east = instance_position(arg_x + 32, arg_y, obj_electric_component);
 var grid_east = noone;
-if(comp_east > 0 && is_array(comp_east.electric_grid))
+if(comp_east > 0 && (comp_east.y - arg_y < 16) && is_array(comp_east.electric_grid))
 {
 	grid_east = comp_east.electric_grid;
 	grid_adj_number += 1;
@@ -14,7 +14,7 @@ if(comp_east > 0 && is_array(comp_east.electric_grid))
 
 var comp_north = instance_position(arg_x, arg_y  - 32, obj_electric_component);
 var grid_north = noone;
-if(comp_north > 0 && is_array(comp_north.electric_grid))
+if(comp_north > 0 && (comp_north.y - (arg_y-32) < 16) && is_array(comp_north.electric_grid))
 {
 	grid_north = comp_north.electric_grid;
 	grid_adj_number += 2;
@@ -22,7 +22,7 @@ if(comp_north > 0 && is_array(comp_north.electric_grid))
 
 var comp_west = instance_position(arg_x - 32, arg_y, obj_electric_component);
 var grid_west = noone;
-if(comp_west > 0 && is_array(comp_west.electric_grid))
+if(comp_west > 0 && (comp_west.y - arg_y < 16) && is_array(comp_west.electric_grid))
 {
 	grid_west = comp_west.electric_grid;
 	grid_adj_number += 4;
@@ -30,7 +30,7 @@ if(comp_west > 0 && is_array(comp_west.electric_grid))
 
 var comp_south = instance_position(arg_x, arg_y + 32, obj_electric_component);
 var grid_south = noone;
-if(comp_south > 0 && is_array(comp_south.electric_grid))
+if(comp_south > 0 && (comp_south.y - (arg_y+32) < 16) && is_array(comp_south.electric_grid))
 {
 	grid_south = comp_south.electric_grid;
 	grid_adj_number += 8;

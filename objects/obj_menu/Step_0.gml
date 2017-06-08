@@ -1,5 +1,7 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Check for menu events
+
+if(global.room_is_transitioning) exit;
+
 var move = 0;
 move -= max(keyboard_check_pressed(vk_up), keyboard_check_pressed(ord("W")), 0);
 move += max(keyboard_check_pressed(vk_down), keyboard_check_pressed(ord("S")), 0);

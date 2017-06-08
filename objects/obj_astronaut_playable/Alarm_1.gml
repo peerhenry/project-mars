@@ -1,3 +1,5 @@
+/// @description Construction
+
 if(!is_walking && current_action = astronaut_action.idle)
 {
 	// do an autotask

@@ -23,6 +23,8 @@ switch(arg_build)
 		return spr_battery;
 	case build.cable:
 		return spr_cable;
+	case build.pipe:
+		return spr_pipe;
 }
 
 return noone;

@@ -43,7 +43,13 @@ for(var n = 0; n < cell_count; n++)
 		{
 			if(angle >= 0) image_angle = angle;
 			if(sprite > 0) sprite_index = sprite;
-			if(image > 0) image_index = image;
+			if(
+				image > 0 
+				&& new_instance.object_index != obj_cable 
+				&& new_instance.object_index != obj_pipe)
+			{
+				image_index = image; // the check for cable or pipe is a dirty fix
+			}
 			
 			// depth = layer_get_depth(add_layer) - 1;
 			depth = -200; // under construction drawing has priority

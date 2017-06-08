@@ -86,17 +86,18 @@ enum map_buffer_action
 	wall,
 	inside,
 	under_construction,
-	cable
+	cable,
+	pipe
 }
 
 // used for map buffer
-global.vacant = 0;
-global.reserved = 1;
-global.occupied = 2;
-global.wall_like = 3;
-global.wall_pure = 4;
-global.under_construction = 5;
-global.cable = 6;
+#macro map_value_vacant 0
+#macro map_value_reserved 1
+#macro map_value_occupied 2
+#macro map_value_wall_like 3
+#macro map_value_wall_pure 4
+#macro map_value_under_construction 5
+#macro map_value_cable 6
 
 // the different constructions
 enum build
@@ -114,5 +115,6 @@ enum build
 	oxygen_tank,		// NA
 	bed,				// NA
 	operating_table,	// consumer
-	cable				// carrier
+	cable,				// carrier
+	pipe
 }

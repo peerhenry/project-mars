@@ -1,3 +1,5 @@
+/// @description Shoot
+
 // 1. reset target
 target = noone;
 
