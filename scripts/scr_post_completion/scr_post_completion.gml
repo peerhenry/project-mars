@@ -6,6 +6,9 @@ with(arg_instance)
 {
 	switch(object_index)
 	{
+		case obj_pipe:
+			depth -= 1; // pipes should appear on top of cables
+			break;
 		case obj_drill:
 		case obj_pump:
 		case obj_sensor:

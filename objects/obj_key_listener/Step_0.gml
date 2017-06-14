@@ -6,27 +6,8 @@ if(keyboard_check_pressed(vk_escape))
 if(keyboard_check_pressed(ord("Z")))
 {
 	zoomed_in = !zoomed_in;
-	var cam = view_camera[0];
-	if(zoomed_in){
-		camera_set_view_size(cam, 960, 540);
-	}
-	else{
-		var camx = camera_get_view_x(cam);
-		var camy = camera_get_view_y(cam);
-		var camW = 1920;
-		var camH = 1080;
-		// prevent cam zooming out from going out of bounds
-		if(camy + camH > room_height)
-		{
-			camy = room_height - camH;
-			camera_set_view_pos(cam, camx, camy);
-		}
-		if(camx + camW > room_width)
-		{
-			camera_set_view_pos(cam, room_width - camW, camy);
-		}
-		camera_set_view_size(cam, camW, camH);
-	}
+	if(zoomed_in) scr_zoom(960, 540);
+	else scr_zoom(1920, 1080);
 }
 
 if(keyboard_check_pressed(ord("R")))

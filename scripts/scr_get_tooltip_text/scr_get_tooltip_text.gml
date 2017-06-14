@@ -26,6 +26,14 @@ switch(arg_build)
 		return "cable";
 	case build.pipe:
 		return "pipe";
+	case build.oxygen_tank:
+		return "oxygen tank";
+	case build.bed:
+		return "bed";
+	case build.operating_table:
+		return "operating table";
+	case build.airlock_pump:
+		return "airlock pump";
 }
 
 return "unkown";

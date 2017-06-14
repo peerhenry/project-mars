@@ -45,7 +45,21 @@ switch(arg_action)
 		scr_map_buffer_set_cell(arg_i, arg_j, new_value);
 		break;
 	case map_buffer_action.cable:
-		var new_value = (map_r << 8) + (map_value_cable << 1) + map_i;
+		var new_o = map_value_cable;
+		if(map_o == map_value_pipe || instance_position(scr_gi_to_rc(arg_i), scr_gi_to_rc(arg_j), obj_pipe) != noone)
+		{
+			new_o = map_value_pipe_and_cable;
+		}
+		var new_value = (map_r << 8) + (new_o << 1) + map_i;
+		scr_map_buffer_set_cell(arg_i, arg_j, new_value);
+		break;
+	case map_buffer_action.pipe:
+		var new_o = map_value_pipe;
+		if(map_o == map_value_cable || instance_position(scr_gi_to_rc(arg_i), scr_gi_to_rc(arg_j), obj_cable) != noone)
+		{
+			new_o = map_value_pipe_and_cable;
+		}
+		var new_value = (map_r << 8) + (new_o << 1) + map_i;
 		scr_map_buffer_set_cell(arg_i, arg_j, new_value);
 		break;
 }

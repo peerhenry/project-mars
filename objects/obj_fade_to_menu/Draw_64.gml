@@ -24,8 +24,8 @@ var y_or = 0;
 draw_rectangle(
 	x_or,
 	y_or,
-	x_or + view_wview[0],
-	y_or + view_hview[0],
+	x_or + 1920,
+	y_or + 1080,
 	false // rectangle is not outlined; it's filled
 );
 

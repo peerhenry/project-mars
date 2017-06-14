@@ -73,7 +73,9 @@ enum build_validation_o
 	unoccupied,
 	wall_like,
 	any,
-	wall
+	wall,
+	for_cable,
+	for_pipe
 }
 
 enum map_buffer_action
@@ -98,6 +100,8 @@ enum map_buffer_action
 #macro map_value_wall_pure 4
 #macro map_value_under_construction 5
 #macro map_value_cable 6
+#macro map_value_pipe 7
+#macro map_value_pipe_and_cable 8
 
 // the different constructions
 enum build
@@ -116,5 +120,6 @@ enum build
 	bed,				// NA
 	operating_table,	// consumer
 	cable,				// carrier
-	pipe
+	pipe,
+	airlock_pump
 }

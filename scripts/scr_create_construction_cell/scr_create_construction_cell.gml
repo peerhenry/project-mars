@@ -13,5 +13,4 @@ new_construction_cell[c_cell_i] = arg_i ;
 new_construction_cell[c_cell_j] = arg_j;
 new_construction_cell[c_cell_new_instance] = arg_new_instance;
 new_construction_cell[c_cell_object_to_remove] = arg_remove_object;
-
 return new_construction_cell;

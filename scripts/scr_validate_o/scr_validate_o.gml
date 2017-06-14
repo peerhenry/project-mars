@@ -16,6 +16,10 @@ switch(validation_o)
 		return true;
 	case build_validation_o.wall:
 		return map_o == map_value_wall_pure;
+	case build_validation_o.for_pipe:
+		return map_o == map_value_vacant || map_o == map_value_cable;
+	case build_validation_o.for_cable:
+		return map_o == map_value_vacant || map_o == map_value_pipe;
 	default:
 		return false;
 }

@@ -13,6 +13,8 @@ with(arg_pipe)
 			image_index = 0;
 			break;
 		case 2:
+			image_index = 11;
+			break;
 		case 8:
 		case 10:
 			image_index = 1;

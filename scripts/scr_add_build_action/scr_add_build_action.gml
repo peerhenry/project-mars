@@ -48,7 +48,6 @@ if(ds_map_exists(global.build_tile_counts, arg_construction)) // construction ex
 else // new construction
 {
 	// add new construction to build tile counts
-	if(global.debug_start_messages) show_debug_message("Adding new construction to build_tile_counts for " + string(arg_construction)); // DEBUG
 	ds_list_add(global.construction_list, arg_construction);
 	ds_map_add(global.build_tile_counts, arg_construction, 1);
 	// also add new build tile to action counts

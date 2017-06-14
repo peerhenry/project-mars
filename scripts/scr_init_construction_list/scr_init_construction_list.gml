@@ -294,91 +294,128 @@ scr_add_build_action(
 
 
 // sensor
-scr_add_build_action(
+scr_add_simple_build_action(
 	build.sensor,
-	0,
-	0,
 	build_validation_i.outside,
 	build_validation_o.vacant,
-	0,
 	map_buffer_action.occupy,
 	base_tall_layer,
 	obj_sensor,
-	noone,
 	500
 );
 
 
 // drill
-scr_add_build_action(
+scr_add_simple_build_action(
 	build.drill,
-	0,	// di
-	0,	// dj
 	build_validation_i.outside,
 	build_validation_o.vacant,
-	0,
 	map_buffer_action.occupy,
 	base_tall_layer,
 	obj_drill,
-	noone,
 	800
 );
 
 
 // pump
-scr_add_build_action(
+scr_add_simple_build_action(
 	build.pump,
-	0,	// di
-	0,	// dj
 	build_validation_i.outside,
 	build_validation_o.vacant,
-	0,
 	map_buffer_action.occupy,
 	base_layer,
 	obj_pump,
-	noone,
 	500
 );
 
 // battery
-scr_add_build_action(
+scr_add_simple_build_action(
 	build.battery,
-	0,	// di
-	0,	// dj
 	build_validation_i.any,
 	build_validation_o.vacant,
-	0,
 	map_buffer_action.occupy,
 	base_layer,
 	obj_battery,
-	noone,
 	500
 );
 
 // cable
-scr_add_build_action(
+scr_add_simple_build_action(
 	build.cable,
-	0,0, // di, dj
 	build_validation_i.outside,
-	build_validation_o.unoccupied,
-	0, // image_index
+	build_validation_o.for_cable,
 	map_buffer_action.cable,
 	base_layer,
 	obj_cable,
-	noone,
 	20
 )
 
 // pipe
-scr_add_build_action(
+scr_add_simple_build_action(
 	build.pipe,
-	0,0, // di, dj
 	build_validation_i.outside,
-	build_validation_o.unoccupied,
-	0, // image_index
+	build_validation_o.for_pipe,
 	map_buffer_action.pipe,
 	base_layer,
 	obj_pipe,
-	noone,
 	20
 )
+
+// oxygen tank
+scr_add_simple_build_action(
+	build.oxygen_tank,
+	build_validation_i.inside,
+	build_validation_o.vacant,
+	map_buffer_action.occupy,
+	base_layer,
+	obj_oxygen_tank,
+	100
+)
+
+// vertical bed
+scr_add_simple_build_action(
+	build.bed,
+	build_validation_i.inside,
+	build_validation_o.vacant,
+	map_buffer_action.occupy,
+	base_layer,
+	obj_bed,
+	100
+)
+scr_add_build_action(
+	build.bed,
+	0,	// di
+	-1,	// dj
+	build_validation_i.inside,
+	build_validation_o.vacant,
+	0,
+	map_buffer_action.occupy,
+	noone,
+	noone,
+	noone,
+	0
+)
+
+// horizontal bed
+/*scr_add_build_action(
+	build.bed,
+	build_validation_i.inside,
+	build_validation_o.vacant,
+	map_buffer_action.occupy,
+	base_layer,
+	obj_bed,
+	200
+)
+scr_add_build_action(
+	build.bed,
+	1,	// di
+	0,	// dj
+	build_validation_i.inside,
+	build_validation_o.vacant,
+	0,
+	map_buffer_action.occupy,
+	noone,
+	noone,
+	noone,
+	0
+)*/

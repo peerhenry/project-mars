@@ -1,1 +1,1 @@
-zoomed_in = false;
+zoomed_in = true;

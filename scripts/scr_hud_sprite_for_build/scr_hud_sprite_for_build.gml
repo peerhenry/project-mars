@@ -25,6 +25,10 @@ switch(arg_build)
 		return spr_cable;
 	case build.pipe:
 		return spr_pipe;
+	case build.oxygen_tank:
+		return spr_oxygen_tank;
+	case build.bed:
+		return spr_bed_hud;
 }
 
 return noone;

@@ -66,9 +66,14 @@ for(var m = 0; m < action_count; m++) // loop over build actions
 					var bc_image = (b_image_index + arg_rotation) % 8;
 					angle = 0;
 					break;
-				case obj_drill:
+				case obj_drill:	// these objects should not listen to rotation
 				case obj_cable:
+				case obj_pipe:
+				case obj_bed:
+				case obj_oxygen_tank:
+				case obj_pump:
 					angle = 0;
+					break;
 			}
 			
 			if(arg_image_override >= 0)

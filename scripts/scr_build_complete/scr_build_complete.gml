@@ -44,6 +44,7 @@ for(var n = 0; n < count; n++) // loop over tiles
 		|| map_buffer_action == map_buffer_action.reserve
 		|| map_buffer_action == map_buffer_action.clear
 		|| map_buffer_action == map_buffer_action.cable
+		|| map_buffer_action == map_buffer_action.pipe
 		|| instance_is_gate
 	)
 	{
