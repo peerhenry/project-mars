@@ -9,6 +9,7 @@
 /// @param build
 /// @param rotation
 
+/*
 var arg_i = argument0;
 var arg_j = argument1;
 var arg_origin_i = argument2;
@@ -51,3 +52,4 @@ else
 		scr_update_ghost_tile_with_overrides(arg_origin_i, n, action_offset, action_count, arg_rotation, spr_wall_straight, -1, 90);
 	}
 }
+*/

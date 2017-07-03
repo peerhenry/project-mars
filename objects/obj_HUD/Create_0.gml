@@ -24,13 +24,14 @@ enum button_state
 
 // ### OBJECT SETTINGS
 
-build_count = ds_list_size(global.construction_list);
+var construction_list = global.active_constructions;
+build_count = ds_list_size(construction_list);
 props_per_build = 3;
 build_button_buffer = buffer_create(build_count*props_per_build*4, buffer_fixed, 4);
 
 for(var n = 0; n < build_count; n++)
 {
-	var next_build = ds_list_find_value(global.construction_list, n);
+	var next_build = ds_list_find_value(construction_list, n);
 	var next_sprite = scr_hud_sprite_for_build(next_build);
 	var next_image_index = scr_hud_image_for_build(next_build);
 	var next_state = button_state.none;

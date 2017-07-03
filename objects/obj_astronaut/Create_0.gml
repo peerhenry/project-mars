@@ -36,7 +36,7 @@ has_died = false;
 // 4. task
 assigned_object = noone;
 current_action = astronaut_action.idle;
-construction = 0;
+construction_instance = 0;
 
 // 5. combat
 target = noone;

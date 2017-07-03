@@ -1,3 +1,5 @@
+/*
+
 var debug_start_messages = global.debug_start_messages;
 if(debug_start_messages){
 	show_debug_message("");
@@ -116,3 +118,5 @@ for(var s = 0; s< ds_list_size(construction_list); s++)
 
 
 buffer_delete(global.big_bad_buffer);
+
+*/

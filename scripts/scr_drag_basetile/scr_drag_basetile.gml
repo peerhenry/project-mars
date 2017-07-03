@@ -1,3 +1,5 @@
+/*
+
 /// @param i
 /// @param j
 /// @param origin_i
@@ -146,3 +148,4 @@ for(var n = 0; n<tile_count; n++)
 		}
 	}
 }
+*/

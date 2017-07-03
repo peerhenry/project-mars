@@ -1,3 +1,5 @@
+/*
+
 /// @param i
 /// @param j
 /// @param origin_i
@@ -45,3 +47,4 @@ else	// vertical cable
 		scr_update_ghost_tile_with_overrides(arg_origin_i, tile_j, action_offset, action_count, arg_rotation, -1, 2,0);
 	}
 }
+*/

@@ -108,10 +108,10 @@ else
 	// constructing
 	if(current_action = astronaut_action.constructing)
 	{
-		construction[@construction_completion] = construction[construction_completion] + 100/(30*construction[construction_time]);
-		if(construction[@construction_completion] >= 100)
+		construction_instance[@construction_completion] = construction_instance[construction_completion] + 100/(30*construction_instance[construction_time]);
+		if(construction_instance[@construction_completion] >= 100)
 		{
-			scr_build_complete(construction);
+			scr_build_complete(construction_instance);
 		}
 	}
 }

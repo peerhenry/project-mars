@@ -1,43 +1,47 @@
 /// @param i
 /// @param j
-/// @param action_offset
-/// @param action_count
+/// @param arg_actions
 /// @param rotation
 /// @param sprite_override
 /// @param image_override
 /// @param angle_override
 var target_i = argument0;
 var target_j = argument1;
-var action_offset = argument2;
-var action_count = argument3;
-var arg_rotation = argument4;
-var arg_sprite_override = argument5;
-var arg_image_override = argument6;
-var arg_angle_override = argument7;
+var arg_actions = argument2;
+var arg_rotation = argument3;
+var arg_sprite_override = argument4;
+var arg_image_override = argument5;
+var arg_angle_override = argument6;
 
 var sprite = arg_sprite_override;
 
 var map_value = scr_map_buffer_get_cell(target_i, target_j);
 var map_i = (map_value & 1);
 var map_o = (map_value >> 1) & 127; // next 7 bytes store o
-	
+
 var new_build_cell = noone;
 var tile_is_valid = false;
 
-var build_action_buffer = global.build_action_buffer;
-var props_per_action = global.props_per_action;
-for(var m = 0; m < action_count; m++) // loop over build actions
+//var build_action_buffer = global.build_action_buffer;
+//var props_per_action = global.props_per_action;
+
+show_debug_message("action count: " + string(array_length_1d(arg_actions)));
+for(var m = 0; m < array_length_1d(arg_actions); m++) // loop over build actions
 {
-	// read from buffer
-	buffer_seek(build_action_buffer, buffer_seek_start, action_offset + m*props_per_action*4);
-	var validation_i = buffer_read(build_action_buffer, buffer_u32);
-	var validation_o = buffer_read(build_action_buffer, buffer_u32);
-	var b_image_index = buffer_read(build_action_buffer, buffer_s32);
-	var map_buffer_action = buffer_read(build_action_buffer, buffer_u32);
-	var b_layer = buffer_read(build_action_buffer, buffer_s32);
-	var object_to_add = buffer_read(build_action_buffer, buffer_s32);
-	var object_to_remove = buffer_read(build_action_buffer, buffer_s32);
-	var metal_cost = buffer_read(build_action_buffer, buffer_s32);
+	var next_action = arg_actions[m];
+	
+	if(!is_array(next_action)){
+		show_error("no array found in action index " + string(m), true);
+	}
+	
+	var validation_i = next_action[macro_validation_i];
+	var validation_o = next_action[macro_validation_o];
+	var b_image_index = 0;
+	var map_buffer_action = next_action[macro_map_buffer_action];
+	var b_layer = next_action[macro_layer];
+	var object_to_add = next_action[macro_object_to_add];
+	var object_to_remove = next_action[macro_object_to_remove];
+	var metal_cost = next_action[macro_metal_cost];
 	
 	// validate
 	var i_is_valid = scr_validate_i(validation_i, map_i);

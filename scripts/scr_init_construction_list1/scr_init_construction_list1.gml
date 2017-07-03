@@ -1,9 +1,15 @@
 
+/*
+
+var base_layer = layer_get_id("base");
+var basetile_layer = layer_get_id("basetiles");
+var base_tall_layer = layer_get_id("base_tall");
+
 // basetile
 
 
 
-/*scr_add_build_action(
+scr_add_build_action(
 	build.basetile,
 	0,	// di
 	0,	// dj

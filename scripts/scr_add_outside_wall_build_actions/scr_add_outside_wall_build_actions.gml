@@ -1,3 +1,5 @@
+/*
+
 var arg_d_i = argument0;
 var arg_d_j = argument1;
 var base_layer = layer_get_id("base");
@@ -43,3 +45,5 @@ scr_add_build_action(
 	noone,
 	0
 );
+
+*/

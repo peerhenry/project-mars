@@ -61,13 +61,13 @@ for(var n = 0; n < count; n++) // loop over tiles
 		// set instance to perform room logic on.
 		switch(build_type)
 		{
-			case build.basetile:	// prevents room logic on walls of the basetile.
+			case construction.basetile:	// prevents room logic on walls of the basetile.
 				if(object_index == obj_base_tile)
 				{
 					scr_room_logic(build_type, added_instance);
 				}
 				break;
-			case build.wall:
+			case construction.wall:
 				scr_room_logic(build_type, added_instance);
 				break;
 			default:

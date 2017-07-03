@@ -1,3 +1,5 @@
+/*
+
 /// @param construction
 /// @param di
 /// @param dj
@@ -69,3 +71,4 @@ buffer_write(big_bad_buffer, buffer_s32, arg_layer);
 buffer_write(big_bad_buffer, buffer_s32, arg_object_to_add);
 buffer_write(big_bad_buffer, buffer_s32, arg_object_to_remove);
 buffer_write(big_bad_buffer, buffer_s32, arg_metal_cost);
+*/
