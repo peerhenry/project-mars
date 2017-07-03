@@ -4,7 +4,7 @@ var cell_count = ds_stack_size(build_stack);
 var build_stack_copy = ds_stack_create();
 ds_stack_copy(build_stack_copy, build_stack);
 
-// loop vars
+// loop vars test
 var action_is_drawable = false;
 var sprite_for_ghost = noone;
 
