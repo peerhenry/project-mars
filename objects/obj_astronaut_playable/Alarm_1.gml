@@ -10,7 +10,7 @@ if(!is_walking && current_action = astronaut_action.idle)
 	{
 		var next_construction = ds_list_find_value(constr_queue, n);
 		var build_state = next_construction[construction_build_state];
-		if(build_state == build_state.ready)
+		if(build_state == construction_state.ready)
 		{
 			var picked_up = scr_try_to_pick_up_construction(id, next_construction);
 			if(picked_up) break;

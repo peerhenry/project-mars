@@ -3,7 +3,7 @@ var arg_construction = argument0;
 
 var build_type = arg_construction[construction_build_type];
 arg_construction[@construction_completion] = 100; // set completion to 100%
-arg_construction[@construction_build_state] = build_state.done;
+arg_construction[@construction_build_state] = construction_state.done;
 
 var construction_cells_array = arg_construction[construction_cells];
 var count = array_length_1d(construction_cells_array);
@@ -61,13 +61,13 @@ for(var n = 0; n < count; n++) // loop over tiles
 		// set instance to perform room logic on.
 		switch(build_type)
 		{
-			case construction.basetile:	// prevents room logic on walls of the basetile.
+			case macro_basetile:	// prevents room logic on walls of the basetile.
 				if(object_index == obj_base_tile)
 				{
 					scr_room_logic(build_type, added_instance);
 				}
 				break;
-			case construction.wall:
+			case macro_wall:
 				scr_room_logic(build_type, added_instance);
 				break;
 			default:
@@ -87,7 +87,7 @@ var index = ds_list_find_index(construction_queue, arg_construction);
 ds_list_delete(construction_queue, index);
 
 // room logic
-if(build_type != build.basetile && build_type != build.wall) scr_room_logic(build_type, room_logic_instance);
+if(build_type != macro_basetile && build_type != macro_wall) scr_room_logic(build_type, room_logic_instance);
 
 // stop astronaut
 var astronaut = arg_construction[construction_astronaut];

@@ -75,7 +75,7 @@ if(cell_count > 0)
 	new_construction[construction_astronaut] = noone; // astronaut assigned to perform the construction
 	new_construction[construction_cells] = construction_cell_array;
 	new_construction[construction_build_type] = global.construct;
-	new_construction[construction_build_state] = build_state.ready; // ready to be picked up
+	new_construction[construction_build_state] = construction_state.ready; // ready to be picked up
 	new_construction[construction_completion] = 0; // start out at 0% complete
 	ds_list_add(global.construction_queue, new_construction);
 	scr_recalculate_paths();

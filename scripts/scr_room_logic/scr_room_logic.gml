@@ -12,16 +12,16 @@ with(new_instance){
 }
 
 switch(construct_type){
-	case construction.basetile:
+	case macro_basetile:
 		scr_room_logic_basetile(target_x, target_y);
 		break;
-	case construction.wall:
+	case macro_wall:
 		scr_room_remove_tile_and_part(target_x, target_y);
 		break;
-	case construction.door:
+	case macro_door:
 		scr_room_logic_door(new_instance);
 		break;
-	case construction.hatch:
+	case macro_hatch:
 		scr_room_logic_hatch(new_instance);
 		break;
 }

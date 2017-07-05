@@ -6,7 +6,7 @@ global.debug_start_messages = false;
 global.debug_gameplay_messages = true;
 
 // # constructions
-scr_initialize_constructions();
+init_constructions();
 
 // used for adjacency numbers
 #macro east_number 1

@@ -30,10 +30,6 @@ for(var m = 0; m < array_length_1d(arg_actions); m++) // loop over build actions
 {
 	var next_action = arg_actions[m];
 	
-	if(!is_array(next_action)){
-		show_error("no array found in action index " + string(m), true);
-	}
-	
 	var validation_i = next_action[macro_validation_i];
 	var validation_o = next_action[macro_validation_o];
 	var b_image_index = 0;

@@ -22,16 +22,16 @@ var arg_rotation = argument9;
 
 switch(arg_build)
 {
-	case construction.wall:
+	case macro_wall:
 		scr_drag_wall(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8, argument9);
 		break;
-	case construction.basetile:
+	case macro_basetile:
 		scr_drag_basetile(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8, argument9);
 		break;
-	case construction.pipe:
+	case macro_pipe:
 		scr_drag_pipe(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8, argument9);
 		break;
-	case construction.cable:
+	case macro_cable:
 		scr_drag_cable(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8, argument9);
 		break;
 }

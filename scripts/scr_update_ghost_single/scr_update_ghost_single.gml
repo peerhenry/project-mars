@@ -1,19 +1,16 @@
 var arg_i = argument0;
 var arg_j = argument1;
-var arg_build = argument2;
+var arg_construction_id = argument2;
 var arg_rotation = argument3;
 
-var active_construction = ds_map_find_value(global.construction_map, arg_build);
+var active_construction = ds_map_find_value(global.construction_map, arg_construction_id);
 var build_tile_keys = active_construction[macro_build_tile_keys];
 
 if(!is_array(build_tile_keys)){
 	show_error("build_tile_keys is not an array!", true);
 }
 
-//var tile_count = ds_map_find_value(global.build_tile_counts, arg_build);
-//var tile_offset = ds_map_find_value(global.build_tile_offsets, arg_build);
-//var build_tile_buffer = global.build_tile_buffer;
-
+var build_coords;
 
 var valid_tile_count = 0;
 // loop over build tiles
@@ -27,11 +24,6 @@ for(var n = 0; n < array_length_1d(build_tile_keys); n++)
 	
 	var di = next_key >> 16;
 	var dj = next_key & 2047;
-	
-	/*var di = buffer_read(build_tile_buffer, buffer_s32);
-	var dj = buffer_read(build_tile_buffer, buffer_s32);
-	var action_offset = buffer_read(build_tile_buffer, buffer_u32);
-	var action_count = buffer_read(build_tile_buffer, buffer_u32);*/
 	
 	var rot_i = di;
 	var rot_j = dj;
@@ -55,7 +47,7 @@ for(var n = 0; n < array_length_1d(build_tile_keys); n++)
 	var target_j = arg_j + rot_j;
 	
 	// todo: refactor to use the surrounder
-	if(arg_build == construction.basetile && (di != 0 || dj != 0)) // wall for basetile
+	/*if(arg_construction_id == construction.basetile && (di != 0 || dj != 0)) // wall for basetile
 	{
 		var sprite = spr_wall_straight;
 		var angle = 0;
@@ -88,25 +80,27 @@ for(var n = 0; n < array_length_1d(build_tile_keys); n++)
 	{
 		var tile_is_valid = scr_update_ghost_tile(target_i, target_j, actions_array, arg_rotation);
 		if(tile_is_valid) valid_tile_count++;
+	}*/
+	
+	var tile_is_valid = scr_update_ghost_tile(target_i, target_j, actions_array, arg_rotation);
+	if(tile_is_valid) {
+		valid_tile_count++;
 	}
 }
 
-// auto rotate door or hatch
-if(arg_build == construction.hatch)
-{
-	if(valid_tile_count == 3 && !global.flip_was_checked)
-	{
-		scr_increment_build_rotation(2);
-		global.flip_was_checked = true;
-	}
-	else if(valid_tile_count == 1 && !global.rotated_was_checked)
-	{
-		scr_increment_build_rotation(1);
-		global.rotated_was_checked = true;
-	}
+// surrounder actions; assumed to always be wall
+var surround_actions = active_construction[macro_surround_actions];
+if(is_array(surround_actions)){
+	
+	scr_update_ghost_tile_with_overrides(arg_i - 1,	arg_j - 1,	surround_actions, 0, spr_wall_edge,		-1, 90);
+	scr_update_ghost_tile_with_overrides(arg_i,		arg_j - 1,	surround_actions, 0, spr_wall_straight, -1, -1);
+	scr_update_ghost_tile_with_overrides(arg_i + 1,	arg_j - 1,	surround_actions, 0, spr_wall_edge,		-1, -1);
+	scr_update_ghost_tile_with_overrides(arg_i - 1,	arg_j,		surround_actions, 0, spr_wall_straight, -1, 90);
+	scr_update_ghost_tile_with_overrides(arg_i + 1,	arg_j,		surround_actions, 0, spr_wall_straight, -1, 90);
+	scr_update_ghost_tile_with_overrides(arg_i - 1,	arg_j + 1,	surround_actions, 0, spr_wall_edge,		-1, 180);
+	scr_update_ghost_tile_with_overrides(arg_i,		arg_j + 1,	surround_actions, 0, spr_wall_straight, -1, -1);
+	scr_update_ghost_tile_with_overrides(arg_i + 1,	arg_j + 1,	surround_actions, 0, spr_wall_edge,		-1, 270);
+	
 }
-else if(arg_build == construction.door && valid_tile_count == 1 && !global.rotated_was_checked)
-{
-	scr_increment_build_rotation(1);
-	global.rotated_was_checked = true;
-}
+
+// auto rotate door or hatch was here
