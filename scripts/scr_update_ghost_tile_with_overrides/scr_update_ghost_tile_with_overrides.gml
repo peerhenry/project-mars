@@ -22,9 +22,6 @@ var map_o = (map_value >> 1) & 127; // next 7 bytes store o
 var new_build_cell = noone;
 var tile_is_valid = false;
 
-//var build_action_buffer = global.build_action_buffer;
-//var props_per_action = global.props_per_action;
-
 show_debug_message("action count: " + string(array_length_1d(arg_actions)));
 for(var m = 0; m < array_length_1d(arg_actions); m++) // loop over build actions
 {
