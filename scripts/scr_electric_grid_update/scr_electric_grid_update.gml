@@ -50,5 +50,10 @@ else // low power
 			next_consumer.image_index = 0;
 			next_consumer.image_speed = 0;
 		}
+		
+		if(next_consumer.object_index == obj_sensor)
+		{
+			next_consumer.sprite_index = spr_sensor;
+		}
 	}
 }

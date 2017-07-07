@@ -29,81 +29,60 @@ if(construction[macro_dragging] == dragging.rectangular)
 	// rectangular
 
 	// #region: set rectangle loop variables
-	var next_i = arg_origin_i;
-	var next_j = arg_origin_j;
-	
-	var i_increment = 1;
-	var i_count = arg_i - arg_origin_i;
-	var i_left = arg_origin_i - 1;
-	var i_right = arg_i + 1;
-	
+	var i_left = arg_origin_i;
+	var i_right = arg_i;
 	if(arg_i < arg_origin_i)
 	{
-		i_increment = -1;
-		i_count = arg_origin_i - arg_i;
-		i_left = arg_i - 1;
-		i_right = arg_origin_i + 1;
+		i_left = arg_i;
+		i_right = arg_origin_i;
 	}
 	
-	var j_increment = 1;
-	var j_count = arg_j - arg_origin_j;
-	var j_top = arg_j + 1;
-	var j_bottom = arg_origin_j - 1;
-		
+	var j_top = arg_origin_j;
+	var j_bottom = arg_j;
 	if(arg_j < arg_origin_j)
 	{
-		j_increment = -1;
-		j_count = arg_origin_j - arg_j;
-		j_top = arg_origin_j + 1 ;
-		j_bottom = arg_j - 1;
+		j_top = arg_j;
+		j_bottom = arg_origin_j;
 	}
 	// #end region: set rectangle loop variables
 	
-	for(var ni = 0; ni <= i_count; ni++)
+	for(var ni = i_left; ni <= i_right; ni++)
 	{
-		next_j = arg_origin_j;
-		for(var nj = 0; nj <= j_count; nj++)
+		for(var nj = j_top; nj <= j_bottom; nj++)
 		{
-			scr_update_ghost_tile_with_overrides(next_i, next_j, actions, -1, -1, 0);
-			next_j = next_j + j_increment;
+			scr_update_ghost_tile_with_overrides(ni, nj, actions, -1, -1, 0);
 		}
-		next_i = next_i + i_increment;
 	}
 	
 	// surrounder
 	var surround_actions = construction[macro_surround_actions];
 	if(is_array(surround_actions))
-	{
-		var next_i = arg_origin_i;
-		var next_j = arg_origin_j;
-		
+	{	
 		// 4 corners
 		scr_update_ghost_tile_with_overrides(
-			arg_origin_i - 1, arg_origin_j - 1, 
+			i_left-1, j_top-1, 
 			surround_actions, spr_wall_edge, 0, 90);
 		scr_update_ghost_tile_with_overrides(
-			arg_origin_i + i_count + 1, arg_origin_j - 1,  
+			i_right+1, j_top-1, 
 			surround_actions, spr_wall_edge, 0, 0);
 		scr_update_ghost_tile_with_overrides(
-			arg_origin_i - 1, arg_origin_j + j_count + 1, 
+			i_left-1, j_bottom+1,
 			surround_actions, spr_wall_edge, 0, 180);
 		scr_update_ghost_tile_with_overrides(
-			arg_origin_i + i_count + 1, arg_origin_j + j_count + 1, 
+			i_right+1, j_bottom+1,
 			surround_actions, spr_wall_edge, 0, 270);
 		
 		// sides
-		for(var ni = 0; ni <= i_count; ni++)
+		for(var ni = i_left; ni <= i_right; ni++)
 		{
-			scr_update_ghost_tile_with_overrides(next_i, arg_origin_j-1, surround_actions, spr_wall_straight, 0, 0);
-			scr_update_ghost_tile_with_overrides(next_i, arg_origin_j + j_count + 1, surround_actions, spr_wall_straight, 0, 0);
-			next_i = next_i + i_increment;
+			scr_update_ghost_tile_with_overrides(ni, j_top-1, surround_actions, spr_wall_straight, 0, 0);
+			scr_update_ghost_tile_with_overrides(ni, j_bottom+1, surround_actions, spr_wall_straight, 0, 0);
 		}
 	
-		for(var nj = 0; nj <= j_count; nj++)
+		for(var nj = j_top; nj <= j_bottom; nj++)
 		{
-			scr_update_ghost_tile_with_overrides(arg_origin_i - 1, next_j, surround_actions, spr_wall_straight, 0, 90);
-			scr_update_ghost_tile_with_overrides(arg_origin_i + i_count + 1, next_j, surround_actions, spr_wall_straight, 0, 90);
-			next_j = next_j + j_increment;
+			scr_update_ghost_tile_with_overrides(i_left-1, nj, surround_actions, spr_wall_straight, 0, 90);
+			scr_update_ghost_tile_with_overrides(i_right+1, nj, surround_actions, spr_wall_straight, 0, 90);
 		}
 	}
 }

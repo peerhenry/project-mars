@@ -9,4 +9,7 @@ switch(arg_consumer.object_index)
 			arg_consumer.image_speed = 1;
 		}
 		break;
+	case obj_sensor:
+		arg_consumer.sprite_index = spr_sensor_on;
+		break;
 }
