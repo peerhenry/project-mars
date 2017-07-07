@@ -1,0 +1,1 @@
+return init_new_draw_params(-1, -1, 0);

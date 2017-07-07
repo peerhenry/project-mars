@@ -11,7 +11,7 @@ if(arg_instance.object_index == obj_suit_closet)
 		var rotation = image_angle div 90;
 		image_angle = 0;
 		image_index += rotation;
-		if(arg_build == build.suit_closet_empty)
+		if(arg_build == macro_suit_closet_empty)
 		{
 			holds_suit = false;
 		}

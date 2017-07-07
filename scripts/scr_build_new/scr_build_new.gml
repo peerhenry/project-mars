@@ -63,9 +63,8 @@ for(var n = 0; n < cell_count; n++)
 	var index = (cell_count - 1 - n);
 	construction_cell_array[index] = new_construction_cell;
 	
-	// 4. occupy navgrid and tell map buffer the cell is under construction
+	// 4. occupy navgrid
 	scr_navgrid_occupy(cell_i, cell_j); // all cells under construction must block the navgrid.
-	scr_execute_map_buffer_action(cell_i, cell_j, map_buffer_action.under_construction);
 }
 
 if(cell_count > 0)

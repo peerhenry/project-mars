@@ -1,8 +1,5 @@
 
-// to be used later...
-
-
-
+// blast from the past:
 
 // construction instance properties
 #macro construction_build_state 0
@@ -11,15 +8,6 @@
 #macro construction_cells 3
 #macro construction_astronaut 4
 #macro construction_time 5
-
-// action types
-#macro action_type_validation_and_object 0		// validation means an object is required at the tile
-#macro action_type_negation_and_object 1		// negation means an object is required not to be at given tile
-#macro action_type_validation 2
-#macro action_type_negation 3
-#macro action_type_replacement 4
-
-// old from here
 
 global.ghost_previous_i = 0; // to check if ghost hovers over a new tile; scr_update_ghost
 global.ghost_previous_j = 0;

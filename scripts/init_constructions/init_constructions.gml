@@ -4,4 +4,3 @@ init_construction_macros();
 init_construction_enums();
 init_construction_globals();
 init_constructions_create_map();
-init_set_active_constructions();

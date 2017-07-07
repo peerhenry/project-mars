@@ -36,10 +36,11 @@ enum build_validation_i
 enum build_validation_o
 {
 	vacant,
-	unoccupied,
 	wall_like,
 	any,
 	wall,
+	cable,
+	pipe,
 	for_cable,
 	for_pipe
 }
@@ -48,12 +49,10 @@ enum map_buffer_action
 {
 	nothing,
 	clear,
-	reserve,
 	occupy,
 	wall_like,
 	wall,
 	inside,
-	under_construction,
 	cable,
 	pipe
 }

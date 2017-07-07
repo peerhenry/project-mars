@@ -20,10 +20,6 @@ switch(arg_action)
 		break;
 	case map_buffer_action.nothing:
 		break;
-	case map_buffer_action.reserve:
-		var new_value = (map_r << 8) + (map_value_reserved << 1) + map_i;
-		scr_map_buffer_set_cell(arg_i, arg_j, new_value);
-		break;
 	case map_buffer_action.occupy:
 		var new_value = (map_r << 8) + (map_value_occupied << 1) + map_i;
 		scr_map_buffer_set_cell(arg_i, arg_j, new_value);
@@ -38,10 +34,6 @@ switch(arg_action)
 		break;
 	case map_buffer_action.inside:
 		var new_value = (map_r << 8) + (map_value_vacant << 1) + 1;
-		scr_map_buffer_set_cell(arg_i, arg_j, new_value);
-		break;
-	case map_buffer_action.under_construction:
-		var new_value = (map_r << 8) + (map_value_under_construction << 1) + map_i;
 		scr_map_buffer_set_cell(arg_i, arg_j, new_value);
 		break;
 	case map_buffer_action.cable:

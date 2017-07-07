@@ -30,7 +30,7 @@ for(var n = 0; n < cell_count; n++)
 	if(map_buffer_action == map_buffer_action.nothing) continue;
 	
 	// determine if cell should be drawn	
-	if(map_buffer_action != map_buffer_action.nothing && map_buffer_action != map_buffer_action.reserve)	// these actions will not be drawn
+	if(map_buffer_action != map_buffer_action.nothing)	// these actions will not be drawn
 	{
 		action_is_drawable = true;
 		if(object_to_add != noone)

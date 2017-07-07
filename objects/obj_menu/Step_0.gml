@@ -38,6 +38,8 @@ else
 				var lid = layer_get_id("layer_fade");
 				instance_create_layer(0, 0, lid, obj_fade);
 				break;
+			case menu_index.test:
+				room_goto(room_tests);
 			case menu_index.quit:
 				game_end();
 				break;

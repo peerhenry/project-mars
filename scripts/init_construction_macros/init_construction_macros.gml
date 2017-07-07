@@ -31,16 +31,19 @@
 #macro macro_cable 10
 #macro macro_pipe 11
 #macro macro_bed 12
+#macro macro_pump 13
+#macro macro_water_reservoir 14
+#macro macro_water_purifier 15
 
 // construction properties
 #macro macro_id 0
 #macro macro_name 1
 #macro macro_hud_sprite 3
-#macro macro_build_tile_map 4
-#macro macro_build_tile_keys 5
-#macro macro_rotation_behavior 6
-#macro macro_dragging 7
-#macro macro_drag_actions 8
+#macro macro_build_tiles 4
+#macro macro_rotation_params 5
+#macro macro_dragging 6
+#macro macro_drag_actions 7
+#macro macro_drag_params 8
 #macro macro_surround_actions 9
 
 // build action properties
@@ -82,3 +85,27 @@
 #macro c_cell_object_to_remove 3
 #macro c_cell_map_buffer_action 4
 #macro c_cell_layer 5
+
+// props for build tiles
+#macro macro_build_tile_di 0
+#macro macro_build_tile_dj 1
+#macro macro_build_tile_actions 2
+
+// linear drag parameters
+#macro macro_drag_horizontal 0
+#macro macro_drag_vertical 1
+#macro macro_drag_top 2 
+#macro macro_drag_bottom 3
+#macro macro_drag_left 4 
+#macro macro_drag_right 5
+
+// rotation parameters
+#macro macro_rotation_0 0
+#macro macro_rotation_1 1
+#macro macro_rotation_2 2
+#macro macro_rotation_3 3
+
+// drawing paramaters
+#macro macro_sprite 0
+#macro macro_image 1
+#macro macro_angle 2

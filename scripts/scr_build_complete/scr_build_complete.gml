@@ -41,7 +41,6 @@ for(var n = 0; n < count; n++) // loop over tiles
 	}
 	if(
 		map_buffer_action == map_buffer_action.inside
-		|| map_buffer_action == map_buffer_action.reserve
 		|| map_buffer_action == map_buffer_action.clear
 		|| map_buffer_action == map_buffer_action.cable
 		|| map_buffer_action == map_buffer_action.pipe

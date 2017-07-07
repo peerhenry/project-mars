@@ -4,6 +4,7 @@ enum menu_index{
 	tutorial,
 	options,
 	debug,
+	test,
 	quit
 }
 
@@ -15,6 +16,7 @@ menu[menu_index.new_game] = "New Game";
 menu[menu_index.tutorial] = "Tutorial";
 menu[menu_index.options] = "Options";
 menu[menu_index.debug] = "Debug";
+menu[menu_index.test] = "Test";
 menu[menu_index.quit] = "Quit";
 menu_index_max = array_length_1d(menu) - 1;
 

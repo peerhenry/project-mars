@@ -23,5 +23,5 @@ new_action[macro_map_buffer_action] = arg_map_buffer_action;
 new_action[macro_validation_o] = arg_validation_o;
 new_action[macro_validation_i] = arg_validation_i;
 
-global.active_actions_array[@global.next_action_index] = new_action;
-global.next_action_index++;
+global.init_active_actions[@global.init_next_action_index] = new_action;
+global.init_next_action_index++;

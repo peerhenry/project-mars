@@ -25,11 +25,6 @@ if(keyboard_check_pressed(ord("T")))
 	scr_run_tests();
 }
 
-if(keyboard_check_pressed(ord("B")))
-{
-	scr_debug_buffers();
-}
-
 if(keyboard_check_pressed(ord("N")))
 {
 	if(!global.music_is_playing)
