@@ -1,5 +1,7 @@
 /// @description Update astronaut
 
+energy -= 0.02;
+
 // 1. kill if health reached zero
 if(has_died) return;
 else if(astronaut_health <= 0)

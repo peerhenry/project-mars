@@ -25,13 +25,14 @@ sprite_suitless_right = spr_character_suitless_right;
 sprite_suitless_up = spr_character_suitless_up;
 image_speed = 0;
 
-// 3. health and oxygen
+// 3. astronaut props
 astronaut_health = 100;
 suit_oxygen = 100;
 wears_suit = true;
 is_outside = true;
 is_moving_through_gate = false;
 has_died = false;
+energy = 100;
 
 // 4. task
 assigned_object = noone;

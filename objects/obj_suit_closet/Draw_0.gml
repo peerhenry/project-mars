@@ -1,4 +1,3 @@
-
 // hardcoded constructable logic
 if(under_construction)
 {
