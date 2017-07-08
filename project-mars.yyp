@@ -567,6 +567,14 @@
             }
         },
         {
+            "Key": "31e6f3cf-7787-4feb-9d78-f8305ee94c00",
+            "Value": {
+                "id": "f38cd256-0572-4a0b-bba6-e2d6f5d24c83",
+                "resourcePath": "objects\\obj_sensor_range_draw\\obj_sensor_range_draw.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "31eb1364-6f6d-45a2-899d-ab97823b648c",
             "Value": {
                 "id": "6b618402-0262-4044-9d0f-e082093d0640",
