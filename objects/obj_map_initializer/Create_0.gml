@@ -1,8 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
-
 // Navigation grid
-show_grid = false;
 var cell_size = 32;
 var half_cell_size = cell_size/2;
 global.horizontal_cells = floor(room_width/cell_size)-1;

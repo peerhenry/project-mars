@@ -32,11 +32,13 @@ else
 				break;
 			case menu_index.tutorial:
 				break;
-			case menu_index.options:
+			case menu_index.settings:
+				room_goto(room_settings);
 				break;
 			case menu_index.debug:
 				var lid = layer_get_id("layer_fade");
 				instance_create_layer(0, 0, lid, obj_fade);
+				obj_fade.target_room = room_map;
 				break;
 			case menu_index.test:
 				room_goto(room_tests);

@@ -36,7 +36,7 @@ if(el_assignable != noone)
 			{
 				if(current_action = astronaut_action.constructing || current_action = astronaut_action.moving_to_construction)
 				{
-					construction[@construction_build_state] = build_state.ready;
+					construction_instance[@construction_build_state] = construction_state.ready;
 				}
 				current_action = astronaut_action.executing_assignment;
 			}
@@ -53,7 +53,7 @@ else if( !position_meeting(mouse_x, mouse_y, obj_gate) ){
 			{
 				if(current_action = astronaut_action.constructing || current_action = astronaut_action.moving_to_construction)
 				{
-					construction[@construction_build_state] = build_state.ready;
+					construction_instance[@construction_build_state] = construction_state.ready;
 				}
 				current_action = astronaut_action.moving_by_command;
 			}

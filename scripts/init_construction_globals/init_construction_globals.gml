@@ -1,14 +1,6 @@
 
 // blast from the past:
 
-// construction instance properties
-#macro construction_build_state 0
-#macro construction_completion 1
-#macro construction_build_type 2
-#macro construction_cells 3
-#macro construction_astronaut 4
-#macro construction_time 5
-
 global.ghost_previous_i = 0; // to check if ghost hovers over a new tile; scr_update_ghost
 global.ghost_previous_j = 0;
 

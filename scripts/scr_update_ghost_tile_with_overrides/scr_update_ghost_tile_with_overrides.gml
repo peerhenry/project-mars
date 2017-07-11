@@ -57,6 +57,10 @@ for(var m = 0; m < array_length_1d(arg_actions); m++) // loop over build actions
 				sprite = object_get_sprite(object_to_add);
 			}
 			
+			var required_object = noone;
+			if(validation_i == build_validation_i.inside) required_object = obj_base_tile;
+			if(validation_o == build_validation_o.wall) required_object = obj_wall;
+			
 			var new_build_cell = scr_create_build_cell(
 				target_i, target_j,
 				map_buffer_action,
@@ -66,7 +70,8 @@ for(var m = 0; m < array_length_1d(arg_actions); m++) // loop over build actions
 				metal_cost,
 				sprite,
 				bc_image,
-				angle
+				angle,
+				required_object
 			);
 			break;
 		}

@@ -2,7 +2,7 @@ alpha = clamp(alpha + (fade*0.1), 0, 1);
 
 if(alpha == 1)
 {
-	room_goto_next();
+	room_goto(target_room);
 	fade = -1;
 	alpha = clamp(alpha + (fade*0.1), 0, 1);
 }

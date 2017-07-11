@@ -3,10 +3,13 @@ path = path_add();
 is_walking = false;
 prev_x = x;
 prev_y = y;
-previous_cell_was_free = true;
 occ_i = (x - 16) div 32;
 occ_j = (y - 16) div 32;
-mp_grid_add_cell(global.grid_map, occ_i, occ_j);
+prev_i = occ_i;
+prev_j = occ_j;
+dest_i = occ_i;
+dest_j = occ_j;
+mp_grid_add_cell(scr_get_nav_grid(), occ_i, occ_j);
 
 up = 1;
 down = 2;

@@ -18,7 +18,6 @@ for(var n = 0; n < count; n++) // loop over tiles
 	var j = next_cell[c_cell_j];
 	var added_instance = next_cell[c_cell_new_instance];
 	var object_to_remove = next_cell[c_cell_object_to_remove];
-	var map_buffer_action = next_cell[c_cell_map_buffer_action];
 	var target_layer = next_cell[c_cell_layer];
 	var cell_x = scr_gi_to_rc(i);
 	var cell_y = scr_gi_to_rc(j);
@@ -28,26 +27,6 @@ for(var n = 0; n < count; n++) // loop over tiles
 	{
 		var instance = instance_position(cell_x, cell_y, object_to_remove);
 		with(instance) instance_destroy();
-	}
-	
-	// 3. set map buffer
-	scr_execute_map_buffer_action(i, j, map_buffer_action);
-	
-	// 4. set navgrid
-	var instance_is_gate = false;
-	with(added_instance)
-	{
-		if(object_index == obj_door || object_index == obj_hatch) instance_is_gate = true;
-	}
-	if(
-		map_buffer_action == map_buffer_action.inside
-		|| map_buffer_action == map_buffer_action.clear
-		|| map_buffer_action == map_buffer_action.cable
-		|| map_buffer_action == map_buffer_action.pipe
-		|| instance_is_gate
-	)
-	{
-		scr_navgrid_clear_cell(i, j);
 	}
 	
 	// 5. finalize addad object

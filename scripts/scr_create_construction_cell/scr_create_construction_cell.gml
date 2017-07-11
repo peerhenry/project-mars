@@ -8,7 +8,6 @@ var arg_remove_object = argument5;
 var new_construction_cell;
 // highest array index goes first
 new_construction_cell[c_cell_layer] = arg_layer;
-new_construction_cell[c_cell_map_buffer_action] = arg_action;
 new_construction_cell[c_cell_i] = arg_i ;
 new_construction_cell[c_cell_j] = arg_j;
 new_construction_cell[c_cell_new_instance] = arg_new_instance;

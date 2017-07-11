@@ -141,6 +141,12 @@ init_construction_set_rotation_parameter(macro_rotation_1, macro_sprite, spr_bed
 init_construction_set_rotation_parameter(macro_rotation_2, macro_sprite, spr_bed_vertical_2);
 init_construction_set_rotation_parameter(macro_rotation_3, macro_sprite, spr_bed_horizontal_2);
 
+// # water reservoir
+init_construction_new_single(macro_water_reservoir, "water_reservoir", spr_water_reservoir, 1);
+init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_water_reservoir, noone, 100);
+init_construction_set_dragging(dragging.rectangular, 3);
+init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_water_reservoir, noone, 100);
+
 // active constructions:
 var active_constructions = ds_list_create();
 global.active_constructions = active_constructions;
@@ -158,3 +164,4 @@ ds_list_add(active_constructions, macro_pump);
 ds_list_add(active_constructions, macro_cable);
 ds_list_add(active_constructions, macro_pipe);
 ds_list_add(active_constructions, macro_bed);
+ds_list_add(active_constructions, macro_water_reservoir);

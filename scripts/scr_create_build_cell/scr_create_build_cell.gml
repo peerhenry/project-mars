@@ -8,8 +8,10 @@ var arg_cost = argument6;
 var arg_sprite_override = argument7;
 var arg_image_index = argument8;
 var arg_angle_override = argument9;
+var arg_required_object = argument10;
 
 var new_build_cell;
+new_build_cell[build_cell_required_object] = arg_required_object;
 new_build_cell[build_cell_object_angle] = arg_angle_override; // highest array index first
 new_build_cell[build_cell_cost] = arg_cost;
 new_build_cell[build_cell_map_buffer_action] = arg_map_buffer_action;

@@ -2,8 +2,8 @@ var le_room = argument0;
 var force_new_room = argument1; // will force creation of a new room even if room is connected
 var out_room = le_room;
 
-if(ds_list_size(le_room.tiles) == 0){
-	// there is nothing to part => destroy the room
+if(ds_list_size(le_room.tiles) == 0) // if there is nothing to part => destroy the room
+{
 	instance_destroy(le_room);
 	return noone;
 }

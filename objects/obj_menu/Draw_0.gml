@@ -8,7 +8,7 @@ draw_set_color(c_white);
 var m;
 for(m = 0; m <= menu_index_max; m++)
 {
-	if(m == menu_index.debug || m == menu_index.quit)
+	if(m == menu_index.debug || m == menu_index.quit || m == menu_index.settings)
 	{
 		draw_set_color(c_white);
 	}

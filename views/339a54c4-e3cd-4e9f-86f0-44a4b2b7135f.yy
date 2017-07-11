@@ -6,7 +6,8 @@
     "children": [
         "aa0a734f-cf6f-49b6-a0c8-e52f496377ad",
         "dd2dc63e-8f11-4bd7-bd5f-945f228fcde4",
-        "4d62cafc-f8b8-4da3-b98d-b19e548034df"
+        "4d62cafc-f8b8-4da3-b98d-b19e548034df",
+        "efe612f3-a627-4c3c-811b-8e2e9e9d43b0"
     ],
     "filterType": "GMObject",
     "folderName": "main_menu",

@@ -10,5 +10,6 @@ occ_i = scr_rc_to_gi(x);
 occ_j = scr_rc_to_gi(y);
 
 // constructable
+construction_instance = noone;
 under_construction = true;
 damage = 0;

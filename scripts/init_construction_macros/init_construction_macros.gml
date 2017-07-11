@@ -1,23 +1,4 @@
 // the different constructions
-/*enum construction
-{
-	basetile,			// carrier
-	wall,				// carrier
-	door,				// NA
-	hatch,				// NA
-	suit_closet,		// NA
-	suit_closet_empty,	// NA
-	sensor,				// consumer
-	drill,				// consumer
-	pump,				// consumer
-	battery,			// source
-	oxygen_tank,		// NA
-	bed,				// NA
-	operating_table,	// consumer
-	cable,				// carrier
-	pipe,
-	airlock_pump
-}//*/
 #macro macro_basetile 0
 #macro macro_wall 1
 #macro macro_door 2
@@ -77,14 +58,14 @@
 #macro build_cell_object_sprite 7
 #macro build_cell_object_image 8
 #macro build_cell_object_angle 9
+#macro build_cell_required_object 10
 
 // properties for construction cells
 #macro c_cell_i 0
 #macro c_cell_j 1
 #macro c_cell_new_instance 2
 #macro c_cell_object_to_remove 3
-#macro c_cell_map_buffer_action 4
-#macro c_cell_layer 5
+#macro c_cell_layer 4
 
 // props for build tiles
 #macro macro_build_tile_di 0
@@ -109,3 +90,12 @@
 #macro macro_sprite 0
 #macro macro_image 1
 #macro macro_angle 2
+
+// construction instance properties
+#macro construction_build_state 0
+#macro construction_completion 1
+#macro construction_build_type 2
+#macro construction_cells 3
+#macro construction_astronaut 4
+#macro construction_time 5
+#macro construction_prerequisite 6

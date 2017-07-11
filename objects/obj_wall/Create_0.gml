@@ -1,7 +1,10 @@
 event_inherited();
-i = scr_rc_to_gi(x);
-j = scr_rc_to_gi(y);
-mp_grid_add_cell( global.grid_map, i, j );
+scr_navgrid_occupy(occ_i, occ_j);
+
+show_debug_message("wall created!");
+var is_free = scr_navgrid_cell_is_free(occ_i, occ_j);
+show_debug_message("after creation, cell free at " + string(occ_i) + ", " + string(occ_j) + ": " + string(is_free));
+
 adjacentcy_numer = 0;
 
 electric_type = electric.carrier;

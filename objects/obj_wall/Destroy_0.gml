@@ -1,2 +1,6 @@
 event_inherited();
-mp_grid_clear_cell( global.grid_map, i, j );
+scr_navgrid_clear_cell( occ_i, occ_j );
+
+// DEBUG
+show_debug_message("WALL DESTROYED!!!");
+show_debug_message("WALL DESTROYED!!!");

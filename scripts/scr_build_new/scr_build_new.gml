@@ -10,6 +10,9 @@ var new_construction;
 var construction_cell_array;
 var build_time = 2; // minimum construction time is 2 seconds
 var build_time_per_cost = global.build_time_per_cost;
+var prerequisite = noone;
+
+var new_instances = ds_list_create();
 
 for(var n = 0; n < cell_count; n++)
 {
@@ -25,6 +28,7 @@ for(var n = 0; n < cell_count; n++)
 	var sprite = next_build_cell[build_cell_object_sprite];
 	var image = next_build_cell[build_cell_object_image];
 	var angle = next_build_cell[build_cell_object_angle];
+	var required_object = next_build_cell[build_cell_required_object];
 	
 	if(map_buffer_action == map_buffer_action.nothing) continue; // skip rest in loop scope this iteration
 	
@@ -39,6 +43,7 @@ for(var n = 0; n < cell_count; n++)
 		var target_x = scr_gi_to_rc(cell_i);
 		var target_y = scr_gi_to_rc(cell_j);
 		new_instance = instance_create_layer(target_x, target_y, add_layer, object_to_add);
+		ds_list_add(new_instances, new_instance);
 		with(new_instance)
 		{
 			if(angle >= 0) image_angle = angle;
@@ -56,6 +61,12 @@ for(var n = 0; n < cell_count; n++)
 			scr_post_creation_logic(global.construct, new_instance);
 			under_construction = true;
 		}
+		
+		if(required_object != noone)
+		{
+			var instance = instance_position(target_x, target_y, required_object);
+			if(instance > 0) prerequisite = instance.construction_instance;
+		}
 	}
 	
 	// 3. create construction cell
@@ -63,13 +74,21 @@ for(var n = 0; n < cell_count; n++)
 	var index = (cell_count - 1 - n);
 	construction_cell_array[index] = new_construction_cell;
 	
-	// 4. occupy navgrid
-	scr_navgrid_occupy(cell_i, cell_j); // all cells under construction must block the navgrid.
+	// NEW: execute map bugger action
+	scr_execute_map_buffer_action(cell_i, cell_j, map_buffer_action);
+	
+	// 4. occupy navgrid !! Not anymore bitch...
+	// scr_navgrid_occupy(cell_i, cell_j); // all cells under construction must block the navgrid.
+	
+	// DEBUG
+	var is_free = scr_navgrid_cell_is_free(cell_i, cell_j);
+	show_debug_message("cell free at " + string(cell_i) + ", " + string(cell_j) + ": " + string(is_free));
 }
 
 if(cell_count > 0)
 {
 	// 5. set construction props & add to construction queue
+	new_construction[construction_prerequisite] = prerequisite;
 	new_construction[construction_time] = build_time;
 	new_construction[construction_astronaut] = noone; // astronaut assigned to perform the construction
 	new_construction[construction_cells] = construction_cell_array;
@@ -79,3 +98,29 @@ if(cell_count > 0)
 	ds_list_add(global.construction_queue, new_construction);
 	scr_recalculate_paths();
 }
+
+// 6. set construction in all new instances
+var last_instance = noone;
+for(var n = 0; n < ds_list_size(new_instances); n++)
+{
+	var next_instance = ds_list_find_value(new_instances, n);
+	next_instance.construction_instance = new_construction;
+	
+	// DEBUG
+	last_instance = next_instance;
+	var is_free = scr_navgrid_cell_is_free(next_instance.occ_i, next_instance.occ_j);
+	show_debug_message("cell freedom after astronaut path recalculation: " + string(next_instance.occ_i) + ", " + string(next_instance.occ_j) + ": " + string(is_free));
+}
+ds_list_destroy(new_instances);
+
+if(last_instance)
+{
+	var is_free = scr_navgrid_cell_is_free(last_instance.occ_i, last_instance.occ_j);
+	show_debug_message("cell free after ds_list_destroy: " + string(last_instance.occ_i) + ", " + string(last_instance.occ_j) + ": " + string(is_free));
+}
+else
+{
+	show_debug_message("last instance was noone!");
+}
+show_debug_message("===");
+show_debug_message("===");

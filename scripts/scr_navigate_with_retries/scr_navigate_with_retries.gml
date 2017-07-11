@@ -18,6 +18,7 @@ var navigation_grid = scr_get_nav_grid();
 with(obj_astronaut)
 {
 	mp_grid_clear_cell(navigation_grid, occ_i, occ_j);
+	mp_grid_clear_cell(navigation_grid, dest_i, dest_j);
 }
 
 // astronauts without suits may not go through hatches
@@ -52,8 +53,8 @@ while ( !path_found && counter < max_loop )
 
 if(path_found)
 {
-	astronaut.occ_i = end_i;
-	astronaut.occ_j = end_j;
+	astronaut.dest_i = end_i;
+	astronaut.dest_j = end_j;
 	with(astronaut)	path_start(astronaut.path, astronaut.movement_speed, path_action_stop, false); // path, speed, end action, absolute
 }
 
@@ -61,6 +62,7 @@ if(path_found)
 with(obj_astronaut)
 {
 	mp_grid_add_cell(navigation_grid, occ_i, occ_j);
+	mp_grid_add_cell(navigation_grid, dest_i, dest_j);
 }
 
 // free hatches again for navigation
