@@ -29,6 +29,7 @@ sprite_suitless_up = spr_character_suitless_up;
 image_speed = 0;
 
 // 3. astronaut props
+name = "John McNeil";
 astronaut_health = 100;
 suit_oxygen = 100;
 wears_suit = true;
@@ -36,6 +37,7 @@ is_outside = true;
 is_moving_through_gate = false;
 has_died = false;
 energy = 100;
+food_level = 100;
 
 // 4. task
 assigned_object = noone;
@@ -43,7 +45,8 @@ current_action = astronaut_action.idle;
 construction_instance = 0;
 
 // 5. combat
-target = noone;
+target = noone;			// thing to pursue
+auto_target = noone;	// thing to auto attack when in range
 auto_attack = true;
 alarm[0] = 30*global.time_to_shoot + round(random_range(-5,5));
 enemy_object = noone;

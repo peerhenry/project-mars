@@ -1,30 +1,43 @@
 /// @description Shoot
 
-// 1. reset target
-target = noone;
+var can_shoot = false;
+var shootable = target;
 
-// 2. acquire target
-if(!is_walking)
+if(instance_exists(target))
 {
-	target = instance_nearest(x, y, enemy_object);
-	if(target != noone)
+	var dx = target.x - x;
+	var dy = target.y - y;
+	if((dx*dx + dy*dy) <= (global.shooting_range_squared*1024))
 	{
-		var dx = target.x - x;
-		var dy = target.y - y;
-		if((dx*dx + dy*dy) > (global.shooting_range_squared*1024))
+		can_shoot = true;
+		if(is_walking) scr_stop_moving(id);
+	}
+	else
+	{
+		scr_navigate(id, target.x, target.y);
+	}
+}
+else
+{
+	if(!is_walking && auto_target == noone)
+	{
+		auto_target = instance_nearest(x, y, enemy_object);
+		var dx = auto_target.x - x;
+		var dy = auto_target.y - y;
+		if((dx*dx + dy*dy) <= (global.shooting_range_squared*1024))
 		{
-			target = noone;
+			can_shoot = true;
 		}
 	}
 }
 
-// 3. shoot at target
-if(target != noone)
+// shoot at target
+if(can_shoot && instance_exists(shootable))
 {
-	var can_shoot = scr_shoot(id, target);
-	if(can_shoot)
+	var has_shot = scr_shoot(id, shootable);
+	if(has_shot)
 	{
-		if(current_action == astronaut_action.constructing || current_action == astronaut_action.moving_to_construction)
+		if(current_action == astronaut_action.constructing)
 		{
 			construction[@construction_build_state] = build_state.ready;
 		}

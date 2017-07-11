@@ -11,6 +11,7 @@ if(global.construct != noone) // BUILD MODE
 	{
 		click_x = mouse_x;
 		click_y = mouse_y;
+		scr_hide_all_panels();
 	}
 	
 	if(mouse_check_button(mb_left))
@@ -57,6 +58,7 @@ if(!is_dragging)
 		// set click origin for selection rectangle
 		click_x = mouse_x;
 		click_y = mouse_y;
+		scr_hide_all_panels();
 	}
 	
 		// LEFT DOWN

@@ -551,6 +551,14 @@
             }
         },
         {
+            "Key": "2eca1b5a-4c7e-4fcd-b8ec-3de69bd0ff61",
+            "Value": {
+                "id": "a9c9555e-6428-4e10-88a2-58d2c7774520",
+                "resourcePath": "scripts\\scr_command_assign\\scr_command_assign.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3061d0a2-8dbc-40d2-98f8-0719211c0e2e",
             "Value": {
                 "id": "dcf9070f-ba3f-4a1d-8b42-6fd9c75b9ab2",
@@ -975,6 +983,14 @@
             }
         },
         {
+            "Key": "4d076d45-848c-49fb-b65c-c92d7d62c7be",
+            "Value": {
+                "id": "d90ed97e-54a9-498b-8c0b-640634e3cd4a",
+                "resourcePath": "views\\4d076d45-848c-49fb-b65c-c92d7d62c7be.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "4d62cafc-f8b8-4da3-b98d-b19e548034df",
             "Value": {
                 "id": "3002393b-3be3-490b-818c-7229e381fb23",
@@ -995,6 +1011,14 @@
             "Value": {
                 "id": "382b6743-62ed-4579-9dba-73149774902f",
                 "resourcePath": "scripts\\scr_room_tile_decode_i\\scr_room_tile_decode_i.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "52475891-da48-4ebb-b4f1-7fa882ab9ace",
+            "Value": {
+                "id": "45b01272-2e59-41cc-bbfc-1309db1efd0f",
+                "resourcePath": "scripts\\scr_command_attack\\scr_command_attack.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1316,6 +1340,14 @@
                 "id": "a7a8ddc0-dd39-4b27-a520-151bcd2258e0",
                 "resourcePath": "sprites\\spr_char_mask_death\\spr_char_mask_death.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "7684a3a2-e481-4c96-8b10-88c8a83cf7bf",
+            "Value": {
+                "id": "663972b6-b6d9-4245-b392-529dec97ddb5",
+                "resourcePath": "scripts\\scr_command_move\\scr_command_move.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -2319,6 +2351,14 @@
             }
         },
         {
+            "Key": "c916e733-e52e-4a70-b4b1-b84ac717b609",
+            "Value": {
+                "id": "987f984f-b805-493e-9dcb-87abd70524b1",
+                "resourcePath": "scripts\\scr_hide_all_panels\\scr_hide_all_panels.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "cc98d028-7bdd-4680-85f3-c87a7baa481e",
             "Value": {
                 "id": "8e2f5490-4dc5-4175-83d8-386404bfb900",
@@ -2484,6 +2524,14 @@
                 "id": "d4b51d9d-c056-4513-9aca-64f951488d71",
                 "resourcePath": "sprites\\spr_bed_hud\\spr_bed_hud.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "dae051e9-e95b-4a48-b939-5c5e93a200e8",
+            "Value": {
+                "id": "d8074619-b4cc-40b3-a16c-def59da8cdb9",
+                "resourcePath": "views\\dae051e9-e95b-4a48-b939-5c5e93a200e8.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -3106,6 +3154,9 @@
         "4ae4e105-22be-4b00-b9b3-42d35028f628",
         "1f4c5c04-1d11-4f1e-8551-ec19c91bd504",
         "3c8c6e64-1eed-4afd-929f-9665430850c2",
+        "2eca1b5a-4c7e-4fcd-b8ec-3de69bd0ff61",
+        "7684a3a2-e481-4c96-8b10-88c8a83cf7bf",
+        "52475891-da48-4ebb-b4f1-7fa882ab9ace",
         "fb88d106-dfba-4c0a-9317-9da3a9171dab",
         "cddddafe-abf9-48e2-8027-d959cb42586e",
         "dd6f4c6a-3125-422d-8782-5b5f249b0485",
@@ -3126,6 +3177,7 @@
         "3c1316bb-f3c3-4cce-b524-6c53fafbae91",
         "d30a9bc2-5330-4051-8bc8-99b77833cb21",
         "7dff2f7e-5bb2-4269-89db-b18621cada95",
+        "c916e733-e52e-4a70-b4b1-b84ac717b609",
         "dbf4e913-3d01-437e-9e72-fe79239aa833",
         "5d9c43e9-61da-48ec-9290-d62111e0bbef",
         "1e3dbe4c-0873-4852-957d-59eef3e79f10",

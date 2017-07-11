@@ -71,6 +71,7 @@ enum astronaut_action // these are assigned to astronaut objects
 	idle,
 	moving_by_command,
 	moving_to_construction,
+	move_to_attack,
 	constructing,
 	executing_assignment,
 	in_combat

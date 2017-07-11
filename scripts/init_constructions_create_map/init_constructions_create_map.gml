@@ -142,9 +142,9 @@ init_construction_set_rotation_parameter(macro_rotation_2, macro_sprite, spr_bed
 init_construction_set_rotation_parameter(macro_rotation_3, macro_sprite, spr_bed_horizontal_2);
 
 // # water reservoir
-init_construction_new_single(macro_water_reservoir, "water_reservoir", spr_water_reservoir, 1);
+init_construction_new_single(macro_water_reservoir, "water reservoir", spr_water_reservoir, 1);
 init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_water_reservoir, noone, 100);
-init_construction_set_dragging(dragging.rectangular, 3);
+init_construction_set_dragging(dragging.rectangular, 1);
 init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_water_reservoir, noone, 100);
 
 // active constructions:
