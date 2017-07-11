@@ -26,6 +26,7 @@ if(show_details)
 	var av_x = tl_x + width - 16 - av_w;
 	var av_y = tl_y + 16
 	draw_rectangle(av_x, av_y, av_x + av_w, av_y + av_h, false);
+	draw_sprite(spr_avatar, 0, av_x, av_y);
 	
 	// text
 	draw_set_color(c_white);

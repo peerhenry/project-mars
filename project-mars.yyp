@@ -1863,6 +1863,14 @@
             }
         },
         {
+            "Key": "9f3f22cf-dc9d-4b71-beb2-01628ae6403e",
+            "Value": {
+                "id": "986f4029-434f-46e2-b0d6-d601257b48d1",
+                "resourcePath": "sprites\\spr_avatar\\spr_avatar.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "9f54ef9e-da42-4353-a8a7-9075153b3e35",
             "Value": {
                 "id": "a1946d19-da85-4423-8f78-27d2894d2456",
