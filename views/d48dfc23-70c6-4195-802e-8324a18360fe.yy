@@ -21,7 +21,8 @@
         "ccf436aa-a2b6-414e-94e4-d6e1f2ad6d81",
         "68a32749-7965-4381-b22b-fabd83f42c72",
         "b3480ba1-a346-46a4-a843-4295cf6874a8",
-        "456afd4c-d68c-410a-9ee9-feb5a1109721"
+        "456afd4c-d68c-410a-9ee9-feb5a1109721",
+        "d26032bd-01c6-487f-b49e-33bce308cc73"
     ],
     "filterType": "GMObject",
     "folderName": "base",

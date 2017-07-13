@@ -13,7 +13,8 @@
         "52ca2c1b-e45c-4c49-b2e1-db47b4d3c97f",
         "9678fe7a-bc0b-4378-b82e-2a55aa4a6798",
         "7dba5a90-07bb-4070-9807-c9522bbcfdf0",
-        "7b1b52aa-ec45-495e-9760-7056ed75a3e4"
+        "7b1b52aa-ec45-495e-9760-7056ed75a3e4",
+        "67e20d31-d2ca-43d0-b33f-d260554b5e3a"
     ],
     "filterType": "GMSprite",
     "folderName": "GAME",

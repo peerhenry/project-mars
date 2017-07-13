@@ -13,8 +13,6 @@ with(new_room){
 	bb_bottom = bb_top + 32;
 }
 
-if(global.debug_gameplay_messages) show_debug_message("A base-room was just created at: " + string(or_x) + ", " + string(or_y));
-
 var i = scr_rc_to_gi(arg_x);
 var j = scr_rc_to_gi(arg_y);
 scr_add_tile_to_room(new_room, i, j);

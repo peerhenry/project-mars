@@ -10,6 +10,4 @@ for(var n = 0; n < ds_list_size(list_2); n++)
 	ds_list_add(list_1, ds_list_find_value(list_2, n));
 }
 
-ds_list_destroy(list_2);
-
 return list_1;

@@ -14,6 +14,11 @@ init_constructions();
 #macro west_number 4
 #macro south_number 8
 
+#macro macro_east_number 1
+#macro macro_north_number 2
+#macro macro_west_number 4
+#macro macro_south_number 8
+
 // selected handle for construction
 global.construct = noone;
 global.build_time_per_cost = 0.01; // one second for each 100 resource cost
@@ -50,19 +55,7 @@ global.resource_amount_metal = 20000;
 
 // # electric grid stuff
 
-enum electric
-{
-	none,
-	carrier,
-	source,
-	consumer
-}
-
-// properties for a grid
-#macro e_grid_carrier_list 0
-#macro e_grid_source_list 1
-#macro e_grid_consumer_list 2
-#macro e_grid_net_power 3
+init_grids();
 
 // # astronaut tasks
 

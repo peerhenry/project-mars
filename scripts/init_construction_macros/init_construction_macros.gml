@@ -15,6 +15,7 @@
 #macro macro_pump 13
 #macro macro_water_reservoir 14
 #macro macro_water_purifier 15
+#macro macro_hydroponics 16
 
 // construction properties
 #macro macro_id 0

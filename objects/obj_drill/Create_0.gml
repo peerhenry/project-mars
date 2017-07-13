@@ -7,4 +7,5 @@ has_resource = resource_instance > 0;
 
 alarm_set(0, 30); // mine event
 
-electric_consumption = 5;
+// electric grid
+scr_set_new_grid_props(id, macro_grid_electric, macro_grid_role_consumer, 5);

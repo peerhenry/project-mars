@@ -1,10 +1,9 @@
 event_inherited();
 scr_navgrid_occupy(occ_i, occ_j);
 
-show_debug_message("wall created!");
-var is_free = scr_navgrid_cell_is_free(occ_i, occ_j);
-show_debug_message("after creation, cell free at " + string(occ_i) + ", " + string(occ_j) + ": " + string(is_free));
+adjacency_numer = 0;
 
-adjacentcy_numer = 0;
+scr_set_new_grid_props(id, macro_grid_electric, macro_grid_role_carrier, 0);
+scr_set_new_grid_props(id, macro_grid_water, macro_grid_role_carrier, 0);
 
-electric_type = electric.carrier;
+scr_set_basetile_lights(id);

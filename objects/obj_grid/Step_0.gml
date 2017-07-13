@@ -1,0 +1,20 @@
+// UNFINISHED
+
+for(var role = 0; role < macro_grid_role_count; role++)
+{
+	var component_role_list = components_map[? role];
+	switch(role)
+	{
+		case macro_grid_role_consumer:
+			total_demand = scr_grid_get_total(id, role);
+			break;
+		case macro_grid_role_source:
+			total_production = scr_grid_get_total(id, role);
+			break;
+		case macro_grid_role_storage:
+			total_storage = scr_grid_get_total(id, role);
+			break;
+	}
+	net_output = total_production - total_demand;
+	// todo: use net_output to change storage
+}

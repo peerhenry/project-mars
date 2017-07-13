@@ -25,7 +25,12 @@
         "b98a06d3-9769-491e-972f-c120dcd310f1",
         "bb8aa143-a2df-41fe-8ee2-761b9d8e4e22",
         "da8e8c99-8e39-4a17-aaf4-da866d07d47a",
-        "00e0e42b-11fc-42cb-b5ca-d4bf432a8db6"
+        "00e0e42b-11fc-42cb-b5ca-d4bf432a8db6",
+        "8685f3b0-5f62-405a-ae17-7eff47c71a15",
+        "0e9ea0a5-3074-41c0-acfd-5d6405191991",
+        "8e31dbe0-7cf4-4515-9e43-e5157583bae1",
+        "fcb0ced4-7414-41f3-8e90-da15536b95e5",
+        "c3168a84-c88c-4811-a330-e4b4de8b74c4"
     ],
     "filterType": "GMSprite",
     "folderName": "BASE",

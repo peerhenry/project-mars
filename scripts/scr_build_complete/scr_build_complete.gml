@@ -54,7 +54,7 @@ for(var n = 0; n < count; n++) // loop over tiles
 		}
 		
 		scr_wall_logic(added_instance); // wall logic on each instance.
-		scr_electric_grid_logic(added_instance);
+		scr_grid_logic(added_instance);
 		scr_post_completion(added_instance);
 	}
 }

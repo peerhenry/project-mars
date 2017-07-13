@@ -74,15 +74,8 @@ for(var n = 0; n < cell_count; n++)
 	var index = (cell_count - 1 - n);
 	construction_cell_array[index] = new_construction_cell;
 	
-	// NEW: execute map bugger action
+	// NEW: execute map buffer action @ placement instead of completion
 	scr_execute_map_buffer_action(cell_i, cell_j, map_buffer_action);
-	
-	// 4. occupy navgrid !! Not anymore bitch...
-	// scr_navgrid_occupy(cell_i, cell_j); // all cells under construction must block the navgrid.
-	
-	// DEBUG
-	var is_free = scr_navgrid_cell_is_free(cell_i, cell_j);
-	show_debug_message("cell free at " + string(cell_i) + ", " + string(cell_j) + ": " + string(is_free));
 }
 
 if(cell_count > 0)
@@ -105,22 +98,5 @@ for(var n = 0; n < ds_list_size(new_instances); n++)
 {
 	var next_instance = ds_list_find_value(new_instances, n);
 	next_instance.construction_instance = new_construction;
-	
-	// DEBUG
-	last_instance = next_instance;
-	var is_free = scr_navgrid_cell_is_free(next_instance.occ_i, next_instance.occ_j);
-	show_debug_message("cell freedom after astronaut path recalculation: " + string(next_instance.occ_i) + ", " + string(next_instance.occ_j) + ": " + string(is_free));
 }
 ds_list_destroy(new_instances);
-
-if(last_instance)
-{
-	var is_free = scr_navgrid_cell_is_free(last_instance.occ_i, last_instance.occ_j);
-	show_debug_message("cell free after ds_list_destroy: " + string(last_instance.occ_i) + ", " + string(last_instance.occ_j) + ": " + string(is_free));
-}
-else
-{
-	show_debug_message("last instance was noone!");
-}
-show_debug_message("===");
-show_debug_message("===");

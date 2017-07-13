@@ -147,6 +147,10 @@ init_construction_set_action(build_validation_i.inside, build_validation_o.vacan
 init_construction_set_dragging(dragging.rectangular, 1);
 init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_water_reservoir, noone, 100);
 
+// # hydroponics
+init_construction_new_single(macro_hydroponics, "hydroponics", spr_hydroponics_hud, 1);
+init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_hydroponics, noone, 100);
+
 // active constructions:
 var active_constructions = ds_list_create();
 global.active_constructions = active_constructions;
@@ -165,3 +169,4 @@ ds_list_add(active_constructions, macro_cable);
 ds_list_add(active_constructions, macro_pipe);
 ds_list_add(active_constructions, macro_bed);
 ds_list_add(active_constructions, macro_water_reservoir);
+ds_list_add(active_constructions, macro_hydroponics);

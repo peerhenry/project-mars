@@ -1,5 +1,6 @@
 /// @param electric_grid
 /// @param instance
+/*
 var arg_grid = argument0;
 var arg_instance = argument1;
 
@@ -25,3 +26,4 @@ if(list_to_use != 0)
 }
 
 arg_instance.electric_grid = 0;
+*/

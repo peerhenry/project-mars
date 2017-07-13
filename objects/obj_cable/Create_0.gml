@@ -1,6 +1,7 @@
 event_inherited();
 
-electric_type = electric.carrier;
+// electric grid
+scr_set_new_grid_props(id, macro_grid_electric, macro_grid_role_carrier, 0);
 
 // begin === SET ADJACENCY NUMBER AND IMAGE INDEX ===
 

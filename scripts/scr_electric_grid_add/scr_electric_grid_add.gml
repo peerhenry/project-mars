@@ -1,6 +1,6 @@
 /// @param electric_grid
 /// @param instance
-var arg_grid = argument0;
+/*var arg_grid = argument0;
 var arg_instance = argument1;
 
 switch(arg_instance.electric_type)
@@ -17,3 +17,4 @@ switch(arg_instance.electric_type)
 }
 
 arg_instance.electric_grid = arg_grid;
+*/

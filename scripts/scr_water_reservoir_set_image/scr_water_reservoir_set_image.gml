@@ -19,17 +19,25 @@ with(arg_water)
 	if(left_water != noone){
 		image_index += 1;
 		left_water.image_index += 4;
+		water_rectangle_left = x - 16;
+		left_water.water_rectangle_right = left_water.x+15;
 	}
 	if(top_water != noone){
 		image_index += 2;
 		top_water.image_index += 8;
+		water_rectangle_top = y - 16;
+		top_water.water_rectangle_bottom = top_water.y+15;
 	}
 	if(right_water != noone){
 		image_index += 4;
 		right_water.image_index += 1;
+		water_rectangle_right = x + 15;
+		right_water.water_rectangle_left = right_water.x-16;
 	}
 	if(bottom_water != noone){
 		image_index += 8;
 		bottom_water.image_index += 2;
+		water_rectangle_bottom = y + 15;
+		bottom_water.water_rectangle_top = bottom_water.y-16;
 	}
 }

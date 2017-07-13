@@ -1,5 +1,7 @@
 event_inherited();
 
+scr_set_new_grid_props(id, macro_grid_water, macro_grid_role_carrier, 0);
+
 // determine adjacency number and set image index
 
 adjacency_number = 0;
