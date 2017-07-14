@@ -28,5 +28,6 @@ for(var grid_type = 0; grid_type < macro_grid_type_count; grid_type++)
 			grid = scr_grid_new_with_instance(arg_instance, grid_type);
 		}
 		scr_grid_update(grid);
+		scr_grid_update_components(grid);
 	}
 }

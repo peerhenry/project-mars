@@ -7,15 +7,16 @@ scr_set_new_grid_props(id, macro_grid_electric, macro_grid_role_carrier, 0);
 
 adjacency_number = 0;
 
-var east_electric = instance_position(x+32, y, obj_electric_component);
-var north_electric = instance_position(x, y-32, obj_electric_component);
-var west_electric = instance_position(x-32, y, obj_electric_component);
-var south_electric = instance_position(x, y+32, obj_electric_component);
+var adjacents = scr_get_adjacent_grid_components(id, macro_grid_electric);
+
+var east_electric = adjacents[0];
+var north_electric = adjacents[1];
+var west_electric = adjacents[2];
+var south_electric = adjacents[3];
 
 if(east_electric != noone)
 {
-	if(east_electric.y - y < 16) adjacency_number += east_number;
-	
+	adjacency_number += east_number;
 	if(east_electric.object_index == obj_cable)
 	{
 		east_electric.adjacency_number += west_number;
@@ -25,8 +26,7 @@ if(east_electric != noone)
 
 if(north_electric != noone)
 {
-	if(north_electric.y - (y-32) < 16) adjacency_number += north_number;
-	
+	adjacency_number += north_number;
 	if(north_electric.object_index == obj_cable)
 	{
 		north_electric.adjacency_number += south_number;
@@ -36,8 +36,7 @@ if(north_electric != noone)
 
 if(west_electric != noone)
 {
-	if(west_electric.y - y < 16) adjacency_number += west_number;
-	
+	adjacency_number += west_number;
 	if(west_electric.object_index == obj_cable)
 	{
 		west_electric.adjacency_number += east_number;
@@ -47,8 +46,7 @@ if(west_electric != noone)
 
 if(south_electric != noone)
 {
-	if(south_electric.y - (y+32) < 16) adjacency_number += south_number;
-	
+	adjacency_number += south_number;
 	if(south_electric.object_index == obj_cable)
 	{
 		south_electric.adjacency_number += north_number;

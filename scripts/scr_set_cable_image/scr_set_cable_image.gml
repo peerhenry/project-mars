@@ -1,3 +1,4 @@
+/// @param cable_instance
 var arg_cable = argument0;
 
 with(arg_cable)
@@ -43,11 +44,10 @@ with(arg_cable)
 			image_index = 20;
 			break;
 	}
-	if(is_array(electric_grid))
+	var electric_grid = scr_get_grid(arg_cable, macro_grid_electric);
+	with(electric_grid)
 	{
-		if(
-			electric_grid[e_grid_net_power] > 0 
-			|| (electric_grid[e_grid_net_power] == 0 && ds_list_size(electric_grid[e_grid_source_list]) > 0))
+		if(net_output > 0 || total_storage > 0)
 		{
 			image_index += 1;
 		}

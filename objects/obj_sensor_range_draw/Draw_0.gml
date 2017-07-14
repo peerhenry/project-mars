@@ -6,7 +6,7 @@ if(global.construct == macro_drill || global.construct == macro_sensor)
 	draw_set_alpha(0.2);
 
 	with(obj_sensor){
-		if(!under_construction && switched_on)
+		if(!under_construction && scr_get_grid_prop(id, macro_grid_electric, macro_grid_component_active))
 		{
 			for(var ni = -20; ni <= 20; ni++){
 				for(var nj = -20; nj <= 20; nj++){

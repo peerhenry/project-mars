@@ -1,6 +1,6 @@
 /// @description mine for resources
 
-if(!under_construction && resource_instance > 0 && switched_on && electric_grid[e_grid_net_power] >= 0)
+if(!under_construction && resource_instance > 0 && is_active)
 {
 	if(resource_instance.amount > 20)
 	{

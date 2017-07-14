@@ -1,8 +1,8 @@
 {
-    "id": "1dff9eb7-7b40-4557-9089-1eae491096f7",
+    "id": "a60dc21d-e68b-4206-ad3d-495d8634a5cb",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_grid_update",
+    "name": "scr_draw_button",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -1,8 +1,8 @@
 {
-    "id": "1dff9eb7-7b40-4557-9089-1eae491096f7",
+    "id": "48a01ae5-bfa1-4e88-8bc7-f6ce700583be",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_grid_update",
+    "name": "scr_belongs_to_grid",
     "IsCompatibility": false,
     "IsDnD": false
 }

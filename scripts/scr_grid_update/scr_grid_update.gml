@@ -1,15 +1,23 @@
 /// @param grid
 var arg_grid = argument0;
-
-for(var role = 0; role < macro_grid_role_count; role++)
+with(arg_grid)
 {
-	var next_list = arg_grid.components_map[? role];
-	for(var n = 0; n < ds_list_size(next_list); n++)
+	for(var role = 0; role < macro_grid_role_count; role++)
 	{
-		var next_component = ds_list_find_value(next_list, n);
-		with(next_component)
+		var component_role_list = components_map[? role];
+		switch(role)
 		{
-			event_user(0);
+			case macro_grid_role_consumer:
+				total_demand = scr_grid_get_total(id, role);
+				break;
+			case macro_grid_role_source:
+				total_production = scr_grid_get_total(id, role);
+				break;
+			case macro_grid_role_storage:
+				total_storage = scr_grid_get_total(id, role);
+				break;
 		}
+		net_output = total_production - total_demand;
+		// todo: use net_output to change storage
 	}
 }
