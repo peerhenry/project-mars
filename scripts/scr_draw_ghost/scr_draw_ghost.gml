@@ -50,6 +50,19 @@ for(var n = 0; n < cell_count; n++)
 			draw_sprite_ext( sprite_for_ghost, image, target_x, target_y, 1, 1, angle, c_white, 0.42 );
 		}
 		draw_rectangle(target_x-16, target_y-16, target_x+15, target_y+15, false);
+		if(object_to_add == obj_sensor)
+		{
+			
+			for(var di = -macro_sensor_d+1; di < macro_sensor_d; di++)
+			{
+				var lim_j = floor(sqrt(macro_sensor_d_squared - di*di)-0.01);
+				var r_left = target_x - 16 - di*32;
+				var r_right = target_x + 15 - di*32;
+				var r_top = target_y - 16 - lim_j*32;
+				var r_bottom = target_y + 15 + lim_j*32;
+				draw_rectangle(r_left, r_top, r_right, r_bottom, false);
+			}
+		}
 	}
 }
 

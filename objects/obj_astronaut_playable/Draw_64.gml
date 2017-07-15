@@ -10,7 +10,7 @@ if(show_details)
 	var tl_y2 = tl_y + height;
 	scr_draw_panel(tl_x, tl_y, tl_x2, tl_y2);
 	
-	draw_set_color(c_dkgray);
+	/*draw_set_color(c_dkgray);
 	draw_set_alpha(0.8);
 	draw_rectangle(tl_x, tl_y, tl_x + width, tl_y + height, false);
 	
@@ -20,7 +20,7 @@ if(show_details)
 	
 	draw_set_color(c_black);
 	draw_line(tl_x + width, tl_y, tl_x + width, tl_y + height);
-	draw_line(tl_x, tl_y + height, tl_x +width, tl_y + height);
+	draw_line(tl_x, tl_y + height, tl_x +width, tl_y + height);*/
 	
 	draw_set_alpha(1);
 	

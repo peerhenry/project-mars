@@ -3,7 +3,7 @@ if(global.hovering_over_HUD){
 	exit; // HUD clicks must not propagate here.
 }
 
-// CONSTRUCTION INPUT
+// # CONSTRUCTION INPUT
 
 if(global.construct != noone) // BUILD MODE
 {
@@ -46,7 +46,7 @@ if(global.construct != noone) // BUILD MODE
 	return;
 }
 
-// ASTRONAUT SELECT/ORDERS INPUT
+// # ASTRONAUT SELECT/ORDERS INPUT
 
 var orders_given = false;
 var just_selected = false;
@@ -73,7 +73,7 @@ if(!is_dragging)
 		}
 	}
 	
-	// LEFT RELEASE
+	// LEFT RELEASE - SELECT
 	if(mouse_check_button_released(mb_left))
 	{
 		with(obj_astronaut_playable)
@@ -91,7 +91,7 @@ if(!is_dragging)
 		}
 	}
 	
-	// RIGHT CLICK
+	// RIGHT CLICK - COMMAND
 	if(mouse_check_button_pressed(mb_right))
 	{
 		if(any_astronauts_selected)
@@ -101,7 +101,7 @@ if(!is_dragging)
 		global.construct = noone;
 	}
 }
-else if(mouse_check_button_released(mb_left))
+else if(mouse_check_button_released(mb_left)) // - DRAG SELECT
 {
 	var rec_left = min(click_x, mouse_x);
 	var rec_right = max(click_x, mouse_x);
@@ -156,4 +156,5 @@ if(just_selected)
 		case 1: audio_play_sound(sound_cmd_commands,1,false); break;
 		case 2:	audio_play_sound(sound_cmd_orders,1,false);	break;
 	}
+	exit;
 }

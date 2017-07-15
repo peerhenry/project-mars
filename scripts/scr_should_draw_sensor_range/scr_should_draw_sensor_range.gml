@@ -1,0 +1,1 @@
+return global.construct == macro_drill || global.construct == macro_sensor || global.sensor_selected;

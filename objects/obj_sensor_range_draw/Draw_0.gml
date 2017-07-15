@@ -1,12 +1,10 @@
-#macro macro_sensor_d_squared 49
-
-if(global.construct == macro_drill || global.construct == macro_sensor)
+if(scr_should_draw_sensor_range())
 {
 	draw_set_color(c_aqua);
 	draw_set_alpha(0.2);
 
 	with(obj_sensor){
-		if(!under_construction && scr_get_grid_prop(id, macro_grid_electric, macro_grid_component_active))
+		if(!under_construction && is_active)
 		{
 			for(var ni = -20; ni <= 20; ni++){
 				for(var nj = -20; nj <= 20; nj++){

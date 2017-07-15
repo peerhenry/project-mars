@@ -2471,6 +2471,14 @@
             }
         },
         {
+            "Key": "c3373dd9-3e80-4990-831b-872309ab951b",
+            "Value": {
+                "id": "84cf845b-73eb-403f-bdba-b271fc0e100e",
+                "resourcePath": "scripts\\scr_should_draw_sensor_range\\scr_should_draw_sensor_range.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "c3a85007-f81f-4d50-80a4-ab702614f87a",
             "Value": {
                 "id": "8423be16-a795-4b25-9416-52623ee0cd4a",
@@ -2683,6 +2691,14 @@
             "Value": {
                 "id": "5d280772-8fe3-4afb-94ad-b0ad2ab8f048",
                 "resourcePath": "scripts\\scr_zoom\\scr_zoom.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "d394a2f7-0161-4d05-beae-c3f4fe651176",
+            "Value": {
+                "id": "2f07b19a-2363-48a8-9570-166d5de8aa1d",
+                "resourcePath": "scripts\\scr_remove_basetile_lights\\scr_remove_basetile_lights.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -3478,9 +3494,11 @@
         "7dff2f7e-5bb2-4269-89db-b18621cada95",
         "c916e733-e52e-4a70-b4b1-b84ac717b609",
         "ddaa57d5-bfa7-434c-924e-23aa730298e5",
+        "d394a2f7-0161-4d05-beae-c3f4fe651176",
         "de23b25c-1e56-45c1-acca-729b28705854",
         "d007503e-3829-4b3f-821d-53d83dc283dc",
         "a60dc21d-e68b-4206-ad3d-495d8634a5cb",
+        "c3373dd9-3e80-4990-831b-872309ab951b",
         "dbf4e913-3d01-437e-9e72-fe79239aa833",
         "5d9c43e9-61da-48ec-9290-d62111e0bbef",
         "1e3dbe4c-0873-4852-957d-59eef3e79f10",

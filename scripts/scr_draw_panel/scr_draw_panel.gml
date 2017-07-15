@@ -5,7 +5,7 @@
 
 draw_set_color(c_dkgray);
 draw_set_alpha(0.8);
-draw_rectangle(argument0, argument1, argument1, argument3, false);
+draw_rectangle(argument0, argument1, argument2, argument3, false);
 	
 draw_set_color(c_ltgray);
 draw_line(argument0, argument1, argument2, argument1);

@@ -1,10 +1,10 @@
-if(global.construct == macro_drill || global.construct == macro_sensor)
+if(scr_should_draw_sensor_range())
 {
 	var within_sensor_range = false;
 
 	with(obj_sensor)
 	{
-		if(!under_construction){
+		if(!under_construction && is_active){
 			var di = other.occ_i - occ_i;
 			var dj = other.occ_j - occ_j;
 			var d_squared = di*di + dj*dj;
