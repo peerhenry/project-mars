@@ -19,15 +19,24 @@ if(instance_exists(target))
 }
 else
 {
-	if(!is_walking && auto_target == noone)
+	if(!is_walking)
 	{
-		auto_target = instance_nearest(x, y, enemy_object);
-		var dx = auto_target.x - x;
-		var dy = auto_target.y - y;
-		if((dx*dx + dy*dy) <= (global.shooting_range_squared*1024))
+		if(auto_target == noone)
 		{
-			can_shoot = true;
+			auto_target = instance_nearest(x, y, enemy_object);
 		}
+		if(instance_exists(auto_target))
+		{
+			var dx = auto_target.x - x;
+			var dy = auto_target.y - y;
+			if((dx*dx + dy*dy) <= (global.shooting_range_squared*1024))
+			{
+				shootable = auto_target;
+				can_shoot = true;
+			}
+			else auto_target = noone;
+		}
+		else auto_target = noone;
 	}
 }
 
