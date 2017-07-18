@@ -11,7 +11,7 @@ with(wall_id)
 {
 
 	// 1. calculate adjacency number
-	adjacentcy_numer = 0;
+	adjacency_numer = 0;
 
 	var connects_west = scr_wall_connector_exists_at(x-32, y);
 	var connects_north = scr_wall_connector_exists_at(x, y-32);
@@ -25,28 +25,28 @@ with(wall_id)
 	*/
 
 	if(connects_west){
-		adjacentcy_numer += 1;
+		adjacency_numer += 1;
 		//with(wall_west_id){ 
 		//	adjacentcy_numer += 4;
 		//}
 	}
 
 	if(connects_north){
-		adjacentcy_numer += 2;
+		adjacency_numer += 2;
 		//with(wall_north_id){
 		//	adjacentcy_numer += 8;
 		//}
 	}
 
 	if(connects_east){
-		adjacentcy_numer += 4;
+		adjacency_numer += 4;
 		//with(wall_east_id){
 		//	adjacentcy_numer += 1;
 		//}
 	}
 
 	if(connects_south){
-		adjacentcy_numer += 8;
+		adjacency_numer += 8;
 		//with(wall_south_id){
 		//	adjacentcy_numer += 2;
 		//}
@@ -59,7 +59,7 @@ with(wall_id)
 
 	// 2. get the corresponding wall_state
 
-	switch(adjacentcy_numer)
+	switch(adjacency_numer)
 	{
 	case 0:
 		wall_state = 15;

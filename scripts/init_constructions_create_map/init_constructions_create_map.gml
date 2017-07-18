@@ -3,12 +3,10 @@ var base_layer = layer_get_id("base");
 var base_tall_layer = layer_get_id("base_tall");
 
 // read from file
-var i, file, file_string;
+/*var i, file, file_string;
 show_debug_message(" === The working directory is: " + string(working_directory));
 show_debug_message(" === The working directory is: " + string(working_directory));
-show_debug_message(" === The working directory is: " + string(working_directory));
-
-
+show_debug_message(" === The working directory is: " + string(working_directory));*/
 
 global.construction_map = ds_map_create();
 
@@ -59,7 +57,7 @@ init_construction_set_tile(-1, 0, 1);
 init_construction_set_validation(build_validation_i.outside, build_validation_o.wall_like);
 init_construction_set_tile(1, 0, 1);
 init_construction_set_validation(build_validation_i.outside, build_validation_o.wall_like);
-init_construction_set_rotation_parameter(macro_rotation_1, macro_angle, 90);
+init_construction_set_rotation_parameter(macro_rotation_1, macro_angle, 90); // sprite must be drawn at an angle with the rotation parameter
 init_construction_set_rotation_parameter(macro_rotation_3, macro_angle, 90);
 
 // # door
@@ -134,7 +132,7 @@ init_construction_new_multitile(macro_bed, "bed", spr_bed_hud, 2);
 init_construction_set_tile(0, 0, 1); // di, dj, action_count
 init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_bed,		noone, 100);
 init_construction_set_tile(0, -1, 1); // di, dj, action_count
-init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	noone,			noone,		noone, 0);
+init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	noone,			noone,			noone, 0);
 // rotation behavior: change sprite
 init_construction_set_rotation_parameter(macro_rotation_0, macro_sprite, spr_bed_vertical);
 init_construction_set_rotation_parameter(macro_rotation_1, macro_sprite, spr_bed_horizontal);
@@ -143,13 +141,21 @@ init_construction_set_rotation_parameter(macro_rotation_3, macro_sprite, spr_bed
 
 // # water reservoir
 init_construction_new_single(macro_water_reservoir, "water reservoir", spr_water_reservoir, 1);
-init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_water_reservoir, noone, 100);
+init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_water_reservoir,	noone, 100);
 init_construction_set_dragging(dragging.rectangular, 1);
-init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_water_reservoir, noone, 100);
+init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_water_reservoir,	noone, 100);
 
 // # hydroponics
 init_construction_new_single(macro_hydroponics, "hydroponics", spr_hydroponics_hud, 1);
-init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_hydroponics, noone, 100);
+init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_tall_layer, obj_hydroponics,		noone, 100);
+
+// # magic generator
+init_construction_new_single(macro_magic_generator, "magic generator", spr_magic_generator, 1);
+init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_magic_generator,	noone, 100);
+
+// # magic pump
+init_construction_new_single(macro_magic_pump, "magic pump", spr_pump, 1);
+init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_magic_pump,			noone, 100);
 
 // active constructions:
 var active_constructions = ds_list_create();
@@ -170,3 +176,5 @@ ds_list_add(active_constructions, macro_pipe);
 ds_list_add(active_constructions, macro_bed);
 ds_list_add(active_constructions, macro_water_reservoir);
 ds_list_add(active_constructions, macro_hydroponics);
+ds_list_add(active_constructions, macro_magic_generator);
+ds_list_add(active_constructions, macro_magic_pump);

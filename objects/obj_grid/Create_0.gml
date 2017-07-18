@@ -6,6 +6,7 @@ for(var role = 0; role < (macro_grid_role_count); role++)
 }
 
 total_production = 0;
-total_storage = 0;
 total_demand = 0;
 net_output = 0;
+storage = 0;
+storage_capacity = 0;

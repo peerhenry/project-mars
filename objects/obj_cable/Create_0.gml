@@ -56,3 +56,5 @@ if(south_electric != noone)
 
 scr_set_cable_image(id);
 // end === SET ADJACENCY NUMBER AND IMAGE INDEX ===
+
+scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.cable);

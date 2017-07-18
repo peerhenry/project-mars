@@ -6,6 +6,7 @@ var arg_i = scr_rc_to_gi(arg_x);
 var arg_j = scr_rc_to_gi(arg_y);
 
 var le_room = scr_room_at(arg_x, arg_y);
+if(le_room == noone) exit;
 scr_remove_tile_from_room(le_room, arg_i, arg_j);
 
 if(ds_list_size(le_room.tiles) == 0)

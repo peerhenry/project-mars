@@ -1,3 +1,4 @@
+/// @description does not change storage levels
 /// @param grid
 var arg_grid = argument0;
 with(arg_grid)
@@ -14,10 +15,9 @@ with(arg_grid)
 				total_production = scr_grid_get_total(id, role);
 				break;
 			case macro_grid_role_storage:
-				total_storage = scr_grid_get_total(id, role);
+				scr_grid_update_storage(id);
 				break;
 		}
 		net_output = total_production - total_demand;
-		// todo: use net_output to change storage
 	}
 }

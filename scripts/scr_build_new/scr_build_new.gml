@@ -58,7 +58,7 @@ for(var n = 0; n < cell_count; n++)
 			
 			// depth = layer_get_depth(add_layer) - 1;
 			depth = -200; // under construction drawing has priority
-			scr_post_creation_logic(global.construct, new_instance);
+			scr_post_creation_logic(global.construct, new_instance);	// for suit closet
 			under_construction = true;
 		}
 		

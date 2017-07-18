@@ -8,10 +8,12 @@
 #macro macro_grid_electric 0
 #macro macro_grid_water 1
 #macro macro_grid_oxygen 2
-#macro macro_grid_type_count 3		// used to iterate over grid types in grid logic
+#macro macro_grid_hydrogen 3
+#macro macro_grid_type_count 4		// used to iterate over grid types in grid logic
 
 // grid component props
 #macro macro_grid_component_grid 0
 #macro macro_grid_component_role 1
 #macro macro_grid_component_value 2 // either consumption, production or storage
 #macro macro_grid_component_active 3
+#macro macro_grid_storage_level 4 // extra prop especially for storage component

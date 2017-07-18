@@ -13,7 +13,10 @@ with(new_instance){
 
 switch(construct_type){
 	case macro_basetile:
-		scr_room_logic_basetile(target_x, target_y);
+		if(new_instance.object_index == obj_base_tile)
+		{
+			scr_room_logic_basetile(target_x, target_y);
+		}
 		break;
 	case macro_wall:
 		scr_room_remove_tile_and_part(target_x, target_y);

@@ -7,7 +7,7 @@ var grid = grid_props[macro_grid_component_grid];
 var is_active = grid_props[macro_grid_component_active];
 
 var light_image_index = 0;
-if(is_active && grid.net_output > 0) light_image_index = 1;
+if(is_active && scr_can_draw_power(id)) light_image_index = 1;
 
 if(wall_adjacency & macro_east_number == macro_east_number)
 {

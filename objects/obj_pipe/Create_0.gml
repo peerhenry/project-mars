@@ -2,57 +2,26 @@ event_inherited();
 
 scr_set_new_grid_props(id, macro_grid_water, macro_grid_role_carrier, 0);
 
+// Connect pipe to water grid components
 // determine adjacency number and set image index
-
 adjacency_number = 0;
-
-var east_pipe = instance_position(x+32, y, obj_pipe);
-var east_pump = instance_position(x+32, y, obj_pump);
-var north_pipe = instance_position(x, y-32, obj_pipe);
-var north_pump = instance_position(x, y-32, obj_pump);
-var west_pipe = instance_position(x-32, y, obj_pipe);
-var west_pump = instance_position(x-32, y, obj_pump);
-var south_pipe = instance_position(x, y+32, obj_pipe);
-var south_pump = instance_position(x, y+32, obj_pump);
-
-if(east_pipe != noone || east_pump != noone)
+var adjacents = scr_get_adjacent_grid_components(id, macro_grid_water);
+var adjacent_pipes = scr_get_adjacent_instances(id, obj_pipe);
+for(var n = 0; n < 4; n++) // ENWS
 {
-	adjacency_number += east_number;
-	if(east_pipe != noone && east_pipe.object_index == obj_pipe)
+	var next_adjacent = adjacents[n];
+	if(adjacent_pipes[n] != noone) next_adjacent = adjacent_pipes[n];
+	if(next_adjacent != noone)
 	{
-		east_pipe.adjacency_number += west_number;
-		scr_set_pipe_image(east_pipe);
-	}
-}
-
-if(north_pipe != noone || north_pump != noone)
-{
-	adjacency_number += north_number;
-	if(north_pipe != noone && north_pipe.object_index == obj_pipe)
-	{
-		north_pipe.adjacency_number += south_number;
-		scr_set_pipe_image(north_pipe);
-	}
-}
-
-if(west_pipe != noone || west_pump != noone)
-{
-	adjacency_number += west_number;
-	if(west_pipe != noone && west_pipe.object_index == obj_pipe)
-	{
-		west_pipe.adjacency_number += east_number;
-		scr_set_pipe_image(west_pipe);
-	}
-}
-
-if(south_pipe != noone || south_pump != noone)
-{
-	adjacency_number += south_number;
-	if(south_pipe != noone && south_pipe.object_index == obj_pipe)
-	{
-		south_pipe.adjacency_number += north_number;
-		scr_set_pipe_image(south_pipe);
+		adjacency_number += power(2, n);
+		if(next_adjacent.object_index == obj_pipe)
+		{
+			next_adjacent.adjacency_number += power(2, (n+2)%4);
+			scr_set_pipe_image(next_adjacent);
+		}
 	}
 }
 
 scr_set_pipe_image(id);
+
+scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.pipe);

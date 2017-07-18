@@ -12,3 +12,5 @@ mp_grid_add_cell( scr_get_nav_grid(), occ_i, occ_j );
 suit_oxygen = 100;
 oxygen_bar_color = global.oxygen_bar_color;
 suit_closet_replenishment = global.suit_closet_replenishment;
+
+scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.occupy);

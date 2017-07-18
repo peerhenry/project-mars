@@ -1,5 +1,5 @@
 var width = 384;
-var height = 256;
+var height = 424;
 var tl_x = display_get_gui_width() - width;
 var tl_y = 0;
 
@@ -10,20 +10,7 @@ if(show_details)
 	var tl_y2 = tl_y + height;
 	scr_draw_panel(tl_x, tl_y, tl_x2, tl_y2);
 	
-	/*draw_set_color(c_dkgray);
-	draw_set_alpha(0.8);
-	draw_rectangle(tl_x, tl_y, tl_x + width, tl_y + height, false);
-	
-	draw_set_color(c_ltgray);
-	draw_line(tl_x, tl_y, tl_x + width, tl_y);
-	draw_line(tl_x, tl_y, tl_x, tl_y + height);
-	
-	draw_set_color(c_black);
-	draw_line(tl_x + width, tl_y, tl_x + width, tl_y + height);
-	draw_line(tl_x, tl_y + height, tl_x +width, tl_y + height);*/
-	
-	draw_set_alpha(1);
-	
+	// avatar
 	draw_set_color(c_black);
 	var av_w = 96;
 	var av_h = 96;
@@ -57,4 +44,11 @@ if(show_details)
 	var food_line_y = tl_y + 128 + 72;
 	draw_text(x_or, food_line_y, "Food");
 	draw_healthbar(bar_x_or, food_line_y - half_bar, tl_x + width - 16, food_line_y + half_bar, food_level, 0, c_red, c_olive, 0, false, false);
+	
+	//draw_text(x_or, food_line_y, "Inventory");
+	
+	// inventory
+	var grid_x = x_or + 96;
+	var grid_y = tl_y + 128 + 96;
+	draw_sprite(spr_inventory_grid, 0, grid_x, grid_y);
 }

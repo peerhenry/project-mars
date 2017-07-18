@@ -44,12 +44,8 @@ with(arg_cable)
 			image_index = 20;
 			break;
 	}
-	var electric_grid = scr_get_grid(arg_cable, macro_grid_electric);
-	with(electric_grid)
+	if(scr_can_draw_from_grid(arg_cable, macro_grid_electric))
 	{
-		if(net_output > 0 || total_storage > 0)
-		{
-			image_index += 1;
-		}
+		image_index += 1;
 	}
 }

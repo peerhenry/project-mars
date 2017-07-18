@@ -78,3 +78,6 @@ audio_group_load(audiogroup_sfx);
 global.sensor_selected = false;
 #macro macro_sensor_d_squared 49
 #macro macro_sensor_d 7
+
+// # grid selection
+global.selected_grid = noone;
