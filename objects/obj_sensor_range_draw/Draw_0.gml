@@ -4,7 +4,7 @@ if(scr_should_draw_sensor_range())
 	draw_set_alpha(0.2);
 
 	with(obj_sensor){
-		if(!under_construction && is_active)
+		if(scr_sensor_can_sense(id))
 		{
 			for(var ni = -20; ni <= 20; ni++){
 				for(var nj = -20; nj <= 20; nj++){

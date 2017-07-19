@@ -4,7 +4,7 @@ if(scr_should_draw_sensor_range())
 
 	with(obj_sensor)
 	{
-		if(!under_construction && is_active){
+		if(scr_sensor_can_sense(id)){
 			var di = other.occ_i - occ_i;
 			var dj = other.occ_j - occ_j;
 			var d_squared = di*di + dj*dj;

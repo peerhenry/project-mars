@@ -1,6 +1,6 @@
-/// @description mine for resources
+/// @description mine metal
 
-if(!under_construction && resource_instance > 0 && is_active)
+if(!under_construction && resource_instance > 0 && scr_can_draw_power(id))
 {
 	if(resource_instance.amount > 20)
 	{
@@ -18,7 +18,7 @@ if(!under_construction && resource_instance > 0 && is_active)
 	}
 }
 
-if(resource_instance > 0)
+if(resource_instance.amount > 0)
 {
-	alarm_set(0, 30);
+	alarm_set(macro_mine_metal, 30);
 }

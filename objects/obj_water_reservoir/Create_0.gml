@@ -1,4 +1,5 @@
 event_inherited();
+grid_type_to_select = macro_grid_water;
 scr_navgrid_occupy(occ_i, occ_j);
 scr_set_new_grid_props(id, macro_grid_water, macro_grid_role_storage, 1000);
 

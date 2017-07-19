@@ -48,7 +48,7 @@ if(can_shoot && instance_exists(shootable))
 	{
 		if(current_action == astronaut_action.constructing)
 		{
-			construction[@construction_build_state] = build_state.ready;
+			construction[@construction_build_state] = construction_state.ready;
 		}
 		current_action = astronaut_action.in_combat;
 	}
