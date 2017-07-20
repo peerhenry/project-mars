@@ -157,6 +157,14 @@ init_construction_set_action(build_validation_i.inside, build_validation_o.vacan
 init_construction_new_single(macro_magic_pump, "magic pump", spr_pump, 1);
 init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_magic_pump,			noone, 100);
 
+// # fridge
+init_construction_new_single(macro_fridge, "refridgerator", spr_fridge_hud, 1);
+init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_tall_layer, obj_fridge,			noone, 100);
+init_construction_set_rotation_parameter(macro_rotation_0, macro_image, 0);
+init_construction_set_rotation_parameter(macro_rotation_1, macro_image, 1);
+init_construction_set_rotation_parameter(macro_rotation_2, macro_image, 2);
+init_construction_set_rotation_parameter(macro_rotation_3, macro_image, 3);
+
 // active constructions:
 var active_constructions = ds_list_create();
 global.active_constructions = active_constructions;
@@ -178,3 +186,4 @@ ds_list_add(active_constructions, macro_water_reservoir);
 ds_list_add(active_constructions, macro_hydroponics);
 ds_list_add(active_constructions, macro_magic_generator);
 ds_list_add(active_constructions, macro_magic_pump);
+ds_list_add(active_constructions, macro_fridge);

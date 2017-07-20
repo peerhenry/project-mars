@@ -1,3 +1,6 @@
+event_inherited();
+
+// draw the assigned icon
 if(is_assigned)
 {
 	frame_counter++;

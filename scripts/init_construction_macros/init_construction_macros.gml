@@ -18,6 +18,7 @@
 #macro macro_hydroponics 16
 #macro macro_magic_generator 17
 #macro macro_magic_pump 18
+#macro macro_fridge 19
 
 // construction properties
 #macro macro_id 0

@@ -663,6 +663,14 @@
             }
         },
         {
+            "Key": "2fee12d4-bc99-4372-bbcc-4c8c33af91c9",
+            "Value": {
+                "id": "69dfb8c4-a874-4027-8d37-bc03059b2130",
+                "resourcePath": "objects\\obj_fridge\\obj_fridge.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "3061d0a2-8dbc-40d2-98f8-0719211c0e2e",
             "Value": {
                 "id": "dcf9070f-ba3f-4a1d-8b42-6fd9c75b9ab2",
@@ -2239,6 +2247,14 @@
             }
         },
         {
+            "Key": "a78b50b6-41e1-4e72-9963-5a08abaa8933",
+            "Value": {
+                "id": "d967e3e2-0084-4fde-9fdc-983300e03038",
+                "resourcePath": "sprites\\spr_fridge_hud\\spr_fridge_hud.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a7deec15-8723-45f5-bb61-e39ce9de6af2",
             "Value": {
                 "id": "0e386e74-1050-4d6d-8395-93f5f433924c",
@@ -2548,6 +2564,14 @@
                 "id": "c01e2784-b189-4b4c-a561-3ada3034ad34",
                 "resourcePath": "objects\\obj_pump\\obj_pump.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "bccfbd09-680a-4c33-9894-0d9b7db15a33",
+            "Value": {
+                "id": "795eae18-b068-40f6-b7d3-453bfa21224e",
+                "resourcePath": "sprites\\spr_fridge\\spr_fridge.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
