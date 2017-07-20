@@ -58,12 +58,6 @@ if(arg_comp_south != noone && !arg_comp_south.under_construction)
 	}
 }
 
-show_debug_message("JEBUB: ")
-show_debug_message(string(grid_east));
-show_debug_message(string(grid_north));
-show_debug_message(string(grid_west));
-show_debug_message(string(grid_south));
-
 switch(grid_adj_number)
 {
 	// only one grid

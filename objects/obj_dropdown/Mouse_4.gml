@@ -15,6 +15,8 @@ if(position_meeting(mouse_x, mouse_y, self))
 		{
 			var item = instance_create_layer(x, yy, layer, obj_dropdown_item);
 			item.text = ds_list_find_value(item_labels, n);
+			item.width = ds_list_find_value(item_widths, n);
+			item.height = ds_list_find_value(item_heights, n);
 			yy += y_incr - 2;
 		}
 	}
