@@ -1,3 +1,5 @@
+image_speed = 0;
+
 item_labels = ds_list_create();
 item_widths = ds_list_create();
 item_heights = ds_list_create();
@@ -32,5 +34,6 @@ ds_list_add(item_heights,
 1080
 );
 
-image_speed = 0;
-text = "1920 x 1080";
+var active_height = display_get_gui_height();
+var active_index = ds_list_find_index(item_heights, active_height);
+text = ds_list_find_value(item_labels, active_index);

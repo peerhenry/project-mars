@@ -1223,6 +1223,14 @@
             }
         },
         {
+            "Key": "4cd96183-06e5-4df5-a13f-c8e70021f12a",
+            "Value": {
+                "id": "df15696b-f3be-4496-9e3f-017ecf58b5f7",
+                "resourcePath": "sprites\\spr_fridge_snack\\spr_fridge_snack.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "4d076d45-848c-49fb-b65c-c92d7d62c7be",
             "Value": {
                 "id": "d90ed97e-54a9-498b-8c0b-640634e3cd4a",

@@ -23,7 +23,7 @@ for(var n = 0; n < cell_count; n++)
 	var add_layer = next_build_cell[build_cell_layer];
 	var object_to_add = next_build_cell[build_cell_object_to_add];
 	var object_to_remove = next_build_cell[build_cell_object_to_remove];
-	var map_buffer_action = next_build_cell[build_cell_map_buffer_action];
+	var map_buffer_action = next_build_cell[build_cell_map_buffer_action]; // obsolete
 	var cost = next_build_cell[build_cell_cost];
 	var sprite = next_build_cell[build_cell_object_sprite];
 	var image = next_build_cell[build_cell_object_image];
@@ -57,7 +57,7 @@ for(var n = 0; n < cell_count; n++)
 			}
 			
 			// depth = layer_get_depth(add_layer) - 1;
-			depth = -200; // under construction drawing has priority
+			// depth = -200; // under construction drawing has priority
 			scr_post_creation_logic(global.construct, new_instance);	// for suit closet
 			under_construction = true;
 		}
@@ -73,9 +73,6 @@ for(var n = 0; n < cell_count; n++)
 	var new_construction_cell = scr_create_construction_cell(cell_i, cell_j, add_layer, map_buffer_action, new_instance, object_to_remove);
 	var index = (cell_count - 1 - n);
 	construction_cell_array[index] = new_construction_cell;
-	
-	// NEW: execute map buffer action @ placement instead of completion
-	scr_execute_map_buffer_action(cell_i, cell_j, map_buffer_action);
 }
 
 if(cell_count > 0)

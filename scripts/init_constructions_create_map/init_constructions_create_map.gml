@@ -154,7 +154,7 @@ init_construction_new_single(macro_magic_generator, "magic generator", spr_magic
 init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_magic_generator,	noone, 100);
 
 // # magic pump
-init_construction_new_single(macro_magic_pump, "magic pump", spr_pump, 1);
+init_construction_new_single(macro_magic_pump, "magic pump", spr_magic_pump, 1);
 init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_magic_pump,			noone, 100);
 
 // # fridge

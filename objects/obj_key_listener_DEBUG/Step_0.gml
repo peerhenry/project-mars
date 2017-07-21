@@ -41,12 +41,22 @@ if(keyboard_check_pressed(ord("I")))
 if(keyboard_check_pressed(ord("M")))
 {
 	global.resource_amount_metal += 10000;
+	with(obj_hydroponics)
+	{
+		show_debug_message("hydroponics y is: " + string(y));
+		show_debug_message("hydroponics depth is: " + string(depth));
+	}
 }
 
 if(keyboard_check_pressed(ord("L")))
 {
-	var cable = instance_position(mouse_x, mouse_y, obj_cable);
-	if(cable > 0) show_debug_message("cable adjacency number: " + string(cable.adjacency_number));
+	//var cable = instance_position(mouse_x, mouse_y, obj_cable);
+	//if(cable > 0) show_debug_message("cable adjacency number: " + string(cable.adjacency_number));
+	show_debug_message("resetting hydroponics depth...");
+	with(obj_hydroponics)
+	{
+		depth = -occ_j;
+	}
 }
 
 if(keyboard_check_pressed(ord("B")))
