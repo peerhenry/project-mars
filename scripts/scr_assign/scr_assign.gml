@@ -1,3 +1,5 @@
+/// @param assignable
+/// @param astronaut
 var arg_assignable = argument0;
 var arg_astronaut = argument1;
 
@@ -14,11 +16,13 @@ if(!arg_assignable.is_assigned)
 			if(arg_astronaut.wears_suit || arg_assignable.under_construction) return false;
 			break;
 		case obj_hydroponics:
-			// todo; write hydroponics assignment: get food
+			// todo; write hydroponics assignment condition: hydroponics food must be done & astronaut must have space in inventory
+			// var enough_space = scr_astronaut_has_big_inventory_space()
 			// return false;
 			break;
 		case obj_fridge:
-			// todo; write a fridge assignment
+			// todo; write a fridge assignment condition: astronaut must have food in inventory to put in fridge
+			// var 
 			// return false;
 			break;
 	}

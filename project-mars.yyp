@@ -183,6 +183,14 @@
             }
         },
         {
+            "Key": "0c99d921-036d-4b94-b516-bab0aed1d4a9",
+            "Value": {
+                "id": "d3bbec99-c1cb-4225-b210-12a19c4dd877",
+                "resourcePath": "sprites\\spr_solar_panel\\spr_solar_panel.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0d37026f-aa28-43bd-a2df-55a7d6b4219d",
             "Value": {
                 "id": "3790c81c-744b-4eda-8d4f-db23797c4bff",
@@ -503,6 +511,14 @@
             }
         },
         {
+            "Key": "218261ea-71df-4f12-88ff-058b4a5916be",
+            "Value": {
+                "id": "33a5167a-b322-4403-a85e-73ec5354f029",
+                "resourcePath": "scripts\\scr_astronaut_has_space\\scr_astronaut_has_space.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "219d6aed-e3cb-4e38-9b77-f7b497a80893",
             "Value": {
                 "id": "8efec42d-1c72-48f6-92c6-85431b4d44fd",
@@ -660,6 +676,14 @@
                 "id": "a9c9555e-6428-4e10-88a2-58d2c7774520",
                 "resourcePath": "scripts\\scr_command_assign\\scr_command_assign.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "2f881597-244e-4a43-9111-a93fd858509e",
+            "Value": {
+                "id": "76ba8616-ee8d-4c71-9427-1632a1b293af",
+                "resourcePath": "objects\\obj_solar_panel\\obj_solar_panel.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1428,6 +1452,14 @@
                 "id": "9f7cd2ca-5f5f-42e8-bf30-4f9dd8b2f567",
                 "resourcePath": "objects\\obj_astronaut\\obj_astronaut.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "65894dde-85ee-4ae7-acd0-036aa938c6e1",
+            "Value": {
+                "id": "98d5173f-669a-41d1-9894-560b02c985f1",
+                "resourcePath": "views\\65894dde-85ee-4ae7-acd0-036aa938c6e1.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -2879,6 +2911,14 @@
             }
         },
         {
+            "Key": "cdeee48b-5cdd-4403-9ae5-bb58803e0f67",
+            "Value": {
+                "id": "537a0b02-ddb1-4fa0-90ce-2fc82968bfe4",
+                "resourcePath": "views\\cdeee48b-5cdd-4403-9ae5-bb58803e0f67.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "ced0cca2-5ce3-44e1-a380-f9494f712ef4",
             "Value": {
                 "id": "f03262af-a0bb-46ab-9fea-b430f37435af",
@@ -3479,6 +3519,14 @@
             }
         },
         {
+            "Key": "f94104a1-1a08-44d9-a989-c4dd1c9ff0a2",
+            "Value": {
+                "id": "3c58b07c-cd9b-4417-8fe3-2dd4c2efe939",
+                "resourcePath": "scripts\\scr_astronaut_has_big_space\\scr_astronaut_has_big_space.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "fa150aa9-a984-4a2c-b2cd-7cdbdb653a9f",
             "Value": {
                 "id": "abfc9bd4-cae0-4218-987d-00ff3141b974",
@@ -3762,6 +3810,8 @@
         "fb88d106-dfba-4c0a-9317-9da3a9171dab",
         "cddddafe-abf9-48e2-8027-d959cb42586e",
         "dd6f4c6a-3125-422d-8782-5b5f249b0485",
+        "218261ea-71df-4f12-88ff-058b4a5916be",
+        "f94104a1-1a08-44d9-a989-c4dd1c9ff0a2",
         "bd6cb688-c931-494d-9c6a-d85a790d3837",
         "35cf87e2-1289-4af8-8428-5fb9fd9a4665",
         "1dfa1c5d-2a51-4917-89ff-e6653db286b1",

@@ -57,7 +57,7 @@ global.resource_amount_metal = 20000;
 
 init_grids();
 
-// # astronaut tasks
+// # astronaut stuff
 
 enum astronaut_action // these are assigned to astronaut objects
 {
@@ -69,6 +69,11 @@ enum astronaut_action // these are assigned to astronaut objects
 	executing_assignment,
 	in_combat
 }
+
+#macro macro_inventory_empty 0
+#macro macro_inventory_pistol 1
+#macro macro_inventory_food 2
+#macro macro_inventory_module 3
 
 // # initialize audio groups
 audio_group_load(audiogroup_music);

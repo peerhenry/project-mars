@@ -165,7 +165,17 @@ init_construction_set_rotation_parameter(macro_rotation_1, macro_image, 1);
 init_construction_set_rotation_parameter(macro_rotation_2, macro_image, 2);
 init_construction_set_rotation_parameter(macro_rotation_3, macro_image, 3);
 
-// active constructions:
+// # solar panel
+init_construction_new_single(macro_solar_panel, "solar panel", spr_solar_panel, 1);
+init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_solar_panel,		noone, 100);
+init_construction_set_dragging(dragging.rectangular, 1);
+init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_solar_panel,		noone, 100);
+
+
+
+
+
+// List of active constructions:
 var active_constructions = ds_list_create();
 global.active_constructions = active_constructions;
 ds_list_add(active_constructions, macro_basetile);
@@ -187,3 +197,4 @@ ds_list_add(active_constructions, macro_hydroponics);
 ds_list_add(active_constructions, macro_magic_generator);
 ds_list_add(active_constructions, macro_magic_pump);
 ds_list_add(active_constructions, macro_fridge);
+ds_list_add(active_constructions, macro_solar_panel);
