@@ -38,7 +38,7 @@ is_moving_through_gate = false;
 has_died = false;
 energy = 100;
 food_level = 100;
-inventory_grid = ds_grid_create(3,3);
+inventory = ds_grid_create(3,3);
 
 // 4. task
 assigned_object = noone;

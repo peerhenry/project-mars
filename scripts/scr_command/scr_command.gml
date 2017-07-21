@@ -14,11 +14,15 @@ if(el_assignable == noone)
 {
 	el_assignable = instance_position(mouse_x, mouse_y, obj_grid_component_assignable);
 }
+
 // Check if player clicked an enemy
 var enemy = instance_position(mouse_x, mouse_y, obj_astronaut_enemy);
 
 if(el_assignable != noone)	// Assign a task
 {
+	// show_debug_message("DEBUG DEBUG assignable: " + string(el_assignable));
+	// show_debug_message("assignable object index: " + string(el_assignable.object_index));
+	// show_debug_message("hydroponics object index: " + string(obj_hydroponics));
 	orders_given = scr_command_assign(el_assignable);
 }
 else if( enemy != noone )	// Or attack an enemy

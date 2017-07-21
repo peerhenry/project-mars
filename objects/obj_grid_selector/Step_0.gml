@@ -1,3 +1,4 @@
+/// @description reset global.selected_grid
 if(is_selected)
 {
 	// mouse click may deselect this

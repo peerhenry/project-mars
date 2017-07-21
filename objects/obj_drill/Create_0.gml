@@ -1,18 +1,17 @@
 event_inherited();
 mp_grid_add_cell( scr_get_nav_grid(), occ_i, occ_j );
+scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.occupy);
 image_speed = 0;
 
 resource_instance = instance_position(x, y, obj_resource);
 has_resource = resource_instance != noone;
 
-#macro macro_mine_metal 0
+#macro macro_alarm_mine_metal 0
 
-if(resource_instance.object_index == obj_resource_metal) alarm_set(macro_mine_metal, 30); // mine event
+if(resource_instance.object_index == obj_resource_metal) alarm_set(macro_alarm_mine_metal, 30); // mine event
 
 // electric grid
 scr_set_new_grid_props(id, macro_grid_electric, macro_grid_role_consumer, 5);
-
 scr_connect_to_cables(id);
-scr_drill_pump_connection(id);
 
-scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.occupy);
+scr_drill_pump_connection(id);

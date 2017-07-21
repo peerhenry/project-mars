@@ -1,4 +1,4 @@
-/// @description set the is_active boolean here
+/// @description Grid has updated
 if(scr_can_draw_power(id))
 {
 	scr_get_grid_prop(id, macro_grid_electric, macro_grid_component_can_perform_role);

@@ -20,5 +20,5 @@ if(!under_construction && resource_instance > 0 && scr_can_draw_power(id))
 
 if(resource_instance.amount > 0)
 {
-	alarm_set(macro_mine_metal, 30);
+	alarm_set(macro_alarm_mine_metal, 30);
 }

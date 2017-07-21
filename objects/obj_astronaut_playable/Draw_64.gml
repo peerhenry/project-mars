@@ -51,4 +51,17 @@ if(show_details)
 	var grid_x = x_or + 96;
 	var grid_y = tl_y + 128 + 96;
 	draw_sprite(spr_inventory_grid, 0, grid_x, grid_y);
+	
+	for (var i=0; i<3; i++)
+    {
+        for (var j=0; j<3; j++)
+        {
+            var value = ds_grid_get(inventory,i,j);
+			if(value != macro_inventory_empty && value != macro_inventory_occupied)
+			{
+				var sprite = scr_get_inventory_item_sprite(value);
+				draw_sprite(sprite, 0, grid_x + 32*i, grid_y + 32*j);
+			}
+        }
+    }
 }

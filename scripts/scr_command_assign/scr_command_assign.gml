@@ -9,7 +9,8 @@ with(obj_astronaut_playable)
 	if(is_selected)
 	{
 		var ds = scr_d_squared(id, arg_assignable);
-		if(ds < d_min){
+		var can_assign = scr_can_assign(arg_assignable, id);
+		if(ds < d_min && can_assign){
 			d_min = ds;
 			assigned_astronaut = id;
 		}

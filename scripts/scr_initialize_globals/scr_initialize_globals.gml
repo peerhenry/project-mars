@@ -23,14 +23,16 @@ init_constructions();
 global.construct = noone;
 global.build_time_per_cost = 0.01; // one second for each 100 resource cost
 
-enum wall_type {
+enum wall_type
+{
 	horizontal,
 	vertical,
 	other,
 	none
 }
 
-enum resource {
+enum resource
+{
 	water,
 	metal
 }
@@ -71,9 +73,10 @@ enum astronaut_action // these are assigned to astronaut objects
 }
 
 #macro macro_inventory_empty 0
-#macro macro_inventory_pistol 1
-#macro macro_inventory_food 2
-#macro macro_inventory_module 3
+#macro macro_inventory_occupied 1	// not used for rendering
+#macro macro_inventory_pistol 2
+#macro macro_inventory_food 3
+#macro macro_inventory_module 4
 
 // # initialize audio groups
 audio_group_load(audiogroup_music);

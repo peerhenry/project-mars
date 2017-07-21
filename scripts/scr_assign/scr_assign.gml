@@ -6,26 +6,8 @@ var arg_astronaut = argument1;
 var can_assign = false;
 if(!arg_assignable.is_assigned)
 {
-	// Check if conditions for assignment are met
-	switch(arg_assignable.object_index)
-	{
-		case obj_suit_closet:
-			if( arg_astronaut.wears_suit == arg_assignable.holds_suit || arg_assignable.under_construction ) return false;
-			break;
-		case obj_bed:
-			if(arg_astronaut.wears_suit || arg_assignable.under_construction) return false;
-			break;
-		case obj_hydroponics:
-			// todo; write hydroponics assignment condition: hydroponics food must be done & astronaut must have space in inventory
-			// var enough_space = scr_astronaut_has_big_inventory_space()
-			// return false;
-			break;
-		case obj_fridge:
-			// todo; write a fridge assignment condition: astronaut must have food in inventory to put in fridge
-			// var 
-			// return false;
-			break;
-	}
+	// Return false if the assignment cannot be done
+	// if(!scr_can_assign(arg_assignable, arg_astronaut)) return false; // moved to scr_command_assign
 	
 	// Check if astronaut can navigate to assignable.
 	var ass_i = scr_rc_to_gi(arg_assignable.x);

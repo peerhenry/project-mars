@@ -3,9 +3,9 @@
 var arg_width = argument0;
 var arg_height = argument1;
 
-show_debug_message("scr_resolution called:");
+/*show_debug_message("scr_resolution called:");
 show_debug_message("width: " + string(arg_width));
-show_debug_message("height: " + string(arg_height));
+show_debug_message("height: " + string(arg_height));*/
 
 // Set the size of GUI
 display_set_gui_size(arg_width, arg_height);

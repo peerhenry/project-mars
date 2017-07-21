@@ -5,9 +5,17 @@ if(keyboard_check_pressed(vk_escape))
 
 if(keyboard_check_pressed(ord("Z")))
 {
+	var width = window_get_width();
+	var height = window_get_height();
 	zoomed_in = !zoomed_in;
-	if(zoomed_in) scr_zoom(960, 540);
-	else scr_zoom(1920, 1080);
+	if(zoomed_in)
+	{
+		scr_zoom(width/2, height/2);
+	}
+	else
+	{
+		scr_zoom(width, height);
+	}
 }
 
 if(keyboard_check_pressed(ord("R")))

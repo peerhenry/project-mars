@@ -1,4 +1,4 @@
-// hardcoded constructable logic
+// hardcoded constructable logic, because its not inherited
 if(under_construction)
 {
 	draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, image_angle, c_aqua, 0.4);
@@ -8,6 +8,7 @@ if(under_construction)
 
 draw_self();
 
+// Draw zzz
 if(occupant != noone)
 {
 	occupant.energy += 0.04;
@@ -29,4 +30,4 @@ if(occupant != noone)
 	}
 }
 
-event_inherited(); // may draw the assigned icon
+event_inherited(); // May draw the assigned icon
