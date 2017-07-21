@@ -12,23 +12,29 @@ global.construction_map = ds_map_create();
 
 // # basetile
 
-init_construction_new_single(macro_basetile, "base tile", spr_base_tile, 2);	// new construction gets 3 build actions
+init_construction_new_single(macro_basetile, "base tile", spr_base_tile, 4);	// new construction gets 3 build actions
 
 //								inside validation			occupation validation			action					layer			add				remove		cost
 
 init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,		map_buffer_action.inside,	basetile_layer, obj_base_tile,	noone,		100);	// build outside
 init_construction_set_action(build_validation_i.outside, build_validation_o.wall,		map_buffer_action.inside,	basetile_layer, obj_base_tile,	obj_wall,	0);		// replace outside wall
+init_construction_set_action(build_validation_i.outside, build_validation_o.cable,		map_buffer_action.inside,	basetile_layer, obj_base_tile,	obj_cable,	50);		// replace cable
+init_construction_set_action(build_validation_i.outside, build_validation_o.pipe,		map_buffer_action.inside,	basetile_layer, obj_base_tile,	obj_pipe,	50);		// replace cable
 
 // ## surrounder
-init_construction_set_surrounder(3); // surrounder gets 3 build actions
-init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,		map_buffer_action.wall,		base_layer,		obj_wall,		noone,		100);		// build outside wall
+init_construction_set_surrounder(5); // surrounder gets 3 build actions
+init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,		map_buffer_action.wall,		base_layer,		obj_wall,		noone,		100);	// build outside wall
 init_construction_set_action(build_validation_i.outside, build_validation_o.wall_like,	map_buffer_action.nothing,	noone,			noone,			noone,		0);		// wall like: nothing
 init_construction_set_action(build_validation_i.inside,	build_validation_o.any,			map_buffer_action.nothing,	noone,			noone,			noone,		0);		// inside; nothing
+init_construction_set_action(build_validation_i.outside, build_validation_o.cable,		map_buffer_action.wall,		base_layer,		obj_wall,		obj_cable,	50);	// build outside wall
+init_construction_set_action(build_validation_i.outside, build_validation_o.pipe,		map_buffer_action.pipe,		base_layer,		obj_wall,		obj_pipe,	50);	// build outside wall
 // ## dragging
-init_construction_set_dragging(dragging.rectangular, 3);
+init_construction_set_dragging(dragging.rectangular, 5);
 init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,		map_buffer_action.inside,	basetile_layer, obj_base_tile,	noone,		100);	// build outside
 init_construction_set_action(build_validation_i.outside, build_validation_o.wall,		map_buffer_action.inside,	basetile_layer, obj_base_tile,	obj_wall,	0);		// replace outside wall
 init_construction_set_action(build_validation_i.inside,	build_validation_o.any,			map_buffer_action.nothing,	noone,			noone,			noone,		0);		// do nothing inside
+init_construction_set_action(build_validation_i.outside, build_validation_o.cable,		map_buffer_action.inside,	basetile_layer, obj_base_tile,	obj_cable,	50);		// replace cable
+init_construction_set_action(build_validation_i.outside, build_validation_o.pipe,		map_buffer_action.inside,	basetile_layer, obj_base_tile,	obj_pipe,	50);		// replace cable
 
 // # wall
 init_construction_new_single(macro_wall, "wall", spr_wall, 1);
