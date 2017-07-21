@@ -1,7 +1,7 @@
 var arg_assignable = argument0;
 var orders_given = false;
 
-// from all selected astronauts, get the one closest to the assignable
+// From all selected astronauts, pick the one closest to the assignable
 var d_min = 100000000;
 var assigned_astronaut = noone;
 with(obj_astronaut_playable)
@@ -15,11 +15,12 @@ with(obj_astronaut_playable)
 		}
 	}
 }
-	
+
+// Use the one astronaut to assign the assignable.
 if(assigned_astronaut != noone)
 {
 	orders_given = scr_assign(arg_assignable, assigned_astronaut);
-	// cancel construction
+	// Cancel construction
 	if(orders_given)
 	{
 		with(assigned_astronaut)

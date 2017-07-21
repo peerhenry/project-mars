@@ -1,28 +1,36 @@
-/// Is called after right click when astronauts are selected.
+/// Is called after right clicking when astronauts are selected.
 
-var orders_given = false; // boolean for sound
+var orders_given = false; // boolean used for playing sound
 
-// 1. cancel active task for selected astronauts
+// Cancel active task for selected astronauts
 with(obj_astronaut_playable)
 {
 	if(is_selected && assigned_object != noone) scr_unassign_task(assigned_object);
 }
 
-// 2. suit closet task
+// Check if player clicked an assignable
 var el_assignable = instance_position(mouse_x, mouse_y, obj_assignable);
-var enemy = instance_position(mouse_x, mouse_y, obj_astronaut_enemy);
-if(el_assignable != noone)
+if(el_assignable == noone)
 {
-	scr_command_assign(el_assignable);
+	el_assignable = instance_position(mouse_x, mouse_y, obj_grid_component_assignable);
 }
-else if( enemy != noone )
+// Check if player clicked an enemy
+var enemy = instance_position(mouse_x, mouse_y, obj_astronaut_enemy);
+
+if(el_assignable != noone)	// Assign a task
+{
+	orders_given = scr_command_assign(el_assignable);
+}
+else if( enemy != noone )	// Or attack an enemy
 {
 	scr_command_attack(enemy);
+	orders_given = true;
 }
-else if( !position_meeting(mouse_x, mouse_y, obj_gate) )
+else if( !position_meeting(mouse_x, mouse_y, obj_gate) )	// Or move
 {
-	scr_command_move();
+	orders_given = scr_command_move();
 }
+
 
 if(orders_given)
 {
