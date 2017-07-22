@@ -5,7 +5,9 @@
     "name": "f15ba609-9d3f-4666-a147-20682d6beb06",
     "children": [
         "dbf4e913-3d01-437e-9e72-fe79239aa833",
-        "5d9c43e9-61da-48ec-9290-d62111e0bbef"
+        "5d9c43e9-61da-48ec-9290-d62111e0bbef",
+        "d1d60135-4dcc-4627-9a50-f5650f760d98",
+        "cc3214a2-4a52-4ed3-b6c9-d3489312bbc5"
     ],
     "filterType": "GMScript",
     "folderName": "DEBUG",

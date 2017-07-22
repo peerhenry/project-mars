@@ -55,6 +55,11 @@ global.shooting_range_squared = 10*10;
 
 global.resource_amount_metal = 20000;
 
+// # custom events
+
+#macro macro_event_grid_update 0	// A grid (water/electric/etc.) updates
+#macro macro_event_interact 1		// Astronaut interact with assignable object
+
 // # electric grid stuff
 
 init_grids();
@@ -77,6 +82,17 @@ enum astronaut_action // these are assigned to astronaut objects
 #macro macro_inventory_pistol 2
 #macro macro_inventory_food 3
 #macro macro_inventory_module 4
+
+// x, y coordinate encodings for 3x3 grid
+#macro macro_astronaut_inventory_0_0 0
+#macro macro_astronaut_inventory_0_1 1	// x: 0, y: 1
+#macro macro_astronaut_inventory_0_2 2
+#macro macro_astronaut_inventory_1_0 4
+#macro macro_astronaut_inventory_1_1 5
+#macro macro_astronaut_inventory_1_2 6
+#macro macro_astronaut_inventory_2_0 8
+#macro macro_astronaut_inventory_2_1 9
+#macro macro_astronaut_inventory_2_2 10
 
 // # initialize audio groups
 audio_group_load(audiogroup_music);

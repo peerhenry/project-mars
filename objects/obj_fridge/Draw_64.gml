@@ -15,16 +15,15 @@ if(is_selected)
 	
 	// inventory
 	draw_sprite(spr_fridge_inventory_grid, 0, x_or, y_or);
-	
-	for (var i=0; i<3; i++)
+	for (var i=0; i < inv_w; i++)
     {
-        for (var j=0; j<3; j++)
+        for (var j=0; j < inv_h; j++)
         {
-            var value = ds_grid_get(inventory,i,j);
+            var value = ds_grid_get(inventory, i, j);
 			if(value != macro_inventory_empty && value != macro_inventory_occupied)
 			{
 				var sprite = scr_get_inventory_item_sprite(value);
-				draw_sprite(sprite, 0, x_or + 32*i, y_or + 32*j);
+				draw_sprite(sprite, 0, x_or + 64*i, y_or + 64*j);
 			}
         }
     }

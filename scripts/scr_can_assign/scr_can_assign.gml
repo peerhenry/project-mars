@@ -19,10 +19,8 @@ switch(arg_assignable.object_index)
 		return enough_space && hydroponics_has_food;
 	case obj_fridge:
 		var astronaut_carries_food = scr_astronaut_has(arg_astronaut, macro_inventory_food);
-		// either astronaut carries food and fridge has space
-		if(astronaut_carries_food) return scr_fridge_has_space(arg_assignable);
-		// or astronaut does not carry food and fridge has food
-		break;
+		if(astronaut_carries_food) return scr_inventory_has_space_for_item(arg_assignable.inventory, macro_inventory_food);
+		else return scr_inventory_has_item(arg_assignable.inventory, macro_inventory_food);
 }
 
 return true;
