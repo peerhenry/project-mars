@@ -63,8 +63,8 @@ init_construction_set_tile(-1, 0, 1);
 init_construction_set_validation(build_validation_i.outside, build_validation_o.wall_like);
 init_construction_set_tile(1, 0, 1);
 init_construction_set_validation(build_validation_i.outside, build_validation_o.wall_like);
-init_construction_set_rotation_parameter(macro_rotation_1, macro_angle, 90); // sprite must be drawn at an angle with the rotation parameter
-init_construction_set_rotation_parameter(macro_rotation_3, macro_angle, 90);
+init_construction_set_rotation_parameter(macro_rotation_1, macro_sprite, spr_hatch_tall_vertical);
+init_construction_set_rotation_parameter(macro_rotation_3, macro_sprite, spr_hatch_tall_vertical);
 
 // # door
 init_construction_new_multitile(macro_door, "door", spr_door, 3); // 3 tiles
@@ -75,8 +75,8 @@ init_construction_set_tile(-1, 0, 1);
 init_construction_set_validation(build_validation_i.any, build_validation_o.wall_like);
 init_construction_set_tile(1, 0, 1);
 init_construction_set_validation(build_validation_i.any, build_validation_o.wall_like);
-init_construction_set_rotation_parameter(macro_rotation_1, macro_angle, 90);
-init_construction_set_rotation_parameter(macro_rotation_3, macro_angle, 90);
+init_construction_set_rotation_parameter(macro_rotation_1, macro_sprite, spr_door_tall_vertical);
+init_construction_set_rotation_parameter(macro_rotation_3, macro_sprite, spr_door_tall_vertical);
 
 // # suit closet
 init_construction_new_single(macro_suit_closet, "space suit closet", spr_suit_closet, 1);

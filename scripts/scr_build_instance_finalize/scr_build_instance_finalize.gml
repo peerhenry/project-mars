@@ -9,9 +9,12 @@ with(added_instance)
 {
 	under_construction = false;
 	
-	// keep these inside the with statement so they dont get executed if the instance doesn't exist
+	// keep these script calls inside the with statement: that way they wont get executed if the instance doesn't exist
+	
 	scr_room_logic(build_type, added_instance);
-	scr_wall_logic(added_instance);
+	// scr_wall_logic(added_instance);
 	scr_grid_logic(added_instance);
+	
+	// Atm only sets pipe depth -= 1, maybe move this to a custom event
 	scr_post_completion(added_instance);
 }

@@ -1,15 +1,22 @@
 event_inherited();
 
 // Plants and sprinklers must be drawn on top of object
-if(!under_construction && is_active)
+if(!under_construction)
 {
-	var food_image = floor(food_level/20) -1;
-	if(food_image >= 0)
+	if(is_active)
 	{
-		draw_sprite(spr_hydroponics_plants, food_image, x, y);
-	}
+		var food_image = floor(food_level/20) -1;
+		if(food_image >= 0)
+		{
+			draw_sprite(spr_hydroponics_plants, food_image, x, y);
+		}
 	
-	draw_sprite(spr_hydroponics_sprinklers, image_index, x, y);
+		draw_sprite(spr_hydroponics_sprinklers, image_index, x, y);
+	}
+	else
+	{
+		draw_sprite(spr_hydroponics_sprinklers_off, image_index, x, y);
+	}
 }
 
 // Assigned icon must be drawn on top

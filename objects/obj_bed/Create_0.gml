@@ -30,6 +30,8 @@ scr_navgrid_occupy(occ_i + di, occ_j + dj);
 scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.occupy);
 scr_execute_map_buffer_action(occ_i + di, occ_j + dj, map_buffer_action.occupy);
 
+depth = -occ_j;
+
 // sleep variables
 occupant = noone;
 zzz_index = 0; // there is a zzz animation for when an astronaut sleeps

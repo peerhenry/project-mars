@@ -8,7 +8,9 @@ ds_stack_copy(build_stack_copy, build_stack);
 var action_is_drawable = false;
 var sprite_for_ghost = noone;
 
-draw_set_alpha(0.42);
+#macro macro_ghost_alpha 0.42
+#macro macro_sensor_ghost_alpha 0.16
+draw_set_alpha(macro_ghost_alpha);
 draw_set_color(c_lime);
 if(!global.can_pay_for_construction) draw_set_color(c_red);
 
@@ -50,9 +52,10 @@ for(var n = 0; n < cell_count; n++)
 			draw_sprite_ext( sprite_for_ghost, image, target_x, target_y, 1, 1, angle, c_white, 0.42 );
 		}
 		draw_rectangle(target_x-16, target_y-16, target_x+15, target_y+15, false);
+		
 		if(object_to_add == obj_sensor)
 		{
-			
+			draw_set_alpha(macro_sensor_ghost_alpha);
 			for(var di = -macro_sensor_d+1; di < macro_sensor_d; di++)
 			{
 				var lim_j = floor(sqrt(macro_sensor_d_squared - di*di)-0.01);
@@ -62,6 +65,7 @@ for(var n = 0; n < cell_count; n++)
 				var r_bottom = target_y + 15 + lim_j*32;
 				draw_rectangle(r_left, r_top, r_right, r_bottom, false);
 			}
+			draw_set_alpha(macro_ghost_alpha);
 		}
 	}
 }

@@ -1,7 +1,7 @@
 if(scr_should_draw_sensor_range())
 {
 	draw_set_color(c_aqua);
-	draw_set_alpha(0.2);
+	draw_set_alpha(0.16);
 
 	with(obj_sensor){
 		if(scr_sensor_can_sense(id))

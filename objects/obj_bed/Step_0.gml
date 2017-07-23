@@ -2,7 +2,7 @@
 
 if(occupant != noone)
 {
-	occupant.energy += 0.08;
+	occupant.energy += 0.06;
 	if(occupant.energy > 100){
 		occupant.energy = 100;
 		instance_activate_object(occupant);

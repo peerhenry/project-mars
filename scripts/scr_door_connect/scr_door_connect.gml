@@ -3,7 +3,7 @@ var door = argument0;
 
 with(door)
 {
-	if(image_angle == 0 || image_angle == 180)
+	if(sprite_index == spr_door_tall)
 	{
 		room1 = scr_room_at(x, y-32); // room north of door
 		room2 = scr_room_at(x, y+32); // room south of door

@@ -87,6 +87,14 @@
             }
         },
         {
+            "Key": "02501df9-f27c-48ad-8427-06ad7edf0c78",
+            "Value": {
+                "id": "5cfad260-ebac-49cf-96b8-1dc7a17774a6",
+                "resourcePath": "sprites\\spr_door_tall\\spr_door_tall.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "028c940f-7cba-4582-825b-24c4e871e4be",
             "Value": {
                 "id": "9f482011-6201-447e-ad01-c7db8832c37e",
@@ -316,6 +324,14 @@
                 "id": "33867fc0-f423-428a-abe1-cccbaffa37ea",
                 "resourcePath": "scripts\\scr_four_electric_grids_add\\scr_four_electric_grids_add.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "16c9babd-83d5-493c-8e72-5405061e4ed3",
+            "Value": {
+                "id": "8d36bd42-5176-4b09-bb1d-c5f8dd0f0c95",
+                "resourcePath": "sprites\\spr_bed_horizontal_2\\spr_bed_horizontal_2.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -579,6 +595,14 @@
             "Value": {
                 "id": "53d14899-08d8-478d-928a-c092f0d20589",
                 "resourcePath": "scripts\\scr_grid_add\\scr_grid_add.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "236a50d7-91bf-49fa-af4c-7c30c9e44ddc",
+            "Value": {
+                "id": "aeb35004-5655-47b6-8cb2-8da8b06b72f7",
+                "resourcePath": "scripts\\scr_update_ghost_tile\\scr_update_ghost_tile.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1231,6 +1255,14 @@
             }
         },
         {
+            "Key": "48fc34a3-4e6a-4ed4-9d49-3cc620f32a2f",
+            "Value": {
+                "id": "c1946978-95f0-48b4-91ed-fb32a8c15b65",
+                "resourcePath": "sprites\\spr_hatch_tall\\spr_hatch_tall.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "48feedd4-b8ed-4cf1-81e5-93a8d51458a1",
             "Value": {
                 "id": "4129f2e2-d51f-4517-add2-67ab3fc45fc9",
@@ -1300,6 +1332,14 @@
                 "id": "3002393b-3be3-490b-818c-7229e381fb23",
                 "resourcePath": "objects\\obj_fade\\obj_fade.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "4daf8551-7775-44ea-a97b-e5157af2a7cb",
+            "Value": {
+                "id": "d37e0327-0105-487b-9f60-61939dfde64e",
+                "resourcePath": "sprites\\spr_door_tall_vertical\\spr_door_tall_vertical.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1471,6 +1511,14 @@
             }
         },
         {
+            "Key": "5f097d76-27de-45fe-b930-032832e08d58",
+            "Value": {
+                "id": "16697d22-0051-4a21-b9cd-6482c55e8946",
+                "resourcePath": "sprites\\spr_hatch_tall_vertical\\spr_hatch_tall_vertical.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "5f1b8bee-34d3-4f5c-8d59-d78b5b6ffb00",
             "Value": {
                 "id": "cc712ae3-47d5-45f5-8fac-053c351c9f7e",
@@ -1500,6 +1548,14 @@
                 "id": "fb802782-d82a-4764-a27e-9f7bd657a4eb",
                 "resourcePath": "views\\60efbb61-7dfe-4b76-8afa-eb047822ab12.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "618b3c6c-eb82-4b19-a7e9-566261fe9489",
+            "Value": {
+                "id": "f8135751-f34c-426d-aabb-e5339871b3fc",
+                "resourcePath": "sprites\\spr_wall_tall\\spr_wall_tall.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1852,6 +1908,14 @@
                 "id": "922bf345-2b36-4076-b303-b32272e04174",
                 "resourcePath": "sounds\\song_jobs\\song_jobs.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "7f471e96-0177-47ee-b152-99017e386239",
+            "Value": {
+                "id": "9c1fbe88-b3eb-4bca-8448-d21134b19cc2",
+                "resourcePath": "sprites\\spr_hydroponics_sprinklers\\spr_hydroponics_sprinklers.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2727,14 +2791,6 @@
             }
         },
         {
-            "Key": "bb8aa143-a2df-41fe-8ee2-761b9d8e4e22",
-            "Value": {
-                "id": "5253f9fb-6c91-413d-9072-643be8a86eb2",
-                "resourcePath": "sprites\\spr_bed_horizontal_2\\spr_bed_horizontal_2.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "bc0179c9-1a07-4d79-a769-665080431680",
             "Value": {
                 "id": "d51a128c-e5b7-4fa5-9689-99d36b139b08",
@@ -2956,6 +3012,14 @@
                 "id": "6281decf-ed88-4ade-b3ab-0a11ff95ebb4",
                 "resourcePath": "sprites\\spr_magic_generator\\spr_magic_generator.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c6600610-5773-414b-94b4-e7cde82221ec",
+            "Value": {
+                "id": "b8eb9503-3b04-4b60-9e88-7e2e53c1aa97",
+                "resourcePath": "views\\c6600610-5773-414b-94b4-e7cde82221ec.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -3426,7 +3490,7 @@
             "Key": "e0fdfdf7-270b-41b3-85a2-ff0fd828348d",
             "Value": {
                 "id": "377a2d31-0f4a-403b-9bb9-5681d3b6edc6",
-                "resourcePath": "sprites\\spr_wall_new\\spr_wall_new.yy",
+                "resourcePath": "sprites\\spr_wall_proto\\spr_wall_proto.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -3834,7 +3898,7 @@
             "Key": "fcb0ced4-7414-41f3-8e90-da15536b95e5",
             "Value": {
                 "id": "269ce01d-c7a8-4de8-b9f7-e62acb988c0d",
-                "resourcePath": "sprites\\spr_hydroponics_sprinklers\\spr_hydroponics_sprinklers.yy",
+                "resourcePath": "sprites\\spr_hydroponics_sprinklers_off\\spr_hydroponics_sprinklers_off.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -4002,6 +4066,7 @@
         "9b65fde5-218d-4bc8-891c-32c0ec902add",
         "1b745382-3ded-49f1-84e3-c9da47e7fd7d",
         "d7dcfc03-f6de-4eec-9d20-c42da4058e9a",
+        "236a50d7-91bf-49fa-af4c-7c30c9e44ddc",
         "18c968ad-b343-40b8-8710-2c11c8e22e0d",
         "72fc8b6f-0dd3-485a-b357-e6e145f9bd32",
         "be165f1b-9963-4348-8988-87be73df6b53",

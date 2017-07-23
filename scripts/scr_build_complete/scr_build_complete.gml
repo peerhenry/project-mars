@@ -30,6 +30,10 @@ for(var n = 0; n < count; n++) // loop over tiles
 	
 	// - finalize added object
 	scr_build_instance_finalize(added_instance, target_layer, build_type);
+	with(added_instance)
+	{
+		depth = depth + 300; // reset normal depth
+	}
 }
 
 // remove from the construction queue

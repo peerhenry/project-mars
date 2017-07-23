@@ -55,10 +55,13 @@ for(var n = 0; n < array_length_1d(build_tiles); n++)
 	}
 }
 
-// surrounder actions; assumed to always be wall
+
 var surround_actions = construction[macro_surround_actions];
-if(is_array(surround_actions)){
-	
+if(is_array(surround_actions))
+{	
+	/*
+	// OLD WAY OF DOING WALLS
+	// surrounder actions; assumed to always be wall
 	scr_update_ghost_tile_with_overrides(arg_i - 1,	arg_j - 1,	surround_actions, spr_wall_edge,		-1, 90);
 	scr_update_ghost_tile_with_overrides(arg_i,		arg_j - 1,	surround_actions, spr_wall_straight,	-1, -1);
 	scr_update_ghost_tile_with_overrides(arg_i + 1,	arg_j - 1,	surround_actions, spr_wall_edge,		-1, -1);
@@ -67,7 +70,30 @@ if(is_array(surround_actions)){
 	scr_update_ghost_tile_with_overrides(arg_i - 1,	arg_j + 1,	surround_actions, spr_wall_edge,		-1, 180);
 	scr_update_ghost_tile_with_overrides(arg_i,		arg_j + 1,	surround_actions, spr_wall_straight,	-1, -1);
 	scr_update_ghost_tile_with_overrides(arg_i + 1,	arg_j + 1,	surround_actions, spr_wall_edge,		-1, 270);
+	*/
 	
+	// with proper sprite indices
+	/*
+	scr_update_ghost_tile_with_overrides(arg_i - 1,	arg_j - 1,	surround_actions, spr_wall_tall,	9,	-1); // tl	ES	0+3
+	scr_update_ghost_tile_with_overrides(arg_i,		arg_j - 1,	surround_actions, spr_wall_tall,	5,	-1); // t	EW	0+2
+	scr_update_ghost_tile_with_overrides(arg_i + 1,	arg_j - 1,	surround_actions, spr_wall_tall,	12,	-1); // tr	WS	2+3
+	scr_update_ghost_tile_with_overrides(arg_i - 1,	arg_j,		surround_actions, spr_wall_tall,	10,	-1); // l	NS	1+3
+	scr_update_ghost_tile_with_overrides(arg_i + 1,	arg_j,		surround_actions, spr_wall_tall,	10,	-1); // r	NS	1+3
+	scr_update_ghost_tile_with_overrides(arg_i - 1,	arg_j + 1,	surround_actions, spr_wall_tall,	3,	-1); // bl	EN	0+1
+	scr_update_ghost_tile_with_overrides(arg_i,		arg_j + 1,	surround_actions, spr_wall_tall,	5,	-1); // b	EW	0+2
+	sc_update_ghost_tile_with_overrides(arg_i + 1,	arg_j + 1,	surround_actions, spr_wall_tall,	6,	-1); // br	NW	1+2
+	*/
+	
+	// without any overrides
+	scr_update_ghost_tile_with_overrides(arg_i - 1,	arg_j - 1,	surround_actions, spr_wall_tall,	-1,	-1); // tl	ES	0+3
+	scr_update_ghost_tile_with_overrides(arg_i,		arg_j - 1,	surround_actions, spr_wall_tall,	-1,	-1); // t	EW	0+2
+	scr_update_ghost_tile_with_overrides(arg_i + 1,	arg_j - 1,	surround_actions, spr_wall_tall,	-1,	-1); // tr	WS	2+3
+	scr_update_ghost_tile_with_overrides(arg_i - 1,	arg_j,		surround_actions, spr_wall_tall,	-1,	-1); // l	NS	1+3
+	scr_update_ghost_tile_with_overrides(arg_i + 1,	arg_j,		surround_actions, spr_wall_tall,	-1,	-1); // r	NS	1+3
+	scr_update_ghost_tile_with_overrides(arg_i - 1,	arg_j + 1,	surround_actions, spr_wall_tall,	-1,	-1); // bl	EN	0+1
+	scr_update_ghost_tile_with_overrides(arg_i,		arg_j + 1,	surround_actions, spr_wall_tall,	-1,	-1); // b	EW	0+2
+	scr_update_ghost_tile_with_overrides(arg_i + 1,	arg_j + 1,	surround_actions, spr_wall_tall,	-1,	-1); // br	NW	1+2
 }
 
-// auto rotate door or hatch was here
+
+// auto rotate door/hatch was here

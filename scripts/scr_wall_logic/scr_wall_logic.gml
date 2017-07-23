@@ -3,6 +3,8 @@
 // also solidifies walls and gates (so astronauts can't shoot through them)
 var arg_instance = argument0;
 
+exit; // REFACTOR: new wall images
+
 with(arg_instance)
 {
 	switch(object_index)

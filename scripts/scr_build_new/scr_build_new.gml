@@ -56,9 +56,8 @@ for(var n = 0; n < cell_count; n++)
 				image_index = image; // the check for cable or pipe is a dirty fix
 			}
 			
-			// depth = layer_get_depth(add_layer) - 1;
-			// depth = -200; // under construction drawing has priority
-			scr_post_creation_logic(global.construct, new_instance);	// for suit closet
+			depth = depth - 300; // under construction drawing has priority
+			scr_post_creation_logic(global.construct, new_instance);	// only for suit closet
 			under_construction = true;
 		}
 		

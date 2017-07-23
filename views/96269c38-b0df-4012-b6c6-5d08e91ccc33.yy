@@ -11,7 +11,7 @@
         "ecace5a9-cc1f-4929-acd5-34f96c9402fd"
     ],
     "filterType": "GMScript",
-    "folderName": "wall logic",
+    "folderName": "wall logic - OBSOLETE",
     "isDefaultView": false,
     "localisedFolderName": ""
 }
