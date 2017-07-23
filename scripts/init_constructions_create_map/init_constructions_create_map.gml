@@ -43,7 +43,7 @@ init_construction_set_action(build_validation_i.inside, build_validation_o.vacan
 init_construction_set_dragging(dragging.linear, 2);
 init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.wall,		base_layer,		obj_wall,		noone,		100);	// build inside
 init_construction_set_action(build_validation_i.inside, build_validation_o.wall_like,	map_buffer_action.wall,		noone,			noone,			noone,		0);		// over existing wall: nothing
-init_construction_set_drag_parameter(macro_drag_vertical, macro_sprite, spr_wall_straight);
+/*init_construction_set_drag_parameter(macro_drag_vertical, macro_sprite, spr_wall_straight);
 init_construction_set_drag_parameter(macro_drag_horizontal, macro_sprite, spr_wall_straight);
 init_construction_set_drag_parameter(macro_drag_vertical, macro_angle, 90);
 init_construction_set_drag_parameter(macro_drag_top, macro_angle, 90);
@@ -53,7 +53,7 @@ init_construction_set_drag_parameter(macro_drag_left, macro_angle, 180);
 init_construction_set_drag_parameter(macro_drag_left, macro_sprite, spr_wall_end);
 init_construction_set_drag_parameter(macro_drag_right, macro_sprite, spr_wall_end);
 init_construction_set_drag_parameter(macro_drag_top, macro_sprite, spr_wall_end);
-init_construction_set_drag_parameter(macro_drag_bottom, macro_sprite, spr_wall_end);
+init_construction_set_drag_parameter(macro_drag_bottom, macro_sprite, spr_wall_end);*/
 
 // # hatch
 init_construction_new_multitile(macro_hatch, "hatch", spr_hatch, 3); // construction uses 3 tiles

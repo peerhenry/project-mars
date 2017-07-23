@@ -2,9 +2,8 @@ event_inherited();
 
 if(wall_adjacency == 0 || under_construction) exit;
 
-var grid_props = grid_props_map[? macro_grid_electric];
-var grid = grid_props[macro_grid_component_grid];
-
+// Maar even geen basetile lichtjes...
+/*
 var light_image_index = 0;
 if(scr_can_draw_power(id)) light_image_index = 1;
 
@@ -24,3 +23,4 @@ if((wall_adjacency & macro_south_number) == macro_south_number)
 {
 	draw_sprite_ext(spr_tile_light, light_image_index, x, y, 1, 1, 180, c_white, 1);
 }
+*/
