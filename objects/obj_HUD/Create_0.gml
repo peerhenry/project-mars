@@ -21,7 +21,6 @@ enum button_state
 	selected
 }
 
-
 // ### OBJECT SETTINGS
 
 var construction_list = global.active_constructions;
@@ -29,21 +28,34 @@ build_count = ds_list_size(construction_list);
 props_per_build = 3;
 build_button_buffer = buffer_create(build_count*props_per_build*4, buffer_fixed, 4);
 
+var hud_layer = layer_get_id("logic");
+
+y_offset = 128; // offset for build buttons
+y_spacing = 0;
+x_offset = 6;
+
+// Create HUD items
 for(var n = 0; n < build_count; n++)
 {
 	var next_build = ds_list_find_value(construction_list, n);
 	var next_sprite = scr_hud_sprite_for_build(next_build);
 	var next_image_index = scr_hud_image_for_build(next_build);
-	var next_state = button_state.none;
+	/*var next_state = button_state.none;
 	var second_u32 = (next_state << 8) + next_image_index;
 	buffer_write(build_button_buffer, buffer_s32, next_sprite);	// b, t, v	
 	buffer_write(build_button_buffer, buffer_u32, second_u32);
-	buffer_write(build_button_buffer, buffer_s32, next_build);
+	buffer_write(build_button_buffer, buffer_s32, next_build);*/
+	
+	var left = x_offset;
+	var top = y_offset + (32 + y_spacing)*n;
+	var new_item = instance_create_layer(left, top, hud_layer, obj_HUD_item);
+	with(new_item)
+	{
+		construction = next_build;
+		sprite_index = next_sprite;
+		image_index = next_image_index;
+	}
 }
-
-y_offset = 128; // offset for build buttons
-y_spacing = 0;
-x_offset = 6;
 
 // coords for menu button
 menu_btn_left = 4;
