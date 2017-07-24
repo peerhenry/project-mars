@@ -17,6 +17,14 @@ var snap_end_y = (end_j + 1)*32;
 var counter = 0;
 var navigation_grid = scr_get_nav_grid();
 
+with(arg_astronaut)
+{
+	if(!is_walking && end_i == occ_i && end_j == occ_j)
+	{
+		return false;
+	}
+}
+
 // Clear all character cells before trying to navigate
 with(obj_astronaut)
 {
@@ -58,9 +66,12 @@ while ( !path_found && counter < arg_max_loop )
 // Navigate the path
 if(path_found)
 {
-	arg_astronaut.dest_i = end_i;
-	arg_astronaut.dest_j = end_j;
-	with(arg_astronaut)	path_start(arg_astronaut.path, arg_astronaut.movement_speed, path_action_stop, false); // path, speed, end action, absolute
+	with(arg_astronaut)
+	{
+		dest_i = end_i;
+		dest_j = end_j;
+		path_start(path, movement_speed, path_action_stop, false); // path, speed, end action, absolute
+	}
 }
 
 // Reset all navgrid cells at astronaut positions.
@@ -71,7 +82,8 @@ with(obj_astronaut)
 }
 
 // Free hatches again for navigation
-if(!arg_astronaut.wears_suit){
+if(!arg_astronaut.wears_suit)
+{
 	with(obj_hatch)
 	{
 		mp_grid_clear_cell(navigation_grid, occ_i, occ_j);

@@ -17,7 +17,7 @@ right = 3;
 left = 4;
 moveDir = down;
 
-movement_speed = global.astronaut_move_speed;
+movement_speed = macro_astronaut_move_speed;
 
 // 2. drawing stuff
 sprite_down = spr_character_walk_down;
@@ -38,7 +38,10 @@ is_moving_through_gate = false;
 has_died = false;
 energy = 100;
 food_level = 100;
+
+// inventory
 inventory = ds_grid_create(3,3);
+scr_inventory_insert(inventory, macro_inventory_pistol)
 
 // 4. task
 assigned_object = noone;

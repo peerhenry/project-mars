@@ -1,5 +1,3 @@
-// Set width and height of viewport and camera based on resolution setting
-
 var height = window_get_height();
 var width = window_get_width();
 view_set_wport(0, width);

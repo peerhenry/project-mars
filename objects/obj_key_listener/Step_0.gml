@@ -34,3 +34,22 @@ if(keyboard_check_pressed(ord("N")))
 		audio_stop_sound(global.current_song);
 	}
 }
+
+if(keyboard_check_pressed(ord("Y")))
+{
+	walls_tall = !walls_tall;
+	if(walls_tall)
+	{
+		with(obj_wall)
+		{
+			sprite_index = spr_wall_tall;
+		}
+	}
+	else
+	{
+		with(obj_wall)
+		{
+			sprite_index = spr_wall;
+		}
+	}
+}

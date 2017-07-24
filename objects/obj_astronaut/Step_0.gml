@@ -1,5 +1,9 @@
 /// @description Update astronaut
 
+if(floor(energy) - floor(energy - 0.02) != 0)
+{
+	movement_speed = 0.5*(1 + sqrt(energy/100))*macro_astronaut_move_speed;
+}
 energy -= 0.02;
 
 // 1. kill if health reached zero

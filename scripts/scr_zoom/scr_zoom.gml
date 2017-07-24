@@ -12,13 +12,21 @@ var new_x = center_x - new_w/2;
 var new_y = center_y - new_h/2;
 
 // prevent cam zooming out from going out of bounds
-if(new_h > cam_h && new_y + new_h > room_height)
+if(new_h > cam_h) // it was a zoom out
 {
-	new_y = room_height - new_h;
+	if(new_y + new_h > room_height)
+	{
+		new_y = room_height - new_h;
+	}
+	else if(new_y < 0)
+	{
+		new_y = 0;
+	}
 }
-if(new_w > cam_w && new_x + new_w > room_width)
+if(new_w > cam_w)
 {
-	new_x = room_width - new_w;
+	if(new_x + new_w > room_width) new_x = room_width - new_w;
+	else if(new_x < 0) new_x = 0;
 }
 
 camera_set_view_size(cam, new_w, new_h);

@@ -5,7 +5,10 @@ var orders_given = false; // boolean used for playing sound
 // Cancel active task for selected astronauts
 with(obj_astronaut_playable)
 {
-	if(is_selected && assigned_object != noone) scr_unassign_task(assigned_object);
+	if(is_selected && assigned_object != noone)
+	{
+		scr_unassign_task(assigned_object);
+	}
 }
 
 // Check if player clicked an assignable

@@ -31,6 +31,7 @@ else
 			case menu_index.new_game:
 				break;
 			case menu_index.tutorial:
+				room_goto(tutorial);
 				break;
 			case menu_index.settings:
 				room_goto(room_settings);

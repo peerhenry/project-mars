@@ -9,7 +9,7 @@ has_resource = resource_instance != noone;
 
 #macro macro_alarm_mine_metal 0
 
-if(resource_instance.object_index == obj_resource_metal) alarm_set(macro_alarm_mine_metal, 30); // mine event
+if(has_resource && resource_instance.object_index == obj_resource_metal) alarm_set(macro_alarm_mine_metal, 30); // mine event
 
 // electric grid
 scr_set_new_grid_props(id, macro_grid_electric, macro_grid_role_consumer, 5);
