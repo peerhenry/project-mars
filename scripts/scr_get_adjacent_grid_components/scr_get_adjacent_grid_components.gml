@@ -3,7 +3,7 @@
 var arg_instance = argument0;
 var arg_grid_type = argument1;
 
-var components = scr_get_adjacent_instances(arg_instance, obj_grid_component);
+var components = scr_get_adjacent_instances(arg_instance, obj_constructable);
 
 for(var n = 0; n < 4; n++)
 {

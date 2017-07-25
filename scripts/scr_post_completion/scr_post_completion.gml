@@ -1,7 +1,5 @@
 var arg_instance = argument0;
 
-var should_update_adjacent_cables = false;
-
 with(arg_instance)
 {
 	switch(object_index)

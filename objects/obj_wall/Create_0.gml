@@ -24,7 +24,17 @@ for(var n = 0; n < 4; n++) // ENWS
 	var next_wall = adj_walls[n];
 	if(next_wall != noone)
 	{
-		next_wall.image_index += power(2, (n+2)%4);
+		var adj_bit = power(2, (n+2)%4);
+		if(next_wall.image_index & adj_bit != adj_bit)
+		{
+			next_wall.image_index += adj_bit;
+		}
 		image_index += power(2, n);
 	}
 }
+
+// DEBUG
+var free = scr_navgrid_cell_is_free(occ_i, occ_j);
+show_debug_message("i,j : " + string(occ_i) + ", " + string(occ_j));
+show_debug_message("at the end of wall creation, cell is free: " + string(free));
+alarm_set(0, 1);

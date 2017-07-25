@@ -25,26 +25,33 @@ for(var n = 0; n < count; n++) // loop over tiles
 	if(object_to_remove != noone)
 	{
 		var instance = instance_position(cell_x, cell_y, object_to_remove);
-		with(instance) instance_destroy();
+		if(instance.object_index == obj_base_tile)
+		{
+			with(instance)
+			{
+				var instance2 = instance_position(cell_x, cell_y, object_to_remove);
+				with(instance2) instance_destroy();
+			}
+		}
+		else with(instance) instance_destroy();
 	}
 	
-	// - finalize added object
-	scr_build_instance_finalize(added_instance, target_layer, build_type);
+	// - finalize added object: MOVED TO CUSTOM EVENT
+	// scr_build_instance_finalize(added_instance, target_layer, build_type);
+	
 	with(added_instance)
 	{
-		depth = depth + 300; // reset normal depth
+		depth = depth + 300;				// reset normal depth
+		event_user(macro_event_finalize);
 	}
 }
 
-// remove from the construction queue
+// Remove from the construction queue
 var construction_queue = global.construction_queue;
 var index = ds_list_find_index(construction_queue, arg_construction);
 ds_list_delete(construction_queue, index);
 
-// old: room logic; now part of scr_build_instance_finalize
-//if(build_type != macro_basetile && build_type != macro_wall) scr_room_logic(build_type, room_logic_instance);
-
-// stop astronaut
+// Stop astronaut
 var astronaut = arg_construction[construction_astronaut];
 if(astronaut != noone)
 {

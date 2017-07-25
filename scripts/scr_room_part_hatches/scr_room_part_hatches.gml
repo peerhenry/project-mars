@@ -1,3 +1,6 @@
+/// @description Puts hatches from given list into the given room if the hatch touches the room
+/// @param room
+/// @param hatch_list
 var new_room = argument0;
 var all_hatches = argument1;
 

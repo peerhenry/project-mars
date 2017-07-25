@@ -43,9 +43,9 @@ for(var n = 0; n < cell_count; n++)
 		var target_x = scr_gi_to_rc(cell_i);
 		var target_y = scr_gi_to_rc(cell_j);
 		new_instance = instance_create_layer(target_x, target_y, add_layer, object_to_add);
-		ds_list_add(new_instances, new_instance);
 		with(new_instance)
 		{
+			ds_list_add(new_instances, new_instance);
 			if(angle >= 0) image_angle = angle;
 			if(sprite > 0) sprite_index = sprite;
 			if(

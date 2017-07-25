@@ -5,19 +5,19 @@ var room_drainage_per_hatch = hatch_o2_drainage_for_one_tile / ds_list_size(tile
 
 var next_hatch = undefined;
 var n = 0;
-repeat(ds_list_size(hatches)){
+repeat(ds_list_size(hatches))
+{
 	next_hatch = ds_list_find_value(hatches, n);
-	if(!is_undefined(next_hatch)){
-		if(next_hatch.is_open){
-			if(oxygen_level > 0)
-			{
-				oxygen_level -= room_drainage_per_hatch; // each open hatch contributes to leakage.
-				if(oxygen_level < 0) oxygen_level  = 0;
-			}
-			all_hatches_closed = false;
-			oxygen_is_leaking = true;
-			oxygen_is_replenishing = false; // do not replenish if hatch is open.
+	if(next_hatch.is_open)
+	{
+		if(oxygen_level > 0)
+		{
+			oxygen_level -= room_drainage_per_hatch; // each open hatch contributes to leakage.
+			if(oxygen_level < 0) oxygen_level  = 0;
 		}
+		all_hatches_closed = false;
+		oxygen_is_leaking = true;
+		oxygen_is_replenishing = false; // do not replenish if hatch is open.
 	}
 	n++;
 }

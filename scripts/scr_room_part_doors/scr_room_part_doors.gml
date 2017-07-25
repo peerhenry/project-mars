@@ -1,3 +1,6 @@
+/// @description Puts doors from given list into the given room if the door touches the room
+/// @param room
+/// @param doors_list
 var new_room = argument0;
 var all_doors = argument1;
 

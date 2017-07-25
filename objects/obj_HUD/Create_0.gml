@@ -30,11 +30,11 @@ build_button_buffer = buffer_create(build_count*props_per_build*4, buffer_fixed,
 
 var hud_layer = layer_get_id("logic");
 
-y_offset = 128; // offset for build buttons
+y_offset = 64; // offset for build buttons
 y_spacing = 0;
 x_offset = 6;
 
-// Create HUD items
+// Create HUD construction buttons
 for(var n = 0; n < build_count; n++)
 {
 	var next_build = ds_list_find_value(construction_list, n);

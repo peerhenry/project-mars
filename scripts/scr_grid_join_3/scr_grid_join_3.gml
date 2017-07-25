@@ -6,5 +6,7 @@ var arg_grid_1 = argument0;
 var arg_grid_2 = argument1;
 var arg_grid_3 = argument2;
 
-var grido = scr_grid_join(arg_grid_1, arg_grid_2);
-return scr_grid_join(grido, arg_grid_3);
+#macro m_j scr_grid_join
+
+var grido = m_j(arg_grid_1, arg_grid_2);
+return m_j(grido, arg_grid_3);

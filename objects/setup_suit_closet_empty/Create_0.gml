@@ -9,5 +9,8 @@ with(inst)
 	holds_suit = false;
 	image_index += 4;
 }
-scr_build_instance_finalize(inst, t_layer, build_type);
+with(inst)
+{
+	event_user(macro_event_finalize);
+}
 instance_destroy();

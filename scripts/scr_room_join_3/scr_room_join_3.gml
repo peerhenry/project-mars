@@ -85,5 +85,5 @@ else{
 	with(room2) instance_destroy();
 	with(room3) instance_destroy();
 	
-	scr_room_reconnect_doors(new_room);
+	scr_room_reconnect_gates(new_room);
 }

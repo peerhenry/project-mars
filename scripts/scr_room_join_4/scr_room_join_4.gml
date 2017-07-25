@@ -118,5 +118,5 @@ else	// four distinct rooms
 	with(room3) instance_destroy();
 	with(room4) instance_destroy();
 	
-	scr_room_reconnect_doors(new_room);
+	scr_room_reconnect_gates(new_room);
 }

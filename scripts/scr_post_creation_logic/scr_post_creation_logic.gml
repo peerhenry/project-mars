@@ -10,7 +10,9 @@ if(arg_instance.object_index == obj_suit_closet)
 	{
 		var rotation = image_angle div 90;
 		//image_angle = 0;
-		image_index += rotation;
+		image_index += rotation; // can be set in construction definition
+		
+		// not sure how this can be refactored...
 		if(arg_build == macro_suit_closet_empty)
 		{
 			holds_suit = false;

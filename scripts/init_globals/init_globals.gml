@@ -57,8 +57,9 @@ global.resource_amount_metal = 20000;
 
 // # custom events
 
-#macro macro_event_grid_update 0	// A grid (water/electric/etc.) updates
+#macro macro_event_grid_notify 0	// A grid (water/electric/etc.) updates
 #macro macro_event_interact 1		// Astronaut interact with assignable object
+#macro macro_event_finalize 2		// finalize construction event
 
 // # electric grid stuff
 

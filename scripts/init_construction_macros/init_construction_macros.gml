@@ -20,6 +20,7 @@
 #macro macro_magic_pump 18
 #macro macro_fridge 19
 #macro macro_solar_panel 20
+#macro macro_destruct 21
 
 // construction properties
 #macro macro_id 0

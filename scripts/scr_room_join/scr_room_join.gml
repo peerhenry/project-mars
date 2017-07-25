@@ -1,4 +1,8 @@
-/// Join 2 rooms
+/// @description Join 2 rooms
+/// @param x
+/// @param y
+/// @param room1
+/// @param room2
 var arg_x = argument0;
 var arg_y = argument1;
 var room1 = argument2;
@@ -6,6 +10,7 @@ var room2 = argument3;
 
 if(room1 == room2){
 	scr_room_expand(room1, arg_x, arg_y);
+	return room1;
 }
 else{
 	// create new room, destroy the old rooms
@@ -38,7 +43,7 @@ else{
 		ds_list_copy(doors, room1.doors);
 		for(var n=0; n<ds_list_size(room2.doors); n++) {
 			var next_door = ds_list_find_value(room2.doors, n);
-			if(ds_list_find_index(doors, next_door ) == -1)
+			if(ds_list_find_index(doors, next_door ) < 0) // prevent duplicate doors from being added.
 			{
 				ds_list_add(doors, next_door);
 			}
@@ -57,5 +62,6 @@ else{
 	instance_destroy(room1);
 	instance_destroy(room2);
 	
-	scr_room_reconnect_doors(new_room);
+	scr_room_reconnect_gates(new_room);
+	return new_room;
 }

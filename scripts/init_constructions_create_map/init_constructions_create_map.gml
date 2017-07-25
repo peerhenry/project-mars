@@ -174,16 +174,19 @@ init_construction_set_rotation_parameter(macro_rotation_3, macro_image, 3);
 // # solar panel
 init_construction_new_single(macro_solar_panel, "solar panel", spr_solar_panel, 1);
 init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_solar_panel,		noone, 100);
-init_construction_set_dragging(dragging.rectangular, 1);
-init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_solar_panel,		noone, 100);
+init_construction_set_dragging_simple(dragging.rectangular);
 
-
+// # destruction
+init_construction_new_single(macro_destruct, "destruct", spr_destruct, 1);
+init_construction_set_action(build_validation_i.any,	build_validation_o.any,			map_buffer_action.clear,	base_layer,		obj_destruct,			noone, 0);
+init_construction_set_dragging_simple(dragging.rectangular);
 
 
 
 // List of active constructions:
 var active_constructions = ds_list_create();
 global.active_constructions = active_constructions;
+ds_list_add(active_constructions, macro_destruct);
 ds_list_add(active_constructions, macro_basetile);
 ds_list_add(active_constructions, macro_wall);
 ds_list_add(active_constructions, macro_hatch);

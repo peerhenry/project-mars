@@ -16,7 +16,7 @@ if(space < 0) return false;
 // Insert item into astronaut inventory
 var inv_x = space >> 8;
 var inv_y = space & 255;
-show_debug_message("INSERTING INTO: " + string(inv_x) + " " + string(inv_y));
+// show_debug_message("INSERTING INTO: " + string(inv_x) + " " + string(inv_y)); // DEBUG
 if(size == 2)
 {
 	ds_grid_set_region(arg_inventory, inv_x, inv_y, inv_x + 1, inv_y + 1, macro_inventory_occupied);

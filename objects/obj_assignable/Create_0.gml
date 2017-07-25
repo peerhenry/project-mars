@@ -1,4 +1,4 @@
-
+event_inherited();
 is_assigned = false;
 assigned_astronaut = noone;
 frames = 6;
