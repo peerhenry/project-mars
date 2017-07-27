@@ -1,5 +1,6 @@
 /// @description Check for menu events
 
+/*
 var move = 0;
 move -= max(keyboard_check_pressed(vk_up), keyboard_check_pressed(ord("W")), 0);
 move += max(keyboard_check_pressed(vk_down), keyboard_check_pressed(ord("S")), 0);
@@ -24,10 +25,6 @@ else
 		
 		switch(menu_focus_index)
 		{
-			case settings_index.fullscreen:
-				break;
-			case settings_index.resolution:
-				break;
 			case settings_index.back:
 				room_goto(room_menu);
 				break;
@@ -37,3 +34,4 @@ else
 }
 
 if(keyboard_check_pressed(vk_escape)) room_goto(room_menu);
+*/

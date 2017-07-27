@@ -8,11 +8,7 @@ draw_set_color(c_white);
 var m;
 for(m = 0; m <= menu_index_max; m++)
 {
-	if(m == settings_index.back)
-	{
-		draw_set_color(c_white);
-	}
-	else draw_set_color(c_gray);
+	draw_set_color(c_white);
 	
 	str_Name = menu[m];
 	string_width(str_Name + " ");

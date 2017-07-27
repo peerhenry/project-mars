@@ -106,10 +106,6 @@ enum astronaut_action // these are assigned to astronaut objects
 #macro macro_astronaut_inventory_2_1 9
 #macro macro_astronaut_inventory_2_2 10
 
-// # initialize audio groups
-audio_group_load(audiogroup_music);
-audio_group_load(audiogroup_sfx);
-
 // # sensor
 global.sensor_selected = false;
 #macro macro_sensor_d_squared 49

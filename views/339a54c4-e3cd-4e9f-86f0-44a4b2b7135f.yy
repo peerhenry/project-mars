@@ -4,15 +4,12 @@
     "mvc": "1.1",
     "name": "339a54c4-e3cd-4e9f-86f0-44a4b2b7135f",
     "children": [
-        "aa0a734f-cf6f-49b6-a0c8-e52f496377ad",
-        "dd2dc63e-8f11-4bd7-bd5f-945f228fcde4",
-        "4d62cafc-f8b8-4da3-b98d-b19e548034df",
-        "efe612f3-a627-4c3c-811b-8e2e9e9d43b0",
-        "3274d00e-e4a7-44d5-8fca-985396990caf",
-        "5d7e7e74-f48b-4b91-a06e-573cde9795f6"
+        "e249b8ab-2974-478c-a3cb-62d717990748",
+        "eb528a3e-ea1d-4bce-83c8-ad47efe189ba",
+        "94bd62fc-c6f8-4e02-afb1-cf42327299f9"
     ],
     "filterType": "GMObject",
-    "folderName": "main_menu",
+    "folderName": "MAIN_MENU",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

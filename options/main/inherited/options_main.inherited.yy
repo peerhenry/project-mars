@@ -24,6 +24,16 @@
                     "groupName": "audiogroup_sfx",
                     "targets": 29263750006690030
                 }
+            },
+            {
+                "Key": 3,
+                "Value": {
+                    "id": "1d79841e-e2f5-440b-b743-c75980682829",
+                    "modelName": "GMAudioGroup",
+                    "mvc": "1.0",
+                    "groupName": "audiogroup_voice",
+                    "targets": 29263750006690030
+                }
             }
         ],
         "Checksum": "濑Ⱥ朦씁ᬄ縈",

@@ -3,7 +3,7 @@
     "modelName": "GMSound",
     "mvc": "1.0",
     "name": "sound_cmd_understood",
-    "audioGroupGuid": "7b2c4976-1e09-44e5-8256-c527145e03bb",
+    "audioGroupGuid": "1d79841e-e2f5-440b-b743-c75980682829",
     "bitDepth": 1,
     "bitRate": 128,
     "kind": 0,

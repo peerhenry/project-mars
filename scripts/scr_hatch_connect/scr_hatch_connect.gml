@@ -1,3 +1,4 @@
+/// @description connect hatch to room
 /// @param hatch
 var arg_hatch = argument0;
 

@@ -3,7 +3,9 @@ scr_navgrid_clear_cell( occ_i, occ_j );
 scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.clear);
 scr_remove_basetile_lights(id);
 
-// update image index of adjacent walls
+if(position_meeting(x, y, obj_gate)) exit;
+
+// If wall isn't being replaced by a gate, update image index of adjacent walls
 var adj_walls = scr_get_adjacent_instances(id, obj_wall);
 for(var n = 0; n < 4; n++) // ENWS
 {

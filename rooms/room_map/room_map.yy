@@ -440,7 +440,7 @@
             "id": "8abe0137-5c87-40c9-8b58-be0c9e90f3e6",
             "modelName": "GMRInstanceLayer",
             "mvc": "1.0",
-            "depth": -850,
+            "depth": -800,
             "grid_x": 32,
             "grid_y": 32,
             "hierarchyFrozen": false,
@@ -3993,7 +3993,7 @@
             "id": "60481da9-b4e4-4c29-8865-da5185ed89ed",
             "modelName": "GMRInstanceLayer",
             "mvc": "1.0",
-            "depth": -750,
+            "depth": 0,
             "grid_x": 32,
             "grid_y": 32,
             "hierarchyFrozen": false,
@@ -4008,7 +4008,7 @@
             "m_parentID": "00000000-0000-0000-0000-000000000000",
             "m_serialiseFrozen": false,
             "name": "base_tall",
-            "userdefined_depth": false,
+            "userdefined_depth": true,
             "visible": true,
             "instances": [
                 

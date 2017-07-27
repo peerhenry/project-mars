@@ -45,10 +45,13 @@ if(show_details)
 	draw_text(x_or, food_line_y, "Food");
 	draw_healthbar(bar_x_or, food_line_y - half_bar, tl_x + width - 16, food_line_y + half_bar, food_level, 0, c_red, c_olive, 0, false, false);
 	
+	var next_line_y = tl_y + 128 + 96;
+	draw_text(x_or, next_line_y, "Is walking: " + string(is_walking));
+	
 	//draw_text(x_or, food_line_y, "Inventory");
 	
 	// inventory
-	var grid_x = x_or + 96;
+	/*var grid_x = x_or + 96;
 	var grid_y = tl_y + 128 + 96;
 	draw_sprite(spr_inventory_grid, 0, grid_x, grid_y);
 	
@@ -63,5 +66,5 @@ if(show_details)
 				draw_sprite(sprite, 0, grid_x + 32*i, grid_y + 32*j);
 			}
         }
-    }
+    }*/
 }

@@ -1,4 +1,7 @@
-/// Adds room to given list if there is a room at given coordinates.
+/// @description Adds room to given list if there is a room at given coordinates.
+/// @param x
+/// @param y
+/// @param list
 var arg_x = argument0;
 var arg_y = argument1;
 var roomlist = argument2;

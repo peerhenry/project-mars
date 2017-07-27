@@ -1,0 +1,17 @@
+after alpha:
+9 weeks to release
+
+1.
+extra features:
+- base modules
+- electrolyser
+- mouse input revamp
+- base damage attack
+2.
+tutorial map V1
+- player learns how to construct a base
+3. 
+base defense V1
+- a map where player must hold out against waves of enemies
+- worm attacks
+- enemy astronaut attacks
