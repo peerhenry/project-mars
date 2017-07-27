@@ -3,11 +3,12 @@
 /// @param y
 var arg_x = argument0;
 var arg_y = argument1;
-var arg_i = scr_rc_to_gi(arg_x);
-var arg_j = scr_rc_to_gi(arg_y);
 
 var le_room = scr_room_at(arg_x, arg_y);
 if(le_room == noone) exit;
+
+var arg_i = scr_rc_to_gi(arg_x);
+var arg_j = scr_rc_to_gi(arg_y);
 scr_remove_tile_from_room(le_room, arg_i, arg_j);
 
 if(ds_list_size(le_room.tiles) == 0)
@@ -16,7 +17,7 @@ if(ds_list_size(le_room.tiles) == 0)
 	return;
 }
 
-if(scr_room_could_part_at(le_room, arg_x, arg_y))
+if(scr_room_could_part_at(arg_x, arg_y))
 {
 	var doors_to_update = ds_list_create();
 	var hatches_to_update = ds_list_create();

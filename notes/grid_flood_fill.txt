@@ -1,0 +1,36 @@
+When a component is deleted, a flood fill must check if the grid needs to part.
+The implementation can be seen in scr_grid_part
+I came up with the following:
+
+1. check if parting is possible, given the grid and the removed component
+
+2. make a ds_map of grid
+Put all components of the grid in a ds_map (grid index coordinates as keys) and store the count.
+Call the map remainder.
+
+3. do a flood fill on the any component
+create queue for the flood fill
+create map for visited coordinates
+create list for visited components
+push first component
+while(queue is not empty)
+{
+	pop head,
+	add id to list visited components
+	remove from remainder
+	
+	for ENWS, check validity
+	-> if valid, push on queue
+}
+
+check validity(i, j)
+{
+	// map of grid has key for (i, j)
+	// map of visited coordinates has no key for (i,j)
+}
+
+4. check if list of visited components has the same count as grid
+=> if yes, done
+
+make a new grid of the flood fill components
+make a new grid of the remaining components, part grid again

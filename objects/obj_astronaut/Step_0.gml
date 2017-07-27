@@ -1,12 +1,6 @@
 /// @description Update astronaut
 
-if(floor(energy) - floor(energy - 0.02) != 0)
-{
-	movement_speed = 0.5*(1 + sqrt(energy/100))*macro_astronaut_move_speed;
-}
-energy -= 0.02;
-
-// 1. kill if health reached zero
+// Kill if health reached zero
 if(has_died) return;
 else if(astronaut_health <= 0)
 {
@@ -19,7 +13,16 @@ else if(astronaut_health <= 0)
 	return;
 }
 
-// 2. 
+// Update energy and speed
+#macro d_energy 0.02
+if(floor(energy) - floor(energy - d_energy) != 0)
+{
+	movement_speed = 0.5*(1 + sqrt(energy/100))*macro_astronaut_move_speed;
+}
+if(energy > 0) energy -= d_energy;
+else if(energy < 0) energy = 0;
+
+// Update movement
 // - Set move direction sprite 
 // - check if going through gate
 // - set the room
@@ -111,8 +114,10 @@ if(is_walking)
 }
 else
 {
-	// 3. update whatever it is astronaut is doing.
+	image_speed = 0;
+	image_index = 0;
 	
+	// Update whatever it is astronaut is doing.
 	// constructing
 	if(current_action = astronaut_action.constructing)
 	{
@@ -124,7 +129,7 @@ else
 	}
 }
 
-// 4. update from path
+// Update from path
 if(path_position > 0 && path_position < 1)
 {
 	if(!is_walking) is_walking = true;
@@ -166,7 +171,7 @@ else
 	}
 }
 
-// 6. update health and oxygen.
+// Update health and oxygen.
 var oxygen_around = !is_outside;
 if(!is_moving_through_gate){
 	var inside_room = scr_room_at(x, y);

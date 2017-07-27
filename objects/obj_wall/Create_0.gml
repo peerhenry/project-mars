@@ -32,9 +32,3 @@ for(var n = 0; n < 4; n++) // ENWS
 		image_index += power(2, n);
 	}
 }
-
-// DEBUG
-var free = scr_navgrid_cell_is_free(occ_i, occ_j);
-show_debug_message("i,j : " + string(occ_i) + ", " + string(occ_j));
-show_debug_message("at the end of wall creation, cell is free: " + string(free));
-alarm_set(0, 1);

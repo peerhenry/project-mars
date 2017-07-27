@@ -5,7 +5,7 @@ with(arg_grid)
 {
 	for(var role = 0; role < macro_grid_role_count; role++)
 	{
-		var component_role_list = components_map[? role];
+		var component_role_list = role_map[? role];
 		switch(role)
 		{
 			case macro_grid_role_consumer:

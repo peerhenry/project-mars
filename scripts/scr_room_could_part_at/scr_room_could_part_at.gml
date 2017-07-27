@@ -1,7 +1,4 @@
-var le_room = argument0;
-var arg_x = argument1;
-var arg_y = argument2;
-
-
-
-return true;
+/// @description Checks if surrounding tiles are disconnected
+/// @param x
+/// @param y
+return scr_surrounding_instances_are_disconnected(argument0, argument1, obj_base_tile);

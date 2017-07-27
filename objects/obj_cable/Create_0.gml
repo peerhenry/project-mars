@@ -1,5 +1,7 @@
 event_inherited();
 
+scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.cable);
+
 // electric grid
 scr_set_new_grid_props(id, macro_grid_electric, macro_grid_role_carrier, 0);
 
@@ -56,5 +58,3 @@ if(south_electric != noone)
 
 scr_set_cable_image(id);
 // end === SET ADJACENCY NUMBER AND IMAGE INDEX ===
-
-scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.cable);

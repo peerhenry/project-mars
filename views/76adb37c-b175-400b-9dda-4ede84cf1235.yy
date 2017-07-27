@@ -8,10 +8,7 @@
         "858eed39-c774-4fd1-a064-baae36f07af7",
         "2829f992-74fe-4d39-b772-a5434f89f88a",
         "ff0242b6-40e5-4b78-ada4-f46e73ef4fd7",
-        "9334fdda-6241-4ea9-ad65-d7217c99ad00",
-        "862db3eb-3378-4d9d-8ddd-7a505bb4e070",
-        "51b10545-515d-408f-9e65-8971a0af441b",
-        "73956559-df91-415a-8740-70215b25b289"
+        "9334fdda-6241-4ea9-ad65-d7217c99ad00"
     ],
     "filterType": "GMScript",
     "folderName": "room tiles",

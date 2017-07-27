@@ -54,7 +54,9 @@ enum map_buffer_action
 	wall,
 	inside,
 	cable,
-	pipe
+	pipe,
+	clear_cable,
+	clear_pipe
 }
 
 enum construction_state

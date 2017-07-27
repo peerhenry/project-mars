@@ -1,3 +1,4 @@
+/// @description Checks if component has grid props belonging to grid type.
 /// @param component
 /// @param grid_type
 

@@ -1,3 +1,5 @@
+/// @param room
+/// @param force_new_room_bool
 var le_room = argument0;
 var force_new_room = argument1; // will force creation of a new room even if room is connected
 var out_room = le_room;
@@ -21,8 +23,8 @@ var tiles_visited = ds_list_create();
 // START flood fill
 
 var origin_tile = ds_list_find_value(tiles_remaining, 0); // get the first tile
-var or_i = scr_room_tile_decode_i(origin_tile);
-var or_j = scr_room_tile_decode_j(origin_tile);
+var or_i = scr_decode_grid_coord_i(origin_tile);
+var or_j = scr_decode_grid_coord_j(origin_tile);
 var tile_left = or_i*32 + 16;
 var tile_top = or_j*32 + 16;
 var tile_right = tile_left + 32;
@@ -37,17 +39,18 @@ ds_queue_enqueue(tile_queue, origin_tile);
 var connected_tiles_count = 0;
 while(!ds_queue_empty(tile_queue))
 {
-	// dequeue the head
+	// pop the head
 	var qh = ds_queue_head(tile_queue);
 	ds_queue_dequeue(tile_queue);
 	var has_been_visited = ds_list_find_index(tiles_visited, qh) > -1;
-	if(has_been_visited){
+	if(has_been_visited)
+	{
 		continue; // skip the rest of the while loop
 	}
 	
 	// MARK TILE
-	var tile_i = scr_room_tile_decode_i(qh);
-	var tile_j = scr_room_tile_decode_j(qh);
+	var tile_i = scr_decode_grid_coord_i(qh);
+	var tile_j = scr_decode_grid_coord_j(qh);
 	var tile_left = tile_i*32 + 16;
 	var tile_top = tile_j*32 + 16;
 	var tile_right = tile_left + 32;
@@ -67,19 +70,19 @@ while(!ds_queue_empty(tile_queue))
 	var next_e_i = tile_i;
 	var next_e_j = tile_j;
 	next_w_i--;
-	var next_west = scr_room_tile_encode(next_w_i, next_w_j);
+	var next_west = scr_encode_grid_coord(next_w_i, next_w_j);
 	next_e_i++;
-	var next_east = scr_room_tile_encode(next_e_i, next_e_j);
+	var next_east = scr_encode_grid_coord(next_e_i, next_e_j);
 		
 	// enqueue north
-	var north = scr_room_tile_encode(tile_i, tile_j-1);
+	var north = scr_encode_grid_coord(tile_i, tile_j-1);
 	var north_is_in_remainder = ds_list_find_index(tiles_remaining, north) > -1;
 	if(north_is_in_remainder)
 	{
 		ds_queue_enqueue(tile_queue, north);
 	}
 	// enqueue south
-	var south = scr_room_tile_encode(tile_i, tile_j+1);
+	var south = scr_encode_grid_coord(tile_i, tile_j+1);
 	var south_is_in_remainder = ds_list_find_index(tiles_remaining, south) > -1;
 	if(south_is_in_remainder)
 	{
@@ -90,14 +93,14 @@ while(!ds_queue_empty(tile_queue))
 	var next_west_is_in_remainder = ds_list_find_index(tiles_remaining, next_west) > -1;
 	while(next_west_is_in_remainder){ // being in the remainder means it's in the room and it hasn't been visited
 		
-		var north_of_next_west = scr_room_tile_encode(next_w_i, next_w_j-1);
+		var north_of_next_west = scr_encode_grid_coord(next_w_i, next_w_j-1);
 		var nnw_is_in_remainder = ds_list_find_index(tiles_remaining, north_of_next_west) > -1;
 		if(nnw_is_in_remainder)
 		{
 			ds_queue_enqueue(tile_queue, north_of_next_west); // enqueu north
 		}
 			
-		var south_of_next_west = scr_room_tile_encode(next_w_i, next_w_j+1);
+		var south_of_next_west = scr_encode_grid_coord(next_w_i, next_w_j+1);
 		var snw_is_in_remainder = ds_list_find_index(tiles_remaining, south_of_next_west) > -1;
 		if(snw_is_in_remainder)
 		{
@@ -120,7 +123,7 @@ while(!ds_queue_empty(tile_queue))
 		// END MARK TILE
 		
 		next_w_i--;
-		next_west = scr_room_tile_encode(next_w_i, next_w_j);
+		next_west = scr_encode_grid_coord(next_w_i, next_w_j);
 		next_west_is_in_remainder = ds_list_find_index(tiles_remaining, next_west) > -1;
 	}
 		
@@ -128,14 +131,14 @@ while(!ds_queue_empty(tile_queue))
 	var next_east_is_in_remainder = ds_list_find_index(tiles_remaining, next_east) > -1;
 	while(next_east_is_in_remainder){
 			
-		var north_of_next_east = scr_room_tile_encode(next_e_i, next_e_j-1);
+		var north_of_next_east = scr_encode_grid_coord(next_e_i, next_e_j-1);
 		var nne_is_in_remainder = ds_list_find_index(tiles_remaining, north_of_next_east) > -1;
 		if(nne_is_in_remainder)
 		{
 			ds_queue_enqueue(tile_queue, north_of_next_east); // enqueu north
 		}
 			
-		var south_of_next_east = scr_room_tile_encode(next_e_i, next_e_j+1);
+		var south_of_next_east = scr_encode_grid_coord(next_e_i, next_e_j+1);
 		var sne_is_in_remainder = ds_list_find_index(tiles_remaining, south_of_next_east) > -1;
 		if(sne_is_in_remainder)
 		{
@@ -158,7 +161,7 @@ while(!ds_queue_empty(tile_queue))
 		// END MARK TILE
 		
 		next_e_i++;
-		next_east = scr_room_tile_encode(next_e_i, next_e_j);
+		next_east = scr_encode_grid_coord(next_e_i, next_e_j);
 		next_east_is_in_remainder = ds_list_find_index(tiles_remaining, next_east) > -1;
 	}
 }
@@ -174,7 +177,8 @@ if(tiles_remain)
 	// make a room from remaining tiles:
 	var room_layer = layer_get_name("rooms");
 	var temp_room = instance_create_layer(0, 0, room_layer, obj_room); // this is just a dummy room without bb, used to pass remaining tiles along with gates
-	with(temp_room){
+	with(temp_room)
+	{
 		oxygen_level = le_room.oxygen_level;
 		temperature = le_room.temperature;
 		ds_list_copy(tiles, tiles_remaining);
@@ -186,17 +190,19 @@ if(tiles_remain)
 	scr_room_part(temp_room, true);
 }
 
-if(tiles_remain || force_new_room){
+if(tiles_remain || force_new_room)
+{
 	// show_message("making a new room of size " + string(ds_list_size(tiles_visited))); // DEBUG
 	
 	// THIS IS WHERE THE ACTUAL PARTED ROOM IS CREATED
 	var new_room = scr_room_new_from_tiles(tiles_visited, min_left, min_top, max_right, max_bottom);
-	with(new_room){
+	with(new_room)
+	{
 		oxygen_level = le_room.oxygen_level;
 		temperature = le_room.temperature;
 	}
 	
-	// move hatches to room
+	// Move gates to room
 	scr_room_part_hatches(new_room, all_hatches);
 	scr_room_part_doors(new_room, all_doors);
 	

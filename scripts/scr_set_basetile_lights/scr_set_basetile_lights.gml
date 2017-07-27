@@ -1,3 +1,4 @@
+// basetile lights have been disabled for now...
 var arg_instance = argument0;
 
 if(arg_instance.object_index == obj_wall)

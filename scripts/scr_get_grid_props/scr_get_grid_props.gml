@@ -1,3 +1,5 @@
+/// @param instance
+/// @param grid_type
 var arg_instance = argument0;
 var arg_grid_type = argument1;
 

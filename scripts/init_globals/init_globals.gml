@@ -5,6 +5,17 @@ global.draw_room_bb = false;
 global.debug_start_messages = false;
 global.debug_gameplay_messages = true;
 
+// # layers
+#macro macro_grid_layer "logic"
+#macro macro_logic_layer "logic"
+#macro macro_base_tall_layer "base_tall"
+#macro macro_astronaut_layer "astronauts"
+#macro macro_rooms_layer "rooms"
+#macro macro_terrain_layer "terrain"
+#macro macro_resource_layer "terrain"
+#macro macro_base_tile_layer "basetiles"
+#macro macro_base_layer "base"
+
 // # constructions
 init_constructions();
 
