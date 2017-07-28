@@ -66,6 +66,8 @@ global.shooting_range_squared = 10*10;
 
 global.resource_amount_metal = 20000;
 
+global.draw_tall_walls = true;
+
 // # custom events
 
 #macro macro_event_grid_notify 0	// A grid (water/electric/etc.) updates

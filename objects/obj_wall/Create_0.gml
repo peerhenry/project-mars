@@ -6,6 +6,7 @@ scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.wall);
 
 depth = -occ_j;	// set depth for tall structures
 image_speed = 0;
+if(!global.draw_tall_walls) sprite_index = spr_wall;
 
 adjacency_numer = 0;
 

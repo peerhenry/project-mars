@@ -1,6 +1,6 @@
-var basetile_layer = layer_get_id("basetiles");
-var base_layer = layer_get_id("base");
-var base_tall_layer = layer_get_id("base_tall");
+var basetile_layer = layer_get_id(macro_base_tile_layer);
+var base_layer = layer_get_id(macro_base_layer);
+var base_tall_layer = layer_get_id(macro_base_tall_layer);
 
 // read from file
 /*var i, file, file_string;
@@ -56,13 +56,18 @@ init_construction_set_drag_parameter(macro_drag_top, macro_sprite, spr_wall_end)
 init_construction_set_drag_parameter(macro_drag_bottom, macro_sprite, spr_wall_end);*/
 
 // # hatch
-init_construction_new_multitile(macro_hatch, "hatch", spr_hatch, 3); // construction uses 3 tiles
+init_construction_new_multitile(macro_hatch, "hatch", spr_hatch, 5); // construction uses 3 tiles
 init_construction_set_tile(0, 0, 1); // di, dj, action_count
-init_construction_set_action(build_validation_i.outside, build_validation_o.wall,		map_buffer_action.wall_like, base_layer,	obj_hatch,		obj_wall,	100);	// build on outside wall
+init_construction_set_action(build_validation_i.outside, build_validation_o.wall, map_buffer_action.wall_like, base_layer,	obj_hatch,		obj_wall,	100);	// build on outside wall
 init_construction_set_tile(-1, 0, 1);
 init_construction_set_validation(build_validation_i.outside, build_validation_o.wall_like);
 init_construction_set_tile(1, 0, 1);
 init_construction_set_validation(build_validation_i.outside, build_validation_o.wall_like);
+init_construction_set_tile(0, -1, 1);
+init_construction_set_validation(build_validation_i.any, build_validation_o.vacant);	// reserve a spot on the outside
+init_construction_set_tile(0, 1, 1);
+init_construction_set_validation(build_validation_i.any, build_validation_o.vacant);	// reserve a spot on the outside
+
 init_construction_set_rotation_parameter(macro_rotation_1, macro_sprite, spr_hatch_tall_vertical);
 init_construction_set_rotation_parameter(macro_rotation_3, macro_sprite, spr_hatch_tall_vertical);
 

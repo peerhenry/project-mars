@@ -37,8 +37,9 @@ if(keyboard_check_pressed(ord("N")))
 
 if(keyboard_check_pressed(ord("Y")))
 {
-	walls_tall = !walls_tall;
-	if(walls_tall)
+	var tall_walls = global.draw_tall_walls;
+	global.draw_tall_walls = !tall_walls;
+	if(tall_walls)
 	{
 		with(obj_wall)
 		{

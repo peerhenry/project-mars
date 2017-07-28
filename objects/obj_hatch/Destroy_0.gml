@@ -22,7 +22,13 @@ if(!under_construction)
 	}
 }
 
-// DEBUG
-var free = scr_navgrid_cell_is_free(occ_i, occ_j);
-show_debug_message("i,j : " + string(occ_i) + ", " + string(occ_j));
-show_debug_message("at the end of hatch destruction, cell is free: " + string(free));
+if(connects_horizontally)
+{
+	scr_execute_map_buffer_action(occ_i + 1, occ_j, map_buffer_action.clear);
+	scr_execute_map_buffer_action(occ_i - 1, occ_j, map_buffer_action.clear);
+}
+else
+{
+	scr_execute_map_buffer_action(occ_i, occ_j + 1, map_buffer_action.clear);
+	scr_execute_map_buffer_action(occ_i, occ_j - 1, map_buffer_action.clear);
+}

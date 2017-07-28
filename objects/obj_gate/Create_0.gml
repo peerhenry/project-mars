@@ -22,3 +22,7 @@ for(var n = 0; n < 4; n++) // ENWS
 		}
 	}
 }
+
+
+var rot_param = global.build_rotation;
+connects_horizontally  = (rot_param == 1 || rot_param == 3)
