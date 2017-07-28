@@ -19,6 +19,7 @@ if(ds_list_size(le_room.tiles) == 0)
 
 if(scr_room_could_part_at(arg_x, arg_y))
 {
+	show_debug_message("Room is now parting...");// DEBUG
 	var doors_to_update = ds_list_create();
 	var hatches_to_update = ds_list_create();
 	

@@ -1,3 +1,4 @@
+/// @description checks if an adjacent spot is in room
 var le_room = argument0;
 var gate = argument1;
 

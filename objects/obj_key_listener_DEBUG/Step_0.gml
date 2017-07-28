@@ -52,11 +52,19 @@ if(keyboard_check_pressed(ord("L")))
 {
 	//var cable = instance_position(mouse_x, mouse_y, obj_cable);
 	//if(cable > 0) show_debug_message("cable adjacency number: " + string(cable.adjacency_number));
-	show_debug_message("resetting hydroponics depth...");
-	with(obj_hydroponics)
+	
+	var count = 0;
+	var leak_count = 0;
+	var replenish_count = 0;
+	with(obj_room)
 	{
-		depth = -occ_j;
+		count++;
+		if(oxygen_is_replenishing) replenish_count++;
+		if(oxygen_is_leaking) leak_count++;
 	}
+	show_debug_message("room count: " + string(count));
+	show_debug_message("leak count: " + string(leak_count));
+	show_debug_message("replenish_count: " + string(replenish_count));
 }
 
 if(keyboard_check_pressed(ord("B")))

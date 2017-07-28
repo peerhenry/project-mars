@@ -11,7 +11,8 @@
         "e9b24bf6-6fe3-4543-aee3-77d7ac0c0fac",
         "0110738c-e37b-45e4-a812-9020b0a148fd",
         "b1d5107c-745b-4c43-b310-974e8d2fa3ea",
-        "f6b1f957-62cc-4243-8843-cfd2332dab71"
+        "f6b1f957-62cc-4243-8843-cfd2332dab71",
+        "a047a1ec-a411-4d9b-9121-f7326dfa6581"
     ],
     "filterType": "GMScript",
     "folderName": "room logic",

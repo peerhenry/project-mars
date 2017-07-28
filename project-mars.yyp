@@ -2623,6 +2623,14 @@
             }
         },
         {
+            "Key": "a047a1ec-a411-4d9b-9121-f7326dfa6581",
+            "Value": {
+                "id": "ec489b8a-2721-4ee1-866b-6b592940879e",
+                "resourcePath": "scripts\\scr_create_room_between_doors\\scr_create_room_between_doors.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "a052d55b-f0af-405d-9e27-659e1ebfb268",
             "Value": {
                 "id": "8013e968-f9d0-40ec-9a6b-364616dc81be",
@@ -4390,6 +4398,7 @@
         "0110738c-e37b-45e4-a812-9020b0a148fd",
         "b1d5107c-745b-4c43-b310-974e8d2fa3ea",
         "f6b1f957-62cc-4243-8843-cfd2332dab71",
+        "a047a1ec-a411-4d9b-9121-f7326dfa6581",
         "e51a69ba-d619-4203-b369-7188caaaa910",
         "0d37026f-aa28-43bd-a2df-55a7d6b4219d",
         "811c46a2-64c1-4058-aea2-d9c7d96bd0bc",

@@ -4,7 +4,7 @@ var arg_y = argument1;
 var or_x = scr_rc_clamp_origin(arg_x);
 var or_y = scr_rc_clamp_origin(arg_y);
 
-var room_layer = layer_get_name("rooms");
+var room_layer = layer_get_name(macro_rooms_layer);
 var new_room = instance_create_layer(arg_x, arg_y, room_layer, obj_room);
 with(new_room){
 	bb_left = or_x;

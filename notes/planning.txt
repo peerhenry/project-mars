@@ -1,6 +1,8 @@
 after alpha:
 9 weeks to release
 
+ALPHA
+
 1.
 extra features:
 - base modules
@@ -15,3 +17,15 @@ base defense V1
 - a map where player must hold out against waves of enemies
 - worm attacks
 - enemy astronaut attacks
+
+4. ?
+
+BETA
+
+5.
+6.
+7.
+8.
+9.
+
+VERSION 1.0

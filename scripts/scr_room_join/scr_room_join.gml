@@ -18,8 +18,8 @@ else{
 	var size1 = ds_list_size(room1.tiles);
 	var size2 = ds_list_size(room2.tiles);
 	var totalsize = size1 + size2;
-	var new_oxygen_level = (room1.oxygen_level * size1 + room2.oxygen_level * size2)/totalsize;
-	var new_temperature = (room1.temperature * size1 + room2.temperature * size2)/totalsize;
+	var new_oxygen_level = (room1.oxygen_level * size1 + room2.oxygen_level * size2)/max(totalsize,1);
+	var new_temperature = (room1.temperature * size1 + room2.temperature * size2)/max(totalsize,1);
 	
 	var new_room = scr_room_new(arg_x, arg_y);
 	

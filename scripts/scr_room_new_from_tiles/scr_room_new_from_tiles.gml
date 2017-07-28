@@ -4,8 +4,7 @@ var top = argument2;
 var right = argument3;
 var bottom = argument4;
 
-var room_layer = layer_get_name("rooms");
-var new_room = instance_create_layer(left, top, room_layer, obj_room);
+var new_room = instance_create_layer(left, top, macro_rooms_layer, obj_room);
 with(new_room){
 	bb_left = left;
 	bb_top = top;

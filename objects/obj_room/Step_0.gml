@@ -1,7 +1,7 @@
 /// @description Update oxygen levels
 
 var all_hatches_closed = true;
-var room_drainage_per_hatch = hatch_o2_drainage_for_one_tile / ds_list_size(tiles);
+var room_drainage_per_hatch = hatch_o2_drainage_for_one_tile / max(ds_list_size(tiles),1);
 
 var next_hatch = undefined;
 var n = 0;
@@ -35,15 +35,21 @@ if(all_hatches_closed)
 	{
 		var no_door_leakage = true;
 		var n = 0;
-		repeat(ds_list_size(doors)){
+		var open_door_count = 0;
+		repeat(ds_list_size(doors))
+		{
 			// if a door is open and the other room is leaking, then this room is leaking as well.
 			next_door = ds_list_find_value(doors, n);
-			if(next_door.is_open){
-				if(next_door.room1 == id && next_door.room2 != id && next_door.room2.oxygen_is_leaking){
+			if(next_door.is_open)
+			{
+				open_door_count++;
+				if(next_door.room1 == id && next_door.room2 != id && next_door.room2.oxygen_is_leaking)
+				{
 					no_door_leakage = false;
 					break;
 				}
-				else if(next_door.room1 != id && next_door.room2 == id && next_door.room1.oxygen_is_leaking){
+				else if(next_door.room1 != id && next_door.room2 == id && next_door.room1.oxygen_is_leaking)
+				{
 					no_door_leakage = false;
 					break;
 				}
@@ -51,6 +57,10 @@ if(all_hatches_closed)
 			n++;
 		}
 		oxygen_is_replenishing = no_door_leakage;
+		if(open_door_count == 0)
+		{
+			oxygen_is_leaking = false;
+		}
 	}
 }
 
