@@ -11,7 +11,7 @@
         "1dd37cb6-f98e-4133-8a5d-952bc1778aed"
     ],
     "filterType": "GMScript",
-    "folderName": "main_menu",
+    "folderName": "MAIN_MENU",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

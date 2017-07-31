@@ -25,11 +25,14 @@ var volume_master = ini_read_real("sound", "master", macro_master_default);
 var volume_voice = ini_read_real("sound", "voice", macro_voice_default);
 var volume_sfx = ini_read_real("sound", "sfx", macro_sfx_default);
 var volume_music = ini_read_real("sound", "music", macro_music_default);
+var fullscreen = ini_read_real("settings", "fullscreen", false);
 
 ini_close();
 
 // Set resolution
 scr_resolution(width, height);
+window_set_fullscreen(fullscreen);
+global.fullscreen = fullscreen;
 
 // Set audio levels
 audio_master_gain(volume_master/100);

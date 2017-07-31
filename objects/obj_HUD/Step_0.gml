@@ -26,7 +26,6 @@ if(mouse_over_menu)
 
 
 // todo: draw spr_cursor_attack if mouse does not hover over HUD...
-// not sure how it works now that all hud construction buttons have been extracted to other instances.
 
 if(global.hovering_over_HUD)
 {

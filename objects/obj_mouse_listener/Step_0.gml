@@ -7,6 +7,7 @@ if(global.hovering_over_HUD){
 
 if(global.construct != noone) // BUILD MODE
 {
+	// Left pressed: set click origin and hide astronaut panels
 	if(mouse_check_button_pressed(mb_left))
 	{
 		click_x = mouse_x;
@@ -14,6 +15,7 @@ if(global.construct != noone) // BUILD MODE
 		scr_hide_all_panels();
 	}
 	
+	// Drag
 	if(mouse_check_button(mb_left))
 	{
 		if(mouse_x != click_x && mouse_y != click_y)
@@ -29,6 +31,7 @@ if(global.construct != noone) // BUILD MODE
 		is_dragging	= false;
 	}
 	
+	// Place new construction on left release
 	if(mouse_check_button_released(mb_left))
 	{
 		scr_build_new();
@@ -37,9 +40,9 @@ if(global.construct != noone) // BUILD MODE
 	
 	scr_update_ghost(click_x, click_y, mouse_x, mouse_y, global.construct, global.build_rotation, is_dragging);
 	
+	// exit BUILD MODE on RIGHT CLICK
 	if(mouse_check_button_pressed(mb_right))
 	{
-		// exit BUILD MODE
 		global.construct = noone;
 	}
 	

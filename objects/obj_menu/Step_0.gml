@@ -41,8 +41,8 @@ else
 				instance_create_layer(0, 0, lid, obj_fade);
 				obj_fade.target_room = room_map;
 				break;
-			case menu_index.test:
-				room_goto(room_tests);
+			/*case menu_index.test:
+				room_goto(room_tests);*/
 			case menu_index.quit:
 				game_end();
 				break;

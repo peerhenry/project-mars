@@ -1,3 +1,5 @@
+#macro macro_malcom_phillips 1
+
 var layer_thing = layer_get_id("astronauts");
 var new_astronaut = instance_create_layer(x, y, layer_thing, obj_astronaut_playable);
 with(new_astronaut)
@@ -9,6 +11,7 @@ with(new_astronaut)
 	sprite_walk_down = sprite_suitless_down;
 	sprite_walk_right = sprite_suitless_right;
 	sprite_walk_up = sprite_suitless_up;
+	astro_id = macro_malcom_phillips;
 }
 
 instance_destroy();
