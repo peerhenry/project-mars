@@ -26,6 +26,7 @@ switch(step)
 		if(astronaut.is_outside)
 		{
 			step++;
-			scr_alert_player("Congratulations! You finished the tutorial.");
+			//scr_alert_player("Congratulations! You finished the tutorial.");
+			instance_create_layer(display_get_gui_width()/2, display_get_gui_height()/2, macro_logic_layer, obj_mission_accomplished);
 		}
 }
