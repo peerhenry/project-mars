@@ -19,13 +19,13 @@ switch(step)
 		{
 			instance_deactivate_object(arrow);
 			step++;
-			scr_alert_player("With the spacesuit on, Phillips can safely go outside.");
+			scr_alert_player("Now Phillips can safely go outside.");
 		}
 		break;
 	case 2:
 		if(astronaut.is_outside)
 		{
 			step++;
-			scr_alert_player("Congratulations!");
+			scr_alert_player("Congratulations! You finished the tutorial.");
 		}
 }

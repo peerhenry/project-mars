@@ -5,6 +5,9 @@ global.draw_room_bb = false;
 global.debug_start_messages = false;
 global.debug_gameplay_messages = true;
 
+// Used to prevent too many messages from appearing to player
+global.message_is_showing = false;
+
 // # layers
 #macro macro_grid_layer "logic"
 #macro macro_logic_layer "logic"
