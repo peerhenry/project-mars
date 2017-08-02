@@ -1,3 +1,5 @@
+/// @param width
+/// @param height
 var new_w = argument0;
 var new_h = argument1;
 

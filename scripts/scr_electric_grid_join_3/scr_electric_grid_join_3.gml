@@ -1,6 +1,6 @@
 /// @param grid_1
 /// @param grid_2
-
+/*
 var arg_grid_1 = argument0;
 var arg_grid_2 = argument1;
 var arg_grid_3 = argument2;
@@ -57,3 +57,4 @@ arg_grid_2 = 0;
 arg_grid_3 = 0;
 
 return arg_grid_1;
+*/

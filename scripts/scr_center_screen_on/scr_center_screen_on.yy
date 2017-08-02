@@ -1,8 +1,8 @@
 {
-    "id": "38f06699-3f9d-4f6c-bb43-86c33cc251d9",
+    "id": "1c9b42fb-dfb0-4acd-ba8e-7dac7d7eba6b",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_join_lists",
+    "name": "scr_center_screen_on",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -2,7 +2,8 @@
 /// @param grid_2
 /// @param grid_3
 /// @param grid_4
-
+// OBSOLETE
+/*
 var arg_grid_1 = argument0;
 var arg_grid_2 = argument1;
 var arg_grid_3 = argument2;
@@ -82,3 +83,4 @@ arg_grid_3 = 0;
 arg_grid_4 = 0;
 
 return arg_grid_1;
+*/

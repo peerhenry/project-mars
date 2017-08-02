@@ -1,7 +1,8 @@
 /// @description adds grid_2 to grid_1
 /// @param grid_1
 /// @param grid_2
-
+// OBSOLETE
+/*
 var arg_grid_1 = argument0;
 var arg_grid_2 = argument1;
 
@@ -35,3 +36,4 @@ scr_join_lists(consumers_1, consumers_2);
 arg_grid_2 = 0;
 
 return arg_grid_1;
+*/

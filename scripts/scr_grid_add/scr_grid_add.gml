@@ -20,7 +20,9 @@ with(arg_grid)
 	if(is_undefined(cell))
 	{
 		ds_list_add(component_key_list, key);
-		ds_map_add(component_map, key, arg_component);
+		var new_cell_list = ds_list_create();
+		ds_list_add(new_cell_list, arg_component);
+		ds_map_add(component_map, key, new_cell_list);
 	}
 	else	// If grid already has a cell at given location
 	{
@@ -30,9 +32,10 @@ with(arg_grid)
 		}
 		else	// Create a list
 		{
-			var new_cell = ds_list_create();
+			show_error("Error: something existed at a grid cell, but it was not a list!", true);
+			/*var new_cell = ds_list_create();
 			ds_list_add(new_cell, cell, arg_component);
-			ds_map_replace(component_map, key, new_cell);
+			ds_map_replace(component_map, key, new_cell);*/
 		}
 	}
 	

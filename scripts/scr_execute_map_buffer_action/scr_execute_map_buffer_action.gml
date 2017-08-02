@@ -18,11 +18,14 @@ var new_r = map_r;
 // modify map_buffer
 switch(arg_action)
 {
+	case map_buffer_action.nothing:
+		exit;
 	case map_buffer_action.clear:
 		new_o = map_value_vacant;
 		break;
-	case map_buffer_action.nothing:
-		exit;
+	case map_buffer_action.reserve:
+		new_o = map_value_reserved;
+		break;
 	case map_buffer_action.occupy:
 		new_o = map_value_occupied;
 		break;

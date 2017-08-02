@@ -14,4 +14,6 @@ with(new_astronaut)
 	astro_id = macro_malcom_phillips;
 }
 
+scr_center_screen_on(new_astronaut);
+
 instance_destroy();

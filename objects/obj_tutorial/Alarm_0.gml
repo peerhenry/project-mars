@@ -6,6 +6,7 @@ with(obj_astronaut)
 	if(astro_id == macro_malcom_phillips)
 	{
 		other.astronaut = id;
+		scr_center_screen_on(id);
 		break;
 	}
 }
@@ -18,6 +19,7 @@ if(astronaut == noone)
 
 // Create objective arrow above the closet
 arrow = instance_create_layer(astronaut.x, astronaut.y - 32, macro_logic_layer, obj_arrow);
+arrow.target = astronaut;
 
 // Get the suit closet
 with(obj_suit_closet)

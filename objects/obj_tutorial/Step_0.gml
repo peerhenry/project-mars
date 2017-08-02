@@ -8,8 +8,7 @@ switch(step)
 	case 0:
 		if(astronaut.is_selected)
 		{
-			arrow.x = closet.x;
-			arrow.y = closet.y - 32;
+			arrow.target = closet;
 			step++;
 			scr_alert_player("Right click on the closet to put on the space suit.");
 		}

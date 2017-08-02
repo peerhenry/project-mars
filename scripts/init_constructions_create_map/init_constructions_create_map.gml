@@ -64,9 +64,9 @@ init_construction_set_validation(build_validation_i.outside, build_validation_o.
 init_construction_set_tile(1, 0, 1);
 init_construction_set_validation(build_validation_i.outside, build_validation_o.wall_like);
 init_construction_set_tile(0, -1, 1);
-init_construction_set_validation(build_validation_i.any, build_validation_o.vacant);	// reserve a spot on the outside
+init_construction_set_validation(build_validation_i.any, build_validation_o.vacant_or_reserved);	// reserve a spot on the outside
 init_construction_set_tile(0, 1, 1);
-init_construction_set_validation(build_validation_i.any, build_validation_o.vacant);	// reserve a spot on the outside
+init_construction_set_validation(build_validation_i.any, build_validation_o.vacant_or_reserved);	// reserve a spot on the outside
 
 init_construction_set_rotation_parameter(macro_rotation_1, macro_sprite, spr_hatch_tall_vertical);
 init_construction_set_rotation_parameter(macro_rotation_3, macro_sprite, spr_hatch_tall_vertical);
@@ -80,6 +80,10 @@ init_construction_set_tile(-1, 0, 1);
 init_construction_set_validation(build_validation_i.any, build_validation_o.wall_like);
 init_construction_set_tile(1, 0, 1);
 init_construction_set_validation(build_validation_i.any, build_validation_o.wall_like);
+init_construction_set_tile(0, -1, 1);
+init_construction_set_validation(build_validation_i.any, build_validation_o.vacant_or_reserved);	// reserve a spot on the outside
+init_construction_set_tile(0, 1, 1);
+init_construction_set_validation(build_validation_i.any, build_validation_o.vacant_or_reserved);
 init_construction_set_rotation_parameter(macro_rotation_1, macro_sprite, spr_door_tall_vertical);
 init_construction_set_rotation_parameter(macro_rotation_3, macro_sprite, spr_door_tall_vertical);
 

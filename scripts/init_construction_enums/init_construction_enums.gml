@@ -36,6 +36,7 @@ enum build_validation_i
 enum build_validation_o
 {
 	vacant,
+	vacant_or_reserved,
 	wall_like,
 	any,
 	wall,
@@ -50,6 +51,7 @@ enum map_buffer_action
 	nothing,
 	clear,
 	occupy,
+	reserve,
 	wall_like,
 	wall,
 	inside,

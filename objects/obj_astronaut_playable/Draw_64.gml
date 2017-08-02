@@ -34,7 +34,8 @@ if(show_details)
 	draw_healthbar(bar_x_or, health_line_y - half_bar, tl_x + width - 16, health_line_y + half_bar, astronaut_health, 0, c_red, c_green, 0, false, false);
 	
 	var oxygen_line_y = tl_y + 128 + 24;
-	draw_text(x_or, oxygen_line_y, "Oxygen");
+	var o2_seconds_remaining = 
+	draw_text(x_or, oxygen_line_y, "Oxygen: ");
 	draw_healthbar(bar_x_or, oxygen_line_y - half_bar, tl_x + width - 16, oxygen_line_y + half_bar, suit_oxygen, 0, c_red, c_blue, 0, false, false);
 	
 	var energy_line_y = tl_y + 128 + 48;

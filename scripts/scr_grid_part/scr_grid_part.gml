@@ -5,7 +5,7 @@ var arg_grid = argument1;
 
 var grid_type = arg_grid.grid_type;
 
-show_debug_message("starting grid_part..."); // DEBUG
+// show_debug_message("starting grid_part..."); // DEBUG
 
 // Create the remainder of all components from the grid
 var remainder_map = ds_map_create();
@@ -16,12 +16,14 @@ with(arg_grid)
 	// show_debug_message("copying component map and key list..."); // DEBUG
 	ds_map_copy(remainder_map, component_map);
 	ds_list_copy(remainder_key_list, component_key_list);
+	/*
 	show_debug_message("key count: " + string(ds_list_size(component_key_list))); // DEBUG
 	show_debug_message("map count: " + string(ds_map_size(component_map))); // DEBUG
 	show_debug_message("grid_type: " + string(grid_type)); // DEBUG
 	show_debug_message("instance: " + string(arg_instance)); // DEBUG
 	show_debug_message("object index: " + string(arg_instance.object_index)); // DEBUG
 	show_debug_message("i,j : " + string(arg_instance.occ_i) + ", " + string(arg_instance.occ_j)); // DEBUG
+	*/
 	if(ds_list_size(component_key_list) != ds_map_size(component_map))
 	{
 		show_error("ERROR: component_key_list had different size than component map", true);

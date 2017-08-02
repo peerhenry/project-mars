@@ -6,3 +6,12 @@ scr_navgrid_clear_cell(occ_i, occ_j);
 depth = -occ_j;	// set depth for tall structures
 room1 = noone; // Either north or west
 room2 = noone; // Either south or east
+
+if(connects_horizontally)
+{
+	if(!global.draw_tall_walls) sprite_index = spr_door_vertical;
+}
+else
+{
+	if(!global.draw_tall_walls) sprite_index = spr_door;
+}

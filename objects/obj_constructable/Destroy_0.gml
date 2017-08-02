@@ -12,14 +12,24 @@ for(var grid_type = 0; grid_type < macro_grid_type_count; grid_type++)
 		with(grid)
 		{
 			// Remove component from grid
-			show_debug_message("Removing component from grid..."); // DEBUG
+			// show_debug_message("Removing " + scr_object_index_string(other.id) + " from grid..."); // DEBUG
 			var role = grid_props[macro_grid_component_role];
 			var list_to_use = role_map[? role];
 			var index = ds_list_find_index(list_to_use, other.id);
 			ds_list_delete(list_to_use, index);	// deletes entry in list
 			
 			// Delete entry in map & key list
-			var cell = ds_map_find_value(component_map, key);
+			var cell_list = ds_map_find_value(component_map, key);
+			var ind = ds_list_find_index(cell_list, key);
+			ds_list_delete(cell_list, ind);
+			if(ds_list_size(cell_list) == 0)
+			{
+				ds_list_destroy(cell_list);
+				ds_map_delete(component_map, key);
+				var key_pos = ds_list_find_index(component_key_list, key);
+				ds_list_delete(component_key_list, key_pos);
+			}
+			/*var cell = ds_map_find_value(component_map, key);
 			if(cell == other.id)
 			{
 				ds_map_delete(component_map, key);
@@ -36,7 +46,7 @@ for(var grid_type = 0; grid_type < macro_grid_type_count; grid_type++)
 					ds_list_destroy(cell);
 					ds_map_replace(component_map, key, new_cell);
 				}
-			}
+			}*/
 			
 			comps_left = ds_list_size(component_key_list);
 		}
