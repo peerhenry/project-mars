@@ -1,0 +1,1 @@
+scr_resolution(global.resolution_width, global.resolution_height);

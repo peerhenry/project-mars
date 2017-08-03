@@ -14,7 +14,8 @@
         "51488f02-a307-44e2-876f-e1be0ba3ae51",
         "862af036-6615-4ea3-8491-fea376ef5273",
         "18bd3dd9-bcf3-4b87-8cc7-090047f7e956",
-        "6d2c927b-031f-454d-9105-8a29b362bd04"
+        "6d2c927b-031f-454d-9105-8a29b362bd04",
+        "05a3dfcb-2e97-466a-a2ef-2c97db2c2189"
     ],
     "filterType": "GMObject",
     "folderName": "setup",

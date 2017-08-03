@@ -18,11 +18,12 @@ if(global.construct != noone) // BUILD MODE
 	// Drag
 	if(mouse_check_button(mb_left))
 	{
-		if(mouse_x != click_x && mouse_y != click_y)
+		if(mouse_x != click_x || mouse_y != click_y)
 		{
 			is_dragging	= true;
 		}
-		else {
+		else
+		{
 			is_dragging	= false;
 		}
 	}

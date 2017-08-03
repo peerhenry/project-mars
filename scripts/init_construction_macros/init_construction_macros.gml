@@ -21,6 +21,7 @@
 #macro macro_fridge 19
 #macro macro_solar_panel 20
 #macro macro_destruct 21
+#macro macro_electrolyser 22
 
 // construction properties
 #macro macro_id 0

@@ -67,7 +67,7 @@ if(show_details)
 			if(value != macro_inventory_empty && value != macro_inventory_occupied)
 			{
 				var sprite = scr_get_inventory_item_sprite(value);
-				draw_sprite(sprite, 0, grid_x + 32*i, grid_y + 32*j);
+				draw_sprite(sprite, 0, grid_x + 64*i, grid_y + 64*j);
 			}
         }
     }

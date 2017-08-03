@@ -3,14 +3,16 @@ event_inherited();
 // Plants and sprinklers must be drawn on top of object
 if(!under_construction)
 {
+	// Draw food
+	var food_image = floor(food_level/20) -1;
+	if(food_image >= 0)
+	{
+		draw_sprite(spr_hydroponics_plants, food_image, x, y);
+	}
+	
+	// Draw sprinklers
 	if(is_active)
 	{
-		var food_image = floor(food_level/20) -1;
-		if(food_image >= 0)
-		{
-			draw_sprite(spr_hydroponics_plants, food_image, x, y);
-		}
-	
 		draw_sprite(spr_hydroponics_sprinklers, image_index, x, y);
 	}
 	else

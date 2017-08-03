@@ -186,7 +186,7 @@
             "id": "ddb6050d-866c-471a-a448-47d389959c97",
             "modelName": "GMRInstanceLayer",
             "mvc": "1.0",
-            "depth": -600,
+            "depth": -1000,
             "grid_x": 32,
             "grid_y": 32,
             "hierarchyFrozen": false,

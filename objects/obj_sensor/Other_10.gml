@@ -1,3 +1,4 @@
+/// @description Grid update notification
 if(scr_can_draw_power(id))
 {
 	sprite_index = spr_sensor_on;

@@ -1,4 +1,4 @@
-/// @description set the is_active boolean here
+/// @description Grid update notification
 var grid_props = grid_props_map[? macro_grid_electric];
 if(scr_can_draw_power(id))
 {

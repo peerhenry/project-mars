@@ -190,6 +190,10 @@ init_construction_new_single(macro_destruct, "destruct", spr_destruct, 1);
 init_construction_set_action(build_validation_i.any,	build_validation_o.any,			map_buffer_action.clear,	base_layer,		obj_destruct,			noone, 0);
 init_construction_set_dragging_simple(dragging.rectangular);
 
+// # electrolyser
+init_construction_new_single(macro_electrolyser, "Electrolyser", spr_elektrolyser_hud, 1);
+init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_tall_layer, obj_electrolyser,		noone, 100);
+
 
 
 // List of active constructions:
@@ -216,3 +220,4 @@ ds_list_add(active_constructions, macro_magic_generator);
 ds_list_add(active_constructions, macro_magic_pump);
 ds_list_add(active_constructions, macro_fridge);
 ds_list_add(active_constructions, macro_solar_panel);
+ds_list_add(active_constructions, macro_electrolyser);
