@@ -2,17 +2,17 @@
 // don't draw if hovering over hud
 if(global.hovering_over_HUD) exit;
 
-var construct = global.construct;
+var construction = global.construct;
 
-// selection rectangle
-if(is_dragging && construct == noone)
+// Draw selection rectangle
+if(is_dragging && construction == noone)
 {
 	draw_set_colour(c_aqua);
 	draw_rectangle(click_x, click_y, mouse_x, mouse_y, true);
 }
 
-// construction ghost
-if(construct != noone)
+// Draw construction ghost
+if(construction != noone)
 {
 	scr_draw_ghost();
 }

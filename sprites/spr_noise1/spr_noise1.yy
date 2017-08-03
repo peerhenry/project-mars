@@ -64,7 +64,7 @@
             "isLocked": false,
             "name": "default (2)",
             "opacity": 36,
-            "visible": true
+            "visible": false
         },
         {
             "id": "cb32ac66-b49f-437b-907e-f7eaf2bef116",
@@ -85,8 +85,8 @@
             "blendMode": 0,
             "isLocked": false,
             "name": "default",
-            "opacity": 100,
-            "visible": false
+            "opacity": 30,
+            "visible": true
         }
     ],
     "origin": 0,

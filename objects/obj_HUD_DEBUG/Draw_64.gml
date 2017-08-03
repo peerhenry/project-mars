@@ -1,3 +1,4 @@
+/*
 draw_set_font(font_hud);
 draw_set_color(c_white);
 draw_set_valign(fa_middle);
@@ -13,3 +14,4 @@ with(obj_mouse_listener)
 dy = 0;
 draw_text(1920/2, 1080/2 + dy, "is draggin: " + string(drag));
 dy += 32;
+*/
