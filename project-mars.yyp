@@ -1519,6 +1519,14 @@
             }
         },
         {
+            "Key": "49f99f56-ed33-485a-865b-e463adfba4d7",
+            "Value": {
+                "id": "5851bfde-b5c1-4e58-91c8-d33e9c341039",
+                "resourcePath": "sounds\\sound_fx_explosion_1\\sound_fx_explosion_1.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "4ac6d729-c173-4e0c-8659-14a242373996",
             "Value": {
                 "id": "4cc12bc8-91e3-4091-9bdc-0116ce2d5aaf",
@@ -2836,6 +2844,14 @@
                 "id": "662f2ffa-7185-4292-a506-e8a97525fe5e",
                 "resourcePath": "objects\\obj_oxygen_tank\\obj_oxygen_tank.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "9ebbf1db-757c-41dd-9b93-aef67882a1be",
+            "Value": {
+                "id": "24a213fe-f024-40bd-93fc-88cb29b8ce66",
+                "resourcePath": "sounds\\sound_fx_explosion_2\\sound_fx_explosion_2.yy",
+                "resourceType": "GMSound"
             }
         },
         {
