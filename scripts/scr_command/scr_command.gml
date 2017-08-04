@@ -16,6 +16,14 @@ var el_assignable = instance_position(mouse_x, mouse_y, obj_assignable);
 
 // Check if player clicked an enemy
 var enemy = instance_position(mouse_x, mouse_y, obj_astronaut_enemy);
+if(enemy == noone)
+{
+	constr = scr_enemy_construction_position(mouse_x, mouse_y);
+	if(constr != noone)
+	{
+		enemy = constr;
+	}
+}
 
 if(el_assignable != noone)	// Assign a task
 {

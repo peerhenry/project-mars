@@ -59,6 +59,7 @@ for(var n = 0; n < cell_count; n++)
 			depth = depth - 300; // under construction drawing has priority
 			scr_post_creation_logic(global.construct, new_instance);	// only for suit closet
 			under_construction = true;
+			owner = macro_player;
 		}
 		
 		if(required_object != noone)

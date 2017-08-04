@@ -45,6 +45,11 @@ if(!hovers_over_selectable)
 	if(scr_any_astronauts_selected())
 	{
 		var hovers_over_enemy = instance_position(mouse_x, mouse_y, obj_astronaut_enemy) != noone;
+		if(!hovers_over_enemy)
+		{
+			var constr = scr_enemy_construction_position(mouse_x, mouse_y);
+			if(constr != noone) hovers_over_enemy = true;
+		}
 		if(hovers_over_enemy)
 		{
 			cursor_sprite = spr_cursor_attack;

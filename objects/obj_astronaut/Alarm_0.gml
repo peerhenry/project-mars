@@ -3,7 +3,18 @@
 var can_shoot = false;
 var shootable = target;
 
-if(instance_exists(target))
+var trarget_is_shootable = instance_exists(target);
+
+if(trarget_is_shootable)
+{
+	var target_is_construction = object_is_ancestor(target.object_index, obj_constructable);
+	if(target_is_construction)
+	{
+		trarget_is_shootable = target.damage < 100;
+	}
+}
+
+if(trarget_is_shootable)
 {
 	var dx = target.x - x;
 	var dy = target.y - y;

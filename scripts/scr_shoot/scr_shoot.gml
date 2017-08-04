@@ -1,3 +1,5 @@
+/// @param shooter
+/// @param target
 var shooter = argument0;
 var target = argument1;
 

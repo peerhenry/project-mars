@@ -19,6 +19,11 @@ global.message_is_showing = false;
 #macro macro_base_tile_layer "basetiles"
 #macro macro_base_layer "base"
 
+// # construction owners
+
+#macro macro_player 0
+#macro macro_enemy 1
+
 // # constructions
 init_constructions();
 

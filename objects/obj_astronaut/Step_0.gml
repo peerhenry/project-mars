@@ -1,8 +1,9 @@
 /// @description Update astronaut
 
-// Kill if health reached zero
 if(has_died) return;
-else if(astronaut_health <= 0)
+
+// Kill if health reached zero
+if(astronaut_health <= 0)
 {
 	is_walking = false;
 	path_end();
