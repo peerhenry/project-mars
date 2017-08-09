@@ -66,10 +66,12 @@ if(keyboard_check_pressed(ord("L")))
 	show_debug_message("leak count: " + string(leak_count));
 	show_debug_message("replenish_count: " + string(replenish_count));*/
 	
-	with(obj_astronaut)
+	scr_show_construction_queue();
+	
+	/*with(obj_astronaut)
 	{
 		scr_kill(id);
-	}
+	}//*/
 }
 
 if(keyboard_check_pressed(ord("B")))

@@ -175,8 +175,7 @@ if(tiles_remain)
 	// show_message("A discrepancy between the count of connected tiles and total tiles of a room was detected; connected " + string(connected_tiles_count) + " total: " + string(tile_count)); // DEBUG
 	
 	// make a room from remaining tiles:
-	var room_layer = layer_get_name("rooms");
-	var temp_room = instance_create_layer(0, 0, room_layer, obj_room); // this is just a dummy room without bb, used to pass remaining tiles along with gates
+	var temp_room = instance_create_layer(0, 0, macro_rooms_layer, obj_room); // this is just a dummy room without bb, used to pass remaining tiles along with gates
 	with(temp_room)
 	{
 		oxygen_level = le_room.oxygen_level;

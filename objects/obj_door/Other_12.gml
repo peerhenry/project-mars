@@ -1,8 +1,15 @@
 /// @description Finalize construction
 event_inherited();
 
-show_debug_message("finalizing door at: " + string(occ_i) + ", " + + string(occ_j)); // DEBUG
+// Set sprite
+if(connects_horizontally)
+{
+	if(!global.draw_tall_walls) sprite_index = spr_door_vertical;
+}
+else
+{
+	if(!global.draw_tall_walls) sprite_index = spr_door;
+}
 
-scr_room_remove_tile_and_part(x, y);
-
-scr_door_connect(id); // connects door to rooms
+scr_room_remove_tile_and_part(x, y);	// Part room
+scr_door_connect(id); // Connects door to rooms

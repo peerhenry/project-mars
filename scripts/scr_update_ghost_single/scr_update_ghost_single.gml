@@ -57,7 +57,7 @@ for(var n = 0; n < array_length_1d(build_tiles); n++)
 
 
 var surround_actions = construction[macro_surround_actions];
-if(is_array(surround_actions))
+if(is_array(surround_actions) && arg_construction_id == macro_basetile)
 {	
 	/*
 	// OLD WAY OF DOING WALLS
@@ -85,14 +85,16 @@ if(is_array(surround_actions))
 	*/
 	
 	// without any overrides
-	scr_update_ghost_tile_with_overrides(arg_i - 1,	arg_j - 1,	surround_actions, spr_wall_tall,	-1,	-1); // tl	ES	0+3
-	scr_update_ghost_tile_with_overrides(arg_i,		arg_j - 1,	surround_actions, spr_wall_tall,	-1,	-1); // t	EW	0+2
-	scr_update_ghost_tile_with_overrides(arg_i + 1,	arg_j - 1,	surround_actions, spr_wall_tall,	-1,	-1); // tr	WS	2+3
-	scr_update_ghost_tile_with_overrides(arg_i - 1,	arg_j,		surround_actions, spr_wall_tall,	-1,	-1); // l	NS	1+3
-	scr_update_ghost_tile_with_overrides(arg_i + 1,	arg_j,		surround_actions, spr_wall_tall,	-1,	-1); // r	NS	1+3
-	scr_update_ghost_tile_with_overrides(arg_i - 1,	arg_j + 1,	surround_actions, spr_wall_tall,	-1,	-1); // bl	EN	0+1
-	scr_update_ghost_tile_with_overrides(arg_i,		arg_j + 1,	surround_actions, spr_wall_tall,	-1,	-1); // b	EW	0+2
-	scr_update_ghost_tile_with_overrides(arg_i + 1,	arg_j + 1,	surround_actions, spr_wall_tall,	-1,	-1); // br	NW	1+2
+	var wall_sprite = spr_wall_tall;
+	if(!global.draw_tall_walls) wall_sprite = spr_wall;
+	scr_update_ghost_tile_with_overrides(arg_i - 1,	arg_j - 1,	surround_actions, wall_sprite,	9,	-1); // tl	ES	0+3
+	scr_update_ghost_tile_with_overrides(arg_i,		arg_j - 1,	surround_actions, wall_sprite,	5,	-1); // t	EW	0+2
+	scr_update_ghost_tile_with_overrides(arg_i + 1,	arg_j - 1,	surround_actions, wall_sprite,	12,	-1); // tr	WS	2+3
+	scr_update_ghost_tile_with_overrides(arg_i - 1,	arg_j,		surround_actions, wall_sprite,	10,	-1); // l	NS	1+3
+	scr_update_ghost_tile_with_overrides(arg_i + 1,	arg_j,		surround_actions, wall_sprite,	10,	-1); // r	NS	1+3
+	scr_update_ghost_tile_with_overrides(arg_i - 1,	arg_j + 1,	surround_actions, wall_sprite,	3,	-1); // bl	EN	0+1
+	scr_update_ghost_tile_with_overrides(arg_i,		arg_j + 1,	surround_actions, wall_sprite,	5,	-1); // b	EW	0+2
+	scr_update_ghost_tile_with_overrides(arg_i + 1,	arg_j + 1,	surround_actions, wall_sprite,	6,	-1); // br	NW	1+2
 }
 
 

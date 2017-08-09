@@ -106,3 +106,9 @@
 #macro construction_astronaut 4
 #macro construction_time 5
 #macro construction_prerequisite 6
+#macro construction_bb_top 7
+#macro construction_bb_left 8
+#macro construction_bb_right 9
+#macro construction_bb_bottom 10
+#macro construction_required_mdu_count 11
+#macro construction_required_mdu_remaining 12

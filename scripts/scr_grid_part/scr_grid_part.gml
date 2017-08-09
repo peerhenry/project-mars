@@ -102,19 +102,19 @@ with(arg_grid)
 var visited_size = ds_list_size(visited_list);
 var original_size = ds_list_size(arg_grid.component_key_list);
 
-show_debug_message("visited size was: " + string(visited_size)); // DEBUG
-show_debug_message("argument grid size was: " + string(original_size)); // DEBUG
+// show_debug_message("visited size was: " + string(visited_size)); // DEBUG
+// show_debug_message("argument grid size was: " + string(original_size)); // DEBUG
 
 if(visited_size  != original_size)
 {
-	show_debug_message("The flood fill grid was different from argument grid!"); // DEBUG
+	// show_debug_message("The flood fill grid was different from argument grid!"); // DEBUG
 	
 	// Create new grid of visited components!
-	show_debug_message("Creating new grid from visited components!"); // DEBUG
+	// show_debug_message("Creating new grid from visited components!"); // DEBUG
 	var new_grid = scr_grid_new_from_components(visited_map, visited_list, grid_type);
-	show_debug_message("Updating grid..."); // DEBUG
+	// show_debug_message("Updating grid..."); // DEBUG
 	scr_grid_update(new_grid);
-	show_debug_message("Notifying grid components..."); // DEBUG
+	// show_debug_message("Notifying grid components..."); // DEBUG
 	scr_grid_notify_components(new_grid);
 	
 	// Make new grid from remainder and part
@@ -132,7 +132,7 @@ else // grid was not parted; it's still connected
 	scr_grid_notify_components(arg_grid);
 	
 	// destroy visited and remainders
-	show_debug_message("destroying visited and remainder maps and lists..."); // DEBUG
+	// show_debug_message("destroying visited and remainder maps and lists..."); // DEBUG
 	ds_map_destroy(visited_map);
 	ds_map_destroy(remainder_map);
 	ds_list_destroy(visited_list);

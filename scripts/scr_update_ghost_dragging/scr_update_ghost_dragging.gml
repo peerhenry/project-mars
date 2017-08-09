@@ -58,23 +58,32 @@ if(construction[macro_dragging] == dragging.rectangular)
 	var surround_actions = construction[macro_surround_actions];
 	if(is_array(surround_actions))
 	{
+		var sprite_override = 0;
+		var image_override = 0;
+		var angle_override = 0;
+	
+		if(arg_build == macro_basetile)
+		{
+			if(!global.draw_tall_walls) sprite_override = spr_wall;
+		}
+	
 		// 4 corners
-		scr_update_ghost_tile(i_left-1, j_top-1, surround_actions);
-		scr_update_ghost_tile(i_right+1, j_top-1, surround_actions);
-		scr_update_ghost_tile(i_left-1, j_bottom+1, surround_actions);
-		scr_update_ghost_tile(i_right+1, j_bottom+1, surround_actions);
+		scr_update_ghost_tile_with_overrides(i_left-1, j_top-1, surround_actions, sprite_override, 9, angle_override);
+		scr_update_ghost_tile_with_overrides(i_right+1, j_top-1, surround_actions, sprite_override, 12, angle_override);
+		scr_update_ghost_tile_with_overrides(i_left-1, j_bottom+1, surround_actions, sprite_override, 3, angle_override);
+		scr_update_ghost_tile_with_overrides(i_right+1, j_bottom+1, surround_actions, sprite_override, 6, angle_override);
 			
 		// sides
 		for(var ni = i_left; ni <= i_right; ni++)
 		{
-			scr_update_ghost_tile(ni, j_top-1, surround_actions);
-			scr_update_ghost_tile(ni, j_bottom+1, surround_actions);
+			scr_update_ghost_tile_with_overrides(ni, j_top-1, surround_actions, sprite_override, 5, angle_override);
+			scr_update_ghost_tile_with_overrides(ni, j_bottom+1, surround_actions, sprite_override, 5, angle_override);
 		}
 	
 		for(var nj = j_top; nj <= j_bottom; nj++)
 		{
-			scr_update_ghost_tile(i_left-1, nj, surround_actions);
-			scr_update_ghost_tile(i_right+1, nj, surround_actions);
+			scr_update_ghost_tile_with_overrides(i_left-1, nj, surround_actions, sprite_override, 10, angle_override);
+			scr_update_ghost_tile_with_overrides(i_right+1, nj, surround_actions, sprite_override, 10, angle_override);
 		}
 		
 		// THE OLD WAY OF DOING WALLS

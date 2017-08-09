@@ -9,7 +9,9 @@
         "d1d60135-4dcc-4627-9a50-f5650f760d98",
         "cc3214a2-4a52-4ed3-b6c9-d3489312bbc5",
         "91d687bc-c8dc-4b55-9e35-e9b627e9d0ae",
-        "06c39589-a1fc-4520-ae2f-d4494adb8a64"
+        "06c39589-a1fc-4520-ae2f-d4494adb8a64",
+        "5c78aeba-2801-4629-992d-b18feb04d7b7",
+        "129557bb-d1e1-419b-b688-d477abecb797"
     ],
     "filterType": "GMScript",
     "folderName": "DEBUG",

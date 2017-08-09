@@ -5,6 +5,20 @@ global.draw_room_bb = false;
 global.debug_start_messages = false;
 global.debug_gameplay_messages = true;
 
+show_debug_message("testing ds_map_replace...")
+var tm = ds_map_create();
+var key = 1;
+var expected = 381;
+ds_map_add(tm, key, 0);
+ds_map_replace(tm, key, expected);
+var result = ds_map_find_value(tm, key);
+if(result == expected){
+	show_debug_message("test PASSED");
+}
+else show_debug_message("test FAILED! exptected: " + string(expected) + " actual: " + string(result));
+ds_map_destroy(tm);
+
+
 // Used to prevent too many messages from appearing to player
 global.message_is_showing = false;
 
@@ -56,7 +70,7 @@ enum resource
 	metal
 }
 
-// # gameplay stuff
+// # Gameplay stuff
 global.oxygen_bar_color = make_color_rgb(55, 55, 255);
 global.gate_drainage_speed = 25; // percentage of oxygen of 1 tile being drained by an open hatch per step.
 global.oxygen_empty_level = 1; // if oxygen_level falls below this number, red stripes are drawn.
@@ -99,11 +113,16 @@ enum astronaut_action // these are assigned to astronaut objects
 	in_combat
 }
 
+// old
 #macro macro_inventory_empty 0
 #macro macro_inventory_occupied 1	// not used for rendering
 #macro macro_inventory_pistol 2
 #macro macro_inventory_food 3
 #macro macro_inventory_module 4
+// new: use items
+#macro macro_item_pistal 2
+#macro macro_item_food 3
+#macro macro_item_mdu 4
 
 // x, y coordinate encodings for 3x3 grid
 #macro macro_astronaut_inventory_0_0 0

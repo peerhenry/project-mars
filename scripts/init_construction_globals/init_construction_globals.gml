@@ -15,8 +15,8 @@ global.last_build_tile_key = 0;
 // see scr_finalize_build_buffers
 
 // used for gameplay:
-global.build_stack = ds_stack_create(); // build stack is filled by ghost, see scr_update_ghost. Mouse release triggers new construction from the data on this stack.
-global.invalid_build_stack = ds_stack_create(); // filled by scr_update_ghost, scr_draw_ghost will draw red tiles for these.
+global.ghost_stack = ds_stack_create(); // ghost stack is filled by ghost, see scr_update_ghost. Mouse release triggers new construction from the data on this stack.
+global.invalid_ghost_stack = ds_stack_create(); // filled by scr_update_ghost, scr_draw_ghost will draw red tiles for these.
 global.construction_queue = ds_list_create(); // constructions dont immediately build, but are put on a queue for astronauts to pick up.
 global.construction_is_valid = false;
 global.can_pay_for_construction = false;

@@ -1,11 +1,18 @@
 /// @param construction
 var arg_construction = argument0;
 
+/*
 var build_type = arg_construction[construction_build_type];
 arg_construction[@construction_completion] = 100; // set completion to 100%
 arg_construction[@construction_build_state] = construction_state.done;
+*/
 
-var construction_cells_array = arg_construction[construction_cells];
+var build_type = ds_map_find_value(arg_construction, construction_build_type);
+ds_map_replace(arg_construction, construction_completion, 100);
+ds_map_replace(arg_construction, construction_build_state, construction_state.done);
+
+//var construction_cells_array = arg_construction[construction_cells];
+var construction_cells_array = ds_map_find_value(arg_construction, construction_cells);
 var count = array_length_1d(construction_cells_array);
 
 var room_logic_instance = noone;
@@ -36,13 +43,10 @@ for(var n = 0; n < count; n++) // loop over tiles
 		else with(instance) instance_destroy();
 	}
 	
-	// - finalize added object: MOVED TO CUSTOM EVENT
-	// scr_build_instance_finalize(added_instance, target_layer, build_type);
-	
 	with(added_instance)
 	{
-		depth = depth + 300;				// reset normal depth
-		event_user(macro_event_finalize);
+		depth = depth + 300;				// Reset normal depth
+		event_user(macro_event_finalize);	// Finalize
 	}
 }
 
@@ -52,9 +56,11 @@ var index = ds_list_find_index(construction_queue, arg_construction);
 ds_list_delete(construction_queue, index);
 
 // Stop astronaut
-var astronaut = arg_construction[construction_astronaut];
+//var astronaut = arg_construction[construction_astronaut];
+var astronaut = ds_map_find_value(arg_construction, construction_astronaut);
 if(astronaut != noone)
 {
 	scr_stop_construcion(astronaut);
 }
-arg_construction[@construction_astronaut] = noone; // astronaut assigned to perform the construction
+// arg_construction[@construction_astronaut] = noone; // astronaut assigned to perform the construction
+ds_map_replace(arg_construction, construction_astronaut, noone);

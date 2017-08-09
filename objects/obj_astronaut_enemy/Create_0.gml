@@ -15,3 +15,5 @@ target = noone;
 enemy_object = obj_astronaut_playable;
 
 mask_color = [1, 0.5, 0.5, 1];
+
+owner = macro_enemy;

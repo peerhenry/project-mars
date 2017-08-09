@@ -20,9 +20,9 @@ if(mouse_hovers_over_new_cell)
 global.can_pay_for_construction = true;
 global.construction_is_valid = true;
 
-// clear the build stack
-ds_stack_clear(global.build_stack);	// todo: rename build_stack to ghost
-ds_stack_clear(global.invalid_build_stack); // used to draw red tiles ghost
+// clear the ghost stack
+ds_stack_clear(global.ghost_stack);
+ds_stack_clear(global.invalid_ghost_stack); // used to draw red tiles ghost
 global.total_cost = 0;
 
 var construction = ds_map_find_value(global.construction_map, arg_construction_id);

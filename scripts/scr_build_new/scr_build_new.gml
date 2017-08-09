@@ -4,7 +4,7 @@ if(!global.can_pay_for_construction) scr_alert_player("Insufficient building mat
 if(!can_construct) return;
 
 // read from the build stack
-var build_stack = global.build_stack;
+var build_stack = global.ghost_stack;
 var cell_count = ds_stack_size(build_stack);
 var new_construction;
 var construction_cell_array;
@@ -13,6 +13,11 @@ var build_time_per_cost = global.build_time_per_cost;
 var prerequisite = noone;
 
 var new_instances = ds_list_create();
+
+var left = 0;
+var right = 0;
+var bottom = 0;
+var top = 0;
 
 for(var n = 0; n < cell_count; n++)
 {
@@ -36,12 +41,32 @@ for(var n = 0; n < cell_count; n++)
 	global.resource_amount_metal -= cost;
 	build_time += cost*build_time_per_cost;
 	
-	// 2. create object instance
+	// update bb
+	var target_x = scr_gi_to_rc(cell_i);
+	var target_y = scr_gi_to_rc(cell_j);
+	var left_x = target_x - 16;
+	var right_x = target_x + 15;
+	var top_y = target_y - 16;
+	var bottom_y = target_y + 15;
+	if(left - right == 0)
+	{
+		left = left_x;
+		right = right_x;
+	}
+	if(top - bottom == 0)
+	{
+		top = top_y;
+		bottom = bottom_y;
+	}
+	if(left_x < left) left = left_x;
+	if(right_x > right) right = right_x;
+	if(top_y < top) top = top_y;
+	if(bottom_y > bottom) bottom = bottom_y;
+	
+	// Create object
 	var new_instance = noone;
 	if(object_to_add != noone)
 	{
-		var target_x = scr_gi_to_rc(cell_i);
-		var target_y = scr_gi_to_rc(cell_j);
 		new_instance = instance_create_layer(target_x, target_y, add_layer, object_to_add);
 		with(new_instance)
 		{
@@ -78,13 +103,36 @@ for(var n = 0; n < cell_count; n++)
 if(cell_count > 0)
 {
 	// 5. set construction props & add to construction queue
+	var new_construction = ds_map_create();
+	ds_map_add(new_construction, construction_completion, 0);
+	ds_map_add(new_construction, construction_build_state, construction_state.not_ready);
+	ds_map_add(new_construction, construction_build_type, global.construct);
+	ds_map_add(new_construction, construction_cells, construction_cell_array);
+	ds_map_add(new_construction, construction_astronaut, noone);
+	ds_map_add(new_construction, construction_time, build_time);
+	ds_map_add(new_construction, construction_prerequisite, prerequisite);
+	ds_map_add(new_construction, construction_bb_bottom, bottom);
+	ds_map_add(new_construction, construction_bb_right, right);
+	ds_map_add(new_construction, construction_bb_left, left);
+	ds_map_add(new_construction, construction_bb_top, top);
+	ds_map_add(new_construction, construction_required_mdu_count, 1);
+	ds_map_add(new_construction, construction_required_mdu_remaining, 1);
+	
+	/*
+	new_construction[construction_required_mdu_remaining] = 1;
+	new_construction[construction_required_mdu_count] = 1;
+	new_construction[construction_bb_top] = top;
+	new_construction[construction_bb_left] = left;
+	new_construction[construction_bb_right] = right;
+	new_construction[construction_bb_bottom] = bottom;
 	new_construction[construction_prerequisite] = prerequisite;
 	new_construction[construction_time] = build_time;
 	new_construction[construction_astronaut] = noone; // astronaut assigned to perform the construction
 	new_construction[construction_cells] = construction_cell_array;
 	new_construction[construction_build_type] = global.construct;
-	new_construction[construction_build_state] = construction_state.ready; // ready to be picked up
+	new_construction[construction_build_state] = construction_state.not_ready; // not ready to be picked up before mdus are delivered
 	new_construction[construction_completion] = 0; // start out at 0% complete
+	*/
 	ds_list_add(global.construction_queue, new_construction);
 	scr_recalculate_paths();
 }

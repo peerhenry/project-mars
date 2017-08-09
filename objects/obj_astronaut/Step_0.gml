@@ -122,8 +122,9 @@ else
 	// constructing
 	if(current_action = astronaut_action.constructing)
 	{
-		construction_instance[@construction_completion] = construction_instance[construction_completion] + 100/(30*construction_instance[construction_time]);
-		if(construction_instance[@construction_completion] >= 100)
+		var completion = construction_instance[? construction_completion] + 100/(30*construction_instance[? construction_time]);
+		ds_map_replace(construction_instance, construction_completion, completion);
+		if(construction_instance[? construction_completion] >= 100)
 		{
 			scr_build_complete(construction_instance);
 		}
@@ -137,7 +138,7 @@ if(path_position > 0 && path_position < 1)
 }
 else
 {
-	if(is_walking && path_position == 1) // path end reached.
+	if(is_walking && path_position >= 1) // path end reached.
 	{
 		prev_x = x; // used for sprite orientation
 		prev_y = y;
@@ -154,8 +155,21 @@ else
 		{
 			switch(current_action)
 			{
+				// If astronaut was moving to construction...
 				case astronaut_action.moving_to_construction:
-					current_action = astronaut_action.constructing;
+					// ...and construction is not ready, he must be delivering an MDU
+					if(scr_construction_is_not_ready(construction_instance))
+					{
+						scr_transfer_mdu_to_construction(id, construction_instance);
+						if(scr_construction_is_ready(construction_instance))
+						{
+							scr_pick_up_construction(id, construction_instance, astronaut_action.constructing)
+						}
+					}
+					else if(scr_construction_is_ready(construction_instance)) // ... and construction is ready, he must be there to construct
+					{
+						current_action = astronaut_action.constructing;
+					}
 					break;
 				case astronaut_action.moving_by_command:
 					current_action = astronaut_action.idle;

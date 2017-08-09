@@ -37,6 +37,7 @@ else if( enemy != noone )	// Or attack an enemy
 else if( !position_meeting(mouse_x, mouse_y, obj_gate) )	// Or move
 {
 	orders_given = scr_command_move();
+	if(orders_given) instance_create_layer(mouse_x, mouse_y, macro_logic_layer, obj_command);
 }
 
 

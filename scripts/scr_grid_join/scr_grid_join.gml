@@ -5,7 +5,7 @@
 var arg_grid_1 = argument0;
 var arg_grid_2 = argument1;
 
-show_debug_message("joining grids: " + string(arg_grid_1) + " and " + string(arg_grid_2));
+// show_debug_message("joining grids: " + string(arg_grid_1) + " and " + string(arg_grid_2));
 
 // Iterate over roles: consumer/source/carrier/storage
 var rolo = macro_grid_role_count;
@@ -26,8 +26,8 @@ var key_list_2 = arg_grid_2.component_key_list;
 var map_1 = arg_grid_1.component_map;
 var map_2 = arg_grid_2.component_map;
 
-show_debug_message("key_list_1: " + string(key_list_1));
-show_debug_message("key_list_2: " + string(key_list_2));
+// show_debug_message("key_list_1: " + string(key_list_1));
+// show_debug_message("key_list_2: " + string(key_list_2));
 if(!ds_exists(key_list_1, ds_type_list)) show_error("No key_list_1", true);
 if(!ds_exists(key_list_2, ds_type_list)) show_error("No key_list_2", true);
 

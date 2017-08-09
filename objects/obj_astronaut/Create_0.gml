@@ -30,6 +30,7 @@ image_speed = 0;
 
 // 3. astronaut props
 name = "John McNeil";
+owner = macro_player;
 astro_id = 0;
 astronaut_health = 100;
 suit_oxygen = 100;

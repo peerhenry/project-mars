@@ -15,7 +15,7 @@ var map_value = scr_map_buffer_get_cell(target_i, target_j);
 var map_i = (map_value & 1);
 var map_o = (map_value >> 1) & 127; // next 7 bytes store o
 
-var new_build_cell = noone;
+var new_ghost_cell = noone;
 var tile_is_valid = false;
 
 var sprite = arg_sprite_override;
@@ -61,7 +61,7 @@ for(var m = 0; m < array_length_1d(arg_actions); m++) // loop over build actions
 			if(validation_i == build_validation_i.inside) required_object = obj_base_tile;
 			if(validation_o == build_validation_o.wall) required_object = obj_wall;
 			
-			var new_build_cell = scr_create_build_cell(
+			var new_ghost_cell = scr_create_build_cell(
 				target_i, target_j,
 				map_buffer_action,
 				b_layer,
@@ -78,14 +78,14 @@ for(var m = 0; m < array_length_1d(arg_actions); m++) // loop over build actions
 	}
 }
 
-if(tile_is_valid && new_build_cell != noone)
+if(tile_is_valid && new_ghost_cell != noone)
 {
-	ds_stack_push(global.build_stack, new_build_cell);
-	global.total_cost += new_build_cell[build_cell_cost];
+	ds_stack_push(global.ghost_stack, new_ghost_cell);
+	global.total_cost += new_ghost_cell[build_cell_cost];
 }
 else if(!tile_is_valid)
 {
-	ds_stack_push(global.invalid_build_stack, target_i, target_j, sprite);
+	ds_stack_push(global.invalid_ghost_stack, target_i, target_j, sprite);
 	global.construction_is_valid = false;
 }
 

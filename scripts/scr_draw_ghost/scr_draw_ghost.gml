@@ -1,5 +1,5 @@
 // read from the build stack
-var build_stack = global.build_stack;
+var build_stack = global.ghost_stack;
 var cell_count = ds_stack_size(build_stack);
 var build_stack_copy = ds_stack_create();
 ds_stack_copy(build_stack_copy, build_stack);
@@ -71,7 +71,7 @@ for(var n = 0; n < cell_count; n++)
 }
 
 // draw invalid tiles
-var invalid_build_stack = global.invalid_build_stack;
+var invalid_build_stack = global.invalid_ghost_stack;
 var invalid_cell_count = ds_stack_size(invalid_build_stack) div 3;
 draw_set_color(c_red);
 repeat(invalid_cell_count)
