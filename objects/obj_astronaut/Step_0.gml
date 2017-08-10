@@ -122,11 +122,11 @@ else
 	// constructing
 	if(current_action = astronaut_action.constructing)
 	{
-		var completion = construction_instance[? construction_completion] + 100/(30*construction_instance[? construction_time]);
-		ds_map_replace(construction_instance, construction_completion, completion);
-		if(construction_instance[? construction_completion] >= 100)
+		var completion = construction[? construction_completion] + 100/(30*construction[? construction_time]);
+		ds_map_replace(construction, construction_completion, completion);
+		if(construction[? construction_completion] >= 100)
 		{
-			scr_build_complete(construction_instance);
+			scr_build_complete(construction);
 		}
 	}
 }
@@ -157,18 +157,13 @@ else
 			{
 				// If astronaut was moving to construction...
 				case astronaut_action.moving_to_construction:
-					// ...and construction is not ready, he must be delivering an MDU
-					if(scr_construction_is_not_ready(construction_instance))
+					current_action = astronaut_action.constructing;
+					break;
+				case astronaut_action.delivering_mdu:
+					scr_deliver_mdu(id, construction);
+					if(scr_construction_is_ready(construction))
 					{
-						scr_transfer_mdu_to_construction(id, construction_instance);
-						if(scr_construction_is_ready(construction_instance))
-						{
-							scr_pick_up_construction(id, construction_instance, astronaut_action.constructing)
-						}
-					}
-					else if(scr_construction_is_ready(construction_instance)) // ... and construction is ready, he must be there to construct
-					{
-						current_action = astronaut_action.constructing;
+						scr_pick_up_construction(id, construction, astronaut_action.constructing)
 					}
 					break;
 				case astronaut_action.moving_by_command:

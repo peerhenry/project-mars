@@ -18,6 +18,7 @@ var left = 0;
 var right = 0;
 var bottom = 0;
 var top = 0;
+var mdu_count = 0;
 
 for(var n = 0; n < cell_count; n++)
 {
@@ -68,6 +69,7 @@ for(var n = 0; n < cell_count; n++)
 	if(object_to_add != noone)
 	{
 		new_instance = instance_create_layer(target_x, target_y, add_layer, object_to_add);
+		mdu_count += scr_get_mdu_count(object_to_add);
 		with(new_instance)
 		{
 			ds_list_add(new_instances, new_instance);
@@ -104,8 +106,10 @@ if(cell_count > 0)
 {
 	// 5. set construction props & add to construction queue
 	var new_construction = ds_map_create();
+	var initial_state = construction_state.not_ready;
+	if(mdu_count == 0) initial_state = construction_state.ready;
 	ds_map_add(new_construction, construction_completion, 0);
-	ds_map_add(new_construction, construction_build_state, construction_state.not_ready);
+	ds_map_add(new_construction, construction_build_state, initial_state);
 	ds_map_add(new_construction, construction_build_type, global.construct);
 	ds_map_add(new_construction, construction_cells, construction_cell_array);
 	ds_map_add(new_construction, construction_astronaut, noone);
@@ -115,8 +119,10 @@ if(cell_count > 0)
 	ds_map_add(new_construction, construction_bb_right, right);
 	ds_map_add(new_construction, construction_bb_left, left);
 	ds_map_add(new_construction, construction_bb_top, top);
-	ds_map_add(new_construction, construction_required_mdu_count, 1);
-	ds_map_add(new_construction, construction_required_mdu_remaining, 1);
+	ds_map_add(new_construction, construction_required_mdu_count, mdu_count);
+	ds_map_add(new_construction, construction_required_mdu_remaining, mdu_count);
+	ds_map_add(new_construction, construction_mdu_deliveries, 0);
+	ds_map_add(new_construction, construction_mdu_piles, ds_list_create());
 	
 	/*
 	new_construction[construction_required_mdu_remaining] = 1;

@@ -5,9 +5,10 @@ var orders_given = false; // boolean used for playing sound
 // Cancel active task for selected astronauts
 with(obj_astronaut_playable)
 {
-	if(is_selected && assigned_object != noone)
+	if(is_selected)
 	{
-		scr_unassign_task(assigned_object);
+		if(current_action != astronaut_action.idle) scr_cancel_current_action(id);
+		if(assigned_object != noone) scr_unassign_task(assigned_object);
 	}
 }
 

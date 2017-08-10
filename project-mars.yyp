@@ -183,6 +183,14 @@
             }
         },
         {
+            "Key": "068ba830-90f2-4ddb-9498-cc3a79ba9e93",
+            "Value": {
+                "id": "ba088e25-ed53-46e0-b821-ad78c144247c",
+                "resourcePath": "scripts\\scr_cancel_current_action\\scr_cancel_current_action.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "06c39589-a1fc-4520-ae2f-d4494adb8a64",
             "Value": {
                 "id": "23ee4951-fb93-42cc-bc57-013f30dd8ac2",
@@ -419,6 +427,14 @@
             "Value": {
                 "id": "f2687fce-eba2-465e-b287-c2f7fdc6e084",
                 "resourcePath": "objects\\obj_tutorial\\obj_tutorial.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "15379f2d-e22a-4ddd-aa36-45fb91bda00d",
+            "Value": {
+                "id": "0d6c644f-b1ed-493d-8b81-1f8fb0be21be",
+                "resourcePath": "objects\\obj_construction_mdu_pile\\obj_construction_mdu_pile.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -895,6 +911,14 @@
             }
         },
         {
+            "Key": "2a8805d1-edc8-4b24-81a6-fc0a878e2032",
+            "Value": {
+                "id": "d665b131-d9e9-4f21-b916-be7df493482e",
+                "resourcePath": "scripts\\scr_get_mdu_count\\scr_get_mdu_count.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2aba4cd3-d0a5-43d8-99fb-2c0555200762",
             "Value": {
                 "id": "6f0e8ef9-9d73-46a6-b205-315f1189e194",
@@ -1172,6 +1196,14 @@
                 "id": "10fed6da-fdb7-41e5-b671-12ae0dc22f3f",
                 "resourcePath": "sprites\\spr_metal\\spr_metal.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "376e7f45-7420-4f6b-9afe-f84554bb8628",
+            "Value": {
+                "id": "43f9b272-78b6-476d-bf9a-868ac2128ea9",
+                "resourcePath": "notes\\construction_test_procedures.yy",
+                "resourceType": "GMNotes"
             }
         },
         {
@@ -1895,6 +1927,14 @@
             }
         },
         {
+            "Key": "60552ed1-dd82-42ec-bf1e-364f7b3d4cc2",
+            "Value": {
+                "id": "76f97d56-f038-43df-95e3-bdcfcf910e7a",
+                "resourcePath": "scripts\\scr_find_spot_along_side\\scr_find_spot_along_side.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "60efbb61-7dfe-4b76-8afa-eb047822ab12",
             "Value": {
                 "id": "fb802782-d82a-4764-a27e-9f7bd657a4eb",
@@ -1972,6 +2012,14 @@
                 "id": "502721ea-5559-42a1-b71b-ff94be31cf7a",
                 "resourcePath": "sprites\\spr_wall_end\\spr_wall_end.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "6316676a-37ed-44f4-8698-8356d27e955d",
+            "Value": {
+                "id": "67e7509a-2b4f-4472-a394-4c9af5245fc3",
+                "resourcePath": "scripts\\scr_find_navigation_target_to_construction1\\scr_find_navigation_target_to_construction1.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -2258,7 +2306,7 @@
             "Key": "75d5137d-c934-4346-92c7-ac92acffeaf1",
             "Value": {
                 "id": "18ee8ab2-d24e-4e09-930b-654dc2df7023",
-                "resourcePath": "scripts\\scr_transfer_mdu_to_construction\\scr_transfer_mdu_to_construction.yy",
+                "resourcePath": "scripts\\scr_deliver_mdu\\scr_deliver_mdu.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -4963,6 +5011,7 @@
         "8c6b1ab6-c63c-42d8-9553-bb3366e66e32",
         "26deac72-9599-42d8-ab69-dd8b866a5f05",
         "05ccd2e7-638f-4b20-aa4c-359b8a32964d",
+        "2a8805d1-edc8-4b24-81a6-fc0a878e2032",
         "0776ed7b-00bb-46df-a1db-572a19b811be",
         "cd2d1ef8-586b-40d4-8c89-4425663ee013",
         "19f68941-b29d-43e4-8d48-ae61301a70ae",
@@ -4983,6 +5032,7 @@
         "2eca1b5a-4c7e-4fcd-b8ec-3de69bd0ff61",
         "7684a3a2-e481-4c96-8b10-88c8a83cf7bf",
         "52475891-da48-4ebb-b4f1-7fa882ab9ace",
+        "068ba830-90f2-4ddb-9498-cc3a79ba9e93",
         "218261ea-71df-4f12-88ff-058b4a5916be",
         "f94104a1-1a08-44d9-a989-c4dd1c9ff0a2",
         "016c181e-e0a4-48da-a22d-c0b06c338146",
@@ -5001,6 +5051,8 @@
         "1e322ced-08d9-45b9-ad3d-234cc4a52223",
         "cd7f68c2-7b97-483e-ae8f-ab0a8208db07",
         "69a6700f-b0f2-453c-aa10-aba27014da5c",
+        "60552ed1-dd82-42ec-bf1e-364f7b3d4cc2",
+        "6316676a-37ed-44f4-8698-8356d27e955d",
         "aa03ec7a-5a45-403e-8459-775a4f9fde9d",
         "75d5137d-c934-4346-92c7-ac92acffeaf1",
         "f9176c13-a1a0-4ef9-8723-411db0c23549",

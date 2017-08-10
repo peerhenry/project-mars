@@ -12,5 +12,12 @@ if(ds_map_find_value(arg_construction, construction_build_state) == construction
 	ds_map_replace(arg_construction, construction_astronaut, arg_astronaut);
 }
 
-arg_astronaut.construction_instance = arg_construction;
+// increment deliveries
+if(arg_action == astronaut_action.delivering_mdu)
+{
+	var deliveries_incr = ds_map_find_value(arg_construction, construction_mdu_deliveries) + 1;
+	ds_map_replace(arg_construction, construction_mdu_deliveries, deliveries_incr);
+}
+
+arg_astronaut.construction = arg_construction;
 arg_astronaut.current_action = arg_action;

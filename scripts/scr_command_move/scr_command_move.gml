@@ -6,10 +6,6 @@ with(obj_astronaut_playable)
 		var will_go = scr_navigate(id, mouse_x, mouse_y);
 		if(will_go)
 		{
-			if(current_action = astronaut_action.constructing || current_action = astronaut_action.moving_to_construction)
-			{
-				ds_map_replace(construction_instance, construction_build_state, construction_state.ready);
-			}
 			current_action = astronaut_action.moving_by_command;
 			orders_given = true;
 		}

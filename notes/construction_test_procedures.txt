@@ -1,0 +1,19 @@
+
+1. construct
+2. astro pickup mdu
+3. deliver
+4. finish
+
+1. multiple astronauts pickup mdu
+2. construct
+3. finish
+
+
+1. construct
+2. astro pickup mdu
+3. cancel the delivery
+
+
+1. multiple mdu astros
+2. construct
+3. cancel 1 or more astros

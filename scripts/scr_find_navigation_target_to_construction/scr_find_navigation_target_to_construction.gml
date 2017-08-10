@@ -3,88 +3,90 @@
 var arg_astronaut = argument0;
 var arg_construction = argument1;
 
-#macro MAX_NAV_D 30000000
+var bottom = arg_construction[? construction_bb_bottom];
+var top = arg_construction[? construction_bb_top];
+var right = arg_construction[? construction_bb_right];
+var left = arg_construction[? construction_bb_left];
+var constr_center_x = (left + right)/2;
+var constr_center_y = (top + bottom) /2;
 
-var d_min = MAX_NAV_D;
-var d_pixel = MAX_NAV_D;
-var found_x = 0;
-var found_y = 0;
-var adj_x = 0;
-var adj_y = 0;
+var dx = arg_astronaut.x - constr_center_x;
+var dy = arg_astronaut.y - constr_center_y;
 
-// loop over construction cells and find the closest navigable adjacent.
-//var cells = arg_construction[construction_cells];
-var cells = ds_map_find_value(arg_construction, construction_cells);
-var cell_count = array_length_1d(cells);
+var next_x = 0;
+var next_y = 0;
 
-for(var n = 0; n < cell_count; n++)
+var side_order = [macro_south_number, macro_west_number, macro_east_number, macro_north_number];
+
+if(dy > dx)
 {
-	var next_cell = cells[n];
-	var cell_i = next_cell[c_cell_i];
-	var cell_j = next_cell[c_cell_j];
-	var cell_x = scr_gi_to_rc(cell_i);
-	var cell_y = scr_gi_to_rc(cell_j);
-	
-	// check left
-	adj_x = cell_x - 32;
-	adj_y = cell_y;
-	d_pixel = abs(adj_x - arg_astronaut.x) + abs(adj_y - arg_astronaut.y);
-	if(scr_navigation_is_possible(arg_astronaut, adj_x, adj_y))
-	{	
-		if(d_pixel < d_min)
-		{
-			d_min = d_pixel;
-			found_x = adj_x;
-			found_y = adj_y;
-		} 
-	}
-	
-	// check top
-	adj_x = cell_x;
-	adj_y = cell_y - 32;
-	d_pixel = abs(adj_x - arg_astronaut.x) + abs(adj_y - arg_astronaut.y);
-	if(scr_navigation_is_possible(arg_astronaut, adj_x, adj_y))
-	{	
-		if(d_pixel < d_min)
-		{ 
-			d_min = d_pixel;
-			found_x = adj_x;
-			found_y = adj_y;
-		} 
-	}
-
-	// check right
-	adj_x = cell_x + 32;
-	adj_y = cell_y;
-	d_pixel = abs(adj_x - arg_astronaut.x) + abs(adj_y - arg_astronaut.y);
-	if(scr_navigation_is_possible(arg_astronaut, adj_x, adj_y))
-	{	
-		if(d_pixel < d_min)
-		{ 
-			d_min = d_pixel;
-			found_x = adj_x;
-			found_y = adj_y;
-		} 
-	}
-
-	// check bottom
-	adj_x = cell_x;
-	adj_y = cell_y + 32;
-	d_pixel = abs(adj_x - arg_astronaut.x) + abs(adj_y - arg_astronaut.y);
-	if(scr_navigation_is_possible(arg_astronaut, adj_x, adj_y))
+	if(dy > -dx)
 	{
-		if(d_pixel < d_min)
-		{ 
-			d_min = d_pixel;
-			found_x = adj_x;
-			found_y = adj_y;
-		} 
+		// south is closest
+		if(dx < 0)
+		{
+			// west is second closest: DEFAULT
+		}
+		else
+		{
+			// east is second closest
+			side_order[1] = macro_east_number;
+			side_order[2] = macro_west_number;
+		}
+	}
+	else
+	{
+		// west is closest
+		if(dy > 0)
+		{
+			// south is second closest
+			side_order = [macro_west_number, macro_south_number, macro_north_number, macro_east_number];
+		}
+		else
+		{
+			// north is second closest
+			side_order = [macro_west_number, macro_north_number, macro_south_number, macro_east_number];
+		}
+	}
+}
+else
+{
+	if(dy > -dx)
+	{
+		// east is closest
+		if(dy > 0)
+		{
+			// south is second closest
+			side_order = [macro_east_number,macro_south_number,macro_north_number,macro_west_number];
+		}
+		else
+		{
+			// north is second closest
+			side_order = [macro_east_number,macro_north_number,macro_south_number,macro_west_number];
+		}
+	}
+	else
+	{
+		// north is closest
+		if(dx > 0)
+		{
+			// east is second closest
+			side_order = [macro_north_number,macro_east_number,macro_west_number,macro_south_number];
+		}
+		else
+		{
+			// west is second closest
+			side_order = [macro_north_number,macro_west_number,macro_east_number,macro_south_number];
+		}
 	}
 }
 
-if(d_min < MAX_NAV_D)
+var result = noone;
+var n = 0;
+while(result == noone)
 {
-	return [found_x, found_y];
+	result = scr_find_spot_along_side(arg_astronaut, arg_construction, side_order[n]);
+	n++;
 }
 
-return noone;
+return result;

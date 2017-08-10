@@ -9,6 +9,11 @@ var size = scr_item_size(arg_item);
 var width = ds_grid_width(arg_inventory);
 var height = ds_grid_height(arg_inventory);
 
+if(!ds_grid_value_exists(arg_inventory, 0, 0, width-1, height-1, arg_item))
+{
+	return false;
+}
+
 if(size == 2)
 {
 	var item_x = ds_grid_value_x(arg_inventory, 0, 0, width-1, height-1, arg_item);
@@ -21,3 +26,5 @@ else
 	var item_y = ds_grid_value_y(arg_inventory, 0, 0, width, height, arg_item);
 	ds_grid_set(arg_inventory, item_x, item_y, macro_inventory_empty);
 }
+
+return true;

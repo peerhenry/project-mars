@@ -31,7 +31,7 @@ with(arg_grid)
 }
 
 // Create the queue for the flood fill
-show_debug_message("creating flood fill queue, visited list and map..."); // DEBUG
+// show_debug_message("creating flood fill queue, visited list and map..."); // DEBUG
 var flood_queue = ds_queue_create();
 var visited_list = ds_list_create();
 var visited_map = ds_map_create();
