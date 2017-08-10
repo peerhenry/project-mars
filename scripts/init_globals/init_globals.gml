@@ -5,20 +5,6 @@ global.draw_room_bb = false;
 global.debug_start_messages = false;
 global.debug_gameplay_messages = true;
 
-show_debug_message("testing ds_map_replace...")
-var tm = ds_map_create();
-var key = 1;
-var expected = 381;
-ds_map_add(tm, key, 0);
-ds_map_replace(tm, key, expected);
-var result = ds_map_find_value(tm, key);
-if(result == expected){
-	show_debug_message("test PASSED");
-}
-else show_debug_message("test FAILED! exptected: " + string(expected) + " actual: " + string(result));
-ds_map_destroy(tm);
-
-
 // Used to prevent too many messages from appearing to player
 global.message_is_showing = false;
 

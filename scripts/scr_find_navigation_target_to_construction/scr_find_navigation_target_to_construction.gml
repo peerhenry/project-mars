@@ -32,7 +32,7 @@ for(var n = 0; n < cell_count; n++)
 	if(scr_navigation_is_possible(arg_astronaut, adj_x, adj_y))
 	{	
 		if(d_pixel < d_min)
-		{ 
+		{
 			d_min = d_pixel;
 			found_x = adj_x;
 			found_y = adj_y;
