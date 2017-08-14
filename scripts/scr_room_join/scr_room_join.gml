@@ -21,7 +21,7 @@ else{
 	var new_oxygen_level = (room1.oxygen_level * size1 + room2.oxygen_level * size2)/max(totalsize,1);
 	var new_temperature = (room1.temperature * size1 + room2.temperature * size2)/max(totalsize,1);
 	
-	var new_room = scr_room_new(arg_x, arg_y);
+	var new_room = scr_create_room_with_tile(arg_x, arg_y);
 	
 	with(new_room){
 		oxygen_level = new_oxygen_level;

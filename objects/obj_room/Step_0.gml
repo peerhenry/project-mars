@@ -17,7 +17,7 @@ repeat(ds_list_size(hatches))
 		}
 		all_hatches_closed = false;
 		oxygen_is_leaking = true;
-		oxygen_is_replenishing = false; // do not replenish if hatch is open.
+		oxygen_should_replenish = false; // do not replenish if hatch is open.
 	}
 	n++;
 }
@@ -27,11 +27,11 @@ if(all_hatches_closed)
 	// auto reset replenishment
 	if(!oxygen_is_leaking)
 	{
-		oxygen_is_replenishing = true;
+		oxygen_should_replenish = true;
 	}
 	
 	// autp reset leakage flag
-	if(!oxygen_is_replenishing)
+	if(!oxygen_should_replenish)
 	{
 		var no_door_leakage = true;
 		var n = 0;
@@ -56,7 +56,7 @@ if(all_hatches_closed)
 			}
 			n++;
 		}
-		oxygen_is_replenishing = no_door_leakage;
+		oxygen_should_replenish = no_door_leakage;
 		if(open_door_count == 0)
 		{
 			oxygen_is_leaking = false;
@@ -64,8 +64,17 @@ if(all_hatches_closed)
 	}
 }
 
+var current_consumption = scr_get_grid_prop(id, macro_grid_oxygen, macro_grid_prop_value);
+var new_consumption = 0;
 // replenish oxygen
-if(oxygen_level < 100 && oxygen_is_replenishing)
+if(oxygen_level < 100 && oxygen_should_replenish && scr_can_draw_from_grid(id, macro_grid_oxygen))
 {
+	var replenishment = min(100 - oxygen_level, o2_replenishment);
+	new_consumption = replenishment*ds_list_size(tiles);
 	oxygen_level += o2_replenishment;
+}
+
+if(current_consumption != new_consumption)
+{
+	scr_set_grid_prop(id, macro_grid_oxygen, macro_grid_prop_value, new_consumption);
 }

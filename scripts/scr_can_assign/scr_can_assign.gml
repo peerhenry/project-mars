@@ -21,6 +21,16 @@ switch(arg_assignable.object_index)
 		var astronaut_carries_food = scr_astronaut_has(arg_astronaut, macro_inventory_food);
 		if(astronaut_carries_food) return scr_inventory_has_space_for_item(arg_assignable.inventory, macro_inventory_food);
 		else return scr_inventory_has_item(arg_assignable.inventory, macro_inventory_food);
+	case obj_mdu_pile:
+		// astronaut has mdu and pile has less than 8
+		if(scr_astronaut_has(arg_astronaut, macro_inventory_module))
+		{
+			return (arg_assignable.image_index < 7);
+		}
+		else
+		{
+			return true;
+		}
 }
 
 return true;

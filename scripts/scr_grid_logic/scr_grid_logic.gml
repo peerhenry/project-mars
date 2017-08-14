@@ -3,6 +3,9 @@
 var arg_instance = argument0;
 var arg_object_index = arg_instance.object_index;
 
+show_debug_message("calling scr_grid_logic...");
+show_debug_message("arg_instance object index: " + string(arg_object_index));
+
 var grid_count = ds_map_size(arg_instance.grid_props_map);
 if(grid_count == 0) exit;
 
@@ -20,7 +23,7 @@ for(var grid_type = 0; grid_type < macro_grid_type_count; grid_type++)
 	//var grid_props = scr_get_grid_props(arg_instance, grid_type);
 	if(scr_has_grid_props(arg_instance, grid_type))
 	{
-		var grid = scr_connect_to_grid(arg_instance, grid_type, comp_east, comp_north, comp_west, comp_south);
+		var grid = scr_connect_adjacent_grids(arg_instance, grid_type, comp_east, comp_north, comp_west, comp_south);
 		if(grid == noone)
 		{
 			grid = scr_grid_new_with_instance(arg_instance, grid_type);

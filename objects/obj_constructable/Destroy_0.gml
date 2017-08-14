@@ -6,20 +6,22 @@ for(var grid_type = 0; grid_type < macro_grid_type_count; grid_type++)
 	var grid_props = grid_props_map[? grid_type];
 	if(!is_undefined(grid_props))
 	{
-		var grid = grid_props[macro_grid_component_grid];
+		var grid = grid_props[macro_grid_prop_grid];
 		var comps_left = 0;
 		var key = encoded_ij;
+		show_debug_message("constr. destroy, key: " + string(encoded_ij));
 		with(grid)
 		{
 			// Remove component from grid
 			// show_debug_message("Removing " + scr_object_index_string(other.id) + " from grid..."); // DEBUG
-			var role = grid_props[macro_grid_component_role];
+			var role = grid_props[macro_grid_prop_role];
 			var list_to_use = role_map[? role];
 			var index = ds_list_find_index(list_to_use, other.id);
 			ds_list_delete(list_to_use, index);	// deletes entry in list
 			
 			// Delete entry in map & key list
 			var cell_list = ds_map_find_value(component_map, key);
+			show_debug_message("cell_list exists: " + string(ds_exists(cell_list, ds_type_list)));
 			var ind = ds_list_find_index(cell_list, key);
 			ds_list_delete(cell_list, ind);
 			if(ds_list_size(cell_list) == 0)

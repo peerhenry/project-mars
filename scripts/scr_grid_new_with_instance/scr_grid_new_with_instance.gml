@@ -6,6 +6,6 @@ var arg_instance = argument0;
 var arg_type = argument1;
 
 var new_grid = scr_grid_new(arg_type);
-scr_grid_add(new_grid, arg_instance);
+scr_connect_to_grid(new_grid, arg_instance);
 
 return new_grid;

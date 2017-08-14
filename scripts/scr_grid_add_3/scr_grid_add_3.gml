@@ -15,25 +15,25 @@ switch(equality_number)
 {
 	case 1:
 		var joined_grid = scr_grid_join(arg_grid_1, arg_grid_3);
-		scr_grid_add(joined_grid, arg_instance);
+		scr_connect_to_grid(joined_grid, arg_instance);
 		return joined_grid;
 	case 2:
 		var joined_grid = scr_grid_join(arg_grid_1, arg_grid_3);
-		scr_grid_add(joined_grid, arg_instance);
+		scr_connect_to_grid(joined_grid, arg_instance);
 		return joined_grid;
 	case 3:
-		scr_grid_add(arg_grid_1, arg_instance);
+		scr_connect_to_grid(arg_grid_1, arg_instance);
 		return arg_grid_1;
 }
 
 if(arg_grid_3 == arg_grid_1)
 {
 	var joined_grid = scr_grid_join(arg_grid_1, arg_grid_2);
-	scr_grid_add(joined_grid, arg_instance);
+	scr_connect_to_grid(joined_grid, arg_instance);
 	return joined_grid;
 }
 
 
 var joined_grid = scr_grid_join_3(arg_grid_1, arg_grid_2, arg_grid_3);
-scr_grid_add(joined_grid, arg_instance);
+scr_connect_to_grid(joined_grid, arg_instance);
 return joined_grid;

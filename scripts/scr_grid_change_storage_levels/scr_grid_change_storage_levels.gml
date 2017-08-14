@@ -18,7 +18,7 @@ with(argument0)
 		{
 			var next_component = ds_list_find_value(storage_list, comp_index);
 			var grid_props = next_component.grid_props_map[? grid_type];
-			var capacity = grid_props[macro_grid_component_value];
+			var capacity = grid_props[macro_grid_prop_value];
 			var level = grid_props[macro_grid_storage_level];
 			var stored = capacity*level;
 			var remaining_space = capacity - stored;

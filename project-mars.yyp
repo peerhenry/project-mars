@@ -271,14 +271,6 @@
             }
         },
         {
-            "Key": "0d37026f-aa28-43bd-a2df-55a7d6b4219d",
-            "Value": {
-                "id": "3790c81c-744b-4eda-8d4f-db23797c4bff",
-                "resourcePath": "scripts\\scr_connect_to_electric_grid\\scr_connect_to_electric_grid.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "0dcda5fa-939f-40f9-a469-ccd67ef88eac",
             "Value": {
                 "id": "d39fa8c3-050b-415d-b7f8-8963107b63c0",
@@ -348,14 +340,6 @@
                 "id": "97292809-179c-4a3c-8d27-752e78578499",
                 "resourcePath": "views\\108dc22c-3b8e-4854-9f37-9d8543b1a3da.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "10d63967-ed2f-49de-849f-1901b4091772",
-            "Value": {
-                "id": "47beca14-3c36-4e99-bc64-73410d369551",
-                "resourcePath": "scripts\\scr_electric_grid_join\\scr_electric_grid_join.yy",
-                "resourceType": "GMScript"
             }
         },
         {
@@ -447,14 +431,6 @@
             }
         },
         {
-            "Key": "160fda03-613f-4455-9064-0fac857d94cc",
-            "Value": {
-                "id": "33867fc0-f423-428a-abe1-cccbaffa37ea",
-                "resourcePath": "scripts\\scr_four_electric_grids_add\\scr_four_electric_grids_add.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "16c9babd-83d5-493c-8e72-5405061e4ed3",
             "Value": {
                 "id": "8d36bd42-5176-4b09-bb1d-c5f8dd0f0c95",
@@ -475,14 +451,6 @@
             "Value": {
                 "id": "528d57d1-9d5b-49bd-a70b-7113e27b3992",
                 "resourcePath": "scripts\\scr_resolution\\scr_resolution.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "17a18d15-4743-4916-a509-9cd44516864c",
-            "Value": {
-                "id": "a09b0793-9797-47bc-887f-aed510d1e5c4",
-                "resourcePath": "scripts\\scr_electric_grid_power\\scr_electric_grid_power.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -754,7 +722,7 @@
             "Key": "22373549-8199-43fc-8921-02b14c2c41a6",
             "Value": {
                 "id": "53d14899-08d8-478d-928a-c092f0d20589",
-                "resourcePath": "scripts\\scr_grid_add\\scr_grid_add.yy",
+                "resourcePath": "scripts\\scr_connect_to_grid\\scr_connect_to_grid.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1239,14 +1207,6 @@
             }
         },
         {
-            "Key": "39ec3771-d78b-4be8-afac-3862e613fdee",
-            "Value": {
-                "id": "9650e32d-79c8-4afc-b4c0-7884d899400a",
-                "resourcePath": "scripts\\scr_three_electric_grids_add\\scr_three_electric_grids_add.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "3ac8e2c6-3cdf-4c12-9e85-60bf763df234",
             "Value": {
                 "id": "ade0d163-c855-461b-ab1e-189ff0dd579d",
@@ -1316,6 +1276,14 @@
                 "id": "1519d374-d659-4453-af86-d9710cd3c7f1",
                 "resourcePath": "scripts\\scr_command\\scr_command.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "3caf756f-11e7-44e7-8847-11d82f57af12",
+            "Value": {
+                "id": "829b8520-63ea-407f-8f12-82e54e2f7a82",
+                "resourcePath": "sprites\\spr_printer_small\\spr_printer_small.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1719,6 +1687,14 @@
             }
         },
         {
+            "Key": "529cc2bf-4d30-49bd-ba77-386118b67867",
+            "Value": {
+                "id": "6934eba6-fe5a-47d3-880c-fa0e7289d523",
+                "resourcePath": "notes\\custom_events.yy",
+                "resourceType": "GMNotes"
+            }
+        },
+        {
             "Key": "52beea16-92f4-4f02-953c-1dce25ae5171",
             "Value": {
                 "id": "40a5e33c-97ed-4d21-9b25-257e91ab6499",
@@ -1908,14 +1884,6 @@
                 "id": "254b08f6-1e6b-4d12-8424-8da8c9f2dfe0",
                 "resourcePath": "sprites\\spr_battery\\spr_battery.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "5f8205d9-5b57-4e8f-91d1-5acad9f08b2e",
-            "Value": {
-                "id": "85fd64ad-896a-49ea-a674-722cf12bb27f",
-                "resourcePath": "scripts\\scr_tell_consumer_power_is_on\\scr_tell_consumer_power_is_on.yy",
-                "resourceType": "GMScript"
             }
         },
         {
@@ -2147,14 +2115,6 @@
             "Value": {
                 "id": "f9e0a095-9439-43cb-9e80-a978bda6eb7e",
                 "resourcePath": "scripts\\scr_get_adjacent_grid_components\\scr_get_adjacent_grid_components.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "6cadbada-cac5-4ba2-bbd4-0098952c19a8",
-            "Value": {
-                "id": "052d1ff6-f497-4a4b-838d-de4dfa7ae405",
-                "resourcePath": "scripts\\scr_electric_grid_join_4\\scr_electric_grid_join_4.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -2455,14 +2415,6 @@
             }
         },
         {
-            "Key": "811c46a2-64c1-4058-aea2-d9c7d96bd0bc",
-            "Value": {
-                "id": "66a40c09-752f-42bf-9fa4-5bd0ae944094",
-                "resourcePath": "scripts\\scr_two_electric_grids_add\\scr_two_electric_grids_add.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "820f6d65-0667-4a5f-acdf-98bc4e503a5c",
             "Value": {
                 "id": "51223fe1-5779-4b96-931e-49a507ac5625",
@@ -2530,7 +2482,7 @@
             "Key": "846841a7-a6be-436a-ae8f-4c5d523c1748",
             "Value": {
                 "id": "a11d62b2-fd5b-4969-9635-c08b5f90f857",
-                "resourcePath": "scripts\\scr_room_new\\scr_room_new.yy",
+                "resourcePath": "scripts\\scr_create_room_with_tile\\scr_create_room_with_tile.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -2639,11 +2591,11 @@
             }
         },
         {
-            "Key": "8bee1ba6-e687-4977-bde9-d4ef768d4a8d",
+            "Key": "8c202cba-8ef5-4a33-87ed-a26267341824",
             "Value": {
-                "id": "c1868ec5-a46a-4c04-905f-6be86ca32412",
-                "resourcePath": "views\\8bee1ba6-e687-4977-bde9-d4ef768d4a8d.yy",
-                "resourceType": "GMFolder"
+                "id": "a082a968-3a97-4e40-b469-49c6bd4a82ae",
+                "resourcePath": "sprites\\spr_printer_big\\spr_printer_big.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2715,14 +2667,6 @@
             "Value": {
                 "id": "4d73499a-a8a9-4509-a1e9-ae94e64f4873",
                 "resourcePath": "scripts\\scr_execute_map_buffer_action\\scr_execute_map_buffer_action.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "8fe293bc-f568-4326-a6d1-84dc6120f20b",
-            "Value": {
-                "id": "8542e7df-ed77-4904-82be-f12f2afb680d",
-                "resourcePath": "scripts\\scr_electric_grid_consumption\\scr_electric_grid_consumption.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -3383,6 +3327,14 @@
             }
         },
         {
+            "Key": "b6298f74-28f0-441f-8349-bc76edc214b8",
+            "Value": {
+                "id": "e4f48a05-b044-4a16-afd7-9a33d0c18710",
+                "resourcePath": "scripts\\scr_create_room\\scr_create_room.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "b6c44b5b-df28-436f-b5e2-329862fe3498",
             "Value": {
                 "id": "f130935b-c2d8-4c54-9437-f3f7c369f0f7",
@@ -3479,14 +3431,6 @@
             }
         },
         {
-            "Key": "bc38b441-c3ad-4909-bd38-8e766b96a3f4",
-            "Value": {
-                "id": "1a5f9193-eb3a-4708-a370-9f50caa7bd1e",
-                "resourcePath": "scripts\\scr_electric_grid_remove\\scr_electric_grid_remove.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "bca5c41e-fc61-4aa4-9707-fd0a79e0ee99",
             "Value": {
                 "id": "c01e2784-b189-4b4c-a561-3ada3034ad34",
@@ -3499,6 +3443,14 @@
             "Value": {
                 "id": "795eae18-b068-40f6-b7d3-453bfa21224e",
                 "resourcePath": "sprites\\spr_fridge\\spr_fridge.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "bd2bf7ad-d254-4541-8a19-998a3e26fc17",
+            "Value": {
+                "id": "f9e962c5-70c8-4535-9e74-19441c9a0986",
+                "resourcePath": "sprites\\spr_printer_hud\\spr_printer_hud.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -3623,14 +3575,6 @@
             }
         },
         {
-            "Key": "c210fc13-029e-42c4-8ade-20fcfe2196eb",
-            "Value": {
-                "id": "ad614f96-edb9-478a-8305-c282c390186b",
-                "resourcePath": "scripts\\scr_electric_grid_update\\scr_electric_grid_update.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "c3168a84-c88c-4811-a330-e4b4de8b74c4",
             "Value": {
                 "id": "654ffac1-95dd-42ce-ae31-e9c5a3cc4659",
@@ -3668,6 +3612,14 @@
                 "id": "59c33618-468b-420b-b61f-167a03070c6a",
                 "resourcePath": "sprites\\spr_bg\\spr_bg.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c57ce30a-ab53-4412-93b8-b009d7037b5e",
+            "Value": {
+                "id": "216099b0-f103-4f79-b60f-c7d33a21de31",
+                "resourcePath": "objects\\obj_printer\\obj_printer.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -4175,14 +4127,6 @@
             }
         },
         {
-            "Key": "de6309df-1546-490e-bea1-4854dfd9abe6",
-            "Value": {
-                "id": "946ae035-4f52-431c-bdca-ae20b2ec833e",
-                "resourcePath": "scripts\\scr_electric_grid_join_3\\scr_electric_grid_join_3.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "de80c198-76bb-4e9a-aebd-a377e94a4593",
             "Value": {
                 "id": "3956f174-07fb-4969-8d18-8d1968db982a",
@@ -4250,7 +4194,7 @@
             "Key": "e156b02c-98e3-4d83-9243-3e94fb5ee9bb",
             "Value": {
                 "id": "bbc87776-d83c-4b54-bf23-0ce103c78fef",
-                "resourcePath": "scripts\\scr_connect_to_grid\\scr_connect_to_grid.yy",
+                "resourcePath": "scripts\\scr_connect_adjacent_grids\\scr_connect_adjacent_grids.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -4324,14 +4268,6 @@
                 "id": "ae693be8-5ec8-46d5-88fb-a491b5b71fe6",
                 "resourcePath": "views\\e43f7779-3e62-45a6-8c65-1d443acba47d.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "e51a69ba-d619-4203-b369-7188caaaa910",
-            "Value": {
-                "id": "18c677d1-9374-45d5-b99e-1e5ad6c6f9dc",
-                "resourcePath": "scripts\\scr_electric_grid_add\\scr_electric_grid_add.yy",
-                "resourceType": "GMScript"
             }
         },
         {
@@ -4519,6 +4455,14 @@
             }
         },
         {
+            "Key": "f2af81c6-9478-455f-8687-b2c797520d24",
+            "Value": {
+                "id": "6f76e646-a223-430d-a13a-031318a32b8e",
+                "resourcePath": "scripts\\scr_assert_instance_type\\scr_assert_instance_type.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f2c2dee6-320b-42a8-834b-0fae1b3622aa",
             "Value": {
                 "id": "6bdedc65-86ef-4d8d-9d3c-1cf323482047",
@@ -4554,7 +4498,7 @@
             "Key": "f43aae76-43a3-4db2-8efe-b22bef7a1a4a",
             "Value": {
                 "id": "fc0dc117-7c3a-42ac-839a-a80c4338230e",
-                "resourcePath": "scripts\\scr_room_new_from_tiles\\scr_room_new_from_tiles.yy",
+                "resourcePath": "scripts\\scr_create_room_with_tiles\\scr_create_room_with_tiles.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -4940,13 +4884,11 @@
         "2829f992-74fe-4d39-b772-a5434f89f88a",
         "ff0242b6-40e5-4b78-ada4-f46e73ef4fd7",
         "9334fdda-6241-4ea9-ad65-d7217c99ad00",
-        "846841a7-a6be-436a-ae8f-4c5d523c1748",
         "20cdb994-7753-4d14-8d59-b337bb8a5673",
         "a7deec15-8723-45f5-bb61-e39ce9de6af2",
         "a052d55b-f0af-405d-9e27-659e1ebfb268",
         "e9e5cedf-1fbd-47f7-a345-6f9de7206d28",
         "d4b6da13-ca56-48ed-97e7-f0ce35a4a540",
-        "f43aae76-43a3-4db2-8efe-b22bef7a1a4a",
         "8d07d7cc-4912-4fe2-ad01-b3d8a37f46db",
         "09d8bc00-2deb-470c-8318-e964e232d16e",
         "48183f77-c56a-435d-b820-c895927c6d98",
@@ -4959,20 +4901,10 @@
         "0110738c-e37b-45e4-a812-9020b0a148fd",
         "b1d5107c-745b-4c43-b310-974e8d2fa3ea",
         "f6b1f957-62cc-4243-8843-cfd2332dab71",
+        "b6298f74-28f0-441f-8349-bc76edc214b8",
+        "846841a7-a6be-436a-ae8f-4c5d523c1748",
+        "f43aae76-43a3-4db2-8efe-b22bef7a1a4a",
         "a047a1ec-a411-4d9b-9121-f7326dfa6581",
-        "e51a69ba-d619-4203-b369-7188caaaa910",
-        "0d37026f-aa28-43bd-a2df-55a7d6b4219d",
-        "811c46a2-64c1-4058-aea2-d9c7d96bd0bc",
-        "39ec3771-d78b-4be8-afac-3862e613fdee",
-        "160fda03-613f-4455-9064-0fac857d94cc",
-        "10d63967-ed2f-49de-849f-1901b4091772",
-        "de6309df-1546-490e-bea1-4854dfd9abe6",
-        "6cadbada-cac5-4ba2-bbd4-0098952c19a8",
-        "c210fc13-029e-42c4-8ade-20fcfe2196eb",
-        "17a18d15-4743-4916-a509-9cd44516864c",
-        "8fe293bc-f568-4326-a6d1-84dc6120f20b",
-        "5f8205d9-5b57-4e8f-91d1-5acad9f08b2e",
-        "bc38b441-c3ad-4909-bd38-8e766b96a3f4",
         "0b3e2340-577b-4b8c-b6a9-11f749331d00",
         "d0bceaed-302b-40f9-9f03-7b729e5ae6f3",
         "3bbc6666-a357-4b79-b68f-613f913c576f",
@@ -5131,6 +5063,7 @@
         "1dd37cb6-f98e-4133-8a5d-952bc1778aed",
         "8ad3b847-52a3-4a58-b820-625cec89b502",
         "f47237d6-d291-4baa-b0e7-905256f9e9ea",
+        "f2af81c6-9478-455f-8687-b2c797520d24",
         "ec86222b-5c64-4376-8e4b-af59b4690c0e",
         "7509d693-bfe4-4bda-b4e4-01a7b8d2c5f6",
         "e3cb7117-98d3-4ec9-a5af-c61b65aceecd",

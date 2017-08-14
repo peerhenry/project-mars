@@ -25,21 +25,6 @@ with(new_grid)
 			var next_component = ds_list_find_value(next_cell, n);
 			scr_grid_component_attach_from_map(next_component, new_grid); // set grid in props, and add to role list
 		}
-		
-		// If the cell is a list, iterate over that list
-		/*if(ds_exists(next_cell, ds_type_list))
-		{
-			var size = ds_list_size(next_cell);
-			for(var n = 0; n < size; n++)
-			{
-				var next_component = ds_list_find_value(next_cell, n);
-				scr_grid_component_attach_from_map(next_component, new_grid); // set grid in props, and add to role list
-			}
-		}
-		else
-		{
-			scr_grid_component_attach_from_map(next_cell, new_grid); // set grid in props, and add to role list
-		}*/
 	}
 }
 return new_grid;

@@ -13,9 +13,9 @@ with(arg_grid)
 	{
 		var next_component = ds_list_find_value(storage_list, n);
 		var grid_props = next_component.grid_props_map[? grid_type];
-		if(grid_props[macro_grid_component_can_perform_role])
+		if(grid_props[macro_grid_prop_can_perform_role])
 		{
-			var capacity = grid_props[macro_grid_component_value];
+			var capacity = grid_props[macro_grid_prop_value];
 			total += capacity;
 			stored += capacity*grid_props[macro_grid_storage_level];
 		}

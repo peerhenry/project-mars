@@ -194,7 +194,7 @@ if(tiles_remain || force_new_room)
 	// show_message("making a new room of size " + string(ds_list_size(tiles_visited))); // DEBUG
 	
 	// THIS IS WHERE THE ACTUAL PARTED ROOM IS CREATED
-	var new_room = scr_room_new_from_tiles(tiles_visited, min_left, min_top, max_right, max_bottom);
+	var new_room = scr_create_room_with_tiles(tiles_visited, min_left, min_top, max_right, max_bottom);
 	with(new_room)
 	{
 		oxygen_level = le_room.oxygen_level;

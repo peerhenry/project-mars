@@ -4,9 +4,9 @@
 scr_drill_pump_connection(id);
 if(scr_can_draw_power(id))
 {
-	scr_set_grid_prop(id, macro_grid_water, macro_grid_component_can_perform_role, true);
+	scr_set_grid_prop(id, macro_grid_water, macro_grid_prop_can_perform_role, true);
 }
 else
 {
-	scr_set_grid_prop(id, macro_grid_water, macro_grid_component_can_perform_role, false);
+	scr_set_grid_prop(id, macro_grid_water, macro_grid_prop_can_perform_role, false);
 }

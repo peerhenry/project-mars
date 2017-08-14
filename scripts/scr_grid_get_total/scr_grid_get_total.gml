@@ -10,9 +10,9 @@ for(var n = 0; n < size; n++)
 {
 	var next_component = ds_list_find_value(component_role_list, n);
 	var grid_props = next_component.grid_props_map[? grid_type];
-	if(grid_props[macro_grid_component_can_perform_role])
+	if(grid_props[macro_grid_prop_can_perform_role])
 	{
-		total += grid_props[macro_grid_component_value];
+		total += grid_props[macro_grid_prop_value];
 	}
 }
 return total;

@@ -12,8 +12,8 @@
 #macro macro_grid_type_count 4		// used to iterate over grid types in grid logic
 
 // grid component props
-#macro macro_grid_component_grid 0
-#macro macro_grid_component_role 1
-#macro macro_grid_component_value 2 // either consumption, production or storage
-#macro macro_grid_component_can_perform_role 3
+#macro macro_grid_prop_grid 0
+#macro macro_grid_prop_role 1
+#macro macro_grid_prop_value 2 // either consumption, production or storage
+#macro macro_grid_prop_can_perform_role 3
 #macro macro_grid_storage_level 4 // extra prop especially for storage component

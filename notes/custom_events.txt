@@ -1,0 +1,9 @@
+
+0: Grid update
+1: Interact with astronaut
+2: Finalize construction
+
+
+Options for later:
+- get required MDU count
+- 

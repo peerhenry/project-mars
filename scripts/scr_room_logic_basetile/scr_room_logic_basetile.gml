@@ -14,7 +14,7 @@ switch(count)
 {
 	case 0:
 		// create new room
-		scr_room_new(arg_x, arg_y);
+		scr_create_room_with_tile(arg_x, arg_y);
 		break;
 	case 1:
 		// add tile to room

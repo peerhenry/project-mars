@@ -49,7 +49,7 @@ else	// four distinct rooms
 		+ room4.temperature * size4
 		+ room3.temperature * size3)/totalsize;
 	
-	var new_room = scr_room_new(arg_x, arg_y);
+	var new_room = scr_create_room_with_tile(arg_x, arg_y);
 	
 	with(new_room){
 		oxygen_level = new_oxygen_level;

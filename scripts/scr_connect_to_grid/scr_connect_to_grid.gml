@@ -1,103 +1,55 @@
+/// @description Adds component to grid and sets grid in component
+/// @param grid
 /// @param component
-/// @param grid_type
-/// @param east_component
-/// @param north_component
-/// @param west_component
-/// @param north_component
-var arg_instance = argument0;
-var arg_grid_type = argument1;
-var arg_comp_east = argument2;
-var arg_comp_north = argument3;
-var arg_comp_west = argument4;
-var arg_comp_south = argument5;
+var arg_grid = argument0;
+var arg_component = argument1;
 
-var grid_adj_number = 0;
+// scr_assert_instance_type(arg_grid, obj_grid);
+
+with(arg_grid)
+{
+	// Get component's grid props
+	var component_grid_props = scr_get_grid_props(arg_component, grid_type);
 	
-var grid_east = noone;
-var grid_north = noone;
-var grid_west = noone;
-var grid_south = noone;
-
-if(arg_comp_east != noone && !arg_comp_east.under_construction)
-{
-	var east_grid_props = scr_get_grid_props(arg_comp_east, arg_grid_type);
-	if(!is_undefined(east_grid_props))
+	// Add component to grid's relevant list
+	var role = component_grid_props[macro_grid_prop_role];
+	var component_list = role_map[? role];
+	ds_list_add(component_list, arg_component);
+	
+	// Add component to grid's map
+	if(object_is_ancestor(arg_component.object_index, obj_constructable))
 	{
-		grid_adj_number += macro_east_number;
-		grid_east = east_grid_props[macro_grid_component_grid];
+		var key = arg_component.encoded_ij;
+		var cell = ds_map_find_value(component_map, key);
+		if(is_undefined(cell))
+		{
+			ds_list_add(component_key_list, key);
+			var new_cell_list = ds_list_create();
+			ds_list_add(new_cell_list, arg_component);
+			ds_map_add(component_map, key, new_cell_list);
+		}
+		else	// If grid already has a cell at given location
+		{
+			if(ds_exists(cell, ds_type_list))	// If cell is a list, add the component to list
+			{
+				ds_list_add(cell, arg_component);
+			}
+			else	// Has to be a list...
+			{
+				show_error("Error: something existed at a grid cell, but it was not a list!", true);
+				/*var new_cell = ds_list_create();
+				ds_list_add(new_cell, cell, arg_component);
+				ds_map_replace(component_map, key, new_cell);*/
+			}
+		}
 	}
-}
-
-if(arg_comp_north != noone && !arg_comp_north.under_construction)
-{
-	var north_grid_props = scr_get_grid_props(arg_comp_north, arg_grid_type);
-	if(!is_undefined(north_grid_props))
+	else
 	{
-		grid_adj_number += macro_north_number;
-		grid_north = north_grid_props[macro_grid_component_grid];
+		// show_debug_message("name: " + object_get_name(arg_component.object_index));
+		// show_error("component did not inherit from obj_constructable", true);
 	}
+	
+	// Set grid in component
+	show_debug_message("setting grid in component: " + string(object_get_name(arg_grid.object_index))); // DEBUG
+	component_grid_props[@macro_grid_prop_grid] = arg_grid;
 }
-
-if(arg_comp_west != noone && !arg_comp_west.under_construction)
-{	
-	var west_grid_props = scr_get_grid_props(arg_comp_west, arg_grid_type);
-	if(!is_undefined(west_grid_props))
-	{
-		grid_adj_number += macro_west_number;
-		grid_west = west_grid_props[macro_grid_component_grid];
-	}
-}
-
-if(arg_comp_south != noone && !arg_comp_south.under_construction)
-{
-	var south_grid_props = scr_get_grid_props(arg_comp_south, arg_grid_type);
-	if(!is_undefined(south_grid_props))
-	{
-		grid_adj_number += macro_south_number;
-		grid_south = south_grid_props[macro_grid_component_grid];
-	}
-}
-
-switch(grid_adj_number)
-{
-	// only one grid
-	case 1:
-		scr_grid_add(grid_east, arg_instance);
-		return grid_east;
-	case 2:
-		scr_grid_add(grid_north, arg_instance);
-		return grid_north;
-	case 4:
-		scr_grid_add(grid_west, arg_instance);
-		return grid_west;
-	case 8:
-		scr_grid_add(grid_south, arg_instance);
-		return grid_south;
-	// two adjacent grids found
-	case 3:	// E+N
-		return scr_grid_add_2(arg_instance, grid_east, grid_north);
-	case 5:	// E+W
-		return scr_grid_add_2(arg_instance, grid_east, grid_west);
-	case 9: // E+S
-		return scr_grid_add_2(arg_instance, grid_east, grid_south);
-	case 6: // N+W
-		return scr_grid_add_2(arg_instance, grid_north, grid_west);
-	case 10: // N+S
-		return scr_grid_add_2(arg_instance, grid_north, grid_south);
-	case 12: // W+S
-		return scr_grid_add_2(arg_instance, grid_west, grid_south);
-	// three grids found
-	case 7:	// ENW
-		return scr_grid_add_3(arg_instance, grid_east, grid_north, grid_west);
-	case 11: // ENS
-		return scr_grid_add_3(arg_instance, grid_east, grid_north, grid_south);
-	case 13: // EWS
-		return scr_grid_add_3(arg_instance, grid_east, grid_west, grid_south);
-	case 14: // NWS
-		return scr_grid_add_3(arg_instance, grid_north, grid_west, grid_south);
-	// four grids
-	case 15:
-		return scr_grid_add_4(arg_instance, grid_east, grid_north, grid_west, grid_south);
-}
-
-return noone;

@@ -14,7 +14,7 @@ if(arg_instance.object_index == obj_pump)
 			{
 				if(scr_drill_has_water(next_drill) && scr_can_draw_power(arg_instance))
 				{
-					scr_set_grid_prop(arg_instance, macro_grid_water, macro_grid_component_can_perform_role, true);
+					scr_set_grid_prop(arg_instance, macro_grid_water, macro_grid_prop_can_perform_role, true);
 				}
 			}
 		}
@@ -32,7 +32,7 @@ else if(arg_instance.object_index == obj_drill)
 				var next_pump = adjacent_pumps[n];
 				if(next_pump != noone)
 				{
-					scr_set_grid_prop(arg_instance, macro_grid_water, macro_grid_component_can_perform_role, true);
+					scr_set_grid_prop(arg_instance, macro_grid_water, macro_grid_prop_can_perform_role, true);
 				}
 			}
 		}
