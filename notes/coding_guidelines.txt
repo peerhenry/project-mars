@@ -18,3 +18,10 @@ Script arguments		arg_
 
 - to avoid copying arrays on write, always use the character @ when writing to an array.
 my_array[@22] = 139;
+
+Scripts may get a different prefix if they have any of the following specific purposed:
+
+Purpose					Prefix
+Debugging				debug_
+Testing					test_
+Asserting				assert_

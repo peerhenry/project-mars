@@ -40,6 +40,7 @@ is_moving_through_gate = false;
 has_died = false;
 energy = 100;
 food_level = 100;
+oxygen_consumption = 1; // absolute value
 
 // inventory
 inventory = ds_grid_create(3,3);

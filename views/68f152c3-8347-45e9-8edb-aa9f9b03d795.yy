@@ -1,8 +1,8 @@
 {
-    "id": "bdf9ed61-d3e7-4e02-8f3e-49adb2b54a19",
+    "id": "68f152c3-8347-45e9-8edb-aa9f9b03d795",
     "modelName": "GMFolder",
     "mvc": "1.1",
-    "name": "bdf9ed61-d3e7-4e02-8f3e-49adb2b54a19",
+    "name": "68f152c3-8347-45e9-8edb-aa9f9b03d795",
     "children": [
         "248647b9-d6ec-493e-9527-79517f14cfff",
         "fa61d86a-bc69-4490-a51a-7db4e2373396",
@@ -19,7 +19,7 @@
         "5fc34be9-db94-4080-8961-b0cd1a4da082"
     ],
     "filterType": "GMScript",
-    "folderName": "grid logic",
+    "folderName": "construction_finalization",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

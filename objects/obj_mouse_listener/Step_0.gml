@@ -20,9 +20,9 @@ if(global.construct != noone) // BUILD MODE
 	if(mouse_check_button(mb_left))
 	{
 		// larger than 5 pixels
-		var sig_x = abs(mouse_x - click_x) > 5;
-		var sig_y = abs(mouse_y - click_y) > 5;
-		if(sig_x && sig_y)
+		var sig_x = abs(mouse_x - click_x) > 2;
+		var sig_y = abs(mouse_y - click_y) > 2;
+		if(sig_x || sig_y)
 		{
 			is_dragging	= true;
 		}

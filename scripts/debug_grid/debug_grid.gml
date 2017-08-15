@@ -27,6 +27,15 @@ with(arg_grid)
 			show_error("Invalid grid! No list found for cell in component_map", true);
 			failed = true;
 		}
+		else 
+		{
+			for(var m = 0; m < ds_list_size(cell); m++)
+			{
+				var next_comp = ds_list_find_value(cell, m);
+				if(!object_exists(next_comp)) show_error("Grid contained a component in map that was not an object!", true);
+				if(!object_is_ancestor(next_comp.object_index, obj_constructable)) show_error("Grid contained a component in map that was not a constructable!", true);
+			}
+		}
 	}
 	
 	var test3 = ds_exists(role_map, ds_type_map);

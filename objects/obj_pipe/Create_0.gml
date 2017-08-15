@@ -1,6 +1,8 @@
 event_inherited();
 
 scr_set_new_grid_props(id, macro_grid_water, macro_grid_role_carrier, 0);
+scr_set_new_grid_props(id, macro_grid_oxygen, macro_grid_role_carrier, 0);
+scr_set_new_grid_props(id, macro_grid_hydrogen, macro_grid_role_carrier, 0);
 
 // Connect pipe to water grid components
 // determine adjacency number and set image index

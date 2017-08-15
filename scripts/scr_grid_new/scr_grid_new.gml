@@ -7,8 +7,8 @@ with(new_grid)
 	grid_type = arg_grid_type;
 }
 
-show_debug_message("new grid created");
-show_debug_message("obj_grid: " + string(obj_grid));
-show_debug_message("new grid object index: " + string(new_grid.object_index));
+// show_debug_message("new grid created"); // DEBUG
+// show_debug_message("obj_grid: " + string(obj_grid));
+// show_debug_message("new grid object index: " + string(new_grid.object_index));
 
 return new_grid;

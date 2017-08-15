@@ -1,13 +1,15 @@
+/// @Description This script performs a flood fill on a grid, and parts it if it is disconnected
 /// @param removed_instance
 /// @param grid
-var arg_instance = argument0;
+var arg_instance = argument0; // This argument is actually not needed for this grid :/
 var arg_grid = argument1;
 
 var grid_type = arg_grid.grid_type;
 
 // show_debug_message("starting grid_part..."); // DEBUG
 
-// Create the remainder of all components from the grid
+// Create the data structures that will contain the remainder of all components from the grid
+// When the flood fill reaches a component, it will be removed from remainder.
 var remainder_map = ds_map_create();
 var remainder_key_list = ds_list_create();
 // Copy grid components to the remainder
@@ -36,11 +38,23 @@ var flood_queue = ds_queue_create();
 var visited_list = ds_list_create();
 var visited_map = ds_map_create();
 
+// debug_grid(arg_grid); // DEBUG
+
 // Get the first component
 with(arg_grid)
 {
+	// if(ds_list_size(component_key_list) == 0) show_error("component_key_list is empty", true); // DEBUG
+
 	var first_key = ds_list_find_value(component_key_list, 0);
-	var first = ds_map_find_value(component_map, first_key); // can be an list
+	var first = ds_map_find_value(component_map, first_key); // should be a list
+
+	// if(is_undefined(first)) show_error("first from component_map is undefined", true); // DEBUG
+	// if(!ds_exists(first, ds_type_list)) show_error("first from component_map is not a list", true); // DEBUG
+	/*else// DEBUG
+	{// DEBUG
+		var comp = ds_list_find_value(first, 0);// DEBUG
+		// if(!object_exists(comp)) show_error("A grid component was not an object!", true); // DEBUG
+	}// DEBUG*/
 	
 	ds_queue_enqueue(flood_queue, first);
 	ds_map_add(visited_map, first_key, first);
@@ -52,7 +66,15 @@ with(arg_grid)
 		var head = ds_queue_dequeue(flood_queue);
 		var head_component = noone;
 		if(ds_exists(head, ds_type_list)) head_component = ds_list_find_value(head, 0)
-		else head_component = head;
+		else
+		{
+			//show_error("head from grid flood queue was not a list!", true); // DEBUG
+			head_component = head;
+		}
+		
+		/*if(ds_list_size(head) == 0) show_error("head from grid flood queue was an empty list!", true); // DEBUG
+		if(is_undefined(head_component)) show_error("head_component is undefined!", true); // DEBUG
+		if(!object_exists(head_component)) show_error("head_component was not an object!", true); // DEBUG*/
 		
 		var head_key = head_component.encoded_ij;
 		

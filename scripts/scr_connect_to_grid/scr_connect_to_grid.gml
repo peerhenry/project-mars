@@ -20,8 +20,8 @@ with(arg_grid)
 	if(object_is_ancestor(arg_component.object_index, obj_constructable))
 	{
 		var key = arg_component.encoded_ij;
-		var cell = ds_map_find_value(component_map, key);
-		if(is_undefined(cell))
+		var cell_list = ds_map_find_value(component_map, key);
+		if(is_undefined(cell_list))
 		{
 			ds_list_add(component_key_list, key);
 			var new_cell_list = ds_list_create();
@@ -30,15 +30,15 @@ with(arg_grid)
 		}
 		else	// If grid already has a cell at given location
 		{
-			if(ds_exists(cell, ds_type_list))	// If cell is a list, add the component to list
+			if(ds_exists(cell_list, ds_type_list))	// If cell is a list, add the component to list
 			{
-				ds_list_add(cell, arg_component);
+				ds_list_add(cell_list, arg_component);
 			}
 			else	// Has to be a list...
 			{
 				show_error("Error: something existed at a grid cell, but it was not a list!", true);
 				/*var new_cell = ds_list_create();
-				ds_list_add(new_cell, cell, arg_component);
+				ds_list_add(new_cell, cell_list, arg_component);
 				ds_map_replace(component_map, key, new_cell);*/
 			}
 		}
@@ -50,6 +50,6 @@ with(arg_grid)
 	}
 	
 	// Set grid in component
-	show_debug_message("setting grid in component: " + string(object_get_name(arg_grid.object_index))); // DEBUG
+	// show_debug_message("setting grid in component: " + string(object_get_name(arg_grid.object_index))); // DEBUG
 	component_grid_props[@macro_grid_prop_grid] = arg_grid;
 }

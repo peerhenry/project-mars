@@ -1,8 +1,8 @@
 {
-    "id": "f2af81c6-9478-455f-8687-b2c797520d24",
+    "id": "5cd5bd50-66b0-4026-b2db-9e64ba63c31b",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_assert_instance_type",
+    "name": "test_add_to_grid_tile_map",
     "IsCompatibility": false,
     "IsDnD": false
 }

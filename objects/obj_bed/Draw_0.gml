@@ -11,6 +11,7 @@ draw_self();
 // Draw zzz
 if(occupant != noone)
 {
+	show_debug_message("occupant != noone");//DEBUG
 	draw_sprite(spr_zzz, zzz_index, x, y);
 	zzz_counter++;
 	if(zzz_counter > 15){

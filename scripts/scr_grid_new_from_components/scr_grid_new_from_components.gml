@@ -22,8 +22,9 @@ with(new_grid)
 		var size = ds_list_size(next_cell);
 		for(var n = 0; n < size; n++)
 		{
-			var next_component = ds_list_find_value(next_cell, n);
-			scr_grid_component_attach_from_map(next_component, new_grid); // set grid in props, and add to role list
+			scr_add_to_grid_logic_map(new_grid, next_component);
+			var component_grid_props = scr_get_grid_props(next_component, new_grid.grid_type);
+			component_grid_props[@macro_grid_prop_grid] = arg_grid;
 		}
 	}
 }

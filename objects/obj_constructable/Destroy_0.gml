@@ -9,21 +9,23 @@ for(var grid_type = 0; grid_type < macro_grid_type_count; grid_type++)
 		var grid = grid_props[macro_grid_prop_grid];
 		var comps_left = 0;
 		var key = encoded_ij;
-		show_debug_message("constr. destroy, key: " + string(encoded_ij));
+		// show_debug_message("constr. destroy, key: " + string(encoded_ij));
 		with(grid)
 		{
 			// Remove component from grid
 			// show_debug_message("Removing " + scr_object_index_string(other.id) + " from grid..."); // DEBUG
 			var role = grid_props[macro_grid_prop_role];
 			var list_to_use = role_map[? role];
-			var index = ds_list_find_index(list_to_use, other.id);
-			ds_list_delete(list_to_use, index);	// deletes entry in list
+			var role_index = ds_list_find_index(list_to_use, other.id);
+			if(role_index < 0) show_error("object not found in grid's role map!", true);
+			ds_list_delete(list_to_use, role_index);	// deletes entry in list
 			
 			// Delete entry in map & key list
 			var cell_list = ds_map_find_value(component_map, key);
-			show_debug_message("cell_list exists: " + string(ds_exists(cell_list, ds_type_list)));
-			var ind = ds_list_find_index(cell_list, key);
-			ds_list_delete(cell_list, ind);
+			// show_debug_message("cell_list exists: " + string(ds_exists(cell_list, ds_type_list)));
+			var cell_index = ds_list_find_index(cell_list, other.id);
+			if(cell_index < 0) show_error("object not found in grid map!", true);
+			ds_list_delete(cell_list, cell_index);
 			if(ds_list_size(cell_list) == 0)
 			{
 				ds_list_destroy(cell_list);
