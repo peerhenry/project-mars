@@ -64,6 +64,12 @@ if(all_hatches_closed)
 	}
 }
 
+if(!oxygen_should_replenish)
+{
+	scr_set_grid_prop(id, macro_grid_oxygen, macro_grid_prop_can_perform_role, false);
+}
+else scr_set_grid_prop(id, macro_grid_oxygen, macro_grid_prop_can_perform_role, true);
+
 var current_consumption = scr_get_grid_prop(id, macro_grid_oxygen, macro_grid_prop_value);
 var new_consumption = 0;
 // replenish oxygen

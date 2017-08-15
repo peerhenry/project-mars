@@ -186,7 +186,7 @@ var oxygen_around = !is_outside;
 var inside_room = scr_room_at(x, y);
 if(!is_moving_through_gate)
 {
-	oxygen_around = !is_outside && inside_room.oxygen_level > global.oxygen_empty_level;
+	oxygen_around = !is_outside && inside_room.oxygen_level >= global.oxygen_empty_level;
 }
 var state = 0;
 if(oxygen_around) state = 1;
@@ -211,6 +211,7 @@ switch(state)
 			}
 			// Consume oxygen from room:
 			inside_room.oxygen_level -= oxygen_consumption/ds_list_size(inside_room.tiles);
+			if(inside_room.oxygen_level < 0) inside_room.oxygen_level = 0;
 		}
 		break;
 	case 2: // suit, no oxygen
@@ -227,6 +228,10 @@ switch(state)
 		break;
 	case 3: // suit, oxygen
 		// Consume oxygen from room:
-		if(inside_room != noone) inside_room.oxygen_level -= oxygen_consumption/ds_list_size(inside_room.tiles);
+		if(inside_room != noone)
+		{
+			inside_room.oxygen_level -= oxygen_consumption/ds_list_size(inside_room.tiles);
+			if(inside_room.oxygen_level < 0) inside_room.oxygen_level = 0;
+		}
 		break;
 }
