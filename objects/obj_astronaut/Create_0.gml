@@ -57,6 +57,7 @@ auto_target = noone;	// thing to auto attack when in range
 auto_attack = true;
 alarm[0] = 30*global.time_to_shoot + round(random_range(-5,5));
 enemy_object = noone;
+shoot_path = path_add();
 
 // active sprites
 sprite_walk_down = sprite_down;

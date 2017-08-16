@@ -1,16 +1,19 @@
 /// Is called after right clicking when astronauts are selected.
 
 var orders_given = false; // boolean used for playing sound
+var any_selected = false;
 
 // Cancel active task for selected astronauts
 with(obj_astronaut_playable)
 {
 	if(is_selected)
 	{
+		any_selected = true;
 		if(current_action != astronaut_action.idle) scr_cancel_current_action(id);
 		if(assigned_object != noone) scr_unassign_task(assigned_object);
 	}
 }
+if(!any_selected) exit;
 
 // Check if player clicked an assignable
 var el_assignable = instance_position(mouse_x, mouse_y, obj_assignable);

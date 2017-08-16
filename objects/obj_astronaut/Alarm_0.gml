@@ -3,32 +3,40 @@
 var can_shoot = false;
 var shootable = target;
 
-var trarget_is_shootable = instance_exists(target);
-
-if(trarget_is_shootable)
+// Determine if target exists and has not yet been killed/destroyed
+var target_is_shootable = instance_exists(target);
+if(target_is_shootable)
 {
 	var target_is_construction = object_is_ancestor(target.object_index, obj_constructable);
 	if(target_is_construction)
 	{
-		trarget_is_shootable = target.damage < 100;
+		target_is_shootable = target.damage < 100;
 	}
 }
 
-if(trarget_is_shootable)
+// Either stop moving and shoot, or move towards target
+if(target_is_shootable)
 {
 	var dx = target.x - x;
 	var dy = target.y - y;
 	if((dx*dx + dy*dy) <= (global.shooting_range_squared*1024))
 	{
-		can_shoot = true;
-		if(is_walking) scr_stop_moving(id);
+		can_shoot = mp_linear_path(shoot_path, target.x, target.y, global.projectile_speed, false);
+		if(is_walking)
+		{
+			if(can_shoot)
+			{
+				scr_stop_moving(id);
+			}
+			else exit; // keep moving
+		}
 	}
-	else
+	else if(!is_walking)
 	{
 		scr_navigate(id, target.x, target.y);
 	}
 }
-else
+else	// See if there is an enemy around to shoot
 {
 	if(!is_walking)
 	{
@@ -43,7 +51,7 @@ else
 			if((dx*dx + dy*dy) <= (global.shooting_range_squared*1024))
 			{
 				shootable = auto_target;
-				can_shoot = true;
+				can_shoot = mp_linear_path(shoot_path, auto_target.x, auto_target.y, global.projectile_speed, false);
 			}
 			else auto_target = noone;
 		}

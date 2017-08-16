@@ -14,7 +14,8 @@
         "6eab7bf1-235d-4093-ae7a-25a6d236d813",
         "12bed24d-cbac-4aee-9197-57477af34dc6",
         "82872544-6523-45a7-bd8f-d36759fdceb7",
-        "3f4029a9-5718-44e1-ac7f-756c97469f58"
+        "3f4029a9-5718-44e1-ac7f-756c97469f58",
+        "3ebf2a67-a4ea-484e-9454-90e081c8826d"
     ],
     "filterType": "GMObject",
     "folderName": "GAME",

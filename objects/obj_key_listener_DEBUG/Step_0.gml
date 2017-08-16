@@ -73,6 +73,7 @@ if(keyboard_check_pressed(ord("L")))
 		scr_kill(id);
 	}//*/
 	
+	/*
 	with(obj_grid)
 	{
 		var room_count = 0;
@@ -89,6 +90,12 @@ if(keyboard_check_pressed(ord("L")))
 			}
 			show_debug_message("oxygen grid has " + string(room_count) + " rooms");
 		}
+	}
+	*/
+	
+	with(obj_astronaut_playable)
+	{
+		show_debug_message("astronaut action: " + string(current_action));
 	}
 	
 }

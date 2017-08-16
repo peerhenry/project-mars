@@ -83,7 +83,7 @@ else
 
 var result = noone;
 var n = 0;
-while(result == noone)
+while(result == noone && n<4)
 {
 	result = scr_find_spot_along_side(arg_astronaut, arg_construction, side_order[n]);
 	n++;
