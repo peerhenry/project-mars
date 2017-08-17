@@ -5,9 +5,10 @@
     "name": "fad0190c-12fa-4765-b561-1e4741f849e2",
     "children": [
         "444c10e0-9a4b-42d2-acec-de0ad360ca6e",
+        "d698b476-1b3c-481a-a882-510d5d525e5c",
+        "8db2e8e1-e873-41fb-9d5b-175926b33856",
         "8ad3b847-52a3-4a58-b820-625cec89b502",
-        "9bb27ffc-d2a4-4276-b86b-35819f68b792",
-        "b6436f32-ebcc-4e68-8902-226b1f402b5b"
+        "9bb27ffc-d2a4-4276-b86b-35819f68b792"
     ],
     "filterType": "GMScript",
     "folderName": "TESTS",

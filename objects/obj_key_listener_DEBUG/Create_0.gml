@@ -1,2 +1,2 @@
 show_grid = false;
-nav_grid = global.grid_map;
+nav_grid = global.nav_grid;

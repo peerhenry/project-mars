@@ -1,3 +1,4 @@
+scr_trace("Grid update event");
 /// @description Grid update notification
 if(scr_can_draw_power(id))
 {

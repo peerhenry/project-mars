@@ -15,12 +15,12 @@ if(astronaut_health <= 0)
 }
 
 // Update energy and speed
-#macro d_energy 0.02
-if(floor(energy) - floor(energy - d_energy) != 0)
+var dE = global.energy_depletion;
+if(floor(energy) - floor(energy - dE) != 0)
 {
 	movement_speed = 0.5*(1 + sqrt(energy/100))*macro_astronaut_move_speed;
 }
-if(energy > 0) energy -= d_energy;
+if(energy > 0) energy -= dE;
 else if(energy < 0) energy = 0;
 
 // Update movement

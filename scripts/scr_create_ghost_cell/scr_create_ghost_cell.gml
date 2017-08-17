@@ -1,3 +1,4 @@
+//scr_trace("scr_create_build_cell");
 var arg_i = argument0;
 var arg_j = argument1;
 var arg_map_buffer_action = argument2;

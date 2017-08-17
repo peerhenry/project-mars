@@ -1,12 +1,6 @@
 /// @param construction
 var arg_construction = argument0;
 
-/*
-var build_type = arg_construction[construction_build_type];
-arg_construction[@construction_completion] = 100; // set completion to 100%
-arg_construction[@construction_build_state] = construction_state.done;
-*/
-
 var build_type = ds_map_find_value(arg_construction, construction_build_type);
 ds_map_replace(arg_construction, construction_completion, 100);
 ds_map_replace(arg_construction, construction_build_state, construction_state.done);

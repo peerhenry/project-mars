@@ -12,6 +12,6 @@ var can_perform = grid_props[macro_grid_prop_can_perform_role];
 if(!can_perform) return false;
 
 var grid = grid_props[macro_grid_prop_grid];
-if(grid <= 0) return false;
+if(grid < 0) return false;
 
 return (grid.net_output > 0 || grid.storage > 0);

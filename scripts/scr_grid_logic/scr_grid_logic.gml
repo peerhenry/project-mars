@@ -1,10 +1,9 @@
 /// @param instance
 
+scr_trace("scr_grid_logic");
+
 var arg_instance = argument0;
 var arg_object_index = arg_instance.object_index;
-
-show_debug_message("calling scr_grid_logic...");
-show_debug_message("arg_instance object index: " + string(arg_object_index));
 
 var grid_count = ds_map_size(arg_instance.grid_props_map);
 if(grid_count == 0) exit;

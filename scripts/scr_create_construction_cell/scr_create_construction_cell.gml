@@ -1,3 +1,4 @@
+scr_trace_script("scr_create_construction_cell", [argument0, argument1, argument2, argument3, argument4, argument5]);
 var arg_i = argument0;
 var arg_j = argument1;
 var arg_layer = argument2;

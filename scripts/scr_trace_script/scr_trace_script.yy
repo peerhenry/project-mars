@@ -1,8 +1,8 @@
 {
-    "id": "97eae6ae-33bf-4f2b-92ec-9bf2ba401e0e",
+    "id": "4d3a8e4c-cb93-4618-acc0-153fa0ffe09c",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_update_ghost1",
+    "name": "scr_trace_script",
     "IsCompatibility": false,
     "IsDnD": false
 }

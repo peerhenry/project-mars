@@ -4,7 +4,7 @@ var half_cell_size = cell_size/2;
 global.horizontal_cells = floor(room_width/cell_size)-1;
 global.vertical_cells = floor(room_height/cell_size)-1;
 
-global.grid_map = mp_grid_create(
+global.nav_grid = mp_grid_create(
 	half_cell_size, // left
 	half_cell_size, // top
 	global.horizontal_cells,	// horizontal cells

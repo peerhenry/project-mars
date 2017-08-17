@@ -1,8 +1,8 @@
 {
-    "id": "a90b0e92-172c-4f28-9310-02d259256252",
+    "id": "7f539ba5-c5af-4192-a123-020f0c517f29",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_create_build_cell",
+    "name": "test_drill_acquire_resource",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -17,6 +17,7 @@ scr_set_new_grid_props(id, macro_grid_oxygen, macro_grid_role_carrier, 0);
 scr_set_new_grid_props(id, macro_grid_hydrogen, macro_grid_role_carrier, 0);
 
 scr_set_basetile_lights(id);
+scr_connect_to_cables(id);
 
 // set wall image index, and also modify adjacent wall
 var adj_walls = scr_get_adjacent_instances(id, obj_wall);

@@ -1,3 +1,5 @@
+scr_trace("scr_build_new");
+
 var can_construct = global.construction_is_valid && global.can_pay_for_construction;
 if(!global.construction_is_valid) scr_alert_player("Invalid construction.");
 if(!global.can_pay_for_construction) scr_alert_player("Insufficient building materials.");

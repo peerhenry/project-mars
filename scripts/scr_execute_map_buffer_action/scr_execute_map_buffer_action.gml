@@ -6,6 +6,8 @@ var arg_i = argument0;
 var arg_j = argument1;
 var arg_action = argument2;
 
+if(global.map_buffer< 0) exit;
+
 var map_value = scr_map_buffer_get_cell(arg_i, arg_j);
 var map_i = (map_value & 1);		// first bit tells if the cell is inside
 var map_o = (map_value >> 1) & 127; // next 7 bits store occupation

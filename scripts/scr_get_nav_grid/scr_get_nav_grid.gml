@@ -1,1 +1,1 @@
-return global.grid_map;
+return global.nav_grid;

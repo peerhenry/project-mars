@@ -9,7 +9,7 @@
         "ab11e37c-16cd-44af-863a-3aa8ad683a75"
     ],
     "filterType": "GMScript",
-    "folderName": "resources",
+    "folderName": "resource_cloud",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

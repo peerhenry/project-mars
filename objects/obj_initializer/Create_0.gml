@@ -1,3 +1,3 @@
 init_view_and_camera();
-init_globals();
+init_game();
 instance_destroy();

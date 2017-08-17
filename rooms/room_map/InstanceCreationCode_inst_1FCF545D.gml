@@ -1,0 +1,1 @@
+event_user(macro_event_finalize);

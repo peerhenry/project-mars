@@ -9,11 +9,11 @@
         "d7dcfc03-f6de-4eec-9d20-c42da4058e9a",
         "236a50d7-91bf-49fa-af4c-7c30c9e44ddc",
         "18c968ad-b343-40b8-8710-2c11c8e22e0d",
+        "a90b0e92-172c-4f28-9310-02d259256252",
         "72fc8b6f-0dd3-485a-b357-e6e145f9bd32",
         "be165f1b-9963-4348-8988-87be73df6b53",
         "d01f5179-5ec2-46ca-bfbf-866acd549617",
-        "267286f3-4869-4764-b769-fba9a71f748e",
-        "60efbb61-7dfe-4b76-8afa-eb047822ab12"
+        "267286f3-4869-4764-b769-fba9a71f748e"
     ],
     "filterType": "GMScript",
     "folderName": "ghost",

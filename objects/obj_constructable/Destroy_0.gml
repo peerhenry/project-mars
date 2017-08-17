@@ -1,3 +1,4 @@
+scr_trace("constructable destroy event");
 //scr_navgrid_clear_cell(occ_i, occ_j); // this caused a bug with hatch removal
 
 // Iterate over all grids this component is connected to
@@ -17,40 +18,25 @@ for(var grid_type = 0; grid_type < macro_grid_type_count; grid_type++)
 			var role = grid_props[macro_grid_prop_role];
 			var list_to_use = role_map[? role];
 			var role_index = ds_list_find_index(list_to_use, other.id);
-			if(role_index < 0) show_error("object not found in grid's role map!", true);
-			ds_list_delete(list_to_use, role_index);	// deletes entry in list
+			if(role_index < 0) show_debug_message("Warning, object not found in grid's logic map at destruction!");
+			else ds_list_delete(list_to_use, role_index);	// deletes entry in list
 			
 			// Delete entry in map & key list
 			var cell_list = ds_map_find_value(component_map, key);
 			// show_debug_message("cell_list exists: " + string(ds_exists(cell_list, ds_type_list)));
-			var cell_index = ds_list_find_index(cell_list, other.id);
-			if(cell_index < 0) show_error("object not found in grid map!", true);
-			ds_list_delete(cell_list, cell_index);
-			if(ds_list_size(cell_list) == 0)
+			if(!is_undefined(cell_list))
 			{
-				ds_list_destroy(cell_list);
-				ds_map_delete(component_map, key);
-				var key_pos = ds_list_find_index(component_key_list, key);
-				ds_list_delete(component_key_list, key_pos);
-			}
-			/*var cell = ds_map_find_value(component_map, key);
-			if(cell == other.id)
-			{
-				ds_map_delete(component_map, key);
-				var key_pos = ds_list_find_index(component_key_list, other.encoded_ij);
-				ds_list_delete(component_key_list, key_pos);
-			}
-			else
-			{
-				var ind = ds_list_find_index(cell, key);
-				ds_list_delete(cell, ind);
-				if(ds_list_size(cell) == 1)	// if one item remains, destroy the list
+				var cell_index = ds_list_find_index(cell_list, other.id);
+				if(cell_index < 0) show_debug_message("Warning, object not found in grid's tile map at destruction!");
+				else ds_list_delete(cell_list, cell_index);
+				if(ds_list_size(cell_list) == 0)
 				{
-					var new_cell = ds_list_find_value(cell, 0);
-					ds_list_destroy(cell);
-					ds_map_replace(component_map, key, new_cell);
+					ds_list_destroy(cell_list);
+					ds_map_delete(component_map, key);
+					var key_pos = ds_list_find_index(component_key_list, key);
+					ds_list_delete(component_key_list, key_pos);
 				}
-			}*/
+			}
 			
 			comps_left = ds_list_size(component_key_list);
 		}

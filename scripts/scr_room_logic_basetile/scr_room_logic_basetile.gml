@@ -1,3 +1,4 @@
+scr_trace("scr_room_logic_basetile");
 var arg_x = argument0;
 var arg_y = argument1;
 
