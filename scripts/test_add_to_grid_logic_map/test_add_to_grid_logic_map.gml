@@ -8,7 +8,7 @@ scr_add_to_grid_logic_map(grid, constr);
 
 // Assert
 var role = scr_get_grid_prop(constr, grid.grid_type, macro_grid_prop_role);
-var list_for_role = grid.role_map[? role];
+var list_for_role = grid.logic_map[? role];
 var success = assert_list_contains(list_for_role, constr);
 
 assert_list_contains(list_for_role, constr);

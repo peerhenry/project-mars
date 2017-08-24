@@ -1,11 +1,10 @@
 /// @description does not change storage levels
 /// @param grid
-/// @param role
 var arg_grid = argument0;
 
 with(arg_grid)
 {
-	var storage_list = role_map[? macro_grid_role_storage];
+	var storage_list = logic_map[? macro_grid_role_storage];
 	var size = ds_list_size(storage_list);
 	var total = 0;
 	var stored = 0;

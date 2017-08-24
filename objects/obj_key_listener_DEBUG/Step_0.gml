@@ -79,7 +79,7 @@ if(keyboard_check_pressed(ord("L")))
 		var room_count = 0;
 		if(grid_type == macro_grid_oxygen)
 		{
-			var consumers = role_map[? macro_grid_role_consumer];
+			var consumers = logic_map[? macro_grid_role_consumer];
 			for(var n = 0; n < ds_list_size(consumers); n++)
 			{
 				var next_c = ds_list_find_value(consumers, n);

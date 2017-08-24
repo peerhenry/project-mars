@@ -7,7 +7,7 @@ var t_layer = layer_get_id(layer_name);
 var inst = instance_create_layer(x, y, t_layer, object);
 with(inst)
 {
-	event_user(macro_event_finalize);
+	//event_user(macro_event_finalize);
 }
 global.build_rotation = current_rotation;
 instance_destroy();

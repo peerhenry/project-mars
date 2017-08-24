@@ -1,3 +1,5 @@
+/// @param text
+if(!global.enable_trace) exit;
 var arg_text = argument0;
 var prefix = "";
 if(object_index > 0)

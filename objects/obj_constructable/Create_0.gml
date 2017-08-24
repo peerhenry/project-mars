@@ -1,5 +1,6 @@
+scr_trace("constructable create event");
 construction_instance = noone;
-under_construction = false;
+under_construction = true;
 damage = 0;
 destroyed = false;
 occ_i = scr_rc_to_gi(x);

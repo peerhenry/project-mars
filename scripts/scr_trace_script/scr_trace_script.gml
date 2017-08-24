@@ -1,3 +1,6 @@
+/// @param script_name
+/// @param parameters_array
+if(!global.enable_trace) exit;
 var arg_script_name = argument0;
 var arg_params = argument1;
 

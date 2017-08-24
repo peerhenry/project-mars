@@ -1,8 +1,8 @@
 {
-    "id": "b387b18a-74c5-42c9-a37b-7e48cdb95700",
+    "id": "435a3d9a-215a-4565-b4fe-ed46e149b1c4",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_grid_new_from_components",
+    "name": "init_game_post",
     "IsCompatibility": false,
     "IsDnD": false
 }

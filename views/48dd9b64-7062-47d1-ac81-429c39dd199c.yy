@@ -16,7 +16,8 @@
         "000713b4-fb32-4b52-bf20-0604ea8ec70c",
         "c6d482cc-61ea-42c3-9656-59fb8c30e232",
         "71d9f50a-c426-4f69-83d9-8087290dddce",
-        "6e23ed82-ee2e-4b95-b551-3341cf415054"
+        "6e23ed82-ee2e-4b95-b551-3341cf415054",
+        "435a3d9a-215a-4565-b4fe-ed46e149b1c4"
     ],
     "filterType": "GMScript",
     "folderName": "INITIALIZATION",

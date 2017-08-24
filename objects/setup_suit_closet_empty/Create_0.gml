@@ -11,6 +11,6 @@ with(inst)
 }
 with(inst)
 {
-	event_user(macro_event_finalize);
+	//event_user(macro_event_finalize);
 }
 instance_destroy();

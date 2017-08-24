@@ -18,27 +18,27 @@ if(arg_grid.grid_type < 0 || arg_grid.grid_type >= macro_grid_type_count)
 
 with(arg_grid)
 {
-	var test1 = ds_exists(component_map, ds_type_map);
+	var test1 = ds_exists(tile_map, ds_type_map);
 	if(!test1)
 	{
 		failed = true;
 		show_debug_message("Invalid grid! No component map");
 	}
 	
-	var test2 = ds_exists(component_key_list, ds_type_list);
+	var test2 = ds_exists(tile_key_list, ds_type_list);
 	if(!test2)
 	{
 		failed = true;
-		show_debug_message("Invalid grid! No component_key_list");
+		show_debug_message("Invalid grid! No tile_key_list");
 	}
 	
-	for(var n = 0; n<ds_list_size(component_key_list); n++)
+	for(var n = 0; n<ds_list_size(tile_key_list); n++)
 	{
-		var cell = component_map[? ds_list_find_value(component_key_list, n)];
+		var cell = tile_map[? ds_list_find_value(tile_key_list, n)];
 		var test_cell = ds_exists(cell, ds_type_list);
 		if(!test_cell)
 		{
-			show_debug_message("Invalid grid! No list found for cell in component_map");
+			show_debug_message("Invalid grid! No list found for cell in tile_map");
 			failed = true;
 		}
 		else 
@@ -60,18 +60,18 @@ with(arg_grid)
 		}
 	}
 	
-	var test3 = ds_exists(role_map, ds_type_map);
+	var test3 = ds_exists(logic_map, ds_type_map);
 	if(!test3)
 	{
 		failed = true;
-		show_debug_message("Invalid grid! No role_map");
+		show_debug_message("Invalid grid! No logic_map");
 	}
 	
-	var test4 = ds_list_size(component_key_list) == ds_map_size(component_map);
+	var test4 = ds_list_size(tile_key_list) == ds_map_size(tile_map);
 	if(!test4)
 	{
 		failed = true;
-		show_debug_message("Invalid grid! component_key_list had different length from component_map");
+		show_debug_message("Invalid grid! tile_key_list had different length from tile_map");
 	}
 	
 	if(!failed) show_debug_message("Grid test passed.");

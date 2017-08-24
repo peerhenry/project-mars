@@ -15,6 +15,7 @@ result[0] = noone;	// E
 
 with(obj_constructable)
 {
+	if(under_construction) continue;
 	var di = occ_i - arg_instance.occ_i;
 	var dj = occ_j - arg_instance.occ_j;
 	var a_di = abs(di);

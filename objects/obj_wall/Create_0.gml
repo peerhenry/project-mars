@@ -1,3 +1,4 @@
+scr_trace("wall create event");
 event_inherited();
 
 // Occupy navgrid and map buffer

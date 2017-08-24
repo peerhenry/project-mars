@@ -14,8 +14,8 @@ with(arg_comp)
 			var next_grid = scr_get_grid(arg_comp, grid_type);
 			show_debug_message("grid type: " + string(grid_type));
 			show_debug_message("grid: " + string(next_grid));
-			show_debug_message("component_map size: " + string(ds_map_size(next_grid.component_map)));
-			show_debug_message("component_key_list size: " + string(ds_list_size(next_grid.component_key_list)));
+			show_debug_message("tile_map size: " + string(ds_map_size(next_grid.tile_map)));
+			show_debug_message("tile_key_list size: " + string(ds_list_size(next_grid.tile_key_list)));
 		}
 	}
 }

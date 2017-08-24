@@ -1,9 +1,12 @@
 /// @description Initialize gamewide globals
 
+global.init_stage = true;
+
 // # DEBUG settings
 global.draw_room_bb = false;
-global.debug_start_messages = false;
-global.debug_gameplay_messages = true;
+global.enable_trace = true;
+global.debug_start_messages = false; // obsolete?
+global.debug_gameplay_messages = true; // obsolete?
 
 // Used to prevent too many messages from appearing to player
 global.message_is_showing = false;
@@ -31,6 +34,8 @@ global.shooting_range_squared = 10*10;
 global.resource_amount_metal = 200000;
 global.draw_tall_walls = true;
 global.default_resource_amount = 10000;
+
+global.auto_complete = true; // Used for setup constructions
 
 // # sensor
 global.sensor_selected = false;

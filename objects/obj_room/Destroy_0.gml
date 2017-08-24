@@ -11,7 +11,7 @@ var grid = grid_props[macro_grid_prop_grid];
 with(grid)
 {
 	var role = grid_props[macro_grid_prop_role];
-	var list_to_use = role_map[? role];
+	var list_to_use = logic_map[? role];
 	var index = ds_list_find_index(list_to_use, other.id);
 	ds_list_delete(list_to_use, index);
 }

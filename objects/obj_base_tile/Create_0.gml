@@ -1,3 +1,5 @@
+scr_trace("basetile create event");
+
 event_inherited();
 wall_adjacency = 0;
 

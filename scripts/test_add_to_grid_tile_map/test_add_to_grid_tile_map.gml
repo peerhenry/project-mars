@@ -8,10 +8,10 @@ scr_add_to_grid_tile_map(grid, constr);
 
 // Assert
 var ij = constr.encoded_ij;
-var list_at_tile = grid.component_map[? ij];
-var success = assert_list_contains(list_at_tile, constr);
-
-assert_list_contains(list_at_tile, constr);
+var list_at_tile = grid.tile_map[? ij];
+var is_in_map = assert_list_contains(list_at_tile, constr);
+var is_in_key_list = assert_list_contains(grid.tile_key_list, ij);
+var success = is_in_map && is_in_key_list;
 
 // Cleanup
 instance_destroy(constr);

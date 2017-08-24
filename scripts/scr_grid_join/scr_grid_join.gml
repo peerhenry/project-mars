@@ -2,6 +2,8 @@
 /// @param grid_1
 /// @param grid_2
 
+scr_trace_script("scr_grid_join", [argument0, argument1]);
+
 var arg_grid_1 = argument0;
 var arg_grid_2 = argument1;
 
@@ -11,8 +13,8 @@ var arg_grid_2 = argument1;
 var rolo = macro_grid_role_count;
 for(var role = 0; role < rolo; role++)
 {
-	var next_component_list_grid_1 = arg_grid_1.role_map[? role];
-	var next_component_list_grid_2 = arg_grid_2.role_map[? role];
+	var next_component_list_grid_1 = arg_grid_1.logic_map[? role];
+	var next_component_list_grid_2 = arg_grid_2.logic_map[? role];
 	for(var n = 0; n < ds_list_size(next_component_list_grid_2); n++) // replace grid in each components
 	{
 		var next_component = ds_list_find_value(next_component_list_grid_2, n);
@@ -21,10 +23,10 @@ for(var role = 0; role < rolo; role++)
 	scr_add_lists(next_component_list_grid_1, next_component_list_grid_2);
 }
 
-var key_list_1 = arg_grid_1.component_key_list;
-var key_list_2 = arg_grid_2.component_key_list;
-var map_1 = arg_grid_1.component_map;
-var map_2 = arg_grid_2.component_map;
+var key_list_1 = arg_grid_1.tile_key_list;
+var key_list_2 = arg_grid_2.tile_key_list;
+var map_1 = arg_grid_1.tile_map;
+var map_2 = arg_grid_2.tile_map;
 
 // show_debug_message("key_list_1: " + string(key_list_1));
 // show_debug_message("key_list_2: " + string(key_list_2));

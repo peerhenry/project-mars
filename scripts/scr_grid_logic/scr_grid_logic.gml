@@ -1,6 +1,6 @@
 /// @param instance
 
-scr_trace("scr_grid_logic");
+scr_trace_script("scr_grid_logic", [argument0]);
 
 var arg_instance = argument0;
 var arg_object_index = arg_instance.object_index;

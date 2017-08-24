@@ -1,3 +1,6 @@
+scr_trace("pump create event");
+//show_debug_message("pump create event");
+
 event_inherited();
 
 // occupy map grid & nav grid
@@ -29,3 +32,5 @@ for(var n = 0; n < 4; n++) // ENWS
 
 // connect to drill
 scr_drill_pump_connection(id);
+
+if(global.auto_complete) event_user(2);
