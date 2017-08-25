@@ -1,6 +1,8 @@
 var width = 384;
-var height = 424;
-var tl_x = display_get_gui_width() - width;
+var height = 32 + 16 + 24*5 + 64*3 + 96;// padding + spaces + lines + inventory + avatar
+var display_width = display_get_gui_width();
+var display_height = display_get_gui_height();
+var tl_x = display_width - width;
 var tl_y = 0;
 
 if(show_details)
@@ -28,35 +30,41 @@ if(show_details)
 	var half_bar = 8;
 	var bar_x_or = tl_x + 128;
 	
+	#region prop bars
+	
 	draw_set_valign(fa_middle);
-	var health_line_y = tl_y + 128;
+	var counter = 0;
+	var health_line_y = tl_y + 128 + counter*24;
 	draw_text(x_or, health_line_y, "Health");
 	draw_healthbar(bar_x_or, health_line_y - half_bar, tl_x + width - 16, health_line_y + half_bar, astronaut_health, 0, c_red, c_green, 0, false, false);
+	counter++;
 	
-	var oxygen_line_y = tl_y + 128 + 24;
-	var o2_seconds_remaining = 
+	var oxygen_line_y = tl_y + 128 + counter*24;
+	//var o2_seconds_remaining = ;
 	draw_text(x_or, oxygen_line_y, "Oxygen: ");
 	draw_healthbar(bar_x_or, oxygen_line_y - half_bar, tl_x + width - 16, oxygen_line_y + half_bar, suit_oxygen, 0, c_red, c_blue, 0, false, false);
+	counter++;
 	
-	var energy_line_y = tl_y + 128 + 48;
+	var energy_line_y = tl_y + 128 + counter*24;
 	draw_text(x_or, energy_line_y, "Energy");
 	draw_healthbar(bar_x_or, energy_line_y - half_bar, tl_x + width - 16, energy_line_y + half_bar, energy, 0, c_red, c_yellow, 0, false, false);
+	counter++;
 	
-	var food_line_y = tl_y + 128 + 72;
+	var food_line_y = tl_y + 128 + counter*24;
 	draw_text(x_or, food_line_y, "Food");
 	draw_healthbar(bar_x_or, food_line_y - half_bar, tl_x + width - 16, food_line_y + half_bar, food_level, 0, c_red, c_olive, 0, false, false);
+	counter++;
 	
+	#endregion prop bars
 	
-	/*
-	var next_line_y = tl_y + 128 + 96;
-	draw_text(x_or, next_line_y, "Is walking: " + string(is_walking)); // DEBUG
-	*/
+	#region inventory
 	
-	//draw_text(x_or, food_line_y, "Inventory");
+	var inv_line_y = tl_y + 128 + counter*24;
+	draw_text(x_or, inv_line_y, "Inventory");
+	counter++;
 	
-	// inventory
 	var grid_x = x_or + 96;
-	var grid_y = tl_y + 128 + 96;
+	var grid_y = tl_y + 128 + counter*24;
 	draw_sprite(spr_inventory_grid, 0, grid_x, grid_y);
 	
 	for (var i=0; i<3; i++)
@@ -71,4 +79,27 @@ if(show_details)
 			}
         }
     }
+	
+	#endregion
+	
+	#region	auto tasks
+	
+	// panel
+	var atw = 4*32 + 2*8 + 3*4; // icons + padding + spacing
+	var ath = 48;
+	scr_draw_panel(display_width - atw, display_height - ath, display_width, display_height);
+	
+	// icons
+	var counter = 0;
+	var icon_top = display_height - ath + 8;
+	var icon_x_or = display_width - atw + 8;
+	draw_sprite(spr_auto_attack, 0, icon_x_or + (32+4)*counter, icon_top);
+	counter++;
+	draw_sprite(spr_auto_construct, 0, icon_x_or + (32+4)*counter, icon_top);
+	counter++;
+	draw_sprite(spr_auto_sleep, 0, icon_x_or + (32+4)*counter, icon_top);
+	counter++;
+	draw_sprite(spr_auto_feed, 0, icon_x_or + (32+4)*counter, icon_top);
+	
+	#endregion
 }

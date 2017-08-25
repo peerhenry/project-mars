@@ -29,7 +29,7 @@ sprite_suitless_up = spr_character_suitless_up;
 image_speed = 0;
 
 // 3. astronaut props
-name = "John McNeil";
+name = "John Doe";
 owner = macro_player;
 astro_id = 0;
 astronaut_health = 100;

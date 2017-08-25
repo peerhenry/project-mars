@@ -1,5 +1,7 @@
 /// @description The very first script to run on startup
 
+show_debug_message("working_directory: " + string(working_directory));
+
 // Set cursor sprite
 cursor_sprite = spr_cursor;
 global.room_is_transitioning = false;
@@ -20,19 +22,19 @@ var monitor_height = display_get_height();
 global.monitor_width = monitor_width;
 global.monitor_height = monitor_height;
 
-// Read settings
-ini_open(macro_settings_file);
+#region Read settings
 
+ini_open(macro_settings_file);
 var settings_width = ini_read_real("settings", "width", monitor_width);
 var settings_height = ini_read_real("settings", "height", monitor_height);
-
 var volume_master = ini_read_real("sound", "master", macro_master_default);
 var volume_voice = ini_read_real("sound", "voice", macro_voice_default);
 var volume_sfx = ini_read_real("sound", "sfx", macro_sfx_default);
 var volume_music = ini_read_real("sound", "music", macro_music_default);
 var fullscreen = ini_read_real("settings", "fullscreen", false);
-
 ini_close();
+
+#endregion
 
 // Set resolution
 scr_resolution(settings_width, settings_height);

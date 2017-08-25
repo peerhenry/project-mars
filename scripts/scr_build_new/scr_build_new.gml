@@ -126,21 +126,6 @@ if(cell_count > 0)
 	ds_map_add(new_construction, construction_mdu_deliveries, 0);
 	ds_map_add(new_construction, construction_mdu_piles, ds_list_create());
 	
-	/*
-	new_construction[construction_required_mdu_remaining] = 1;
-	new_construction[construction_required_mdu_count] = 1;
-	new_construction[construction_bb_top] = top;
-	new_construction[construction_bb_left] = left;
-	new_construction[construction_bb_right] = right;
-	new_construction[construction_bb_bottom] = bottom;
-	new_construction[construction_prerequisite] = prerequisite;
-	new_construction[construction_time] = build_time;
-	new_construction[construction_astronaut] = noone; // astronaut assigned to perform the construction
-	new_construction[construction_cells] = construction_cell_array;
-	new_construction[construction_build_type] = global.construct;
-	new_construction[construction_build_state] = construction_state.not_ready; // not ready to be picked up before mdus are delivered
-	new_construction[construction_completion] = 0; // start out at 0% complete
-	*/
 	ds_list_add(global.construction_queue, new_construction);
 	scr_recalculate_paths();
 }
