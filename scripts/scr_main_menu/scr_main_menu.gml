@@ -1,5 +1,6 @@
 /// @description script is called at main menu creation
 
+application_surface_draw_enable(true);
 cursor_sprite = spr_cursor;
 
 // Play menu song

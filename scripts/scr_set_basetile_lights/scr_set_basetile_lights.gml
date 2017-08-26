@@ -1,6 +1,6 @@
 // basetile lights have been disabled for now...
 var arg_instance = argument0;
-
+/*
 if(arg_instance.object_index == obj_wall)
 {
 	var adj_tiles = scr_get_adjacent_instances(arg_instance, obj_base_tile);
@@ -18,4 +18,4 @@ else if(arg_instance.object_index == obj_base_tile)
 		var next_wall = adj_walls[n];
 		if(next_wall != noone) arg_instance.wall_adjacency += power(2, n);
 	}
-}
+}*/

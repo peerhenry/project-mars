@@ -1,13 +1,10 @@
-step = 0;
+step = -1;
 has_initialized = false;
-
-// TUTORIAL STEPS:
-// 1 select astronaut
-// 2 put on suit
-// 
 
 astronaut = noone;
 closet = noone;
 arrow = noone;
-// Initialize after one second
-alarm[0] = 30;
+// Initialize after five steps
+alarm[0] = 5;
+
+instance_create_depth(-1000,-1000, 0, obj_wasd);

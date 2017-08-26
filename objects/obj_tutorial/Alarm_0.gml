@@ -6,7 +6,7 @@ with(obj_astronaut)
 	if(astro_id == macro_malcom_phillips)
 	{
 		other.astronaut = id;
-		scr_center_screen_on(id);
+		//scr_center_screen_on(id);
 		break;
 	}
 }
@@ -33,4 +33,3 @@ if(closet == noone)
 }
 
 has_initialized = true;
-scr_alert_player("Select captain Phillips.");

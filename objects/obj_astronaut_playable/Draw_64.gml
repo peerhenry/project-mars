@@ -5,7 +5,7 @@ var display_height = display_get_gui_height();
 var tl_x = display_width - width;
 var tl_y = 0;
 
-if(show_details)
+if ( show_details )
 {
 	// panel
 	var tl_x2 = tl_x + width;

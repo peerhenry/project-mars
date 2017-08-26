@@ -11,8 +11,10 @@ room2 = noone; // Either south or east
 if(connects_horizontally)
 {
 	if(!global.draw_tall_walls) sprite_index = spr_door_vertical;
+	else sprite_index = spr_door_tall_vertical;
 }
 else
 {
 	if(!global.draw_tall_walls) sprite_index = spr_door;
+	else sprite_index = spr_door_tall;
 }

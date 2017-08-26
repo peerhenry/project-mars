@@ -1,10 +1,20 @@
-if(!has_initialized)
-{
-	return false;
-}
+
+// TUTORIAL STEPS:
+// - move using WASD
+// - select astronaut
+// - put on suit
+// - go outside
 
 switch(step)
 {
+	case -1:
+		if(!has_initialized) exit;
+		with(obj_wasd){
+			exit;
+		}
+		scr_alert_player("Select captain Phillips.");
+		step++;
+		break;
 	case 0:
 		if(astronaut.is_selected)
 		{

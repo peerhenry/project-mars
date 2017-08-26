@@ -14,7 +14,6 @@ for(var grid_type = 0; grid_type < macro_grid_type_count; grid_type++)
 		with(grid)
 		{
 			// Remove component from grid
-			// show_debug_message("Removing " + scr_object_index_string(other.id) + " from grid..."); // DEBUG
 			var role = grid_props[macro_grid_prop_role];
 			var list_to_use = logic_map[? role];
 			var role_index = ds_list_find_index(list_to_use, other.id);
@@ -51,5 +50,6 @@ for(var grid_type = 0; grid_type < macro_grid_type_count; grid_type++)
 			scr_grid_part(id, grid);
 		}
 	}
+	grid_props = 0; // free array memory
 }
 ds_map_destroy(grid_props_map);
