@@ -67,7 +67,6 @@ init_construction_set_tile(0, -1, 1);
 init_construction_set_validation(build_validation_i.any, build_validation_o.vacant_or_reserved);	// reserve a spot on the outside
 init_construction_set_tile(0, 1, 1);
 init_construction_set_validation(build_validation_i.any, build_validation_o.vacant_or_reserved);	// reserve a spot on the outside
-
 init_construction_set_rotation_parameter(macro_rotation_1, macro_sprite, spr_hatch_tall_vertical);
 init_construction_set_rotation_parameter(macro_rotation_3, macro_sprite, spr_hatch_tall_vertical);
 

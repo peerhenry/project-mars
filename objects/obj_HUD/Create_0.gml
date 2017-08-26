@@ -43,10 +43,11 @@ for(var n = 0; n < build_count; n++)
 	
 	var left = x_offset;
 	var top = y_offset + (32 + y_spacing)*n;
-	var new_item = instance_create_layer(left, top, hud_layer, obj_HUD_item);
+	var new_item = instance_create_layer(left, top, hud_layer, obj_HUD_construction_button);
 	with(new_item)
 	{
 		construction = next_build;
+		tooltip_text = scr_get_tooltip_text(next_build);
 		sprite_index = next_sprite;
 		image_index = next_image_index;
 	}

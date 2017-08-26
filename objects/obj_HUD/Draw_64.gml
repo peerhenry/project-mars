@@ -1,4 +1,4 @@
-// ### MENU BUTTON
+#region MENU BUTTON
 // box
 var color = global.btn_bg_color;
 if(mouse_over_menu) color = global.btn_bg_color_hover;
@@ -13,8 +13,9 @@ draw_set_valign(fa_middle);
 draw_set_font(font_hud);
 draw_set_color(global.btn_color);
 draw_text(menu_btn_center_x, menu_btn_center_y, "Menu");
+#endregion
 
-// ### RESOURCE COUNTER
+#region RESOURCE COUNTER
 // box
 draw_set_color(global.btn_bg_color);
 draw_rectangle(resources_left, resources_top, resources_right, resources_bottom, false);
@@ -27,9 +28,9 @@ draw_set_valign(fa_middle);
 draw_set_font(font_hud);
 draw_set_color(global.btn_color);
 draw_text(resources_center_x, resources_center_y, "Metal: " + string(scr_get_metal_amount()));
+#endregion
 
-
-// ### BUILD PANEL
+#region BUILD PANEL
 // draw background
 draw_set_color(c_black);
 // draw_rectangle(x_offset, y_offset, x_offset + 31, y_offset + (32 + y_spacing)*build_count - y_spacing, false);
@@ -49,3 +50,4 @@ draw_rectangle(
 	y_offset + (32 + y_spacing)*build_count - y_spacing + 10, 
 	false);
 draw_set_alpha(1);
+#endregion

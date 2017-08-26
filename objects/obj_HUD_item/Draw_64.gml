@@ -42,7 +42,7 @@ if(state == button_state.hover)
 	draw_set_halign(fa_middle);
 	draw_set_valign(fa_middle);
 	draw_set_font(font_hud);
-	var tt_text = scr_get_tooltip_text(construction);
+	var tt_text = tooltip_text;
 	draw_set_color(global.btn_color);
 	draw_text(tt_center_x, tt_center_y, tt_text);
 }

@@ -26,9 +26,7 @@ if(mouse_over)
 		if(clicked)
 		{
 			new_state = button_state.selected;
-			global.construct = construction;
-			global.construction_is_valid = false;
-			global.rotated_was_checked = false;	// for auto rotate hatches and doors
+			event_user(0);
 		}
 		state = new_state;
 	}

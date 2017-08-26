@@ -76,7 +76,7 @@ for(var n = 0; n < cell_count; n++)
 		{
 			ds_list_add(new_instances, new_instance);
 			if(angle >= 0) image_angle = angle;
-			if(sprite > 0) sprite_index = sprite;
+			//if(sprite > 0) sprite_index = sprite;
 			if(
 				image > 0 
 				&& new_instance.object_index != obj_cable 

@@ -8,7 +8,9 @@
         "47fcae60-71f0-48c8-a8d4-c76e2c21ff4d",
         "be4bc1e0-7f1e-4e73-903b-b1834003e6f2",
         "f43edac3-a863-42b7-b6e8-b04baf1059ea",
-        "bb1f7644-6fe6-40dc-b777-f8859e073a81"
+        "bb1f7644-6fe6-40dc-b777-f8859e073a81",
+        "485832f9-85c1-4f75-a779-9ebb457c17ac",
+        "c12db89a-4375-45f2-84da-cf8bdb8f5b9d"
     ],
     "filterType": "GMSprite",
     "folderName": "logic",
