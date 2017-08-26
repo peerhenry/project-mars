@@ -87,14 +87,14 @@ init_construction_set_rotation_parameter(macro_rotation_1, macro_sprite, spr_doo
 init_construction_set_rotation_parameter(macro_rotation_3, macro_sprite, spr_door_tall_vertical);
 
 // # suit closet
-init_construction_new_single(macro_suit_closet, "space suit closet", spr_suit_closet, 1);
+init_construction_new_single(macro_suit_closet, "space suit closet", spr_suit_closet_hud, 1);
 init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_suit_closet, noone, 200);
 init_construction_set_rotation_parameter(macro_rotation_1, macro_image, 1);
 init_construction_set_rotation_parameter(macro_rotation_2, macro_image, 2);
 init_construction_set_rotation_parameter(macro_rotation_3, macro_image, 3);
 
 // # empty suit closet
-init_construction_new_single(macro_suit_closet_empty, "empty suit closet", spr_suit_closet, 1);
+init_construction_new_single(macro_suit_closet_empty, "empty suit closet", spr_suit_closet_empty_hud, 1);
 init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_suit_closet, noone, 100);
 init_construction_set_rotation_parameter(macro_rotation_0, macro_image, 4);
 init_construction_set_rotation_parameter(macro_rotation_1, macro_image, 5);
