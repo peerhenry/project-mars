@@ -14,5 +14,5 @@ draw_line(argument0, argument1, argument0, argument3);
 draw_set_color(c_black);
 draw_line(argument2, argument1, argument2, argument3);
 draw_line(argument0, argument3, argument2, argument3);
-	
+
 draw_set_alpha(1);

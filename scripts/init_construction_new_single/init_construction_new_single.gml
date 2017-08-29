@@ -2,6 +2,7 @@
 /// @param name
 /// @param hud_sprite
 /// @param action_count 
+/// @param category
 
 // This script initializes a construction that has a single build tile.
 // construction -> build tiles -> build tile -> build actions -> build action
@@ -10,6 +11,7 @@ var arg_id = argument0;
 var arg_name = argument1;
 var arg_hud_sprite = argument2;
 var arg_action_count = argument3;
+var arg_category = argument4;
 
 // array of build actions
 var build_actions;
@@ -28,4 +30,4 @@ var build_tiles;
 build_tiles[0] = build_tile;
 global.init_active_tiles = build_tiles;
 
-init_construction_new(arg_id, arg_name, arg_hud_sprite, build_tiles);
+init_construction_new(arg_id, arg_name, arg_hud_sprite, build_tiles, arg_category);

@@ -1,3 +1,9 @@
+// construction categories
+#macro macro_category_deconstruction 1
+#macro macro_category_foundation 2
+#macro macro_category_inside 3
+#macro macro_category_outside 4
+
 // the different constructions
 #macro macro_basetile 0
 #macro macro_wall 1
@@ -34,6 +40,7 @@
 #macro macro_drag_actions 7
 #macro macro_drag_params 8
 #macro macro_surround_actions 9
+#macro macro_category 10
 
 // build action properties
 #macro macro_validation_i 0

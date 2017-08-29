@@ -8,9 +8,7 @@
         "d45d693a-a067-4eb5-bf2b-424307d4dd80",
         "a3c7604e-d966-4438-a253-02e2faf0f327",
         "0322e45b-e66b-432f-95e7-57d170ec4c1e",
-        "c6e1c0cf-3913-4a48-b80b-b940596cb5aa",
-        "a43887aa-f4d1-4e19-973e-e0463421cc55",
-        "8685f3b0-5f62-405a-ae17-7eff47c71a15"
+        "c6e1c0cf-3913-4a48-b80b-b940596cb5aa"
     ],
     "filterType": "GMSprite",
     "folderName": "BASE",

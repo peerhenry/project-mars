@@ -36,9 +36,9 @@ draw_set_color(c_black);
 // draw_rectangle(x_offset, y_offset, x_offset + 31, y_offset + (32 + y_spacing)*build_count - y_spacing, false);
 draw_rectangle(
 	0, 
-	y_offset - 12, 
-	x_offset + 31 + 12, 
-	y_offset + (32 + y_spacing)*build_count - y_spacing + 12, 
+	y_offset - padding, 
+	x_offset + 31 + padding, 
+	y_offset + (32 + y_spacing)*item_count - y_spacing + padding, 
 	false);
 
 draw_set_color(c_teal);
@@ -47,7 +47,7 @@ draw_rectangle(
 	2, 
 	y_offset - 10, 
 	x_offset + 31 + 10, 
-	y_offset + (32 + y_spacing)*build_count - y_spacing + 10, 
+	y_offset + (32 + y_spacing)*item_count - y_spacing + 10, 
 	false);
 draw_set_alpha(1);
 #endregion

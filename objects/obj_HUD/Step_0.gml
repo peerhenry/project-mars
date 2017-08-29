@@ -29,6 +29,7 @@ if(mouse_over_menu)
 
 if(global.hovering_over_HUD)
 {
+	cursor_sprite = spr_cursor;
 	return;
 }
 

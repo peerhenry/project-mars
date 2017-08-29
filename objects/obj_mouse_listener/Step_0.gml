@@ -49,6 +49,7 @@ if(global.construct != noone) // BUILD MODE
 	if(mouse_check_button_pressed(mb_right))
 	{
 		global.construct = noone;
+		scr_hide_categories();
 	}
 	
 	return;
@@ -65,6 +66,7 @@ if(!is_dragging)
 	// LEFT CLICK: set click origin for dragging
 	if(mouse_check_button_pressed(mb_left))
 	{
+		scr_hide_categories();
 		click_x = mouse_x;
 		click_y = mouse_y;
 	}
@@ -87,6 +89,7 @@ if(!is_dragging)
 	if(mouse_check_button_released(mb_right))
 	{
 		// deselect everything
+		scr_hide_categories();
 		var select_astro = instance_position(mouse_x, mouse_y, obj_astronaut_playable);
 		scr_hide_all_panels();
 		with(obj_astronaut_playable)
