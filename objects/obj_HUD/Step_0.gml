@@ -18,8 +18,11 @@ if(mouse_over_menu)
 	global.hovering_over_HUD = true;
 	if(clicked)
 	{
-		var l = layer_get_id("logic");
-		instance_create_layer(0, 0, l, obj_fade_to_menu);
+		//var l = layer_get_id("logic");
+		//instance_create_layer(0, 0, l, obj_fade_to_menu);
+		with(hud_menu){
+			event_user(0); // toggle menu
+		}
 	}
 	return;
 }

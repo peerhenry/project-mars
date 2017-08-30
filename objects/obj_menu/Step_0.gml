@@ -33,6 +33,9 @@ else
 			case menu_index.tutorial:
 				room_goto(tutorial);
 				break;
+			case menu_index.survival:
+				room_goto(mars_survival);
+				break;
 			case menu_index.settings:
 				room_goto(room_settings);
 				break;

@@ -2,6 +2,7 @@ enum menu_index{
 	game_continue,
 	new_game,
 	tutorial,
+	survival,
 	settings,
 	debug,
 	quit
@@ -13,6 +14,7 @@ menu[menu_index.quit] = "";
 menu[menu_index.game_continue] = "Continue";
 menu[menu_index.new_game] = "New Game";
 menu[menu_index.tutorial] = "Tutorial";
+menu[menu_index.survival] = "Survival";
 menu[menu_index.settings] = "Settings";
 menu[menu_index.debug] = "Test Level";
 //menu[menu_index.test] = "Test";
@@ -24,6 +26,7 @@ colors[menu_index.quit] = c_white;
 colors[menu_index.game_continue] = c_gray;
 colors[menu_index.new_game] = c_gray;
 colors[menu_index.tutorial] = c_white;
+colors[menu_index.survival] = c_white;
 colors[menu_index.settings] = c_white;
 colors[menu_index.debug] = c_white;
 //colors[menu_index.test] = c_gray;

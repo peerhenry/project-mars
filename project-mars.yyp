@@ -279,6 +279,14 @@
             }
         },
         {
+            "Key": "0b038bc2-d812-426e-b3f7-43e1759bd981",
+            "Value": {
+                "id": "1bf11a14-9cac-46e3-9fe8-d3bc37c7a2bd",
+                "resourcePath": "objects\\obj_HUD_menu_button_quit\\obj_HUD_menu_button_quit.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0b3e2340-577b-4b8c-b6a9-11f749331d00",
             "Value": {
                 "id": "cc354444-7fa4-43f3-b1f4-98e21d40a3af",
@@ -444,6 +452,14 @@
                 "id": "989b59c9-4b77-4b5c-ab33-81f7db26a4fd",
                 "resourcePath": "sprites\\spr_suit_closet_empty_hud\\spr_suit_closet_empty_hud.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "141ff6b7-24d9-4b73-9a08-e47e66b3fac2",
+            "Value": {
+                "id": "966a8cfe-1efc-43ce-88f3-803aa3315970",
+                "resourcePath": "objects\\obj_HUD_menu_button\\obj_HUD_menu_button.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -831,6 +847,14 @@
             }
         },
         {
+            "Key": "2474f57c-805b-4ffa-955e-aed80581ee8a",
+            "Value": {
+                "id": "f77a1916-27a2-477a-bce0-c2250412c763",
+                "resourcePath": "rooms\\mars_survival\\mars_survival.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "248647b9-d6ec-493e-9527-79517f14cfff",
             "Value": {
                 "id": "faa1a2ee-e4cd-4784-83b0-d64368cdd0f9",
@@ -1195,6 +1219,14 @@
             "Value": {
                 "id": "cadf6720-0e53-4794-8586-e0f8ca712df6",
                 "resourcePath": "objects\\obj_hatch\\obj_hatch.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "3416f009-f423-4942-a372-92f3d38783d9",
+            "Value": {
+                "id": "2ad0b7c3-f12f-4731-bbd1-5d681a052dfc",
+                "resourcePath": "objects\\obj_HUD_menu_button_return\\obj_HUD_menu_button_return.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -3191,6 +3223,14 @@
             }
         },
         {
+            "Key": "9666ffc4-18dc-451d-b925-f68dc1afa127",
+            "Value": {
+                "id": "99d205c3-3a70-47f7-bc26-32c5f23796fb",
+                "resourcePath": "rooms\\mars_base\\mars_base.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "9678fe7a-bc0b-4378-b82e-2a55aa4a6798",
             "Value": {
                 "id": "84da6b22-6631-4cbc-8889-1ca108d55760",
@@ -4471,6 +4511,14 @@
             }
         },
         {
+            "Key": "d1456221-ceba-47d2-8486-b550861c2ca2",
+            "Value": {
+                "id": "01329c02-5ab8-4855-a678-00efe690bc5f",
+                "resourcePath": "views\\9666ffc4-18dc-451d-b925-f68dc1afa127-room.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "d1d60135-4dcc-4627-9a50-f5650f760d98",
             "Value": {
                 "id": "443a8098-e6ef-44ea-b398-1dcb8fe492b3",
@@ -4775,6 +4823,14 @@
             }
         },
         {
+            "Key": "df26e86c-cf59-49c3-982f-5f66188d4de3",
+            "Value": {
+                "id": "a980adf4-f5c5-4af8-af84-c53525d158b8",
+                "resourcePath": "sprites\\sprite133\\sprite133.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "df706008-20a5-4d9a-a8a1-5013410f7fd4",
             "Value": {
                 "id": "dbaeaf2e-215e-42ed-aa6d-8b34d89992ce",
@@ -5036,6 +5092,14 @@
                 "id": "a9ff10e9-8149-4c0f-99fb-b5a34d1cb635",
                 "resourcePath": "objects\\obj_checkbox_fullscreen\\obj_checkbox_fullscreen.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "ec361dd3-b998-47f9-8cef-4ad630e548ce",
+            "Value": {
+                "id": "2ccabe0a-fa5d-4dcf-9b60-b78e7115c735",
+                "resourcePath": "sprites\\spr_view_mover\\spr_view_mover.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

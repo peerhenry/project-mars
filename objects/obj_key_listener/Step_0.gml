@@ -1,6 +1,12 @@
-if(keyboard_check_pressed(vk_escape))
+if(keyboard_check_pressed(vk_f11))
 {
 	room_goto(0); // should use fade shit
+}
+
+if(keyboard_check_pressed(vk_f12))
+{
+	// application quit
+	game_end();
 }
 
 if(keyboard_check_pressed(ord("Z")))
