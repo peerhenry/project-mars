@@ -53,50 +53,16 @@ if(keyboard_check_pressed(ord("L")))
 	//var cable = instance_position(mouse_x, mouse_y, obj_cable);
 	//if(cable > 0) show_debug_message("cable adjacency number: " + string(cable.adjacency_number));
 	
-	/*var count = 0;
-	var leak_count = 0;
-	var replenish_count = 0;
-	with(obj_room)
-	{
-		count++;
-		if(oxygen_is_replenishing) replenish_count++;
-		if(oxygen_is_leaking) leak_count++;
-	}
-	show_debug_message("room count: " + string(count));
-	show_debug_message("leak count: " + string(leak_count));
-	show_debug_message("replenish_count: " + string(replenish_count));*/
-	
-	// scr_show_construction_queue();
-	
-	/*with(obj_astronaut)
-	{
-		scr_kill(id);
-	}//*/
-	
-	/*
 	with(obj_grid)
 	{
-		var room_count = 0;
-		if(grid_type == macro_grid_oxygen)
-		{
-			var consumers = logic_map[? macro_grid_role_consumer];
-			for(var n = 0; n < ds_list_size(consumers); n++)
-			{
-				var next_c = ds_list_find_value(consumers, n);
-				if(next_c.object_index == obj_room)
-				{
-					room_count++;
-				}
-			}
-			show_debug_message("oxygen grid has " + string(room_count) + " rooms");
+		if(grid_type == macro_grid_electric){
+			debug_show_grid(id);
 		}
 	}
-	*/
 	
-	with(obj_astronaut_playable)
-	{
-		show_debug_message("astronaut action: " + string(current_action));
-	}
+	// scr_show_construction_queue();
+	// debug_show_oxygen_grid_room_counts()
+	// debug_show_astronaut_actions()
 	
 }
 

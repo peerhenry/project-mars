@@ -1,16 +1,15 @@
 /// @Description gets grids from adjacent components, joins them if necessary, then adds component to that grid and sets the grid in the component.
 /// @param component
 /// @param grid_type
-/// @param east_component
-/// @param north_component
-/// @param west_component
-/// @param north_component
 var arg_instance = argument0;
 var arg_grid_type = argument1;
-var arg_comp_east = argument2;
-var arg_comp_north = argument3;
-var arg_comp_west = argument4;
-var arg_comp_south = argument5;
+
+var adjacents = scr_get_adjacent_grid_components(arg_instance, arg_grid_type);
+
+var arg_comp_east = adjacents[0];
+var arg_comp_north = adjacents[1];
+var arg_comp_west = adjacents[2];
+var arg_comp_south = adjacents[3];
 
 var grid_adj_number = 0;
 	
@@ -58,6 +57,8 @@ if(arg_comp_south != noone && !arg_comp_south.under_construction)
 		grid_south = south_grid_props[macro_grid_prop_grid];
 	}
 }
+
+adjacents = 0; // free array memory
 
 switch(grid_adj_number)
 {

@@ -11,7 +11,10 @@
         "91d687bc-c8dc-4b55-9e35-e9b627e9d0ae",
         "06c39589-a1fc-4520-ae2f-d4494adb8a64",
         "5c78aeba-2801-4629-992d-b18feb04d7b7",
-        "129557bb-d1e1-419b-b688-d477abecb797"
+        "129557bb-d1e1-419b-b688-d477abecb797",
+        "cdff00f7-5e13-40c9-b5ce-8fa48beaf72d",
+        "05a26db0-601d-4805-85c5-2987bd95361a",
+        "6fc8bdb5-dd99-4913-aa81-25ab3549962b"
     ],
     "filterType": "GMScript",
     "folderName": "console",

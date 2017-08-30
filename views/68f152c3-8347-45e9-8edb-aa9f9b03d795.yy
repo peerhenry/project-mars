@@ -15,8 +15,7 @@
         "f8aec0ec-2d3b-4cf6-812d-e0b71cfe1128",
         "4424e2a7-ca16-45b6-8d50-870cb20f8027",
         "fd792ac1-0dd5-4714-9609-f42981bc61c8",
-        "7096b81a-2f19-44bd-88a0-44a948e6562b",
-        "5fc34be9-db94-4080-8961-b0cd1a4da082"
+        "9303c792-2317-484f-9836-885e91ab1aba"
     ],
     "filterType": "GMScript",
     "folderName": "construction_finalization",

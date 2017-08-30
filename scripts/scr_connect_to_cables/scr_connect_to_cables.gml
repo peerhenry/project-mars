@@ -8,7 +8,11 @@ for(var n = 0; n < 4; n++)
 	var next_cable = adjacents[n];
 	if(next_cable != noone)
 	{
-		next_cable.adjacency_number += power(2, (n+2)%4);
-		scr_set_cable_image(next_cable);
+		var bit = power(2, (n+2)%4);
+		if(next_cable.adjacency_number & bit == 0)
+		{
+			next_cable.adjacency_number += bit;
+			scr_set_cable_image(next_cable);
+		}
 	}
 }

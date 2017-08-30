@@ -22,7 +22,7 @@ for(var grid_type = 0; grid_type < macro_grid_type_count; grid_type++)
 			
 			// Delete entry in map & key list
 			var cell_list = ds_map_find_value(tile_map, key);
-			// show_debug_message("cell_list exists: " + string(ds_exists(cell_list, ds_type_list)));
+			show_debug_message("cell_list exists: " + string(ds_exists(cell_list, ds_type_list)));
 			if(!is_undefined(cell_list))
 			{
 				var cell_index = ds_list_find_index(cell_list, other.id);

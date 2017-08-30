@@ -25,7 +25,7 @@ init_construction_set_action(build_validation_i.outside, build_validation_o.pipe
 init_construction_set_surrounder(5); // surrounder gets 3 build actions
 init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,		map_buffer_action.wall,		base_layer,		obj_wall,		noone,		100);	// build outside wall
 init_construction_set_action(build_validation_i.outside, build_validation_o.wall_like,	map_buffer_action.nothing,	noone,			noone,			noone,		0);		// wall like: nothing
-init_construction_set_action(build_validation_i.inside,	build_validation_o.any,			map_buffer_action.nothing,	noone,			noone,			noone,		0);		// inside; nothing
+init_construction_set_action(build_validation_i.inside,	 build_validation_o.any,		map_buffer_action.nothing,	noone,			noone,			noone,		0);		// inside; nothing
 init_construction_set_action(build_validation_i.outside, build_validation_o.cable,		map_buffer_action.wall,		base_layer,		obj_wall,		obj_cable,	50);	// build outside wall
 init_construction_set_action(build_validation_i.outside, build_validation_o.pipe,		map_buffer_action.pipe,		base_layer,		obj_wall,		obj_pipe,	50);	// build outside wall
 // ## dragging

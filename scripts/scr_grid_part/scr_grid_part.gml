@@ -39,8 +39,14 @@ with(arg_grid)
 	ds_map_add(visited_map, first_key, first);
 	ds_list_add(visited_list, first_key);
 
+	var failsafe_counter = 0;
 	while(!ds_queue_empty(flood_queue))
 	{
+		if(failsafe_counter > 100000)
+		{
+			show_error("Never ending while loop in grid_part!", true);
+		}
+		
 		//show_debug_message("Popping next item on queue"); // DEBUG
 		var head = ds_queue_dequeue(flood_queue);
 		var head_component = noone;
@@ -92,6 +98,8 @@ with(arg_grid)
 				ds_list_add(visited_list, next_key);
 			}
 		}
+		
+		failsafe_counter++;
 	}
 }
 

@@ -22,32 +22,10 @@ with(arg_grid)
 	if(object_is_ancestor(arg_component.object_index, obj_constructable))
 	{
 		scr_add_to_grid_tile_map(arg_grid, arg_component);
-		
-		//var key = arg_component.encoded_ij;
-		//var cell_list = ds_map_find_value(component_map, key);
-		//if(is_undefined(cell_list))
-		//{
-		//	ds_list_add(component_key_list, key);
-		//	var new_cell_list = ds_list_create();
-		//	ds_list_add(new_cell_list, arg_component);
-		//	ds_map_add(component_map, key, new_cell_list);
-		//}
-		//else	// If grid already has a cell at given location
-		//{
-		//	if(ds_exists(cell_list, ds_type_list))	// If cell is a list, add the component to list
-		//	{
-		//		ds_list_add(cell_list, arg_component);
-		//	}
-		//	else	// Has to be a list...
-		//	{
-		//		show_error("Error: something existed at a grid cell, but it was not a list!", true);
-		//	}
-		//}
 	}
 	else
 	{
-		// show_debug_message("name: " + object_get_name(arg_component.object_index));
-		// show_error("component did not inherit from obj_constructable", true);
+		// Is allowed: for example rooms for oxygen grid
 	}
 	
 	// Set grid in component
