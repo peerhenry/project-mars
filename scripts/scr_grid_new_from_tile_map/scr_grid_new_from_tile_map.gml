@@ -2,6 +2,10 @@
 /// @param tile_map
 /// @param tile_key_list
 /// @param grid_type
+
+scr_trace_script("scr_grid_new_from_tile_map", [argument0, argument1, argument2]);
+debug_types([argument0, argument1, argument2], [macro_type_map, macro_type_list, macro_type_real]);
+
 var arg_tile_map = argument0;
 var arg_tile_key_list = argument1;
 var arg_grid_type = argument2;
@@ -13,11 +17,15 @@ if(ds_map_size(arg_tile_map) != ds_list_size(arg_tile_key_list)){
 var new_grid = scr_grid_new(arg_grid_type);
 with(new_grid)
 {
-	// Replace grid's tile map
-	ds_map_destroy(tile_map);
-	ds_list_destroy(tile_key_list);
-	tile_map = arg_tile_map;
-	tile_key_list = arg_tile_key_list;
+	ds_list_copy(tile_key_list, arg_tile_key_list);
+	// copy all the lists in the map:
+	for(var n = 0; n < ds_list_size(arg_tile_key_list); n++)
+	{
+		var next_key = ds_list_find_value(arg_tile_key_list, n);
+		var new_list = ds_list_create();
+		ds_list_copy(new_list, arg_tile_map[? next_key]);
+		ds_map_add(tile_map, next_key, new_list);
+	}
 	
 	// All components in the tile_map need to get the grid in their props, and the grid needs to set them in its proper role lists
 	for(var n = 0; n < ds_list_size(arg_tile_key_list); n++)
@@ -34,4 +42,7 @@ with(new_grid)
 		}
 	}
 }
+
+debug_grid(new_grid); // DEBUG
+
 return new_grid;

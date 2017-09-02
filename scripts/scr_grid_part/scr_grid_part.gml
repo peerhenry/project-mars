@@ -1,11 +1,9 @@
 /// @Description This script performs a flood fill on a grid, and parts it if it is disconnected
-/// @param removed_instance
 /// @param grid
+scr_trace_script("scr_grid_part", [argument0]);
+debug_instance_type(argument0, obj_grid);
 
-scr_trace_script("scr_grid_part", [argument0, argument1]);
-
-var arg_instance = argument0; // This argument is actually not needed for this grid :/
-var arg_grid = argument1;
+var arg_grid = argument0;
 
 var grid_type = arg_grid.grid_type;
 
@@ -107,19 +105,24 @@ with(arg_grid)
 var visited_size = ds_list_size(visited_list);
 var original_size = ds_list_size(arg_grid.tile_key_list);
 
-if(visited_size  != original_size)
-{	
+if(visited_size != original_size)
+{
 	// Create new grid of visited components!
 	var new_grid = scr_grid_new_from_tile_map(visited_map, visited_list, grid_type);
-	scr_grid_update(new_grid);
-	scr_grid_notify_components(new_grid);
+	scr_grid_update(new_grid);	// calculates grid properties (eg. storage, output, demand...)
+	scr_grid_notify_components(new_grid); // triggers the notify event in components
 	
 	// Make new grid from remainder and part
 	var new_grid_from_remainder = scr_grid_new_from_tile_map(remainder_map, remainder_key_list, grid_type);
-	scr_grid_part(arg_instance, new_grid_from_remainder);
+	scr_grid_part(new_grid_from_remainder);
 	
 	// destroy original grid
+	show_debug_message("Destroying grid " + string(arg_grid)); // DEBUG
 	instance_destroy(arg_grid);
+	
+	// Check if new grid is valid
+	show_debug_message("Grid was parted");
+	debug_grid(new_grid);
 }
 else // grid was not parted; it's still connected
 {
@@ -132,6 +135,10 @@ else // grid was not parted; it's still connected
 	ds_map_destroy(remainder_map);
 	ds_list_destroy(visited_list);
 	ds_list_destroy(remainder_key_list);
+	
+	// check if grid is still valid
+	show_debug_message("Grid was not parted");
+	debug_grid(arg_grid);
 }
 
 ds_queue_destroy(flood_queue);

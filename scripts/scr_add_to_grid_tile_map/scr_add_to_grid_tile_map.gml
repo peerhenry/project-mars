@@ -1,5 +1,9 @@
 /// @param grid
 /// @param component
+
+debug_instance_type(argument0, obj_grid);
+debug_instance_inherits(argument1, obj_constructable);
+
 var arg_grid = argument0;
 var arg_component = argument1;
 

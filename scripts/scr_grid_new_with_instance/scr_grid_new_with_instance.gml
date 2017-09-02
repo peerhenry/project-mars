@@ -1,6 +1,8 @@
-/// @description makes a new grid and adds the component
-/// @param component
+/// @description makes a new grid and adds the instance
+/// @param instance
 /// @param grid_type
+
+scr_trace_script("scr_grid_new_with_instance", [argument0, argument1]);
 
 var arg_instance = argument0;
 var arg_type = argument1;

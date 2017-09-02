@@ -1,3 +1,5 @@
+scr_trace("Running test_add_to_grid_logic_map...");
+
 // Arrange
 var grid = instance_create_depth(0, 0, 0, obj_grid);
 grid.grid_type = macro_grid_electric;
@@ -17,4 +19,4 @@ assert_list_contains(list_for_role, constr);
 instance_destroy(constr);
 instance_destroy(grid);
 
-return success;
+return test_show_result(test_add_to_grid_logic_map, success);

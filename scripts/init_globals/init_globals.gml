@@ -4,7 +4,7 @@ global.init_stage = true;
 
 // # DEBUG settings
 global.draw_room_bb = false;
-global.enable_trace = true;
+global.enable_trace = debug_mode;
 global.debug_start_messages = false; // obsolete?
 global.debug_gameplay_messages = true; // obsolete?
 

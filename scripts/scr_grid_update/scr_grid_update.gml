@@ -1,6 +1,9 @@
 /// @description does not change storage levels
 /// @param grid
 var arg_grid = argument0;
+
+debug_instance_type(argument0, obj_grid);
+
 with(arg_grid)
 {
 	for(var role = 0; role < macro_grid_role_count; role++)

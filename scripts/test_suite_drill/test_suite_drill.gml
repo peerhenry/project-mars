@@ -1,3 +1,4 @@
+scr_trace("Running test_suite_drill");
 var pass = true;
 
 global.default_resource_amount = 30;

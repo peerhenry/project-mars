@@ -58,3 +58,13 @@
 // Sensor
 #macro macro_sensor_d_squared 49
 #macro macro_sensor_d 7
+
+if(debug_mode){
+	#macro macro_type_string 0
+	#macro macro_type_real 1
+	#macro macro_type_bool 2
+	#macro macro_type_array 3
+	#macro macro_type_list 4
+	#macro macro_type_map 5
+	#macro macro_type_object 6
+}

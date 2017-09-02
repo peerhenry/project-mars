@@ -4,6 +4,12 @@
 var arg_grid = argument0;
 var arg_component = argument1;
 
+debug_instance_type(argument0, obj_grid);
+debug_instance_inherits(argument1, obj_constructable);
+
+scr_trace_script("scr_remove_from_grid_tile_map", [argument0, argument1]);
+debug_grid(arg_grid); // DEBUG
+
 with(arg_grid)
 {
 	var ij = arg_component.encoded_ij;
@@ -26,6 +32,7 @@ with(arg_grid)
 	// If there are no more components at the tile, remove the tile
 	if(ds_list_empty(list_at_tile))
 	{
+		show_debug_message("Destroying list at tile..."); // DEBUG
 		ds_list_destroy(list_at_tile);
 		ds_map_delete(tile_map, ij);
 		ds_list_delete(tile_key_list, key_list_index);

@@ -4,6 +4,7 @@
 var arg_grid = argument0;
 var arg_component = argument1;
 
+scr_trace_script("scr_connect_to_grid", [argument0, argument1]);
 // scr_assert_instance_type(arg_grid, obj_grid);
 
 with(arg_grid)

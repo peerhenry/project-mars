@@ -1,21 +1,24 @@
 scr_trace("test_drill_should_destroy_depleted_resource");
+
+// Arrange
 var metal = instance_create_depth(32, 32, 0, obj_resource_metal);
 metal.amount = -10;
 var drill = instance_create_depth(32, 32, 0, obj_drill);
-drill.under_construction = false;
-// give drill a grid with plenty power
-var e_grid = instance_create_depth(0,0,0,obj_grid);
-with(e_grid)
-{
-	grid_type = macro_grid_electric;
-	net_output = 100;
+with(drill){
+	event_user(macro_event_finalize);
 }
-scr_set_grid_prop(drill, macro_grid_electric, macro_grid_prop_grid, e_grid);
+var grid = scr_get_grid(drill, macro_grid_electric);
+debug_grid(grid); // DEBUG
+grid.net_output = 100; // set grid to have plenty of power.
+
+// Act
 with(drill){ event_perform(ev_alarm, 0); }
 var res_is_gone = !instance_exists(drill.resource_instance);
-instance_destroy(e_grid);
+
+// Cleanup
 instance_destroy(drill);
 
+// Assert
 if(!instance_exists(metal) && res_is_gone) return true
 else{
 	show_debug_message("[TEST] failed. Expected object metal to not exist.");
