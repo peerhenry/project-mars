@@ -3599,6 +3599,14 @@
             }
         },
         {
+            "Key": "a3f54bc0-e1d8-4a1d-9172-139e942bd72e",
+            "Value": {
+                "id": "0dc1ebbe-c62c-45d9-a36d-6e92ac8965ab",
+                "resourcePath": "scripts\\scr_update_action\\scr_update_action.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "a4895c8b-95d5-4d9f-a3cc-cdce6f0569fc",
             "Value": {
                 "id": "87668ed4-efbb-4320-aaf1-d9b19ac948ed",
@@ -3951,6 +3959,14 @@
             }
         },
         {
+            "Key": "b5556e2c-efbf-421b-88a2-0246311768a9",
+            "Value": {
+                "id": "05c1cf57-8efa-4020-8e2e-19ed0ad249f4",
+                "resourcePath": "scripts\\scr_autotask\\scr_autotask.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "b5b14df3-0b6d-4890-84f5-7703746843b7",
             "Value": {
                 "id": "b99de1db-0c23-4ba2-b6f3-14e518b39d53",
@@ -4252,6 +4268,14 @@
                 "id": "8423be16-a795-4b25-9416-52623ee0cd4a",
                 "resourcePath": "sprites\\spr_character_suitless_down\\spr_character_suitless_down.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c3b2473a-d2b1-4ff6-8d21-6cad64477681",
+            "Value": {
+                "id": "625e126c-880a-43e4-b973-be65d2cda1af",
+                "resourcePath": "views\\c3b2473a-d2b1-4ff6-8d21-6cad64477681.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -4796,6 +4820,14 @@
                 "id": "f7edcc10-3233-4257-a8b0-59ef73a82ed0",
                 "resourcePath": "sprites\\spr_auto_construct\\spr_auto_construct.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "da2e3cac-2ebf-4b05-aa01-6a58e2ad6d4d",
+            "Value": {
+                "id": "1f844c96-4436-4aab-b1e6-8b3dd8e51c91",
+                "resourcePath": "scripts\\scr_end_path_action\\scr_end_path_action.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -5822,6 +5854,9 @@
         "6316676a-37ed-44f4-8698-8356d27e955d",
         "aa03ec7a-5a45-403e-8459-775a4f9fde9d",
         "75d5137d-c934-4346-92c7-ac92acffeaf1",
+        "b5556e2c-efbf-421b-88a2-0246311768a9",
+        "da2e3cac-2ebf-4b05-aa01-6a58e2ad6d4d",
+        "a3f54bc0-e1d8-4a1d-9172-139e942bd72e",
         "f9176c13-a1a0-4ef9-8723-411db0c23549",
         "986c676f-d487-4015-8f81-d2c6d7683ae9",
         "4137783b-8ea9-4c2f-a747-31dc65a21735",

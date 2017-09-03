@@ -2,6 +2,7 @@
 var arg_astronaut = argument0;
 
 var constr_queue = scr_get_construction_queue(arg_astronaut);
+if(constr_queue == noone) exit;
 
 var construction_count = ds_list_size(constr_queue);
 for(var n = 0; n < construction_count; n++)

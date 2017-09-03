@@ -119,16 +119,7 @@ else
 	image_index = 0;
 	
 	// Update whatever astronaut is doing.
-	// constructing
-	if(current_action = astronaut_action.constructing)
-	{
-		var completion = construction[? construction_completion] + 100/(30*construction[? construction_time]);
-		ds_map_replace(construction, construction_completion, completion);
-		if(construction[? construction_completion] >= 100)
-		{
-			scr_build_complete(construction);
-		}
-	}
+	scr_update_action(id);
 }
 
 // Update from path
@@ -147,30 +138,7 @@ else
 		image_index = 0;
 		path_end();
 		
-		if(assigned_object != noone) // there is a task to perform at the end of the path.
-		{
-			scr_perform(assigned_object);
-		}
-		else
-		{
-			switch(current_action)
-			{
-				// If astronaut was moving to construction...
-				case astronaut_action.moving_to_construction:
-					current_action = astronaut_action.constructing;
-					break;
-				case astronaut_action.delivering_mdu:
-					scr_deliver_mdu(id, construction);
-					if(scr_construction_is_ready(construction))
-					{
-						scr_pick_up_construction(id, construction, astronaut_action.constructing)
-					}
-					break;
-				case astronaut_action.moving_by_command:
-					current_action = astronaut_action.idle;
-					break;
-			}
-		}
+		scr_end_path_action(id);
 	}
 	else
 	{
