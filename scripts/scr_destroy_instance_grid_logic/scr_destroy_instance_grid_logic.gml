@@ -1,6 +1,7 @@
 /// @param instance
 var arg_instance = argument0;
-
+debug_instance_inherits(arg_instance, obj_constructable);
+debug_type(arg_instance.grid_props_map, macro_type_map);
 scr_trace("destroy instance grid logic");
 
 // Iterate over all grids this component is connected to
@@ -42,4 +43,4 @@ for(var grid_type = 0; grid_type < macro_grid_type_count; grid_type++)
 		ds_map_replace(arg_instance.grid_props_map, grid_type, 0); // free memory (hopefully)
 	}
 }
-ds_map_destroy(grid_props_map);
+ds_map_destroy(arg_instance.grid_props_map);

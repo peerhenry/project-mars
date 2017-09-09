@@ -5,13 +5,11 @@ if(!global.construction_is_valid) scr_alert_player("Invalid construction.");
 if(!global.can_pay_for_construction) scr_alert_player("Insufficient building materials.");
 if(!can_construct) return;
 
-// read from the build stack
-var build_stack = global.ghost_stack;
-var cell_count = ds_stack_size(build_stack);
+// read from the ghost stack
+var ghost_stack = global.ghost_stack;
+var cell_count = ds_stack_size(ghost_stack);
 var new_construction;
 var construction_cell_array;
-var build_time = 2; // minimum construction time is 2 seconds
-var build_time_per_cost = global.build_time_per_cost;
 var prerequisite = noone;
 
 var new_instances = ds_list_create();
@@ -25,7 +23,7 @@ var mdu_count = 0;
 for(var n = 0; n < cell_count; n++)
 {
 	// 1. read next cell from stack
-	var next_build_cell = ds_stack_pop(build_stack);
+	var next_build_cell = ds_stack_pop(ghost_stack);
 	var cell_i = next_build_cell[build_cell_i];
 	var cell_j = next_build_cell[build_cell_j];
 	var add_layer = next_build_cell[build_cell_layer];
@@ -42,7 +40,6 @@ for(var n = 0; n < cell_count; n++)
 	
 	// pay
 	global.resource_amount_metal -= cost;
-	build_time += cost*build_time_per_cost;
 	
 	// update bb
 	var target_x = scr_gi_to_rc(cell_i);
@@ -98,43 +95,24 @@ for(var n = 0; n < cell_count; n++)
 		}
 	}
 	
-	// 3. create construction cell
+	// create construction cell
 	var new_construction_cell = scr_create_construction_cell(cell_i, cell_j, add_layer, map_buffer_action, new_instance, object_to_remove);
 	var index = (cell_count - 1 - n);
 	construction_cell_array[index] = new_construction_cell;
 }
 
+// Create construction and register in queue
 if(cell_count > 0)
 {
-	// 5. set construction props & add to construction queue
-	var new_construction = ds_map_create();
-	var initial_state = construction_state.not_ready;
-	if(mdu_count == 0) initial_state = construction_state.ready;
-	ds_map_add(new_construction, construction_completion, 0);
-	ds_map_add(new_construction, construction_build_state, initial_state);
-	ds_map_add(new_construction, construction_build_type, global.construct);
-	ds_map_add(new_construction, construction_cells, construction_cell_array);
-	ds_map_add(new_construction, construction_astronaut, noone);
-	ds_map_add(new_construction, construction_time, build_time);
-	ds_map_add(new_construction, construction_prerequisite, prerequisite);
-	ds_map_add(new_construction, construction_bb_bottom, bottom);
-	ds_map_add(new_construction, construction_bb_right, right);
-	ds_map_add(new_construction, construction_bb_left, left);
-	ds_map_add(new_construction, construction_bb_top, top);
-	ds_map_add(new_construction, construction_required_mdu_count, mdu_count);
-	ds_map_add(new_construction, construction_required_mdu_remaining, mdu_count);
-	ds_map_add(new_construction, construction_mdu_deliveries, 0);
-	ds_map_add(new_construction, construction_mdu_piles, ds_list_create());
-	
-	ds_list_add(global.construction_queue, new_construction);
+	var new_construction = scr_new_construction(mdu_count, construction_cell_array, prerequisite, right, top, left, bottom, macro_player);	
+	scr_register_new_construction(new_construction);
 	scr_recalculate_paths();
+	// Set construction in all new instances
+	for(var n = 0; n < ds_list_size(new_instances); n++)
+	{
+		var next_instance = ds_list_find_value(new_instances, n);
+		next_instance.construction_instance = new_construction;
+	}
 }
 
-// 6. set construction in all new instances
-var last_instance = noone;
-for(var n = 0; n < ds_list_size(new_instances); n++)
-{
-	var next_instance = ds_list_find_value(new_instances, n);
-	next_instance.construction_instance = new_construction;
-}
 ds_list_destroy(new_instances);

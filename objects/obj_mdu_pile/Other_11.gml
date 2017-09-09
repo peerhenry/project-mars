@@ -1,4 +1,5 @@
 /// @description Interact with assigned astronaut
+scr_trace("MDU pile interact event");
 
 // either dump a module here or astronaut takes one.
 var astro_inv = assigned_astronaut.inventory;

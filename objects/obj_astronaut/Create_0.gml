@@ -49,7 +49,7 @@ scr_inventory_insert(inventory, macro_inventory_pistol)
 // 4. task
 assigned_object = noone;
 current_action = astronaut_action.idle;
-construction = 0;
+construction = noone;
 
 // 5. combat
 target = noone;			// thing to pursue

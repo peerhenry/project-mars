@@ -1,11 +1,17 @@
 init_globals();
-scr_trace("[TEST] Running tests...");
+test_message("Running tests...");
 
-var all_passed = true;
+var trace_was_enabled = global.enable_trace;
+global.enable_trace = false;
+global.tests_passed = true;
 
-if(!test_add_to_grid_logic_map()) all_passed = false;
-if(!test_add_to_grid_tile_map()) all_passed = false;
-if(!test_suite_drill()) all_passed = false;
-if(!test_suite_grid()) all_passed = false;
+test_add_to_grid_logic_map();
+test_add_to_grid_tile_map();
+test_suite_drill();
+test_suite_grid();
+test_suite_get_owner();
+test_suite_construction();
+test_suite_pump();
 
-return test_show_result("All tests ", all_passed);
+global.enable_trace = trace_was_enabled;
+return global.tests_passed;

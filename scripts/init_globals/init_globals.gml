@@ -14,20 +14,14 @@ ini_open(macro_settings_file);
 global.regeneration_speed = ini_read_real("gameplay", "regeneration_speed", 0.01);
 global.energy_depletion = ini_read_real("gameplay", "energy_depletion", 0.01); // how fast is idle astronaut losing energy PP/frame
 
-#region OXYGEN
-
+// -- OXYGEN
 // percentage of oxygen of 1 tile being drained by an open hatch per step.
 global.gate_drainage_speed = ini_read_real("oxygen", "gate_drainage_speed", 25);
-
 global.suit_o2_depletion_speed = ini_read_real("oxygen", "suit_depletion_speed", 0.01);
-
 // how fast is health drained from suffocation: HP/step
 global.suffocation_speed = ini_read_real("oxygen", "suffocation_speed", 0.5);
-
  // how fast is suit oxygen replenishing in suit closet PP/step
 global.suit_closet_replenishment = ini_read_real("oxygen", "suit_closet_replenishment", 0.2);
-
-#endregion
 
 // -- OXYGEN RENDERING
 global.oxygen_empty_level = ini_read_real("oxygen_graphics", "red_stripes_percentage", 1); // if oxygen_level falls below this number, red stripes are drawn.
@@ -40,16 +34,30 @@ global.projectile_damage = ini_read_real("shooting", "projectile_damage", 10);
 var shooting_range = ini_read_real("shooting", "astronaut_shooting_range", 10);
 global.shooting_range_squared = shooting_range*shooting_range;
 
+// -- GRIDS --
+global.sensor_energy_consumption = ini_read_real("grids", "sensor_energy_consumption", 1);
+global.drill_energy_consumption = ini_read_real("grids", "drill_energy_consumption", 5);
+global.pump_energy_consumption = ini_read_real("grids", "pump_energy_consumption", 2);
+global.pump_water_production = ini_read_real("grids", "pump_water_production", 20);
+global.electrolyser_energy_consumption = ini_read_real("grids", "electrolyser_energy_consumption", 1);
+global.hydroponics_water_consumption = ini_read_real("grids", "hydroponics_water_consumption", 1);
+global.solar_panel_energy_production = ini_read_real("grids", "solar_panel_energy_production", 2);
+
 ini_close();
 
-// selected handle for construction
-global.build_time_per_cost = 0.01; // one second for each 100 resource cost
+// seconds
+global.build_time_sec_minimum = 2;
+global.build_time_sec_per_mdu = 1;
 
 // # Gameplay stuff
 global.oxygen_bar_color = make_color_rgb(55, 55, 255);
 
 global.resource_amount_metal = 200000;
 global.default_resource_amount = 10000;
+
+// ownership
+global.ownership_behavior = macro_ownership_default;
+global.default_owner = macro_player;
 
 // -- Runtime vars --
 

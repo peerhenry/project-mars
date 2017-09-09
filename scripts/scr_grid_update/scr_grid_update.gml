@@ -1,4 +1,4 @@
-/// @description does not change storage levels
+/// @description Calculate grid outputs, does not change storage levels
 /// @param grid
 var arg_grid = argument0;
 

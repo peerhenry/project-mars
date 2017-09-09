@@ -18,6 +18,7 @@ enum astronaut_action // these are assigned to astronaut objects
 	idle,
 	moving_by_command,
 	moving_to_construction,
+	fetching_mdu,
 	delivering_mdu,
 	move_to_attack,
 	constructing,

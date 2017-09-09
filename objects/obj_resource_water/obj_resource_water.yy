@@ -4,16 +4,7 @@
     "mvc": "1.0",
     "name": "obj_resource_water",
     "eventList": [
-        {
-            "id": "187d89ea-1862-4913-a5de-4688dbdf5111",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "1e9a59b9-a2d6-4b5c-8cb7-68e700aaefaf"
-        }
+        
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "parentObjectId": "8819358e-f213-424b-bef3-c2f6d73ba65b",

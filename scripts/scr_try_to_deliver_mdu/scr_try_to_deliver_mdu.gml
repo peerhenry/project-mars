@@ -2,6 +2,7 @@
 /// @param construction
 var arg_astronaut = argument0;
 var arg_construction = argument1;
+// var arg_target = argument2;
 
 if(scr_astronaut_is_next_to_construction(arg_astronaut, arg_construction))
 {

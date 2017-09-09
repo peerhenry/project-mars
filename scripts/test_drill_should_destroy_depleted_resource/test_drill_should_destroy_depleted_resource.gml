@@ -1,4 +1,4 @@
-scr_trace("test_drill_should_destroy_depleted_resource");
+test_init(test_drill_should_destroy_depleted_resource);
 
 // Arrange
 var metal = instance_create_depth(32, 32, 0, obj_resource_metal);
@@ -19,9 +19,12 @@ var res_is_gone = !instance_exists(drill.resource_instance);
 instance_destroy(drill);
 
 // Assert
-if(!instance_exists(metal) && res_is_gone) return true
-else{
-	show_debug_message("[TEST] failed. Expected object metal to not exist.");
+assert_false(instance_exists(metal), "instance_exists(metal)");
+assert_true(res_is_gone, "res_is_gone");
+
+if(instance_exists(metal))
+{
 	instance_destroy(metal);
-	return false;
 }
+
+test_result();

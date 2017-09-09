@@ -127,26 +127,16 @@ if(path_position > 0 && path_position < 1)
 {
 	if(!is_walking) is_walking = true;
 }
-else
+else if(path_position == 1)
 {
-	if(is_walking && path_position >= 1) // path end reached.
-	{
-		prev_x = x; // used for sprite orientation
-		prev_y = y;
-		is_walking = false;
-		image_speed = 0;
-		image_index = 0;
-		path_end();
-		
-		scr_end_path_action(id);
-	}
-	else
-	{
-		if(assigned_object != noone) // astronaut is adjacent to assigned task
-		{
-			scr_perform(assigned_object);
-		}
-	}
+	prev_x = x; // used for sprite orientation
+	prev_y = y;
+	is_walking = false;
+	image_speed = 0;
+	image_index = 0;
+	path_end();
+	scr_end_path_action(id);
+	// scr_perform(assigned_object);
 }
 
 // Update health and oxygen.

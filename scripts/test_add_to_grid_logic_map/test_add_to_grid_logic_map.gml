@@ -1,4 +1,4 @@
-scr_trace("Running test_add_to_grid_logic_map...");
+test_init(test_add_to_grid_logic_map);
 
 // Arrange
 var grid = instance_create_depth(0, 0, 0, obj_grid);
@@ -11,12 +11,10 @@ scr_add_to_grid_logic_map(grid, constr);
 // Assert
 var role = scr_get_grid_prop(constr, grid.grid_type, macro_grid_prop_role);
 var list_for_role = grid.logic_map[? role];
-var success = assert_list_contains(list_for_role, constr);
-
 assert_list_contains(list_for_role, constr);
 
 // Cleanup
 instance_destroy(constr);
 instance_destroy(grid);
 
-return test_show_result(test_add_to_grid_logic_map, success);
+test_result();

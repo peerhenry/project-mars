@@ -77,4 +77,6 @@ with(arg_grid)
 	if(!failed) show_debug_message("Grid test passed.");
 }
 
-return !failed;
+if(failed){
+	global.tests_passed = false;
+}

@@ -122,3 +122,4 @@
 #macro construction_required_mdu_remaining 12
 #macro construction_mdu_deliveries 13
 #macro construction_mdu_piles 14
+#macro construction_owner 15

@@ -1,5 +1,6 @@
 /// @arg astronaut
 debug_instance_inherits(argument0, obj_astronaut);
+scr_trace("Path end action!");
 var arg_astronaut = argument0;
 
 with(arg_astronaut)
@@ -15,6 +16,9 @@ with(arg_astronaut)
 			// If astronaut was moving to construction...
 			case astronaut_action.moving_to_construction:
 				current_action = astronaut_action.constructing;
+				break;
+			case astronaut_action.fetching_mdu:
+				
 				break;
 			case astronaut_action.delivering_mdu:
 				scr_deliver_mdu(id, construction);

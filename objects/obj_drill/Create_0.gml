@@ -13,7 +13,7 @@ has_resource = resource_instance != noone;
 if(has_resource && resource_instance.object_index == obj_resource_metal) alarm_set(macro_alarm_mine_metal, 30); // mine event
 
 // electric grid
-scr_set_new_grid_props(id, macro_grid_electric, macro_grid_role_consumer, 5);
+scr_set_new_grid_props(id, macro_grid_electric, macro_grid_role_consumer, global.drill_energy_consumption);
 scr_connect_to_cables(id);
 
 scr_drill_pump_connection(id);

@@ -8,6 +8,6 @@ with(new_grid)
 	grid_type = arg_grid_type;
 }
 
-show_debug_message("NEW GRID CREATED: " + string(new_grid));
+scr_trace("New grid created: " + string(new_grid));
 
 return new_grid;

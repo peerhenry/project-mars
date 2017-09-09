@@ -1,0 +1,22 @@
+test_init(test_pickup_construction);
+
+init_construction_enums();
+
+// arrange
+var constr = scr_create_dummy_construction();
+var astronaut = instance_create_depth(0,0,0,obj_astronaut);
+var expect_action = astronaut_action.constructing;
+
+// act
+scr_pick_up_construction(astronaut, constr, expect_action);
+
+// assert
+assert_equal(constr, astronaut.construction, "construction");
+assert_equal(expect_action, astronaut.current_action, "current_action");
+assert_equal(construction_state.picked_up, constr[? construction_build_state], "construction state");
+
+// cleanup
+scr_cancel_construction(constr);
+
+// return result
+test_result();

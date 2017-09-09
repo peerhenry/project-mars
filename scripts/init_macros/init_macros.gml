@@ -10,9 +10,17 @@
 #macro macro_base_layer "base"
 #macro macro_base_tile_layer "base_low"
 
-// # construction owners
+// owners
 #macro macro_player 0
 #macro macro_enemy 1
+#macro macro_china 2
+#macro macro_nau 3 // North american union
+#macro macro_eu 4
+#macro macro_japan 5
+
+// ownership behavior
+#macro macro_ownership_default 0
+#macro macro_ownership_map_quarters 1
 
 // used for adjacency numbers
 #macro east_number 1

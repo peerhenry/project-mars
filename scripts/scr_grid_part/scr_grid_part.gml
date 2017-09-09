@@ -117,11 +117,9 @@ if(visited_size != original_size)
 	scr_grid_part(new_grid_from_remainder);
 	
 	// destroy original grid
-	show_debug_message("Destroying grid " + string(arg_grid)); // DEBUG
 	instance_destroy(arg_grid);
 	
 	// Check if new grid is valid
-	show_debug_message("Grid was parted");
 	debug_grid(new_grid);
 }
 else // grid was not parted; it's still connected
@@ -137,7 +135,6 @@ else // grid was not parted; it's still connected
 	ds_list_destroy(remainder_key_list);
 	
 	// check if grid is still valid
-	show_debug_message("Grid was not parted");
 	debug_grid(arg_grid);
 }
 

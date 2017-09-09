@@ -14,7 +14,6 @@ if(!arg_assignable.is_assigned)
 	var ass_j = scr_rc_to_gi(arg_assignable.y);
 	var astro_i = scr_rc_to_gi(arg_astronaut.x);
 	var astro_j = scr_rc_to_gi(arg_astronaut.y);
-	var needs_to_navigate = true;
 		
 	var already_adjacent = (astro_i == ass_i && abs(astro_j - ass_j) == 1)
 		|| (astro_j == ass_j && abs(astro_i - ass_i) == 1);
@@ -88,20 +87,13 @@ if(!arg_assignable.is_assigned)
 		}
 		
 		var n = 0;
-		while(!can_assign)
+		while(!can_assign && n<4)
 		{
 			var dx = adj_arr_dx[n];
 			var dy = adj_arr_dy[n];
 			if(free_spots[n]) can_assign = scr_navigate_once(arg_astronaut, arg_assignable.x + dx, arg_assignable.y + dy);
 			n++;
 		}
-		
-		/*
-		if(try_west) can_assign = scr_navigate_once(arg_astronaut, arg_assignable.x-32, arg_assignable.y);
-		if(!can_assign && try_east) can_assign = scr_navigate_once(arg_astronaut, arg_assignable.x+32, arg_assignable.y);
-		if(!can_assign && try_north) can_assign = scr_navigate_once(arg_astronaut, arg_assignable.x, arg_assignable.y-32);
-		if(!can_assign && try_south) can_assign = scr_navigate_once(arg_astronaut, arg_assignable.x, arg_assignable.y+32);
-		*/
 		
 		with(obj_astronaut)
 		{

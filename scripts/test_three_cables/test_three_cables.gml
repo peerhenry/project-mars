@@ -1,7 +1,5 @@
 /// @description creates three cables and destroys middle one first
-test_notify(test_three_cables);
-
-var pass = true;
+test_init(test_three_cables);
 
 // required globabls for grid_part
 global.horizontal_cells = 1000;
@@ -27,11 +25,9 @@ with(obj_grid){
 	grid_count++;
 	debug_grid(id);
 }
-if(grid_count != 1) pass = false;
+assert_equal(1, grid_count, "grid count");
 
-show_debug_message("[TEST_THREE_CABLES] now destroying first instance...");
 instance_destroy(cables[1]);
-show_debug_message("[TEST_THREE_CABLES] first instance destroyed");
 
 grid_count = 0;
 with(obj_grid){
@@ -39,11 +35,10 @@ with(obj_grid){
 	debug_grid(id);
 }
 if(grid_count != 2) pass = false;
+assert_equal(2, grid_count, "grid count");
 
 instance_destroy(cables[0]);
-show_debug_message("[TEST_THREE_CABLES] second instance destroyed");
 instance_destroy(cables[2]);
-show_debug_message("[TEST_THREE_CABLES] third instance destroyed");
 
 cables = 0;
 
@@ -51,6 +46,6 @@ grid_count = 0;
 with(obj_grid){
 	grid_count++;
 }
-if(grid_count != 0) pass = false;
+assert_equal(0, grid_count, "grid count");
 
-return test_show_result(test_three_cables, pass);
+return test_result();

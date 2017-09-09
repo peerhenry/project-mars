@@ -1,12 +1,9 @@
-test_notify(test_cables_create_finalize_destroy);
+test_init(test_cables_create_finalize_destroy);
 
-var pass = true;
-
+// Arrange
 // required globabls for grid_part
 global.horizontal_cells = 1000;
 global.vertical_cells = 1000;
-
-// Arrange
 var cable1 = instance_create_depth(32*1, 32, 0, obj_cable);
 var cable2 = instance_create_depth(32*2, 32, 0, obj_cable);
 var cable3 = instance_create_depth(32*3, 32, 0, obj_cable);
@@ -20,13 +17,13 @@ repeat(3){
 	counter++;
 }
 
+// Assert
 var grid_count = 0;
 with(obj_grid){
 	grid_count++;
 }
-if(grid_count != 1) pass = false;
+assert_equal(1, grid_count, "grid count");
 
-// Cleanup
 counter = 0;
 repeat(3){
 	var next_cable = cables[counter];
@@ -41,6 +38,6 @@ grid_count = 0;
 with(obj_grid){
 	grid_count++;
 }
-if(grid_count != 0) pass = false;
+assert_equal(0, grid_count, "grid count");
 
-return test_show_result("test_cables_create_finalize_destroy", pass);
+test_result();

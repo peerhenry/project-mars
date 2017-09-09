@@ -1,0 +1,1 @@
+assert_equal(true, argument0, argument1);

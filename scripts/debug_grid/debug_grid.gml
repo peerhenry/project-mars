@@ -2,7 +2,7 @@
 /// @param grid
 var arg_grid = argument0;
 
-show_debug_message("DEBUGGING GRID " + string(arg_grid) + "...");
+//show_debug_message("DEBUGGING GRID " + string(arg_grid) + "...");
 var failed = false;
 
 if(arg_grid.object_index != obj_grid)
@@ -50,5 +50,5 @@ with(arg_grid)
 	var test4 = ds_list_size(tile_key_list) == ds_map_size(tile_map);
 	if(!test4) show_error("Invalid grid! component_key_list had different length from tile_map", true);
 	
-	if(!failed && test1 && test2 && test3 && test4) show_debug_message("DEBUG GRID " + string(arg_grid) + " PASSED.");
+	//if(!failed && test1 && test2 && test3 && test4) show_debug_message("DEBUG GRID " + string(arg_grid) + " PASSED.");
 }

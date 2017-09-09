@@ -47,7 +47,7 @@ for(var n = 0; n < count; n++)
 			next_y = bottom + 16;
 			break;
 	}
-	if(scr_navigation_is_possible(arg_astronaut, next_x, next_y)) return [next_x, next_y];	
+	if(scr_can_navigate(arg_astronaut, next_x, next_y)) return [next_x, next_y];	
 }
 
 return noone;

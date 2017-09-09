@@ -4,16 +4,7 @@
     "mvc": "1.0",
     "name": "obj_resource_metal",
     "eventList": [
-        {
-            "id": "6ea1333b-2de8-4a95-b5ca-260341aa3529",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "e1b0be7a-7ad2-4f21-845b-cda5212ca717"
-        }
+        
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "parentObjectId": "8819358e-f213-424b-bef3-c2f6d73ba65b",
