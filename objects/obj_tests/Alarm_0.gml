@@ -1,7 +1,7 @@
-// run tests
+/// @description Run tests
 
 passed = scr_run_tests();
-is_done = true;
+done = true;
 if(passed)
 {
 	msg = "Tests passed";
@@ -12,3 +12,4 @@ else
 	msg = "Tests failed";
 	color = c_red;
 }
+alarm[1] = 5;

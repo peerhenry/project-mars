@@ -6,7 +6,7 @@ var expect_right = 124;
 var expect_top = 904;
 var expect_bottom = 2476;
 var expect_left = 1252;
-var expect_build_time = global.build_time_sec_minimum + expect_mdu_count*global.build_time_sec_per_mdu;
+var expect_build_time = scr_calculate_build_time(expect_mdu_count, 0);
 var expect_owner = macro_japan;
 global.construct = 8282;
 var expect_construction_type = global.construct;
@@ -21,7 +21,8 @@ var constr = scr_new_construction(
 	expect_top,
 	expect_left,
 	expect_bottom,
-	expect_owner
+	expect_owner,
+	0
 );
 
 // assert

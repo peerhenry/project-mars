@@ -19,6 +19,8 @@ var right = 0;
 var bottom = 0;
 var top = 0;
 var mdu_count = 0;
+var total_required_metal = 0;
+var total_required_carbon = 0;
 
 for(var n = 0; n < cell_count; n++)
 {
@@ -30,16 +32,17 @@ for(var n = 0; n < cell_count; n++)
 	var object_to_add = next_build_cell[build_cell_object_to_add];
 	var object_to_remove = next_build_cell[build_cell_object_to_remove];
 	var map_buffer_action = next_build_cell[build_cell_map_buffer_action]; // obsolete
-	var cost = next_build_cell[build_cell_cost];
+	var metal_cost = next_build_cell[build_cell_cost];
 	var sprite = next_build_cell[build_cell_object_sprite];
 	var image = next_build_cell[build_cell_object_image];
 	var angle = next_build_cell[build_cell_object_angle];
 	var required_object = next_build_cell[build_cell_required_object];
 	
+	total_required_metal += metal_cost;
 	if(map_buffer_action == map_buffer_action.nothing) continue; // skip rest in loop scope this iteration
 	
 	// pay
-	global.resource_amount_metal -= cost;
+	global.resource_amount_metal -= metal_cost;
 	
 	// update bb
 	var target_x = scr_gi_to_rc(cell_i);
@@ -104,7 +107,7 @@ for(var n = 0; n < cell_count; n++)
 // Create construction and register in queue
 if(cell_count > 0)
 {
-	var new_construction = scr_new_construction(mdu_count, construction_cell_array, prerequisite, right, top, left, bottom, macro_player);	
+	var new_construction = scr_new_construction(mdu_count, construction_cell_array, prerequisite, right, top, left, bottom, macro_player, total_required_metal);	
 	scr_register_new_construction(new_construction);
 	scr_recalculate_paths();
 	// Set construction in all new instances

@@ -19,10 +19,10 @@ for(var n = 0; n < array_length_1d(arg_data); n++){
 		if(!is_array(element)) show_error("Error: expected array, actual: " + string(typeof(element)), true);
 		break;
 		case macro_type_list:
-		if(!ds_exists(element, ds_type_list)) show_error("Error: expected list, actual: " + string(typeof(element)), true);
+		if(!ds_exists(element, ds_type_list)) show_error("Error: expected list did not exist: " + string(element), true);
 		break;
 		case macro_type_map:
-		if(!ds_exists(element, ds_type_map)) show_error("Error: expected map, actual: " + string(typeof(element)), true);
+		if(!ds_exists(element, ds_type_map)) show_error("Error: expected map did not exist: " + string(element), true);
 		break;
 	}
 }

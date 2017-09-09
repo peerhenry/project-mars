@@ -1,1 +1,0 @@
-scr_run_tests();

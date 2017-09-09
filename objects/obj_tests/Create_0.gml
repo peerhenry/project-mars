@@ -1,5 +1,7 @@
 msg = "Running tests.";
 color = c_yellow;
-is_done = false;
+done = false;
 passed = false;
 alarm[0] = 10;
+x = -500;
+global.failed_test_list = ds_list_create();

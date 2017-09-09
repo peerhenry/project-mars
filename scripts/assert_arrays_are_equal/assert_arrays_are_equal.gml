@@ -18,6 +18,6 @@ if(equal)
 
 if(!equal)
 {
-	global.tests_passed = false;
+	global.current_test_pass = false;
 	show_debug_message("[FAIL] Array assertion: expected: " + string(argument0) + " actual: " + string(argument1));
 }

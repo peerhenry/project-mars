@@ -14,11 +14,12 @@ if(target_is_shootable)
 	}
 }
 
-// Either stop moving and shoot, or move towards target
+// if astronaut has a shootable target, persue it.
 if(target_is_shootable)
 {
 	var dx = target.x - x;
 	var dy = target.y - y;
+	// Either stop moving and shoot, or move towards target
 	if((dx*dx + dy*dy) <= (global.shooting_range_squared*1024))
 	{
 		can_shoot = mp_linear_path(shoot_path, target.x, target.y, global.projectile_speed, false);
@@ -65,10 +66,8 @@ if(can_shoot && instance_exists(shootable))
 	var has_shot = scr_shoot(id, shootable);
 	if(has_shot)
 	{
-		if(current_action == astronaut_action.constructing)
-		{
-			construction[@construction_build_state] = construction_state.ready;
-		}
+		scr_trace("has shot");
+		scr_cancel_current_action(id);
 		current_action = astronaut_action.in_combat;
 	}
 }

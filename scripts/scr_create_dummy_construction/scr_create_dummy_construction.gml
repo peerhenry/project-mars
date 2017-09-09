@@ -6,5 +6,6 @@ return scr_new_construction(
 	0,
 	0,
 	0,
-	macro_player		// owner
+	macro_player,		// owner
+	0
 );

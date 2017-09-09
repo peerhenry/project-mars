@@ -13,8 +13,12 @@ var role = scr_get_grid_prop(constr, grid.grid_type, macro_grid_prop_role);
 var list_for_role = grid.logic_map[? role];
 assert_list_contains(list_for_role, constr);
 
+test_message("instance_count BEFORE cleanup... " + string(instance_count));
+
 // Cleanup
 instance_destroy(constr);
 instance_destroy(grid);
+
+test_message("instance_count AFTER cleanup... " + string(instance_count));
 
 test_result();

@@ -61,7 +61,7 @@ ds_list_delete(construction_queue, index);
 var astronaut = ds_map_find_value(arg_construction, construction_astronaut);
 if(astronaut != noone)
 {
-	scr_stop_construcion(astronaut);
+	scr_stop_construction(astronaut);
 }
 // arg_construction[@construction_astronaut] = noone; // astronaut assigned to perform the construction
 ds_map_replace(arg_construction, construction_astronaut, noone);

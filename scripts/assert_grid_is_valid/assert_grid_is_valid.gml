@@ -78,5 +78,5 @@ with(arg_grid)
 }
 
 if(failed){
-	global.tests_passed = false;
+		global.current_test_pass = false;
 }

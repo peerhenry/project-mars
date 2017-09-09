@@ -7,10 +7,11 @@
 // @arg left
 // @arg bottom
 // @arg owner
+// @arg required_metal
 
 debug_types( // argument2 is optional
-	[argument0, argument1, argument3, argument4, argument5, argument6, argument7], 
-	[macro_type_real, macro_type_array, macro_type_real, macro_type_real, macro_type_real, macro_type_real, macro_type_real]
+	[argument0, argument1, argument3, argument4, argument5, argument6, argument7, argument8], 
+	[macro_type_real, macro_type_array, macro_type_real, macro_type_real, macro_type_real, macro_type_real, macro_type_real, macro_type_real]
 );
 
 var arg_mdu_count = argument0;
@@ -21,11 +22,13 @@ var arg_top = argument4;
 var arg_left = argument5;
 var arg_bottom = argument6;
 var arg_owner = argument7;
+var arg_required_metal = argument8;
 
 var new_construction = ds_map_create();
 var initial_state = construction_state.not_ready;
 if(arg_mdu_count == 0) initial_state = construction_state.ready;
-var build_time = global.build_time_sec_minimum + arg_mdu_count*global.build_time_sec_per_mdu;
+//var build_time = global.build_time_sec_minimum + arg_mdu_count*global.build_time_sec_per_mdu + arg_required_metal*0.01 + 100;
+var build_time = scr_calculate_build_time(arg_mdu_count, arg_required_metal);
 ds_map_add(new_construction, construction_completion, 0);
 ds_map_add(new_construction, construction_build_state, initial_state);
 ds_map_add(new_construction, construction_build_type, global.construct);

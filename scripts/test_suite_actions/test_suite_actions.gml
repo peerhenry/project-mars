@@ -1,0 +1,1 @@
+test_cancel_current_action();

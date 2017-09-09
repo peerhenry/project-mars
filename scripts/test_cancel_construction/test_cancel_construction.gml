@@ -1,7 +1,5 @@
 test_init(test_cancel_construction);
 
-init_construction_globals();
-
 // arrange
 var constr = scr_new_construction(
 	0,		// mdu count
@@ -11,7 +9,8 @@ var constr = scr_new_construction(
 	0,
 	0,
 	0,
-	macro_player		// owner
+	macro_player,		// owner
+	0
 );
 var astronaut = instance_create_depth(0,0,0,obj_astronaut);
 scr_pick_up_construction(astronaut, constr, astronaut_action.constructing);
@@ -25,5 +24,7 @@ assert_false(ds_exists(constr, ds_type_map), "ds_exists(constr, ds_type_map)");
 assert_false(ds_exists(pile_list, ds_type_list), "ds_exists(pile_list, ds_type_list)");
 assert_false(ds_exists(astronaut.construction, ds_type_map), "ds_exists(astronaut.construction, ds_type_map)");
 
-// return result
+// cleanup
+instance_destroy(astronaut);
+
 test_result();

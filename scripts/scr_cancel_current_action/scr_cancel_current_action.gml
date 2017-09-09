@@ -1,15 +1,29 @@
+/// @arg astronaut
 var arg_astronaut = argument0;
+debug_instance_inherits(arg_astronaut, obj_astronaut);
 
-switch(arg_astronaut.current_action)
+with(arg_astronaut)
 {
-	case astronaut_action.delivering_mdu:
-		var deliveries_decr = construction[? construction_mdu_deliveries] - 1;
-		ds_map_replace(construction, construction_mdu_deliveries, deliveries_decr);
-		break;
-	case astronaut_action.constructing:
-	case astronaut_action.moving_to_construction:
-		ds_map_replace(construction, construction_build_state, construction_state.ready);
-		break;
+	switch(current_action)
+	{
+		case astronaut_action.delivering_mdu:
+			var deliveries_decr = construction[? construction_mdu_deliveries] - 1;
+			ds_map_replace(construction, construction_mdu_deliveries, deliveries_decr);
+			break;
+		case astronaut_action.constructing:
+		case astronaut_action.moving_to_construction:
+			ds_map_replace(construction, construction_build_state, construction_state.ready);
+			construction = noone;
+			break;
+	}
+	
+	if(assigned_object != noone){
+		scr_unassign_task(assigned_object);
+	}
+	
+	current_action = astronaut_action.idle;
+	
+	if(is_walking){
+		path_end();
+	}
 }
-
-arg_astronaut.current_action = astronaut_action.idle;
