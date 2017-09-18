@@ -44,7 +44,7 @@ oxygen_consumption = 1; // absolute value
 
 // inventory
 inventory = ds_grid_create(3,3);
-scr_inventory_insert(inventory, macro_inventory_pistol)
+scr_inventory_insert(inventory, macro_inventory_pistol);
 
 // 4. task
 assigned_object = noone;

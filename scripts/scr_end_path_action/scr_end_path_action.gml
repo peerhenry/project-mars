@@ -17,7 +17,7 @@ with(arg_astronaut)
 			case astronaut_action.moving_to_construction:
 				current_action = astronaut_action.constructing;
 				break;
-			case astronaut_action.fetching_mdu:
+			case astronaut_action.fetching_mdu:	// it's handled in scr_perform(assigned_object)
 				
 				break;
 			case astronaut_action.delivering_mdu:
@@ -28,6 +28,12 @@ with(arg_astronaut)
 				}
 				break;
 			case astronaut_action.moving_by_command:
+				current_action = astronaut_action.idle;
+				break;
+			case astronaut_action.moving_to_shoot:
+				current_action = astronaut_action.idle;
+				break;
+			default:
 				current_action = astronaut_action.idle;
 				break;
 		}

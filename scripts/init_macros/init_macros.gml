@@ -33,6 +33,15 @@
 #macro macro_west_number 4
 #macro macro_south_number 8
 
+#macro macro_east 0
+#macro macro_north_east 1
+#macro macro_north 2
+#macro macro_north_west 3
+#macro macro_west 4
+#macro macro_south_west 5
+#macro macro_south 6
+#macro macro_south_east 7
+
 // # custom events
 
 #macro macro_event_grid_notify 0	// A grid (water/electric/etc.) updates

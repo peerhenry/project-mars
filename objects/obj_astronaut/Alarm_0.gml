@@ -1,41 +1,33 @@
 /// @description Shoot
 
+if(is_walking)
+{
+	alarm[0] = 30*global.time_to_shoot + round(random_range(-5,5));
+	exit;
+}
+
 var can_shoot = false;
 var shootable = target;
 
 // Determine if target exists and has not yet been killed/destroyed
-var target_is_shootable = instance_exists(target);
-if(target_is_shootable)
+var target_is_shootable = false;
+var target_exists = instance_exists(target);
+if(target_exists)
 {
 	var target_is_construction = object_is_ancestor(target.object_index, obj_constructable);
 	if(target_is_construction)
 	{
 		target_is_shootable = target.damage < 100;
 	}
+	else {
+		target_is_shootable = true;
+	}
 }
 
 // if astronaut has a shootable target, persue it.
 if(target_is_shootable)
 {
-	var dx = target.x - x;
-	var dy = target.y - y;
-	// Either stop moving and shoot, or move towards target
-	if((dx*dx + dy*dy) <= (global.shooting_range_squared*1024))
-	{
-		can_shoot = mp_linear_path(shoot_path, target.x, target.y, global.projectile_speed, false);
-		if(is_walking)
-		{
-			if(can_shoot)
-			{
-				scr_stop_moving(id);
-			}
-			else exit; // keep moving
-		}
-	}
-	else if(!is_walking)
-	{
-		scr_navigate(id, target.x, target.y);
-	}
+	scr_attack(id, target);
 }
 else	// See if there is an enemy around to shoot
 {
@@ -47,9 +39,7 @@ else	// See if there is an enemy around to shoot
 		}
 		if(instance_exists(auto_target))
 		{
-			var dx = auto_target.x - x;
-			var dy = auto_target.y - y;
-			if((dx*dx + dy*dy) <= (global.shooting_range_squared*1024))
+			if(scr_target_is_within_range(id, auto_target))
 			{
 				shootable = auto_target;
 				can_shoot = mp_linear_path(shoot_path, auto_target.x, auto_target.y, global.projectile_speed, false);

@@ -14,6 +14,6 @@ if(done && !passed)
 	for(var n = 0 ; n < fail_count; n++)
 	{
 		var next_test = ds_list_find_value(failed_tests, n);
-		draw_text(80, 80+28*(1+n), next_test);
+		draw_text(80, 80+32*(1+n), next_test);
 	}
 }

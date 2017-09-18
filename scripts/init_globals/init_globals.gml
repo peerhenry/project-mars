@@ -32,6 +32,7 @@ global.time_to_shoot = ini_read_real("shooting", "time_to_shoot", 1);
 global.projectile_speed  = ini_read_real("shooting", "projectile_speed", 30);
 global.projectile_damage = ini_read_real("shooting", "projectile_damage", 10);
 var shooting_range = ini_read_real("shooting", "astronaut_shooting_range", 10);
+global.shooting_range = shooting_range;
 global.shooting_range_squared = shooting_range*shooting_range;
 
 // -- GRIDS --

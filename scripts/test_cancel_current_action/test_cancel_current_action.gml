@@ -12,6 +12,7 @@ scr_cancel_current_action(astro);
 // assert
 assert_equal(astronaut_action.idle, astro.current_action, "current_action");
 assert_equal(noone, astro.construction, "construction");
+assert_equal(noone, astro.assigned_object, "assigned_object");
 
 // cleanup
 scr_destroy_construction(constr);

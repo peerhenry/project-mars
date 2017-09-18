@@ -12,8 +12,8 @@ var start_y = arg_astronaut.y;
 
 var end_i = (arg_end_x - 16) div 32;
 var end_j = (arg_end_y - 16) div 32;
-var snap_end_x = (end_i + 1)*32;
-var snap_end_y = (end_j + 1)*32;
+var snap_end_x = scr_gi_to_rc(end_i);
+var snap_end_y = scr_gi_to_rc(end_j);
 var counter = 0;
 var navigation_grid = scr_get_nav_grid();
 
