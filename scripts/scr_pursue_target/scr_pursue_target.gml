@@ -11,35 +11,40 @@ with(arg_attacker)
 	var dy = target.y - y;
 
 	var distance = sqrt(dx*dx + dy*dy);
-	var shooting_range = scr_get_shooting_range(arg_attacker);
-	if(distance < global.shooting_range) exit;
-
-	var fraction = (1 - global.shooting_range/distance);
-	var in_range_x = dx*fraction;
-	var in_range_y = dy*fraction;
+	var shooting_range_pixels = scr_get_shooting_range(id)*32;
+	
+	// determine the fraction of current distance the attacker has to move to get into shooting range
+	var fraction = 1;
+	if(distance < shooting_range_pixels) fraction = 0;
+	else fraction = (1 - (shooting_range_pixels/distance));
+	
+	var in_range_dx = dx*fraction;
+	var in_range_dy = dy*fraction;
+	var in_range_x = x + in_range_dx;
+	var in_range_y = y + in_range_dy;
 	var dir = scr_get_approximate_direction(dx, dy);
 	var dest_ij = scr_get_adjacent_cell_in_direction(scr_rc_to_gi(in_range_x), scr_rc_to_gi(in_range_y), dir);
-	var dest_i = scr_decode_grid_coord_i(dest_ij);
-	var dest_j = scr_decode_grid_coord_j(dest_ij);
-	var dest_x = scr_gi_to_rc(dest_i);
-	var dest_y = scr_gi_to_rc(dest_j);
+	var end_i = scr_decode_grid_coord_i(dest_ij);
+	var end_j = scr_decode_grid_coord_j(dest_ij);
+	var end_x = scr_gi_to_rc(end_i);
+	var end_y = scr_gi_to_rc(end_j);
 
-	// try to navigate to that tile
-	var can_navigate_to_shoot = scr_navigate(id, dest_x, dest_y);
-	if(can_navigate_to_shoot)
+	var counter = 0;
+	while ( !can_pursue && counter < 50 ) // 50 is an arbitrary limit
 	{
-		current_action = astronaut_action.moving_to_shoot;
-		can_pursue = true;
-	}
-	else
-	{
-		// if not possible, navigate to target directly
-		var can_navigate_to_target = scr_navigate(id, target.x, target.y);
-		if(can_navigate_to_target)
+		end_i += scr_get_delta_i(counter);
+		end_j += scr_get_delta_j(counter);
+		var snap_end_x = (end_i + 1)*32;
+		var snap_end_y = (end_j + 1)*32;
+		var is_a_shooting_spot = scr_points_are_within_range(snap_end_x, snap_end_y, target.x, target.y, scr_get_shooting_range(id));
+		if(is_a_shooting_spot) is_a_shooting_spot = scr_can_shoot_unobstructed_from(id, snap_end_x, snap_end_y, target);
+		if(is_a_shooting_spot)
 		{
-			current_action = astronaut_action.moving_to_target;	
-			can_pursue = true;
+			can_pursue = scr_navigate_once(id, snap_end_x, snap_end_y);
+			if(can_pursue) current_action = astronaut_action.moving_to_shoot;
 		}
+	
+		counter++;
 	}
 }
 
