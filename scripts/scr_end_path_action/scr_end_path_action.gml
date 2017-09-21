@@ -1,7 +1,7 @@
 /// @arg astronaut
-debug_instance_inherits(argument0, obj_astronaut);
-scr_trace("Path end action!");
 var arg_astronaut = argument0;
+debug_instance_inherits(arg_astronaut, obj_astronaut);
+scr_trace("Path end action!");
 
 with(arg_astronaut)
 {
@@ -31,7 +31,7 @@ with(arg_astronaut)
 				current_action = astronaut_action.idle;
 				break;
 			case astronaut_action.moving_to_shoot:
-				current_action = astronaut_action.idle;
+				current_action = astronaut_action.in_combat;
 				break;
 			default:
 				current_action = astronaut_action.idle;

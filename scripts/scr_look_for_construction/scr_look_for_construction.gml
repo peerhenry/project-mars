@@ -1,9 +1,8 @@
 /// @param astronaut
 
-scr_trace("scr_look_for_construction");
-debug_instance_inherits(argument0, obj_astronaut);
-
+//scr_trace("scr_look_for_construction");
 var arg_astronaut = argument0;
+debug_instance_inherits(arg_astronaut, obj_astronaut);
 
 var done = false;
 var constr_queue = scr_get_construction_queue(arg_astronaut.owner);

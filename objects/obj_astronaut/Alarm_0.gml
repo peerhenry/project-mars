@@ -6,7 +6,7 @@ if(is_walking)
 	exit;
 }
 
-var can_shoot = false;
+var can_shoot = true;
 var shootable = target;
 
 // Determine if target exists and has not yet been killed/destroyed
@@ -28,6 +28,7 @@ if(target_exists)
 if(target_is_shootable)
 {
 	scr_attack(id, target);
+	can_shoot = scr_target_is_within_range(id, target);
 }
 else	// See if there is an enemy around to shoot
 {

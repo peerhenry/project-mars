@@ -53,17 +53,22 @@ if(keyboard_check_pressed(ord("L")))
 	//var cable = instance_position(mouse_x, mouse_y, obj_cable);
 	//if(cable > 0) show_debug_message("cable adjacency number: " + string(cable.adjacency_number));
 	
-	with(obj_grid)
-	{
-		if(grid_type == macro_grid_electric){
-			debug_show_grid(id);
-		}
-	}
+	//with(obj_grid)
+	//{
+	//	if(grid_type == macro_grid_electric){
+	//		debug_show_grid(id);
+	//	}
+	//}
 	
 	// scr_show_construction_queue();
 	// debug_show_oxygen_grid_room_counts()
 	// debug_show_astronaut_actions()
 	
+	with(obj_astronaut_playable){
+		show_debug_message("name: " + string(name));
+		show_debug_message("target: " + string(target));
+		show_debug_message("shoot_alarm: " + string(alarm[0]));
+	}
 }
 
 if(keyboard_check_pressed(ord("B")))
