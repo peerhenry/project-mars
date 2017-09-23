@@ -1,5 +1,8 @@
-/// @arg shooter
-/// @arg target
+/// @arg x1
+/// @arg y1
+/// @arg x2
+/// @arg y2
+/// @arg tile_range
 var arg_x1 = argument0;
 var arg_y1 = argument1;
 var arg_x2 = argument2;

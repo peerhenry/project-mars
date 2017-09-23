@@ -7,7 +7,7 @@ with(arg_astronaut)
 	{
 		if(!is_walking) is_walking = true;
 	}
-	else if(path_position == 1)
+	else if(is_walking && path_position == 1)
 	{
 		scr_stop_moving(id);
 		scr_end_path_action(id);

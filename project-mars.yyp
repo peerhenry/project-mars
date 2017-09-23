@@ -1143,6 +1143,14 @@
             }
         },
         {
+            "Key": "29d566a3-1423-4216-808b-8f54fd8e22fb",
+            "Value": {
+                "id": "5a0587ac-30f0-4113-b547-8755b6656f06",
+                "resourcePath": "scripts\\test_points_are_within_range\\test_points_are_within_range.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2a44f881-7356-4e79-b0f2-6334b94b9cec",
             "Value": {
                 "id": "85e5b478-6753-4333-a369-e16f1820b10c",
@@ -6676,6 +6684,7 @@
         "2968a890-ff9d-48ab-a4e9-5df2c943a3a9",
         "cfbda57f-a42b-41a8-b954-efb6926ee0c9",
         "822a441b-4f82-4576-ae64-922c5020cbd2",
+        "29d566a3-1423-4216-808b-8f54fd8e22fb",
         "a033452f-260c-4ff4-bdd9-4e3d75d4d45b",
         "8ad3b847-52a3-4a58-b820-625cec89b502",
         "ec86222b-5c64-4376-8e4b-af59b4690c0e",

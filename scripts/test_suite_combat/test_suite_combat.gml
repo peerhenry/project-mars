@@ -4,3 +4,4 @@ test_can_shoot_unobstructed();
 test_alarm_shoot();
 test_attack();
 test_pursue_target();
+test_points_are_within_range();
