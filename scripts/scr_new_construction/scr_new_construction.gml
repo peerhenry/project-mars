@@ -1,20 +1,19 @@
-
-// @arg mdu_count
-// @arg construction_cells
-// @arg prerequisite
-// @arg right
-// @arg top
-// @arg left
-// @arg bottom
-// @arg owner
-// @arg required_metal
+/// @arg mdu_count
+/// @arg construction_cells
+/// @arg prerequisite
+/// @arg right
+/// @arg top
+/// @arg left
+/// @arg bottom
+/// @arg owner
+/// @arg required_metal
 
 debug_types( // argument2 is optional
 	[argument0, argument1, argument3, argument4, argument5, argument6, argument7, argument8], 
 	[macro_type_real, macro_type_array, macro_type_real, macro_type_real, macro_type_real, macro_type_real, macro_type_real, macro_type_real]
 );
 
-var arg_mdu_count = argument0;
+var arg_mdu_count = ceil(argument0); // must be a whole number
 var arg_construction_cell_array = argument1;
 var arg_prerequisite = argument2;
 var arg_right = argument3;
