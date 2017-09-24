@@ -3,8 +3,6 @@ var arg_astronaut = argument0;
 
 with(arg_astronaut)
 {
-	var navgrid = scr_get_nav_grid();
-	mp_grid_add_cell(navgrid, occ_i, occ_j); // dirty fix for when astronaut walks across another astronaut
 	if(is_walking)
 	{
 		// must be a rectangle because otherwise room detection may be flawed.

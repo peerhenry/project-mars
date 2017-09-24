@@ -7,7 +7,6 @@ with(arg_astronaut)
 	switch(current_action)
 	{
 		case astronaut_action.constructing:
-			scr_trace("CONSTRUCTING!");
 			var completion = construction[? construction_completion] + 100/(30*construction[? construction_time]);
 			ds_map_replace(construction, construction_completion, completion);
 			if(construction[? construction_completion] >= 100)

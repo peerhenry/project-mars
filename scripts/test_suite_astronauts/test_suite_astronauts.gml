@@ -10,6 +10,7 @@ global.nav_grid = mp_grid_create(
 	cell_size, // cell width
 	cell_size);// cell height
 
+test_suite_step();
 test_suite_navigation();
 test_suite_actions();
 test_suite_combat();

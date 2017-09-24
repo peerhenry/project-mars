@@ -5,8 +5,6 @@ prev_x = x;
 prev_y = y;
 occ_i = (x - 16) div 32;
 occ_j = (y - 16) div 32;
-prev_i = occ_i;
-prev_j = occ_j;
 dest_i = occ_i;
 dest_j = occ_j;
 mp_grid_add_cell(scr_get_nav_grid(), occ_i, occ_j);

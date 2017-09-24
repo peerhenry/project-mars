@@ -91,7 +91,9 @@ if(arg_astronaut.current_action == astronaut_action.delivering_mdu)
 
 
 // DEBUG
+/*
 scr_alert_player("Transfered MDU to construction, remaining: " + string(remaining_mdus));
 show_debug_message("remaining_mdus" + string(remaining_mdus));
 show_debug_message("remaining required MDUs in map: " + string(ds_map_find_value(arg_construction, construction_required_mdu_remaining)));
 debug_show_construction(arg_construction);
+*/
