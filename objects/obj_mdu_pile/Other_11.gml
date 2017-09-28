@@ -26,4 +26,14 @@ else
 	}
 }
 
+var astro = assigned_astronaut;
+var action = astro.current_action;
 scr_unassign_task(id);
+
+with(astro)
+{
+	if(action == astronaut_action.fetching_mdu)
+	{
+		scr_deliver_mdu_after_fetch(astro);
+	}
+}

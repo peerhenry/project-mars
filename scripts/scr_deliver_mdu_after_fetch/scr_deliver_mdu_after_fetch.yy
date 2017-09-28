@@ -1,8 +1,8 @@
 {
-    "id": "fb88d106-dfba-4c0a-9317-9da3a9171dab",
+    "id": "90f31f1f-6c4d-4068-b75b-f6122b96370e",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_try_to_pick_up_construction",
+    "name": "scr_deliver_mdu_after_fetch",
     "IsCompatibility": false,
     "IsDnD": false
 }

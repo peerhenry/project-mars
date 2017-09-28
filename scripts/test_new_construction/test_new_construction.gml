@@ -40,7 +40,7 @@ assert_equal(0, constr[? construction_mdu_deliveries], "mdu deliveris");
 assert_equal(noone, constr[? construction_prerequisite], "prerequisite");
 assert_equal(noone, constr[? construction_astronaut], "");
 assert_equal(0, constr[? construction_completion], "completion");
-assert_equal(construction_state.not_ready, constr[? construction_build_state], "build_state");
+assert_equal(construction_state.awaiting_mdus, constr[? construction_build_state], "build_state");
 assert_equal(expect_construction_type, constr[? construction_build_type], "build_type");
 var list = constr[?construction_mdu_piles];
 debug_type(list, macro_type_list);

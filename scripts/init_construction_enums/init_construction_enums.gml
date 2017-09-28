@@ -63,8 +63,9 @@ enum map_buffer_action
 
 enum construction_state
 {
-	not_ready,		// not ready to be constructed.
-	ready,			// construction is ready to be picked up
-	picked_up,		// an astronaut picked up this construction task
+	not_ready,
+	awaiting_mdus,
+	ready,
+	picked_up,
 	done
 }

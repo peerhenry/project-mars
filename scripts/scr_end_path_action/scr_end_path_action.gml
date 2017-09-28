@@ -21,10 +21,10 @@ with(arg_astronaut)
 				
 				break;
 			case astronaut_action.delivering_mdu:
-				scr_deliver_mdu(id, construction);
+				scr_transfer_mdu(id, construction);
 				if(scr_construction_is_ready(construction))
 				{
-					scr_pick_up_construction(id, construction, astronaut_action.constructing)
+					scr_update_astro_and_construction(id, construction, astronaut_action.constructing);
 				}
 				break;
 			case astronaut_action.moving_by_command:

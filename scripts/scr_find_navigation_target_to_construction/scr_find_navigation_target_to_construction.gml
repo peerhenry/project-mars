@@ -15,7 +15,7 @@ var dy = arg_astronaut.y - constr_center_y;
 
 var next_x = 0;
 var next_y = 0;
-
+// First order the 4 sides of the construction by how close they are to astronaut
 var side_order = [macro_south_number, macro_west_number, macro_east_number, macro_north_number];
 
 if(dy > dx)
@@ -85,7 +85,7 @@ var result = noone;
 var n = 0;
 while(result == noone && n<4)
 {
-	result = scr_find_spot_along_side(arg_astronaut, arg_construction, side_order[n]);
+	result = scr_find_spot_along_side(arg_astronaut, arg_construction, side_order[n]); // array of x and y
 	n++;
 }
 

@@ -1,19 +1,9 @@
 test_init(test_cancel_construction);
 
 // arrange
-var constr = scr_new_construction(
-	0,		// mdu count
-	[],		// cell array
-	noone,	// prerequisite
-	0,		// bounding box
-	0,
-	0,
-	0,
-	macro_player,		// owner
-	0
-);
+var constr = scr_create_dummy_construction();
 var astronaut = instance_create_depth(0,0,0,obj_astronaut);
-scr_pick_up_construction(astronaut, constr, astronaut_action.constructing);
+scr_update_astro_and_construction(astronaut, constr, astronaut_action.constructing);
 var pile_list = constr[? construction_mdu_piles];
 
 // act

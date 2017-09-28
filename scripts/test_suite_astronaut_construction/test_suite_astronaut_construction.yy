@@ -1,8 +1,8 @@
 {
-    "id": "aa03ec7a-5a45-403e-8459-775a4f9fde9d",
+    "id": "412d8af8-efda-4ea6-9599-e57ade111df8",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_try_to_deliver_mdu",
+    "name": "test_suite_astronaut_construction",
     "IsCompatibility": false,
     "IsDnD": false
 }

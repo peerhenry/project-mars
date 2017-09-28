@@ -85,3 +85,8 @@ if(debug_mode){
 	#macro macro_type_map 5
 	#macro macro_type_object 6
 }
+
+// Reach states
+#macro macro_unreachable 0
+#macro macro_reachable 1
+#macro macro_adjacent 2
