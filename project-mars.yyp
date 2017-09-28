@@ -6599,6 +6599,14 @@
             }
         },
         {
+            "Key": "fe2ec84a-35e4-4124-9cdb-faf2e054a930",
+            "Value": {
+                "id": "fd94e415-85fc-4a7a-81dd-0c5d17671044",
+                "resourcePath": "scripts\\scr_incr_construction_mdu\\scr_incr_construction_mdu.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "fe4fabec-a417-42b4-b1e5-99841de812b7",
             "Value": {
                 "id": "c927a7c1-b26b-4ce6-bf37-6c5c6f977157",
@@ -6833,6 +6841,7 @@
         "90f31f1f-6c4d-4068-b75b-f6122b96370e",
         "e441c0ed-05c5-43a6-a787-e56c296df64c",
         "75d5137d-c934-4346-92c7-ac92acffeaf1",
+        "fe2ec84a-35e4-4124-9cdb-faf2e054a930",
         "1dfa1c5d-2a51-4917-89ff-e6653db286b1",
         "d5388aeb-d0d3-4001-ab37-6b0b92b2c373",
         "3998e5e5-a249-4c77-9b40-4e5f3aa9fbbd",

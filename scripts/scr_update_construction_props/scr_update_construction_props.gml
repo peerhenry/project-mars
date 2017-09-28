@@ -1,8 +1,10 @@
 /// @Description Sets astronaut action, and modifies construction properties accordingly
 /// @param construction_instance
+/// @param astronaut
 /// @param action
 var arg_construction = argument0;
-var arg_action = argument1;
+var arg_astronaut = argument1;
+var arg_action = argument2;
 
 var state = arg_construction[? construction_build_state];
 
@@ -16,6 +18,7 @@ switch(arg_action)
 		break;
 	case astronaut_action.constructing:
 	case astronaut_action.moving_to_construction:
+		ds_map_replace(arg_construction, construction_astronaut, arg_astronaut);
 		var state = arg_construction[? construction_build_state];
 		if(state == construction_state.ready)
 		{

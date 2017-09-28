@@ -64,10 +64,23 @@ if(keyboard_check_pressed(ord("L")))
 	// debug_show_oxygen_grid_room_counts()
 	// debug_show_astronaut_actions()
 	
-	with(obj_astronaut_playable){
-		show_debug_message("name: " + string(name));
-		show_debug_message("target: " + string(target));
-		show_debug_message("shoot_alarm: " + string(alarm[0]));
+	//with(obj_astronaut_playable){
+	//	show_debug_message("name: " + string(name));
+	//	show_debug_message("target: " + string(target));
+	//	show_debug_message("shoot_alarm: " + string(alarm[0]));
+	//}
+	
+	var q = scr_get_construction_queue(macro_player);
+	var size = ds_list_size(q);
+	for(var n = 0; n < size; n++)
+	{
+		var next_con = ds_list_find_value(q, n);
+		var rem = next_con[? construction_required_mdu_remaining];
+		while(rem > 0)
+		{
+			scr_incr_construction_mdu(next_con);
+			rem = next_con[? construction_required_mdu_remaining];
+		}
 	}
 }
 
