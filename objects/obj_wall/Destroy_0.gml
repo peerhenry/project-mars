@@ -12,6 +12,10 @@ for(var n = 0; n < 4; n++) // ENWS
 	var next_wall = adj_walls[n];
 	if(next_wall != noone)
 	{
-		next_wall.image_index -= power(2, (n+2)%4);
+		var remove_bit = power(2, (n+2)%4)
+		if(image_index & remove_bit == remove_bit)
+		{
+			next_wall.image_index -= remove_bit;
+		}
 	}
 }

@@ -10,8 +10,6 @@ image_speed = 0;
 if(!global.draw_tall_walls) sprite_index = spr_wall;
 else sprite_index = spr_wall_tall;
 
-adjacency_numer = 0;
-
 // carrier of all grids
 scr_set_new_grid_props(id, macro_grid_electric, macro_grid_role_carrier, 0);
 scr_set_new_grid_props(id, macro_grid_water, macro_grid_role_carrier, 0);
@@ -26,7 +24,7 @@ var adj_walls = scr_get_adjacent_instances(id, obj_wall); // ENWS
 for(var n = 0; n < 4; n++) // ENWS
 {
 	var next_wall = adj_walls[n];
-	if(next_wall != noone && !next_wall.under_construction)
+	if(next_wall != noone)
 	{
 		var bit = power(2, n);
 		if(image_index & bit != bit)

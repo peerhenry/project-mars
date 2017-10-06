@@ -13,4 +13,5 @@ scr_set_basetile_lights(id);
 
 scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.inside);
 
-room_logic = scr_room_logic_basetile;
+var cont = global.script_container;
+room_logic_basetile = script_container_resolve(cont, "room_logic_basetile");

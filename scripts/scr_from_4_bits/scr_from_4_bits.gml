@@ -1,0 +1,1 @@
+return 8*argument0 + 4*argument1 + 2*argument2 + argument3;
