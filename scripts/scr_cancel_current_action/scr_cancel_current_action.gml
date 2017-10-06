@@ -6,9 +6,11 @@ with(arg_astronaut)
 {
 	switch(current_action)
 	{
+		case astronaut_action.fetching_mdu:
 		case astronaut_action.delivering_mdu:
 			var deliveries_decr = construction[? construction_mdu_deliveries] - 1;
 			ds_map_replace(construction, construction_mdu_deliveries, deliveries_decr);
+			construction = noone;
 			break;
 		case astronaut_action.constructing:
 		case astronaut_action.moving_to_construction:

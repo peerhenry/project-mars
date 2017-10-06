@@ -1,3 +1,3 @@
 /// @description Finalize construction
 event_inherited();
-scr_room_logic_basetile(x, y);
+script_execute(room_logic, x, y);

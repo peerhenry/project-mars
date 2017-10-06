@@ -17,13 +17,8 @@ if(mouse_hovers_over_new_cell)
 	global.rotated_was_checked = false;	// for auto rotate hatches and doors
 }
 
-global.can_pay_for_construction = true;
-global.construction_is_valid = true;
-
 // clear the ghost stack
-ds_stack_clear(global.ghost_stack);
-ds_stack_clear(global.invalid_ghost_stack); // used to draw red tiles ghost
-global.total_cost = 0;
+scr_ghost_reset();
 
 var construction = ds_map_find_value(global.construction_map, arg_construction_id);
 

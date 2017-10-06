@@ -1,10 +1,6 @@
 /// @description creates three cables and destroys middle one first
 test_init(test_three_cables);
 
-// required globabls for grid_part
-global.horizontal_cells = 1000;
-global.vertical_cells = 1000;
-
 // Arrange
 var cable1 = instance_create_depth(32*1, 32, 0, obj_cable);
 var cable2 = instance_create_depth(32*2, 32, 0, obj_cable);

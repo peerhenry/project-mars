@@ -70,7 +70,16 @@ if(keyboard_check_pressed(ord("L")))
 	//	show_debug_message("shoot_alarm: " + string(alarm[0]));
 	//}
 	
-	var q = scr_get_construction_queue(macro_player);
+	var count = 0;
+	with(obj_mdu_pile){
+		show_debug_message("pile mdu count: " + string(mdu_count));	
+		count = count+1;
+		
+	}
+	show_debug_message("mdu pile count: " + string(count));
+	
+	// supply all constructions with mdus
+	/*var q = scr_get_construction_queue(macro_player);
 	var size = ds_list_size(q);
 	for(var n = 0; n < size; n++)
 	{
@@ -81,7 +90,7 @@ if(keyboard_check_pressed(ord("L")))
 			scr_incr_construction_mdu(next_con);
 			rem = next_con[? construction_required_mdu_remaining];
 		}
-	}
+	}*/
 }
 
 if(keyboard_check_pressed(ord("B")))

@@ -1,7 +1,7 @@
+init_map();
 init_globals();
+
 init_construction_globals();
 init_construction_enums();
-global.nav_grid = noone;
-global.map_buffer = noone;
-global.horizontal_cells = 1000;
-global.vertical_cells = 1000;
+var inst_layer = layer_get_id("Instances");
+init_constructions_create_map(inst_layer, inst_layer, inst_layer);

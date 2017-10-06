@@ -41,6 +41,10 @@ switch(arg_action)
 		new_i = 1;
 		new_o = map_value_vacant;
 		break;
+	case map_buffer_action.outside:
+		new_i = 0;
+		new_o = map_value_vacant;
+		break;
 	case map_buffer_action.cable:
 		new_o = map_value_cable;
 		if(map_o == map_value_pipe || instance_position(scr_gi_to_rc(arg_i), scr_gi_to_rc(arg_j), obj_pipe) != noone)

@@ -1,2 +1,2 @@
 init_constructions();
-init_grids();
+init_grids(); // only grid macros

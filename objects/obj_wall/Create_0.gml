@@ -26,7 +26,7 @@ var adj_walls = scr_get_adjacent_instances(id, obj_wall); // ENWS
 for(var n = 0; n < 4; n++) // ENWS
 {
 	var next_wall = adj_walls[n];
-	if(next_wall != noone)
+	if(next_wall != noone && !next_wall.under_construction)
 	{
 		var bit = power(2, n);
 		if(image_index & bit != bit)

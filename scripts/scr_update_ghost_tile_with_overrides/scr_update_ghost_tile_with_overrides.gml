@@ -20,7 +20,8 @@ var tile_is_valid = false;
 
 var sprite = arg_sprite_override;
 
-for(var m = 0; m < array_length_1d(arg_actions); m++) // loop over build actions
+// loop over build actions to create a ghost cell
+for(var m = 0; m < array_length_1d(arg_actions); m++)
 {
 	var next_action = arg_actions[m];
 	
@@ -37,6 +38,8 @@ for(var m = 0; m < array_length_1d(arg_actions); m++) // loop over build actions
 	var i_is_valid = scr_validate_i(validation_i, map_i);
 	var o_is_valid = scr_validate_o(validation_o, map_o, target_i, target_j);
 	var validation_passed = i_is_valid && o_is_valid;
+	// if(!i_is_valid) show_error("inside validation fail for thing with sprite: " + string(object_get_name(object_to_add)), true); // DEBUG
+	// if(!o_is_valid) show_error("occupation validation fail for thing with sprite: " + string(object_get_name(object_to_add)), true); // DEBUG
 	
 	if(validation_passed)
 	{

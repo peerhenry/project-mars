@@ -55,6 +55,7 @@ enum map_buffer_action
 	wall_like,
 	wall,
 	inside,
+	outside,
 	cable,
 	pipe,
 	clear_cable,

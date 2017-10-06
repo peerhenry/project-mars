@@ -1,6 +1,14 @@
-var basetile_layer = layer_get_id(macro_base_tile_layer);
+/// @arg basetile_layer
+/// @arg base_layer
+/// @arg base_tall_layer
+var basetile_layer = argument0;
+var base_layer = argument1;
+var base_tall_layer = argument2;
+
+// old
+/*var basetile_layer = layer_get_id(macro_base_tile_layer);
 var base_layer = layer_get_id(macro_base_layer);
-var base_tall_layer = layer_get_id(macro_base_tall_layer);
+var base_tall_layer = layer_get_id(macro_base_tall_layer);*/
 
 // read from file
 /*var i, file, file_string;

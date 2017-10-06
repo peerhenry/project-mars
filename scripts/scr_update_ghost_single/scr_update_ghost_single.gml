@@ -1,3 +1,7 @@
+/// @arg i
+/// @arg j
+/// @arg construction_id	Not an instance
+/// @arg rotation
 var arg_i = argument0;
 var arg_j = argument1;
 var arg_construction_id = argument2;
@@ -47,6 +51,35 @@ for(var n = 0; n < array_length_1d(build_tiles); n++)
 	var sprite = draw_params[macro_sprite];
 	var image = draw_params[macro_image];
 	var angle = draw_params[macro_angle];
+	
+	// sprite fix for syncing gates with draw tall walls
+	switch(construction[macro_id])
+	{
+		case macro_door:
+			if(arg_rotation == 0 || arg_rotation == 2)
+			{
+				if(!global.draw_tall_walls) sprite = spr_door;
+				else sprite = spr_door_tall;
+			}
+			else
+			{
+				if(!global.draw_tall_walls) sprite = spr_door_vertical;
+				else sprite = spr_door_tall_vertical;
+			}
+			break;
+		case macro_hatch:
+			if(arg_rotation == 0 || arg_rotation == 2)
+			{
+				if(!global.draw_tall_walls) sprite = spr_hatch;
+				else sprite = spr_hatch_tall;
+			}
+			else
+			{
+				if(!global.draw_tall_walls) sprite = spr_hatch_vertical;
+				else sprite = spr_hatch_tall_vertical;
+			}
+			break;
+	}
 	
 	var tile_is_valid = scr_update_ghost_tile_with_overrides(target_i, target_j, actions_array, sprite, image, angle);
 	

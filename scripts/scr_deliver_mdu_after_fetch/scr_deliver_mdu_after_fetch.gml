@@ -21,6 +21,8 @@ switch(reach_state)
 		arg_astronaut.current_action = astronaut_action.delivering_mdu;
 		break;
 	case macro_unreachable:
+		var deliveries_decr = construction[? construction_mdu_deliveries] - 1;
+		ds_map_replace(construction, construction_mdu_deliveries, deliveries_decr);
 		scr_update_astro_props(arg_astronaut, noone, astronaut_action.idle);
 		break;
 }
