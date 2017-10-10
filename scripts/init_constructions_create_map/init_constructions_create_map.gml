@@ -131,20 +131,20 @@ init_construction_set_action(build_validation_i.outside, build_validation_o.vaca
 
 // # cable
 init_construction_new_single(macro_cable, "cable", spr_cable, 1, macro_category_outside);
-init_construction_set_action(build_validation_i.outside, build_validation_o.for_cable,	map_buffer_action.cable,	base_layer,		obj_cable,		noone, 100);
+init_construction_set_action(build_validation_i.outside, build_validation_o.for_cable,	map_buffer_action.cable,	basetile_layer,	obj_cable,		noone, 100);
 init_construction_set_dragging(dragging.linear, 2);
 init_construction_set_action(build_validation_i.outside, build_validation_o.cable,		map_buffer_action.nothing,	noone,			noone,			noone, 100);
-init_construction_set_action(build_validation_i.outside, build_validation_o.for_cable,	map_buffer_action.cable,	base_layer,		obj_cable,		noone, 100);
+init_construction_set_action(build_validation_i.outside, build_validation_o.for_cable,	map_buffer_action.cable,	basetile_layer,	obj_cable,		noone, 100);
 init_construction_set_drag_parameter(macro_drag_vertical, macro_image, 2);
 init_construction_set_drag_parameter(macro_drag_top, macro_image, 2);
 init_construction_set_drag_parameter(macro_drag_bottom, macro_image, 2);
 
 // # pipe
 init_construction_new_single(macro_pipe, "pipe", spr_pipe, 1, macro_category_outside);
-init_construction_set_action(build_validation_i.outside, build_validation_o.for_pipe,	map_buffer_action.pipe,		base_layer,		obj_pipe,		noone, 100);
+init_construction_set_action(build_validation_i.outside, build_validation_o.for_pipe,	map_buffer_action.pipe,		basetile_layer,	obj_pipe,		noone, 100);
 init_construction_set_dragging(dragging.linear, 1);
 init_construction_set_action(build_validation_i.outside, build_validation_o.pipe,		map_buffer_action.nothing,	noone,			noone,			noone, 100);
-init_construction_set_action(build_validation_i.outside, build_validation_o.for_pipe,	map_buffer_action.pipe,		base_layer,		obj_pipe,		noone, 100);
+init_construction_set_action(build_validation_i.outside, build_validation_o.for_pipe,	map_buffer_action.pipe,		basetile_layer,	obj_pipe,		noone, 100);
 init_construction_set_drag_parameter(macro_drag_vertical, macro_image, 1);
 init_construction_set_drag_parameter(macro_drag_top, macro_image, 1);
 init_construction_set_drag_parameter(macro_drag_bottom, macro_image, 1);

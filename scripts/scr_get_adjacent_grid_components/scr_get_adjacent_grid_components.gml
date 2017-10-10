@@ -1,3 +1,4 @@
+// returns ENWS
 /// @param instance
 /// @param grid_type
 var arg_instance = argument0;
@@ -18,22 +19,22 @@ with(obj_constructable)
 	{
 		if(di == 1)	// east
 		{
-			if(scr_belongs_to_grid(id, arg_grid_type)) result[0] = id;
+			if(scr_belongs_to_grid(id, arg_grid_type) && owner == arg_instance.owner) result[0] = id;
 		}
 		else if(di == -1)	// west
 		{
-			if(scr_belongs_to_grid(id, arg_grid_type)) result[2] = id;
+			if(scr_belongs_to_grid(id, arg_grid_type) && owner == arg_instance.owner) result[2] = id;
 		}
 	}
 	if(di == 0)
 	{
 		if(dj == -1) // north
 		{
-			if(scr_belongs_to_grid(id, arg_grid_type)) result[1] = id;
+			if(scr_belongs_to_grid(id, arg_grid_type) && owner == arg_instance.owner) result[1] = id;
 		}
 		else if(dj == 1) // south
 		{
-			if(scr_belongs_to_grid(id, arg_grid_type)) result[3] = id;
+			if(scr_belongs_to_grid(id, arg_grid_type) && owner == arg_instance.owner) result[3] = id;
 		}
 	}
 }

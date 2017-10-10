@@ -12,7 +12,7 @@ switch(global.ownership_behavior)
 {
 	case macro_ownership_default:
 		return global.default_owner;
-	case macro_ownership_map_quarters:
+	case macro_ownership_map_quarters: // get owner by map quarter
 		with(arg_constructable)
 		{
 			var bit_one = x > room_width/2;
