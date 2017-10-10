@@ -24,7 +24,7 @@ var arg_owner = argument7;
 var arg_required_metal = argument8;
 
 var new_construction = ds_map_create();
-var initial_state = construction_state.not_ready;
+var initial_state = construction_state.awaiting_mdus;
 if(arg_mdu_count == 0) initial_state = construction_state.ready;
 else if(arg_prerequisite == noone) initial_state = construction_state.awaiting_mdus;
 //var build_time = global.build_time_sec_minimum + arg_mdu_count*global.build_time_sec_per_mdu + arg_required_metal*0.01 + 100;

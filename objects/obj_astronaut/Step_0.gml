@@ -1,6 +1,9 @@
 /// @description Update astronaut
 
-if(has_died) return;
+if(has_died)
+{
+	return;
+}
 
 // Kill if health reached zero
 if(astronaut_health <= 0)

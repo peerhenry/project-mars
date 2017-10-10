@@ -1,9 +1,12 @@
 /// @param construction
 var arg_construction = argument0;
 
+// set completion to 100 and state to done
 var build_type = ds_map_find_value(arg_construction, construction_build_type);
 ds_map_replace(arg_construction, construction_completion, 100);
 ds_map_replace(arg_construction, construction_build_state, construction_state.done);
+
+// destroy mdu piles
 var piles = arg_construction[? construction_mdu_piles];
 for(var n = 0; n < ds_list_size(piles); n++)
 {
@@ -16,9 +19,8 @@ ds_list_destroy(piles);
 //var construction_cells_array = arg_construction[construction_cells];
 var construction_cells_array = ds_map_find_value(arg_construction, construction_cells);
 var count = array_length_1d(construction_cells_array);
-
 var room_logic_instance = noone;
-for(var n = 0; n < count; n++) // loop over tiles
+for(var n = 0; n < count; n++) // loop over cells
 {
 	// - get construction cell parameters
 	var next_cell = construction_cells_array[n];
@@ -30,7 +32,7 @@ for(var n = 0; n < count; n++) // loop over tiles
 	var cell_x = scr_gi_to_rc(i);
 	var cell_y = scr_gi_to_rc(j);
 	
-	// - remove object
+	// - remove any removals
 	if(object_to_remove != noone)
 	{
 		var instance = instance_position(cell_x, cell_y, object_to_remove);
@@ -64,5 +66,6 @@ if(astronaut != noone)
 {
 	scr_stop_construction(astronaut);
 }
-// arg_construction[@construction_astronaut] = noone; // astronaut assigned to perform the construction
 ds_map_replace(arg_construction, construction_astronaut, noone);
+
+// ds_map_destroy(arg_construction);

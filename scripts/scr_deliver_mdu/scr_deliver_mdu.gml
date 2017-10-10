@@ -12,6 +12,7 @@ if(arg_reach_state == macro_adjacent)
 }
 else if(arg_reach_state == macro_reachable)
 {
-	scr_navigate_to_construction(arg_astronaut, arg_construction);
+	var is_navigating = scr_navigate_to_construction(arg_astronaut, arg_construction);
+	//if(!is_navigating) show_error("construction is reachable but astronaut does not navigate", true); // DEBUG
 	scr_update_astro_and_construction(arg_astronaut, arg_construction, astronaut_action.delivering_mdu);
 }

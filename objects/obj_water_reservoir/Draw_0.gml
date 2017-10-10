@@ -1,6 +1,10 @@
-draw_self();
+if(under_construction)
+{
+	event_inherited();
+	exit;
+}
 
-if(under_construction) exit;
+draw_self();
 
 var water_grid = scr_get_grid(id, macro_grid_water);
 

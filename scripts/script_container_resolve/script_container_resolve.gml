@@ -1,6 +1,5 @@
 /// @arg container
 /// @arg name
-/// @arg script
 var arg_container = argument0;
 var arg_name = argument1;
 

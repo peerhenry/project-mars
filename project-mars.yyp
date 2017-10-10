@@ -687,6 +687,14 @@
             }
         },
         {
+            "Key": "18071d79-55a1-48f5-a794-2c8ed7093dd9",
+            "Value": {
+                "id": "d4fa6c01-55e7-4732-be1c-39a516a7a6df",
+                "resourcePath": "sprites\\spr_noise_32\\spr_noise_32.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "185c41ef-a9ed-4a58-a27d-896daa69cf4e",
             "Value": {
                 "id": "477aede4-ecdc-4fb5-ba28-435a4f275604",
@@ -948,6 +956,14 @@
                 "id": "09cd7bee-cb9e-4cc5-b053-fbce0a085cff",
                 "resourcePath": "views\\1fd8b746-fd26-49de-83a3-25ca9b49d82e.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "1fec7caf-11b2-41f0-af89-a642e9c563a6",
+            "Value": {
+                "id": "ccc9a1ee-c907-476e-bff9-1d7ee8621fa8",
+                "resourcePath": "sprites\\spr_noise_321\\spr_noise_321.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2418,7 +2434,7 @@
             "Key": "52ca2c1b-e45c-4c49-b2e1-db47b4d3c97f",
             "Value": {
                 "id": "580ad79e-0d3a-4be6-b630-25173cf5c6e3",
-                "resourcePath": "sprites\\spr_noise\\spr_noise.yy",
+                "resourcePath": "sprites\\spr_perlin_noise\\spr_perlin_noise.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -2548,6 +2564,14 @@
                 "id": "e782655a-16aa-407f-af53-468ce330d5fe",
                 "resourcePath": "scripts\\test_cancel_construction\\test_cancel_construction.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "5b5418de-620a-4561-8a99-369baa920747",
+            "Value": {
+                "id": "9a15a4c6-7323-45b1-aca4-5fada4b6e14b",
+                "resourcePath": "shaders\\shader_noise\\shader_noise.yy",
+                "resourceType": "GMShader"
             }
         },
         {
@@ -2975,6 +2999,14 @@
             }
         },
         {
+            "Key": "6b587339-8c9e-4ea1-b862-ce739b04e5bc",
+            "Value": {
+                "id": "70ce2e38-cee8-43a8-ba38-f5f6b8ad2298",
+                "resourcePath": "scripts\\scr_action_to_string\\scr_action_to_string.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "6b5b50cc-1b39-41ea-976d-4a295701d8d4",
             "Value": {
                 "id": "bbcb4222-1e3c-4b1a-8d4d-fbb28950d8fa",
@@ -3164,6 +3196,14 @@
                 "id": "d006b01f-a6d6-4075-916c-639741898506",
                 "resourcePath": "shaders\\shader_vanilla\\shader_vanilla.yy",
                 "resourceType": "GMShader"
+            }
+        },
+        {
+            "Key": "715c8367-2483-4648-81bf-7e3d0d552aa4",
+            "Value": {
+                "id": "070f0b3d-00fc-4bfd-9447-3fcaff17bc0f",
+                "resourcePath": "scripts\\scr_play_sound\\scr_play_sound.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -4002,7 +4042,7 @@
             "Key": "9678fe7a-bc0b-4378-b82e-2a55aa4a6798",
             "Value": {
                 "id": "84da6b22-6631-4cbc-8889-1ca108d55760",
-                "resourcePath": "sprites\\spr_noise1\\spr_noise1.yy",
+                "resourcePath": "sprites\\spr_perlin_noise1\\spr_perlin_noise1.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -6191,6 +6231,14 @@
             }
         },
         {
+            "Key": "e876038c-a7f9-40a7-91fd-68e5c23ee8a3",
+            "Value": {
+                "id": "b9111b42-94cf-46a6-9412-293dc0acc52c",
+                "resourcePath": "objects\\obj_noise_shader\\obj_noise_shader.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "e879e1fc-02de-43bd-be7e-d726e715031a",
             "Value": {
                 "id": "7c85276d-12e4-47b1-aa99-b5eb9ddad3b8",
@@ -7165,6 +7213,7 @@
         "e69a9f84-bbd0-4a7a-9f7c-8510b0e25cdd",
         "823977db-ed17-443b-9a76-8b10a0a68849",
         "4f93d6e4-f822-4ad9-8856-1217beac871a",
+        "6b587339-8c9e-4ea1-b862-ce739b04e5bc",
         "43e1994c-158d-4ed7-b2d7-9aff5999d1a9",
         "1e3dbe4c-0873-4852-957d-59eef3e79f10",
         "1709bdf1-fe50-49cd-8b69-db9cf111cedc",
@@ -7183,6 +7232,7 @@
         "d0526bef-e9e5-4d74-88e4-6d59c907a507",
         "4d3a8e4c-cb93-4618-acc0-153fa0ffe09c",
         "185c41ef-a9ed-4a58-a27d-896daa69cf4e",
+        "715c8367-2483-4648-81bf-7e3d0d552aa4",
         "e76441f8-d763-43cd-acb8-b4651b06261c",
         "ef55de64-c8d9-4c2b-8d7e-0711b44f5bb5",
         "9a6e3701-694c-4994-8527-58a6ee4e3814",

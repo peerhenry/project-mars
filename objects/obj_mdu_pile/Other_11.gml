@@ -18,11 +18,7 @@ else
 	if(success)
 	{
 		mdu_count--;
-		if(mdu_count == 0)
-		{
-			instance_destroy();
-		}
-		else image_index--;
+		image_index--;
 	}
 }
 
@@ -36,4 +32,9 @@ with(astro)
 	{
 		scr_deliver_mdu_after_fetch(astro);
 	}
+}
+
+if(mdu_count == 0)
+{
+	instance_destroy();
 }

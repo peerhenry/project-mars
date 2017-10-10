@@ -65,3 +65,4 @@ sprite_walk_up = sprite_up;
 // shader stuff
 
 mask_color = [1, 1, 1, 1];
+script_container = global.script_container;

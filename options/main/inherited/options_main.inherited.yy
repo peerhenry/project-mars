@@ -2,6 +2,33 @@
     "option_gameguid": "b80abd30-4ec9-4a94-b888-9436419cdb71",
     "option_lastchanged": "03 May 2017 15:12:01",
     "option_sci_usesci": true
+}←be5f1418-b31b-48af-a023-f04cdf6e5121|{
+    "textureGroups": {
+        "Additions": [
+            {
+                "Key": 1,
+                "Value": {
+                    "id": "d4083c61-7cf1-473f-a1fc-e1fdea2f13a5",
+                    "modelName": "GMTextureGroup",
+                    "mvc": "1.0",
+                    "groupName": "menu",
+                    "targets": 29263750006690030,
+                    "autocrop": true,
+                    "border": 2,
+                    "groupParent": "00000000-0000-0000-0000-000000000000",
+                    "mipsToGenerate": 0,
+                    "scaled": true
+                }
+            }
+        ],
+        "Checksum": "ࢺ懜璙ᓆ锯翋꤯맫",
+        "Deletions": [
+            
+        ],
+        "Ordering": [
+            
+        ]
+    }
 }←7fa50043-cea6-4cd0-9521-a8ba8c6ea9f0|{
     "audioGroups": {
         "Additions": [

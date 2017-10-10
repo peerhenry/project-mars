@@ -171,13 +171,16 @@ init_construction_set_action(build_validation_i.inside, build_validation_o.vacan
 init_construction_new_single(macro_hydroponics, "hydroponics", spr_hydroponics_hud, 1, macro_category_inside);
 init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_tall_layer, obj_hydroponics,		noone, 100);
 
-// # magic generator
-init_construction_new_single(macro_magic_generator, "magic generator", spr_magic_generator, 1, macro_category_inside);
-init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_magic_generator,	noone, 100);
+if(debug_mode)
+{
+	// # magic generator
+	init_construction_new_single(macro_magic_generator, "magic generator", spr_magic_generator, 1, macro_category_inside);
+	init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_magic_generator,	noone, 100);
 
-// # magic pump
-init_construction_new_single(macro_magic_pump, "magic pump", spr_magic_pump, 1, macro_category_outside);
-init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_magic_pump,			noone, 100);
+	// # magic pump
+	init_construction_new_single(macro_magic_pump, "magic pump", spr_magic_pump, 1, macro_category_outside);
+	init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_magic_pump,			noone, 100);
+}
 
 // # fridge
 init_construction_new_single(macro_fridge, "refridgerator", spr_fridge_hud, 1, macro_category_inside);
@@ -225,8 +228,11 @@ ds_list_add(active_constructions, macro_pipe);
 ds_list_add(active_constructions, macro_bed);
 ds_list_add(active_constructions, macro_water_reservoir);
 ds_list_add(active_constructions, macro_hydroponics);
-ds_list_add(active_constructions, macro_magic_generator);
-ds_list_add(active_constructions, macro_magic_pump);
+if(debug_mode)
+{
+	ds_list_add(active_constructions, macro_magic_generator);
+	ds_list_add(active_constructions, macro_magic_pump);
+}
 ds_list_add(active_constructions, macro_fridge);
 ds_list_add(active_constructions, macro_solar_panel);
 ds_list_add(active_constructions, macro_electrolyser);

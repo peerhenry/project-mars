@@ -1,6 +1,8 @@
 /// @description Finalize construction
 event_inherited();
 
+scr_navgrid_clear_cell(occ_i, occ_j);
+
 // Set sprite
 if(connects_horizontally)
 {

@@ -1,7 +1,9 @@
+/// @param script_container
 /// @param shooter
 /// @param target
-var shooter = argument0;
-var target = argument1;
+var container = argument0;
+var shooter = argument1;
+var target = argument2;
 
 var lid = layer_get_id("astronauts");
 var new_projectile = instance_create_layer(shooter.x, shooter.y, lid, obj_projectile);
@@ -52,8 +54,9 @@ with(shooter)
 			// look north
 			sprite_index = sprite_up;
 		}
-	}	
+	}
 }
 
-audio_play_sound(sound_fx_laser, 0, 0);
+var play_sound = script_container_resolve(container, "play_sound");
+script_execute(play_sound, sound_fx_laser);
 return true;

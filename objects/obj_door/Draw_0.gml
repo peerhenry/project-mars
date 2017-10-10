@@ -1,10 +1,10 @@
 if(under_construction)
 {
-	draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, image_angle, c_aqua, 0.4);
-	draw_set_alpha(1);
+	event_inherited();
 	exit;
 }
 
+// draw red color for room oxygen levels
 if(room1 != noone && room1.oxygen_level < 100)
 {
 	var o2_alpha = ((100 - room1.oxygen_level)/100)*global.oxygen_max_alpha;

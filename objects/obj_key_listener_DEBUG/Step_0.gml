@@ -60,7 +60,7 @@ if(keyboard_check_pressed(ord("L")))
 	//	}
 	//}
 	
-	// scr_show_construction_queue();
+	scr_show_construction_queue();
 	// debug_show_oxygen_grid_room_counts()
 	// debug_show_astronaut_actions()
 	
@@ -70,13 +70,13 @@ if(keyboard_check_pressed(ord("L")))
 	//	show_debug_message("shoot_alarm: " + string(alarm[0]));
 	//}
 	
-	var count = 0;
+	// count mdu piles
+	/*var count = 0;
 	with(obj_mdu_pile){
 		show_debug_message("pile mdu count: " + string(mdu_count));	
 		count = count+1;
-		
 	}
-	show_debug_message("mdu pile count: " + string(count));
+	show_debug_message("mdu pile count: " + string(count));*/
 	
 	// supply all constructions with mdus
 	/*var q = scr_get_construction_queue(macro_player);

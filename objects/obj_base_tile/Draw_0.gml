@@ -1,6 +1,6 @@
 event_inherited();
 
-if(wall_adjacency == 0 || under_construction) exit;
+//if(wall_adjacency == 0 || under_construction) exit;
 
 // Maar even geen basetile lichtjes...
 /*

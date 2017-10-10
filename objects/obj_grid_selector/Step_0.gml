@@ -1,4 +1,5 @@
 /// @description reset global.selected_grid
+event_inherited();
 if(is_selected)
 {
 	// mouse click may deselect this

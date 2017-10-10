@@ -82,6 +82,16 @@ if ( show_details )
 	
 	#endregion
 	
+	if(debug_mode)
+	{
+		var after_grid_y = grid_y + 128;
+		draw_text(x_or, after_grid_y, "construction: " + string(construction));
+		draw_text(x_or, after_grid_y+24, "current_action: " + scr_action_to_string(current_action));
+		draw_text(x_or, after_grid_y+48, "assigned_object: " + string(assigned_object));
+		draw_text(x_or, after_grid_y+72, "is_walking: " + string(is_walking));
+		draw_text(x_or, after_grid_y+96, "path_position: " + string(path_position));
+	}
+	
 	#region	auto tasks
 	
 	// panel

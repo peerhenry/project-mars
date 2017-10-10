@@ -54,7 +54,7 @@ else	// See if there is an enemy around to shoot
 // shoot at target
 if(can_shoot && instance_exists(shootable))
 {
-	var has_shot = scr_shoot(id, shootable);
+	var has_shot = scr_shoot(script_container, id, shootable);
 	if(has_shot)
 	{
 		scr_trace("has shot");
