@@ -6,33 +6,34 @@
     "For3D": false,
     "HTile": false,
     "VTile": false,
-    "bbox_bottom": 123,
-    "bbox_left": 20,
-    "bbox_right": 117,
-    "bbox_top": 4,
+    "bbox_bottom": 119,
+    "bbox_left": 8,
+    "bbox_right": 119,
+    "bbox_top": 8,
     "bboxmode": 0,
     "colkind": 1,
     "coltolerance": 0,
+    "edgeFiltering": false,
     "frames": [
         {
-            "id": "32f4d8a1-1f8a-4fba-91f3-6b689f3e7b6c",
+            "id": "b0cf2f4b-c11a-42b4-a22a-783b8bd27e74",
             "modelName": "GMSpriteFrame",
             "mvc": "1.0",
             "SpriteId": "e64d37e3-d4be-40cd-b2f7-462fd59111fd",
             "compositeImage": {
-                "id": "2d0842cc-1e5d-4ae9-8a80-1371be9b2d6d",
+                "id": "40b30e49-bee3-42ac-a3b2-9679157b3ff5",
                 "modelName": "GMSpriteImage",
                 "mvc": "1.0",
-                "FrameId": "32f4d8a1-1f8a-4fba-91f3-6b689f3e7b6c",
+                "FrameId": "b0cf2f4b-c11a-42b4-a22a-783b8bd27e74",
                 "LayerId": "00000000-0000-0000-0000-000000000000"
             },
             "images": [
                 {
-                    "id": "f0600511-5b93-4e00-8de4-f232898d6e4b",
+                    "id": "89bd8c84-a062-4bcc-97e4-7719ac6fc170",
                     "modelName": "GMSpriteImage",
                     "mvc": "1.0",
-                    "FrameId": "32f4d8a1-1f8a-4fba-91f3-6b689f3e7b6c",
-                    "LayerId": "4b08dbd7-4baa-4357-a20a-5689e1d0364d"
+                    "FrameId": "b0cf2f4b-c11a-42b4-a22a-783b8bd27e74",
+                    "LayerId": "427ffe0c-6654-4e86-b463-ce6c29e31b8f"
                 }
             ]
         }
@@ -42,7 +43,7 @@
     "height": 128,
     "layers": [
         {
-            "id": "4b08dbd7-4baa-4357-a20a-5689e1d0364d",
+            "id": "427ffe0c-6654-4e86-b463-ce6c29e31b8f",
             "modelName": "GMImageLayer",
             "mvc": "1.0",
             "SpriteId": "e64d37e3-d4be-40cd-b2f7-462fd59111fd",
@@ -54,8 +55,10 @@
         }
     ],
     "origin": 0,
+    "originLocked": false,
     "playbackSpeed": 15,
     "playbackSpeedType": 0,
+    "premultiplyAlpha": false,
     "sepmasks": false,
     "swatchColours": null,
     "swfPrecision": 2.525,
