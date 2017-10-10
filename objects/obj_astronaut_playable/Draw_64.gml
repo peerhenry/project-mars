@@ -82,6 +82,7 @@ if ( show_details )
 	
 	#endregion
 	
+	#region debug info
 	if(debug_mode)
 	{
 		var after_grid_y = grid_y + 128;
@@ -91,6 +92,7 @@ if ( show_details )
 		draw_text(x_or, after_grid_y+72, "is_walking: " + string(is_walking));
 		draw_text(x_or, after_grid_y+96, "path_position: " + string(path_position));
 	}
+	#endregion
 	
 	#region	auto tasks
 	
@@ -103,13 +105,13 @@ if ( show_details )
 	var counter = 0;
 	var icon_top = display_height - ath + 8;
 	var icon_x_or = display_width - atw + 8;
-	draw_sprite(spr_auto_attack, 0, icon_x_or + (32+4)*counter, icon_top);
+	draw_sprite(spr_auto_attack, auto_attack, icon_x_or + (32+4)*counter, icon_top);
 	counter++;
-	draw_sprite(spr_auto_construct, 0, icon_x_or + (32+4)*counter, icon_top);
+	draw_sprite(spr_auto_construct, auto_construct, icon_x_or + (32+4)*counter, icon_top);
 	counter++;
-	draw_sprite(spr_auto_sleep, 0, icon_x_or + (32+4)*counter, icon_top);
+	draw_sprite(spr_auto_sleep, auto_sleep, icon_x_or + (32+4)*counter, icon_top);
 	counter++;
-	draw_sprite(spr_auto_feed, 0, icon_x_or + (32+4)*counter, icon_top);
+	draw_sprite(spr_auto_feed, auto_eat, icon_x_or + (32+4)*counter, icon_top);
 	
 	#endregion
 }

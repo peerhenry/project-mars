@@ -4,13 +4,15 @@
 var arg_assignable = argument0;
 var arg_astronaut = argument1;
 
+if(arg_assignable.owner != arg_astronaut.owner || arg_assignable.under_construction || arg_assignable.is_assigned) return false;
+
 switch(arg_assignable.object_index)
 {
 	case obj_suit_closet:
-		if( arg_astronaut.wears_suit == arg_assignable.holds_suit || arg_assignable.under_construction ) return false;
+		if( arg_astronaut.wears_suit == arg_assignable.holds_suit ) return false;
 		break;
 	case obj_bed:
-		return !(arg_astronaut.wears_suit || arg_assignable.under_construction || arg_assignable.occupant != noone);
+		return arg_assignable.occupant == noone; //!arg_astronaut.wears_suit;
 	case obj_hydroponics:
 		// todo; write hydroponics assignment condition: 
 		// hydroponics food must be done & astronaut must have space in inventory

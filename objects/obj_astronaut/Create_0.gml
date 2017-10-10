@@ -49,10 +49,17 @@ assigned_object = noone;
 current_action = astronaut_action.idle;
 construction = noone;
 
+// automatic behavior
+auto_attack = true;
+auto_construct = true;
+auto_eat = true;
+auto_sleep = true;
+auto_eat_level = 20;
+auto_sleep_level = 20;
+
 // 5. combat
 target = noone;			// thing to pursue
 auto_target = noone;	// thing to auto attack when in range
-auto_attack = true;
 alarm[0] = 30*global.time_to_shoot + round(random_range(-5,5));
 enemy_object = noone;
 shoot_path = path_add();

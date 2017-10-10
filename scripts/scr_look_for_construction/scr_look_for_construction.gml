@@ -9,13 +9,13 @@ var constr_queue = scr_get_construction_queue(arg_astronaut.owner);
 if(constr_queue == noone || is_undefined(constr_queue))
 {
 	scr_warn("Construction queue was noone or undefined for owner: " + string(arg_astronaut.owner));
-	exit;
+	return false;
 }
 
 var construction_count = ds_list_size(constr_queue);
 for(var n = 0; n < construction_count; n++)
 {
-	if(found_one) break;
+	if(found_one) return true;
 	
 	// Check if construction has a prerequisite construction
 	var next_construction = ds_list_find_value(constr_queue, n);

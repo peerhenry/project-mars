@@ -2,7 +2,23 @@
 debug_instance_inherits(argument0, obj_astronaut);
 var arg_astronaut = argument0;
 
-// 1. Find construction
-// 2. Find out howmany MDUs it needs, and howmany are being delivered
-// 3. Find MDU pile
-scr_look_for_construction(arg_astronaut);
+var auto_task_found = false;
+
+with(arg_astronaut)
+{
+	// food
+	if(!auto_task_found && auto_eat)
+	{
+		auto_task_found  = scr_auto_eat(arg_astronaut);
+	}
+	// sleep
+	if(!auto_task_found && auto_sleep)
+	{
+		auto_task_found  = scr_auto_sleep(arg_astronaut);
+	}
+	// construct
+	if(!auto_task_found && auto_construct)
+	{
+		auto_task_found  = scr_look_for_construction(arg_astronaut);
+	}
+}

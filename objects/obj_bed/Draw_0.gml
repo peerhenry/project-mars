@@ -13,4 +13,5 @@ if(occupant != noone)
 			zzz_index = 0;
 		}
 	}
+	draw_healthbar(x-16, y-24, x+16, y-20, occupant.energy, c_black, c_yellow, c_yellow, 0, true, true);
 }
