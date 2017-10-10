@@ -19,42 +19,19 @@ var south_electric = adjacents[3];
 if(east_electric != noone)
 {
 	adjacency_number += east_number;
-	if(east_electric.object_index == obj_cable)
-	{
-		east_electric.adjacency_number += west_number;
-		scr_set_cable_image(east_electric);
-	}
 }
-
 if(north_electric != noone)
 {
 	adjacency_number += north_number;
-	if(north_electric.object_index == obj_cable)
-	{
-		north_electric.adjacency_number += south_number;
-		scr_set_cable_image(north_electric);
-	}
 }
-
 if(west_electric != noone)
 {
 	adjacency_number += west_number;
-	if(west_electric.object_index == obj_cable)
-	{
-		west_electric.adjacency_number += east_number;
-		scr_set_cable_image(west_electric);
-	}
 }
-
 if(south_electric != noone)
 {
 	adjacency_number += south_number;
-	if(south_electric.object_index == obj_cable)
-	{
-		south_electric.adjacency_number += north_number;
-		scr_set_cable_image(south_electric);
-	}
 }
 
 scr_set_cable_image(id);
-// end === SET ADJACENCY NUMBER AND IMAGE INDEX ===
+scr_connect_to_cables(id);

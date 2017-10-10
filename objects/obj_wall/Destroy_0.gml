@@ -19,3 +19,6 @@ for(var n = 0; n < 4; n++) // ENWS
 		}
 	}
 }
+
+scr_disconnect_from_cables(id);
+scr_disconnect_from_pipes(id);

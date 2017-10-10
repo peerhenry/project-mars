@@ -8,7 +8,7 @@ global.enable_trace = false;
 global.tests_passed = true;
 
 test_message("Running tests...");
-test_suite_drill();
+test_suite_objects();
 test_suite_grid();
 test_suite_get_owner();
 test_suite_construction();
