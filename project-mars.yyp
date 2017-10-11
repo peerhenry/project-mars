@@ -3639,6 +3639,14 @@
             }
         },
         {
+            "Key": "7e873035-040f-4b9c-844e-a11e20c9a3a2",
+            "Value": {
+                "id": "ea92a43e-38d9-4de2-bb4f-d2dd589a58e7",
+                "resourcePath": "objects\\obj_HUD_zoom_button\\obj_HUD_zoom_button.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "7eaa451c-a67b-47aa-bd71-ba2a32679861",
             "Value": {
                 "id": "0aa6b771-444d-4f1c-89fe-6306bedf6608",
@@ -3811,6 +3819,14 @@
             "Value": {
                 "id": "309db41c-5b4d-47b2-a436-7edc6420dc11",
                 "resourcePath": "scripts\\scr_metal_can_spend\\scr_metal_can_spend.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "841fad72-7732-4e74-8f7d-4956133132ba",
+            "Value": {
+                "id": "5de40b9d-87e2-4e50-a638-462236155ceb",
+                "resourcePath": "scripts\\scr_toggle_zoom\\scr_toggle_zoom.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -6439,6 +6455,14 @@
             }
         },
         {
+            "Key": "e6604321-41ea-49ac-a7cb-a296bc708291",
+            "Value": {
+                "id": "71093aba-44ad-40b6-acd2-6d382b0e1797",
+                "resourcePath": "sprites\\spr_zoom_button\\spr_zoom_button.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e670fe99-ab9b-4e1a-b755-40be2f7626d2",
             "Value": {
                 "id": "7bbb4495-c86a-48de-9dd1-07df96271341",
@@ -7031,6 +7055,14 @@
             }
         },
         {
+            "Key": "f9d2c18c-e8dc-465e-a068-023f3d4b925d",
+            "Value": {
+                "id": "dcff60a0-1cdd-45f9-86a1-16583e1f49e4",
+                "resourcePath": "scripts\\init_zoom\\init_zoom.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f9f119fd-4af5-49c2-8112-485a03d44a23",
             "Value": {
                 "id": "bc194271-7715-48a8-a8ff-3c49e7580c0e",
@@ -7331,6 +7363,7 @@
         "71d9f50a-c426-4f69-83d9-8087290dddce",
         "6e23ed82-ee2e-4b95-b551-3341cf415054",
         "435a3d9a-215a-4565-b4fe-ed46e149b1c4",
+        "f9d2c18c-e8dc-465e-a068-023f3d4b925d",
         "96959605-9cf1-412e-af09-b1ee18cd71b2",
         "37f13ff7-93f0-4e32-bfb0-db7a644918bc",
         "6b5b50cc-1b39-41ea-976d-4a295701d8d4",
@@ -7556,6 +7589,7 @@
         "e7272c2f-be30-4c37-a9c2-be057d94df9c",
         "41b53df6-6884-4a40-9577-e8c053e25ac3",
         "500995df-9cf9-4abb-8327-9d918ee276ff",
+        "841fad72-7732-4e74-8f7d-4956133132ba",
         "d30a9bc2-5330-4051-8bc8-99b77833cb21",
         "1c9b42fb-dfb0-4acd-ba8e-7dac7d7eba6b",
         "c916e733-e52e-4a70-b4b1-b84ac717b609",

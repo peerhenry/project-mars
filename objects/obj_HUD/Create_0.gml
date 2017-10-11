@@ -29,12 +29,17 @@ y_offset = 64; // offset for build buttons
 y_spacing = 0;
 x_offset = padding;
 
+// -- zoom button --
+var bottom = window_get_height() - 32 - padding;
+show_debug_message("zoom button @: " + string(bottom));
+instance_create_layer(8, bottom, macro_logic_layer, obj_HUD_zoom_button);
+
 // -- Construction panel --
 
 item_count = 0;
 var left = x_offset;
-
 var top = y_offset + (32 + y_spacing)*item_count;
+
 var deconstruction_item = instance_create_layer(left, top, macro_logic_layer, obj_HUD_category_select_button);
 with(deconstruction_item){
 	tooltip_text = "Deconstruction";

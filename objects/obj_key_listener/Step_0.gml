@@ -11,17 +11,7 @@ if(keyboard_check_pressed(vk_f12))
 
 if(keyboard_check_pressed(ord("Z")))
 {
-	var width = window_get_width();
-	var height = window_get_height();
-	zoomed_in = !zoomed_in;
-	if(zoomed_in)
-	{
-		scr_zoom(width/2, height/2);
-	}
-	else
-	{
-		scr_zoom(width, height);
-	}
+	scr_toggle_zoom();
 }
 
 if(keyboard_check_pressed(ord("R")))
