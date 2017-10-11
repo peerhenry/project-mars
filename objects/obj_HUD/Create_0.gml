@@ -46,7 +46,7 @@ with(deconstruction_item){
 	sprite_index = spr_destruct;
 	category = macro_category_deconstruction;
 }
-item_count++
+item_count++;
 
 var top = y_offset + (32 + y_spacing)*item_count;
 var foundation_item = instance_create_layer(left, top, macro_logic_layer, obj_HUD_category_select_button);

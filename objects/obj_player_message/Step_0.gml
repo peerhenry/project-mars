@@ -1,7 +1,7 @@
 if(popping_down)
 {
 	text_y+=2;
-	if(text_y == gui_height)
+	if(text_y >= gui_height)
 	{
 		instance_destroy();
 	}

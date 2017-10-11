@@ -5,5 +5,5 @@ var did_it =
 	|| keyboard_check(ord("D"));
 if did_it
 {
-	alarm[0] = 5;
+	alarm[0] = 2;
 }

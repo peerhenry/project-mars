@@ -50,3 +50,5 @@ audio_group_set_gain(audiogroup_music, volume_music/100, 0);
 global.music_volume = volume_music;
 global.sfx_volume = volume_sfx;
 global.voice_volume = volume_voice;
+
+global.active_constructions = ds_list_create();

@@ -1127,6 +1127,14 @@
             }
         },
         {
+            "Key": "25555812-bd42-476a-be88-ff6c655d93e0",
+            "Value": {
+                "id": "f5f2be60-b463-40ed-af84-d1598b92e40b",
+                "resourcePath": "views\\25555812-bd42-476a-be88-ff6c655d93e0.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "25b9129c-05a8-4f52-8463-c545f5b76522",
             "Value": {
                 "id": "8e0451dd-94b0-4760-8870-0c6c52ebe4fd",
@@ -5783,14 +5791,6 @@
             }
         },
         {
-            "Key": "cf619751-0ba6-45b8-ba4b-79f42b09d486",
-            "Value": {
-                "id": "b92e04a6-75e2-4732-b407-e501fb39c1d5",
-                "resourcePath": "objects\\setup_solar_panel\\setup_solar_panel.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "cf75b1cd-9dec-40c6-b9ce-7970398ed03b",
             "Value": {
                 "id": "06836d51-7999-41e4-88c7-edbfbb6fc93f",
@@ -7199,6 +7199,14 @@
             }
         },
         {
+            "Key": "fcf489b0-7169-493b-8757-b7ed93539ff6",
+            "Value": {
+                "id": "7eb937f3-3690-4013-b00f-f6af5a5139a6",
+                "resourcePath": "objects\\setup_cable\\setup_cable.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "fcfa962b-09a2-41ad-91d7-db4796f240fb",
             "Value": {
                 "id": "20a552df-dd2f-4371-8a07-ac02945e1d04",
@@ -7287,6 +7295,14 @@
             }
         },
         {
+            "Key": "ffb7386f-7e99-4862-b02b-2114e595dbd7",
+            "Value": {
+                "id": "dbb6f2d1-23a6-4eaa-b6f3-e881a0f17cb4",
+                "resourcePath": "scripts\\init_tutorial\\init_tutorial.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ffb86f0a-e4c8-4c4e-b431-826a63391c5f",
             "Value": {
                 "id": "b66dac3a-0990-4ac7-8d23-9712a36808a7",
@@ -7350,6 +7366,7 @@
         "495e355f-752e-4e67-9196-233135eb33c7",
         "0fe6b590-26a7-43a7-83ee-3ead447cc99d",
         "7d237c50-ea92-4b6c-bb2e-5ab62aafd6ca",
+        "ffb7386f-7e99-4862-b02b-2114e595dbd7",
         "10b6178a-76dc-4368-95c3-c861bd61878c",
         "599b424d-fcba-4054-9d12-3601d378ecc2",
         "2098a558-efa7-43bb-8402-341e21443579",

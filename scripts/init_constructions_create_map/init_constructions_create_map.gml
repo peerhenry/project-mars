@@ -210,6 +210,7 @@ init_construction_set_action(build_validation_i.inside, build_validation_o.vacan
 
 // List of active constructions:
 var active_constructions = ds_list_create();
+ds_list_destroy(global.active_constructions);
 global.active_constructions = active_constructions;
 ds_list_add(active_constructions, macro_destruct);
 ds_list_add(active_constructions, macro_basetile);
@@ -228,7 +229,7 @@ ds_list_add(active_constructions, macro_pipe);
 ds_list_add(active_constructions, macro_bed);
 ds_list_add(active_constructions, macro_water_reservoir);
 ds_list_add(active_constructions, macro_hydroponics);
-if(debug_mode)
+if(debug_mode) // magic
 {
 	ds_list_add(active_constructions, macro_magic_generator);
 	ds_list_add(active_constructions, macro_magic_pump);
