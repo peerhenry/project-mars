@@ -1495,6 +1495,14 @@
             }
         },
         {
+            "Key": "31ce1dca-aec3-48b5-98e7-11d7e1aa59f4",
+            "Value": {
+                "id": "e9ff856b-3fda-4c8d-853b-717e6b3b7f61",
+                "resourcePath": "sprites\\spr_battery_hud\\spr_battery_hud.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "31e6f3cf-7787-4feb-9d78-f8305ee94c00",
             "Value": {
                 "id": "f38cd256-0572-4a0b-bba6-e2d6f5d24c83",
@@ -2874,7 +2882,7 @@
             "Key": "5f6be152-e516-4d49-b93f-7b475c36122c",
             "Value": {
                 "id": "254b08f6-1e6b-4d12-8424-8da8c9f2dfe0",
-                "resourcePath": "sprites\\spr_battery\\spr_battery.yy",
+                "resourcePath": "sprites\\spr_battery_dummy\\spr_battery_dummy.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -3420,6 +3428,14 @@
                 "id": "6d35f1f2-bbb2-40f5-b55c-f37a8b33b48b",
                 "resourcePath": "scripts\\test_suite_pump\\test_suite_pump.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "7436cedb-ddf3-495c-a338-ccdab6c4c0ed",
+            "Value": {
+                "id": "35c45c2b-9188-4605-9b85-14da8b5e8aef",
+                "resourcePath": "sprites\\spr_battery\\spr_battery.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

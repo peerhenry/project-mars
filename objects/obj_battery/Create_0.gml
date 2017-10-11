@@ -9,3 +9,5 @@ grid_type_to_select = macro_grid_electric;
 
 // Set electric grid for obj_grid_component
 scr_set_new_grid_props(id, macro_grid_electric, macro_grid_role_storage, 1000);
+
+depth = -occ_j;

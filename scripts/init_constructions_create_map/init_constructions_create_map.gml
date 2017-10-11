@@ -118,8 +118,8 @@ init_construction_new_single(macro_sensor, "sensor", spr_sensor, 1, macro_catego
 init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_sensor,		noone, 100);
 
 // # battery
-init_construction_new_single(macro_battery, "battery", spr_battery, 1, macro_category_inside);
-init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_battery,	noone, 100);
+init_construction_new_single(macro_battery, "battery", spr_battery_hud, 1, macro_category_inside);
+init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_tall_layer,	obj_battery,	noone, 100);
 
 // # O2 tank
 init_construction_new_single(macro_oxygen_tank, "oxygen tank", spr_oxygen_tank_hud, 1, macro_category_inside);
