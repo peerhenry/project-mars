@@ -11,7 +11,7 @@ var result = scr_get_reach_state(astro, constr);
 assert_equal(macro_reachable, result, "reach state");
 
 // cleanup
-ds_map_destroy(constr);
+scr_destroy_construction(constr);
 instance_destroy(astro);
 
 test_result();

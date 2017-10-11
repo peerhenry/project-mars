@@ -9,4 +9,5 @@ with(arg_astronaut)
 	image_speed = 0;
 	image_index = 0;
 	path_end();
+	path_position = 1;
 }

@@ -13,7 +13,7 @@ assert_true(result[0] > 0, "result[0] > 0");
 assert_true(result[1] > 0, "result[1] > 0");
 
 // cleanup
-ds_map_destroy(constr);
+scr_destroy_construction(constr);
 instance_destroy(astro);
 
 test_result();

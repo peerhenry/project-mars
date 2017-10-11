@@ -47,9 +47,8 @@ debug_type(list, macro_type_list);
 
 // cleanup
 expected_array = 0;
-ds_map_replace(constr, construction_cells, 0);
-ds_list_destroy(list);
-ds_map_destroy(constr);
+ds_map_replace(constr, construction_cells, 0); // because they are not really construction cells
+scr_destroy_construction(constr);
 
 // return result
 test_result();

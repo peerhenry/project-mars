@@ -74,7 +74,6 @@ for(var n = 0; n < cell_count; n++)
 		mdu_count += scr_get_mdu_count(object_to_add);
 		with(new_instance)
 		{
-			ds_list_add(new_instances, new_instance);
 			if(angle >= 0) image_angle = angle;
 			//if(sprite > 0) sprite_index = sprite;
 			if(
@@ -86,9 +85,9 @@ for(var n = 0; n < cell_count; n++)
 			}
 			
 			depth = depth - 300; // under construction drawing has priority
-			scr_post_creation_logic(global.construct, new_instance);	// only for suit closet
 			under_construction = true;
 			owner = macro_player;
+			scr_post_creation_logic(global.construct, new_instance);
 		}
 		
 		if(required_object != noone)
@@ -98,16 +97,20 @@ for(var n = 0; n < cell_count; n++)
 		}
 	}
 	
-	// create construction cell
-	var new_construction_cell = scr_create_construction_cell(cell_i, cell_j, add_layer, map_buffer_action, new_instance, object_to_remove);
-	var index = (cell_count - 1 - n);
-	construction_cell_array[index] = new_construction_cell;
+	if(instance_exists(new_instance)) // post creation could destroy the instance
+	{
+		ds_list_add(new_instances, new_instance);
+		// create construction cell
+		var new_construction_cell = scr_create_construction_cell(cell_i, cell_j, add_layer, map_buffer_action, new_instance, object_to_remove);
+		var index = (cell_count - 1 - n);
+		construction_cell_array[index] = new_construction_cell;
+	}
 }
 
 // Create construction and register in queue
-if(cell_count > 0)
+if(cell_count > 0 && ds_list_size(new_instances) > 0)
 {
-	var new_construction = scr_new_construction(mdu_count, construction_cell_array, prerequisite, right, top, left, bottom, macro_player, total_required_metal);	
+	var new_construction = scr_new_construction(mdu_count, construction_cell_array, prerequisite, right, top, left, bottom, macro_player, total_required_metal);
 	scr_register_new_construction(new_construction);
 	scr_recalculate_paths();
 	// Set construction in all new instances

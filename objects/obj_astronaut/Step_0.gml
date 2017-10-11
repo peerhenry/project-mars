@@ -32,6 +32,6 @@ scr_step_sprite_and_image(id);
 scr_update_action(id);
 
 // Update from path
-scr_step_path(id);
+scr_step_path(script_container, id);
 
 scr_step_health_and_oxygen(id);

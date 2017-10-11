@@ -46,8 +46,6 @@ with(door)
 	}
 	else room2 = scr_room_at(x2, y2); // room south or east of door
 	
-	show_debug_message("adj_door_count: " + string(adj_door_count)); // DEBUG
-	
 	if(adj_door_count == 1)
 	{
 		// The north room must equal the north room of the south door, or vice versa
@@ -58,9 +56,7 @@ with(door)
 				// Remove door1 from room2
 				var door1_index = ds_list_find_index(room2.doors, door1);
 				if(door1_index > -1) ds_list_delete(room2.doors, door1_index);
-				// else show_error("Could not remove door1 from room2", true);	// DEBUG for door creation
 				// Create room between this door and adjacent door
-				show_debug_message("Creating a new room between doors..."); // DEBUG
 				room1 = scr_create_room_between_doors(door1, id);
 			
 				// Replace the room for the other door
@@ -71,9 +67,7 @@ with(door)
 				// Remove door2 from room1
 				var door2_index = ds_list_find_index(room1.doors, door2);
 				if(door2_index > -1) ds_list_delete(room1.doors, door2_index);
-				// else show_error("Could nor remove door2 from room1", true); // DEBUG for door creation
 				// Create room between this door and adjacent door
-				show_debug_message("Creating a new room between doors..."); // DEBUG
 				room2 = scr_create_room_between_doors(id, door2);
 			
 				// Replace room1 in door2

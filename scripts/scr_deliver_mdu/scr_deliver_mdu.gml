@@ -1,14 +1,16 @@
 /// @description Either transfers mdu, or brings it to the construction
+/// @param container
 /// @param astronaut
 /// @param construction
 /// @param reach_state
-var arg_astronaut = argument0;
-var arg_construction = argument1;
-var arg_reach_state = argument2;
+var arg_container = argument0;
+var arg_astronaut = argument1;
+var arg_construction = argument2;
+var arg_reach_state = argument3;
 
 if(arg_reach_state == macro_adjacent)
 {
-	scr_transfer_mdu(arg_astronaut, arg_construction);
+	scr_transfer_mdu(arg_container, arg_astronaut, arg_construction);
 }
 else if(arg_reach_state == macro_reachable)
 {

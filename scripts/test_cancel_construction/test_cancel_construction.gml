@@ -7,7 +7,7 @@ scr_update_astro_and_construction(astronaut, constr, astronaut_action.constructi
 var pile_list = constr[? construction_mdu_piles];
 
 // act
-scr_cancel_construction(constr);
+scr_cancel_construction(global.script_container, constr);
 
 // assert
 assert_false(ds_exists(constr, ds_type_map), "ds_exists(constr, ds_type_map)");

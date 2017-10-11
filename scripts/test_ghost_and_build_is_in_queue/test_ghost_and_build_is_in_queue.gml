@@ -1,5 +1,6 @@
 test_init(test_ghost_and_build);
 
+// arrange
 scr_ghost_reset();
 
 // act

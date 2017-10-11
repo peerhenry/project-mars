@@ -1,5 +1,7 @@
+/// @arg script_container
 /// @arg astronaut
-var arg_astronaut = argument0;
+var arg_container = argument0;
+var arg_astronaut = argument1;
 debug_instance_inherits(arg_astronaut, obj_astronaut);
 scr_trace("Path end action!");
 
@@ -21,7 +23,7 @@ with(arg_astronaut)
 				
 				break;
 			case astronaut_action.delivering_mdu:
-				scr_transfer_mdu(id, construction);
+				scr_transfer_mdu(arg_container, id, construction);
 				if(scr_construction_is_ready(construction))
 				{
 					scr_update_astro_and_construction(id, construction, astronaut_action.constructing);

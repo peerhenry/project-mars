@@ -15,6 +15,7 @@ for(var n = 0; n < ds_list_size(piles); n++)
 	instance_destroy(next_pile);
 }
 ds_list_destroy(piles);
+ds_map_replace(arg_construction, construction_mdu_piles, noone);
 
 //var construction_cells_array = arg_construction[construction_cells];
 var construction_cells_array = ds_map_find_value(arg_construction, construction_cells);
@@ -60,12 +61,11 @@ var index = ds_list_find_index(construction_queue, arg_construction);
 ds_list_delete(construction_queue, index);
 
 // Stop astronaut
-//var astronaut = arg_construction[construction_astronaut];
-var astronaut = ds_map_find_value(arg_construction, construction_astronaut);
-if(astronaut != noone)
+with(obj_astronaut)
 {
-	scr_stop_construction(astronaut);
+	if(construction == arg_construction) scr_stop_construction(id);
 }
+
 ds_map_replace(arg_construction, construction_astronaut, noone);
 
-// ds_map_destroy(arg_construction);
+// do not destroy because construction may be needed after completion

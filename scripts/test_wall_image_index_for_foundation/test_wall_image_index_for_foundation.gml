@@ -69,5 +69,7 @@ with(obj_wall)
 	instance_destroy();
 }
 ds_list_clear(cq);
+scr_destroy_construction(constr1);
+scr_destroy_construction(constr2);
 
 test_result();

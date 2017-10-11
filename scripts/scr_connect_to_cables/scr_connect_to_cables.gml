@@ -1,6 +1,5 @@
 /// @param instance
 var arg_instance = argument0;
-show_debug_message("connecting to cables..."); // DEBUG
 var adjacents = scr_get_adjacent_instances(arg_instance, obj_cable); // ENWS
 
 for(var n = 0; n < 4; n++)

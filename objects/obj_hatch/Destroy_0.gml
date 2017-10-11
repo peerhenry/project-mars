@@ -1,12 +1,9 @@
 /// @description Remove hatch from room
 
-// show_debug_message("hatch base_room: " + string(base_room)); // DEBUG
-// show_debug_message("base_room is an obj_room: " + string((base_room.object_index == obj_room))); // DEBUG
 event_inherited();
 
 with(base_room)
 {
-	// show_debug_message("removing hatch from room..."); // DEBUG
 	var ind = ds_list_find_index(hatches, other.id);
 	ds_list_delete(hatches, ind);
 }

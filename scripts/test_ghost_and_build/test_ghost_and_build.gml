@@ -1,5 +1,6 @@
 test_init(test_wall_image_index_for_foundation);
 
+// arrange
 scr_ghost_reset();
 
 // act

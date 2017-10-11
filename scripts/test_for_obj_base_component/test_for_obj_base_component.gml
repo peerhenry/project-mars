@@ -11,10 +11,7 @@ ds_map_replace(constr, construction_cells, [cell]);
 // act
 var destruction = instance_create_layer(dummy.x, dummy.y, "instances", obj_destruct);
 destruction.owner = dummy.owner;
-with(destruction){ 
-	event_perform_object(obj_destruct, ev_alarm, 0);
-	alarm_set(0, -1);
-}
+scr_deconstruct_post_creation(destruction);
 
 // assert
 assert_false(instance_exists(dummy), "instance_exists(dummy)");

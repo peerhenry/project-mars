@@ -11,7 +11,7 @@ if(required > deliveries)
 {
 	if(scr_inventory_has_item(arg_astronaut.inventory, macro_item_mdu))
 	{
-		scr_deliver_mdu(arg_astronaut, arg_construction, arg_reach_state);
+		scr_deliver_mdu(arg_astronaut.script_container, arg_astronaut, arg_construction, arg_reach_state);
 		return true;
 	}
 	else 

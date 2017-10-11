@@ -27,10 +27,8 @@ assert_equal(1, constr2[? construction_mdu_deliveries], "construction_mdu_delive
 // cleanup
 instance_destroy(astro1);
 instance_destroy(astro2);
-scr_unregister_construction(constr1);
-scr_unregister_construction(constr2);
-ds_map_destroy(constr1);
-ds_map_destroy(constr2);
+scr_destroy_construction(constr1);
+scr_destroy_construction(constr2);
 instance_destroy(pile1);
 instance_destroy(pile2);
 

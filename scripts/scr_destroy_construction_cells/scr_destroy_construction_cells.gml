@@ -15,4 +15,5 @@ if(is_array(construction_cells_array))
 		construction_cells_array[@n] = 0;
 	}
 	ds_map_replace(arg_construction, construction_cells, 0);
+	construction_cells_array = 0;
 }

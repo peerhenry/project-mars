@@ -3,6 +3,7 @@ test_init_globals();
 var inst_layer = layer_get_id("Instances");
 init_constructions_create_map(inst_layer, inst_layer, inst_layer);
 var container = test_register_scripts();
+global.script_container = container;
 var trace_was_enabled = global.enable_trace;
 global.enable_trace = false;
 global.tests_passed = true;

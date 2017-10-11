@@ -1,5 +1,7 @@
+/// @arg script_container
 /// @arg construction
-var arg_construction = argument0;
+var arg_script_container = argument0;
+var arg_construction = argument1;
 
 var remaining_mdus = arg_construction[? construction_required_mdu_remaining] - 1;
 ds_map_replace(arg_construction, construction_required_mdu_remaining, remaining_mdus);
@@ -64,7 +66,9 @@ else
 	// Create new pile in center of construction
 	var cx = (arg_construction[? construction_bb_left] + arg_construction[? construction_bb_right])/2;
 	var cy = (arg_construction[? construction_bb_top] + arg_construction[? construction_bb_bottom])/2;
-	var newpile = instance_create_layer(cx, cy, macro_base_layer, obj_construction_mdu_pile);
+	var get_layer_for = script_container_resolve(arg_script_container, "get_layer_for");
+	var lyr = script_execute(get_layer_for, obj_construction_mdu_pile);
+	var newpile = instance_create_layer(cx, cy, lyr, obj_construction_mdu_pile);
 	//ds_map_replace(arg_construction, construction_mdu_pile, newpile);
 	ds_list_add(piles, newpile);
 }

@@ -11,6 +11,7 @@ var cq = scr_get_construction_queue(constr[? construction_owner]);
 assert_list_contains(cq, constr);
 
 // cleanup
+scr_destroy_construction(constr);
 ds_list_clear(cq);
 
 // return result
