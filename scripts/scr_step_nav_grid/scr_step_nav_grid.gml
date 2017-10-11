@@ -18,6 +18,7 @@ with(arg_astronaut)
 			}
 			occ_i = current_i;
 			occ_j = current_j;
+			depth = -occ_j;
 			mp_grid_add_cell(navgrid, occ_i, occ_j);
 		}
 	}
