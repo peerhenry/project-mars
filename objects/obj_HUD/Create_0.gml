@@ -84,7 +84,8 @@ menu_btn_center_x = (menu_btn_left + menu_btn_right)/2;
 menu_btn_center_y = (menu_btn_top + menu_btn_bottom)/2;
 mouse_over_menu = false;
 
-hud_menu = instance_create_layer(-500, 500, macro_logic_layer, obj_HUD_menu);
+hud_menu = instance_create_layer(-500, 500, macro_logic_layer, obj_HUD_menu_main);
+sound_menu = instance_create_layer(-500, 500, macro_logic_layer, obj_HUD_menu_sound);
 
 // -- Resource panel settings --
 resources_left = 480;
