@@ -2,6 +2,7 @@
 
 switch(argument0)
 {
+	case obj_wall:
 	case obj_construction_mdu_pile:
 	case obj_mdu_pile:
 		return macro_base_tall_layer;

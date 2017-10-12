@@ -10,7 +10,7 @@ bb_right = 0;
 bb_top = 0;
 bb_bottom = 0;
 
-oxygen_level = 100;	// 100%
+oxygen_level = 0;	// 0%
 oxygen_is_leaking = false;
 oxygen_is_replenishing = true; // only if there is no oxygen drainage
 temperature = 20; // 20 degrees celsius

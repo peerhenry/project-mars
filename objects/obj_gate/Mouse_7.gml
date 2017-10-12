@@ -3,7 +3,7 @@ if(under_construction)
 {
 	exit;
 }
-if(!is_open && !locked){
+if(!is_open && !locked && global.construct == noone){
 	auto_close = false;
 	scr_gate_toggle();
 }

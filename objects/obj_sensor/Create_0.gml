@@ -8,3 +8,4 @@ scr_set_new_grid_props(id, macro_grid_electric, macro_grid_role_consumer, global
 scr_connect_to_cables(id);
 
 is_selected = false;
+draw_cables = true;

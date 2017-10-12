@@ -25,5 +25,17 @@ if(under_construction)
 }
 else
 {
+	if(draw_cables)
+	{
+		if(scr_can_draw_power(id))
+		{
+			draw_sprite(spr_connection_cable, cable_adjacency+16, x, y);
+		}
+		else draw_sprite(spr_connection_cable, cable_adjacency, x, y);
+	}
+	if(draw_pipes)
+	{
+		draw_sprite(spr_pipe, pipe_adjacency, x, y);
+	}
 	draw_self();
 }

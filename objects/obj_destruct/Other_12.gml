@@ -11,5 +11,4 @@ else
 }
 
 scr_recalculate_paths();
-
 instance_destroy();

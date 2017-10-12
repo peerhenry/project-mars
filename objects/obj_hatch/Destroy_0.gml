@@ -11,7 +11,9 @@ with(base_room)
 if(!under_construction)
 {
 	// replace hatch with wall
-	var lid = layer_get_id("base_tall");
+	
+	var get_layer_for = script_container_resolve(script_container, "get_layer_for");
+	var lid = script_execute(get_layer_for, obj_wall);
 	var new_wall = instance_create_layer(x, y, lid, obj_wall);
 	with(new_wall)
 	{

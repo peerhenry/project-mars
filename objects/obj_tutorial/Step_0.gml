@@ -41,6 +41,7 @@ switch(step)
 		{
 			step++;
 			ds_list_add(global.active_constructions, macro_sensor);
+			scr_update_hud_category(macro_category_outside);
 			scr_alert_player("Select sensor from construction menu.");
 		}
 		break;
@@ -97,6 +98,8 @@ switch(step)
 			if(water_found)
 			{
 				scr_alert_player("You have found water! Click on the sensor to see it.");
+				arrow.target = instance_find(obj_sensor, 0);
+				instance_activate_object(arrow);
 				step = step + 2;
 			}
 			else
@@ -131,6 +134,8 @@ switch(step)
 		}
 		if(step_completed)
 		{
+			arrow.target = instance_find(obj_sensor, 0);
+			instance_activate_object(arrow);
 			scr_alert_player("You have found water! Click on the sensor to see it.");
 			step++;
 		}
@@ -142,6 +147,7 @@ switch(step)
 		}
 		if(step_completed)
 		{
+			instance_deactivate_object(arrow);
 			ds_list_add(global.active_constructions, macro_drill);
 			ds_list_add(global.active_constructions, macro_pump);
 			scr_alert_player("Construct a drill on the water and a pump next to it.");
@@ -164,7 +170,7 @@ switch(step)
 		{
 			var has_power = scr_can_draw_power(id);
 			var can_perform = scr_get_grid_prop(id, macro_grid_water, macro_grid_prop_can_perform_role);
-			if(has_power && can_perform)
+			if(!under_construction && has_power && can_perform)
 			{
 				pump_done = true;
 			}
@@ -191,6 +197,7 @@ switch(step)
 		if(step_completed)
 		{
 			ds_list_add(global.active_constructions, macro_water_reservoir);
+			scr_update_hud_category(macro_category_inside);
 			scr_alert_player("Build a reservoir in your base to store the water.");
 			step++;
 		}

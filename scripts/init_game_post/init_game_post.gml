@@ -16,4 +16,10 @@ with(obj_base_component)
 	event_user(macro_event_finalize);
 }
 
+// starting rooms have 100% oxygen
+with(obj_room)
+{
+	oxygen_level = 100;
+}
+
 global.init_stage = false;

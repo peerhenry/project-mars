@@ -1,0 +1,1 @@
+test_can_assign_noone();

@@ -4,7 +4,7 @@
 var arg_assignable = argument0;
 var arg_astronaut = argument1;
 
-if(arg_assignable.owner != arg_astronaut.owner || arg_assignable.under_construction || arg_assignable.is_assigned) return false;
+if(arg_assignable == noone || arg_assignable.owner != arg_astronaut.owner || arg_assignable.under_construction || arg_assignable.is_assigned) return false;
 
 switch(arg_assignable.object_index)
 {

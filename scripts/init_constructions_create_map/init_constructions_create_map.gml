@@ -133,7 +133,9 @@ init_construction_set_action(build_validation_i.outside, build_validation_o.vaca
 init_construction_new_single(macro_cable, "cable", spr_cable, 1, macro_category_outside);
 init_construction_set_action(build_validation_i.outside, build_validation_o.for_cable,	map_buffer_action.cable,	basetile_layer,	obj_cable,		noone, 100);
 init_construction_set_dragging(dragging.linear, 2);
-init_construction_set_action(build_validation_i.outside, build_validation_o.cable,		map_buffer_action.nothing,	noone,			noone,			noone, 100);
+init_construction_set_action(build_validation_i.outside, build_validation_o.cable,		map_buffer_action.nothing,	noone,			noone,			noone, 0);
+init_construction_set_action(build_validation_i.inside, build_validation_o.any,			map_buffer_action.nothing,	noone,			noone,			noone, 0);
+init_construction_set_action(build_validation_i.outside, build_validation_o.wall_like,	map_buffer_action.nothing,	noone,			noone,			noone, 0);
 init_construction_set_action(build_validation_i.outside, build_validation_o.for_cable,	map_buffer_action.cable,	basetile_layer,	obj_cable,		noone, 100);
 init_construction_set_drag_parameter(macro_drag_vertical, macro_image, 2);
 init_construction_set_drag_parameter(macro_drag_top, macro_image, 2);
@@ -143,7 +145,9 @@ init_construction_set_drag_parameter(macro_drag_bottom, macro_image, 2);
 init_construction_new_single(macro_pipe, "pipe", spr_pipe, 1, macro_category_outside);
 init_construction_set_action(build_validation_i.outside, build_validation_o.for_pipe,	map_buffer_action.pipe,		basetile_layer,	obj_pipe,		noone, 100);
 init_construction_set_dragging(dragging.linear, 1);
-init_construction_set_action(build_validation_i.outside, build_validation_o.pipe,		map_buffer_action.nothing,	noone,			noone,			noone, 100);
+init_construction_set_action(build_validation_i.outside, build_validation_o.pipe,		map_buffer_action.nothing,	noone,			noone,			noone, 0);
+init_construction_set_action(build_validation_i.inside, build_validation_o.any,			map_buffer_action.nothing,	noone,			noone,			noone, 0);
+init_construction_set_action(build_validation_i.outside, build_validation_o.wall_like,	map_buffer_action.nothing,	noone,			noone,			noone, 0);
 init_construction_set_action(build_validation_i.outside, build_validation_o.for_pipe,	map_buffer_action.pipe,		basetile_layer,	obj_pipe,		noone, 100);
 init_construction_set_drag_parameter(macro_drag_vertical, macro_image, 1);
 init_construction_set_drag_parameter(macro_drag_top, macro_image, 1);
@@ -200,8 +204,18 @@ init_construction_new_single(macro_destruct, "destruct", spr_destruct, 1, macro_
 init_construction_set_action(build_validation_i.any,	build_validation_o.any,			map_buffer_action.clear,	base_layer,		obj_destruct,			noone, 0);
 init_construction_set_dragging_simple(dragging.rectangular);
 
+// # destruction safe
+init_construction_new_single(macro_destruct_safe, "destruct safe", spr_destruct_safe, 1, macro_category_deconstruction);
+init_construction_set_action(build_validation_i.any,	build_validation_o.any,			map_buffer_action.clear,	base_layer,		obj_destruct,			noone, 0);
+init_construction_set_dragging_simple(dragging.rectangular);
+
+// # destruction room
+init_construction_new_single(macro_destruct_room, "destruct room", spr_destruct_room, 1, macro_category_deconstruction);
+init_construction_set_action(build_validation_i.any,	build_validation_o.any,			map_buffer_action.clear,	base_layer,		obj_destruct,			noone, 0);
+init_construction_set_dragging_simple(dragging.rectangular);
+
 // # electrolyser
-init_construction_new_single(macro_electrolyser, "Electrolyser", spr_elektrolyser_hud, 1, macro_category_inside);
+init_construction_new_single(macro_electrolyser, "electrolyser", spr_elektrolyser_hud, 1, macro_category_inside);
 init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_tall_layer, obj_electrolyser,		noone, 100);
 
 // # 3D printer
@@ -212,7 +226,6 @@ init_construction_set_action(build_validation_i.inside, build_validation_o.vacan
 var active_constructions = ds_list_create();
 ds_list_destroy(global.active_constructions);
 global.active_constructions = active_constructions;
-ds_list_add(active_constructions, macro_destruct);
 ds_list_add(active_constructions, macro_basetile);
 ds_list_add(active_constructions, macro_wall);
 ds_list_add(active_constructions, macro_hatch);
@@ -238,3 +251,7 @@ ds_list_add(active_constructions, macro_fridge);
 ds_list_add(active_constructions, macro_solar_panel);
 ds_list_add(active_constructions, macro_electrolyser);
 ds_list_add(active_constructions, macro_printer);
+
+ds_list_add(active_constructions, macro_destruct);
+ds_list_add(active_constructions, macro_destruct_safe);
+ds_list_add(active_constructions, macro_destruct_room);

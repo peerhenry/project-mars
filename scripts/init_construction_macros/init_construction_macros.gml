@@ -26,9 +26,12 @@
 #macro macro_magic_pump 18
 #macro macro_fridge 19
 #macro macro_solar_panel 20
-#macro macro_destruct 21
-#macro macro_electrolyser 22
-#macro macro_printer 23
+#macro macro_electrolyser 21
+#macro macro_printer 22
+
+#macro macro_destruct 101
+#macro macro_destruct_safe 102
+#macro macro_destruct_room 103
 
 // construction properties
 #macro macro_id 0

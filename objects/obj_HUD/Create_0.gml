@@ -40,7 +40,7 @@ item_count = 0;
 var left = x_offset;
 var top = y_offset + (32 + y_spacing)*item_count;
 
-var deconstruction_item = instance_create_layer(left, top, macro_logic_layer, obj_HUD_category_select_button);
+deconstruction_item = instance_create_layer(left, top, macro_logic_layer, obj_HUD_category_select_button);
 with(deconstruction_item){
 	tooltip_text = "Deconstruction";
 	sprite_index = spr_destruct;
@@ -49,7 +49,7 @@ with(deconstruction_item){
 item_count++;
 
 var top = y_offset + (32 + y_spacing)*item_count;
-var foundation_item = instance_create_layer(left, top, macro_logic_layer, obj_HUD_category_select_button);
+foundation_item = instance_create_layer(left, top, macro_logic_layer, obj_HUD_category_select_button);
 with(foundation_item){
 	tooltip_text = "Base Foundation";
 	sprite_index = spr_category_foundation;
@@ -58,7 +58,7 @@ with(foundation_item){
 item_count++;
 
 var top = y_offset + (32 + y_spacing)*item_count;
-var inside_item = instance_create_layer(left, top, macro_logic_layer, obj_HUD_category_select_button);
+inside_item = instance_create_layer(left, top, macro_logic_layer, obj_HUD_category_select_button);
 with(inside_item){
 	tooltip_text = "Inside constructions";
 	sprite_index = spr_category_inside;
@@ -67,7 +67,7 @@ with(inside_item){
 item_count++;
 
 var top = y_offset + (32 + y_spacing)*item_count;
-var outside_item = instance_create_layer(left, top, macro_logic_layer, obj_HUD_category_select_button);
+outside_item = instance_create_layer(left, top, macro_logic_layer, obj_HUD_category_select_button);
 with(outside_item){
 	tooltip_text = "Outside constructions";
 	sprite_index = spr_category_outside;
