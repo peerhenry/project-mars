@@ -3,8 +3,8 @@ global.music_is_playing = false;
 index = -1; // song starts at 0
 global.current_song = -1;
 
-songs[5] = song_vistas;
-songs[4] = song_jobs;
+songs[5] = song_signals;
+songs[4] = song_vistas;
 songs[3] = song_claim;
 songs[2] = song_dig;
 songs[1] = song_explore;
