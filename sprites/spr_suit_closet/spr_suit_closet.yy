@@ -13,6 +13,7 @@
     "bboxmode": 0,
     "colkind": 1,
     "coltolerance": 0,
+    "edgeFiltering": false,
     "frames": [
         {
             "id": "418a04c5-2319-4911-9773-e3444d2e0304",
@@ -208,6 +209,7 @@
         }
     ],
     "origin": 9,
+    "originLocked": false,
     "playbackSpeed": 15,
     "playbackSpeedType": 0,
     "premultiplyAlpha": false,
@@ -237,7 +239,7 @@
         4285558896,
         4284703587,
         4283782485,
-        4281742902,
+        4279834905,
         4278190080,
         4286158839,
         4286688762,

@@ -1,11 +1,5 @@
 // hardcoded constructable logic
-if(under_construction)
-{
-	event_inherited();
-	exit;
-}
-
-draw_self();
+event_inherited(); // may draw the assigned icon
 
 // draw oxygen bar
 if(holds_suit && suit_oxygen < 100)
@@ -22,5 +16,3 @@ if(holds_suit && suit_oxygen < 100)
 		false
 	);
 }
-
-event_inherited(); // may draw the assigned icon
