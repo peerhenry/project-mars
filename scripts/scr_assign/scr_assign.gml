@@ -5,6 +5,7 @@ var arg_assignable = argument0;
 var arg_astronaut = argument1;
 
 var can_assign = false;
+var already_adjacent = false;
 if(!arg_assignable.is_assigned)
 {
 	// Return false if the assignment cannot be done
@@ -16,7 +17,7 @@ if(!arg_assignable.is_assigned)
 	var astro_i = scr_rc_to_gi(arg_astronaut.x);
 	var astro_j = scr_rc_to_gi(arg_astronaut.y);
 		
-	var already_adjacent = (astro_i == ass_i && abs(astro_j - ass_j) == 1)
+	already_adjacent = (astro_i == ass_i && abs(astro_j - ass_j) == 1)
 		|| (astro_j == ass_j && abs(astro_i - ass_i) == 1);
 		
 	if(already_adjacent)
@@ -109,6 +110,9 @@ if(can_assign)
 	arg_assignable.is_assigned = true;
 	arg_assignable.assigned_astronaut = arg_astronaut;
 	arg_astronaut.assigned_object = arg_assignable;
+	if(already_adjacent){
+		scr_end_path_action(arg_astronaut);
+	}
 }
 
 return can_assign;

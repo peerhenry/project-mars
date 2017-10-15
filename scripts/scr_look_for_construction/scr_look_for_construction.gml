@@ -46,3 +46,5 @@ for(var n = 0; n < construction_count; n++)
 		}
 	}
 }
+
+return found_one;

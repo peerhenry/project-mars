@@ -6,3 +6,4 @@ scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.occupy);
 depth = -occ_j;
 image_speed = 0;
 mdu_count = 1;
+under_construction = false;

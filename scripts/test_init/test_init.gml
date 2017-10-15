@@ -13,5 +13,6 @@ if(!is_string(script_string))
 }
 
 global.current_test = script_string;
+ds_map_add(global.assertion_map, script_string, ds_list_create());
 
 test_message("Running: " + script_string);

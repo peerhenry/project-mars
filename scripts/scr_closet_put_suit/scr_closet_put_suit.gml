@@ -20,5 +20,6 @@ if(arg_astronaut.wears_suit && !arg_closet.holds_suit){
 		sprite_walk_up = sprite_suitless_up;
 	}
 	
-	audio_play_sound(sound_fx_suit_pressure, 0, 0);
+	var play = script_container_resolve(arg_astronaut.script_container, "play_sound");
+	script_execute(play, sound_fx_suit_pressure);
 }

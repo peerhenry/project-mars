@@ -12,6 +12,6 @@ with(arg_astronaut)
 	{
 		scr_stop_moving(id);
 		path_end();
-		scr_end_path_action(script_container, id);
+		scr_end_path_action(id);
 	}
 }

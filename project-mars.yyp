@@ -7319,6 +7319,14 @@
             }
         },
         {
+            "Key": "fbd73c15-b8a3-43d0-85c9-e2c1cb3fdfe0",
+            "Value": {
+                "id": "ec6f146e-0fea-4439-a6bb-cccdcf60a932",
+                "resourcePath": "scripts\\test_adjacent_closet\\test_adjacent_closet.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "fbeb2c78-ed63-433e-8ad6-84a773e0025c",
             "Value": {
                 "id": "f4ea6117-3b3f-4c76-91c1-2b0c5aa451c5",
@@ -7926,6 +7934,7 @@
         "29d566a3-1423-4216-808b-8f54fd8e22fb",
         "88cb600e-6ff3-4db5-9858-3e92a1024110",
         "130e144c-b451-4a25-b23c-46525aa0c972",
+        "fbd73c15-b8a3-43d0-85c9-e2c1cb3fdfe0",
         "a033452f-260c-4ff4-bdd9-4e3d75d4d45b",
         "ed178de6-928d-437f-9901-0748df93d7ac",
         "7480679c-448b-4249-8f9b-ff01c4a874ab",

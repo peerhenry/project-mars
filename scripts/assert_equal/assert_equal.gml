@@ -9,5 +9,8 @@ var result = test_as_string(argument1, argument2);
 if(!equal)
 {
 	global.current_test_pass = false;
-	show_debug_message("[FAIL] Assertion: " + string(argument2) + ": expected: " + expected + " actual: " + result);
+	var message = "[FAIL] Assertion: " + string(argument2) + ": expected: " + expected + " actual: " + result;
+	show_debug_message(message);
+	var assertion_list = global.assertion_map[? global.current_test];
+	ds_list_add(assertion_list, message);
 }
