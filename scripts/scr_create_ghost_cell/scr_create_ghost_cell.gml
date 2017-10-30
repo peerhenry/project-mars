@@ -1,4 +1,15 @@
 //scr_trace("scr_create_build_cell");
+/// @arg i
+/// @arg j
+/// @arg map_buffer_action
+/// @arg layer
+/// @arg object
+/// @arg removal
+/// @arg cost
+/// @arg sprite_override
+/// @arg image_index
+/// @arg angle_override
+/// @arg required_object
 var arg_i = argument0;
 var arg_j = argument1;
 var arg_map_buffer_action = argument2;

@@ -1,5 +1,4 @@
 scr_trace("scr_build_new");
-
 var can_construct = global.construction_is_valid && global.can_pay_for_construction;
 if(!global.construction_is_valid) scr_alert_player("Invalid construction.");
 if(!global.can_pay_for_construction) scr_alert_player("Insufficient building materials.");
@@ -111,6 +110,7 @@ for(var n = 0; n < cell_count; n++)
 if(cell_count > 0 && ds_list_size(new_instances) > 0)
 {
 	var new_construction = scr_new_construction(mdu_count, construction_cell_array, prerequisite, right, top, left, bottom, macro_player, total_required_metal);
+	scr_trace("new construction was created...");
 	scr_register_new_construction(new_construction);
 	scr_recalculate_paths();
 	// Set construction in all new instances

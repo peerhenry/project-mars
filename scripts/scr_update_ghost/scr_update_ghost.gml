@@ -9,18 +9,25 @@ var arg_is_dragging = argument6;
 var end_i = scr_rc_to_gi(arg_mouse_x);
 var end_j = scr_rc_to_gi(arg_mouse_y);
 
-var mouse_hovers_over_new_cell = (end_i != global.ghost_previous_i || end_j != global.ghost_previous_j);
+// OBSOLETE
+/*var mouse_hovers_over_new_cell = (end_i != global.ghost_previous_i || end_j != global.ghost_previous_j);
 if(mouse_hovers_over_new_cell)
 {
 	global.ghost_previous_i = end_i;
 	global.ghost_previous_j = end_j;
 	global.rotated_was_checked = false;	// for auto rotate hatches and doors
-}
+}*/
 
 // clear the ghost stack
 scr_ghost_reset();
 
 var construction = ds_map_find_value(global.construction_map, arg_construction_id);
+
+if(arg_construction_id == macro_destruct_safe || arg_construction_id == macro_destruct_room)
+{
+	scr_update_ghost_destruct(arg_origin_x, arg_origin_y, arg_mouse_x, arg_mouse_y, arg_construction_id, arg_is_dragging);
+	exit;
+}
 
 // first check dragging
 var ghost_was_dragging = false;

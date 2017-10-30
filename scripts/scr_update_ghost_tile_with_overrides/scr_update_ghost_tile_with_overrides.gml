@@ -14,10 +14,8 @@ var arg_angle_override = argument5;
 var map_value = scr_map_buffer_get_cell(target_i, target_j);
 var map_i = (map_value & 1);
 var map_o = (map_value >> 1) & 127; // next 7 bytes store o
-
 var new_ghost_cell = noone;
 var tile_is_valid = false;
-
 var sprite = arg_sprite_override;
 
 // loop over build actions to create a ghost cell

@@ -8,3 +8,5 @@ test_register_new_construction();
 test_ghost_and_build();
 test_ghost_and_build_is_in_queue();
 test_wall_image_index_for_foundation();
+test_suite_update_ghost_destruct();
+test_room_cannot_part_here();

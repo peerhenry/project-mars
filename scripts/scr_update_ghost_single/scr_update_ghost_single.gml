@@ -8,13 +8,12 @@ var arg_construction_id = argument2;
 var arg_rotation = argument3;
 
 var construction = ds_map_find_value(global.construction_map, arg_construction_id);
+
 var build_tiles = construction[macro_build_tiles];
-
 var build_coords;
-
 var valid_tile_count = 0;
-// loop over build tiles
 
+// loop over build tiles
 for(var n = 0; n < array_length_1d(build_tiles); n++)
 {	
 	var next_build_tile = build_tiles[n];	

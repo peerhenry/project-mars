@@ -1,4 +1,7 @@
 /// Check if given coordinate lies within given room.
+/// @arg room
+/// @arg x
+/// @arg y
 var le_room = argument0;
 var arg_x = argument1;
 var arg_y = argument2;

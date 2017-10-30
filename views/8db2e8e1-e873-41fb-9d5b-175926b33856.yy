@@ -10,7 +10,8 @@
         "7bfe44e3-05f1-45c0-b2a6-007601c34322",
         "ecf491d8-639b-41d0-a9d5-332230ee72cf",
         "83973ce2-f474-4c6d-8adc-ffde39ec2621",
-        "8fddd617-f131-4bbf-84b1-7999a57116db"
+        "8fddd617-f131-4bbf-84b1-7999a57116db",
+        "8bb9a53d-3dff-4f87-bf9c-df51f39744d2"
     ],
     "filterType": "GMScript",
     "folderName": "suites",

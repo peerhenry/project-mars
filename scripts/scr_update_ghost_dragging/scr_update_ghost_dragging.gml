@@ -85,37 +85,6 @@ if(construction[macro_dragging] == dragging.rectangular)
 			scr_update_ghost_tile_with_overrides(i_left-1, nj, surround_actions, sprite_override, 10, angle_override);
 			scr_update_ghost_tile_with_overrides(i_right+1, nj, surround_actions, sprite_override, 10, angle_override);
 		}
-		
-		// THE OLD WAY OF DOING WALLS
-		/*
-		// 4 corners
-		scr_update_ghost_tile_with_overrides(
-			i_left-1, j_top-1, 
-			surround_actions, spr_wall_edge, 0, 90);
-		scr_update_ghost_tile_with_overrides(
-			i_right+1, j_top-1, 
-			surround_actions, spr_wall_edge, 0, 0);
-		scr_update_ghost_tile_with_overrides(
-			i_left-1, j_bottom+1,
-			surround_actions, spr_wall_edge, 0, 180);
-		scr_update_ghost_tile_with_overrides(
-			i_right+1, j_bottom+1,
-			surround_actions, spr_wall_edge, 0, 270);
-		
-		
-		// sides
-		for(var ni = i_left; ni <= i_right; ni++)
-		{
-			scr_update_ghost_tile_with_overrides(ni, j_top-1, surround_actions, spr_wall_straight, 0, 0);
-			scr_update_ghost_tile_with_overrides(ni, j_bottom+1, surround_actions, spr_wall_straight, 0, 0);
-		}
-	
-		for(var nj = j_top; nj <= j_bottom; nj++)
-		{
-			scr_update_ghost_tile_with_overrides(i_left-1, nj, surround_actions, spr_wall_straight, 0, 90);
-			scr_update_ghost_tile_with_overrides(i_right+1, nj, surround_actions, spr_wall_straight, 0, 90);
-		}
-		*/
 	}
 }
 else
