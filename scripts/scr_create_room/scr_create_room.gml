@@ -7,7 +7,10 @@ var arg_y = argument1;
 var or_x = scr_rc_clamp_origin(arg_x);
 var or_y = scr_rc_clamp_origin(arg_y);
 
-var new_room = instance_create_layer(arg_x, arg_y, macro_rooms_layer, obj_room);
+var container = global.script_container;
+var get_layer = script_container_resolve(container, "get_layer_for");
+var rooms_layer = script_execute(get_layer, obj_room);
+var new_room = instance_create_layer(arg_x, arg_y, rooms_layer, obj_room);
 var base_tile = instance_position(arg_x, arg_y, obj_base_tile);
 with(new_room){
 	bb_left = or_x;

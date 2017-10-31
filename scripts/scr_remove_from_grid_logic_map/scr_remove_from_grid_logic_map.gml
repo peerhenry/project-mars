@@ -4,7 +4,7 @@ var arg_grid = argument0;
 var arg_component = argument1;
 
 scr_trace_script("scr_remove_from_grid_logic_map", [argument0, argument1]);
-debug_grid(arg_grid); // DEBUG
+//debug_grid(arg_grid); // DEBUG
 
 with(arg_grid)
 {

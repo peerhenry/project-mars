@@ -19,5 +19,6 @@ if(is_undefined(existing))
 }
 else
 {
-	show_error("Script for " + arg_name + " is already registered", true);
+	ds_map_replace(script_map, arg_name, arg_script);
+	// show_error("Script for " + arg_name + " is already registered", true);
 }

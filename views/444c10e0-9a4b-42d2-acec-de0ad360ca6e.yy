@@ -11,7 +11,8 @@
         "7b66c07f-dbe9-4051-98e9-1d4946ed0d4c",
         "88bca295-9294-4f9d-8e56-c208bbd0b1df",
         "9de4fdbc-7560-4561-8c09-6a0d502d7dc6",
-        "7a31861e-756a-49f9-acbb-e1c318c64508"
+        "7a31861e-756a-49f9-acbb-e1c318c64508",
+        "a973010f-b346-4e0a-bd5a-d0b5179e4775"
     ],
     "filterType": "GMScript",
     "folderName": "assertions",

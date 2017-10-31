@@ -1,10 +1,18 @@
+/// @arg tile_list
+/// @arg bb_left
+/// @arg bb_top
+/// @arg bb_right
+/// @arg bb_bottom
 var tile_list = argument0;
 var left = argument1;
 var top = argument2;
 var right = argument3;
 var bottom = argument4;
 
-var new_room = instance_create_layer(left, top, macro_rooms_layer, obj_room);
+var container = global.script_container;
+var get_layer = script_container_resolve(container, "get_layer_for");
+var rooms_layer = script_execute(get_layer, obj_room);
+var new_room = instance_create_layer(left, top, rooms_layer, obj_room);
 with(new_room){
 	bb_left = left;
 	bb_top = top;

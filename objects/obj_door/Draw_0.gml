@@ -25,7 +25,7 @@ if(room1 != noone && room1.oxygen_level < 100)
 
 if(room2 != noone && room2.oxygen_level < 100)
 {
-	var o2_alpha = ( (100-room2.oxygen_level)/100 )*global.oxygen_max_alpha;
+	var o2_alpha = ( (100-room2.oxygen_level)/100 )*oxygen_max_alpha;
 	draw_set_alpha(o2_alpha);
 	draw_set_color(c_red);
 	var left = x - 16;
@@ -50,5 +50,7 @@ draw_self();
 
 if(locked)
 {
-	draw_sprite(spr_locked, 0, x, y);
+	var lock_y = y;
+	if(global.draw_tall_walls) lock_y = y - 16;
+	draw_sprite(spr_locked, 0, x, lock_y);
 }

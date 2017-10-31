@@ -1,8 +1,8 @@
 {
-    "id": "2d7e81e6-300b-4e61-8ef5-340eccd96771",
+    "id": "d4ccc9c1-e4f8-4aa1-a892-50e09456dc03",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "test_three_cables",
+    "name": "test_parted_rooms_have_grids",
     "IsCompatibility": false,
     "IsDnD": false
 }

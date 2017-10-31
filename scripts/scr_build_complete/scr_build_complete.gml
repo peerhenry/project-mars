@@ -18,6 +18,7 @@ ds_list_destroy(piles);
 ds_map_replace(arg_construction, construction_mdu_piles, noone);
 
 //var construction_cells_array = arg_construction[construction_cells];
+var instances_to_finalize = ds_stack_create();
 var construction_cells_array = ds_map_find_value(arg_construction, construction_cells);
 var count = array_length_1d(construction_cells_array);
 var room_logic_instance = noone;
@@ -37,22 +38,10 @@ for(var n = 0; n < count; n++) // loop over cells
 	if(object_to_remove != noone)
 	{
 		var instance = instance_position(cell_x, cell_y, object_to_remove);
-		if(instance.object_index == obj_base_tile)
-		{
-			with(instance)
-			{
-				var instance2 = instance_position(cell_x, cell_y, object_to_remove);
-				with(instance2) instance_destroy();
-			}
-		}
-		else with(instance) instance_destroy();
+		instance_destroy(instance);
 	}
 	
-	with(added_instance)
-	{
-		depth = depth + 300;				// Reset normal depth
-		event_user(macro_event_finalize);	// Finalize
-	}
+	ds_stack_push(instances_to_finalize, added_instance);
 }
 
 // Remove from the construction queue
@@ -67,5 +56,16 @@ with(obj_astronaut)
 }
 
 ds_map_replace(arg_construction, construction_astronaut, noone);
-
 // do not destroy because construction may be needed after completion
+// 31-10-2017: but is it ever used?
+
+while(!ds_stack_empty(instances_to_finalize))
+{
+	var next_instance = ds_stack_pop(instances_to_finalize);
+	with(next_instance)
+	{
+		depth = depth + 300;				// Reset normal depth
+		event_user(macro_event_finalize);
+	}
+}
+ds_stack_destroy(instances_to_finalize);

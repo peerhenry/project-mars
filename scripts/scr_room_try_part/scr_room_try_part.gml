@@ -11,7 +11,7 @@ var partial_room = scr_room_part(arg_room, false);	// false: do not force new ro
 var room_was_parted = partial_room != arg_room;		// arg_room is destroyed if partitioned.
 
 if(room_was_parted)
-{
+{	
 	for(var n = 0; n < ds_list_size(doors_to_update); n++)
 	{
 		var next_door = ds_list_find_value(doors_to_update, n);

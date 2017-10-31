@@ -10,6 +10,7 @@ global.tests_passed = true;
 
 test_message("Running tests...");
 scr_tests();
+//test_split_room_with_destruct_safe();
 
 global.enable_trace = trace_was_enabled;
 script_container_destroy(container);

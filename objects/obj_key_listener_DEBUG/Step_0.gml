@@ -97,3 +97,22 @@ if(keyboard_check_pressed(ord("B")))
 {
 	global.draw_room_bb = !global.draw_room_bb
 }
+
+if(keyboard_check_pressed(ord("O")))
+{
+	with(obj_grid)
+	{
+		if(grid_type == macro_grid_oxygen) 
+		{
+			total_production = 10;
+			total_demand = 0;
+			net_output = 10;
+			storage = 10;
+			storage_capacity = 10;
+		}
+	}
+	with(obj_room)
+	{
+		oxygen_level = 100;
+	}
+}

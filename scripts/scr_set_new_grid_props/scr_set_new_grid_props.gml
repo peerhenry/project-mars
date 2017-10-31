@@ -10,6 +10,6 @@ var arg_value = argument3;
 
 with(arg_instance)
 {
-	var electric_grid_props = scr_new_grid_props(arg_role, arg_value);
-	ds_map_add(grid_props_map, arg_grid_type, electric_grid_props);
+	var new_grid_props = scr_new_grid_props(arg_role, arg_value);
+	ds_map_add(grid_props_map, arg_grid_type, new_grid_props);
 }

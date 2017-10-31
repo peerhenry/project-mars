@@ -175,7 +175,9 @@ if(tiles_remain)
 	// show_message("A discrepancy between the count of connected tiles and total tiles of a room was detected; connected " + string(connected_tiles_count) + " total: " + string(tile_count)); // DEBUG
 	
 	// make a room from remaining tiles:
-	var temp_room = instance_create_layer(0, 0, macro_rooms_layer, obj_room); // this is just a dummy room without bb, used to pass remaining tiles along with gates
+	var get_layer = script_container_resolve(global.script_container, "get_layer_for");
+	var rooms_layer = script_execute(get_layer, obj_room);
+	var temp_room = instance_create_layer(0, 0, rooms_layer, obj_room); // this is just a dummy room without bb, used to pass remaining tiles along with gates
 	with(temp_room)
 	{
 		oxygen_level = le_room.oxygen_level;
@@ -217,4 +219,4 @@ ds_list_destroy(all_doors);
 ds_queue_destroy(tile_queue);
 ds_list_destroy(tiles_visited);
 
-return out_room; // not sure why we're returning the room if it's not used.
+return out_room;

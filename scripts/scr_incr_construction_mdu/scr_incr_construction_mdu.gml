@@ -53,12 +53,6 @@ if(size > 0)
 		}
 		var newpile = instance_create_layer(last_pile.x + dx, last_pile.y + dy, macro_base_layer, obj_construction_mdu_pile);
 		ds_list_add(piles, newpile);
-		
-		/* DEBUG
-		var msg = "new pile, segment: " + string(segment) + " x_s:" + string(x_s) + " dx:" + string(dx) + " dy:" + string(dy);
-		show_debug_message(msg);
-		scr_alert_player(msg);
-		*/
 	}
 }
 else

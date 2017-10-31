@@ -1,3 +1,10 @@
+/// @arg origin_x
+/// @arg origin_y
+/// @arg mouse_x
+/// @arg mouse_y
+/// @arg construction_id
+/// @arg rotation
+/// @arg is_dragging
 var arg_origin_x = argument0;
 var arg_origin_y = argument1;
 var arg_mouse_x = argument2;

@@ -9,7 +9,7 @@ var step_completed = false;
 switch(step)
 {
 	case -2:
-		scr_alert_player("Use keys WASD to move the view around.");
+		script_execute(alert_script, "Use keys WASD to move the view around.");
 		step++;
 		break;
 	case -1:

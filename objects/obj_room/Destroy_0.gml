@@ -7,13 +7,9 @@ ds_list_destroy(hatches);
 // remove room from grid
 var grid_props = grid_props_map[? macro_grid_oxygen];
 var grid = grid_props[macro_grid_prop_grid];
-// scr_assert_instance_type(grid, obj_grid); // DEBUG
-with(grid)
+if(grid > 0)
 {
-	var role = grid_props[macro_grid_prop_role];
-	var list_to_use = logic_map[? role];
-	var index = ds_list_find_index(list_to_use, other.id);
-	ds_list_delete(list_to_use, index);
+	scr_remove_from_grid_logic_map(grid, id);
 }
 
 ds_map_destroy(grid_props_map);

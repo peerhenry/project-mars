@@ -2,9 +2,7 @@
 /// @param grid
 scr_trace_script("scr_grid_part", [argument0]);
 debug_instance_type(argument0, obj_grid);
-
 var arg_grid = argument0;
-
 var grid_type = arg_grid.grid_type;
 
 // Create the data structures that will contain the remainder of all components from the grid

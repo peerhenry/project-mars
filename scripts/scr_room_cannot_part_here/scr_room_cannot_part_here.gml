@@ -6,10 +6,12 @@ var arg_i = argument1;
 var arg_j = argument2;
 
 var flip_count = 0;
-var in_gap = false;
 var dis = [-1,0,1,1,1,0,-1,-1];
 var djs = [-1,-1,-1,0,1,1,1,0];
-for(var n = 0; n<8; n++)
+var next_i = arg_i + dis[0];
+var next_j = arg_j + djs[0];
+var in_gap = !scr_check_tile_in_room(arg_room, next_i, next_j);;
+for(var n = 1; n<8; n++)
 {
 	var next_i = arg_i + dis[n];
 	var next_j = arg_j + djs[n];
@@ -18,14 +20,18 @@ for(var n = 0; n<8; n++)
 	{
 		if(in_gap)
 		{
-			flip_count++; 
+			flip_count++;
 			in_gap = false;
 		}
 	}
 	else
 	{
-		in_gap = true;
+		if(!in_gap)
+		{
+			flip_count++;
+			in_gap = true;
+		}
 	}
 }
 
-return flip_count<2;
+return flip_count<3;
