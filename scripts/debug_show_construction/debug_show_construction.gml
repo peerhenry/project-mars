@@ -3,7 +3,7 @@ show_debug_message("construction_build_state: " + string(ds_map_find_value(next_
 show_debug_message("construction_completion: " + string(ds_map_find_value(next_construction, construction_completion)));
 show_debug_message("construction_build_type: " + string(ds_map_find_value(next_construction, construction_build_type)));
 var cells = ds_map_find_value(next_construction, construction_cells);
-var cell_count = array_length_1d(cells);
+var cell_count = ds_list_size(cells);
 show_debug_message("cell_count: " + string(cell_count));
 show_debug_message("construction_astronaut: " + string(ds_map_find_value(next_construction, construction_astronaut)));
 show_debug_message("construction_time: " + string(ds_map_find_value(next_construction, construction_time)));

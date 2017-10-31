@@ -1,4 +1,4 @@
-test_init(test_ghost_and_build_is_in_queue);
+test_init(test_wall_image_index_for_foundation);
 
 scr_ghost_reset();
 

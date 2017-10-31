@@ -1,0 +1,2 @@
+test_split_room_with_destruct_safe();
+test_under_construction_destruct_safe();

@@ -1,4 +1,4 @@
-test_init(test_wall_image_index_for_foundation);
+test_init(test_ghost_and_build);
 
 // arrange
 scr_ghost_reset();
@@ -8,16 +8,8 @@ scr_update_ghost_single(10, 10, macro_basetile, 0);
 scr_build_new(); // creates the construction
 
 // assert
-var btc = 0; // basetile count;
-with(obj_base_tile){
-	btc = btc + 1;
-}
-assert_equal(1, btc, "basetile count");
-var wallcount = 0;
-with(obj_wall){
-	wallcount = wallcount + 1;
-}
-assert_equal(8, wallcount, "wallcount");
+assert_object_count(1, obj_base_tile);
+assert_object_count(8, obj_wall);
 
 // cleanup
 with(obj_base_tile){

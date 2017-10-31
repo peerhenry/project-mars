@@ -19,18 +19,18 @@ ds_map_replace(arg_construction, construction_mdu_piles, noone);
 
 //var construction_cells_array = arg_construction[construction_cells];
 var instances_to_finalize = ds_stack_create();
-var construction_cells_array = ds_map_find_value(arg_construction, construction_cells);
-var count = array_length_1d(construction_cells_array);
+var construction_cells_list = ds_map_find_value(arg_construction, construction_cells);
+var count = ds_list_size(construction_cells_list);
 var room_logic_instance = noone;
 for(var n = 0; n < count; n++) // loop over cells
 {
 	// - get construction cell parameters
-	var next_cell = construction_cells_array[n];
-	var i = next_cell[c_cell_i];
-	var j = next_cell[c_cell_j];
-	var added_instance = next_cell[c_cell_new_instance];
-	var object_to_remove = next_cell[c_cell_object_to_remove];
-	var target_layer = next_cell[c_cell_layer];
+	var next_cell = construction_cells_list[|n];
+	var i = next_cell[?c_cell_i];
+	var j = next_cell[?c_cell_j];
+	var added_instance = next_cell[?c_cell_new_instance];
+	var object_to_remove = next_cell[?c_cell_object_to_remove];
+	var target_layer = next_cell[?c_cell_layer];
 	var cell_x = scr_gi_to_rc(i);
 	var cell_y = scr_gi_to_rc(j);
 	

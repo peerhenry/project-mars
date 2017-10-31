@@ -10,6 +10,7 @@ switch(argument0)
 		return 0.5;
 	case obj_destruct_placemarker:
 	case obj_destruct:
+	case noone:
 		return 0;
 }
 return 1;

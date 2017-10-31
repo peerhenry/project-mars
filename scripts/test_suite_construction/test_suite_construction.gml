@@ -10,4 +10,4 @@ test_ghost_and_build_is_in_queue();
 test_wall_image_index_for_foundation();
 test_suite_update_ghost_destruct();
 test_room_cannot_part_here();
-test_split_room_with_destruct_safe();
+test_suite_destruction();

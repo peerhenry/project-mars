@@ -1,4 +1,4 @@
-test_init(test_ghost_and_build);
+test_init(test_ghost_and_build_is_in_queue);
 
 // arrange
 scr_ghost_reset();
@@ -10,8 +10,8 @@ scr_build_new(); // creates the construction
 // assert
 var cq = scr_get_construction_queue(macro_player);
 var constr = ds_list_find_value(cq, 0);
-var cells = constr[? construction_cells]; // array of cells
-var length = array_length_1d(cells);
+var cells = constr[? construction_cells]; // list of cells
+var length = ds_list_size(cells);
 assert_equal(9, length, "cells of first construction in queue");
 
 // cleanup

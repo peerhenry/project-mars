@@ -1,6 +1,5 @@
 return scr_new_construction(
-	0,		// mdu count
-	[],		// cell array
+	ds_list_create(),	// cell list
 	noone,	// prerequisite
 	32,		// bounding box
 	0,		// "

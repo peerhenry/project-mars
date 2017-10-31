@@ -14,6 +14,8 @@ if(ds_map_size(arg_tile_map) != ds_list_size(arg_tile_key_list)){
 	show_error("ERROR! tile map was of different size than tile key list in scr_grid_new_from_tile_map", true);
 }
 
+var found_rooms = ds_list_create();
+
 var new_grid = scr_grid_new(arg_grid_type);
 with(new_grid)
 {
@@ -39,10 +41,22 @@ with(new_grid)
 			var next_component = ds_list_find_value(next_cell, m);
 			scr_add_to_grid_logic_map(new_grid, next_component);
 			scr_replace_grid(next_component, new_grid);
+			
+			// in case of oxygen grid, transfer the rooms to the grid as well...
+			if(arg_grid_type == macro_grid_oxygen && next_component.object_index == obj_base_tile)
+			{
+				var a_room = scr_room_at(next_component.x, next_component.y);
+				if(ds_list_find_index(found_rooms, a_room) == -1)
+				{
+					scr_connect_to_grid(new_grid, a_room);
+					ds_list_add(found_rooms, a_room);
+				}
+			}
 		}
 	}
 }
 
 debug_grid(new_grid); // DEBUG
 
+ds_list_destroy(found_rooms);
 return new_grid;

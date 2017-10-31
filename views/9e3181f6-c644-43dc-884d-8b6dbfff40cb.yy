@@ -22,7 +22,8 @@
         "2a8805d1-edc8-4b24-81a6-fc0a878e2032",
         "43ed2962-0d50-4109-bc06-ff25d957bd4b",
         "574af48c-f1ed-4a34-b7e3-9e887e4dbc3e",
-        "8c5680bc-05e8-46be-9e6c-c8abc0beb401"
+        "8c5680bc-05e8-46be-9e6c-c8abc0beb401",
+        "6b04f12b-2af6-4b93-9439-9f07adc478db"
     ],
     "filterType": "GMScript",
     "folderName": "CONSTRUCTION",
