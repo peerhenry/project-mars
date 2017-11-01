@@ -63,6 +63,7 @@ for(var n = 0; n < count; n++) // loop over cells
 			ds_map_replace(cell, c_cell_new_instance, added_instance);
 			ds_map_replace(cell, c_cell_layer, target_layer);
 			ds_map_replace(cell, c_cell_object_to_remove, noone);
+			added_instance.construction_instance = constr;
 			instance_destroy(removal);
 		}
 		
