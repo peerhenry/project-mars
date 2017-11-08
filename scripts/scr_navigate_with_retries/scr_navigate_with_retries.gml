@@ -86,7 +86,8 @@ if(!arg_astronaut.wears_suit)
 {
 	with(obj_hatch)
 	{
-		mp_grid_clear_cell(navigation_grid, occ_i, occ_j);
+		// only free them again if they were not under construction, destruction or locked
+		if(!under_construction && !under_destruction && !locked) mp_grid_clear_cell(navigation_grid, occ_i, occ_j);
 	}
 }
 

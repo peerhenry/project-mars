@@ -8,6 +8,7 @@ vertical = false;
 image_speed = 0;
 occ_i = scr_rc_to_gi(x);
 occ_j = scr_rc_to_gi(y);
+under_destruction = false;
 
 var adj_walls = scr_get_adjacent_instances(id, obj_wall);
 for(var n = 0; n < 4; n++) // ENWS

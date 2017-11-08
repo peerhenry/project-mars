@@ -82,6 +82,12 @@ for(var n = 0; n < count; n++) // loop over cells
 		if(object_is_ancestor(removal.object_index, obj_gate))
 		{
 			// todo: Gates must not be allowed to be active while under deconstruction...
+			with(removal)
+			{
+				if(is_open) scr_gate_toggle();
+				scr_navgrid_occupy(occ_i, occ_j);
+				under_destruction = true; // boolean to prevent mouse control over gate
+			}
 		}
 	}
 }

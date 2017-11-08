@@ -1,5 +1,5 @@
 /// @description Open/close
-if(under_construction)
+if(under_construction || under_destruction)
 {
 	exit;
 }

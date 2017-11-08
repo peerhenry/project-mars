@@ -13,7 +13,7 @@ for(var n = 0; n < 4; n++) // ENWS
 	if(next_wall != noone)
 	{
 		var remove_bit = power(2, (n+2)%4)
-		if(image_index & remove_bit == remove_bit)
+		if(next_wall.image_index & remove_bit == remove_bit)
 		{
 			next_wall.image_index -= remove_bit;
 		}
