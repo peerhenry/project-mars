@@ -1,6 +1,7 @@
 scr_trace("scr_build_new");
-var valid = global.construction_is_valid;
-var payable = global.can_pay_for_construction;
+var ghost = global.construction_ghost;
+var valid = ghost[?macro_ghost_valid];
+var payable = ghost[?macro_ghost_payable];
 var alert_player = script_container_resolve(global.script_container, "alert_player")
 if(!valid) script_execute(alert_player, "Invalid construction.");
 if(!payable) script_execute(alert_player, "Insufficient building materials.");
@@ -8,13 +9,13 @@ var can_construct = valid && payable;
 if(!can_construct) return;
 
 // read from the ghost stack
-var ghost_stack = global.ghost_stack;
+var ghost_stack = ghost[?macro_ghost_stack];
 var cell_count = ds_stack_size(ghost_stack);
 var new_construction;
 var construction_cell_list = ds_list_create();
 var prerequisite = noone;
 
-var construct_id = global.construct;
+var construct_type = ghost[?macro_ghost_constr_type];;
 var new_instances = ds_list_create();
 var left = 0;
 var right = 0;
@@ -89,7 +90,7 @@ for(var n = 0; n < cell_count; n++)
 			depth = depth - 300; // under construction drawing has priority
 			under_construction = true;
 			owner = macro_player;
-			scr_post_creation_logic(construct_id, new_instance);
+			scr_post_creation_logic(construct_type, new_instance);
 		}
 		
 		if(required_object != noone)
@@ -115,17 +116,15 @@ for(var n = 0; n < cell_count; n++)
 if(cell_count > 0 && ds_list_size(new_instances) > 0)
 {
 	var new_construction = scr_new_construction(construction_cell_list, prerequisite, right, top, left, bottom, macro_player, total_required_metal);
-	scr_trace("new construction was created...");
 	scr_register_new_construction(new_construction);
 	scr_recalculate_paths();
-	// Set construction in all new instances
 	for(var n = 0; n < ds_list_size(new_instances); n++)
 	{
 		var next_instance = ds_list_find_value(new_instances, n);
 		next_instance.construction_instance = new_construction;
 	}
 	
-	if(construct_id == macro_destruct_safe || construct_id == macro_destruct_room) scr_handle_new_destruction(new_construction);
+	if(construct_type == macro_destruct_safe || construct_type == macro_destruct_room) scr_handle_new_destruction(new_construction);
 }
 else
 {

@@ -9,7 +9,7 @@ var arg_origin_x = argument0;
 var arg_origin_y = argument1;
 var arg_mouse_x = argument2;
 var arg_mouse_y = argument3;
-var arg_construction_id = argument4;
+var arg_construction_type = argument4;
 var arg_rotation = argument5;
 var arg_is_dragging = argument6;
 
@@ -17,13 +17,12 @@ var end_i = scr_rc_to_gi(arg_mouse_x);
 var end_j = scr_rc_to_gi(arg_mouse_y);
 
 // clear the ghost stack
-scr_ghost_reset();
+var ghost = scr_ghost_reset_with_constr_type(arg_construction_type);
+var construction = ds_map_find_value(global.construction_map, arg_construction_type);
 
-var construction = ds_map_find_value(global.construction_map, arg_construction_id);
-
-if(arg_construction_id == macro_destruct_safe || arg_construction_id == macro_destruct_room)
+if(arg_construction_type == macro_destruct_safe || arg_construction_type == macro_destruct_room)
 {
-	scr_update_ghost_destruct(arg_origin_x, arg_origin_y, arg_mouse_x, arg_mouse_y, arg_construction_id, arg_is_dragging);
+	scr_update_ghost_destruct(arg_origin_x, arg_origin_y, arg_mouse_x, arg_mouse_y, arg_construction_type, arg_is_dragging);
 	exit;
 }
 
@@ -46,16 +45,16 @@ if(arg_is_dragging && construction[macro_dragging] != dragging.none)
 			origin_i, origin_j, 
 			diff_i, diff_j,
 			abs_diff_i, abs_diff_j,
-			arg_construction_id, arg_rotation
+			arg_construction_type, arg_rotation
 		);
 		ghost_was_dragging = true;
 	}
 }
 
 // if no dragging, do regular update ghost
-if(!ghost_was_dragging) scr_update_ghost_single(end_i, end_j, arg_construction_id, arg_rotation);
+if(!ghost_was_dragging) scr_update_ghost_single(end_i, end_j, arg_construction_type, arg_rotation);
 
-if(global.total_cost > global.resource_amount_metal)
+if(ghost[?macro_ghost_cost] > global.resource_amount_metal)
 {
-	global.can_pay_for_construction = false;
+	ds_map_replace(ghost, macro_ghost_payable, false);
 }

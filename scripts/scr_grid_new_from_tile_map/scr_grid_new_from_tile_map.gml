@@ -46,7 +46,7 @@ with(new_grid)
 			if(arg_grid_type == macro_grid_oxygen && next_component.object_index == obj_base_tile)
 			{
 				var a_room = scr_room_at(next_component.x, next_component.y);
-				if(ds_list_find_index(found_rooms, a_room) == -1)
+				if(a_room != noone && ds_list_find_index(found_rooms, a_room) == -1)
 				{
 					scr_connect_to_grid(new_grid, a_room);
 					ds_list_add(found_rooms, a_room);

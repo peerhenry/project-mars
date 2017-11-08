@@ -1,0 +1,1 @@
+return global.construction_ghost[? macro_ghost_constr_type];

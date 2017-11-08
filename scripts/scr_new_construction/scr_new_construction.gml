@@ -33,7 +33,7 @@ else if(arg_prerequisite == noone) initial_state = construction_state.awaiting_m
 var build_time = scr_calculate_build_time(mdu_count, arg_required_metal);
 ds_map_add(new_construction, construction_completion, 0);
 ds_map_add(new_construction, construction_build_state, initial_state);
-ds_map_add(new_construction, construction_build_type, global.construct);
+ds_map_add(new_construction, construction_type, scr_get_selected_constr_type());
 ds_map_add(new_construction, construction_cells, arg_construction_cell_list);
 ds_map_add(new_construction, construction_astronaut, noone);
 ds_map_add(new_construction, construction_time, build_time);

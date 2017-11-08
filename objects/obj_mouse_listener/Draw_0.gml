@@ -2,7 +2,7 @@
 // don't draw if hovering over hud
 if(global.hovering_over_HUD) exit;
 
-var construction = global.construct;
+var construction = scr_get_selected_constr_type();
 
 // Draw selection rectangle
 if(is_dragging && construction == noone)

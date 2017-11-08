@@ -15,7 +15,8 @@
         "99819d9e-cd78-4ae4-872e-3d5869e6d978",
         "230da6da-129a-4a63-8dd6-99cef523222e",
         "eb6b9792-872d-489a-8e0e-1f7f1120e8c7",
-        "31fb941b-862b-46d0-b045-cb302b2a9fea"
+        "31fb941b-862b-46d0-b045-cb302b2a9fea",
+        "0829413c-1775-496c-8528-8e1daa103269"
     ],
     "filterType": "GMScript",
     "folderName": "coordinates",

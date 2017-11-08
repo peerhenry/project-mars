@@ -11,6 +11,10 @@ global.tests_passed = true;
 test_message("Running tests...");
 scr_tests();
 
+// test_suite_construction();
+
+//test_suite_destruction();
+
 global.enable_trace = trace_was_enabled;
 script_container_destroy(container);
 return global.tests_passed;

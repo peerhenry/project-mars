@@ -8,19 +8,6 @@ with(base_room)
 	ds_list_delete(hatches, ind);
 }
 
-if(!under_construction)
-{
-	// replace hatch with wall
-	
-	var get_layer_for = script_container_resolve(script_container, "get_layer_for");
-	var lid = script_execute(get_layer_for, obj_wall);
-	var new_wall = instance_create_layer(x, y, lid, obj_wall);
-	with(new_wall)
-	{
-		event_user(macro_event_finalize);
-	}
-}
-
 if(connects_horizontally)
 {
 	scr_execute_map_buffer_action(occ_i + 1, occ_j, map_buffer_action.clear);

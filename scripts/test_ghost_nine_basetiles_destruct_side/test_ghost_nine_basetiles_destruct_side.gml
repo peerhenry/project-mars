@@ -31,13 +31,19 @@ instance_create_depth(160, 64, 0, obj_wall);
 instance_create_depth(160, 96, 0, obj_wall);
 instance_create_depth(160, 128, 0, obj_wall);
 
+with(obj_base_tile) under_construction = false;
+with(obj_wall) under_construction = false;
+
 // act
-scr_ghost_reset();
+scr_ghost_reset_with_constr_type(macro_destruct_safe);
 scr_update_ghost_destruct(96, 64, 96, 64, macro_destruct_safe, false);
 
 // assert
-assert_equal(0, ds_stack_size(global.invalid_ghost_stack), "invalid ghost stack size");
-assert_equal(13, ds_stack_size(global.ghost_stack), "ghost stack size");
+var ghost = global.construction_ghost;
+var ghost_stack = ghost[?macro_ghost_stack];
+var ghost_invalid_stack = ghost[?macro_ghost_invalid_stack];
+assert_equal(0, ds_stack_size(ghost_invalid_stack), "invalid ghost stack size");
+assert_equal(13, ds_stack_size(ghost_stack), "ghost stack size");
 
 // cleanup
 with(obj_base_tile)

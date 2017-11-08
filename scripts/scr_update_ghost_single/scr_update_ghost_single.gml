@@ -4,10 +4,10 @@
 /// @arg rotation
 var arg_i = argument0;
 var arg_j = argument1;
-var arg_construction_id = argument2;
+var arg_construction_type = argument2;
 var arg_rotation = argument3;
 
-var construction = ds_map_find_value(global.construction_map, arg_construction_id);
+var construction = ds_map_find_value(global.construction_map, arg_construction_type);
 
 var build_tiles = construction[macro_build_tiles];
 var build_coords;
@@ -89,7 +89,7 @@ for(var n = 0; n < array_length_1d(build_tiles); n++)
 
 
 var surround_actions = construction[macro_surround_actions];
-if(is_array(surround_actions) && arg_construction_id == macro_basetile)
+if(is_array(surround_actions) && arg_construction_type == macro_basetile)
 {
 	var wall_sprite = spr_wall_tall;
 	if(!global.draw_tall_walls) wall_sprite = spr_wall;

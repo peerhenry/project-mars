@@ -1,8 +1,9 @@
 /// @param construction
 var arg_construction = argument0;
 
+var needs_path_recalc = false;
 // set completion to 100 and state to done
-var build_type = ds_map_find_value(arg_construction, construction_build_type);
+var build_type = ds_map_find_value(arg_construction, construction_type);
 ds_map_replace(arg_construction, construction_completion, 100);
 ds_map_replace(arg_construction, construction_build_state, construction_state.done);
 
@@ -39,6 +40,8 @@ for(var n = 0; n < count; n++) // loop over cells
 	{
 		var instance = instance_position(cell_x, cell_y, object_to_remove);
 		instance_destroy(instance);
+		// recalculate paths at the end of this script if there are any removals
+		needs_path_recalc = true;
 	}
 	
 	ds_stack_push(instances_to_finalize, added_instance);
@@ -69,3 +72,8 @@ while(!ds_stack_empty(instances_to_finalize))
 	}
 }
 ds_stack_destroy(instances_to_finalize);
+
+if(needs_path_recalc)
+{
+	scr_recalculate_paths();
+}

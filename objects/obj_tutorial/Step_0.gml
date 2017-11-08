@@ -46,7 +46,7 @@ switch(step)
 		}
 		break;
 	case 3:
-		if(global.construct == macro_sensor)
+		if(scr_get_selected_constr_type() == macro_sensor)
 		{
 			arrow.x = 1080;
 			arrow.y = 768;

@@ -36,8 +36,8 @@ for(var m = 0; m < array_length_1d(arg_actions); m++)
 	var i_is_valid = scr_validate_i(validation_i, map_i);
 	var o_is_valid = scr_validate_o(validation_o, map_o, target_i, target_j);
 	var validation_passed = i_is_valid && o_is_valid;
-	// if(!i_is_valid) show_error("inside validation fail for thing with sprite: " + string(object_get_name(object_to_add)), true); // DEBUG
-	// if(!o_is_valid) show_error("occupation validation fail for thing with sprite: " + string(object_get_name(object_to_add)), true); // DEBUG
+	//if(!i_is_valid) show_error("inside validation fail for object: " + string(object_get_name(object_to_add)) + " at" + scr_coord_to_string(target_i, target_j), true); // DEBUG
+	//if(!o_is_valid) show_error("occupation validation fail for object: " + string(object_get_name(object_to_add) + " at" + scr_coord_to_string(target_i, target_j)), true); // DEBUG
 	
 	if(validation_passed)
 	{
@@ -79,15 +79,20 @@ for(var m = 0; m < array_length_1d(arg_actions); m++)
 	}
 }
 
+var ghost = global.construction_ghost;
+var ghost_stack = ghost[?macro_ghost_stack];
+var ghost_invalid_stack = ghost[?macro_ghost_invalid_stack];
+
 if(tile_is_valid && new_ghost_cell != noone)
 {
-	ds_stack_push(global.ghost_stack, new_ghost_cell);
-	global.total_cost += new_ghost_cell[build_cell_cost];
+	ds_stack_push(ghost_stack, new_ghost_cell);
+	var new_cost = ghost[?macro_ghost_cost] + new_ghost_cell[build_cell_cost];
+	ds_map_replace(ghost, macro_ghost_cost, new_cost);
 }
 else if(!tile_is_valid)
 {
-	ds_stack_push(global.invalid_ghost_stack, target_i, target_j, sprite);
-	global.construction_is_valid = false;
+	ds_stack_push(ghost_invalid_stack, target_i, target_j, sprite);
+	ds_map_replace(ghost, macro_ghost_valid, false);
 }
 
 return tile_is_valid;

@@ -1,0 +1,1 @@
+ds_list_clear(global.construction_queue);

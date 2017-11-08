@@ -6,7 +6,8 @@ if(global.hovering_over_HUD)
 
 #region CONSTRUCTION INPUT
 
-if(global.construct != noone) // BUILD MODE
+var constr_type = scr_get_selected_constr_type();
+if(constr_type != noone) // BUILD MODE
 {
 	// Left pressed: set click origin and hide astronaut panels
 	if(mouse_check_button_pressed(mb_left))
@@ -43,12 +44,12 @@ if(global.construct != noone) // BUILD MODE
 		is_dragging	= false;
 	}
 	
-	scr_update_ghost(click_x, click_y, mouse_x, mouse_y, global.construct, global.build_rotation, is_dragging);
+	scr_update_ghost(click_x, click_y, mouse_x, mouse_y, constr_type, global.build_rotation, is_dragging);
 	
 	// exit BUILD MODE on RIGHT CLICK
 	if(mouse_check_button_pressed(mb_right))
 	{
-		global.construct = noone;
+		scr_ghost_reset();
 		scr_hide_categories();
 	}
 	

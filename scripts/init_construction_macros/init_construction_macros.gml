@@ -112,7 +112,7 @@
 // construction instance properties
 #macro construction_build_state 0
 #macro construction_completion 1
-#macro construction_build_type 2
+#macro construction_type 2
 #macro construction_cells 3
 #macro construction_astronaut 4
 #macro construction_time 5
@@ -127,3 +127,11 @@
 #macro construction_mdu_piles 14
 #macro construction_owner 15
 #macro construction_required_metal 16
+
+// construction ghost
+#macro macro_ghost_stack 0
+#macro macro_ghost_invalid_stack 1
+#macro macro_ghost_constr_type 2
+#macro macro_ghost_cost 3
+#macro macro_ghost_valid 4
+#macro macro_ghost_payable 5

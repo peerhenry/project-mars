@@ -1,6 +1,8 @@
 /// @arg destruction
 var arg_destruction = argument0;
 
+show_debug_message("handling new destruction...");
+
 var deletions = ds_list_create();
 var construction_rechecks = ds_list_create();
 
@@ -29,6 +31,10 @@ for(var n = 0; n < count; n++) // loop over cells
 	{
 		// find the construction cell that removal belongs to...
 		var constr = removal.construction_instance;
+		if(!ds_exists(constr, ds_type_map))
+		{
+			show_error("No construction instance for: " + object_get_name(removal.object_index), true)
+		}
 		if(ds_list_find_index(construction_rechecks, constr) == -1) ds_list_add(construction_rechecks, constr);
 		var construction_cells_list = constr[? construction_cells];
 		var construction_cell_count = ds_list_size(construction_cells_list);
@@ -69,6 +75,14 @@ for(var n = 0; n < count; n++) // loop over cells
 		
 		// remove cell from destruction
 		ds_list_add(deletions, next_cell);
+	}
+	else
+	{
+		// something may need to happen to removal not under construction
+		if(object_is_ancestor(removal.object_index, obj_gate))
+		{
+			// todo: Gates must not be allowed to be active while under deconstruction...
+		}
 	}
 }
 

@@ -1,7 +1,7 @@
 test_init(test_ghost_and_build_is_in_queue);
 
 // arrange
-scr_ghost_reset();
+scr_ghost_reset_with_constr_type(macro_basetile);
 
 // act
 scr_update_ghost_single(10, 10, macro_basetile, 0);

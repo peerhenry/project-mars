@@ -20,4 +20,6 @@ var new_ghost_cell = scr_create_ghost_cell(
 	0,
 	noone
 );
-ds_stack_push(global.ghost_stack, new_ghost_cell);
+var ghost = global.construction_ghost;
+var ghost_stack = ghost[?macro_ghost_stack];
+ds_stack_push(ghost_stack, new_ghost_cell);

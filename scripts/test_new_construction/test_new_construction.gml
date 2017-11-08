@@ -7,8 +7,8 @@ var expect_bottom = 2476;
 var expect_left = 1252;
 var expect_build_time = scr_calculate_build_time(0, 0);
 var expect_owner = macro_japan;
-global.construct = 8282;
-var expect_construction_type = global.construct;
+var expect_construction_type = 8282;
+scr_ghost_reset_with_constr_type(expect_construction_type);
 var expected_list = ds_list_create();
 
 // act
@@ -39,7 +39,7 @@ assert_equal(noone, constr[? construction_prerequisite], "prerequisite");
 assert_equal(noone, constr[? construction_astronaut], "");
 assert_equal(0, constr[? construction_completion], "completion");
 assert_equal(construction_state.ready, constr[? construction_build_state], "build_state");
-assert_equal(expect_construction_type, constr[? construction_build_type], "build_type");
+assert_equal(expect_construction_type, constr[? construction_type], "build_type");
 var list = constr[?construction_mdu_piles];
 debug_type(list, macro_type_list);
 

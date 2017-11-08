@@ -1,7 +1,7 @@
 test_init(test_ghost_and_build);
 
 // arrange
-scr_ghost_reset();
+scr_ghost_reset_with_constr_type(macro_basetile);
 
 // act
 scr_update_ghost_single(10, 10, macro_basetile, 0);
@@ -20,5 +20,6 @@ with(obj_wall){
 }
 var cq = scr_get_construction_queue(macro_player);
 ds_list_clear(cq);
+scr_ghost_reset();
 
 test_result();

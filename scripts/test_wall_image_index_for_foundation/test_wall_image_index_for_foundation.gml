@@ -1,6 +1,6 @@
 test_init(test_wall_image_index_for_foundation);
 
-scr_ghost_reset();
+scr_ghost_reset_with_constr_type(macro_basetile);
 
 // Act
 //   first basetile construction
@@ -12,7 +12,7 @@ var cq = scr_get_construction_queue(macro_player);
 var constr1 = ds_list_find_value(cq, 0);
 scr_build_complete(constr1);
 //   second basetile construction
-scr_ghost_reset();
+scr_ghost_reset_with_constr_type(macro_basetile);
 scr_update_ghost_single(11, 10, macro_basetile, 0);
 scr_build_new();
 var constr2 = ds_list_find_value(cq, 0);
@@ -71,5 +71,6 @@ with(obj_wall)
 ds_list_clear(cq);
 scr_destroy_construction(constr1);
 scr_destroy_construction(constr2);
+scr_ghost_reset();
 
 test_result();

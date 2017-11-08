@@ -1,7 +1,7 @@
 var next_construction = argument0;
 show_debug_message("construction_build_state: " + string(ds_map_find_value(next_construction, construction_build_state)));
 show_debug_message("construction_completion: " + string(ds_map_find_value(next_construction, construction_completion)));
-show_debug_message("construction_build_type: " + string(ds_map_find_value(next_construction, construction_build_type)));
+show_debug_message("construction_type: " + string(ds_map_find_value(next_construction, construction_type)));
 var cells = ds_map_find_value(next_construction, construction_cells);
 var cell_count = ds_list_size(cells);
 show_debug_message("cell_count: " + string(cell_count));

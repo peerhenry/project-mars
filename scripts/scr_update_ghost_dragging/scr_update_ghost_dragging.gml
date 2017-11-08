@@ -17,10 +17,10 @@ var arg_diff_i = argument4;
 var arg_diff_j = argument5;
 var arg_abs_diff_i = argument6;
 var arg_abs_diff_j = argument7;
-var arg_build = argument8;
+var arg_construction_type = argument8;
 var arg_rotation = argument9;
 
-var construction = ds_map_find_value(global.construction_map, arg_build);
+var construction = ds_map_find_value(global.construction_map, arg_construction_type);
 
 var actions = construction[macro_drag_actions];
 
@@ -62,7 +62,7 @@ if(construction[macro_dragging] == dragging.rectangular)
 		var image_override = 0;
 		var angle_override = 0;
 	
-		if(arg_build == macro_basetile)
+		if(arg_construction_type == macro_basetile)
 		{
 			if(!global.draw_tall_walls) sprite_override = spr_wall;
 		}
@@ -150,19 +150,3 @@ else
 		}
 	}
 }
-
-/*switch(arg_build)
-{
-	case macro_wall:
-		scr_drag_wall(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8, argument9);
-		break;
-	case macro_basetile:
-		scr_drag_basetile(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8, argument9);
-		break;
-	case macro_pipe:
-		scr_drag_pipe(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8, argument9);
-		break;
-	case macro_cable:
-		scr_drag_cable(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8, argument9);
-		break;
-}*/

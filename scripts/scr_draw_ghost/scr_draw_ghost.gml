@@ -1,5 +1,6 @@
 // read from the build stack
-var build_stack = global.ghost_stack;
+var ghost = global.construction_ghost;
+var build_stack = ghost[?macro_ghost_stack];
 var cell_count = ds_stack_size(build_stack);
 var build_stack_copy = ds_stack_create();
 ds_stack_copy(build_stack_copy, build_stack);
@@ -12,7 +13,8 @@ var sprite_for_ghost = noone;
 #macro macro_sensor_ghost_alpha 0.16
 draw_set_alpha(macro_ghost_alpha);
 draw_set_color(c_lime);
-if(!global.can_pay_for_construction) draw_set_color(c_red);
+
+if(!ghost[?macro_ghost_payable]) draw_set_color(c_red);
 
 for(var n = 0; n < cell_count; n++)
 {
@@ -71,7 +73,7 @@ for(var n = 0; n < cell_count; n++)
 }
 
 // draw invalid tiles
-var invalid_build_stack = global.invalid_ghost_stack;
+var invalid_build_stack = ghost[?macro_ghost_invalid_stack];
 var invalid_cell_count = ds_stack_size(invalid_build_stack) div 3;
 draw_set_color(c_red);
 repeat(invalid_cell_count)

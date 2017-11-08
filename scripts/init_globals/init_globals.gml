@@ -63,7 +63,6 @@ global.default_owner = macro_player;
 
 // -- Runtime vars --
 
-global.construct = noone;
 // Used to prevent too many messages from appearing to player
 global.message_is_showing = false;
 global.draw_tall_walls = true;
