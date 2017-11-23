@@ -3,8 +3,6 @@ var window_mouse_y = window_mouse_get_y();
 var clicked = mouse_check_button_released(mb_left);
 var right_clicked = mouse_check_button_released(mb_right);
 
-global.hovering_over_HUD = false;
-
 // 1. menu button
 
 mouse_over_menu = 
@@ -15,7 +13,7 @@ mouse_over_menu =
 	
 if(mouse_over_menu)
 {
-	global.hovering_over_HUD = true;
+	global.hovering_over_hud_panel = true;
 	if(clicked)
 	{
 		with(hud_menu){

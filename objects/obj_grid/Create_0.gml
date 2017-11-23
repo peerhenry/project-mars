@@ -16,3 +16,18 @@ total_demand = 0;
 net_output = 0;
 storage = 0;
 storage_capacity = 0;
+
+counter = 0;
+limit = 30; // update display levels once every thirty steps
+
+display_total_production = 0;
+display_total_demand = 0;
+display_net_output = 0;
+display_storage = 0;
+display_storage_capacity = 0;
+
+// cumulative variables
+cum_tp = 0;
+cum_td = 0;
+cum_no = 0;
+cum_s = 0;

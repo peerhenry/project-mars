@@ -49,10 +49,10 @@ current_action = astronaut_action.idle;
 construction = noone;
 
 // automatic behavior
-auto_attack = true;
-auto_construct = true;
-auto_eat = true;
-auto_sleep = true;
+auto_attack = false;
+auto_construct = false;
+auto_eat = false;
+auto_sleep = false;
 auto_eat_level = 20;
 auto_sleep_level = 20;
 

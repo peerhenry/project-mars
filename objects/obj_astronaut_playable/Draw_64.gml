@@ -1,12 +1,12 @@
-var width = 384;
-var height = 32 + 16 + 24*5 + 64*3 + 96;// padding + spaces + lines + inventory + avatar
-var display_width = display_get_gui_width();
-var display_height = display_get_gui_height();
-var tl_x = display_width - width;
-var tl_y = 0;
-
 if ( show_details )
 {
+	var width = 384;
+	var height = 32 + 16 + 24*5 + 64*3 + 96;// padding + spaces + lines + inventory + avatar
+	var display_width = display_get_gui_width();
+	var display_height = display_get_gui_height();
+	var tl_x = display_width - width;
+	var tl_y = 0;
+	
 	// panel
 	var tl_x2 = tl_x + width;
 	var tl_y2 = tl_y + height;
@@ -39,11 +39,14 @@ if ( show_details )
 	draw_healthbar(bar_x_or, health_line_y - half_bar, tl_x + width - 16, health_line_y + half_bar, astronaut_health, 0, c_red, c_green, 0, false, false);
 	counter++;
 	
-	var oxygen_line_y = tl_y + 128 + counter*24;
-	//var o2_seconds_remaining = ;
-	draw_text(x_or, oxygen_line_y, "Oxygen: ");
-	draw_healthbar(bar_x_or, oxygen_line_y - half_bar, tl_x + width - 16, oxygen_line_y + half_bar, suit_oxygen, 0, c_red, c_blue, 0, false, false);
-	counter++;
+	if(wears_suit)
+	{
+		var oxygen_line_y = tl_y + 128 + counter*24;
+		//var o2_seconds_remaining = ;
+		draw_text(x_or, oxygen_line_y, "Oxygen: ");
+		draw_healthbar(bar_x_or, oxygen_line_y - half_bar, tl_x + width - 16, oxygen_line_y + half_bar, suit_oxygen, 0, c_red, c_blue, 0, false, false);
+		counter++;
+	}
 	
 	var energy_line_y = tl_y + 128 + counter*24;
 	draw_text(x_or, energy_line_y, "Energy");
@@ -94,7 +97,7 @@ if ( show_details )
 	}
 	#endregion
 	
-	#region	auto tasks
+	#region	auto tasks -- second panel
 	
 	// panel
 	var atw = 4*32 + 2*8 + 3*4; // icons + padding + spacing

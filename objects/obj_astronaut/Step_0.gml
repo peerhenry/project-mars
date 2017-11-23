@@ -13,7 +13,6 @@ if(astronaut_health <= 0)
 	if(assigned_object != noone) scr_unassign_task(assigned_object);
 	// die
 	scr_kill(id); // destroys astronaut and replaces it with a corpse object.
-	has_died = true;
 	return;
 }
 

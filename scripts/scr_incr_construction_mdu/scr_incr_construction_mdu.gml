@@ -62,7 +62,9 @@ else
 	var cy = (arg_construction[? construction_bb_top] + arg_construction[? construction_bb_bottom])/2;
 	var get_layer_for = script_container_resolve(arg_script_container, "get_layer_for");
 	var lyr = script_execute(get_layer_for, obj_construction_mdu_pile);
-	var newpile = instance_create_layer(cx, cy, lyr, obj_construction_mdu_pile);
+	var clamped_cx = scr_rc_clamp_center(cx);
+	var clamped_cy = scr_rc_clamp_center(cy);
+	var newpile = instance_create_layer(clamped_cx, clamped_cy, lyr, obj_construction_mdu_pile);
 	//ds_map_replace(arg_construction, construction_mdu_pile, newpile);
 	ds_list_add(piles, newpile);
 }

@@ -13,4 +13,13 @@ if(astronaut.wears_suit)
 	if(astronaut.object_index == obj_astronaut_enemy) corpse.sprite_index = spr_char_mask_death;
 }
 
+with(astronaut)
+{
+	has_died = true;
+	if(object_index == obj_astronaut_playable){
+		var play_sound = script_container_resolve(script_container, "play_sound");
+		script_execute(play_sound, sound_fx_flatline);
+	}
+}
+
 instance_destroy(astronaut);

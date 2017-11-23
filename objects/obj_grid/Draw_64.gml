@@ -41,17 +41,17 @@ if(global.selected_grid == id)
 	draw_text(x_or, 8, grid_type_string);
 	
 	var line1_y = y_or;
-	draw_text(x_or, line1_y, "storage: " + string(storage));
+	draw_text(x_or, line1_y, "storage: " + string(display_storage));
 	
 	var line2_y = y_or + 24;
-	draw_text(x_or, line2_y, "storage capacity: " + string(storage_capacity));
+	draw_text(x_or, line2_y, "storage capacity: " + string(display_storage_capacity));
 	
 	var line3_y = y_or + 48;
-	draw_text(x_or, line3_y, "production: " + string(total_production));
+	draw_text(x_or, line3_y, "production: " + string(display_total_production));
 	
 	var line4_y = y_or + 72;
-	draw_text(x_or, line4_y, "demand: " + string(total_demand));
+	draw_text(x_or, line4_y, "demand: " + string(display_total_demand));
 	
 	var line5_y = y_or + 96;
-	draw_text(x_or, line5_y, "net output: " + string(net_output));
+	draw_text(x_or, line5_y, "net output: " + string(display_net_output));
 }

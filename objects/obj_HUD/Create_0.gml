@@ -1,6 +1,7 @@
 // ### GLOBAL SETTINGS
 
-global.hovering_over_HUD = false;
+global.hovering_over_HUD = false; // write @ begin step, read @ step
+global.hovering_over_hud_panel = false; // read & reset @ begin step, write @ step
 
 // COLORS
 global.btn_bg_color = c_dkgray;

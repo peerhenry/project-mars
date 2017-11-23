@@ -3103,6 +3103,14 @@
             }
         },
         {
+            "Key": "5ef4cbf9-8748-457a-9539-31f7b196f3c4",
+            "Value": {
+                "id": "eeb54937-e9b1-4afe-9fe2-885e5773ac9b",
+                "resourcePath": "sounds\\sound_fx_lock\\sound_fx_lock.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "5f097d76-27de-45fe-b930-032832e08d58",
             "Value": {
                 "id": "16697d22-0051-4a21-b9cd-6482c55e8946",
@@ -3332,6 +3340,14 @@
                 "id": "e0438893-09e3-4cec-afdc-c48e7c057636",
                 "resourcePath": "scripts\\test_for_obj_base_component\\test_for_obj_base_component.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "6707726d-2630-4725-b2c0-485e3ae5f590",
+            "Value": {
+                "id": "8bccb2d0-3f15-457c-a44d-fa271109fbed",
+                "resourcePath": "sounds\\sound_fx_flatline\\sound_fx_flatline.yy",
+                "resourceType": "GMSound"
             }
         },
         {

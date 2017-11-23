@@ -11,7 +11,7 @@ var right_clicked = mouse_check_button_released(mb_right);
 
 if(mouse_over)
 {
-	global.hovering_over_HUD = true;
+	global.hovering_over_hud_panel = true;
 	if(state != button_state.selected)
 	{
 		var new_state = button_state.hover;
