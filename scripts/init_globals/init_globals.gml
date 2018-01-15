@@ -17,7 +17,8 @@ global.energy_depletion = ini_read_real("gameplay", "energy_depletion", 0.01); /
 // -- OXYGEN
 // percentage of oxygen of 1 tile being drained by an open hatch per step.
 global.gate_drainage_speed = ini_read_real("oxygen", "gate_drainage_speed", 25);
-global.suit_o2_depletion_speed = ini_read_real("oxygen", "suit_depletion_speed", 0.01);
+//global.suit_o2_depletion_speed = ini_read_real("oxygen", "suit_depletion_speed", 0.01);
+global.suit_o2_depletion_speed = ini_read_real("oxygen", "suit_depletion_speed", 1);
 // how fast is health drained from suffocation: HP/step
 global.suffocation_speed = ini_read_real("oxygen", "suffocation_speed", 0.5);
  // how fast is suit oxygen replenishing in suit closet PP/step
@@ -69,3 +70,11 @@ global.draw_tall_walls = true;
 global.auto_complete = true; // Used for setup constructions
 global.sensor_selected = false;
 global.selected_grid = noone;
+
+// Skirmish
+
+var skirmish_settings = ds_map_create();
+ds_map_add(skirmish_settings, macro_skirmish_victory_condition, victory.domination);
+ds_map_add(skirmish_settings, macro_skirmish_astro_count, 5);
+
+global.skirmish_settings = skirmish_settings;

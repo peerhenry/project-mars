@@ -25,3 +25,8 @@ enum astronaut_action // these are assigned to astronaut objects
 	executing_assignment,
 	in_combat
 }
+
+enum victory{
+	sandbox,
+	domination
+}; // to add: escape, return to earth

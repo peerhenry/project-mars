@@ -1239,6 +1239,14 @@
             }
         },
         {
+            "Key": "26043699-0779-42dc-907b-0273c7fe6964",
+            "Value": {
+                "id": "b345269b-b7f2-44eb-b863-35f888833729",
+                "resourcePath": "scripts\\scr_count_instances\\scr_count_instances.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "267286f3-4869-4764-b769-fba9a71f748e",
             "Value": {
                 "id": "80d7dcc2-d3a5-4f51-b156-c55d881b8fcc",
@@ -1844,6 +1852,14 @@
                 "id": "af4fb8d7-e16f-4fec-80b1-e9cc93193a9c",
                 "resourcePath": "sprites\\spr_destruct_safe\\spr_destruct_safe.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "36f8d928-79cf-4d7d-9f31-5b96c586d2ec",
+            "Value": {
+                "id": "4461bd1d-8524-4471-b5e6-2d9f968cc3cb",
+                "resourcePath": "objects\\obj_skirmish\\obj_skirmish.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -6511,6 +6527,14 @@
             }
         },
         {
+            "Key": "d38155b6-05ea-41ac-af9e-0163c26a1d4b",
+            "Value": {
+                "id": "1d56aea7-0584-46e6-ac6b-549ae2be3dbb",
+                "resourcePath": "scripts\\init_skirmish\\init_skirmish.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "d394a2f7-0161-4d05-beae-c3f4fe651176",
             "Value": {
                 "id": "2f07b19a-2363-48a8-9570-166d5de8aa1d",
@@ -7993,6 +8017,7 @@
         "0fe6b590-26a7-43a7-83ee-3ead447cc99d",
         "7d237c50-ea92-4b6c-bb2e-5ab62aafd6ca",
         "ffb7386f-7e99-4862-b02b-2114e595dbd7",
+        "d38155b6-05ea-41ac-af9e-0163c26a1d4b",
         "10b6178a-76dc-4368-95c3-c861bd61878c",
         "599b424d-fcba-4054-9d12-3601d378ecc2",
         "2098a558-efa7-43bb-8402-341e21443579",
@@ -8298,6 +8323,7 @@
         "4f5384c4-abd8-4bbe-8565-712094e5c332",
         "185c41ef-a9ed-4a58-a27d-896daa69cf4e",
         "715c8367-2483-4648-81bf-7e3d0d552aa4",
+        "26043699-0779-42dc-907b-0273c7fe6964",
         "e76441f8-d763-43cd-acb8-b4651b06261c",
         "ef55de64-c8d9-4c2b-8d7e-0711b44f5bb5",
         "9a6e3701-694c-4994-8527-58a6ee4e3814",

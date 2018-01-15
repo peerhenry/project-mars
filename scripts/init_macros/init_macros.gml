@@ -90,3 +90,7 @@ if(debug_mode){
 #macro macro_unreachable 0
 #macro macro_reachable 1
 #macro macro_adjacent 2
+
+// Skirmish settings
+#macro macro_skirmish_victory_condition 0 
+#macro macro_skirmish_astro_count 1
