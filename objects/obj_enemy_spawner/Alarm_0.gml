@@ -8,7 +8,7 @@ repeat(wave_size)
 	spawn_y = 0;
 	
 	var side = floor(random(4));
-	var offset = -32;
+	var offset = -64;
 	
 	switch(side){ // ENWS
 		case 0:
