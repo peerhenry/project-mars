@@ -9,7 +9,7 @@ with(arg_astronaut)
 	// food
 	if(!auto_task_found && auto_eat)
 	{
-		auto_task_found  = scr_auto_eat(arg_astronaut);
+		//auto_task_found  = scr_auto_eat(arg_astronaut);
 	}
 	// sleep
 	if(!auto_task_found && auto_sleep)

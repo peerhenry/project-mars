@@ -50,4 +50,4 @@ wave_number++;
 
 scr_alert_player("wave " + string(wave_number));
 show_debug_message("wave " + string(wave_number) + " spawned " + string(wave_size) + " astronauts.")
-alarm[0] = 30*10;
+alarm[0] = 30*wave_time;

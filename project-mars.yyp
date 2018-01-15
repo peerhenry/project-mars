@@ -127,14 +127,6 @@
             }
         },
         {
-            "Key": "028c940f-7cba-4582-825b-24c4e871e4be",
-            "Value": {
-                "id": "9f482011-6201-447e-ad01-c7db8832c37e",
-                "resourcePath": "rooms\\room_settings\\room_settings.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "03112f1b-cb5b-4a14-8f3a-f299aa734686",
             "Value": {
                 "id": "2c90e870-fc55-47e5-a0b9-2fe4390537e9",
@@ -2250,7 +2242,7 @@
             "Key": "42075d63-aadd-4820-bb50-fc6afba9697c",
             "Value": {
                 "id": "3ea9e8e7-ecf8-4f20-811b-d854cdd2b8ec",
-                "resourcePath": "rooms\\room_map\\room_map.yy",
+                "resourcePath": "rooms\\room_parent_map\\room_parent_map.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -2591,6 +2583,14 @@
             }
         },
         {
+            "Key": "4c214578-cbe7-4a0f-8a75-477ebcb8bba9",
+            "Value": {
+                "id": "a3f29278-782d-4094-a914-45fc420274db",
+                "resourcePath": "rooms\\room_map_skirmish\\room_map_skirmish.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "4c4601dc-20fc-4359-93f4-422ba9ccbb2a",
             "Value": {
                 "id": "3e76a5ee-857b-4a36-8ab8-b781f2d5cf33",
@@ -2842,8 +2842,16 @@
             "Key": "5487cfef-fb07-478e-a4d1-d9814588734f",
             "Value": {
                 "id": "3b1347fe-4e83-49f6-971b-cfa6094b4c2a",
-                "resourcePath": "scripts\\scr_zoom_camera_to_resultion\\scr_zoom_camera_to_resultion.yy",
+                "resourcePath": "scripts\\scr_zoom_camera_to_resolution\\scr_zoom_camera_to_resolution.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "54c2ea42-2126-4405-a89c-d115721d8684",
+            "Value": {
+                "id": "f4d353f6-b777-437d-a33b-8365b3386c65",
+                "resourcePath": "views\\54c2ea42-2126-4405-a89c-d115721d8684.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -3199,6 +3207,14 @@
             }
         },
         {
+            "Key": "6114a948-b3ef-40b7-8f3f-09b1b291dc8d",
+            "Value": {
+                "id": "cdb07a85-47f3-417e-90df-44535deffeea",
+                "resourcePath": "rooms\\room_menu_base\\room_menu_base.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "618b3c6c-eb82-4b19-a7e9-566261fe9489",
             "Value": {
                 "id": "f8135751-f34c-426d-aabb-e5339871b3fc",
@@ -3324,6 +3340,14 @@
                 "id": "ade74a82-ca1a-4f07-bb60-f37e3c740ac0",
                 "resourcePath": "views\\6654cb8e-6057-49ee-9139-053c199d174c.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "665eeccb-d6dd-486a-a65e-793654580c01",
+            "Value": {
+                "id": "208e5cd1-ca81-4395-8915-8d4c5c07ce1e",
+                "resourcePath": "rooms\\room_skirmish\\room_skirmish.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -3959,6 +3983,14 @@
             }
         },
         {
+            "Key": "7d6d62af-233f-4634-a709-cef53a2e44df",
+            "Value": {
+                "id": "6190ba15-36e3-4782-9f44-9661841bb64d",
+                "resourcePath": "rooms\\room_settings\\room_settings.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "7dba5a90-07bb-4070-9807-c9522bbcfdf0",
             "Value": {
                 "id": "475c4f35-e7ad-4271-8850-6285d65b73b3",
@@ -4036,6 +4068,14 @@
                 "id": "22868f55-d0d1-455a-9fdb-a2e7c12563f3",
                 "resourcePath": "views\\801882be-d7db-4b76-aa8b-88fb9e573cbe.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "80489753-dd46-481f-bc11-d7457764bc2d",
+            "Value": {
+                "id": "7dc58658-77f3-41b6-b6a6-3eca7d222adf",
+                "resourcePath": "scripts\\scr_start_skirmish\\scr_start_skirmish.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -4623,6 +4663,14 @@
             }
         },
         {
+            "Key": "957a8ec1-387c-49f8-b2c7-54a4a9349872",
+            "Value": {
+                "id": "7ce44e0d-084f-4cf7-ad48-f6311fb91e6a",
+                "resourcePath": "scripts\\scr_action_back\\scr_action_back.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "95e1e58a-2fcc-469a-9398-6631c9b86826",
             "Value": {
                 "id": "caa31927-c4be-4137-b25f-b061e3f6ba49",
@@ -4740,6 +4788,14 @@
                 "id": "15741180-73d7-4ae3-81fe-fbedfc140404",
                 "resourcePath": "scripts\\test_init\\test_init.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "9abeadce-544d-4022-87c1-c80b0c44c5db",
+            "Value": {
+                "id": "d6b5c4b2-68b5-41a6-a42b-b7285119c9f8",
+                "resourcePath": "views\\6114a948-b3ef-40b7-8f3f-09b1b291dc8d-room.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -6543,6 +6599,14 @@
             }
         },
         {
+            "Key": "d55afa37-0785-416c-a625-6efc44942a4f",
+            "Value": {
+                "id": "81041524-63c7-41d9-abd8-aeb4e7259282",
+                "resourcePath": "rooms\\room_map\\room_map.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "d575206e-95a7-4c53-b7f7-ae1ae295e2d7",
             "Value": {
                 "id": "4e2863eb-f59e-415a-b2ea-ec3b5a138542",
@@ -8211,6 +8275,8 @@
         "4f93d6e4-f822-4ad9-8856-1217beac871a",
         "6b587339-8c9e-4ea1-b862-ce739b04e5bc",
         "e54e69c8-aa1c-4879-a367-7665fb5b3f4b",
+        "957a8ec1-387c-49f8-b2c7-54a4a9349872",
+        "80489753-dd46-481f-bc11-d7457764bc2d",
         "43e1994c-158d-4ed7-b2d7-9aff5999d1a9",
         "1e3dbe4c-0873-4852-957d-59eef3e79f10",
         "1709bdf1-fe50-49cd-8b69-db9cf111cedc",

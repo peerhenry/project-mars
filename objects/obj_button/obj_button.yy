@@ -33,9 +33,30 @@
             "enumb": 0,
             "eventtype": 0,
             "m_owner": "0dcda5fa-939f-40f9-a469-ccd67ef88eac"
+        },
+        {
+            "id": "8a0eb9ec-d4ea-4e35-8398-78599a79bccd",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 4,
+            "eventtype": 6,
+            "m_owner": "0dcda5fa-939f-40f9-a469-ccd67ef88eac"
+        },
+        {
+            "id": "faa1ab10-5f1b-4e68-bdc4-58f873f98e8b",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 8,
+            "m_owner": "0dcda5fa-939f-40f9-a469-ccd67ef88eac"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
+    "overriddenProperties": null,
     "parentObjectId": "00000000-0000-0000-0000-000000000000",
     "persistent": false,
     "physicsAngularDamping": 0.1,
@@ -50,6 +71,36 @@
     "physicsShape": 1,
     "physicsShapePoints": null,
     "physicsStartAwake": true,
+    "properties": [
+        {
+            "id": "54fd921d-c6a1-4503-b22a-8330bcad67fb",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "scr_mock",
+            "varName": "click_action",
+            "varType": 1
+        },
+        {
+            "id": "1b845f4d-7258-4274-b92b-3367fac13ce9",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "button",
+            "varName": "text",
+            "varType": 2
+        }
+    ],
     "solid": false,
     "spriteId": "3c00a077-57c1-4a89-9676-7eb9b631df0d",
     "visible": true

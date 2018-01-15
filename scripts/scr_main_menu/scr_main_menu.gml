@@ -9,4 +9,4 @@ if(!audio_is_playing(song_menu))
 	audio_play_sound(song_menu, 1, false);
 }
 
-scr_zoom_camera_to_resultion();
+scr_zoom_camera_to_resolution();

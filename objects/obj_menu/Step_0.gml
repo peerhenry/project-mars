@@ -33,6 +33,9 @@ else
 			case menu_index.tutorial:
 				room_goto(tutorial);
 				break;
+			case menu_index.skirmish:
+				room_goto(room_skirmish);
+				break;
 			case menu_index.survival:
 				room_goto(mars_survival);
 				break;
@@ -47,6 +50,7 @@ else
 			/*case menu_index.test:
 				room_goto(room_tests);*/
 			case menu_index.quit:
+				audio_stop_all();
 				game_end();
 				break;
 		}
