@@ -17,12 +17,13 @@ global.energy_depletion = ini_read_real("gameplay", "energy_depletion", 0.01); /
 // -- OXYGEN
 // percentage of oxygen of 1 tile being drained by an open hatch per step.
 global.gate_drainage_speed = ini_read_real("oxygen", "gate_drainage_speed", 25);
-//global.suit_o2_depletion_speed = ini_read_real("oxygen", "suit_depletion_speed", 0.01);
-global.suit_o2_depletion_speed = ini_read_real("oxygen", "suit_depletion_speed", 1);
 // how fast is health drained from suffocation: HP/step
 global.suffocation_speed = ini_read_real("oxygen", "suffocation_speed", 0.5);
  // how fast is suit oxygen replenishing in suit closet PP/step
 global.suit_closet_replenishment = ini_read_real("oxygen", "suit_closet_replenishment", 0.3);
+
+// TODO: unify these two
+global.suit_o2_depletion_speed = ini_read_real("oxygen", "suit_depletion_speed", 0.01);
 global.astro_oxygen_consumption = ini_read_real("oxygen", "astronaut_consumption", 0.1);
 
 // -- OXYGEN RENDERING
@@ -60,7 +61,8 @@ global.default_resource_amount = 10000;
 
 // ownership
 global.ownership_behavior = macro_ownership_default;
-global.default_owner = macro_player;
+global.default_owner = macro_player; // change to setup owner
+global.setup_mdu_pile_count = 1;
 
 // -- Runtime vars --
 
