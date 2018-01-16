@@ -1,4 +1,10 @@
+/// @arg x
+/// @arg y
+var arg_x = argument0;
+var arg_y = argument1;
 /// Is called after right clicking when astronauts are selected.
+
+var script_container = global.script_container;
 
 var orders_given = false; // boolean used for playing sound
 var any_selected = false;
@@ -16,13 +22,13 @@ with(obj_astronaut_playable)
 if(!any_selected) exit;
 
 // Check if player clicked an assignable
-var el_assignable = instance_position(mouse_x, mouse_y, obj_assignable);
+var el_assignable = instance_position(arg_x, arg_y, obj_assignable);
 
 // Check if player clicked an enemy
-var enemy = instance_position(mouse_x, mouse_y, obj_astronaut_enemy);
+var enemy = instance_position(arg_x, arg_y, obj_astronaut_enemy);
 if(enemy == noone)
 {
-	constr = scr_enemy_construction_position(mouse_x, mouse_y);
+	constr = scr_enemy_construction_position(arg_x, arg_y);
 	if(constr != noone)
 	{
 		enemy = constr;
@@ -38,19 +44,24 @@ else if( enemy != noone )	// Or attack an enemy
 	scr_command_attack(enemy);
 	orders_given = true;
 }
-else if( !position_meeting(mouse_x, mouse_y, obj_gate) )	// Or move
+else if( !position_meeting(arg_x, arg_y, obj_gate) )	// Or move
 {
-	orders_given = scr_command_move();
-	if(orders_given) instance_create_layer(mouse_x, mouse_y, macro_logic_layer, obj_command);
+	orders_given = scr_command_move(arg_x, arg_y);
+	if(orders_given)
+	{
+		var create_instance = script_container_resolve(script_container, "create_instance");
+		script_execute(create_instance, arg_x, arg_y, obj_command);
+	}
 }
 
 
 if(orders_given)
 {
 	var s = irandom(2);
+	var play_sound = script_container_resolve(script_container, "play_sound");
 	switch s{
-		case 0: audio_play_sound(sound_cmd_yep, 1, false); break;
-		case 1: audio_play_sound(sound_cmd_understood, 1, false); break;
-		case 2:	audio_play_sound(sound_cmd_acknowledged, 1, false); break;
+		case 0: script_execute(play_sound, sound_cmd_yep); break;
+		case 1: script_execute(play_sound, sound_cmd_understood); break;
+		case 2:	script_execute(play_sound, sound_cmd_acknowledged); break;
 	}
 }

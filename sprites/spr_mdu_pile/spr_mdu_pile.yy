@@ -13,6 +13,7 @@
     "bboxmode": 2,
     "colkind": 1,
     "coltolerance": 0,
+    "edgeFiltering": false,
     "frames": [
         {
             "id": "9bd5eb51-8a26-4196-978e-161f08b7cb05",
@@ -369,7 +370,7 @@
             "mvc": "1.0",
             "SpriteId": "6824e7f6-f5b7-48ba-b9bb-4dd0c6238410",
             "blendMode": 0,
-            "isLocked": false,
+            "isLocked": true,
             "name": "Layer 9",
             "opacity": 16,
             "visible": true
@@ -402,15 +403,17 @@
             "mvc": "1.0",
             "SpriteId": "6824e7f6-f5b7-48ba-b9bb-4dd0c6238410",
             "blendMode": 0,
-            "isLocked": false,
+            "isLocked": true,
             "name": "default",
             "opacity": 100,
-            "visible": true
+            "visible": false
         }
     ],
     "origin": 9,
+    "originLocked": false,
     "playbackSpeed": 15,
     "playbackSpeedType": 0,
+    "premultiplyAlpha": false,
     "sepmasks": false,
     "swatchColours": null,
     "swfPrecision": 2.525,

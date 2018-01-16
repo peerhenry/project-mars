@@ -94,6 +94,7 @@ if ( show_details )
 		draw_text(x_or, after_grid_y+48, "assigned_object: " + string(assigned_object));
 		draw_text(x_or, after_grid_y+72, "is_walking: " + string(is_walking));
 		draw_text(x_or, after_grid_y+96, "path_position: " + string(path_position));
+		draw_text(x_or, after_grid_y+120, "target: " + string(target));
 	}
 	#endregion
 	

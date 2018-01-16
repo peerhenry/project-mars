@@ -124,7 +124,7 @@ if(!is_dragging)
 		}
 		else
 		{
-			scr_command();
+			scr_command(mouse_x, mouse_y);
 		}
 	}
 }

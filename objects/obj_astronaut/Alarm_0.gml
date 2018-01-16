@@ -23,6 +23,7 @@ if(target_exists)
 		target_is_shootable = true;
 	}
 }
+else target = noone;
 
 // if astronaut has a shootable target, persue it.
 if(target_is_shootable)

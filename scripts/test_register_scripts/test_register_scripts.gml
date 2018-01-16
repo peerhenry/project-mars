@@ -4,4 +4,7 @@ script_container_register(container, "play_sound", scr_mock);
 script_container_register(container, "get_layer_for", scr_mock_get_layer_for);
 script_container_register(container, "alert_player", scr_mock_alert);
 script_container_register(container, "calculate_required_mdu_count", scr_mock_return_0);
+script_container_register(container, "create_instance", scr_mock_return_0);
+script_container_register(container, "create_corpse", scr_mock);
+script_container_register(container, "get_reach_state", scr_mock_return_true);
 return container;

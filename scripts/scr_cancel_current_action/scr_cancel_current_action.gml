@@ -23,6 +23,7 @@ with(arg_astronaut)
 		scr_unassign_task(assigned_object);
 	}
 	
+	target = noone;
 	current_action = astronaut_action.idle;
 	
 	if(is_walking){

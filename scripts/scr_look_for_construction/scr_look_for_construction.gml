@@ -1,6 +1,6 @@
 /// @param astronaut
 
-//scr_trace("scr_look_for_construction");
+scr_trace("scr_look_for_construction");
 var arg_astronaut = argument0;
 debug_instance_inherits(arg_astronaut, obj_astronaut);
 
@@ -13,6 +13,7 @@ if(constr_queue == noone || is_undefined(constr_queue))
 }
 
 var construction_count = ds_list_size(constr_queue);
+scr_trace("construction_count: " + string(construction_count));
 for(var n = 0; n < construction_count; n++)
 {
 	if(found_one) return true;
@@ -31,7 +32,13 @@ for(var n = 0; n < construction_count; n++)
 	}
 	
 	// The astronaut must also be able to reach the construction
-	var reach_state = scr_get_reach_state(arg_astronaut, next_construction);
+	var get_reach_state = script_container_resolve(arg_astronaut.script_container, "get_reach_state");
+	var reach_state = script_execute(get_reach_state, arg_astronaut, next_construction);
+	
+	scr_trace("build_state: " + string(build_state));
+	scr_trace("prerequisite: " + string(prerequisite));
+	scr_trace("pass_from_prerequisite: " + string(pass_from_prerequisite));
+	scr_trace("reach_state: " + string(reach_state));
 	
 	if(reach_state != macro_unreachable && pass_from_prerequisite)
 	{
@@ -46,5 +53,7 @@ for(var n = 0; n < construction_count; n++)
 		}
 	}
 }
+
+scr_trace("found_one: " + string(found_one));
 
 return found_one;

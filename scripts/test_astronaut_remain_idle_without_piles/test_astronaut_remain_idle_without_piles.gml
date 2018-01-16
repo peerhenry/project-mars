@@ -3,9 +3,8 @@ test_init(test_astronaut_remain_idle_without_piles);
 // arrange
 var astro1 = instance_create_depth(0, 0, 0, obj_astronaut);
 var astro2 = instance_create_depth(0, 0, 0, obj_astronaut);
-var construction = scr_create_dummy_construction();
+var construction = scr_create_dummy_mdu_construction();
 scr_register_new_construction(construction);
-ds_map_replace(construction, construction_required_mdu_count, 1);
 
 // act
 scr_look_for_construction(astro1);

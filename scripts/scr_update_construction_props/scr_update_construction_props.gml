@@ -19,14 +19,13 @@ switch(arg_action)
 	case astronaut_action.constructing:
 	case astronaut_action.moving_to_construction:
 		ds_map_replace(arg_construction, construction_astronaut, arg_astronaut);
-		var state = arg_construction[? construction_build_state];
 		if(state == construction_state.ready)
 		{
 			ds_map_replace(arg_construction, construction_build_state, construction_state.picked_up);
 		}
 		else
 		{
-			show_error("Astronaut is going to construct while construction is not ready.", true);
+			show_error("Astronaut is going to construct while construction is not ready. state: " + string(state), true);
 		}
 		break;
 }

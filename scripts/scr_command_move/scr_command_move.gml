@@ -1,14 +1,15 @@
+/// @arg arg_x
+/// @arg arg_y
+var arg_x = argument0;
+var arg_y = argument1;
+
 var orders_given = false;
 with(obj_astronaut_playable)
 {
 	if(is_selected)
 	{
-		var will_go = scr_navigate(id, mouse_x, mouse_y);
-		if(will_go)
-		{
-			current_action = astronaut_action.moving_by_command;
-			orders_given = true;
-		}
+		 var will_go = scr_command_move_to(id, arg_x, arg_y);
+		 if(will_go) orders_given = true;
 	}
 }
 

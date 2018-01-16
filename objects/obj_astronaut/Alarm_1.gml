@@ -1,4 +1,5 @@
 /// @description Autotask
+scr_trace("astronaut alarm 1");
 
 if(!is_walking && current_action = astronaut_action.idle)
 {
