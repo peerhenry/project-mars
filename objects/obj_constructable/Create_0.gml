@@ -14,3 +14,5 @@ cable_adjacency = 0;
 pipe_adjacency = 0;
 draw_cables = false;
 draw_pipes = false;
+
+if(occupy_navgrid) scr_navgrid_occupy(occ_i, occ_j);

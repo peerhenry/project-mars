@@ -23,7 +23,8 @@
         "5f6be152-e516-4d49-b93f-7b475c36122c",
         "890b025e-1006-4933-a34c-b37f238eb102",
         "c6326a74-63ae-4beb-9d95-7a3cc461ce83",
-        "7436cedb-ddf3-495c-a338-ccdab6c4c0ed"
+        "7436cedb-ddf3-495c-a338-ccdab6c4c0ed",
+        "733853a1-a408-4ded-97fb-4f19dafebf1a"
     ],
     "filterType": "GMSprite",
     "folderName": "inside",

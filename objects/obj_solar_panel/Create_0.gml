@@ -1,5 +1,4 @@
 event_inherited();
-scr_navgrid_occupy(occ_i, occ_j);
 scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.occupy);
 
 // Set grid type to select for obj_grid_selector

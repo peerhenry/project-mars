@@ -1,7 +1,6 @@
 event_inherited();
 
 // Occupy navgrid & execute map buffer action
-mp_grid_add_cell( scr_get_nav_grid(), occ_i, occ_j );
 scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.occupy);
 
 // Set grid type to select for obj_grid_selector

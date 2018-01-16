@@ -50,7 +50,7 @@ construction = noone;
 
 // automatic behavior
 auto_attack = false;
-auto_construct = false;
+auto_construct = true;
 auto_eat = false;
 auto_sleep = false;
 auto_eat_level = 20;

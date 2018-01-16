@@ -2,7 +2,6 @@ scr_trace("wall create event");
 event_inherited();
 
 // Occupy navgrid and map buffer
-scr_navgrid_occupy(occ_i, occ_j);
 scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.wall);
 
 depth = -occ_j;	// set depth for tall structures
