@@ -1,61 +1,62 @@
 {
-    "id": "3274d00e-e4a7-44d5-8fca-985396990caf",
+    "id": "4891037c-d83d-4f7e-a781-dd539892ff9c",
     "modelName": "GMObject",
     "mvc": "1.0",
     "name": "obj_dropdown",
     "eventList": [
         {
-            "id": "f5fba732-6203-4684-8965-8e3a08822f52",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 4,
-            "eventtype": 6,
-            "m_owner": "3274d00e-e4a7-44d5-8fca-985396990caf"
-        },
-        {
-            "id": "44d53799-9738-402f-a9f8-dc65df60994d",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "3274d00e-e4a7-44d5-8fca-985396990caf"
-        },
-        {
-            "id": "1c37a196-a40f-44b3-9016-4f9702eaf656",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 1,
-            "m_owner": "3274d00e-e4a7-44d5-8fca-985396990caf"
-        },
-        {
-            "id": "965c5fdc-54d1-4172-8d21-6affcb9cdefb",
+            "id": "69e6ece9-666b-4829-b423-f8b51c2eab21",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 8,
-            "m_owner": "3274d00e-e4a7-44d5-8fca-985396990caf"
+            "m_owner": "4891037c-d83d-4f7e-a781-dd539892ff9c"
         },
         {
-            "id": "3865f83a-59d0-436b-be9f-e5ec643fc8c2",
+            "id": "9334d8da-078c-4975-8a23-e6a0fbcb60d3",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 3,
-            "m_owner": "3274d00e-e4a7-44d5-8fca-985396990caf"
+            "m_owner": "4891037c-d83d-4f7e-a781-dd539892ff9c"
+        },
+        {
+            "id": "4f31ef08-4273-48f1-a1bf-c385727d04da",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 4,
+            "eventtype": 6,
+            "m_owner": "4891037c-d83d-4f7e-a781-dd539892ff9c"
+        },
+        {
+            "id": "3816d434-6a59-4b0d-a196-602fe2067ab5",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "4891037c-d83d-4f7e-a781-dd539892ff9c"
+        },
+        {
+            "id": "074a6980-341e-40a1-9db6-33e902838bc8",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 10,
+            "eventtype": 7,
+            "m_owner": "4891037c-d83d-4f7e-a781-dd539892ff9c"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
+    "overriddenProperties": null,
     "parentObjectId": "00000000-0000-0000-0000-000000000000",
     "persistent": false,
     "physicsAngularDamping": 0.1,
@@ -70,6 +71,22 @@
     "physicsShape": 1,
     "physicsShapePoints": null,
     "physicsStartAwake": true,
+    "properties": [
+        {
+            "id": "740bbe22-ee56-487b-b0cb-6bd404b82265",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "dropdown",
+            "varName": "text",
+            "varType": 2
+        }
+    ],
     "solid": false,
     "spriteId": "3c00a077-57c1-4a89-9676-7eb9b631df0d",
     "visible": true

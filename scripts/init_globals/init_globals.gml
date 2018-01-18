@@ -4,7 +4,6 @@ global.init_stage = true;
 
 // # DEBUG settings
 global.draw_room_bb = false;
-global.enable_trace = debug_mode;
 global.debug_start_messages = false; // obsolete?
 global.debug_gameplay_messages = true; // obsolete?
 
@@ -55,14 +54,13 @@ global.build_time_sec_per_mdu = 1;
 
 // # Gameplay stuff
 global.oxygen_bar_color = make_color_rgb(55, 55, 255);
-
+global.setup_mdu_pile_size = 1;
 global.resource_amount_metal = 200000;
 global.default_resource_amount = 10000;
 
 // ownership
 global.ownership_behavior = macro_ownership_default;
 global.default_owner = macro_player; // change to setup owner
-global.setup_mdu_pile_count = 1;
 
 // -- Runtime vars --
 
@@ -72,11 +70,3 @@ global.draw_tall_walls = true;
 global.auto_complete = true; // Used for setup constructions
 global.sensor_selected = false;
 global.selected_grid = noone;
-
-// Skirmish
-
-var skirmish_settings = ds_map_create();
-ds_map_add(skirmish_settings, macro_skirmish_victory_condition, victory.domination);
-ds_map_add(skirmish_settings, macro_skirmish_astro_count, 5);
-
-global.skirmish_settings = skirmish_settings;

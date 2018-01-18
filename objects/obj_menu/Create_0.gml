@@ -30,7 +30,7 @@ colors[menu_index.new_game] = c_gray;
 colors[menu_index.tutorial] = c_white;
 colors[menu_index.survival] = c_white;
 colors[menu_index.settings] = c_white;
-colors[menu_index.skirmish] = c_gray;
+colors[menu_index.skirmish] = c_white;
 colors[menu_index.debug] = c_white;
 //colors[menu_index.test] = c_gray;
 

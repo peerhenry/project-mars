@@ -94,3 +94,4 @@ if(debug_mode){
 // Skirmish settings
 #macro macro_skirmish_victory_condition 0 
 #macro macro_skirmish_astro_count 1
+#macro macro_skirmish_mdu_pile_count 2

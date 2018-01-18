@@ -1,13 +1,10 @@
-with(obj_dropdown)
+if(global.hovers_over_dropdown_item) exit;
+with(dropdown)
 {
+	chosen_item = other;
+	chosen_item_number = other.number;
 	text = other.text;
-	// select event
-	
-	ini_open(macro_settings_file);
-	ini_write_real("settings", "width", other.width);
-	ini_write_real("settings", "height", other.height);
-	ini_close();
-	scr_resolution(other.width, other.height);
+	event_user(0);
 }
 with(obj_dropdown_item)
 {

@@ -5,16 +5,6 @@
     "name": "obj_label",
     "eventList": [
         {
-            "id": "66a78624-ff57-4b5f-beed-6e5a530d63b3",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "fe79a90b-e332-462b-a89e-05ac84ebeb28"
-        },
-        {
             "id": "eae6edc6-e2b5-439c-aaaa-8e9bde80ff6c",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -26,6 +16,7 @@
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
+    "overriddenProperties": null,
     "parentObjectId": "00000000-0000-0000-0000-000000000000",
     "persistent": false,
     "physicsAngularDamping": 0.1,
@@ -40,6 +31,22 @@
     "physicsShape": 1,
     "physicsShapePoints": null,
     "physicsStartAwake": true,
+    "properties": [
+        {
+            "id": "d35e13c1-99d8-4be0-8ff4-8366ce3e32b5",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "label",
+            "varName": "text",
+            "varType": 2
+        }
+    ],
     "solid": false,
     "spriteId": "00000000-0000-0000-0000-000000000000",
     "visible": true

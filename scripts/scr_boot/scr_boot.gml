@@ -1,6 +1,7 @@
 /// @description The very first script to run on startup
 
-show_debug_message("working_directory: " + string(working_directory));
+global.enable_trace = debug_mode;
+//show_debug_message("working_directory: " + string(working_directory));
 
 // Set cursor sprite
 cursor_sprite = spr_cursor;
@@ -52,3 +53,13 @@ global.sfx_volume = volume_sfx;
 global.voice_volume = volume_voice;
 
 global.active_constructions = ds_list_create();
+
+global.hovers_over_dropdown_item = false;;
+
+// Skirmish settings
+var skirmish_settings = ds_map_create();
+ds_map_add(skirmish_settings, macro_skirmish_victory_condition, victory.domination);
+ds_map_add(skirmish_settings, macro_skirmish_astro_count, 5);
+ds_map_add(skirmish_settings, macro_skirmish_mdu_pile_count, 4);
+
+global.skirmish_settings = skirmish_settings;
