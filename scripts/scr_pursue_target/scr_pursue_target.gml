@@ -30,6 +30,7 @@ with(arg_attacker)
 	var end_y = scr_gi_to_rc(end_j);
 
 	var counter = 0;
+	// try to find a shooting spot among 50 tiles surrounding the first nearest tile
 	while ( !can_pursue && counter < 50 ) // 50 is an arbitrary limit
 	{
 		end_i += scr_get_delta_i(counter);

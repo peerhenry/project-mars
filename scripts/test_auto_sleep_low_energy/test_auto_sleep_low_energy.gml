@@ -9,6 +9,7 @@ bed.under_construction = false;
 // act
 var result = scr_auto_sleep(astro);
 // assert
+assert_object_count(1, obj_assign_icon);
 assert_true(result, "auto sleep result");
 // cleanup
 instance_destroy(astro);
