@@ -13,6 +13,7 @@ for(var n = 0; n < astro_count; n++)
 scr_update_ghost(24*32, 24*32, 26*32, 26*32, macro_basetile, 0, true);
 scr_build_new();
 debug_finish_all_constructions();
+scr_ghost_reset();
 
 // TODO: create enemy constructions...
 

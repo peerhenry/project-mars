@@ -5479,6 +5479,14 @@
             }
         },
         {
+            "Key": "ace70b42-2fea-47fe-8c6f-6b7210069152",
+            "Value": {
+                "id": "f8bd0f13-eedb-44e7-83c8-d0a2fa88a276",
+                "resourcePath": "objects\\obj_assign_icon\\obj_assign_icon.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "ad5a2d76-6012-4121-8e4e-e1f65d362b22",
             "Value": {
                 "id": "ef34327f-d882-4b25-ab4a-33d31eb105e5",

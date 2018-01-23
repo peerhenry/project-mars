@@ -1,4 +1,4 @@
-if(global.hovers_over_dropdown_item) exit;
+if(!hovers) exit;
 if(position_meeting(mouse_x, mouse_y, self))
 {
 	if(instance_exists(obj_dropdown_item))

@@ -1,3 +1,4 @@
+/// @descr performs and updates the current action
 /// @arg astronaut
 var arg_astronaut = argument0;
 debug_instance_inherits(arg_astronaut, obj_astronaut);

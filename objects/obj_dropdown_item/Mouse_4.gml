@@ -1,4 +1,4 @@
-if(global.hovers_over_dropdown_item) exit;
+if(!hovers) exit;
 with(dropdown)
 {
 	chosen_item = other;

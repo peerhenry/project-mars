@@ -54,8 +54,6 @@ global.voice_volume = volume_voice;
 
 global.active_constructions = ds_list_create();
 
-global.hovers_over_dropdown_item = false;;
-
 // Skirmish settings
 var skirmish_settings = ds_map_create();
 ds_map_add(skirmish_settings, macro_skirmish_victory_condition, victory.domination);

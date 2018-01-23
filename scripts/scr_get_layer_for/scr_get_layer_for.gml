@@ -2,6 +2,8 @@
 
 switch(argument0)
 {
+	case obj_assign_icon:
+		return macro_logic_layer;
 	case obj_wall:
 	case obj_construction_mdu_pile:
 	case obj_mdu_pile:
