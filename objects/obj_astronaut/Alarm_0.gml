@@ -58,8 +58,7 @@ if(can_shoot && instance_exists(shootable))
 	var has_shot = scr_shoot(script_container, id, shootable);
 	if(has_shot)
 	{
-		scr_trace("has shot");
-		scr_cancel_current_action(id);
+		// scr_cancel_current_action(id);
 		current_action = astronaut_action.in_combat;
 	}
 }

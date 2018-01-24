@@ -1,8 +1,9 @@
-test_init(test_alarm_shoot);
+test_init(test_alarm_shoot_target);
 
 // arrange
 var astro = instance_create_depth(32,32,0,obj_astronaut_playable);
 var enemy = instance_create_depth(100,100,0,astro.enemy_object);
+astro.target = enemy;
 
 // act
 with(astro){
@@ -10,8 +11,8 @@ with(astro){
 }
 
 // assert
-assert_equal(enemy, astro.auto_target, "auto target");
-assert_equal(noone, astro.target, "target");
+assert_equal(noone, astro.auto_target, "auto target");
+assert_equal(enemy, astro.target, "target");
 assert_equal(astronaut_action.in_combat, astro.current_action, "current_action");
 
 // cleanup
