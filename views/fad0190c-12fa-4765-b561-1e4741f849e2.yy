@@ -9,8 +9,8 @@
         "d698b476-1b3c-481a-a882-510d5d525e5c",
         "e5480fa9-699a-4ca0-ba3c-9cafbd24a656",
         "8db2e8e1-e873-41fb-9d5b-175926b33856",
-        "8ad3b847-52a3-4a58-b820-625cec89b502",
-        "7c05267a-f0b5-4805-8443-087886dbc675"
+        "4d9b8a99-db19-44fd-99a9-b1e9dd2792fd",
+        "8ad3b847-52a3-4a58-b820-625cec89b502"
     ],
     "filterType": "GMScript",
     "folderName": "TESTS",

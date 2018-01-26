@@ -1,2 +1,2 @@
 event_inherited();
-text = "Quit";
+text = "Exit to Main Menu";

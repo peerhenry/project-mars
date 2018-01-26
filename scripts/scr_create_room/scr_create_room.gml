@@ -1,4 +1,4 @@
-/// @Description Creates a new room.
+/// @Description Creates a new room object, given coordinate must be inside the room.
 /// @param x
 /// @param y
 var arg_x = argument0;

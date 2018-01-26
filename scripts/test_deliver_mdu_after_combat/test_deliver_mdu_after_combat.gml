@@ -1,7 +1,5 @@
 test_init(test_deliver_mdu_after_combat);
 
-global.enable_trace = true;
-
 // arrange
 var constr = scr_create_dummy_mdu_construction();
 scr_register_new_construction(constr);

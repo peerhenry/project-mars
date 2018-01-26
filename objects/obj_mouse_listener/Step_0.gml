@@ -44,7 +44,8 @@ if(constr_type != noone) // BUILD MODE
 		is_dragging	= false;
 	}
 	
-	scr_update_ghost(click_x, click_y, mouse_x, mouse_y, constr_type, global.build_rotation, is_dragging);
+	var rot = global.construction_ghost[? macro_ghost_rotation];
+	scr_update_ghost(click_x, click_y, mouse_x, mouse_y, constr_type, rot, is_dragging);
 	
 	// exit BUILD MODE on RIGHT CLICK
 	if(mouse_check_button_pressed(mb_right))

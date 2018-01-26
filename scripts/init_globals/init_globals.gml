@@ -22,8 +22,8 @@ global.suffocation_speed = ini_read_real("oxygen", "suffocation_speed", 0.5);
 global.suit_closet_replenishment = ini_read_real("oxygen", "suit_closet_replenishment", 0.3);
 
 // TODO: unify these two
-global.suit_o2_depletion_speed = ini_read_real("oxygen", "suit_depletion_speed", 0.01);
-global.astro_oxygen_consumption = ini_read_real("oxygen", "astronaut_consumption", 0.1);
+global.suit_o2_depletion_speed = ini_read_real("oxygen", "suit_depletion_speed", 0.001); // prev 0.01
+global.astro_oxygen_consumption = ini_read_real("oxygen", "astronaut_consumption", 0.01); // prev 0.1
 
 // -- OXYGEN RENDERING
 global.oxygen_empty_level = ini_read_real("oxygen_graphics", "red_stripes_percentage", 1); // if oxygen_level falls below this number, red stripes are drawn.

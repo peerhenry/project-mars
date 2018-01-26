@@ -25,5 +25,7 @@ for(var n = 0; n < 4; n++) // ENWS
 }
 
 
-var rot_param = global.build_rotation;
-connects_horizontally  = (rot_param == 1 || rot_param == 3)
+var rot_param = global.construction_ghost[? macro_ghost_rotation];
+show_debug_message("creating hatch with rot_param: " + string(rot_param));
+connects_horizontally  = (rot_param == 1 || rot_param == 3);
+show_debug_message("connects_horizontally " + string(connects_horizontally));

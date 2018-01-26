@@ -10,14 +10,12 @@ for(var n = 0; n < astro_count; n++)
 }
 
 // create constructions
-scr_update_ghost(24*32, 24*32, 26*32, 26*32, macro_basetile, 0, true);
-scr_build_new();
-debug_finish_all_constructions();
-scr_ghost_reset();
+scr_setup_six_rooms(20,15, 5, 4, 2);
 
 // TODO: create enemy constructions...
 
 // create mdu piles...
+/*
 global.setup_mdu_pile_size = 8;
 var pile_count = skirmish_settings[? macro_skirmish_mdu_pile_count];
 var pile_counter = 0;
@@ -38,6 +36,7 @@ for(var n = 0; n < 3; n++)
 	}
 }
 global.setup_mdu_pile_size = 1;
+*/
 
 // center camera on starting position
 camera_set_view_pos(view_camera[0], 32*32 - view_wport[0]/2, 32*32 - view_hport[0]/2);

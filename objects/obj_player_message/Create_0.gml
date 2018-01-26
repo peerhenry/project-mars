@@ -11,4 +11,4 @@ text_x = display_get_gui_width()/2;
 text_y = gui_height + half_height;
 text_stop_y = gui_height - half_height;
 
-audio_play_sound(sound_fx_notify, 0, 0);
+if( !audio_is_playing(sound_fx_notify) ) audio_play_sound(sound_fx_notify, 0, 0);

@@ -62,7 +62,7 @@ for(var m = 0; m < array_length_1d(arg_actions); m++)
 			if(validation_i == build_validation_i.inside) required_object = obj_base_tile;
 			if(validation_o == build_validation_o.wall) required_object = obj_wall;
 			
-			var new_ghost_cell = scr_create_ghost_cell(
+			new_ghost_cell = scr_create_ghost_cell(
 				target_i, target_j,
 				map_buffer_action,
 				b_layer,

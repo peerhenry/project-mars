@@ -46,6 +46,10 @@ with(door)
 	}
 	else room2 = scr_room_at(x2, y2); // room south or east of door
 	
+	show_debug_message("room1 is now: " + string(room1)); // DEBUG
+	show_debug_message("room2 is now: " + string(room2));
+	show_debug_message("the total nr of rooms is: " + string(scr_count_instances(obj_room)));
+	
 	if(adj_door_count == 1)
 	{
 		// The north room must equal the north room of the south door, or vice versa
