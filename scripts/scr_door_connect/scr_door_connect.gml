@@ -32,8 +32,6 @@ with(door)
 	{
 		adj_door_count++;
 		room1 = door1.room2;
-		show_debug_message("adjacent door found at: " + string(door1.occ_i) + ", " + string(door1.occ_j));
-		show_debug_message("its room2 has tilecount: " + string(ds_list_size(door1.room2.tiles)));
 	}
 	else room1 = scr_room_at(x1, y1); // room north or west of door
 	
@@ -41,18 +39,12 @@ with(door)
 	{
 		adj_door_count++;
 		room2 = door2.room1;
-		show_debug_message("adjacent door found at: " + string(door2.occ_i) + ", " + string(door2.occ_j));
-		show_debug_message("its room1 has tilecount: " + string(ds_list_size(door2.room1.tiles)));
 	}
 	else room2 = scr_room_at(x2, y2); // room south or east of door
 	
-	show_debug_message("room1 is now: " + string(room1)); // DEBUG
-	show_debug_message("room2 is now: " + string(room2));
-	show_debug_message("the total nr of rooms is: " + string(scr_count_instances(obj_room)));
-	
 	if(adj_door_count == 1)
 	{
-		// The north room must equal the north room of the south door, or vice versa
+		// The north room of this door must equal the north room of the south door, or vice versa
 		if(room1 == room2)
 		{
 			if(door1 != noone)
@@ -78,8 +70,8 @@ with(door)
 				door2.room1 = room2;
 			}
 		}
-		else show_debug_message("room1 did not equal room2: " + string(room1) + ", " + + string(room2) + ". Tilecounts: " + string(ds_list_size(room1.tiles)) + ", " + string(ds_list_size(room2.tiles)));
-		//else show_error("room1 did not equal room2: " + string(room1) + ", " + + string(room2) + ". Tilecounts: " + string(ds_list_size(room1.tiles)) + ", " + string(ds_list_size(room2.tiles)), true);
+		//else show_debug_message("room1 did not equal room2: " + string(room1) + ", " + + string(room2) + ". Tilecounts: " + string(ds_list_size(room1.tiles)) + ", " + string(ds_list_size(room2.tiles)));
+		else show_error("room1 did not equal room2: " + string(room1) + ", " + + string(room2) + ". Tilecounts: " + string(ds_list_size(room1.tiles)) + ", " + string(ds_list_size(room2.tiles)), true);
 	}
 	else if(adj_door_count == 2)
 	{

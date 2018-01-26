@@ -50,47 +50,8 @@ if(keyboard_check_pressed(ord("M")))
 
 if(keyboard_check_pressed(ord("L")))
 {
-	//var cable = instance_position(mouse_x, mouse_y, obj_cable);
-	//if(cable > 0) show_debug_message("cable adjacency number: " + string(cable.adjacency_number));
-	
-	//with(obj_grid)
-	//{
-	//	if(grid_type == macro_grid_electric){
-	//		debug_show_grid(id);
-	//	}
-	//}
-	
-	scr_show_construction_queue();
-	// debug_show_oxygen_grid_room_counts()
-	// debug_show_astronaut_actions()
-	
-	//with(obj_astronaut_playable){
-	//	show_debug_message("name: " + string(name));
-	//	show_debug_message("target: " + string(target));
-	//	show_debug_message("shoot_alarm: " + string(alarm[0]));
-	//}
-	
-	// count mdu piles
-	/*var count = 0;
-	with(obj_mdu_pile){
-		show_debug_message("pile mdu count: " + string(mdu_count));	
-		count = count+1;
-	}
-	show_debug_message("mdu pile count: " + string(count));*/
-	
-	// supply all constructions with mdus
-	/*var q = scr_get_construction_queue(macro_player);
-	var size = ds_list_size(q);
-	for(var n = 0; n < size; n++)
-	{
-		var next_con = ds_list_find_value(q, n);
-		var rem = next_con[? construction_required_mdu_remaining];
-		while(rem > 0)
-		{
-			scr_incr_construction_mdu(next_con);
-			rem = next_con[? construction_required_mdu_remaining];
-		}
-	}*/
+	//scr_show_construction_queue();
+	show_debug_message("room count: " + string(scr_count_instances(obj_room)));
 }
 
 if(keyboard_check_pressed(ord("B")))

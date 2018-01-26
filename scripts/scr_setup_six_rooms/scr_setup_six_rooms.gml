@@ -22,6 +22,9 @@ scr_setup_room(i_or, j_or, r_width, r_height);
 scr_setup_room(i_or + i_step, j_or, r_width, r_height);
 scr_setup_room(i_or + 2*i_step, j_or, r_width, r_height);
 
+scr_setup_cable(i_or + r_width + 1 + 2*i_step, j_or, i_or + 3*i_step - 1, j_or);
+scr_setup_solar_array(i_or + 3*i_step, j_or, r_width, r_height);
+
 scr_setup_room(i_or, j_or + j_step, r_width, r_height);
 scr_setup_room(i_or + i_step, j_or + j_step, r_width, r_height);
 scr_setup_room(i_or + 2*i_step, j_or + j_step, r_width, r_height);
@@ -29,7 +32,7 @@ scr_setup_room(i_or + 2*i_step, j_or + j_step, r_width, r_height);
 if(hall_length > 0)
 {
 	var hall_i = i_or + floor(r_width/2);
-	var hall_j = j_or + floor(r_width/2);
+	var hall_j = j_or + floor(r_height/2);
 	
 	// horizontal halls
 	scr_setup_hall(i_or + r_width, hall_j, i_or + i_step - 1, hall_j);
@@ -43,6 +46,15 @@ if(hall_length > 0)
 	scr_setup_hall(hall_i + 2*i_step, j_or + r_height, hall_i + 2*i_step, j_or + j_step - 1);
 }
 
-// insert doors
-
 // hatch
+
+var hatch_start_i = i_or + i_step + floor(r_width/2);
+var hatch_start_j = j_or + j_step + r_height;
+var hatch_end_i = hatch_start_i;
+var hatch_end_j = hatch_start_j + 4;
+scr_setup_hatch_hall(
+	hatch_start_i, 
+	hatch_start_j, 
+	hatch_end_i, 
+	hatch_end_j
+);

@@ -4,7 +4,7 @@ button_objects = [
 	obj_HUD_menu_button_sound, 
 	obj_HUD_menu_button_save, 
 	obj_HUD_menu_button_load, 
-	obj_HUD_menu_button_quit
-	// todo: add button exit to desktop
+	obj_HUD_menu_button_quit,
+	obj_HUD_menu_button_exit
 ];
 event_user(2); // initialize menu

@@ -42,7 +42,8 @@ if(oxygen_level < 100){
 		draw_set_alpha(o2_alpha);
 		draw_set_color(c_red);
 		draw_rectangle(xx-16, yy-16, xx+15, yy+15, false);
-		if(oxygen_level < global.oxygen_empty_level){
+		if(oxygen_level < global.oxygen_empty_level)
+		{
 			draw_sprite(spr_oxygen_depleted, -1, xx, yy);
 		}
 	}

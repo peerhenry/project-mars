@@ -10,7 +10,9 @@ for(var n = 0; n < astro_count; n++)
 }
 
 // create constructions
-scr_setup_six_rooms(20,15, 5, 4, 2);
+scr_setup_six_rooms(20,10, 5, 4, 2);
+var rc = scr_count_instances(obj_room);
+if(rc != 14) show_error("error: room count: " + string(rc ), true);
 
 // TODO: create enemy constructions...
 
@@ -40,3 +42,5 @@ global.setup_mdu_pile_size = 1;
 
 // center camera on starting position
 camera_set_view_pos(view_camera[0], 32*32 - view_wport[0]/2, 32*32 - view_hport[0]/2);
+
+scr_force_trace("init_skirmish DONE..."); // DEBUG

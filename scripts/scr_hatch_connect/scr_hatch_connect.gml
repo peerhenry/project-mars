@@ -23,13 +23,11 @@ else if(nr_of_adjacent_rooms == 0)
 else
 {
 	var the_room = ds_list_find_value(adj_rooms, 0);
-	show_debug_message("setting base room in hatch... " + string(the_room)); // DEBUG
 	arg_hatch.base_room = the_room;
 	with(the_room)
 	{
 		if(ds_list_find_index(hatches, arg_hatch) < 0)
 		{
-			show_debug_message("adding hatch to room..."); // DEBUG
 			ds_list_add(hatches, arg_hatch);
 		}
 	}

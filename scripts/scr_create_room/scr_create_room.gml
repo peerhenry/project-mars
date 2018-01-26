@@ -4,6 +4,8 @@
 var arg_x = argument0;
 var arg_y = argument1;
 
+scr_force_trace("CREATING ROOM..."); // DEBUG
+
 var or_x = scr_rc_clamp_origin(arg_x);
 var or_y = scr_rc_clamp_origin(arg_y);
 

@@ -10,7 +10,8 @@
         "d9d808c5-f207-4b07-88a7-de6b4086607c",
         "53b4f945-bbc6-480c-be51-9d16fc42e9e5",
         "28717c0c-fcb8-43ed-bdcf-8855d6c03c75",
-        "364bbc5b-0dc4-4bc9-a039-6da30a344d25"
+        "364bbc5b-0dc4-4bc9-a039-6da30a344d25",
+        "3ac63466-1b5a-4f50-bc75-bb3786c7f20d"
     ],
     "filterType": "GMScript",
     "folderName": "setup base",

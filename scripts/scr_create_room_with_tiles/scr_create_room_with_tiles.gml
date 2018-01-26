@@ -9,6 +9,8 @@ var top = argument2;
 var right = argument3;
 var bottom = argument4;
 
+scr_force_trace("CREATING ROOM..."); // DEBUG
+
 var container = global.script_container;
 var get_layer = script_container_resolve(container, "get_layer_for");
 var rooms_layer = script_execute(get_layer, obj_room);
