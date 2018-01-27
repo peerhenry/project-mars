@@ -9,8 +9,6 @@ var top = argument2;
 var right = argument3;
 var bottom = argument4;
 
-scr_force_trace("CREATING ROOM..."); // DEBUG
-
 var container = global.script_container;
 var get_layer = script_container_resolve(container, "get_layer_for");
 var rooms_layer = script_execute(get_layer, obj_room);
@@ -32,7 +30,6 @@ var tile_x = scr_gi_to_rc(tile_i);
 var tile_y = scr_gi_to_rc(tile_j);
 var base_tile = instance_position(tile_x, tile_y, obj_base_tile);
 var o2_grid = scr_get_grid(base_tile, macro_grid_oxygen);
-show_debug_message("new room gets O2 grid: " + string(o2_grid) + " from " + string(tile_i) + ", " + string(tile_j)); // DEBUG
 scr_connect_to_grid(o2_grid, new_room);
 
 return new_room;

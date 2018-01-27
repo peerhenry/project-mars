@@ -35,11 +35,9 @@ if(is_open){
 			
 			if(room2.oxygen_is_leaking){
 				room1.oxygen_is_leaking = true;
-				room1.oxygen_is_replenishing = false;
 			}
 			else if(room1.oxygen_is_leaking){
 				room2.oxygen_is_leaking = true;
-				room2.oxygen_is_replenishing = false;
 			}
 		
 			// clamp new values

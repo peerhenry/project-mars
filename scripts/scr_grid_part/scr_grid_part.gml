@@ -5,8 +5,6 @@ debug_instance_type(argument0, obj_grid);
 var arg_grid = argument0;
 var grid_type = arg_grid.grid_type;
 
-if(grid_type == macro_grid_oxygen) show_debug_message("parting O2 grid: " + string(arg_grid));
-
 // Create the data structures that will contain the remainder of all components from the grid
 // When the flood fill reaches a component, it will be removed from remainder.
 var remainder_map = ds_map_create();
@@ -117,7 +115,6 @@ if(visited_size != original_size)
 	scr_grid_part(new_grid_from_remainder);
 	
 	// destroy original grid
-	if(grid_type == macro_grid_oxygen) show_debug_message("destroying O2 grid: " + string(arg_grid));
 	instance_destroy(arg_grid);
 	
 	// Check if new grid is valid

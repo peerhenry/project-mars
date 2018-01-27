@@ -23,4 +23,7 @@ if(room2 != noone)
 }
 else can_join = false;
 
-if(can_join)scr_room_join(x, y, room1, room2);
+if(can_join)
+{
+	scr_room_join(x, y, room1, room2);
+}

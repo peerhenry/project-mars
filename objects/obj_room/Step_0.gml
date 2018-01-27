@@ -1,6 +1,6 @@
 /// @description Update oxygen levels
 
-var all_hatches_closed = true;
+//var all_hatches_closed = true;
 var room_drainage_per_hatch = hatch_o2_drainage_for_one_tile / max(ds_list_size(tiles),1);
 
 var next_hatch = undefined;
@@ -15,14 +15,14 @@ repeat(ds_list_size(hatches))
 			oxygen_level -= room_drainage_per_hatch; // each open hatch contributes to leakage.
 			if(oxygen_level < 0) oxygen_level  = 0;
 		}
-		all_hatches_closed = false;
+		//all_hatches_closed = false;
 		oxygen_is_leaking = true;
-		oxygen_should_replenish = false; // do not replenish if hatch is open.
+		//oxygen_should_replenish = false; // do not replenish if hatch is open.
 	}
 	n++;
 }
 
-if(all_hatches_closed)
+/*if(all_hatches_closed)
 {
 	// auto reset replenishment
 	if(!oxygen_is_leaking)
@@ -31,7 +31,7 @@ if(all_hatches_closed)
 	}
 	
 	// autp reset leakage flag
-	if(!oxygen_should_replenish)
+	if(!oxygen_should_replenish) // BUG: this does not get false
 	{
 		var no_door_leakage = true;
 		var n = 0;
@@ -62,9 +62,9 @@ if(all_hatches_closed)
 			oxygen_is_leaking = false;
 		}
 	}
-}
+}*/
 
-if(!oxygen_should_replenish)
+if(oxygen_is_leaking)
 {
 	scr_set_grid_prop(id, macro_grid_oxygen, macro_grid_prop_can_perform_role, false);
 }
@@ -73,7 +73,7 @@ else scr_set_grid_prop(id, macro_grid_oxygen, macro_grid_prop_can_perform_role, 
 var current_consumption = scr_get_grid_prop(id, macro_grid_oxygen, macro_grid_prop_value);
 var new_consumption = 0;
 // replenish oxygen
-if(oxygen_level < 100 && oxygen_should_replenish && scr_can_draw_from_grid(id, macro_grid_oxygen))
+if(oxygen_level < 100 && !oxygen_is_leaking && scr_can_draw_from_grid(id, macro_grid_oxygen))
 {
 	var replenishment = min(100 - oxygen_level, o2_replenishment);
 	new_consumption = replenishment*ds_list_size(tiles);

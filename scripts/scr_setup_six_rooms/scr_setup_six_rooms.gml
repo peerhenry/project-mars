@@ -47,7 +47,6 @@ if(hall_length > 0)
 }
 
 // hatch
-
 var hatch_start_i = i_or + i_step + floor(r_width/2);
 var hatch_start_j = j_or + j_step + r_height;
 var hatch_end_i = hatch_start_i;
@@ -58,3 +57,11 @@ scr_setup_hatch_hall(
 	hatch_end_i, 
 	hatch_end_j
 );
+
+// o2 tank
+scr_setup_single_tile_construction(i_or, j_or, macro_oxygen_tank, 0);
+var tank = instance_position(scr_gi_to_rc(i_or), scr_gi_to_rc(j_or), obj_oxygen_tank);
+with(tank)
+{
+	
+}

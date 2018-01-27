@@ -6,6 +6,7 @@ if(is_open){
 } else {
 	target_frame = 0;
 	image_speed = -1;
+	scr_check_if_gate_close_plugs_leak();
 }
 
 // play sound
