@@ -6,7 +6,7 @@ var expect_top = 904;
 var expect_bottom = 2476;
 var expect_left = 1252;
 var expect_build_time = scr_calculate_build_time(0, 0);
-var expect_owner = macro_japan;
+var expect_owner = macro_enemy;
 var expect_construction_type = 8282;
 scr_ghost_reset_with_constr_type(expect_construction_type);
 var expected_list = ds_list_create();

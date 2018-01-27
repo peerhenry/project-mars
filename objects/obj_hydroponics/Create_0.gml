@@ -6,4 +6,4 @@ scr_set_new_grid_props(id, macro_grid_water, macro_grid_role_consumer, 2);
 
 depth = -occ_j;
 
-food_level = 100;
+food_level = 0;

@@ -6,5 +6,6 @@ assert_object_count(14, obj_room);
 // cleanup
 with(obj_constructable) instance_destroy();
 with(obj_room) instance_destroy();
+with(obj_resource) instance_destroy();
 
 test_result();

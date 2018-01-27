@@ -1,4 +1,4 @@
-var constr_queue = global.construction_queue;
+var constr_queue = scr_get_construction_queue(macro_player);
 
 var construction_count = ds_list_size(constr_queue);
 for(var n = 0; n < construction_count; n++)

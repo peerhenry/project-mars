@@ -1,4 +1,5 @@
-var queues = [ global.construction_queue ];  // TODO: retrieve all queues
+var cqm = global.construction_queue_map;
+var queues = [ ds_map_find_value(cqm, macro_player), ds_map_find_value(cqm, macro_enemy) ];
 
 for(var n = 0; n < array_length_1d(queues); n++)
 {

@@ -10,8 +10,11 @@ with(astronaut)
 	has_died = true;
 	if(object_index == obj_astronaut_playable)
 	{
-		var play_sound = script_container_resolve(script_container, "play_sound");
-		script_execute(play_sound, sound_fx_flatline);
+		if(!audio_is_playing(sound_fx_flatline))
+		{
+			var play_sound = script_container_resolve(script_container, "play_sound");
+			script_execute(play_sound, sound_fx_flatline);
+		}
 	}
 }
 

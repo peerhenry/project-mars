@@ -10,6 +10,10 @@ switch(argument0)
 		return macro_base_tall_layer;
 	case obj_room:
 		return macro_rooms_layer;
+	case obj_resource_water:
+	case obj_resource_metal:
+	case obj_resource_gold:
+		return macro_resource_layer;
 	default:
 		return macro_base_layer;
 }

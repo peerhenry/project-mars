@@ -13,6 +13,7 @@ assert_equal(global.default_owner, owner, "owner");
 
 // Cleanup
 instance_destroy(constr);
+global.default_owner = macro_player;
 
 // Return result
 test_result();

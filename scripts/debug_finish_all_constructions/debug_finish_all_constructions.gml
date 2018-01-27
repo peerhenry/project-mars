@@ -1,4 +1,4 @@
-var cq = global.construction_queue;
+var cq = scr_get_construction_queue( global.default_owner );
 var count = ds_list_size(cq);
 var temp_list = ds_list_create();
 ds_list_copy(temp_list, cq);

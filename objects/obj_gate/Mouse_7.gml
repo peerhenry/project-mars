@@ -1,4 +1,5 @@
 /// @description Open/close
+if(owner != macro_player) exit;
 if(under_construction || under_destruction)
 {
 	exit;

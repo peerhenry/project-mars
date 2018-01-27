@@ -89,7 +89,7 @@ for(var n = 0; n < cell_count; n++)
 			
 			depth = depth - 300; // under construction drawing has priority
 			under_construction = true;
-			owner = macro_player;
+			//owner = macro_player;
 			scr_post_creation_logic(construct_type, new_instance);
 		}
 		
@@ -115,7 +115,8 @@ for(var n = 0; n < cell_count; n++)
 // Create construction and register in queue
 if(cell_count > 0 && ds_list_size(new_instances) > 0)
 {
-	var new_construction = scr_new_construction(construction_cell_list, prerequisite, right, top, left, bottom, macro_player, total_required_metal);
+	var owner = global.default_owner;
+	var new_construction = scr_new_construction(construction_cell_list, prerequisite, right, top, left, bottom, owner, total_required_metal);
 	scr_register_new_construction(new_construction);
 	scr_recalculate_paths();
 	for(var n = 0; n < ds_list_size(new_instances); n++)

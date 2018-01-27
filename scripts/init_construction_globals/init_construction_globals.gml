@@ -10,4 +10,7 @@ ds_map_add(ghost, macro_ghost_rotation, 0);
 global.construction_ghost = ghost;
 
 // constructions dont immediately build, but are put on a queue for astronauts to pick up.
-global.construction_queue = ds_list_create();
+var cqm = ds_map_create();
+ds_map_add(cqm, macro_player, ds_list_create());
+ds_map_add(cqm, macro_enemy, ds_list_create());
+global.construction_queue_map = cqm;
