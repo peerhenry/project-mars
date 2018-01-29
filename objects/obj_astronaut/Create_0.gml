@@ -20,9 +20,9 @@ movement_speed = macro_astronaut_move_speed;
 sprite_down = spr_character_walk_down;
 sprite_right = spr_character_walk_right;
 sprite_up = spr_character_walk_up;
-sprite_suitless_down = spr_character_suitless_down;
-sprite_suitless_right = spr_character_suitless_right;
-sprite_suitless_up = spr_character_suitless_up;
+sprite_suitless_down = spr_male_down;
+sprite_suitless_right = spr_male_right;
+sprite_suitless_up = spr_male_up;
 image_speed = 0;
 
 // astronaut props
@@ -67,5 +67,12 @@ shoot_path = path_add();
 sprite_walk_down = sprite_down;
 sprite_walk_right = sprite_right;
 sprite_walk_up = sprite_up;
-// shader stuff
-mask_color = [1, 1, 1, 1];
+
+// shader color mask
+mask_color_clothes = [0.4, 0.2, 0.75, 0.5];
+mask_color_suit = [1, 1, 1, 0];
+mask_color = mask_color_suit;
+sprite_mask_down = spr_suit_mask_down;
+sprite_mask_right = spr_suit_mask_right;
+sprite_mask_up = spr_suit_mask_up;
+mask_sprite = sprite_mask_down;

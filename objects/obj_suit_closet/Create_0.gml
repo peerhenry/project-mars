@@ -15,3 +15,8 @@ oxygen_bar_color = global.oxygen_bar_color;
 suit_closet_replenishment = global.suit_closet_replenishment;
 
 scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.occupy);
+
+// mask
+mask_sprite = spr_suit_closet_mask;
+mask_color = [0,0,0,0];
+if(owner == macro_enemy) mask_color = global.enemy_suit_color;

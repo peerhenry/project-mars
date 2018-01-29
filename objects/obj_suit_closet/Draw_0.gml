@@ -16,3 +16,5 @@ if(holds_suit && suit_oxygen < 100)
 		false
 	);
 }
+
+if(holds_suit) scr_draw_mask(id);

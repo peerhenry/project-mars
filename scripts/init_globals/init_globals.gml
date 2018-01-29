@@ -70,3 +70,6 @@ global.draw_tall_walls = true;
 global.auto_complete = true; // Used for setup constructions
 global.sensor_selected = false;
 global.selected_grid = noone;
+
+// colors
+global.enemy_suit_color = [1, 0.5, 0, 0.4];
