@@ -4,10 +4,10 @@ event_inherited();
 if(!under_construction)
 {
 	// Draw food
-	var food_image = floor(food_level/25) - 1;
+	var food_image = floor(food_level/25);
 	if(food_image >= 0)
 	{
-		draw_sprite(spr_hydroponics_plants, 3, x, y);
+		draw_sprite(spr_hydroponics_plants, food_image, x, y);
 	}
 	
 	// Draw sprinklers

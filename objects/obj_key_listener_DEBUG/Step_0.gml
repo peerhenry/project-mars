@@ -58,6 +58,14 @@ if(keyboard_check_pressed(ord("L")))
 	}
 }
 
+if(keyboard_check_pressed(ord("K")))
+{
+	with(obj_astronaut_playable)
+	{
+		if(is_selected) scr_kill(id);
+	}
+}
+
 if(keyboard_check_pressed(ord("B")))
 {
 	global.draw_room_bb = !global.draw_room_bb

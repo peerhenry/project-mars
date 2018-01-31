@@ -27,6 +27,6 @@ with(arg_astronaut)
 	current_action = astronaut_action.idle;
 	
 	if(is_walking){
-		path_end();
+		scr_cancel_walking(id);
 	}
 }

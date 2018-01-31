@@ -13,6 +13,7 @@ with(obj_astronaut_playable)
 		if(ds < d_min && can_assign){
 			d_min = ds;
 			assigned_astronaut = id;
+			break;
 		}
 	}
 }
