@@ -15,29 +15,11 @@ scr_set_new_grid_props(id, macro_grid_water, macro_grid_role_carrier, 0);
 scr_set_new_grid_props(id, macro_grid_oxygen, macro_grid_role_carrier, 0);
 scr_set_new_grid_props(id, macro_grid_hydrogen, macro_grid_role_carrier, 0);
 
-scr_set_basetile_lights(id);
-scr_connect_to_cables(id);
-scr_connect_to_pipes(id);
-
-// set wall image index, and also modify adjacent wall
-var adj_walls = scr_get_adjacent_instances(id, obj_wall); // ENWS
-for(var n = 0; n < 4; n++) // ENWS
+if(!global.init_stage)
 {
-	var next_wall = adj_walls[n];
-	if(next_wall != noone)
-	{
-		var bit = power(2, n);
-		if(image_index & bit != bit)
-		{
-			image_index += bit;
-		}
-		
-		// check if adjacent wall has the bit
-		var adj_bit = power(2, (n+2)%4);
-		if(next_wall.image_index & adj_bit != adj_bit)
-		{
-			next_wall.image_index += adj_bit;
-		}
-	}
+	scr_connect_to_cables(id);
+	scr_connect_to_pipes(id);
+	
+	scr_set_basetile_lights(id);
+	scr_connect_wall(id);
 }
-adj_walls = 0; // free array memory

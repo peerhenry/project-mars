@@ -15,7 +15,7 @@ if(room_was_parted)
 	for(var n = 0; n < ds_list_size(doors_to_update); n++)
 	{
 		var next_door = ds_list_find_value(doors_to_update, n);
-		scr_door_connect(next_door);
+		scr_door_connect_rooms(next_door);
 	}
 	
 	for(var n = 0; n < ds_list_size(hatches_to_update); n++)

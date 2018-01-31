@@ -12,7 +12,9 @@
         "421b654a-a07a-4ea7-b38c-b3ca54abf732",
         "ca7a3d6a-1e14-4ca9-b7c6-0b1e2d3a8221",
         "f0fc534a-39fd-4e05-9b90-47001c4a185f",
-        "6046505c-4462-4d69-bb0b-fdbf0614f9b5"
+        "6046505c-4462-4d69-bb0b-fdbf0614f9b5",
+        "6549aea2-1874-4b69-9d23-b90218c577db",
+        "1429d0b0-9b10-4c15-98a1-e3fd2aff9a90"
     ],
     "filterType": "GMScript",
     "folderName": "level setup",

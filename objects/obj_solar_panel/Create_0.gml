@@ -5,4 +5,5 @@ scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.occupy);
 grid_type_to_select = macro_grid_electric;
 
 scr_set_new_grid_props(id, macro_grid_electric, macro_grid_role_source, global.solar_panel_energy_production);
-scr_connect_to_cables(id);
+
+if(!global.init_stage) scr_connect_to_cables(id);

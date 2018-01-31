@@ -16,9 +16,5 @@ if(!global.init_stage)
 {
 	scr_connect_to_cables(id);
 	scr_connect_to_pipes(id);
+	scr_drill_pump_connection(id);
 }
-
-// connect to drill
-scr_drill_pump_connection(id);
-
-// if(global.auto_complete) event_user(macro_event_finalize); // obsolete?

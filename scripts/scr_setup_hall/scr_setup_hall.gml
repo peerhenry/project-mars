@@ -14,8 +14,10 @@ if(i_start == i_finish)	// vertical hall
 	var j_length = abs(j_start - j_finish) + 1;
 	scr_setup_room(i_min, j_min, 1, j_length);
 	
-	scr_setup_door(i_min, j_min, 0);
-	scr_setup_door(i_min, j_min + j_length - 1, 0);
+	var add_top_door = position_meeting(scr_gi_to_rc(i_min), scr_gi_to_rc(j_min - 1), obj_base_tile);
+	if(add_top_door) scr_setup_door(i_min, j_min, 0);
+	var add_bottom_door = position_meeting(scr_gi_to_rc(i_min), scr_gi_to_rc(j_min + j_length), obj_base_tile);
+	if(add_bottom_door) scr_setup_door(i_min, j_min + j_length - 1, 0);
 }
 else if(j_start == j_finish) // horizontal hall
 {
@@ -24,8 +26,10 @@ else if(j_start == j_finish) // horizontal hall
 	var j_min = min(j_start, j_finish);
 	scr_setup_room(i_min, j_min, i_length, 1);
 	
-	scr_setup_door(i_min, j_min, 1);
-	scr_setup_door(i_min + i_length - 1, j_min, 1);
+	var add_left_door = position_meeting(scr_gi_to_rc(i_min - 1), scr_gi_to_rc(j_min), obj_base_tile);
+	if(add_left_door) scr_setup_door(i_min, j_min, 1);
+	var add_right_door = position_meeting(scr_gi_to_rc(i_min + i_length), scr_gi_to_rc(j_min), obj_base_tile);
+	if(add_right_door) scr_setup_door(i_min + i_length - 1, j_min, 1);
 }
 else	// hall with knee
 {
@@ -37,6 +41,8 @@ else	// hall with knee
 	scr_setup_room(i_min, j_min, i_length, 1);
 	scr_setup_room(i_min + i_length - 1, j_min, 1, j_length);
 	
-	scr_setup_door(i_min, j_min, 1);
-	scr_setup_door(i_min + i_length - 1, j_min + j_length - 1, 0);
+	var add_left_door = position_meeting(scr_gi_to_rc(i_min - 1), scr_gi_to_rc(j_min), obj_base_tile);
+	if(add_left_door) scr_setup_door(i_min, j_min, 1);
+	var add_bottom_door = position_meeting(scr_gi_to_rc(i_min + i_length - 1), scr_gi_to_rc(j_min + j_length), obj_base_tile);
+	if(add_bottom_door) scr_setup_door(i_min + i_length - 1, j_min + j_length - 1, 0);
 }

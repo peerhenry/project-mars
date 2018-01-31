@@ -6,11 +6,7 @@ switch(victory_contition)
 {
 	case victory.domination:
 		// check if all enemy units are destroyed
-		var live_enemy_count = 0;
-		with(obj_astronaut_enemy)
-		{
-			if(!has_died) live_enemy_count++;
-		}
+		var live_enemy_count = scr_count_live_astronauts(macro_enemy);
 		if(live_enemy_count == 0)
 		{
 			// VICTORY
@@ -23,11 +19,7 @@ switch(victory_contition)
 		break;
 }
 
-var live_player_astro_count = 0;
-with(obj_astronaut_playable)
-{
-	if(!has_died) live_player_astro_count++;
-}
+var live_player_astro_count = scr_count_live_astronauts(macro_player);
 if(live_player_astro_count == 0)
 {
 	// GAME OVER
