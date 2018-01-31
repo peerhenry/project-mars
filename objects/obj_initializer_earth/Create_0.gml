@@ -1,4 +1,2 @@
-init_view_and_camera();
-init_game();
+event_inherited();
 init_earth();
-alarm[0] = 1;

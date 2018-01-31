@@ -1,0 +1,1 @@
+owner = macro_enemy;

@@ -22,4 +22,10 @@ with(obj_room)
 	oxygen_level = 100;
 }
 
+with(obj_pump)
+{
+	scr_connect_to_pipes(id);
+	scr_connect_to_cables(id);
+}
+
 global.init_stage = false;

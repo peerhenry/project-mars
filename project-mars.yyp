@@ -4695,6 +4695,14 @@
             }
         },
         {
+            "Key": "8b4dc83d-718e-46cb-985d-bf9c032594b0",
+            "Value": {
+                "id": "f1ded300-d930-49d2-8698-4d3f023d2d08",
+                "resourcePath": "objects\\obj_skirmish_spawner\\obj_skirmish_spawner.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "8b7f56a7-441c-4241-a7f9-dee5feab0ae1",
             "Value": {
                 "id": "fbfa8911-fbbd-44ae-ba4d-513f3f6ce505",

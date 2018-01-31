@@ -6,10 +6,7 @@ with(drill){ event_user(macro_event_finalize); }
 var pump = instance_create_depth(32, 32, 0, obj_pump);
 
 // act
-with(pump)
-{
-	event_user(macro_event_finalize);
-}
+with(pump){ event_user(macro_event_finalize); }
 var grid = scr_get_grid_prop(pump, macro_grid_water, macro_grid_prop_grid);
 scr_grid_update(grid);
 

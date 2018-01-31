@@ -67,7 +67,6 @@ global.default_owner = macro_player; // change to setup owner
 // Used to prevent too many messages from appearing to player
 global.message_is_showing = false;
 global.draw_tall_walls = true;
-global.auto_complete = true; // Used for setup constructions
 global.sensor_selected = false;
 global.selected_grid = noone;
 

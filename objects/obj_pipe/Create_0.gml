@@ -6,7 +6,6 @@ scr_set_new_grid_props(id, macro_grid_hydrogen, macro_grid_role_carrier, 0);
 
 // Connect pipe to water grid components
 // determine adjacency number and set image index
-adjacency_number = 0;
 var adjacents = scr_get_adjacent_grid_components(id, macro_grid_water);
 var adjacent_pipes = scr_get_adjacent_instances(id, obj_pipe);
 for(var n = 0; n < 4; n++) // ENWS

@@ -40,7 +40,11 @@ var hovers_over_selectable = position_meeting(mouse_x, mouse_y, obj_astronaut_pl
 
 if(!hovers_over_selectable)
 {
-	hovers_over_selectable = position_meeting(mouse_x, mouse_y, obj_grid_selector);
+	var selector = instance_position(mouse_x, mouse_y, obj_grid_selector);
+	if(selector != noone)
+	{
+		hovers_over_selectable = (selector.owner == macro_player);
+	}
 }
 
 if(!hovers_over_selectable)

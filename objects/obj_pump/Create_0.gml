@@ -11,11 +11,14 @@ grid_type_to_select = macro_grid_water;
 
 // set grid props; for obj_grid_component
 scr_set_new_grid_props(id, macro_grid_electric, macro_grid_role_consumer, global.pump_energy_consumption);
-scr_connect_to_cables(id);
 scr_set_new_grid_props(id, macro_grid_water, macro_grid_role_source, global.pump_water_production);
-scr_connect_to_pipes(id);
+if(!global.init_stage)
+{
+	scr_connect_to_cables(id);
+	scr_connect_to_pipes(id);
+}
 
 // connect to drill
 scr_drill_pump_connection(id);
 
-if(global.auto_complete) event_user(macro_event_finalize);
+// if(global.auto_complete) event_user(macro_event_finalize); // obsolete?

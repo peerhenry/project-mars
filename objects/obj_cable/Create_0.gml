@@ -7,8 +7,6 @@ scr_set_new_grid_props(id, macro_grid_electric, macro_grid_role_carrier, 0);
 
 // begin === SET ADJACENCY NUMBER AND IMAGE INDEX ===
 
-adjacency_number = 0;
-
 var adjacents = scr_get_adjacent_grid_components(id, macro_grid_electric);
 
 var east_electric = adjacents[0];
