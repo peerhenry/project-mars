@@ -5,3 +5,5 @@ if(disappearing)
 	if(a <= 0) instance_destroy();
 }
 else draw_self();
+
+scr_draw_mask(id);

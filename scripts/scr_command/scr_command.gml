@@ -15,8 +15,7 @@ with(obj_astronaut_playable)
 	if(is_selected)
 	{
 		any_selected = true;
-		if(current_action != astronaut_action.idle) scr_cancel_current_action(id);
-		if(assigned_object != noone) scr_unassign_task(assigned_object);
+		scr_cancel_all(id);
 	}
 }
 if(!any_selected) exit;
@@ -25,14 +24,19 @@ if(!any_selected) exit;
 var el_assignable = instance_position(arg_x, arg_y, obj_assignable);
 
 // Check if player clicked an enemy
-var enemy = instance_position(arg_x, arg_y, obj_astronaut_enemy);
+var enemy = instance_position(arg_x, arg_y, obj_astronaut);
+
 if(enemy == noone)
 {
-	constr = scr_enemy_construction_position(arg_x, arg_y);
+	var constr = scr_enemy_construction_position(arg_x, arg_y);
 	if(constr != noone)
 	{
 		enemy = constr;
 	}
+}
+else if(enemy.owner != macro_enemy)
+{
+	enemy = noone;
 }
 
 if(el_assignable != noone)	// Assign a task

@@ -10,8 +10,8 @@ with(obj_astronaut)
 		if(!can_go)
 		{
 			// stop whatever you were doing
-			assigned_object = noone;
-			current_action = astronaut_action.idle;
+			scr_cancel_walking(id)
+			
 		}
 	}
 }

@@ -1,4 +1,4 @@
-test_init(test_cancel_current_action);
+test_init(test_cancel_all_moving_to_construction);
 
 // arrange
 var astro = instance_create_depth(0,0,0,obj_astronaut);
@@ -7,7 +7,7 @@ var constr = scr_create_dummy_construction();
 astro.construction = constr;
 
 // act
-scr_cancel_current_action(astro);
+scr_cancel_all(astro);
 
 // assert
 assert_equal(astronaut_action.idle, astro.current_action, "current_action");

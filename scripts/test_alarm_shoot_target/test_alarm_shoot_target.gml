@@ -1,8 +1,8 @@
 test_init(test_alarm_shoot_target);
 
 // arrange
-var astro = instance_create_depth(32,32,0,obj_astronaut_playable);
-var enemy = instance_create_depth(100,100,0,astro.enemy_object);
+var astro = instance_create_depth(32, 32, 0, obj_astronaut_playable);
+var enemy = scr_create_enemy_astronaut(100, 100);
 astro.target = enemy;
 
 // act

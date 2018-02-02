@@ -19,7 +19,11 @@
         "890a5bae-e52e-4c17-a65e-68d7a5fe6c6b",
         "a272ecd6-91b8-4878-baf4-629d4f5abd52",
         "ed6be389-1ece-4cad-9081-2249148ae56d",
-        "c8524218-01ef-4163-886e-a4c4dc7733ca"
+        "c8524218-01ef-4163-886e-a4c4dc7733ca",
+        "574af48c-f1ed-4a34-b7e3-9e887e4dbc3e",
+        "032c14c8-50cf-4199-8463-0b0ec1ab442c",
+        "b228ac67-c013-43e2-98d8-9877fe4c8af3",
+        "092628ce-02d9-45d1-87f5-e51f8d7b9e4e"
     ],
     "filterType": "GMScript",
     "folderName": "MISC",

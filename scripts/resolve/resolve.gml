@@ -1,0 +1,1 @@
+return script_container_resolve(argument0, argument1);

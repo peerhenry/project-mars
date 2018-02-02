@@ -27,7 +27,7 @@ image_speed = 0;
 
 // astronaut props
 name = "John Doe";
-owner = macro_player;
+owner = scr_get_owner(id);
 astro_id = 0;
 astronaut_health = 100;
 suit_oxygen = 100;
@@ -60,17 +60,17 @@ auto_sleep_level = 20;
 target = noone;			// thing to pursue
 auto_target = noone;	// thing to auto attack when in range
 alarm[0] = 30*global.time_to_shoot + round(random_range(-5,5));
-enemy_object = noone;
+enemy = scr_get_enemy(owner);
 shoot_path = path_add();
 
 // active sprites
-sprite_walk_down = sprite_down;
-sprite_walk_right = sprite_right;
-sprite_walk_up = sprite_up;
+sprite_active_down = sprite_down;
+sprite_active_right = sprite_right;
+sprite_active_up = sprite_up;
 
 // shader color mask
-mask_color_clothes = [0.4, 0.2, 0.75, 0.5];
-mask_color_suit = [1, 1, 1, 0];
+mask_color_clothes = scr_get_clothes_color(owner);
+mask_color_suit = scr_get_suit_color(owner);
 mask_color = mask_color_suit;
 sprite_mask_down = spr_suit_mask_down;
 sprite_mask_right = spr_suit_mask_right;

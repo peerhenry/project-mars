@@ -34,11 +34,13 @@ with(shooter)
 		{
 			// look south
 			sprite_index = sprite_down;
+			mask_sprite = sprite_mask_down;
 		}
 		else
 		{
 			// look east
 			sprite_index = sprite_right;
+			mask_sprite = sprite_mask_right;
 			image_xscale = -1;
 		}
 	}
@@ -48,11 +50,14 @@ with(shooter)
 		{
 			// look west
 			sprite_index = sprite_right;
+			mask_sprite = sprite_mask_right;
+			image_xscale = 1;
 		}
 		else
 		{
 			// look north
 			sprite_index = sprite_up;
+			mask_sprite = sprite_mask_up;
 		}
 	}
 }

@@ -36,8 +36,15 @@ if(global.hovering_over_HUD)
 	return;
 }
 
-var hovers_over_selectable = position_meeting(mouse_x, mouse_y, obj_astronaut_playable);
+// hovers over astronaut
+var hovers_over_selectable = false;
+var astro = instance_position(mouse_x, mouse_y, obj_astronaut)
+if(astro != noone)
+{
+	hovers_over_selectable = astro.owner == macro_player;
+}
 
+// hovers over grid selector
 if(!hovers_over_selectable)
 {
 	var selector = instance_position(mouse_x, mouse_y, obj_grid_selector);
@@ -52,7 +59,12 @@ if(!hovers_over_selectable)
 	// Grid selectors, fridges and sensors are selectable
 	if(scr_any_astronauts_selected())
 	{
-		var hovers_over_enemy = instance_position(mouse_x, mouse_y, obj_astronaut_enemy) != noone;
+		var hovers_over_enemy = false;
+		if(astro != noone)
+		{
+			hovers_over_selectable = astro.owner == macro_enemy;
+		}
+
 		if(!hovers_over_enemy)
 		{
 			var constr = scr_enemy_construction_position(mouse_x, mouse_y);

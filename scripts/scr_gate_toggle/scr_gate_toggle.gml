@@ -10,4 +10,6 @@ if(is_open){
 }
 
 // play sound
-if(is_open) audio_play_sound(sound_fx_door, 0, 0);
+if(is_open) audio_play_sound(sound_fx_door, 0, 0); // todo: resolve
+
+scr_recalculate_paths();

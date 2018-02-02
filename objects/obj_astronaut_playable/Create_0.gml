@@ -1,7 +1,5 @@
 event_inherited();
 
-enemy_object = obj_astronaut_enemy;
-
 is_selected = false;
 show_details = false;
 

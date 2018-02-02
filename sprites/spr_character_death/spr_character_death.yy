@@ -6,13 +6,14 @@
     "For3D": false,
     "HTile": false,
     "VTile": false,
-    "bbox_bottom": 30,
-    "bbox_left": 1,
+    "bbox_bottom": 31,
+    "bbox_left": 2,
     "bbox_right": 31,
     "bbox_top": 1,
     "bboxmode": 0,
     "colkind": 1,
     "coltolerance": 0,
+    "edgeFiltering": false,
     "frames": [
         {
             "id": "475f2fe9-9ac3-49ca-a022-fba4ac693af4",
@@ -35,18 +36,18 @@
                     "LayerId": "db45e2e1-922e-4a68-b278-0ae868f57e3b"
                 },
                 {
-                    "id": "593a7deb-66e2-4b73-9eca-10a6700be3ce",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "475f2fe9-9ac3-49ca-a022-fba4ac693af4",
-                    "LayerId": "7c92ac55-db0d-4481-9117-90b8e7e5ec79"
-                },
-                {
                     "id": "029255ee-e155-4a56-b4c7-71e871bb0df4",
                     "modelName": "GMSpriteImage",
                     "mvc": "1.0",
                     "FrameId": "475f2fe9-9ac3-49ca-a022-fba4ac693af4",
                     "LayerId": "6ee994bf-7b4a-4f56-9214-1506d0c2d3dd"
+                },
+                {
+                    "id": "be653116-c1e1-445a-b614-51386767edba",
+                    "modelName": "GMSpriteImage",
+                    "mvc": "1.0",
+                    "FrameId": "475f2fe9-9ac3-49ca-a022-fba4ac693af4",
+                    "LayerId": "4218c124-f9f8-4a66-9e4c-f7d2aa1c19f4"
                 }
             ]
         }
@@ -56,13 +57,13 @@
     "height": 32,
     "layers": [
         {
-            "id": "7c92ac55-db0d-4481-9117-90b8e7e5ec79",
+            "id": "4218c124-f9f8-4a66-9e4c-f7d2aa1c19f4",
             "modelName": "GMImageLayer",
             "mvc": "1.0",
             "SpriteId": "03a80666-cbc0-486e-8c26-93d5bffbc560",
             "blendMode": 0,
             "isLocked": false,
-            "name": "Layer 11",
+            "name": "Layer 1",
             "opacity": 100,
             "visible": true
         },
@@ -83,15 +84,17 @@
             "mvc": "1.0",
             "SpriteId": "03a80666-cbc0-486e-8c26-93d5bffbc560",
             "blendMode": 0,
-            "isLocked": false,
+            "isLocked": true,
             "name": "default",
             "opacity": 100,
             "visible": false
         }
     ],
     "origin": 4,
+    "originLocked": false,
     "playbackSpeed": 15,
     "playbackSpeedType": 0,
+    "premultiplyAlpha": false,
     "sepmasks": false,
     "swatchColours": null,
     "swfPrecision": 2.525,

@@ -1,3 +1,4 @@
+event_inherited();
 if(image_index == target_frame)
 {
 	image_speed = 0;

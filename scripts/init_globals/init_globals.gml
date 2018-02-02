@@ -8,43 +8,56 @@ global.debug_start_messages = false; // obsolete?
 global.debug_gameplay_messages = true; // obsolete?
 
 ini_open(macro_settings_file);
+var section = "common";
+
+// %LOCALAPPDATA%/project_mars
 
 // -- GAMEPLAY
-global.regeneration_speed = ini_read_real("gameplay", "regeneration_speed", 0.01);
-global.energy_depletion = ini_read_real("gameplay", "energy_depletion", 0.01); // how fast is idle astronaut losing energy PP/frame
+section = "astronauts";
+global.regeneration_speed = init_global_real(section, "regeneration_speed", 0.01);
+global.energy_depletion = init_global_real(section, "energy_depletion", 0.01); // how fast is idle astronaut losing energy PP/frame
 
 // -- OXYGEN
+// TODO: refactor oxygen to make absolute calculations instead of percentages
+section = "oxygen";
 // percentage of oxygen of 1 tile being drained by an open hatch per step.
-global.gate_drainage_speed = ini_read_real("oxygen", "gate_drainage_speed", 25);
+global.gate_drainage_speed = init_global_real(section, "gate_drainage_speed", 25);
 // how fast is health drained from suffocation: HP/step
-global.suffocation_speed = ini_read_real("oxygen", "suffocation_speed", 0.5);
+global.suffocation_speed = init_global_real(section, "suffocation_speed", 0.5);
  // how fast is suit oxygen replenishing in suit closet PP/step
-global.suit_closet_replenishment = ini_read_real("oxygen", "suit_closet_replenishment", 0.3);
+global.suit_closet_replenishment = init_global_real(section, "suit_closet_replenishment", 0.3);
 
 // TODO: unify these two
-global.suit_o2_depletion_speed = ini_read_real("oxygen", "suit_depletion_speed", 0.001); // prev 0.01
-global.astro_oxygen_consumption = ini_read_real("oxygen", "astronaut_consumption", 0.01); // prev 0.1
+global.suit_o2_depletion_speed = init_global_real(section, "suit_depletion_speed", 0.001); // prev 0.01
+global.astro_oxygen_consumption = init_global_real(section, "astronaut_consumption", 0.01); // prev 0.1
 
 // -- OXYGEN RENDERING
-global.oxygen_empty_level = ini_read_real("oxygen_graphics", "red_stripes_percentage", 1); // if oxygen_level falls below this number, red stripes are drawn.
-global.oxygen_max_alpha = ini_read_real("oxygen_graphics", "oxygen_max_alpha", 0.33); // for rendering low oxygen levels
+section = "oxygen_graphics";
+global.oxygen_empty_level = init_global_real(section, "red_stripes_percentage", 1); // if oxygen_level falls below this number, red stripes are drawn.
+global.oxygen_max_alpha = init_global_real(section, "oxygen_max_alpha", 0.33); // for rendering low oxygen levels
+var o_r = init_global_real(section, "oxygen_bar_color_r", 55);
+var o_g = init_global_real(section, "oxygen_bar_color_g", 55);
+var o_b = init_global_real(section, "oxygen_bar_color_b", 255);
+global.oxygen_bar_color = make_color_rgb(o_r, o_g, o_b);
 
 // -- SHOOTING --
-global.time_to_shoot = ini_read_real("shooting", "time_to_shoot", 1);
-global.projectile_speed  = ini_read_real("shooting", "projectile_speed", 30);
-global.projectile_damage = ini_read_real("shooting", "projectile_damage", 10);
-var shooting_range = ini_read_real("shooting", "astronaut_shooting_range", 10);
+section = "shooting";
+global.time_to_shoot = init_global_real(section, "time_to_shoot", 1);
+global.projectile_speed  = init_global_real(section, "projectile_speed", 30);
+global.projectile_damage = init_global_real(section, "projectile_damage", 10);
+var shooting_range = init_global_real(section, "astronaut_shooting_range", 10);
 global.shooting_range = shooting_range;
 global.shooting_range_squared = shooting_range*shooting_range;
 
 // -- GRIDS --
-global.sensor_energy_consumption = ini_read_real("grids", "sensor_energy_consumption", 1);
-global.drill_energy_consumption = ini_read_real("grids", "drill_energy_consumption", 5);
-global.pump_energy_consumption = ini_read_real("grids", "pump_energy_consumption", 2);
-global.pump_water_production = ini_read_real("grids", "pump_water_production", 20);
-global.electrolyser_energy_consumption = ini_read_real("grids", "electrolyser_energy_consumption", 1);
-global.hydroponics_water_consumption = ini_read_real("grids", "hydroponics_water_consumption", 1);
-global.solar_panel_energy_production = ini_read_real("grids", "solar_panel_energy_production", 2);
+section = "grids";
+global.sensor_energy_consumption = init_global_real(section, "sensor_energy_consumption", 1);
+global.drill_energy_consumption = init_global_real(section, "drill_energy_consumption", 5);
+global.pump_energy_consumption = init_global_real(section, "pump_energy_consumption", 2);
+global.pump_water_production = init_global_real(section, "pump_water_production", 20);
+global.electrolyser_energy_consumption = init_global_real(section, "electrolyser_energy_consumption", 1);
+global.hydroponics_water_consumption = init_global_real(section, "hydroponics_water_consumption", 1);
+global.solar_panel_energy_production = init_global_real(section, "solar_panel_energy_production", 2);
 
 ini_close();
 
@@ -53,7 +66,6 @@ global.build_time_sec_minimum = 2;
 global.build_time_sec_per_mdu = 1;
 
 // # Gameplay stuff
-global.oxygen_bar_color = make_color_rgb(55, 55, 255);
 global.setup_mdu_pile_size = 1;
 global.resource_amount_metal = 200000;
 global.default_resource_amount = 10000;
@@ -71,4 +83,4 @@ global.sensor_selected = false;
 global.selected_grid = noone;
 
 // colors
-global.enemy_suit_color = [1, 0.5, 0, 0.4];
+global.enemy_suit_color = [0,0,0,1];

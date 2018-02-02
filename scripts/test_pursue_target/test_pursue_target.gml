@@ -2,7 +2,7 @@ test_init(test_pursue_target);
 
 // arrange
 var astro = instance_create_depth(32, 32, 0, obj_astronaut_playable);
-var enemy = instance_create_depth(512, 512, 0, astro.enemy_object);
+var enemy = scr_create_enemy_astronaut(512, 512);
 astro.target = enemy;
 
 // act

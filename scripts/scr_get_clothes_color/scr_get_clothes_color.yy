@@ -1,8 +1,8 @@
 {
-    "id": "068ba830-90f2-4ddb-9498-cc3a79ba9e93",
+    "id": "b228ac67-c013-43e2-98d8-9877fe4c8af3",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_cancel_current_action",
+    "name": "scr_get_clothes_color",
     "IsCompatibility": false,
     "IsDnD": false
 }

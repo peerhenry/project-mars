@@ -37,7 +37,7 @@ else	// See if there is an enemy around to shoot
 	{
 		if(auto_target == noone)
 		{
-			auto_target = instance_nearest(x, y, enemy_object);
+			auto_target = scr_get_nearest_astronaut(id, enemy);
 		}
 		if(instance_exists(auto_target))
 		{

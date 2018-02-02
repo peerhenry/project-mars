@@ -2,7 +2,7 @@ test_init(test_attack);
 
 // arrange
 var astro = instance_create_depth(32,32,0,obj_astronaut_playable);
-var enemy = instance_create_depth(128,128,0,astro.enemy_object);
+var enemy = scr_create_enemy_astronaut(128, 128);
 
 // act
 var can_attack = scr_attack(astro, enemy);

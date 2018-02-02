@@ -1,6 +1,7 @@
 /// @description The very first script to run on startup
 
 global.enable_trace = debug_mode;
+global.dev_env = true;
 //show_debug_message("working_directory: " + string(working_directory));
 
 // Set cursor sprite
@@ -22,12 +23,13 @@ var monitor_width = display_get_width();
 var monitor_height = display_get_height();
 global.monitor_width = monitor_width;
 global.monitor_height = monitor_height;
+// monitor width and height may not be supported by game...
 
 #region Read settings
 
 ini_open(macro_settings_file);
-var settings_width = ini_read_real("settings", "width", monitor_width);
-var settings_height = ini_read_real("settings", "height", monitor_height);
+var settings_width = ini_read_real("settings", "width", 1024);
+var settings_height = ini_read_real("settings", "height", 768);
 var volume_master = ini_read_real("sound", "master", macro_master_default);
 var volume_voice = ini_read_real("sound", "voice", macro_voice_default);
 var volume_sfx = ini_read_real("sound", "sfx", macro_sfx_default);

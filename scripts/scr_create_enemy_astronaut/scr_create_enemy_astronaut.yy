@@ -1,8 +1,8 @@
 {
-    "id": "b94f3a93-d520-47d5-a0eb-982f4913bb1f",
+    "id": "fb0590c0-81cf-4136-bf51-072c4ba73efa",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "test_cancel_current_action",
+    "name": "scr_create_enemy_astronaut",
     "IsCompatibility": false,
     "IsDnD": false
 }

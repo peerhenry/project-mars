@@ -1,6 +1,7 @@
+/// @descr cancels action, unassigns task and cancels walking
 /// @arg astronaut
 var arg_astronaut = argument0;
-debug_instance_inherits(arg_astronaut, obj_astronaut);
+// debug_instance_inherits(arg_astronaut, obj_astronaut);
 
 with(arg_astronaut)
 {
@@ -19,14 +20,10 @@ with(arg_astronaut)
 			break;
 	}
 	
-	if(assigned_object != noone){
-		scr_unassign_task(assigned_object);
-	}
+	if(assigned_object != noone) scr_unassign_task(assigned_object);
 	
 	target = noone;
 	current_action = astronaut_action.idle;
 	
-	if(is_walking){
-		scr_cancel_walking(id);
-	}
+	if(is_walking) scr_cancel_walking(id);
 }

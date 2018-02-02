@@ -17,6 +17,7 @@
 #macro macro_nau 3 // North american union
 #macro macro_eu 4
 #macro macro_japan 5
+#macro macro_un 6
 
 // ownership behavior
 #macro macro_ownership_default 0

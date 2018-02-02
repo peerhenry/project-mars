@@ -32,27 +32,27 @@ with(arg_astronaut)
 		{
 			case up:
 			{
-				if(sprite_index != sprite_walk_up)
+				if(sprite_index != sprite_active_up)
 				{
-					sprite_index = sprite_walk_up;
+					sprite_index = sprite_active_up;
 					mask_sprite = sprite_mask_up;
 				}
 				break;
 			}
 			case down:
 			{
-				if(sprite_index != sprite_walk_down)
+				if(sprite_index != sprite_active_down)
 				{
-					sprite_index = sprite_walk_down;
+					sprite_index = sprite_active_down;
 					mask_sprite = sprite_mask_down;
 				}
 				break;
 			}
 			case left:
 			{
-				if(sprite_index != sprite_walk_right || image_xscale != -1)
+				if(sprite_index != sprite_active_right || image_xscale != -1)
 				{
-					sprite_index = sprite_walk_right;
+					sprite_index = sprite_active_right;
 					mask_sprite = sprite_mask_right;
 					image_xscale = -1;
 				}
@@ -60,9 +60,9 @@ with(arg_astronaut)
 			}
 			case right:
 			{
-				if(sprite_index != sprite_walk_right || image_xscale != 1)
+				if(sprite_index != sprite_active_right || image_xscale != 1)
 				{
-					sprite_index = sprite_walk_right;
+					sprite_index = sprite_active_right;
 					mask_sprite = sprite_mask_right;
 					image_xscale = 1;
 				}

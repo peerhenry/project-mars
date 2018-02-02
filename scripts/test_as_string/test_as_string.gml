@@ -42,6 +42,21 @@ switch(name){
 			case astronaut_action.in_combat:
 				return "in_combat";
 		}
+	case "owner":
+		switch(value){
+			case macro_player:
+				return "player";
+			case macro_enemy:
+				return "enemy";
+			case macro_china:
+				return "china";
+			case macro_nau:
+				return "nau";
+			case macro_japan:
+				return "japan";
+			case macro_un:
+				return "UN";
+		}
 	default:
 		return string(value);
 }

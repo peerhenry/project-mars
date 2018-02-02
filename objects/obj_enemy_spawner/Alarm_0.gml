@@ -1,11 +1,11 @@
 
-wave_size = power(20, wave_number/7); // 20 enemies on wave number 7
-wave_size = min(wave_size, 100);
+var wave_size = power(20, wave_number/7); // 20 enemies on wave number 7
+wave_size = min(wave_size, 50);
 
 repeat(wave_size)
 {
-	spawn_x = 0;
-	spawn_y = 0;
+	var spawn_x = 0;
+	var spawn_y = 0;
 	
 	var side = floor(random(4));
 	var offset = -64;
@@ -29,7 +29,7 @@ repeat(wave_size)
 			break;
 	}
 	
-	var enemy = instance_create_layer(spawn_x, spawn_y, macro_astronaut_layer, obj_astronaut_enemy);
+	var enemy = scr_create_enemy_astronaut(spawn_x, spawn_y);
 	
 	var target = noone;
 	with(obj_astronaut_playable)
