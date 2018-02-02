@@ -12,3 +12,5 @@ test_suite_update_ghost_destruct();
 test_room_cannot_part_here();
 test_suite_destruction();
 test_finish_construction_occupies_nav_grid();
+test_ghost_ownership_matches();
+test_ghost_ownership_does_not_match();

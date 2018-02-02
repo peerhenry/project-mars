@@ -136,3 +136,4 @@
 #macro macro_ghost_valid 4
 #macro macro_ghost_payable 5
 #macro macro_ghost_rotation 6
+#macro macro_ghost_owner 7

@@ -16,7 +16,9 @@
         "3d79e7ff-b539-4816-96f4-819f3d25555a",
         "078aae34-108c-4f3f-b9c3-bf69595814c8",
         "2eabd4bd-30e2-41cf-8f34-f65ee737ff7d",
-        "f7dc52c3-ac2e-4541-ae35-17ad6e815fee"
+        "f7dc52c3-ac2e-4541-ae35-17ad6e815fee",
+        "3c1f01cf-b83b-42b5-acad-073661fc7ab6",
+        "c7f2ce18-0f09-4038-9ae8-5a7c1bf70687"
     ],
     "filterType": "GMScript",
     "folderName": "construction",

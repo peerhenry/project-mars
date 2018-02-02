@@ -5,6 +5,7 @@ var astronaut = argument0;
 var create_corpse = script_container_resolve(astronaut.script_container, "create_corpse");
 script_execute(create_corpse, astronaut);
 
+scr_cancel_current_action(astronaut);
 with(astronaut)
 {
 	has_died = true;
