@@ -8,5 +8,6 @@ script_container_register(container, "calculate_required_mdu_count", scr_calcula
 script_container_register(container, "create_instance", scr_create_instance);
 script_container_register(container, "create_corpse", scr_create_corpse);
 script_container_register(container, "get_reach_state", scr_get_reach_state);
+script_container_register(container, "room_logic_door", scr_room_logic_door);
 global.script_container = container;
 return container;

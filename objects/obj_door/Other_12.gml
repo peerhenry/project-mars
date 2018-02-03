@@ -11,5 +11,5 @@ else
 	if(!global.draw_tall_walls) sprite_index = spr_door;
 }
 
-scr_room_remove_tile_and_part(x, y);	// Part room
-scr_door_connect_rooms(id); // Connects door to rooms
+var room_logic_door = resolve(script_container, "room_logic_door");
+script_execute(room_logic_door, id);

@@ -7111,6 +7111,14 @@
             }
         },
         {
+            "Key": "d2999c52-4001-43b6-a4af-0bddd3564ab2",
+            "Value": {
+                "id": "571012bc-557a-40e9-97de-e90ae2ebaa42",
+                "resourcePath": "scripts\\scr_room_logic_door\\scr_room_logic_door.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "d29d8294-b932-4f0d-b913-9eb29ca9e6d7",
             "Value": {
                 "id": "a7f1031f-e5ac-4853-a774-54785961a573",
@@ -8655,6 +8663,14 @@
             }
         },
         {
+            "Key": "ff52cc6b-ef43-4b36-9729-5320f55e6bfb",
+            "Value": {
+                "id": "812cd422-91cb-4364-861a-51a723798092",
+                "resourcePath": "scripts\\test_navigate_through_door_other_owner\\test_navigate_through_door_other_owner.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ff936b60-970f-4dfe-827e-98853e9cbc19",
             "Value": {
                 "id": "6e2c757b-41c2-4aa7-859b-683fc4ac9476",
@@ -8795,6 +8811,7 @@
         "846841a7-a6be-436a-ae8f-4c5d523c1748",
         "f43aae76-43a3-4db2-8efe-b22bef7a1a4a",
         "a047a1ec-a411-4d9b-9121-f7326dfa6581",
+        "d2999c52-4001-43b6-a4af-0bddd3564ab2",
         "071fa7e4-c2ef-473b-ab7e-68c1c70b5cf4",
         "b0f3ba36-4f03-47af-bef3-75314fa08a78",
         "61116d56-6832-4b8e-b362-c2123ca4a74f",
@@ -9182,6 +9199,7 @@
         "1b8cf1c5-442d-485a-8835-999aa96fae5c",
         "aeb9bf38-4a2a-45b2-987a-a74a1b897867",
         "5a4ff58b-a6a4-4294-a2a8-b3fa782f6342",
+        "ff52cc6b-ef43-4b36-9729-5320f55e6bfb",
         "fc722e2d-1c80-417b-b3f7-240372ca0033",
         "e5164281-8f8d-41fb-94c2-4ab9aa20942a",
         "be057723-2c27-492a-872e-648e0b3482da",

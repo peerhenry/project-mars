@@ -155,17 +155,20 @@ else if(mouse_check_button_released(mb_left)) // - DRAG SELECT
 	}
 	else // selection rectangle is so small, it only selects if it is contained in astronaut BB
 	{
-		with(obj_astronaut_playable)
+		with(obj_astronaut)
 		{
-			if(
-				rec_left > x - 15  && rec_right < x + 15 &&
-				rec_top > y - 15 && rec_bottom < y + 15)
+			if(owner == macro_player)
 			{
-				is_selected = true;
-				just_selected = true;
-			}
-			else{
-				is_selected = false;
+				if(
+					rec_left > x - 15  && rec_right < x + 15 &&
+					rec_top > y - 15 && rec_bottom < y + 15)
+				{
+					is_selected = true;
+					just_selected = true;
+				}
+				else{
+					is_selected = false;
+				}
 			}
 		}
 	}

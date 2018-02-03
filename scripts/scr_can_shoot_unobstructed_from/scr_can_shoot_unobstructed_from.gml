@@ -15,7 +15,10 @@ with(arg_shooter)
 {
 	x = arg_x;
 	y = arg_y;
+	var temp = arg_target.solid;
+	arg_target.solid = false;
 	can_shoot = mp_linear_path(shoot_path, arg_target.x, arg_target.y, global.projectile_speed, false);
+	arg_target.solid = temp;
 	x = r_x;
 	y = r_y;
 }

@@ -68,7 +68,7 @@ if(!hovers_over_selectable)
 		if(!hovers_over_enemy)
 		{
 			var constr = scr_enemy_construction_position(mouse_x, mouse_y);
-			if(constr != noone) hovers_over_enemy = true;
+			if(constr != noone && constr.object_index != obj_base_tile) hovers_over_enemy = true;
 		}
 		if(hovers_over_enemy)
 		{

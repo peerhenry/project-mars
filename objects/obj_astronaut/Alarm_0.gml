@@ -14,8 +14,8 @@ var target_is_shootable = false;
 var target_exists = instance_exists(target);
 if(target_exists)
 {
-	var target_is_construction = object_is_ancestor(target.object_index, obj_constructable);
-	if(target_is_construction)
+	var target_is_constructable = object_is_ancestor(target.object_index, obj_constructable);
+	if(target_is_constructable)
 	{
 		target_is_shootable = target.damage < 100;
 	}

@@ -19,10 +19,7 @@ var navigation_grid = scr_get_nav_grid();
 
 with(arg_astronaut)
 {
-	if(!is_walking && end_i == occ_i && end_j == occ_j)
-	{
-		return false;
-	}
+	if(!is_walking && end_i == occ_i && end_j == occ_j) return false;
 }
 
 // Clear all character cells before trying to navigate
@@ -33,17 +30,16 @@ with(obj_astronaut)
 }
 
 // Astronauts without suits may not go through hatches
-if(!arg_astronaut.wears_suit)
+
+with(obj_gate)
 {
-	with(obj_hatch)
-	{
-		mp_grid_add_cell(navigation_grid, occ_i, occ_j);
-	}
+	var impassable = ( object_index == obj_hatch && !arg_astronaut.wears_suit ) || arg_astronaut.owner != owner;
+	if( impassable ) mp_grid_add_cell( navigation_grid, occ_i, occ_j );
 }
 
 var path_found = false;
 
-if(scr_destination_is_legal(snap_end_x, snap_end_y, arg_astronaut))
+if( scr_destination_is_legal(snap_end_x, snap_end_y, arg_astronaut) )
 {
 	path_found = mp_grid_path(navigation_grid, arg_astronaut.path, start_x, start_y, snap_end_x, snap_end_y, true);
 }
@@ -84,10 +80,10 @@ with(obj_astronaut)
 // Free hatches again for navigation
 if(!arg_astronaut.wears_suit)
 {
-	with(obj_hatch)
+	with(obj_gate)
 	{
-		// only free them again if they were not under construction, destruction or locked
-		if(!under_construction && !under_destruction && !locked) mp_grid_clear_cell(navigation_grid, occ_i, occ_j);
+		// only free them again if they were not under construction, destruction or locked, and matches ownership
+		if(!under_construction && !under_destruction && !locked && owner == arg_astronaut.owner) mp_grid_clear_cell(navigation_grid, occ_i, occ_j);
 	}
 }
 
