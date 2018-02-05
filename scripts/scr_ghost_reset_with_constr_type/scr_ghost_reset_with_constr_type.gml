@@ -1,4 +1,4 @@
-/// @arg construction_id
+/// @arg construction_type
 var arg_construction_type = argument0;
 var ghost = global.construction_ghost;
 var ghost_stack = ghost[? macro_ghost_stack];
