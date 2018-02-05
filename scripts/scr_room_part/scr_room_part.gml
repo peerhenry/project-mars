@@ -14,9 +14,11 @@ if(ds_list_size(le_room.tiles) == 0) // if there is nothing to part => destroy t
 var tiles_remaining = ds_list_create(); // tiles unvisited by the flood fill
 var all_hatches = ds_list_create();
 var all_doors = ds_list_create();
+var all_leaks = ds_list_create();
 ds_list_copy(tiles_remaining, le_room.tiles); // copy room tiles into tiles_remaining
 ds_list_copy(all_hatches, le_room.hatches); // copy room tiles into all_hatches
 ds_list_copy(all_doors, le_room.doors); // copy room tiles into all_doors
+ds_list_copy(all_leaks, le_room.leaks); // copy leaks into all_leaks
 var tile_queue = ds_queue_create();
 var tiles_visited = ds_list_create();
 
@@ -206,6 +208,7 @@ if(tiles_remain || force_new_room)
 	// Move gates to room
 	scr_room_part_hatches(new_room, all_hatches);
 	scr_room_part_doors(new_room, all_doors);
+	scr_room_part_leaks(new_room, all_leaks);
 	
 	out_room = new_room;
 	
@@ -216,6 +219,7 @@ if(tiles_remain || force_new_room)
 ds_list_destroy(tiles_remaining);
 ds_list_destroy(all_hatches);
 ds_list_destroy(all_doors);
+ds_list_destroy(all_leaks);
 ds_queue_destroy(tile_queue);
 ds_list_destroy(tiles_visited);
 

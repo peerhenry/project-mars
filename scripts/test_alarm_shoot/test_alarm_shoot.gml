@@ -15,5 +15,6 @@ assert_equal(astronaut_action.in_combat, astro.current_action, "current_action")
 // cleanup
 instance_destroy( astro );
 instance_destroy( enemy );
+with(obj_projectile) instance_destroy();
 
 test_result();

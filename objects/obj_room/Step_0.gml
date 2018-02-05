@@ -4,8 +4,7 @@
 var room_drainage_per_hatch = hatch_o2_drainage_for_one_tile / max(ds_list_size(tiles),1);
 
 var next_hatch = undefined;
-var n = 0;
-repeat(ds_list_size(hatches))
+for(var n = 0; n < ds_list_size(hatches); n++)
 {
 	next_hatch = ds_list_find_value(hatches, n);
 	if(next_hatch.is_open)
@@ -22,47 +21,17 @@ repeat(ds_list_size(hatches))
 	n++;
 }
 
-/*if(all_hatches_closed)
+var leak_count = ds_list_size(leaks);
+if(leak_count > 0) oxygen_is_leaking = true;
+for(var n = 0; n < leak_count; n++)
 {
-	// auto reset replenishment
-	if(!oxygen_is_leaking)
+	var next_leak = ds_list_find_value(leaks, n);
+	if(oxygen_level > 0)
 	{
-		oxygen_should_replenish = true;
+		oxygen_level -= room_drainage_per_hatch; // each open hatch contributes to leakage.
+		if(oxygen_level < 0) oxygen_level  = 0;
 	}
-	
-	// autp reset leakage flag
-	if(!oxygen_should_replenish) // BUG: this does not get false
-	{
-		var no_door_leakage = true;
-		var n = 0;
-		var open_door_count = 0;
-		repeat(ds_list_size(doors))
-		{
-			// if a door is open and the other room is leaking, then this room is leaking as well.
-			next_door = ds_list_find_value(doors, n);
-			if(next_door.is_open)
-			{
-				open_door_count++;
-				if(next_door.room1 == id && next_door.room2 != id && next_door.room2.oxygen_is_leaking)
-				{
-					no_door_leakage = false;
-					break;
-				}
-				else if(next_door.room1 != id && next_door.room2 == id && next_door.room1.oxygen_is_leaking)
-				{
-					no_door_leakage = false;
-					break;
-				}
-			}
-			n++;
-		}
-		oxygen_should_replenish = no_door_leakage;
-		if(open_door_count == 0)
-		{
-			oxygen_is_leaking = false;
-		}
-	}
-}*/
+}
 
 if(oxygen_is_leaking)
 {

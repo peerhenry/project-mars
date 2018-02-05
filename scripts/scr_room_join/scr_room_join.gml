@@ -56,6 +56,14 @@ else{
 		for(var n=0; n<ds_list_size(room2.hatches); n++) {
 			ds_list_add(hatches, ds_list_find_value(room2.hatches, n));
 		}
+		
+		// add leaks
+		for(var n=0; n<ds_list_size(room1.leaks); n++) {
+			ds_list_add(leaks, ds_list_find_value(room1.leaks, n));
+		}
+		for(var n=0; n<ds_list_size(room2.leaks); n++) {
+			ds_list_add(leaks, ds_list_find_value(room2.leaks, n));
+		}
 	}
 	
 	// destroy rooms 1 and 2

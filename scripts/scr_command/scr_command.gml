@@ -28,8 +28,8 @@ var enemy = instance_position(arg_x, arg_y, obj_astronaut);
 
 if(enemy == noone)
 {
-	var constr = scr_enemy_construction_position(arg_x, arg_y);
-	if(constr != noone && constr.object_index != obj_base_tile)
+	var constr = scr_enemy_component_position(arg_x, arg_y);
+	if(constr != noone)
 	{
 		enemy = constr;
 	}

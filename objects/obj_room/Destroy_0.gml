@@ -3,6 +3,7 @@
 ds_list_destroy(tiles);
 ds_list_destroy(doors);
 ds_list_destroy(hatches);
+ds_list_destroy(leaks);
 
 // remove room from grid
 var grid_props = grid_props_map[? macro_grid_oxygen];

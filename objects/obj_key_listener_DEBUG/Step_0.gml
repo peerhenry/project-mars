@@ -60,9 +60,20 @@ if(keyboard_check_pressed(ord("L")))
 
 if(keyboard_check_pressed(ord("K")))
 {
+	var found = false;
 	with(obj_astronaut_playable)
 	{
-		if(is_selected) scr_kill(id);
+		if(is_selected)
+		{
+			found = true;
+			scr_kill(id);
+			break;
+		}
+	}
+	if(!found)
+	{
+		var astro = instance_position(mouse_x, mouse_y, obj_astronaut);
+		if(astro != noone) scr_kill(astro);
 	}
 }
 

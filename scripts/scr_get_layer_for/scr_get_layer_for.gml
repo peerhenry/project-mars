@@ -9,6 +9,7 @@ switch(argument0)
 	case obj_mdu_pile:
 	case obj_door:
 	case obj_hatch:
+	case obj_projectile:
 		return macro_base_tall_layer;
 	case obj_room:
 		return macro_rooms_layer;

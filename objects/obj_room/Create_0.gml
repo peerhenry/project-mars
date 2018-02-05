@@ -4,6 +4,7 @@
 tiles = ds_list_create();
 doors = ds_list_create();
 hatches = ds_list_create(); // if there is more one or more hatches, the room is an airlock.
+leaks = ds_list_create();
 
 bb_left = 0;
 bb_right = 0;

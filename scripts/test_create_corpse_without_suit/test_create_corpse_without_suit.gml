@@ -8,6 +8,8 @@ scr_set_suit(astro, false);
 var corpse = scr_create_corpse(astro);
 
 // assert
+assert_object_count(1, obj_corpse);
+assert_object_count(1, obj_astronaut);
 assert_arrays_are_equal(astro.mask_color, corpse.mask_color);
 assert_equal(spr_male_dead, corpse.sprite_index, "sprite_index");
 assert_equal(spr_male_mask_dead, corpse.mask_sprite, "mask_sprite");

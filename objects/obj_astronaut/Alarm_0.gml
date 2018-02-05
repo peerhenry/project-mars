@@ -28,8 +28,7 @@ else target = noone;
 // if astronaut has a shootable target, persue it.
 if(target_is_shootable)
 {
-	scr_attack(id, target);
-	can_shoot = scr_target_is_within_range(id, target);
+	can_shoot = scr_attack(id, target);
 }
 else	// See if there is an enemy around to shoot
 {

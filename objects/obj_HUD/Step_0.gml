@@ -38,7 +38,7 @@ if(global.hovering_over_HUD)
 
 // hovers over astronaut
 var hovers_over_selectable = false;
-var astro = instance_position(mouse_x, mouse_y, obj_astronaut)
+var astro = instance_position(mouse_x, mouse_y, obj_astronaut);
 if(astro != noone)
 {
 	hovers_over_selectable = astro.owner == macro_player;
@@ -62,14 +62,15 @@ if(!hovers_over_selectable)
 		var hovers_over_enemy = false;
 		if(astro != noone)
 		{
-			hovers_over_selectable = astro.owner == macro_enemy;
+			hovers_over_enemy = astro.owner == macro_enemy;
 		}
 
 		if(!hovers_over_enemy)
 		{
-			var constr = scr_enemy_construction_position(mouse_x, mouse_y);
-			if(constr != noone && constr.object_index != obj_base_tile) hovers_over_enemy = true;
+			var constr = scr_enemy_component_position(mouse_x, mouse_y);
+			if(constr != noone) hovers_over_enemy = true;
 		}
+		
 		if(hovers_over_enemy)
 		{
 			cursor_sprite = spr_cursor_attack;

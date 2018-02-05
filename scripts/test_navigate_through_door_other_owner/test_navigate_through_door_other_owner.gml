@@ -14,6 +14,7 @@ assert_false(enemy.is_walking, "is walking");
 
 // cleanup
 with(obj_constructable) instance_destroy();
+with(obj_room) instance_destroy();
 instance_destroy(enemy);
 
 test_result();

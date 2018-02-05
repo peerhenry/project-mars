@@ -3,7 +3,7 @@ var new_astronaut = instance_create_layer(x, y, layer_thing, obj_astronaut_playa
 with(new_astronaut)
 {
 	name = "Malcom Phillips";
-	wears_suit = false;
+	scr_set_suit(id, false);
 	sprite_index = spr_character_suitless_down;
 	is_outside = false;
 	sprite_active_down = sprite_suitless_down;

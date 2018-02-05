@@ -11,7 +11,7 @@ if(path_position == 1)
 	}
 	else
 	{
-		var unlucky_construction = instance_position(x, y, obj_constructable);
+		var unlucky_construction = scr_get_component(x, y);
 		if(unlucky_construction != noone)
 		{
 			with(unlucky_construction)

@@ -2,6 +2,10 @@ test_init(test_setup_room);
 
 // arrange
 
+// assert setup
+assert_equal(macro_ownership_default, global.ownership_behavior, "ownership behavior");
+assert_equal(macro_player, global.default_owner, "default owner");
+
 // act
 scr_setup_room(1,2,10,10);
 

@@ -5,22 +5,7 @@ var container = argument0;
 var shooter = argument1;
 var target = argument2;
 
-var lid = layer_get_id("astronauts");
-var new_projectile = instance_create_layer(shooter.x, shooter.y, lid, obj_projectile);
-with(new_projectile)
-{
-	var can_shoot = mp_linear_path(path, target.x, target.y, global.projectile_speed, false);
-	if(!can_shoot)
-	{
-		instance_destroy();
-		return false;
-	}
-	path_start(path, global.projectile_speed, path_action_stop, false);	// false: don't go along an absolute path, go relative to your position	
-	
-	var pd = point_direction(shooter.x, shooter.y, target.x, target.y);
-	var dd = angle_difference(image_angle, pd);
-	image_angle -= dd;
-}
+scr_create_projectile(shooter, target);
 
 // orient shooter towards target
 with(shooter)
@@ -33,13 +18,13 @@ with(shooter)
 		if(dy > -dx)
 		{
 			// look south
-			sprite_index = sprite_down;
+			sprite_index = sprite_active_down;
 			mask_sprite = sprite_mask_down;
 		}
 		else
 		{
 			// look east
-			sprite_index = sprite_right;
+			sprite_index = sprite_active_right;
 			mask_sprite = sprite_mask_right;
 			image_xscale = -1;
 		}
@@ -49,14 +34,14 @@ with(shooter)
 		if(dy > -dx)
 		{
 			// look west
-			sprite_index = sprite_right;
+			sprite_index = sprite_active_right;
 			mask_sprite = sprite_mask_right;
 			image_xscale = 1;
 		}
 		else
 		{
 			// look north
-			sprite_index = sprite_up;
+			sprite_index = sprite_active_up;
 			mask_sprite = sprite_mask_up;
 		}
 	}
