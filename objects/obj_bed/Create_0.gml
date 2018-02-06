@@ -1,12 +1,8 @@
 event_inherited();
 
-// hardcoded constructable logic
-under_construction = true;
-damage = 0;
-
 occ_i = scr_rc_to_gi(x);
 occ_j = scr_rc_to_gi(y);
-var rot_param = global.construction_ghost[? macro_ghost_rotation];
+rot_param = global.construction_ghost[? macro_ghost_rotation];
 di = 0;
 dj = 0;	// second space the bed occupies
 switch(rot_param)

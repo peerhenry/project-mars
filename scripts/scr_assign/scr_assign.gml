@@ -12,10 +12,10 @@ if(!arg_assignable.is_assigned)
 	// if(!scr_can_assign(arg_assignable, arg_astronaut)) return false; // moved to scr_command_assign
 	
 	// Check if astronaut can navigate to assignable.
-	var ass_i = scr_rc_to_gi(arg_assignable.x);
-	var ass_j = scr_rc_to_gi(arg_assignable.y);
-	var astro_i = scr_rc_to_gi(arg_astronaut.x);
-	var astro_j = scr_rc_to_gi(arg_astronaut.y);
+	var ass_i = arg_assignable.occ_i;
+	var ass_j = arg_assignable.occ_j;
+	var astro_i = arg_astronaut.occ_i;
+	var astro_j = arg_astronaut.occ_j;
 		
 	already_adjacent = (astro_i == ass_i && abs(astro_j - ass_j) == 1)
 		|| (astro_j == ass_j && abs(astro_i - ass_i) == 1);
@@ -32,53 +32,17 @@ if(!arg_assignable.is_assigned)
 			scr_navgrid_clear_cell(occ_i, occ_j);
 			scr_navgrid_clear_cell(dest_i, dest_j);
 		}
-		var try_west = scr_navgrid_cell_is_free(ass_i-1, ass_j);
-		var try_east = scr_navgrid_cell_is_free(ass_i+1, ass_j);
-		var try_north = scr_navgrid_cell_is_free(ass_i, ass_j-1);
-		var try_south = scr_navgrid_cell_is_free(ass_i, ass_j+1);
 		
-		var adj_arr_dx = [0,0,0,0];
-		var adj_arr_dy = [0,0,0,0];
-		var free_spots = [false, false, false, false];
-		
-		var di = astro_i - ass_i;
-		var dj = astro_j - ass_j;
-		if(dj > di)
+		var free_spots = ds_list_create();
+		var spots = scr_get_assignable_spots(arg_assignable, arg_astronaut);
+		for(var n = 0; n < array_length_1d(spots); n++)
 		{
-			if(dj > -di)
+			var next_spot = spots[n];
+			var spot_i = scr_decode_grid_coord_i(next_spot);
+			var spot_j = scr_decode_grid_coord_j(next_spot);
+			if( scr_navgrid_cell_is_free(spot_i, spot_j) )
 			{
-				// south is closest
-				adj_arr_dx[0] = 0; adj_arr_dy[0] = 32;	free_spots[0] = try_south;// south
-				adj_arr_dx[1] = 32; adj_arr_dy[1] = 0;	free_spots[1] = try_east;// east
-				adj_arr_dx[2] = -32; adj_arr_dy[2] = 0;	free_spots[2] = try_west; // west
-				adj_arr_dx[3] = 0; adj_arr_dy[3] = -32; free_spots[3] = try_north; // north
-			}
-			else
-			{
-				// west is closest
-				adj_arr_dx[0] = -32; adj_arr_dy[0] = 0;	free_spots[0] = try_west; // west
-				adj_arr_dx[1] = 0; adj_arr_dy[1] = -32; free_spots[1] = try_north; // north
-				adj_arr_dx[2] = 0; adj_arr_dy[2] = 32;	free_spots[2] = try_south;// south
-				adj_arr_dx[3] = 32; adj_arr_dy[3] = 0;	free_spots[3] = try_east;// east
-			}
-		}
-		else
-		{
-			if(dj > -di)
-			{
-				// east is closest
-				adj_arr_dx[0] = 32; adj_arr_dy[0] = 0;	free_spots[0] = try_east; // east
-				adj_arr_dx[1] = 0; adj_arr_dy[1] = -32; free_spots[1] = try_north; // north
-				adj_arr_dx[2] = 0; adj_arr_dy[2] = 32;	free_spots[2] = try_south;// south
-				adj_arr_dx[3] = -32; adj_arr_dy[3] = 0;	free_spots[3] = try_west; // west
-			}
-			else
-			{
-				// north is closest
-				adj_arr_dx[0] = 0; adj_arr_dy[0] = -32; free_spots[0] = try_north; // north
-				adj_arr_dx[1] = 32; adj_arr_dy[1] = 0;	free_spots[1] = try_east; // east
-				adj_arr_dx[2] = -32; adj_arr_dy[2] = 0;	free_spots[2] = try_west; // west
-				adj_arr_dx[3] = 0; adj_arr_dy[3] = 32;	free_spots[3] = try_south; // south
+				ds_list_add(free_spots, next_spot);
 			}
 		}
 		
@@ -89,11 +53,14 @@ if(!arg_assignable.is_assigned)
 		}
 		
 		var n = 0;
-		while(!can_assign && n<4)
+		while(!can_assign && n < ds_list_size(free_spots))
 		{
-			var dx = adj_arr_dx[n];
-			var dy = adj_arr_dy[n];
-			if(free_spots[n]) can_assign = scr_navigate_once(arg_astronaut, arg_assignable.x + dx, arg_assignable.y + dy);
+			var next_spot = free_spots[|n];
+			var spot_i = scr_decode_grid_coord_i(next_spot);
+			var spot_j = scr_decode_grid_coord_j(next_spot);
+			var s_x = scr_gi_to_rc(spot_i);
+			var s_y = scr_gi_to_rc(spot_j);
+			can_assign = scr_navigate_once(arg_astronaut, s_x, s_y);
 			n++;
 		}
 		
@@ -102,6 +69,8 @@ if(!arg_assignable.is_assigned)
 			scr_navgrid_occupy(occ_i, occ_j);
 			scr_navgrid_occupy(dest_i, dest_j);
 		}
+		
+		ds_list_destroy(free_spots);
 	}
 }
 

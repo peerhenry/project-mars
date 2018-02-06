@@ -11,7 +11,8 @@ var room_w = 5;
 var room_h = 5;
 scr_setup_six_rooms(base_or_i, base_or_j, room_w, room_h, 2);
 // player astronauts...
-init_skirmish_add_astronauts(80, 70, astro_count, macro_player); // base_or_j + 3 is inside
+init_skirmish_add_astronauts(base_or_i + 1, base_or_j + 3, astro_count, macro_player); 
+//init_skirmish_add_astronauts(80, 70, astro_count, macro_player);
 
 // 2. enemy base
 global.default_owner = macro_enemy;
@@ -44,5 +45,5 @@ for(var n = 0; n < 3; n++)
 global.setup_mdu_pile_size = 1;
 
 // center camera on starting position
-//camera_set_view_pos(view_camera[0], 32*32 - view_wport[0]/2, 32*32 - view_hport[0]/2);
-camera_set_view_pos(view_camera[0], 32*80 - view_wport[0]/2, 32*70 - view_hport[0]/2);
+camera_set_view_pos(view_camera[0], 32*32 - view_wport[0]/2, 32*32 - view_hport[0]/2);
+//camera_set_view_pos(view_camera[0], 32*80 - view_wport[0]/2, 32*70 - view_hport[0]/2);
