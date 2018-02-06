@@ -8,7 +8,10 @@ var p_layer = script_execute(get_layer_for, obj_projectile);
 var new_projectile = instance_create_layer(shooter.x, shooter.y, p_layer, obj_projectile);
 with(new_projectile)
 {
+	var temp = target.solid;
+	target.solid = false;
 	var can_shoot = mp_linear_path(path, target.x, target.y, global.projectile_speed, false);
+	target.solid = temp;
 	if(!can_shoot)
 	{
 		instance_destroy();
