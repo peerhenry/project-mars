@@ -23,6 +23,7 @@ sprite_up = spr_character_walk_up;
 sprite_suitless_down = spr_male_down;
 sprite_suitless_right = spr_male_right;
 sprite_suitless_up = spr_male_up;
+sprite_index = sprite_suitless_down;
 image_speed = 0;
 
 // astronaut props
@@ -64,9 +65,9 @@ enemy = scr_get_enemy(owner);
 shoot_path = path_add();
 
 // active sprites
-sprite_active_down = sprite_down;
-sprite_active_right = sprite_right;
-sprite_active_up = sprite_up;
+sprite_active_down = sprite_suitless_down;
+sprite_active_right = sprite_suitless_right;
+sprite_active_up = sprite_suitless_up;
 
 // shader color mask
 mask_color_clothes = scr_get_clothes_color(owner);

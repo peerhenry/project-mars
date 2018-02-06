@@ -16,7 +16,8 @@
         "72fc8b6f-0dd3-485a-b357-e6e145f9bd32",
         "be165f1b-9963-4348-8988-87be73df6b53",
         "267286f3-4869-4764-b769-fba9a71f748e",
-        "ea07b4c2-b395-4c71-a07f-8f8566ae5133"
+        "ea07b4c2-b395-4c71-a07f-8f8566ae5133",
+        "0bb11a42-6d25-4093-923b-e028401b4ff1"
     ],
     "filterType": "GMScript",
     "folderName": "ghost",

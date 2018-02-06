@@ -1,11 +1,11 @@
 /// @arg owner
 switch(argument0){
 	case macro_player:
-		return [0.1, 0.1, 0.95, 0.7]; //[0,0,0,0]; // transparent
+		return [0.1, 0.1, 0.95, 0.5]; //[0,0,0,0]; // transparent
 	case macro_enemy:
-		return [0.8, 0.2, 0.1, 0.5];
+		return [1, 0.2, 0.05, 0.5];
 	case macro_china:
-		return [0.8, 0.2, 0.1, 0.5]; // red
+		return [0.9, 0.1, 0.05, 0.7]; // red
 	case macro_nau:
 		return [0.1, 0.2, 0.8, 0.5]; // blue
 	case macro_japan:

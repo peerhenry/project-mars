@@ -34,6 +34,7 @@ for(var m = 0; m < array_length_1d(arg_actions); m++)
 	
 	// validate
 	var validation_passed = scr_validate_cell(target_i, target_j, validation_i, validation_o, owner);
+	if(validation_passed) validation_passed = scr_validate_object_to_add(target_i, target_j, object_to_add);
 	
 	if(validation_passed)
 	{
