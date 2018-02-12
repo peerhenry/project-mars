@@ -1,9 +1,7 @@
-/// @arg script_container
 /// @arg destruct_target
 /// @arg wall
-var arg_container = argument0;
-var arg_target = argument1;
-var arg_hatch = argument2;
+var arg_target = argument0;
+var arg_hatch = argument1;
 
 var needs_wall = false;
 var hatch_surrounding_basetiles = scr_get_surrounding_instances(arg_hatch, obj_base_tile);
@@ -23,9 +21,9 @@ for(var p = 0; p<8; p++)
 }
 if(!needs_wall)
 {
-	scr_create_destruct_ghost_cell(arg_container, arg_hatch, obj_destruct_placemarker);
+	scr_create_destruct_ghost_cell(arg_hatch, obj_destruct_placemarker);
 }
 else
 {
-	scr_create_destruct_ghost_cell(arg_container, arg_hatch, obj_wall);
+	scr_create_destruct_ghost_cell(arg_hatch, obj_wall);
 }

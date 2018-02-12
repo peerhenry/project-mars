@@ -5,7 +5,11 @@ var arg_x = argument0;
 var arg_y = argument1;
 
 var le_room = scr_room_at(arg_x, arg_y);
-if(le_room == noone) exit;
+if(le_room == noone)
+{
+	scr_warn("scr_room_remove_tile_and_part was called while there was no room at " + string(arg_x) + ", " + string(arg_y));
+	exit;
+}
 
 var arg_i = scr_rc_to_gi(arg_x);
 var arg_j = scr_rc_to_gi(arg_y);

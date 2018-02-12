@@ -7,7 +7,7 @@ with(arg_attacker)
 {
 	target = arg_target;
 	
-	if(!scr_target_is_within_range(id, target) || !scr_can_shoot_unobstructed(id, target) || is_walking)
+	if(is_walking || !scr_target_is_within_range(id, target) || !scr_can_shoot_unobstructed(id, target))
 	{
 		var can_pursue = scr_pursue_target(id);
 		if(!can_pursue)

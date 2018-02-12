@@ -16,6 +16,7 @@ with(obj_room)
 	room_count++;
 	var grid = scr_get_grid(id, macro_grid_oxygen);
 	assert_equal(obj_grid, grid.object_index, "grid.object_index");
+	show_debug_message("@@@ ROOM: " + string(id));
 }
 assert_equal(1, room_count, "room_count");
 assert_object_count(macro_grid_type_count, obj_grid);
@@ -33,18 +34,14 @@ assert_object_count(2, obj_room);
 with(obj_room)
 {
 	var grid = scr_get_grid(id, macro_grid_oxygen);
-	assert_equal(obj_grid, grid.object_index, "grid.object_index");
+	//assert_equal(obj_grid, grid.object_index, "grid.object_index");
+	show_debug_message("@@@ ROOM: " + string(id) + " with grid: " + string(grid));
 }
 
 // cleanup
 script_container_register(container, "room_logic_basetile", scr_mock);
-with(obj_wall)
-{
-	instance_destroy();
-}
-with(obj_base_tile)
-{
-	instance_destroy();
-}
+with(obj_wall) instance_destroy();
+with(obj_base_tile) instance_destroy(); // should also destroy the rooms
+assert_object_count(0, obj_room);
 
 test_result();

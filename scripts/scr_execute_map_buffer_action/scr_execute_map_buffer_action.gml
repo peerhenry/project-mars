@@ -37,13 +37,15 @@ switch(arg_action)
 	case map_buffer_action.wall:
 		new_o = map_value_wall_pure;
 		break;
+	case map_buffer_action.clear_and_inside:
+		new_o = map_value_vacant;
 	case map_buffer_action.inside:
 		new_i = 1;
-		new_o = map_value_vacant;
 		break;
+	case map_buffer_action.clear_and_outside:
+		new_o = map_value_vacant;
 	case map_buffer_action.outside:
 		new_i = 0;
-		new_o = map_value_vacant;
 		break;
 	case map_buffer_action.cable:
 		new_o = map_value_cable;

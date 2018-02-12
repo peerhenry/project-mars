@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-tiles = ds_list_create();
+tiles = ds_list_create(); // these are encoded ij
 doors = ds_list_create();
 hatches = ds_list_create(); // if there is more one or more hatches, the room is an airlock.
 leaks = ds_list_create();

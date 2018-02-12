@@ -1,9 +1,7 @@
-/// @arg script_container
 /// @arg destruct_target
 /// @arg wall
-var arg_container = argument0;
-var arg_target = argument1;
-var arg_wall = argument2;
+var arg_target = argument0;
+var arg_wall = argument1;
 
 var will_stay = false;
 var wall_surrounding_basetiles = scr_get_surrounding_instances(arg_wall, obj_base_tile);
@@ -23,5 +21,5 @@ for(var p = 0; p<8; p++)
 }
 if(!will_stay)
 {
-	scr_create_destruct_ghost_cell(arg_container, arg_wall, obj_destruct_placemarker);
+	scr_create_destruct_ghost_cell(arg_wall, obj_destruct_placemarker);
 }

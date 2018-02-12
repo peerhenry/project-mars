@@ -5,6 +5,7 @@ var arg_room = argument0;
 var arg_i = argument1;
 var arg_j = argument2;
 
+// a flip is a transition from a room tile to a non-room tile in the surrounding 8 tiles.
 var flip_count = 0;
 var dis = [-1,0,1,1,1,0,-1,-1];
 var djs = [-1,-1,-1,0,1,1,1,0];

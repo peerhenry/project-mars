@@ -59,7 +59,9 @@ enum map_buffer_action
 	cable,
 	pipe,
 	clear_cable,
-	clear_pipe
+	clear_pipe,
+	clear_and_inside,
+	clear_and_outside
 }
 
 enum construction_state

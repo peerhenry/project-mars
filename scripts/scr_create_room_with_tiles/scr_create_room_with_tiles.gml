@@ -24,8 +24,8 @@ with(new_room){
 
 // Connect to O2 grid belonging to the basetile at the first tile coordinate of the list.
 var first_tile = ds_list_find_value(tile_list, 0);
-var tile_i = first_tile >> 16;
-var tile_j = first_tile mod 65536;
+var tile_i = scr_decode_grid_coord_i(first_tile);
+var tile_j = scr_decode_grid_coord_j(first_tile);
 var tile_x = scr_gi_to_rc(tile_i);
 var tile_y = scr_gi_to_rc(tile_j);
 var base_tile = instance_position(tile_x, tile_y, obj_base_tile);
