@@ -21,9 +21,7 @@ assert_true(result, "room2 is connected to leak");
 
 // cleanup
 ds_list_destroy(aggr);
-door.room1 = noone;
-door.room2 = noone;
-with(door) instance_destroy();
 with(obj_room) instance_destroy();
+with(door) instance_destroy();
 
 test_result();

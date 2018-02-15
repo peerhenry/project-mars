@@ -23,9 +23,7 @@ assert_true(room1.oxygen_is_leaking, "room1 oxygen_is_leaking");
 assert_false(room2.oxygen_is_leaking, "room2 oxygen_is_leaking");
 
 // cleanup
-door.room1 = noone;
-door.room2 = noone;
-with(door) instance_destroy();
 with(obj_room) instance_destroy();
+with(door) instance_destroy();
 
 test_result();

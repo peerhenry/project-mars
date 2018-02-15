@@ -1,5 +1,16 @@
-/// @description Insert description here
-// You can write your code in this editor
+// set door rooms to noone
+for(var n = 0; n < ds_list_size(doors); n++)
+{
+	var next_door = doors[| n];
+	
+	show_debug_message("obj_door: " + string(obj_door));
+	show_debug_message("obj_room: " + string(obj_room));
+	show_debug_message("next_door.object_index" + string(next_door.object_index));
+	
+	if(id == next_door.room1) next_door.room1 = noone;
+	else next_door.room2 = noone;
+}
+
 ds_list_destroy(tiles);
 ds_list_destroy(doors);
 ds_list_destroy(hatches);

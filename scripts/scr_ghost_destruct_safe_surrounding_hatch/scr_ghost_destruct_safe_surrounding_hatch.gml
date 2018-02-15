@@ -1,5 +1,5 @@
 /// @arg destruct_target
-/// @arg wall
+/// @arg hatch
 var arg_target = argument0;
 var arg_hatch = argument1;
 

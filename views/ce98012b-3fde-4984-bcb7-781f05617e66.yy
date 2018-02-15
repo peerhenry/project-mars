@@ -27,7 +27,8 @@
         "85cf4390-ffa3-4475-a3a0-fe95ae3a79cf",
         "04a5fd1a-c156-4cf9-8af3-2a3f88a20c46",
         "5ab159bd-b0ee-4110-8171-92399b667bf3",
-        "c4f0bdfb-71de-45b0-9c43-73acb44dccca"
+        "c4f0bdfb-71de-45b0-9c43-73acb44dccca",
+        "06f7eea1-d1ca-41aa-bbdb-6a07b90a2a8b"
     ],
     "filterType": "GMScript",
     "folderName": "BASE",

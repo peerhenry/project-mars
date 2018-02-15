@@ -2,10 +2,15 @@ test_init(test_destruct_safe_hatch);
 
 // arrange
 scr_setup_room(1, 1, 1, 3);
-scr_setup_hatch(1, 4, 0);
+scr_setup_single_tile_construction(1, 4, macro_hatch, 0);
 
 // assert setup
 assert_object_count(1, obj_hatch);
+with(obj_hatch)
+{
+	assert_equal(x, scr_gi_to_rc(1), "hatch x");
+	assert_equal(y, scr_gi_to_rc(4), "hatch y");
+}
 
 // act
 var tx = scr_gi_to_rc(1);
@@ -18,6 +23,7 @@ scr_ghost_reset();
 // assert
 assert_object_count(0, obj_base_tile);
 assert_object_count(0, obj_room);
+assert_object_count(0, obj_hatch);
 
 // cleanup
 with(obj_base_tile) instance_destroy();
