@@ -30,6 +30,7 @@ repeat(wave_size)
 	}
 	
 	var enemy = scr_create_enemy_astronaut(spawn_x, spawn_y);
+	scr_set_suit(enemy, true);
 	
 	var target = noone;
 	with(obj_astronaut_playable)

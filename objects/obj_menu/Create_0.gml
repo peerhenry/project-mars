@@ -26,7 +26,7 @@ menu_index_max = array_length_1d(menu) - 1;
 // highest index first
 colors[menu_index.quit] = c_white;
 colors[menu_index.game_continue] = c_gray;
-colors[menu_index.new_game] = c_gray;
+colors[menu_index.new_game] = c_white;
 colors[menu_index.tutorial] = c_white;
 colors[menu_index.survival] = c_white;
 colors[menu_index.settings] = c_white;

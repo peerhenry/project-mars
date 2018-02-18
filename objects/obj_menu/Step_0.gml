@@ -29,6 +29,8 @@ else
 			case menu_index.game_continue:
 				break;
 			case menu_index.new_game:
+				var fader = instance_create_layer(0, 0, "layer_fade", obj_fade);
+				fader.target_room = mission_control;
 				break;
 			case menu_index.tutorial:
 				room_goto(tutorial);
@@ -43,9 +45,8 @@ else
 				room_goto(room_settings);
 				break;
 			case menu_index.debug:
-				var lid = layer_get_id("layer_fade");
-				instance_create_layer(0, 0, lid, obj_fade);
-				obj_fade.target_room = room_map;
+				var fader = instance_create_layer(0, 0, "layer_fade", obj_fade);
+				fader.target_room = room_test_map;
 				break;
 			/*case menu_index.test:
 				room_goto(room_tests);*/

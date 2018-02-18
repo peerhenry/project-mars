@@ -1,3 +1,5 @@
+if( instance_number(object_index) > 1 ) instance_destroy();
+
 // ### GLOBAL SETTINGS
 
 global.hovering_over_HUD = false; // write @ begin step, read @ step

@@ -1,3 +1,11 @@
+scr_mouse_step();
+exit;
+
+
+
+/* OLD:
+
+
 if(global.hovering_over_HUD)
 {
 	is_dragging	= false;
@@ -66,15 +74,15 @@ var just_selected = false;
 if(!is_dragging)
 {
 	// LEFT CLICK: set click origin for dragging
-	if(mouse_check_button_pressed(mb_left))
+	if( mouse_check_button_pressed(mb_left) )
 	{
-		scr_hide_categories();
+		scr_hide_categories(); // hide construction menu
 		click_x = mouse_x;
 		click_y = mouse_y;
 	}
 	
 	// LEFT DOWN: while down, check if it's dragging
-	if(mouse_check_button(mb_left))
+	if( mouse_check_button(mb_left) )
 	{
 		var sig_x = abs(mouse_x - click_x) > 5;
 		var sig_y = abs(mouse_y - click_y) > 5;
@@ -88,7 +96,7 @@ if(!is_dragging)
 		}
 	}
 	
-	if(mouse_check_button_released(mb_right))
+	if( mouse_check_button_released(mb_right) )
 	{
 		// deselect everything
 		scr_hide_categories();
@@ -96,10 +104,12 @@ if(!is_dragging)
 		scr_hide_all_panels();
 		with(obj_astronaut_playable)
 		{
-			if(id != select_astro){
+			if(id != select_astro)
+			{
 				is_selected = false;
 			}
-			else{
+			else
+			{
 				show_details = true;
 			}
 		}
@@ -190,3 +200,4 @@ if(just_selected)
 	}
 	exit;
 }
+*/

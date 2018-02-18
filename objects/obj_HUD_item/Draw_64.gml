@@ -5,7 +5,6 @@ var bottom = y + height;
 
 // draw sprite
 if(sprite_index != noone) draw_sprite(sprite_index, image_index, x + 16, y + 16);
-else show_debug_message("sprite_index was noone : (");
 draw_set_alpha(0.3);
 draw_set_color(c_aqua);
 draw_rectangle(left, top, right, bottom, false);

@@ -12,7 +12,8 @@
         "485832f9-85c1-4f75-a779-9ebb457c17ac",
         "c12db89a-4375-45f2-84da-cf8bdb8f5b9d",
         "ec361dd3-b998-47f9-8cef-4ad630e548ce",
-        "df26e86c-cf59-49c3-982f-5f66188d4de3"
+        "df26e86c-cf59-49c3-982f-5f66188d4de3",
+        "97d1d272-3873-4e11-abc3-72b11e9b490f"
     ],
     "filterType": "GMSprite",
     "folderName": "logic",

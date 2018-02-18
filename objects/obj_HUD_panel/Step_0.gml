@@ -6,4 +6,4 @@ var mouse_over = window_mouse_x > left &&
 	window_mouse_y > top && 
 	window_mouse_y < bottom;
 	
-if(mouse_over) global.hovering_over_hud_panel = true;
+if(mouse_over) hovers = true;

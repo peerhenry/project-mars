@@ -13,7 +13,6 @@ mouse_over_menu =
 	
 if(mouse_over_menu)
 {
-	global.hovering_over_hud_panel = true;
 	if(clicked)
 	{
 		with(hud_menu){
@@ -24,16 +23,13 @@ if(mouse_over_menu)
 			if(id != other.hud_menu) event_user(1); // close other menus
 		}
 	}
-	return;
+	exit;
 }
-
-
-// todo: draw spr_cursor_attack if mouse does not hover over HUD...
 
 if(global.hovering_over_HUD)
 {
 	cursor_sprite = spr_cursor;
-	return;
+	exit;
 }
 
 // hovers over astronaut
