@@ -77,3 +77,6 @@ sprite_mask_down = spr_suit_mask_down;
 sprite_mask_right = spr_suit_mask_right;
 sprite_mask_up = spr_suit_mask_up;
 mask_sprite = sprite_mask_down;
+
+var is_inside = position_meeting(x, y, obj_base_tile);
+scr_set_suit(id, !is_inside);

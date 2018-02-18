@@ -13,7 +13,11 @@ ds_list_add(singletons, obj_view_mover);
 ds_list_add(singletons, obj_key_listener);
 ds_list_add(singletons, obj_HUD);
 ds_list_add(singletons, obj_noise_shader);
-if(global.dev_env) ds_list_add(singletons, obj_key_listener_DEBUG);
+if(global.dev_env)
+{
+	ds_list_add(singletons, obj_key_listener_DEBUG);
+	ds_list_add(singletons, obj_HUD_DEBUG);
+}
 
 for(var n = 0; n < ds_list_size(singletons); n++)
 {

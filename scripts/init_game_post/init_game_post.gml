@@ -29,5 +29,3 @@ with(obj_room)
 {
 	oxygen_level = 100;
 }
-
-global.init_stage = false;

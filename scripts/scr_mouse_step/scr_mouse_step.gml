@@ -31,13 +31,6 @@ if(mouse_check_button(mb_left))
 	}
 }
 
-/*if(mouse_check_button_released(mb_left))
-{
-	if(is_dragging) drag_released = true;
-	is_dragging = false;
-	left_released = true;
-}*/
-
 #endregion
 
 #region CONSTRUCTION INPUT
@@ -74,7 +67,6 @@ if(constr_type != noone) // BUILD MODE
 
 #region ASTRONAUT SELECT/ORDERS INPUT
 
-var orders_given = false;
 var just_selected_any_astro = false;
 
 if(!is_dragging)
@@ -90,20 +82,6 @@ if(!is_dragging)
 		// deselect everything
 		scr_hide_categories();
 		scr_hide_all_panels();
-		
-		/*var select_astro = instance_position(mouse_x, mouse_y, obj_astronaut_playable);
-		with(obj_astronaut_playable)
-		{
-			if(id != select_astro)
-			{
-				is_selected = false;
-			}
-			else
-			{
-				show_details = true;
-			}
-		}*/
-		
 		scr_command(mouse_x, mouse_y);
 	}
 	
@@ -112,7 +90,6 @@ if(!is_dragging)
 	if(mouse_check_button_released(mb_left))
 	{
 		var single_select_astro = instance_position(mouse_x, mouse_y, obj_astronaut_playable);
-		
 		if(single_select_astro != noone)
 		{
 			// deselect other astronauts

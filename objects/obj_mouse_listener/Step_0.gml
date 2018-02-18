@@ -1,7 +1,4 @@
 scr_mouse_step();
-exit;
-
-
 
 /* OLD:
 

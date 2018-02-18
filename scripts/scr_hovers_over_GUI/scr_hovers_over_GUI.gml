@@ -1,4 +1,5 @@
 var hovering_over_gui = false;
+
 with(obj_HUD_panel)
 {
 	if(hovers)
@@ -7,13 +8,17 @@ with(obj_HUD_panel)
 		break;
 	}
 }
-with(obj_HUD_item)
+
+if(!hovering_over_gui)
 {
-	if(mouse_over)
+	with(obj_HUD_item)
 	{
-		hovering_over_gui = true;
-		break;
-	}
+		if(mouse_over)
+		{
+			hovering_over_gui = true;
+			break;
+		}
+	}	
 }
 
 return hovering_over_gui;
