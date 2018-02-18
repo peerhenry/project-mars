@@ -77,14 +77,11 @@ with(obj_astronaut)
 	mp_grid_add_cell(navigation_grid, dest_i, dest_j);
 }
 
-// Free hatches again for navigation
-if(!arg_astronaut.wears_suit)
+// Free hatches and doors again
+with(obj_gate)
 {
-	with(obj_gate)
-	{
-		// only free them again if they were not under construction, destruction or locked, and matches ownership
-		if(!under_construction && !under_destruction && !locked && owner == arg_astronaut.owner) mp_grid_clear_cell(navigation_grid, occ_i, occ_j);
-	}
+	var passable = (!under_construction && !under_destruction && !locked);
+	if( passable ) mp_grid_clear_cell(navigation_grid, occ_i, occ_j);
 }
 
 return path_found;

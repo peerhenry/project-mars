@@ -1807,6 +1807,14 @@
             }
         },
         {
+            "Key": "3101e94c-7b55-4d38-90ba-0171aea30bb3",
+            "Value": {
+                "id": "91ae7d4f-b178-4cda-af21-992342ccb3b5",
+                "resourcePath": "views\\3101e94c-7b55-4d38-90ba-0171aea30bb3.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "31035940-1fd4-4c80-bfb3-78b2ba170925",
             "Value": {
                 "id": "ba0392cf-02e6-4077-87f3-afb07605c745",
@@ -2068,6 +2076,14 @@
                 "id": "d89f8872-a59b-40a1-82fd-f4369f6e3fa4",
                 "resourcePath": "sprites\\spr_tiles_earth\\spr_tiles_earth.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "3675f3f8-e05d-4474-ae4d-d412eb297726",
+            "Value": {
+                "id": "209bb2f8-0203-4952-958b-dd7cb97f32a9",
+                "resourcePath": "scripts\\test_hatch_clears_navgrid\\test_hatch_clears_navgrid.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -9640,6 +9656,7 @@
         "31320da5-82b8-425a-a61d-9f953c148192",
         "3ea63ad9-3b64-411b-b050-4f0b31055288",
         "9f68b34a-c2ff-456c-821b-9fac2a93376b",
+        "3675f3f8-e05d-4474-ae4d-d412eb297726",
         "2febcc22-458c-41db-b912-ec27e4b0aa0d",
         "4b93767b-db51-440f-a09a-534c74d06abe",
         "8ad3b847-52a3-4a58-b820-625cec89b502"

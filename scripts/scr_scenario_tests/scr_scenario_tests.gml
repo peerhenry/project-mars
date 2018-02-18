@@ -5,5 +5,6 @@ test_message("Running scenario tests...");
 test_suite_setup();
 test_scenario_rooms();
 test_suite_destruct();
+test_hatch_clears_navgrid();
 
 script_container_destroy(container);
