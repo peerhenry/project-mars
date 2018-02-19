@@ -77,15 +77,14 @@
 #macro macro_sensor_d_squared 49
 #macro macro_sensor_d 7
 
-if(debug_mode){
-	#macro macro_type_string 0
-	#macro macro_type_real 1
-	#macro macro_type_bool 2
-	#macro macro_type_array 3
-	#macro macro_type_list 4
-	#macro macro_type_map 5
-	#macro macro_type_object 6
-}
+// debug stuff
+#macro macro_type_string 0
+#macro macro_type_real 1
+#macro macro_type_bool 2
+#macro macro_type_array 3
+#macro macro_type_list 4
+#macro macro_type_map 5
+#macro macro_type_object 6
 
 // Reach states
 #macro macro_unreachable 0
@@ -96,3 +95,7 @@ if(debug_mode){
 #macro macro_skirmish_victory_condition 0 
 #macro macro_skirmish_astro_count 1
 #macro macro_skirmish_mdu_pile_count 2
+
+// ghost drawing stuff
+#macro macro_ghost_alpha 0.42
+#macro macro_sensor_ghost_alpha 0.16

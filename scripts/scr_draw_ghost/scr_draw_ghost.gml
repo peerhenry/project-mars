@@ -9,8 +9,6 @@ ds_stack_copy(build_stack_copy, build_stack);
 var action_is_drawable = false;
 var sprite_for_ghost = noone;
 
-#macro macro_ghost_alpha 0.42
-#macro macro_sensor_ghost_alpha 0.16
 draw_set_alpha(macro_ghost_alpha);
 draw_set_color(c_lime);
 

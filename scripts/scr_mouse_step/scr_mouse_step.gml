@@ -82,13 +82,16 @@ if(!is_dragging)
 		// deselect everything
 		scr_hide_categories();
 		scr_hide_all_panels();
-		scr_command(mouse_x, mouse_y);
+		var hover_astro = instance_position(mouse_x, mouse_y, obj_astronaut_playable);
+		if(hover_astro != noone) hover_astro.show_details = true;
+		else scr_command(mouse_x, mouse_y);
 	}
 	
 	// Left release & not dragging
 	// Either select 1 astronaut or command selected astronauts
 	if(mouse_check_button_released(mb_left))
 	{
+		scr_hide_all_panels();
 		var single_select_astro = instance_position(mouse_x, mouse_y, obj_astronaut_playable);
 		if(single_select_astro != noone)
 		{
@@ -98,7 +101,6 @@ if(!is_dragging)
 				is_selected = false;
 			}
 			
-			scr_hide_all_panels();
 			single_select_astro.is_selected = true;
 			just_selected_any_astro = true;
 		}
@@ -157,12 +159,7 @@ else if(mouse_check_button_released(mb_left)) // - DRAG SELECT
 if(just_selected_any_astro)
 {
 	any_astronauts_selected = true;
-	var s = irandom(2);
-	switch s{
-		case 0: audio_play_sound(sound_cmd_yes,1,false); break;
-		case 1: audio_play_sound(sound_cmd_commands,1,false); break;
-		case 2:	audio_play_sound(sound_cmd_orders,1,false);	break;
-	}
+	scr_play_selection_sound();
 	exit;
 }
 else if(mouse_check_button_released(mb_left))

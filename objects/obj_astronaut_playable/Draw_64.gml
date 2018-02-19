@@ -4,7 +4,9 @@ if ( show_details )
 	var height = 32 + 16 + 24*5 + 64*3 + 96;// padding + spaces + lines + inventory + avatar
 	var display_width = display_get_gui_width();
 	var display_height = display_get_gui_height();
-	var tl_x = display_width - width;
+	var ap_offset = 0;
+	with(obj_HUD)  ap_offset = ap_w + 20;
+	var tl_x = display_width - width - ap_offset;
 	var tl_y = 0;
 	
 	// panel
@@ -86,7 +88,7 @@ if ( show_details )
 	#endregion
 	
 	#region debug info
-	if(debug_mode)
+	if(debug_mode || global.dev_env)
 	{
 		var after_grid_y = grid_y + 128;
 		draw_text(x_or, after_grid_y, "construction: " + string(construction));

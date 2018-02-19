@@ -21,4 +21,12 @@ if(!hovering_over_gui)
 	}	
 }
 
+if(!hovering_over_gui)
+{
+	with(obj_HUD)
+	{
+		if(mouse_over_HUD) hovering_over_gui = true;
+	}
+}
+
 return hovering_over_gui;

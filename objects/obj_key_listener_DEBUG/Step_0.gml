@@ -48,14 +48,16 @@ if(keyboard_check_pressed(ord("M")))
 	}
 }
 
+if(keyboard_check_pressed(ord("H")))
+{
+	with(obj_hydroponics) food_level = 100;
+}
+
 if(keyboard_check_pressed(ord("L")))
 {
 	//scr_show_construction_queue();
 	//show_debug_message("room count: " + string(scr_count_instances(obj_room)));
-	with(obj_room)
-	{
-		oxygen_level = 100;
-	}
+	with(obj_room) oxygen_level = 100;
 }
 
 if(keyboard_check_pressed(ord("K")))
