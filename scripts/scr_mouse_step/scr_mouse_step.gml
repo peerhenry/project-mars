@@ -156,7 +156,7 @@ else if(mouse_check_button_released(mb_left)) // - DRAG SELECT
 #endregion
 
 // play selection sounds
-if(just_selected_any_astro)
+if( just_selected_any_astro )
 {
 	any_astronauts_selected = true;
 	scr_play_selection_sound();

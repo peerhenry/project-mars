@@ -33,4 +33,5 @@ scr_update_action(id);
 // Update from path
 scr_step_path(script_container, id);
 
-scr_step_health_and_oxygen(id);
+scr_step_hunger_and_health(id);
+scr_step_oxygen_and_health(id);

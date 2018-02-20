@@ -13,7 +13,7 @@ with(base_room)
 }
 ds_list_add(base_room.tiles, scr_encode_grid_coord(astro.occ_i, astro.occ_j));
 // act
-scr_step_health_and_oxygen(astro);
+scr_step_oxygen_and_health(astro);
 // assert
 with astro
 {

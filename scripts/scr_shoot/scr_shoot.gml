@@ -11,7 +11,13 @@ if( scr_inventory_has_item(shooter.inventory, macro_inventory_rifle) )
 }
 else if( scr_inventory_has_item(shooter.inventory, macro_inventory_pistol) )
 {
-	scr_create_projectile(shooter, target);
+	var shot = scr_create_projectile(shooter, target);
+	if(shot)
+	{
+		// play laser 1
+		var play_sound = script_container_resolve(shooter.script_container, "play_sound");
+		script_execute(play_sound, sound_fx_laser);
+	}
 }
 
 // orient shooter towards target

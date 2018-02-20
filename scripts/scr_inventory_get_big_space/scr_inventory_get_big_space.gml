@@ -13,7 +13,8 @@ for(var j = 0; j < q_height; j++)
 {
 	for(var i = 0; i < q_width; i++)
 	{
-		var quad_can_be_valid = invalid_quads[j*(q_width) + i] == 0;	// means the quad has not (yet) been invalidated
+		//var quad_can_be_valid = invalid_quads[j*(q_width) + i] == 0;	// means the quad has not (yet) been invalidated
+		var quad_can_be_valid = true;
 		if(quad_can_be_valid)
 		{
 			var tl = ds_grid_get(arg_inventory, i, j) == macro_inventory_empty;

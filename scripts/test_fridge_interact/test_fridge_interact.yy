@@ -1,8 +1,8 @@
 {
-    "id": "d024439a-7c9f-42d0-9108-06c06d665465",
+    "id": "b849a459-dbb5-4aaa-9c3f-458060d8261d",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_step_health_and_oxygen",
+    "name": "test_fridge_interact",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -3,7 +3,10 @@
 var shooter = argument0;
 var target = argument1;
 
-var get_layer_for = resolve(shooter.script_container, "get_layer_for");
+// shooter or target may have died before this script
+if(!instance_exists(shooter) || !instance_exists(target)) return false;
+
+var get_layer_for = resolve(global.script_container, "get_layer_for");
 var p_layer = script_execute(get_layer_for, obj_projectile);
 var new_projectile = instance_create_layer(shooter.x, shooter.y, p_layer, obj_projectile);
 with(new_projectile)
@@ -23,3 +26,4 @@ with(new_projectile)
 	var dd = angle_difference(image_angle, pd);
 	image_angle -= dd;
 }
+return true;

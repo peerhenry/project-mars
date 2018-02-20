@@ -10,5 +10,6 @@ script_container_register(container, "create_corpse", scr_create_corpse);
 script_container_register(container, "get_reach_state", scr_get_reach_state);
 script_container_register(container, "room_logic_door", scr_room_logic_door);
 script_container_register(container, "door_destroy_logic", scr_door_destroy_logic);
+script_container_register(container, "create_explosion_and_rubble", scr_create_explosion_and_rubble);
 global.script_container = container;
 return container;

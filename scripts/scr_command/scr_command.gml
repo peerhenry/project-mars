@@ -39,7 +39,7 @@ else if(enemy.owner != macro_enemy)
 	enemy = noone;
 }
 
-if(el_assignable != noone)	// Assign a task
+if(el_assignable != noone && el_assignable.owner == macro_player)	// Assign a task
 {
 	orders_given = scr_command_assign(el_assignable);
 }

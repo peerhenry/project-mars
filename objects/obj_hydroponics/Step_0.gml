@@ -6,3 +6,4 @@ if(scr_can_draw_from_grid(id, macro_grid_water) && food_level < 100)
 		food_level = 100;
 	}
 }
+event_inherited();

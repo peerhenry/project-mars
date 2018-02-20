@@ -6,5 +6,6 @@ test_suite_setup();
 test_scenario_rooms();
 test_suite_destruct();
 test_hatch_clears_navgrid();
+test_destroy_from_damage_wall_door(); // todo
 
 script_container_destroy(container);

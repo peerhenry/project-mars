@@ -15,3 +15,4 @@ test_suite_navigation();
 test_suite_actions();
 test_suite_combat();
 test_suite_assignables();
+test_astronaut_inventory();

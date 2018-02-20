@@ -2,11 +2,6 @@
 for(var n = 0; n < ds_list_size(doors); n++)
 {
 	var next_door = doors[| n];
-	
-	show_debug_message("obj_door: " + string(obj_door));
-	show_debug_message("obj_room: " + string(obj_room));
-	show_debug_message("next_door.object_index" + string(next_door.object_index));
-	
 	if(id == next_door.room1) next_door.room1 = noone;
 	else next_door.room2 = noone;
 }

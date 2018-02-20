@@ -94,6 +94,17 @@ scr_setup_single_tile_construction(i_or + i_step, j_or + j_step + r_height - 2, 
 scr_setup_single_tile_construction(i_or + i_step + r_width - 1, j_or + j_step + r_height - 1, macro_suit_closet, 2);
 scr_setup_single_tile_construction(i_or + i_step + r_width - 1, j_or + j_step + r_height - 2, macro_suit_closet, 2);
 
+if(global.default_owner == macro_player)
+{
+	scr_setup_single_tile_construction(i_or + i_step + r_width - 1, j_or + j_step, macro_fridge, 0);
+	//show_debug_message("NOW ADDING FOOD TO ALL FRIDGES");
+	with(obj_fridge)
+	{
+		//show_debug_message("INSERTING FOOD INTO A FRIDGE...");
+		scr_inventory_insert(inventory, macro_inventory_food);
+	}
+}
+
 // room 6: hydroponics
 var hydro_i = i_or + 2*i_step + 1;
 var hydro_j = j_or + j_step + 1

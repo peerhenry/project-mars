@@ -18,6 +18,12 @@ if(size == 2)
 {
 	var item_x = ds_grid_value_x(arg_inventory, 0, 0, width-1, height-1, arg_item);
 	var item_y = ds_grid_value_y(arg_inventory, 0, 0, width-1, height-1, arg_item);
+	ds_grid_set_region(arg_inventory, item_x, item_y, item_x + 1, item_y, macro_inventory_empty);
+}
+else if(size == 4)
+{
+	var item_x = ds_grid_value_x(arg_inventory, 0, 0, width-1, height-1, arg_item);
+	var item_y = ds_grid_value_y(arg_inventory, 0, 0, width-1, height-1, arg_item);
 	ds_grid_set_region(arg_inventory, item_x, item_y, item_x + 1, item_y + 1, macro_inventory_empty);
 }
 else

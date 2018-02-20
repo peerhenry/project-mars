@@ -3,6 +3,8 @@
 switch(argument0)
 {
 	case obj_assign_icon:
+	case obj_leak:
+	case obj_hit:
 		return macro_logic_layer;
 	case obj_wall:
 	case obj_construction_mdu_pile:

@@ -4,7 +4,7 @@ var astro = instance_create_depth(0,0,0,obj_astronaut);
 var expect_health = astro.astronaut_health - global.suffocation_speed;
 astro.wears_suit = false;
 // act
-scr_step_health_and_oxygen(astro);
+scr_step_oxygen_and_health(astro);
 // assert
 with astro
 {

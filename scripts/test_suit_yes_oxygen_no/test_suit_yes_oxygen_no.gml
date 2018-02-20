@@ -11,7 +11,7 @@ var expected_health = 100;
 var expect_o2 = 100 - global.suit_o2_depletion_speed;
 
 // act
-scr_step_health_and_oxygen(astro);
+scr_step_oxygen_and_health(astro);
 // assert
 with astro
 {
