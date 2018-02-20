@@ -103,11 +103,12 @@ resources_center_y = (resources_top + resources_bottom)/2;
 cursor_sprite = spr_cursor;
 
 // -- Astronaut panel --
+ap_margin = 20;
 ap_padding = 4;
 ap_name_w = 116;
 ap_w = ap_name_w + ap_padding + 4*(ap_padding+16);
 ap_h = 28;
 ap_offset = ap_h + 4;
 var gui_w = display_get_gui_width();
-ap_origin_left = gui_w - (ap_w + 20);
+ap_origin_left = gui_w - (ap_w + ap_margin);
 ap_origin_top = 40;

@@ -1,4 +1,6 @@
-if(show_details) // todo: menu must not be showing...
+var hud_menu_active = false;
+with(obj_HUD_menu) hud_menu_active = is_active;
+if(show_details && !hud_menu_active)
 {
 	var display_height = display_get_gui_height();
 	var icon_top = display_height - 40;

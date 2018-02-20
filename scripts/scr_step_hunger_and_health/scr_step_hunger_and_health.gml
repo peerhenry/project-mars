@@ -9,20 +9,15 @@ with(arg_astronaut)
 	}
 	else
 	{
-		food_level -= 0.1;
+		food_level -= 0.01;
 		if(food_level < 0) food_level  = 0;
 	}
 	
 	if(food_level < 20 && auto_eat)
 	{
 		// try to eat
-		var has_food = scr_inventory_has_item(inventory, macro_inventory_food);
-		if(has_food)
-		{
-			scr_inventory_extract(inventory, macro_inventory_food);
-			food_level = 100;
-		}
-		else
+		var can_eat = scr_eat(id);
+		if(!can_eat)
 		{
 			// find fridge
 			var closest_fridge_with_food = noone;

@@ -1,7 +1,7 @@
 var width = 256 + 16;
 var height = 384 + 16;
 var ap_offset = 0;
-with(obj_HUD) ap_offset = ap_w + 20;
+with(obj_HUD) ap_offset = ap_w + ap_margin;
 var tl_x = display_get_gui_width() - width - ap_offset;
 var tl_y = 0;
 

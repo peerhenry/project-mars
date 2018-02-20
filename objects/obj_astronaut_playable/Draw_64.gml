@@ -1,11 +1,11 @@
 if ( show_details )
 {
-	var width = 384;
-	var height = 32 + 16 + 24*5 + 64*3 + 96;// padding + spaces + lines + inventory + avatar
+	draw_set_font(font_hud);
+	
+	var width = details_panel_width;
+	var height = details_panel_height;// padding + spaces + lines + inventory + avatar
 	var display_width = display_get_gui_width();
 	var display_height = display_get_gui_height();
-	var ap_offset = 0;
-	with(obj_HUD)  ap_offset = ap_w + 20;
 	var tl_x = display_width - width - ap_offset;
 	var tl_y = 0;
 	
@@ -47,8 +47,8 @@ if ( show_details )
 		//var o2_seconds_remaining = ;
 		draw_text(x_or, oxygen_line_y, "Oxygen: ");
 		draw_healthbar(bar_x_or, oxygen_line_y - half_bar, tl_x + width - 16, oxygen_line_y + half_bar, suit_oxygen, 0, c_red, c_blue, 0, false, false);
-		counter++;
 	}
+	counter++;
 	
 	var energy_line_y = tl_y + 128 + counter*24;
 	draw_text(x_or, energy_line_y, "Energy");

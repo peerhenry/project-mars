@@ -29,4 +29,12 @@ if(!hovering_over_gui)
 	}
 }
 
+if(!hovering_over_gui)
+{
+	with(obj_astronaut_playable)
+	{
+		if(hovering_over_details_panel) hovering_over_gui = true;
+	}
+}
+
 return hovering_over_gui;

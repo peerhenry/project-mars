@@ -1,12 +1,13 @@
 event_inherited();
 
+hovering_over_details_panel = false;
 if(show_details)
 {
 	var width = 384;
 	var height = 32 + 16 + 24*5 + 64*3 + 96;// padding + spaces + lines + inventory + avatar
 	var display_width = display_get_gui_width();
 	var display_height = display_get_gui_height();
-	var left = display_width - width;
+	var left = display_width - width - ap_offset;
 	var top = 0;
 	
 	// panel
@@ -20,7 +21,7 @@ if(show_details)
 		&& window_mouse_y > top
 		&& window_mouse_y < bottom;
 	
-	if(mouse_over_details_panel) global.hovering_over_hud_panel = true;
+	if(mouse_over_details_panel) hovering_over_details_panel = true;
 	else{
 		var atw = 4*32 + 2*8 + 3*4; // icons + padding + spacing
 		var ath = 48;
@@ -32,6 +33,6 @@ if(show_details)
 			&& window_mouse_x < at_right
 			&& window_mouse_y > at_top
 			&& window_mouse_y < at_bottom;
-		if(mouse_over_at_panel) global.hovering_over_hud_panel = true;
+		if(mouse_over_at_panel) hovering_over_details_panel = true;
 	}
 }
