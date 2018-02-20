@@ -51,16 +51,18 @@
 
 #macro macro_astronaut_move_speed 3
 
-// old
+
 #macro macro_inventory_empty 0
 #macro macro_inventory_occupied 1	// not used for rendering
 #macro macro_inventory_pistol 2
 #macro macro_inventory_food 3
 #macro macro_inventory_module 4
+#macro macro_inventory_rifle 5
 // new: use items
 #macro macro_item_pistal 2
 #macro macro_item_food 3
 #macro macro_item_mdu 4
+#macro macro_item_rifle 5
 
 // x, y coordinate encodings for 3x3 grid
 #macro macro_astronaut_inventory_0_0 0

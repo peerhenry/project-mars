@@ -5,7 +5,14 @@ var container = argument0;
 var shooter = argument1;
 var target = argument2;
 
-scr_create_projectile(shooter, target);
+if( scr_inventory_has_item(shooter.inventory, macro_inventory_rifle) )
+{
+	scr_create_rifle_shot(shooter, target);
+}
+else if( scr_inventory_has_item(shooter.inventory, macro_inventory_pistol) )
+{
+	scr_create_projectile(shooter, target);
+}
 
 // orient shooter towards target
 with(shooter)
@@ -47,6 +54,4 @@ with(shooter)
 	}
 }
 
-var play_sound = script_container_resolve(container, "play_sound");
-script_execute(play_sound, sound_fx_laser);
 return true;

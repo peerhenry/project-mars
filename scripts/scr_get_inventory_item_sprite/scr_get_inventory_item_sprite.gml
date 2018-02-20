@@ -9,4 +9,6 @@ switch(arg_item)
 		return spr_inv_food;
 	case macro_inventory_module:
 		return spr_inv_module;
+	case macro_inventory_rifle:
+		return spr_inv_rifle;
 }

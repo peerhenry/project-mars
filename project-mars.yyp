@@ -127,6 +127,14 @@
             }
         },
         {
+            "Key": "027679d4-8317-4863-b3f4-dec7aec6b16a",
+            "Value": {
+                "id": "2d6b8c14-ae09-4881-b181-583bd64c510f",
+                "resourcePath": "scripts\\scr_inventory_get_two_space\\scr_inventory_get_two_space.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "03112f1b-cb5b-4a14-8f3a-f299aa734686",
             "Value": {
                 "id": "2c90e870-fc55-47e5-a0b9-2fe4390537e9",
@@ -516,6 +524,14 @@
                 "id": "0626356e-ab6f-49b2-8c04-c12867e66e8b",
                 "resourcePath": "scripts\\test_register_new_construction\\test_register_new_construction.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "0d59e357-e6e2-48bd-a654-6fdaf2949cbf",
+            "Value": {
+                "id": "c322a8a4-7647-4fe7-832f-abb187f17165",
+                "resourcePath": "objects\\obj_rifle_shot\\obj_rifle_shot.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -3399,6 +3415,14 @@
             }
         },
         {
+            "Key": "5bbfa56c-0e71-4935-ae76-271a1e63b521",
+            "Value": {
+                "id": "992f3dcb-a910-4f84-939a-115849a5ab09",
+                "resourcePath": "scripts\\scr_create_rifle_shot\\scr_create_rifle_shot.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5bc3e798-49ce-4ab1-b176-4c61c452c6e2",
             "Value": {
                 "id": "ad3a0d1c-751d-462c-a240-426890bb4a8a",
@@ -3956,6 +3980,14 @@
                 "id": "1bff13c8-7b7e-4c92-ad3c-2f2370eb30d1",
                 "resourcePath": "scripts\\scr_find_navigation_target_to_construction\\scr_find_navigation_target_to_construction.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "6a8b22b6-8b70-408f-8527-ceb533f64d43",
+            "Value": {
+                "id": "bc4120db-7e64-4c67-b390-64bc94411e6b",
+                "resourcePath": "sprites\\spr_inv_rifle\\spr_inv_rifle.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -9399,6 +9431,7 @@
         "b7908597-968b-4e3d-84f2-d91339e12432",
         "35cf87e2-1289-4af8-8428-5fb9fd9a4665",
         "9f834e5e-dcd3-4b06-9ac5-e6458ceb1c44",
+        "5bbfa56c-0e71-4935-ae76-271a1e63b521",
         "f9176c13-a1a0-4ef9-8723-411db0c23549",
         "986c676f-d487-4015-8f81-d2c6d7683ae9",
         "c51c6d30-8e70-4301-b376-88969f8c2c09",
@@ -9421,6 +9454,7 @@
         "ddb654f4-9003-4846-a1aa-71fb76cf8944",
         "cbb867c1-cd0f-4fab-af83-4122ff513ce7",
         "96e298cf-9226-4f4b-bc1b-f46a3be2e639",
+        "027679d4-8317-4863-b3f4-dec7aec6b16a",
         "b53358c1-f5b8-4994-adf7-728cea19b95e",
         "672cc540-45a9-415c-8519-bc865afe2859",
         "af6f8a0d-ff88-453f-bcaf-22e42e2a533b",

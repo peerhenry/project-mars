@@ -8,7 +8,8 @@ var size = scr_item_size(arg_item);
 
 // Find a space in astronaut inventory for item
 var space = -1;
-if(size == 2) space = scr_inventory_get_big_space(arg_inventory);
+if(size == 2) space = scr_inventory_get_two_space(arg_inventory);
+else if(size == 4) space = scr_inventory_get_big_space(arg_inventory);
 else space = scr_inventory_get_space(arg_inventory);
 
 if(space < 0) return false;
@@ -18,6 +19,10 @@ var inv_x = space >> 8;
 var inv_y = space & 255;
 // show_debug_message("INSERTING INTO: " + string(inv_x) + " " + string(inv_y)); // DEBUG
 if(size == 2)
+{
+	ds_grid_set_region(arg_inventory, inv_x, inv_y, inv_x + 1, inv_y, macro_inventory_occupied);
+}
+else if(size == 4)
 {
 	ds_grid_set_region(arg_inventory, inv_x, inv_y, inv_x + 1, inv_y + 1, macro_inventory_occupied);
 }
