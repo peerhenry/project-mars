@@ -2,7 +2,8 @@ scr_trace("scr_build_new");
 var ghost = global.construction_ghost;
 var valid = ghost[?macro_ghost_valid];
 var payable = ghost[?macro_ghost_payable];
-var alert_player = script_container_resolve(global.script_container, "alert_player")
+var script_container = global.script_container
+var alert_player = script_container_resolve(script_container, "alert_player")
 if(!valid) script_execute(alert_player, "Invalid construction.");
 if(!payable) script_execute(alert_player, "Insufficient building materials.");
 var can_construct = valid && payable;
@@ -126,6 +127,9 @@ if(cell_count > 0 && ds_list_size(new_instances) > 0)
 	}
 	
 	if(construct_type == macro_destruct_safe || construct_type == macro_destruct_room) scr_handle_new_destruction(new_construction);
+	
+	var play_sound = resolve(script_container, "play_sound");
+	script_execute(play_sound, sound_fx_build_1);
 }
 else
 {

@@ -3,8 +3,6 @@ event_inherited();
 
 // inventory
 inventory = ds_grid_create(3,3);
-scr_inventory_insert(inventory, macro_inventory_pistol);
-scr_inventory_insert(inventory, macro_inventory_rifle);
 
 // tasks
 assigned_object = noone;

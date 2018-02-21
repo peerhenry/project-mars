@@ -33,3 +33,5 @@ auto_sleep_level = global.auto_sleep_level;
 var is_inside = position_meeting(x, y, obj_base_tile);
 is_outside = !is_inside;
 scr_set_suit(id, !is_inside);
+
+scr_inventory_insert(inventory, macro_inventory_pistol);

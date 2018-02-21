@@ -1,8 +1,6 @@
 /// @arg destruction
 var arg_destruction = argument0;
 
-show_debug_message("handling new destruction...");
-
 var deletions = ds_list_create();
 var construction_rechecks = ds_list_create();
 
@@ -35,6 +33,7 @@ for(var n = 0; n < count; n++) // loop over cells
 		{
 			show_error("No construction instance for: " + object_get_name(removal.object_index), true)
 		}
+		
 		if(ds_list_find_index(construction_rechecks, constr) == -1) ds_list_add(construction_rechecks, constr);
 		var construction_cells_list = constr[? construction_cells];
 		var construction_cell_count = ds_list_size(construction_cells_list);
@@ -107,17 +106,24 @@ for(var n = 0; n<ds_list_size(construction_rechecks); n++)
 	var cells = next_constr[?construction_cells];
 	var current_mdu_req = next_constr[?construction_required_mdu_count];
 	var req_mdu_count = scr_calculate_required_mdu_count(cells);
-	if(current_mdu_req != req_mdu_count)
+	if(req_mdu_count == 0)
 	{
-		var diff = current_mdu_req - req_mdu_count;
-		ds_map_replace(next_constr, construction_required_mdu_count, req_mdu_count);
-		var rem = next_constr[?construction_required_mdu_remaining];
-		ds_map_replace(next_constr, construction_required_mdu_remaining, rem - diff);
+		scr_cancel_construction(global.script_container, constr);
 	}
-	// update build state & build time
-	var required_metal = next_constr[?construction_required_metal];
-	var new_build_time = scr_calculate_build_time(req_mdu_count, required_metal);
-	ds_map_replace(next_constr, construction_time, new_build_time);
+	else
+	{
+		if(current_mdu_req != req_mdu_count)
+		{
+			var diff = current_mdu_req - req_mdu_count;
+			ds_map_replace(next_constr, construction_required_mdu_count, req_mdu_count);
+			var rem = next_constr[?construction_required_mdu_remaining];
+			ds_map_replace(next_constr, construction_required_mdu_remaining, rem - diff);
+		}
+		// update build state & build time
+		var required_metal = next_constr[?construction_required_metal];
+		var new_build_time = scr_calculate_build_time(req_mdu_count, required_metal);
+		ds_map_replace(next_constr, construction_time, new_build_time);
+	}
 }
 
 ds_list_destroy(construction_rechecks);
