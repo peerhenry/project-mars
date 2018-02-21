@@ -14,7 +14,8 @@
         "2fee12d4-bc99-4372-bbcc-4c8c33af91c9",
         "e3b4c4b9-911e-4715-89ab-788ca5093fa5",
         "9ad5ce57-8da1-4020-9476-7b803ba5b69e",
-        "c57ce30a-ab53-4412-93b8-b009d7037b5e"
+        "c57ce30a-ab53-4412-93b8-b009d7037b5e",
+        "48f259bd-7c90-4bae-a5f6-a66e34345b16"
     ],
     "filterType": "GMObject",
     "folderName": "inside",

@@ -11,7 +11,7 @@ scr_stop_moving(astro);
 // assert
 with(astro)
 {
-	assert_false(is_walking, "is walking");
+	assert_false(is_moving, "is walking");
 	assert_equal(0, image_speed, "image_speed");
 	assert_equal(0, image_index, "image_index");
 	assert_equal(1, path_position, "path_position");

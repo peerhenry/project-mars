@@ -7,54 +7,32 @@ var arg_wear = argument1;
 with(arg_astro)
 {
 	wears_suit = arg_wear;
-	if(arg_wear)
+	var sprite_set = scr_get_sprite_set(id);
+
+	// update sprite and mask
+	switch(sprite_index)
 	{
-		sprite_mask_down = spr_suit_mask_down;
-		sprite_mask_right = spr_suit_mask_right;
-		sprite_mask_up = spr_suit_mask_up;
-		switch(sprite_index)
-		{
-			case sprite_active_down: 
-				sprite_index = sprite_down; 
-				mask_sprite = sprite_mask_down;
-				break;
-			case sprite_active_right: 
-				sprite_index = sprite_right; 
-				mask_sprite = sprite_mask_right;
-				break;
-			case sprite_active_up: 
-				sprite_index = sprite_up;
-				mask_sprite = sprite_mask_up;
-				break;
-		}
-		sprite_active_down = sprite_down;
-		sprite_active_right = sprite_right;
-		sprite_active_up = sprite_up;
-		mask_color = mask_color_suit;
+		case sprite_down:
+			sprite_index = sprite_set[0]; 
+			mask_sprite = sprite_set[3];
+			break;
+		case sprite_right:
+			sprite_index = sprite_set[1]; 
+			mask_sprite =  sprite_set[4];
+			break;
+		case sprite_up:
+			sprite_index = sprite_set[2];
+			mask_sprite = sprite_set[5];
+			break;
 	}
-	else
-	{
-		sprite_mask_down = spr_male_mask_down;
-		sprite_mask_right = spr_male_mask_right;
-		sprite_mask_up = spr_male_mask_up;
-		switch(sprite_index)
-		{
-			case sprite_active_down: 
-				sprite_index = sprite_suitless_down; 
-				mask_sprite = sprite_mask_down;
-				break;
-			case sprite_active_right: 
-				sprite_index = sprite_suitless_right; 
-				mask_sprite = sprite_mask_right;
-				break;
-			case sprite_active_up: 
-				sprite_index = sprite_suitless_up;
-				mask_sprite = sprite_mask_up;
-				break;
-		}
-		sprite_active_down = sprite_suitless_down;
-		sprite_active_right = sprite_suitless_right;
-		sprite_active_up = sprite_suitless_up;
-		mask_color = mask_color_clothes;
-	}
+	sprite_down = sprite_set[0];
+	sprite_right = sprite_set[1];
+	sprite_up = sprite_set[2];
+	sprite_mask_down = sprite_set[3];
+	sprite_mask_right = sprite_set[4];
+	sprite_mask_up = sprite_set[5];
+	
+	// update mask color
+	if(arg_wear) mask_color = mask_color_suit;
+	else mask_color = mask_color_clothes;
 }

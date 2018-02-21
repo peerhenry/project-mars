@@ -67,9 +67,10 @@ if(constr_type != noone) // BUILD MODE
 
 #region ASTRONAUT SELECT/ORDERS INPUT
 
-var just_selected_any_astro = false;
+var just_selected_any_entity = false;
+var selection_includes_astro = false;
 
-if(!is_dragging)
+if( !is_dragging )
 {
 	// LEFT CLICK: set click origin for dragging
 	if( mouse_check_button_pressed(mb_left) )
@@ -82,8 +83,12 @@ if(!is_dragging)
 		// deselect everything
 		scr_hide_categories();
 		scr_hide_all_panels();
-		var hover_astro = instance_position(mouse_x, mouse_y, obj_astronaut_playable);
-		if(hover_astro != noone) hover_astro.show_details = true;
+		var hover_actor = instance_position(mouse_x, mouse_y, obj_astronaut_playable);
+		if(
+			hover_actor != noone
+			&& object_is_ancestor(hover_actor.object_index, obj_astronaut)
+			&& hover_actor.owner = macro_player
+		) hover_actor.show_details = true;
 		else scr_command(mouse_x, mouse_y);
 	}
 	
@@ -92,17 +97,13 @@ if(!is_dragging)
 	if(mouse_check_button_released(mb_left))
 	{
 		scr_hide_all_panels();
-		var single_select_astro = instance_position(mouse_x, mouse_y, obj_astronaut_playable);
-		if(single_select_astro != noone)
+		var single_select_ent = instance_position(mouse_x, mouse_y, obj_movable);
+		if(single_select_ent != noone && single_select_ent.owner == macro_player)
 		{
-			// deselect other astronauts
-			with(obj_astronaut_playable)
-			{
-				is_selected = false;
-			}
-			
-			single_select_astro.is_selected = true;
-			just_selected_any_astro = true;
+			scr_deselect_all();
+			single_select_ent.is_selected = true;
+			just_selected_any_entity = true;
+			if(object_is_ancestor(single_select_ent.object_index, obj_astronaut)) selection_includes_astro = true;
 		}
 	}
 }
@@ -116,23 +117,27 @@ else if(mouse_check_button_released(mb_left)) // - DRAG SELECT
 	// selection rectangle must contain a tile center
 	if(rec_right - rec_left > 15 || rec_bottom - rec_top > 15)
 	{
-		with(obj_astronaut_playable)
+		with(obj_movable)
 		{
-			if(
-				x >= rec_left && x <= rec_right &&
-				y >= rec_top && y <= rec_bottom)
+			if(owner == macro_player)
 			{
-				is_selected = true;
-				just_selected_any_astro = true;
-			}
-			else{
-				is_selected = false;
+				if(
+					x >= rec_left && x <= rec_right &&
+					y >= rec_top && y <= rec_bottom)
+				{
+					is_selected = true;
+					just_selected_any_entity = true;
+					if(object_is_ancestor(object_index, obj_astronaut)) selection_includes_astro = true;
+				}
+				else{
+					is_selected = false;
+				}
 			}
 		}
 	}
 	else // selection rectangle is so small, it only selects if it is contained in astronaut BB
 	{
-		with(obj_astronaut)
+		with(obj_movable)
 		{
 			if(owner == macro_player)
 			{
@@ -141,7 +146,8 @@ else if(mouse_check_button_released(mb_left)) // - DRAG SELECT
 					rec_top > y - 15 && rec_bottom < y + 15)
 				{
 					is_selected = true;
-					just_selected_any_astro = true;
+					just_selected_any_entity = true;
+					if(object_is_ancestor(object_index, obj_astronaut)) selection_includes_astro = true;
 				}
 				else{
 					is_selected = false;
@@ -156,17 +162,9 @@ else if(mouse_check_button_released(mb_left)) // - DRAG SELECT
 #endregion
 
 // play selection sounds
-if( just_selected_any_astro )
+if( just_selected_any_entity )
 {
-	any_astronauts_selected = true;
-	scr_play_selection_sound();
+	if(selection_includes_astro) scr_play_selection_sound();
 	exit;
 }
-else if(mouse_check_button_released(mb_left))
-{
-	// deselect all astronauts
-	with(obj_astronaut_playable)
-	{
-		is_selected = false;
-	}
-}
+else if(mouse_check_button_released(mb_left)) scr_deselect_all();

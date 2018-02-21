@@ -108,12 +108,14 @@ if(mouse_over_HUD || global.hovering_over_HUD)
 	exit;
 }
 
-// hovers over astronaut
+// ---  Check hovers over selectable 
+
+// hovers over movable
 var hovers_over_selectable = false;
-var astro = instance_position(mouse_x, mouse_y, obj_astronaut);
-if(astro != noone)
+var entity = instance_position(mouse_x, mouse_y, obj_movable);
+if(entity != noone)
 {
-	hovers_over_selectable = astro.owner == macro_player;
+	hovers_over_selectable = entity.owner == macro_player;
 }
 
 // hovers over grid selector
@@ -126,15 +128,17 @@ if(!hovers_over_selectable)
 	}
 }
 
+// --- End Check hovers over selectable
+
 if(!hovers_over_selectable)
 {
 	// Grid selectors, fridges and sensors are selectable
-	if(scr_any_astronauts_selected())
+	if(scr_any_task_actors_selected())
 	{
 		var hovers_over_enemy = false;
-		if(astro != noone)
+		if(entity != noone)
 		{
-			hovers_over_enemy = astro.owner == macro_enemy;
+			hovers_over_enemy = entity.owner == macro_enemy;
 		}
 
 		if(!hovers_over_enemy)

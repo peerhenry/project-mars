@@ -6,9 +6,9 @@ with(arg_astronaut)
 {
 	if(path_position > 0 && path_position < 1)
 	{
-		if(!is_walking) is_walking = true;
+		if(!is_moving) is_moving = true;
 	}
-	else if(is_walking && path_position == 1)
+	else if(is_moving && path_position == 1)
 	{
 		scr_stop_moving(id);
 		path_end();

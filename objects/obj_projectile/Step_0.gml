@@ -9,13 +9,14 @@ if(new_j != jj)
 
 if(path_position == 1)
 {
-	var unlucky_astronaut = instance_position(x, y, obj_astronaut); // HIT
-	if(unlucky_astronaut != noone)
+	//var unlucky_entity = instance_position(x, y, obj_astronaut);
+	var unlucky_entity = instance_position(x, y, obj_movable);
+	if(unlucky_entity != noone)
 	{
-		with(unlucky_astronaut)
+		with(unlucky_entity)
 		{
-			astronaut_health -= other.damage;
-			if(astronaut_health < 0) astronaut_health = 0;	
+			entity_health -= other.damage;
+			if(entity_health < 0) entity_health = 0;	
 		}
 	}
 	else

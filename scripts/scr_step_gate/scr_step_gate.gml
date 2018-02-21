@@ -3,7 +3,7 @@ var arg_astronaut = argument0;
 
 with(arg_astronaut)
 {
-	if(is_walking)
+	if(is_moving)
 	{
 		// must be a rectangle because otherwise room detection may be flawed.
 		var colliding_gate = collision_rectangle(x-13, y-13, x+13, y+13, obj_gate, false, true);

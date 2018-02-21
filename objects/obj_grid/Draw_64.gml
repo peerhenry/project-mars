@@ -1,10 +1,8 @@
 if(global.selected_grid == id)
 {
-	var width = 384;
-	var height = 160;
-	var tl_x = display_get_gui_width() - width;
+	var tl_x = display_get_gui_width() - width - ap_offset;
 	var tl_y = 0;
-
+	
 	// panel
 	var tl_x2 = tl_x + width;
 	var tl_y2 = tl_y + height;

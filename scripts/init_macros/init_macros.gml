@@ -101,3 +101,9 @@
 // ghost drawing stuff
 #macro macro_ghost_alpha 0.42
 #macro macro_sensor_ghost_alpha 0.16
+
+// movable orientations
+#macro macro_up 1
+#macro macro_down 2
+#macro macro_right 3
+#macro macro_left 4

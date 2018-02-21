@@ -13,7 +13,7 @@ assert_false(astro.is_moving_through_gate, "is_moving_through_gate");
 // 2. walking
 
 // arrange
-astro.is_walking = true;
+astro.is_moving = true;
 // act
 scr_step_gate(astro);
 // assert

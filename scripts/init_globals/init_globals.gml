@@ -31,6 +31,17 @@ global.suit_closet_replenishment = init_global_real(section, "suit_closet_replen
 global.suit_o2_depletion_speed = init_global_real(section, "suit_depletion_speed", 0.001); // prev 0.01
 global.astro_oxygen_consumption = init_global_real(section, "astronaut_consumption", 0.01); // prev 0.1
 
+// -- HUNGER
+section = "food";
+global.hunger_speed = init_global_real(section, "hunger_speed", 0.01);
+global.starvation_speed = init_global_real(section, "starvation_speed", 0.01);
+global.auto_eat_hunger_level = init_global_real(section, "auto_eat_hunger_level", 20);
+
+// - SLEEP
+section = "sleep";
+global.auto_sleep_level = init_global_real(section, "hunger_sleep_level", 0.01);
+global.sleep_speed = init_global_real(section, "sleep_speed", 0.06);
+
 // -- OXYGEN RENDERING
 section = "oxygen_graphics";
 global.oxygen_empty_level = init_global_real(section, "red_stripes_percentage", 1); // if oxygen_level falls below this number, red stripes are drawn.
@@ -84,3 +95,4 @@ global.selected_grid = noone;
 
 // colors
 global.enemy_suit_color = [0,0,0,1];
+global.laser_sound_time = 0;

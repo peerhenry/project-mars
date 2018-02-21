@@ -4,7 +4,7 @@ var arg_astronaut = argument0;
 with(arg_astronaut)
 {
 	//mp_grid_add_cell(navgrid, occ_i, occ_j); // dirty fix for when another astronaut walks across this one to prevent this cell from being cleared
-	if(is_walking)
+	if(is_moving)
 	{
 		// update navgrid
 		var navgrid = scr_get_nav_grid();

@@ -7,5 +7,4 @@ event_inherited();
 sprite_down = spr_cart_down;
 sprite_right = spr_cart_right;
 sprite_up = spr_cart_up;
-oxygen_consumption = 0;
 image_speed = 1;

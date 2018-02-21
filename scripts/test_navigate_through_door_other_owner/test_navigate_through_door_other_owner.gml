@@ -10,7 +10,7 @@ var enemy = scr_create_enemy_astronaut(scr_gi_to_rc(2), scr_gi_to_rc(2));
 scr_navigate(enemy, scr_gi_to_rc(2), scr_gi_to_rc(10));
 
 // assert
-assert_false(enemy.is_walking, "is walking");
+assert_false(enemy.is_moving, "is walking");
 
 // cleanup
 with(obj_constructable) instance_destroy();

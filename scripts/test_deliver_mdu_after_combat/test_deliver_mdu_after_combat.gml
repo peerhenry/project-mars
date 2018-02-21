@@ -7,9 +7,9 @@ var astro = instance_create_depth(0,0,0,obj_astronaut_playable);
 astro.auto_construct = true;
 scr_inventory_insert(astro.inventory, macro_item_mdu);
 var enemy = scr_create_enemy_astronaut(64,64);
-enemy.astronaut_health = 1;
+enemy.entity_health = 1;
 astro.target = enemy;
-enemy.astronaut_health = 0;
+enemy.entity_health = 0;
 with(enemy) event_perform(ev_step, 0); // should kill the enemy
 with(astro) event_perform(ev_alarm, 0); // should cancel combat state with enemy
 

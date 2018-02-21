@@ -1,22 +1,14 @@
 /// @param astronaut
-var astronaut = argument0;
+var arg_entity = argument0;
 
-// create corpse
-var create_corpse = script_container_resolve(astronaut.script_container, "create_corpse");
-script_execute(create_corpse, astronaut);
-
-scr_cancel_all(astronaut);
-with(astronaut)
+switch(arg_entity.object_index)
 {
-	has_died = true;
-	if(object_index == obj_astronaut_playable)
-	{
-		if(!audio_is_playing(sound_fx_flatline))
-		{
-			var play_sound = script_container_resolve(script_container, "play_sound");
-			script_execute(play_sound, sound_fx_flatline);
-		}
-	}
+	case obj_astronaut:
+	case obj_astronaut_playable:
+		scr_kill_astronaut(arg_entity);
+		break;
+	case obj_cart:
+		break;
+	case obj_robot:
+		break;
 }
-
-instance_destroy(astronaut);

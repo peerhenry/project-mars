@@ -31,3 +31,9 @@ cum_tp = 0;
 cum_td = 0;
 cum_no = 0;
 cum_s = 0;
+
+// gui panel
+width = 384;
+height = 160;
+ap_offset = 0;
+with(obj_HUD) other.ap_offset = ap_w + ap_margin;

@@ -13,6 +13,7 @@
     "bboxmode": 2,
     "colkind": 1,
     "coltolerance": 0,
+    "edgeFiltering": false,
     "frames": [
         {
             "id": "4767ea93-899b-4d2e-bc91-5ac2fc92f2a1",
@@ -83,7 +84,7 @@
             "mvc": "1.0",
             "SpriteId": "16c9babd-83d5-493c-8e72-5405061e4ed3",
             "blendMode": 0,
-            "isLocked": false,
+            "isLocked": true,
             "name": "shade",
             "opacity": 20,
             "visible": true
@@ -101,8 +102,10 @@
         }
     ],
     "origin": 9,
+    "originLocked": false,
     "playbackSpeed": 0,
     "playbackSpeedType": 0,
+    "premultiplyAlpha": false,
     "sepmasks": false,
     "swatchColours": null,
     "swfPrecision": 2.525,

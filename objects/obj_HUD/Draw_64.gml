@@ -85,7 +85,7 @@ with(obj_astronaut_playable)
 	// draw healthbat
 	var healthbar_x = name_x;
 	var healthbar_y = ap_bottom - 2 - other.ap_padding;
-	draw_healthbar(healthbar_x, healthbar_y, name_x + other.ap_name_w, healthbar_y + 2, astronaut_health, c_black, c_red, c_lime, 0, true, false);
+	draw_healthbar(healthbar_x, healthbar_y, name_x + other.ap_name_w, healthbar_y + 2, entity_health, c_black, c_red, c_lime, 0, true, false);
 	
 	// draw auto icons
 	var counter = 0;

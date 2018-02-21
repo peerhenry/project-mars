@@ -1,6 +1,8 @@
 /// @arg astronaut
-debug_instance_inherits(argument0, obj_astronaut);
 var arg_astronaut = argument0;
+var oi = arg_astronaut.object_index;
+
+if(oi != obj_astronaut && !object_is_ancestor(oi, obj_astronaut)) exit;
 
 with(arg_astronaut)
 {

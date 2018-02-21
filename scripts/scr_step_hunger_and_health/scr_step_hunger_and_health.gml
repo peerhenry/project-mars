@@ -5,15 +5,15 @@ with(arg_astronaut)
 {
 	if(food_level == 0)
 	{
-		astronaut_health -= 0.02;
+		entity_health -= global.starvation_speed;
 	}
 	else
 	{
-		food_level -= 0.01;
+		food_level -= global.hunger_speed;
 		if(food_level < 0) food_level  = 0;
 	}
 	
-	if(food_level < 20 && auto_eat)
+	if(food_level < auto_eat_level && auto_eat)
 	{
 		// try to eat
 		var can_eat = scr_eat(id);

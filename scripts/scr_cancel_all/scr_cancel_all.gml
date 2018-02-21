@@ -1,9 +1,10 @@
 /// @descr cancels action, unassigns task and cancels walking
-/// @arg astronaut
-var arg_astronaut = argument0;
-// debug_instance_inherits(arg_astronaut, obj_astronaut);
+/// @arg entity
+var arg_entity = argument0;
 
-with(arg_astronaut)
+if( !object_is_ancestor(arg_entity.object_index, obj_task_actor) ) exit;
+
+with(arg_entity)
 {
 	switch(current_action)
 	{
@@ -25,5 +26,5 @@ with(arg_astronaut)
 	target = noone;
 	current_action = astronaut_action.idle;
 	
-	if(is_walking) scr_cancel_walking(id);
+	if(is_moving) scr_cancel_walking(id);
 }

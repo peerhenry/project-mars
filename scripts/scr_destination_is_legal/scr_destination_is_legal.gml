@@ -6,7 +6,7 @@ var arg_j = scr_rc_to_gi(arg_y);
 
 if(arg_i == arg_astronaut.dest_i && arg_j == arg_astronaut.dest_j) return true; // astronaut is allowed to go to its own position.
 
-with(obj_astronaut)
+with(obj_movable)
 {
 	if(arg_i == dest_i && arg_j == dest_j) return false; // another astronaut occupies the target
 }

@@ -4,7 +4,7 @@ var arg_x = argument0;
 var arg_y = argument1;
 
 var orders_given = false;
-with(obj_astronaut_playable)
+with(obj_movable)
 {
 	if(is_selected)
 	{

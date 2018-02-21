@@ -8,7 +8,7 @@ with(astro)
 {
 	old_i = occ_i;
 	old_j = occ_j;
-	is_walking = true;
+	is_moving = true;
 	x = 100;
 	y = 100;
 }

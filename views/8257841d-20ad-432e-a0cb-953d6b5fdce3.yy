@@ -8,7 +8,10 @@
         "64d98b71-32a6-4081-a8a2-f9e228287d1c",
         "1d6cded2-a792-4f97-a7ae-64c3b67789e8",
         "1b6b59d8-bccc-4f86-a8e6-e21c7bd5a65d",
-        "bfff74d0-2a9a-4c21-9b59-7edb8b3c8610"
+        "bfff74d0-2a9a-4c21-9b59-7edb8b3c8610",
+        "09daa3ea-93d1-4d45-b71a-d3afdcd7dc4b",
+        "ca4a170e-6dae-455d-8f3c-d3afee922fb5",
+        "bd7dccff-7cda-4347-9929-b5d08c275f4d"
     ],
     "filterType": "GMObject",
     "folderName": "astronauts",

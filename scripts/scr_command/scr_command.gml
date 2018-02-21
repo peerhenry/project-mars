@@ -8,14 +8,16 @@ var script_container = global.script_container;
 
 var orders_given = false; // boolean used for playing sound
 var any_selected = false;
+var selectable_is_astronaut = false;
 
-// Cancel active task for selected astronauts
-with(obj_astronaut_playable)
+// Cancel active task for selected entities
+with(obj_movable)
 {
 	if(is_selected)
 	{
 		any_selected = true;
 		scr_cancel_all(id);
+		if(object_is_ancestor(object_index, obj_astronaut)) selectable_is_astronaut = true;
 	}
 }
 if(!any_selected) exit;
@@ -24,15 +26,11 @@ if(!any_selected) exit;
 var el_assignable = instance_position(arg_x, arg_y, obj_assignable);
 
 // Check if player clicked an enemy
-var enemy = instance_position(arg_x, arg_y, obj_astronaut);
+var enemy = instance_position(arg_x, arg_y, obj_movable);
 
 if(enemy == noone)
 {
-	var constr = scr_enemy_component_position(arg_x, arg_y);
-	if(constr != noone)
-	{
-		enemy = constr;
-	}
+	enemy = scr_enemy_component_position(arg_x, arg_y);
 }
 else if(enemy.owner != macro_enemy)
 {
@@ -59,7 +57,7 @@ else if( !position_meeting(arg_x, arg_y, obj_gate) )	// Or move
 }
 
 
-if(orders_given)
+if(orders_given && selectable_is_astronaut)
 {
 	var s = irandom(2);
 	var play_sound = script_container_resolve(script_container, "play_sound");

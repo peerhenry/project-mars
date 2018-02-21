@@ -38,7 +38,7 @@ if ( show_details )
 	var counter = 0;
 	var health_line_y = tl_y + 128 + counter*24;
 	draw_text(x_or, health_line_y, "Health");
-	draw_healthbar(bar_x_or, health_line_y - half_bar, tl_x + width - 16, health_line_y + half_bar, astronaut_health, 0, c_red, c_green, 0, false, false);
+	draw_healthbar(bar_x_or, health_line_y - half_bar, tl_x + width - 16, health_line_y + half_bar, entity_health, 0, c_red, c_green, 0, false, false);
 	counter++;
 	
 	if(wears_suit)
@@ -94,7 +94,7 @@ if ( show_details )
 		draw_text(x_or, after_grid_y, "construction: " + string(construction));
 		draw_text(x_or, after_grid_y+24, "current_action: " + scr_action_to_string(current_action));
 		draw_text(x_or, after_grid_y+48, "assigned_object: " + string(assigned_object));
-		draw_text(x_or, after_grid_y+72, "is_walking: " + string(is_walking));
+		draw_text(x_or, after_grid_y+72, "is_moving: " + string(is_moving));
 		draw_text(x_or, after_grid_y+96, "path_position: " + string(path_position));
 		draw_text(x_or, after_grid_y+120, "target: " + string(target));
 	}

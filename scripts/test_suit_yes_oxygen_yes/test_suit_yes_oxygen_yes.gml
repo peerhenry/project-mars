@@ -20,7 +20,7 @@ scr_step_oxygen_and_health(astro);
 with astro
 {
 	assert_equal(100, suit_oxygen, "suit_oxygen");
-	assert_equal(100, astronaut_health, "astronaut_health");
+	assert_equal(100, entity_health, "astronaut health");
 }
 //cleanup
 instance_destroy(astro);

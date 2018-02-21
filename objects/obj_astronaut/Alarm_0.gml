@@ -1,6 +1,6 @@
 /// @description Shoot
 
-if(is_walking)
+if(is_moving)
 {
 	alarm[0] = 30*global.time_to_shoot + round(random_range(-5,5));
 	exit;
@@ -32,7 +32,7 @@ if(target_is_shootable)
 }
 else	// See if there is an enemy around to shoot
 {
-	if(!is_walking)
+	if(!is_moving)
 	{
 		if(auto_target == noone)
 		{

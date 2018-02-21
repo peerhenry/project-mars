@@ -3,26 +3,26 @@ var arg_astronaut = argument0;
 
 with(arg_astronaut)
 {
-	if(is_walking)
+	if(is_moving)
 	{
 		image_speed = 1.2;
 		var dx = x - prev_x;
 		var dy = y - prev_y;
 		if(dx > 0)
 		{
-			moveDir = right;
+			moveDir = macro_right;
 		}
 		else if(dx < 0)
 		{
-			moveDir = left;
+			moveDir = macro_left;
 		}
 		if(dy < 0)
 		{
-			if(dy < dx - 0.1) moveDir = up;
+			if(dy < dx - 0.1) moveDir = macro_up;
 		}
 		else if(dy > 0 && dy > dx + 0.1)
 		{
-			moveDir = down;
+			moveDir = macro_down;
 		}
 	
 		prev_x = x;
@@ -30,39 +30,39 @@ with(arg_astronaut)
 	
 		switch(moveDir)
 		{
-			case up:
+			case macro_up:
 			{
-				if(sprite_index != sprite_active_up)
+				if(sprite_index != sprite_up)
 				{
-					sprite_index = sprite_active_up;
+					sprite_index = sprite_up;
 					mask_sprite = sprite_mask_up;
 				}
 				break;
 			}
-			case down:
+			case macro_down:
 			{
-				if(sprite_index != sprite_active_down)
+				if(sprite_index != sprite_down)
 				{
-					sprite_index = sprite_active_down;
+					sprite_index = sprite_down;
 					mask_sprite = sprite_mask_down;
 				}
 				break;
 			}
-			case left:
+			case macro_left:
 			{
-				if(sprite_index != sprite_active_right || image_xscale != -1)
+				if(sprite_index != sprite_right || image_xscale != -1)
 				{
-					sprite_index = sprite_active_right;
+					sprite_index = sprite_right;
 					mask_sprite = sprite_mask_right;
 					image_xscale = -1;
 				}
 				break;
 			}
-			case right:
+			case macro_right:
 			{
-				if(sprite_index != sprite_active_right || image_xscale != 1)
+				if(sprite_index != sprite_right || image_xscale != 1)
 				{
-					sprite_index = sprite_active_right;
+					sprite_index = sprite_right;
 					mask_sprite = sprite_mask_right;
 					image_xscale = 1;
 				}
@@ -72,7 +72,7 @@ with(arg_astronaut)
 	}
 	else
 	{
-		image_speed = 0;
+		if(object_index != obj_cart) image_speed = 0; // cart sprite keeps moving
 		image_index = 0;
 	}
 }

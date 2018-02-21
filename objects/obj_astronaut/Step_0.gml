@@ -1,19 +1,22 @@
 /// @description Update astronaut
 
+event_inherited();
+if(has_died) exit;
+scr_step_energy_and_speed(id);
+scr_step_hunger_and_health(id);
+scr_step_oxygen_and_health(id);
+
+/* OLD: todo: remove
 if(has_died)
 {
 	return;
 }
 
 // Kill if health reached zero
-if(astronaut_health <= 0)
+if(entity_health <= 0)
 {
-	is_walking = false;
-	path_end();
-	if(assigned_object != noone) scr_unassign_task(assigned_object);
-	// die
 	scr_kill(id); // destroys astronaut and replaces it with a corpse object.
-	return;
+	exit;
 }
 
 // Update energy and speed
@@ -35,3 +38,4 @@ scr_step_path(script_container, id);
 
 scr_step_hunger_and_health(id);
 scr_step_oxygen_and_health(id);
+*/

@@ -222,6 +222,18 @@ init_construction_set_action(build_validation_i.inside, build_validation_o.vacan
 init_construction_new_single(macro_printer, "3D Printer", spr_printer_hud, 1, macro_category_inside);
 init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_tall_layer, obj_printer,			noone, 100);
 
+// # med bed
+init_construction_new_multitile(macro_med_bed, "med bed", spr_med_bed_hud, 2, macro_category_inside);
+init_construction_set_tile(0, 0, 1); // di, dj, action_count
+init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_med_bed,		noone, 100);
+init_construction_set_tile(0, -1, 1); // di, dj, action_count
+init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	noone,			noone,			noone, 0);
+// rotation behavior: change sprite
+init_construction_set_rotation_parameter(macro_rotation_0, macro_sprite, spr_med_bed_vertical);
+init_construction_set_rotation_parameter(macro_rotation_1, macro_sprite, spr_med_bed_horizontal);
+init_construction_set_rotation_parameter(macro_rotation_2, macro_sprite, spr_med_bed_vertical_2);
+init_construction_set_rotation_parameter(macro_rotation_3, macro_sprite, spr_med_bed_horizontal_2);
+
 // List of active constructions:
 var active_constructions = ds_list_create();
 ds_list_destroy(global.active_constructions);
@@ -240,6 +252,7 @@ ds_list_add(active_constructions, macro_pump);
 ds_list_add(active_constructions, macro_cable);
 ds_list_add(active_constructions, macro_pipe);
 ds_list_add(active_constructions, macro_bed);
+ds_list_add(active_constructions, macro_med_bed);
 ds_list_add(active_constructions, macro_water_reservoir);
 ds_list_add(active_constructions, macro_hydroponics);
 if(debug_mode) // magic

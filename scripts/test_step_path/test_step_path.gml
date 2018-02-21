@@ -8,7 +8,7 @@ astro.path_position = 0.5;
 // act
 scr_step_path(global.script_container, astro);
 // assert
-assert_true(astro.is_walking, "is_walking");
+assert_true(astro.is_moving, "is_moving");
 
 // 2. At path end
 
@@ -17,7 +17,7 @@ astro.path_position = 1;
 // act
 scr_step_path(global.script_container, astro);
 // assert
-assert_false(astro.is_walking, "is_walking");
+assert_false(astro.is_moving, "is_moving");
 
 //cleanup
 instance_destroy(astro);

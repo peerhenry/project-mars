@@ -1,10 +1,12 @@
 /// @descr performs and updates the current action
 /// @arg astronaut
-var arg_astronaut = argument0;
-debug_instance_inherits(arg_astronaut, obj_astronaut);
+var arg_entity = argument0;
+debug_instance_inherits(arg_entity, obj_movable);
 scr_trace("Path end action!");
 
-with(arg_astronaut)
+if( !object_is_ancestor(arg_entity.object_index, obj_task_actor) ) exit;
+
+with(arg_entity)
 {
 	if(assigned_object != noone) // there is a task to perform at the end of the path.
 	{
@@ -22,7 +24,7 @@ with(arg_astronaut)
 				
 				break;
 			case astronaut_action.delivering_mdu:
-				scr_transfer_mdu(arg_astronaut.script_container, id, construction);
+				scr_transfer_mdu(arg_entity.script_container, id, construction);
 				if(scr_construction_is_ready(construction))
 				{
 					scr_update_astro_and_construction(id, construction, astronaut_action.constructing);

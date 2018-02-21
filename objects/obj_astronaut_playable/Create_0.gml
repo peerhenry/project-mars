@@ -1,6 +1,5 @@
 event_inherited();
 
-is_selected = false;
 show_details = false;
 hovering_over_details_panel = false;
 

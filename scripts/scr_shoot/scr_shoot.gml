@@ -31,13 +31,13 @@ with(shooter)
 		if(dy > -dx)
 		{
 			// look south
-			sprite_index = sprite_active_down;
+			sprite_index = sprite_down;
 			mask_sprite = sprite_mask_down;
 		}
 		else
 		{
 			// look east
-			sprite_index = sprite_active_right;
+			sprite_index = sprite_right;
 			mask_sprite = sprite_mask_right;
 			image_xscale = -1;
 		}
@@ -47,14 +47,14 @@ with(shooter)
 		if(dy > -dx)
 		{
 			// look west
-			sprite_index = sprite_active_right;
+			sprite_index = sprite_right;
 			mask_sprite = sprite_mask_right;
 			image_xscale = 1;
 		}
 		else
 		{
 			// look north
-			sprite_index = sprite_active_up;
+			sprite_index = sprite_up;
 			mask_sprite = sprite_mask_up;
 		}
 	}

@@ -1,0 +1,1 @@
+with(obj_movable) is_selected = false;
