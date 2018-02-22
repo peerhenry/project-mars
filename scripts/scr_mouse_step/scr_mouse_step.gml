@@ -82,13 +82,16 @@ if( !is_dragging )
 	{
 		// deselect everything
 		scr_hide_categories();
-		scr_hide_all_panels();
-		var hover_actor = instance_position(mouse_x, mouse_y, obj_astronaut_playable);
+		var hover_actor = instance_position(mouse_x, mouse_y, obj_task_actor);
 		if(
 			hover_actor != noone
 			&& object_is_ancestor(hover_actor.object_index, obj_astronaut)
 			&& hover_actor.owner = macro_player
-		) hover_actor.show_details = true;
+		)
+		{
+			scr_hide_all_panels();
+			hover_actor.show_details = true;
+		}
 		else scr_command(mouse_x, mouse_y);
 	}
 	
@@ -105,10 +108,23 @@ if( !is_dragging )
 			just_selected_any_entity = true;
 			if(object_is_ancestor(single_select_ent.object_index, obj_astronaut)) selection_includes_astro = true;
 		}
+		else if(single_select_ent == noone)
+		{
+			var single_select_ent = instance_position(mouse_x, mouse_y, obj_grid_selector);
+			if(single_select_ent != noone && single_select_ent.owner == macro_player)
+			{
+				with(single_select_ent)
+				{
+					global.selected_grid = scr_get_grid(id, grid_type_to_select);
+					is_selected = true;
+				}
+			}
+		}
 	}
 }
 else if(mouse_check_button_released(mb_left)) // - DRAG SELECT
 {
+	scr_hide_all_panels();
 	var rec_left = min(click_x, mouse_x);
 	var rec_right = max(click_x, mouse_x);
 	var rec_top = min(click_y, mouse_y);

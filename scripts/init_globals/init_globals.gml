@@ -39,17 +39,22 @@ global.auto_eat_hunger_level = init_global_real(section, "auto_eat_hunger_level"
 
 // - SLEEP
 section = "sleep";
-global.auto_sleep_level = init_global_real(section, "hunger_sleep_level", 0.01);
+global.auto_sleep_level = init_global_real(section, "auto_sleep_level", 20);
 global.sleep_speed = init_global_real(section, "sleep_speed", 0.06);
 
 // -- OXYGEN RENDERING
 section = "oxygen_graphics";
 global.oxygen_empty_level = init_global_real(section, "red_stripes_percentage", 1); // if oxygen_level falls below this number, red stripes are drawn.
 global.oxygen_max_alpha = init_global_real(section, "oxygen_max_alpha", 0.33); // for rendering low oxygen levels
-var o_r = init_global_real(section, "oxygen_bar_color_r", 55);
-var o_g = init_global_real(section, "oxygen_bar_color_g", 55);
+var o_r = init_global_real(section, "oxygen_bar_color_r", 100);
+var o_g = init_global_real(section, "oxygen_bar_color_g", 100);
 var o_b = init_global_real(section, "oxygen_bar_color_b", 255);
+
+// -- BAR COLORS
 global.oxygen_bar_color = make_color_rgb(o_r, o_g, o_b);
+global.health_bar_color = c_lime; // make_color_rgb(h_r, h_g, h_b);
+global.sleep_bar_color = c_yellow; // make_color_rgb(s_r, s_g, s_b);
+global.food_bar_color = c_orange; // make_color_rgb(f_r, f_g, f_b);
 
 // -- SHOOTING --
 section = "shooting";

@@ -82,10 +82,52 @@ with(obj_astronaut_playable)
 	draw_set_valign(fa_top);
 	draw_text(name_x, name_y, name);
 	
-	// draw healthbat
+	// draw need bars (vertically)
+	var oc = global.oxygen_bar_color;
+	var sc = global.sleep_bar_color;
+	var fc = global.food_bar_color;
+	
+	/*var obc = c_black;
+	var fbc = c_black;
+	var sbc = c_black;
+	if(energy < 20 && other.flash_counter > 15) sbc = c_red;
+	if(food_level < 20 && other.flash_counter > 15) fbc = c_red;*/
+	
 	var healthbar_x = name_x;
 	var healthbar_y = ap_bottom - 2 - other.ap_padding;
-	draw_healthbar(healthbar_x, healthbar_y, name_x + other.ap_name_w, healthbar_y + 2, entity_health, c_black, c_red, c_lime, 0, true, false);
+	
+	var bw = 3;
+	var bspace = 5;
+	var hby = healthbar_y-20;
+	draw_set_color(c_red);
+	// food_level bar
+	var hbx = name_x + other.ap_name_w - bw;
+	draw_healthbar(hbx, hby, hbx + bw, hby + 22, food_level, c_black, fc, fc, 3, true, true);
+	if(food_level < 20 && other.flash_counter > 15)
+	{
+		draw_rectangle(hbx - 1, hby - 1, hbx + bw + 1, hby + 22 + 1, true);
+	}
+	// sleep bar
+	hbx = hbx - bspace - bw;
+	draw_healthbar(hbx, hby, hbx + bw, hby + 22, energy, c_black, sc, sc, 3, true, true);
+	if(energy < 20 && other.flash_counter > 15)
+	{
+		draw_rectangle(hbx - 1, hby - 1, hbx + bw + 1, hby + 22 + 1, true);
+	}
+	// oxygen bar
+	hbx = hbx - bspace - bw;
+	draw_healthbar(hbx, hby, hbx + bw, hby + 22, suit_oxygen, c_black, oc, oc, 3, true, true);
+	if(suit_oxygen < 20 && other.flash_counter > 15)
+	{
+		draw_rectangle(hbx - 1, hby - 1, hbx + bw + 1, hby + 22 + 1, true);
+	}
+	
+	// draw healthbar
+	var hc = health_bar_color;
+	if(entity_health < 20) hc = c_red;
+	else if(entity_health < 100) hc = c_yellow;
+	draw_healthbar(healthbar_x, healthbar_y, hbx - bspace, healthbar_y + 2, entity_health, c_black, hc, hc, 0, true, true);
+	
 	
 	// draw auto icons
 	var counter = 0;
@@ -116,18 +158,20 @@ if(astro != noone)
 	draw_set_font(font_small);
 	var sw = string_width(astro.name);
 	var sh = string_height(astro.name);
+	var tt_x = window_mouse_x + 16;
+	var tt_y = window_mouse_y + 16;
 	// box
 	draw_set_color(c_dkgray);
 	draw_set_alpha(0.9);
-	draw_rectangle(window_mouse_x, window_mouse_y, window_mouse_x + sw + 8, window_mouse_y + sh + 8, false);
+	draw_rectangle(tt_x, tt_y, tt_x + sw + 8, tt_y + sh + 8, false);
 	// outline
 	draw_set_alpha(1.0);
 	draw_set_color(c_white);
-	draw_rectangle(window_mouse_x, window_mouse_y, window_mouse_x + sw + 8, window_mouse_y + sh + 8, true);
+	draw_rectangle(tt_x, tt_y, tt_x + sw + 8, tt_y + sh + 8, true);
 	// text
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
-	draw_text(window_mouse_x + 4, window_mouse_y + 4, astro.name);
+	draw_text(tt_x + 4, tt_y + 4, astro.name);
 }
 
 #endregion

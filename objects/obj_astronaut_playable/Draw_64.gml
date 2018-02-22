@@ -37,8 +37,11 @@ if ( show_details )
 	draw_set_valign(fa_middle);
 	var counter = 0;
 	var health_line_y = tl_y + 128 + counter*24;
-	draw_text(x_or, health_line_y, "Health");
-	draw_healthbar(bar_x_or, health_line_y - half_bar, tl_x + width - 16, health_line_y + half_bar, entity_health, 0, c_red, c_green, 0, false, false);
+	draw_text(x_or, health_line_y, "Health:");
+	var hc = health_bar_color;
+	if(entity_health < 20) hc = c_red;
+	else if(entity_health < 50) hc = c_yellow;
+	draw_healthbar(bar_x_or, health_line_y - half_bar, tl_x + width - 16, health_line_y + half_bar, entity_health, c_black, hc, hc, 0, true, true);
 	counter++;
 	
 	if(wears_suit)
@@ -46,18 +49,19 @@ if ( show_details )
 		var oxygen_line_y = tl_y + 128 + counter*24;
 		//var o2_seconds_remaining = ;
 		draw_text(x_or, oxygen_line_y, "Oxygen: ");
-		draw_healthbar(bar_x_or, oxygen_line_y - half_bar, tl_x + width - 16, oxygen_line_y + half_bar, suit_oxygen, 0, c_red, c_blue, 0, false, false);
+		
+		draw_healthbar(bar_x_or, oxygen_line_y - half_bar, tl_x + width - 16, oxygen_line_y + half_bar, suit_oxygen, c_black, oxygen_bar_color, oxygen_bar_color, 0, true, true);
 	}
 	counter++;
 	
 	var energy_line_y = tl_y + 128 + counter*24;
-	draw_text(x_or, energy_line_y, "Energy");
-	draw_healthbar(bar_x_or, energy_line_y - half_bar, tl_x + width - 16, energy_line_y + half_bar, energy, 0, c_red, c_yellow, 0, false, false);
+	draw_text(x_or, energy_line_y, "Sleep:");
+	draw_healthbar(bar_x_or, energy_line_y - half_bar, tl_x + width - 16, energy_line_y + half_bar, energy, c_black, sleep_bar_color, sleep_bar_color, 0, true, true);
 	counter++;
 	
 	var food_line_y = tl_y + 128 + counter*24;
-	draw_text(x_or, food_line_y, "Food");
-	draw_healthbar(bar_x_or, food_line_y - half_bar, tl_x + width - 16, food_line_y + half_bar, food_level, 0, c_red, c_olive, 0, false, false);
+	draw_text(x_or, food_line_y, "Food:");
+	draw_healthbar(bar_x_or, food_line_y - half_bar, tl_x + width - 16, food_line_y + half_bar, food_level, c_black, food_bar_color, food_bar_color, 0, true, true);
 	counter++;
 	
 	#endregion prop bars

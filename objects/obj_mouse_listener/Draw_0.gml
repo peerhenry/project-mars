@@ -12,7 +12,4 @@ if(is_dragging && construction == noone)
 }
 
 // Draw construction ghost
-if(construction != noone)
-{
-	scr_draw_ghost();
-}
+if(construction != noone) scr_draw_ghost();

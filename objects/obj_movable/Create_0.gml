@@ -24,6 +24,7 @@ entity_health = 100;
 
 // only for player
 is_selected = false;
+hover = false;
 
 // draw stuff
 var sprite_set = scr_get_sprite_set(id);
@@ -36,3 +37,4 @@ sprite_mask_up = sprite_set[5];
 mask_color = [0,0,0,0]; // not regular color; array for shader
 sprite_index = sprite_down;
 mask_sprite = sprite_mask_down;
+health_bar_color = global.health_bar_color;

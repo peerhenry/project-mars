@@ -37,7 +37,7 @@ with(arg_astronaut)
 					}
 				}
 			}
-			scr_assign(closest_fridge_with_food, id);
+			if(closest_fridge_with_food != noone) scr_assign(closest_fridge_with_food, id);
 		}
 	}
 }

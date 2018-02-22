@@ -128,8 +128,11 @@ if(cell_count > 0 && ds_list_size(new_instances) > 0)
 	
 	if(construct_type == macro_destruct_safe || construct_type == macro_destruct_room) scr_handle_new_destruction(new_construction);
 	
-	var play_sound = resolve(script_container, "play_sound");
-	script_execute(play_sound, sound_fx_build_1);
+	if(!global.init_stage)
+	{
+		var play_sound = resolve(script_container, "play_sound");
+		script_execute(play_sound, sound_fx_build_1);
+	}
 }
 else
 {

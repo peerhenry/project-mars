@@ -15,3 +15,6 @@ auto_target = noone;	// thing to auto attack when in range
 alarm[0] = 30*global.time_to_shoot + round(random_range(-5,5));
 enemy = scr_get_enemy(owner);
 shoot_path = path_add();
+
+// draw/gui stuff
+show_details = false;

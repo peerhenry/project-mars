@@ -4,6 +4,9 @@ var clicked = mouse_check_button_released(mb_left);
 var right_clicked = mouse_check_button_released(mb_right);
 mouse_over_HUD = false;
 
+flash_counter = flash_counter + 1;
+if(flash_counter == 30) flash_counter = 0;
+
 #region menu button
 
 mouse_over_menu = 
@@ -32,6 +35,7 @@ if(mouse_over_menu)
 
 #region astro panels
 
+if(double_click_timer > 0) double_click_timer = double_click_timer - 1;
 var offset = 0;
 var hover_over_ap = false;
 var panel_selected_astro = noone;
@@ -82,12 +86,26 @@ with(obj_astronaut_playable)
 }
 if(panel_selected_astro != noone)
 {
-	with(obj_astronaut_playable)
+	scr_hide_all_panels();
+	if(double_click_timer > 0)
 	{
-		if(id == panel_selected_astro) is_selected = true;
-		else is_selected = false;
+		var cam = view_camera[0];
+		var cam_w = camera_get_view_width(cam);
+		var cam_h = camera_get_view_height(cam);
+		var new_x = panel_selected_astro.x - cam_w/2;
+		var new_y = panel_selected_astro.y - cam_h/2;
+		scr_set_cam_pos_safe(new_x, new_y);
 	}
-	scr_play_selection_sound();
+	else
+	{
+		double_click_timer = 15;
+		with(obj_astronaut_playable)
+		{
+			if(id == panel_selected_astro) is_selected = true;
+			else is_selected = false;
+		}
+		scr_play_selection_sound();
+	}
 	exit;
 }
 else if(details_astro != noone)

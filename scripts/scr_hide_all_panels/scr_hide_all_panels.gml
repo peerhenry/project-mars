@@ -6,3 +6,4 @@ with(obj_grid_selector)
 {
 	is_selected = false;
 }
+global.selected_grid = noone;

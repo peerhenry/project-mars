@@ -35,3 +35,5 @@ is_outside = !is_inside;
 scr_set_suit(id, !is_inside);
 
 scr_inventory_insert(inventory, macro_inventory_pistol);
+
+oxygen_bar_color = global.oxygen_bar_color;

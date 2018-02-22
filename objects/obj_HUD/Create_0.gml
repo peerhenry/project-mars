@@ -112,3 +112,6 @@ ap_offset = ap_h + 4;
 var gui_w = display_get_gui_width();
 ap_origin_left = gui_w - (ap_w + ap_margin);
 ap_origin_top = 40;
+health_bar_color = global.health_bar_color;
+flash_counter = 0;
+double_click_timer = 0;
