@@ -115,3 +115,4 @@ ap_origin_top = 40;
 health_bar_color = global.health_bar_color;
 flash_counter = 0;
 double_click_timer = 0;
+double_click_astro = noone;

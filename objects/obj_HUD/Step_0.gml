@@ -86,8 +86,10 @@ with(obj_astronaut_playable)
 }
 if(panel_selected_astro != noone)
 {
+	var add_to_selection = keyboard_check(vk_shift) || keyboard_check(vk_control);
+	
 	scr_hide_all_panels();
-	if(double_click_timer > 0)
+	if(double_click_timer > 0 && double_click_astro == panel_selected_astro)
 	{
 		var cam = view_camera[0];
 		var cam_w = camera_get_view_width(cam);
@@ -98,13 +100,18 @@ if(panel_selected_astro != noone)
 	}
 	else
 	{
-		double_click_timer = 15;
+		double_click_timer = 10;
+		double_click_astro = panel_selected_astro;
 		with(obj_astronaut_playable)
 		{
-			if(id == panel_selected_astro) is_selected = true;
-			else is_selected = false;
+			if(id == panel_selected_astro)
+			{
+				if(add_to_selection) is_selected = !is_selected;
+				else is_selected = true;
+				if(is_selected) scr_play_selection_sound();
+			}
+			else if(!add_to_selection) is_selected = false;
 		}
-		scr_play_selection_sound();
 	}
 	exit;
 }
