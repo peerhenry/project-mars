@@ -1,5 +1,8 @@
 test_init(test_ghost_ownership_does_not_match);
 
+assert_true(scr_navgrid_cell_is_free(1,1), "11 is free before arrange");
+assert_true(scr_navgrid_cell_is_free(2,2), "22 is free before arrange");
+
 // arrange
 scr_ghost_reset_with_constr_type(macro_basetile);
 
@@ -28,5 +31,8 @@ with(obj_wall) instance_destroy();
 var cq = scr_get_construction_queue(macro_player);
 ds_list_clear(cq);
 scr_ghost_reset();
+
+assert_true(scr_navgrid_cell_is_free(1,1), "11 is free after cleanup");
+assert_true(scr_navgrid_cell_is_free(2,2), "22 is free after cleanup");
 
 test_result();

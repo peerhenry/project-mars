@@ -2,29 +2,5 @@
 /// @arg entity
 var arg_entity = argument0;
 
-if( !object_is_ancestor(arg_entity.object_index, obj_task_actor) ) exit;
-
-with(arg_entity)
-{
-	switch(current_action)
-	{
-		case astronaut_action.fetching_mdu:
-		case astronaut_action.delivering_mdu:
-			var deliveries_decr = construction[? construction_mdu_deliveries] - 1;
-			ds_map_replace(construction, construction_mdu_deliveries, deliveries_decr);
-			construction = noone;
-			break;
-		case astronaut_action.constructing:
-		case astronaut_action.moving_to_construction:
-			ds_map_replace(construction, construction_build_state, construction_state.ready);
-			construction = noone;
-			break;
-	}
-	
-	if(assigned_object != noone) scr_unassign_task(assigned_object);
-	
-	target = noone;
-	current_action = astronaut_action.idle;
-	
-	if(is_moving) scr_cancel_walking(id);
-}
+if( scr_instance_inherits(arg_entity, obj_task_actor) ) scr_cancel_all_task_actor(arg_entity);
+else if( scr_instance_inherits(arg_entity, obj_cart) ) scr_cancel_all_cart(arg_entity);

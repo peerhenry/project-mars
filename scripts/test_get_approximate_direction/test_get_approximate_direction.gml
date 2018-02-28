@@ -35,4 +35,7 @@ assert_equal(macro_south, dir, "South direction");
 var dir = scr_get_approximate_direction(dx, dy);
 assert_equal(macro_south_east, dir, "SE direction");
 
+assert_true(scr_navgrid_cell_is_free(1,1), "11 is free");
+assert_true(scr_navgrid_cell_is_free(2,2), "22 is free");
+
 test_result();

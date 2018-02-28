@@ -87,12 +87,6 @@ with(obj_astronaut_playable)
 	var sc = global.sleep_bar_color;
 	var fc = global.food_bar_color;
 	
-	/*var obc = c_black;
-	var fbc = c_black;
-	var sbc = c_black;
-	if(energy < 20 && other.flash_counter > 15) sbc = c_red;
-	if(food_level < 20 && other.flash_counter > 15) fbc = c_red;*/
-	
 	var healthbar_x = name_x;
 	var healthbar_y = ap_bottom - 2 - other.ap_padding;
 	
@@ -134,13 +128,63 @@ with(obj_astronaut_playable)
 	var icon_x_or = name_x + other.ap_name_w + other.ap_padding;
 	var icon_top = name_y;
 	var icon_offset = (16 + other.ap_padding);
-	draw_sprite(spr_auto_attack_small, auto_attack, icon_x_or + icon_offset * counter, icon_top);
+	var c_attack = c_dkgray;
+	if(auto_attack) c_attack = c_aqua;
+	var c_construct = c_dkgray;
+	if(auto_construct) c_construct = c_aqua;
+	var c_sleep = c_dkgray;
+	if(auto_sleep)
+	{
+		c_sleep = c_red;
+		with(obj_bed)
+		{
+			if(owner = macro_player)
+			{
+				if(occupant != noone) c_sleep = c_yellow;
+				else{
+					c_sleep = c_aqua;
+					break;
+				}
+			}
+		}
+	}
+	var c_food = c_dkgray;
+	if(auto_eat)
+	{
+		c_food = c_red;
+		var there_is_hydroponics = false;
+		with(obj_hydroponics) if(owner = macro_player) { there_is_hydroponics = true; break; }
+		with(obj_fridge)
+		{
+			if(owner = macro_player)
+			{
+				if(!scr_inventory_has_item(inventory, macro_inventory_food))
+				{
+					if(there_is_hydroponics) c_food = c_yellow;
+				}
+				else{
+					c_food = c_aqua;
+					break;
+				}	
+			}
+		}
+	}
+	
+	draw_sprite_ext(spr_auto_attack_small, 2, icon_x_or + icon_offset * counter, icon_top, 1, 1, 0, c_attack, 1);
+	counter++;
+	draw_sprite_ext(spr_auto_construct_small, 2, icon_x_or + icon_offset * counter, icon_top, 1, 1, 0, c_construct, 1);
+	counter++;
+	draw_sprite_ext(spr_auto_sleep_small, 2, icon_x_or + icon_offset * counter, icon_top, 1, 1, 0, c_sleep, 1);
+	counter++;
+	draw_sprite_ext(spr_auto_feed_small, 2, icon_x_or + icon_offset * counter, icon_top, 1, 1, 0, c_food, 1);
+	
+	/*draw_sprite(spr_auto_attack_small, auto_attack, icon_x_or + icon_offset * counter, icon_top);
 	counter++;
 	draw_sprite(spr_auto_construct_small, auto_construct, icon_x_or + icon_offset * counter, icon_top);
 	counter++;
 	draw_sprite(spr_auto_sleep_small, auto_sleep, icon_x_or + icon_offset * counter, icon_top);
 	counter++;
-	draw_sprite(spr_auto_feed_small, auto_eat, icon_x_or + icon_offset * counter, icon_top);
+	draw_sprite(spr_auto_feed_small, auto_eat, icon_x_or + icon_offset * counter, icon_top);*/
 	
 	// increment offset
 	offset = offset + other.ap_offset;

@@ -8,7 +8,9 @@ var script_container = global.script_container;
 
 var orders_given = false; // boolean used for playing sound
 var any_selected = false;
-var selectable_is_astronaut = false;
+var selection_contains_cart = false;
+var selection_contains_task_actor = false;
+var selection_contains_astronaut = false;
 
 // Cancel active task for selected entities
 with(obj_movable)
@@ -17,36 +19,50 @@ with(obj_movable)
 	{
 		any_selected = true;
 		scr_cancel_all(id);
-		if(object_is_ancestor(object_index, obj_astronaut)) selectable_is_astronaut = true;
+		if(scr_instance_inherits(id, obj_astronaut)) selection_contains_astronaut = true;
+		if(scr_instance_inherits(id, obj_task_actor)) selection_contains_task_actor = true;
+		if(scr_instance_inherits(id, obj_cart)) selection_contains_cart = true;
 	}
 }
+
 if(!any_selected) exit;
+else // DEBUG
+{
+	show_debug_message("selection_contains_cart: " + string(selection_contains_cart));
+}
 
-// Check if player clicked an assignable
+// Set possible clickables
 var el_assignable = instance_position(arg_x, arg_y, obj_assignable);
+var component = instance_position(arg_x, arg_y, obj_base_component);
+var movable = instance_position(arg_x, arg_y, obj_movable);
+var wall = instance_position(arg_x, arg_y, obj_wall);
 
-// Check if player clicked an enemy
-var enemy = instance_position(arg_x, arg_y, obj_movable);
+if(selection_contains_task_actor)
+{
+	// Set clicked enemey
+	var enemy = noone;
+	if(movable != noone && movable.owner == macro_enemy) enemy = movable;
+	else if(wall != noone && wall.owner == macro_enemy) enemy = wall;
+	else if(component != noone && component.owner == macro_enemy) enemy = component;	
+	
+	if(el_assignable != noone && el_assignable.owner == macro_player)	// Assign a task
+	{
+		orders_given = scr_command_assign(el_assignable);
+	}
+	else if( enemy != noone )	// Or attack an enemy
+	{
+		orders_given = scr_command_attack(enemy);
+	}
+}
+else if(selection_contains_cart)
+{
+	if(component != noone && component.owner == macro_player)
+	{
+		orders_given = scr_command_cart_pickup(component);
+	}
+}
 
-if(enemy == noone)
-{
-	enemy = scr_enemy_component_position(arg_x, arg_y);
-}
-else if(enemy.owner != macro_enemy)
-{
-	enemy = noone;
-}
-
-if(el_assignable != noone && el_assignable.owner == macro_player)	// Assign a task
-{
-	orders_given = scr_command_assign(el_assignable);
-}
-else if( enemy != noone )	// Or attack an enemy
-{
-	scr_command_attack(enemy);
-	orders_given = true;
-}
-else if( !position_meeting(arg_x, arg_y, obj_gate) )	// Or move
+if( !orders_given && !position_meeting(arg_x, arg_y, obj_gate) )	// Or move
 {
 	orders_given = scr_command_move(arg_x, arg_y);
 	if(orders_given)
@@ -57,13 +73,20 @@ else if( !position_meeting(arg_x, arg_y, obj_gate) )	// Or move
 }
 
 
-if(orders_given && selectable_is_astronaut)
+if(orders_given)
 {
-	var s = irandom(2);
 	var play_sound = script_container_resolve(script_container, "play_sound");
-	switch s{
-		case 0: script_execute(play_sound, sound_cmd_yep); break;
-		case 1: script_execute(play_sound, sound_cmd_understood); break;
-		case 2:	script_execute(play_sound, sound_cmd_acknowledged); break;
+	if(selection_contains_astronaut)
+	{
+		var s = irandom(2);
+		switch s{
+			case 0: script_execute(play_sound, sound_cmd_yep); break;
+			case 1: script_execute(play_sound, sound_cmd_understood); break;
+			case 2:	script_execute(play_sound, sound_cmd_acknowledged); break;
+		}
+	}
+	else 
+	{
+		// play robot sound
 	}
 }

@@ -105,7 +105,7 @@ cursor_sprite = spr_cursor;
 // -- Astronaut panel --
 ap_margin = 20;
 ap_padding = 4;
-ap_name_w = 116;
+ap_name_w = 126;
 ap_w = ap_name_w + ap_padding + 4*(ap_padding+16);
 ap_h = 28;
 ap_offset = ap_h + 4;

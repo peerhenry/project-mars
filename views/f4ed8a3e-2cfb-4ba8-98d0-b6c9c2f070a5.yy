@@ -14,7 +14,8 @@
         "1f4c5c04-1d11-4f1e-8551-ec19c91bd504",
         "ed5a1c34-3c31-4b69-9235-ba7fa6a6fa2e",
         "d561d661-9835-4259-bcba-5e7ab717e612",
-        "eefd5ac2-1cc9-433a-9d6e-38f4bfbc62d8"
+        "eefd5ac2-1cc9-433a-9d6e-38f4bfbc62d8",
+        "bf5822c7-b888-4859-9f15-75650669a175"
     ],
     "filterType": "GMScript",
     "folderName": "assignables",

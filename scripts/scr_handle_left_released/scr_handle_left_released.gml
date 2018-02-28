@@ -20,11 +20,12 @@ if(single_select_ent != noone && single_select_ent.owner == macro_player) // (de
 	if(single_select_ent.is_selected)
 	{
 		just_selected_any_entity = true;
-		if(object_is_ancestor(single_select_ent.object_index, obj_astronaut)) selection_includes_astro = true;
+		if(scr_instance_inherits(single_select_ent, obj_astronaut)) selection_includes_astro = true;
 	}
 }
 else if(single_select_ent == noone) // select grid selector
 {
+	scr_deselect_all();
 	var single_select_ent = instance_position(mouse_x, mouse_y, obj_grid_selector);
 	if(single_select_ent != noone && single_select_ent.owner == macro_player)
 	{

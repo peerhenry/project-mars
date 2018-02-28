@@ -53,7 +53,7 @@ var index = ds_list_find_index(construction_queue, arg_construction);
 ds_list_delete(construction_queue, index);
 
 // Stop astronaut
-with(obj_astronaut)
+with(obj_task_actor)
 {
 	if(construction == arg_construction) scr_stop_construction(id);
 }

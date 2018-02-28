@@ -100,6 +100,49 @@
                     "LayerId": "18c2934e-34d3-4133-a2c3-8c170af8e7a2"
                 }
             ]
+        },
+        {
+            "id": "7bac3433-5573-4eed-b72d-081fed0a5c89",
+            "modelName": "GMSpriteFrame",
+            "mvc": "1.0",
+            "SpriteId": "301e9390-ffcb-424e-9584-aff59c8e37c1",
+            "compositeImage": {
+                "id": "85a129ab-a54e-4c28-86d7-36dc37654623",
+                "modelName": "GMSpriteImage",
+                "mvc": "1.0",
+                "FrameId": "7bac3433-5573-4eed-b72d-081fed0a5c89",
+                "LayerId": "00000000-0000-0000-0000-000000000000"
+            },
+            "images": [
+                {
+                    "id": "3042a8d9-8f2a-4120-803a-75bc1787b0d8",
+                    "modelName": "GMSpriteImage",
+                    "mvc": "1.0",
+                    "FrameId": "7bac3433-5573-4eed-b72d-081fed0a5c89",
+                    "LayerId": "423298db-ee71-47b4-ad49-e34fd43b0490"
+                },
+                {
+                    "id": "13cd9412-e448-4091-92d4-8ee44800fe05",
+                    "modelName": "GMSpriteImage",
+                    "mvc": "1.0",
+                    "FrameId": "7bac3433-5573-4eed-b72d-081fed0a5c89",
+                    "LayerId": "ff3f5b6f-160b-4511-8d69-069cd287e9bf"
+                },
+                {
+                    "id": "ad858dbd-14a2-49e1-b81c-7025ef69315d",
+                    "modelName": "GMSpriteImage",
+                    "mvc": "1.0",
+                    "FrameId": "7bac3433-5573-4eed-b72d-081fed0a5c89",
+                    "LayerId": "8387528d-f7c5-47a4-92f0-8ec610da8356"
+                },
+                {
+                    "id": "377234d0-86d4-44d1-844b-3c04b325a42b",
+                    "modelName": "GMSpriteImage",
+                    "mvc": "1.0",
+                    "FrameId": "7bac3433-5573-4eed-b72d-081fed0a5c89",
+                    "LayerId": "18c2934e-34d3-4133-a2c3-8c170af8e7a2"
+                }
+            ]
         }
     ],
     "gridX": 0,

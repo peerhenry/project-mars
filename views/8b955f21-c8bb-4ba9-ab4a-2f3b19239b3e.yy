@@ -14,7 +14,7 @@
         "be1a2e1a-59a1-4e9d-848d-be19bfc761a3"
     ],
     "filterType": "GMScript",
-    "folderName": "astronauts",
+    "folderName": "entities",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

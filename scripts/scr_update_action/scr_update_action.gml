@@ -1,8 +1,7 @@
 /// @arg astronaut
 var arg_astronaut = argument0;
-var oi = arg_astronaut.object_index;
 
-if(oi != obj_astronaut && !object_is_ancestor(oi, obj_astronaut)) exit;
+if( !scr_instance_inherits(arg_astronaut, obj_astronaut) ) exit;
 
 with(arg_astronaut)
 {

@@ -46,5 +46,8 @@ debug_type(list, macro_type_list);
 // cleanup
 scr_destroy_construction(constr);
 
+assert_true(scr_navgrid_cell_is_free(1,1), "11 is free");
+assert_true(scr_navgrid_cell_is_free(2,2), "22 is free");
+
 // return result
 test_result();

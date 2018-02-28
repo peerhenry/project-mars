@@ -102,3 +102,8 @@ if(keyboard_check_pressed(ord("O")))
 		oxygen_level = 100;
 	}
 }
+
+if(keyboard_check_pressed(ord("C")))
+{
+	with(obj_astronaut_playable) scr_cancel_walking(id);
+}

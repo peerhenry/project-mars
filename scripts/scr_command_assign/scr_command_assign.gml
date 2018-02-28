@@ -36,4 +36,16 @@ if(assigned_actor != noone)
 	}
 }
 
+// If assignment succesful, all other selected movables should just move there
+if(orders_given)
+{
+	with(obj_movable)
+	{
+		if(is_selected && id != assigned_actor)
+		{
+			 scr_command_move_to(id, arg_x, arg_y);
+		}
+	}
+}
+
 return orders_given;

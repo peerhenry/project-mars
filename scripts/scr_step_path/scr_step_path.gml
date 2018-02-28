@@ -1,17 +1,23 @@
-/// @arg astronaut
-var script_container = argument0;
-var arg_astronaut = argument1;
+/// @arg entity
 
-with(arg_astronaut)
+var arg_entity = argument0;
+
+with(arg_entity)
 {
-	if(path_position > 0 && path_position < 1)
+	if(path_exists(path))
 	{
-		if(!is_moving) is_moving = true;
-	}
-	else if(is_moving && path_position == 1)
-	{
-		scr_stop_moving(id);
-		path_end();
-		scr_end_path_action(id);
+		if(is_moving) // todo: refactor is_moving to path_exists
+		{
+			if(path_position == 1)
+			{
+				scr_stop_moving(id);
+				scr_end_path_action(id);
+				//path_delete(path); // todo: refactor is_moving to path_exists
+			}
+		}
+		else if(path_position > 0 && path_position < 1)
+		{
+			is_moving = true;
+		}
 	}
 }

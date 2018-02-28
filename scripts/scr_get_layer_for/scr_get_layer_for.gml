@@ -3,6 +3,7 @@
 switch(argument0)
 {
 	case obj_assign_icon:
+	case obj_cart_assign_icon:
 	case obj_leak:
 	case obj_hit:
 		return macro_logic_layer;

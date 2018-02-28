@@ -26,7 +26,22 @@ enum astronaut_action // these are assigned to astronaut objects
 	in_combat
 }
 
+enum cart_action
+{
+	idle,
+	move,
+	pickup,
+	deploy
+}
+
 enum victory{
 	sandbox,
 	domination
 }; // to add: escape, return to earth
+
+enum reach_state
+{
+	unreachable,
+	reachable,
+	adjacent
+}

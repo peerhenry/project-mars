@@ -73,6 +73,7 @@ if(path_found)
 		dest_i = end_i;
 		dest_j = end_j;
 		path_start(path, movement_speed, path_action_stop, false); // path, speed, end action, absolute
+		is_moving = true;
 	}
 }
 

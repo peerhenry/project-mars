@@ -28,4 +28,8 @@ with(astro)
 
 //cleanup
 instance_destroy(astro);
+
+assert_true(scr_navgrid_cell_is_free(1,1), "11 is free");
+assert_true(scr_navgrid_cell_is_free(2,2), "22 is free");
+
 test_result();
