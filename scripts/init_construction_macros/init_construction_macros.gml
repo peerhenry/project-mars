@@ -29,6 +29,7 @@
 #macro macro_electrolyser 21
 #macro macro_printer 22
 #macro macro_med_bed 23
+#macro macro_recharge_station 24
 
 #macro macro_destruct 101
 #macro macro_destruct_safe 102

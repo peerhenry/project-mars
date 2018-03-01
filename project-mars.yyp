@@ -4447,6 +4447,14 @@
             }
         },
         {
+            "Key": "71ea800a-1470-4405-9928-4b3d2b278ef8",
+            "Value": {
+                "id": "4198bc9e-1785-4fa9-b77d-212dd7abbbcf",
+                "resourcePath": "scripts\\scr_step_recharge\\scr_step_recharge.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "71f13ffa-930b-423b-80b9-9b65a3523da2",
             "Value": {
                 "id": "d50200e4-3158-44e1-a496-0194acbf0217",
@@ -6362,7 +6370,7 @@
             "Key": "abcad706-abcd-4206-becc-4119262632cf",
             "Value": {
                 "id": "cea047c0-ac4b-49e4-a130-17b6887ab3d8",
-                "resourcePath": "objects\\obj_charge_station\\obj_charge_station.yy",
+                "resourcePath": "objects\\obj_recharge_station\\obj_recharge_station.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -6420,6 +6428,14 @@
                 "id": "a31d2ba2-479d-402d-80e0-06031fcaafdd",
                 "resourcePath": "scripts\\scr_setup_six_rooms\\scr_setup_six_rooms.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "adddfd90-f6f9-409c-817d-538442cff225",
+            "Value": {
+                "id": "225f2cc0-0652-4bc0-9c9a-e60a3d025037",
+                "resourcePath": "sprites\\spr_recharge_station1\\spr_recharge_station1.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -6514,7 +6530,7 @@
             "Key": "b086a10b-a0c1-4a8a-8bb1-4e6344411518",
             "Value": {
                 "id": "a81fce26-bcf3-4e52-b63f-7c033a82a49d",
-                "resourcePath": "sprites\\spr_charge_pole\\spr_charge_pole.yy",
+                "resourcePath": "sprites\\spr_recharge_station\\spr_recharge_station.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -7668,6 +7684,14 @@
                 "id": "bd5475d6-54b4-4ddb-a797-d1b760287feb",
                 "resourcePath": "views\\ce98012b-3fde-4984-bcb7-781f05617e66.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "ce983b44-7035-4f81-a540-7eb621f72cf0",
+            "Value": {
+                "id": "7ebf2f1a-2916-462e-b9e8-635c925085c6",
+                "resourcePath": "sprites\\spr_recharge_station_HUD\\spr_recharge_station_HUD.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -9924,6 +9948,7 @@
         "5ab159bd-b0ee-4110-8171-92399b667bf3",
         "c4f0bdfb-71de-45b0-9c43-73acb44dccca",
         "06f7eea1-d1ca-41aa-bbdb-6a07b90a2a8b",
+        "71ea800a-1470-4405-9928-4b3d2b278ef8",
         "0b3e2340-577b-4b8c-b6a9-11f749331d00",
         "d0bceaed-302b-40f9-9f03-7b729e5ae6f3",
         "3bbc6666-a357-4b79-b68f-613f913c576f",

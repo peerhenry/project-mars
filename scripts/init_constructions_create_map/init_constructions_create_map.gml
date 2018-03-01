@@ -234,6 +234,10 @@ init_construction_set_rotation_parameter(macro_rotation_1, macro_sprite, spr_med
 init_construction_set_rotation_parameter(macro_rotation_2, macro_sprite, spr_med_bed_vertical_2);
 init_construction_set_rotation_parameter(macro_rotation_3, macro_sprite, spr_med_bed_horizontal_2);
 
+// # Recharge station
+init_construction_new_single(macro_recharge_station, "recharge station", spr_recharge_station_HUD, 1, macro_category_outside);
+init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,		map_buffer_action.occupy,	base_tall_layer, obj_recharge_station,			noone, 100);
+
 // List of active constructions:
 var active_constructions = ds_list_create();
 ds_list_destroy(global.active_constructions);
@@ -264,6 +268,7 @@ ds_list_add(active_constructions, macro_fridge);
 ds_list_add(active_constructions, macro_solar_panel);
 ds_list_add(active_constructions, macro_electrolyser);
 ds_list_add(active_constructions, macro_printer);
+ds_list_add(active_constructions, macro_recharge_station);
 
 ds_list_add(active_constructions, macro_destruct);
 ds_list_add(active_constructions, macro_destruct_safe);
