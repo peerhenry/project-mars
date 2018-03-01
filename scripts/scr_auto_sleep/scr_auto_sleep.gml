@@ -2,7 +2,7 @@ var arg_astronaut = argument0;
 
 with(arg_astronaut)
 {
-	if(energy < auto_sleep_level){
+	if(sleep_level < auto_sleep_level){
 		// first try the nearest bed
 		var nearest_bed = instance_nearest(x, y, obj_bed);
 		var valid_bed = scr_can_assign(nearest_bed, arg_astronaut);

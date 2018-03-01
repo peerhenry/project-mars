@@ -103,17 +103,20 @@ with(obj_astronaut_playable)
 	}
 	// sleep bar
 	hbx = hbx - bspace - bw;
-	draw_healthbar(hbx, hby, hbx + bw, hby + 22, energy, c_black, sc, sc, 3, true, true);
-	if(energy < 20 && other.flash_counter > 15)
+	draw_healthbar(hbx, hby, hbx + bw, hby + 22, sleep_level, c_black, sc, sc, 3, true, true);
+	if(sleep_level < 20 && other.flash_counter > 15)
 	{
 		draw_rectangle(hbx - 1, hby - 1, hbx + bw + 1, hby + 22 + 1, true);
 	}
 	// oxygen bar
-	hbx = hbx - bspace - bw;
-	draw_healthbar(hbx, hby, hbx + bw, hby + 22, suit_oxygen, c_black, oc, oc, 3, true, true);
-	if(suit_oxygen < 20 && other.flash_counter > 15)
+	if(wears_suit)
 	{
-		draw_rectangle(hbx - 1, hby - 1, hbx + bw + 1, hby + 22 + 1, true);
+		hbx = hbx - bspace - bw;
+		draw_healthbar(hbx, hby, hbx + bw, hby + 22, suit_oxygen, c_black, oc, oc, 3, true, true);
+		if(suit_oxygen < 20 && other.flash_counter > 15)
+		{
+			draw_rectangle(hbx - 1, hby - 1, hbx + bw + 1, hby + 22 + 1, true);
+		}
 	}
 	
 	// draw healthbar
@@ -192,30 +195,46 @@ with(obj_astronaut_playable)
 
 #endregion
 
-#region HOVER ASTRO NAME
+// todo: robot panels
 
+#region TOOLTIPS
+
+// hover over astro tooltip
 var astro = instance_position(mouse_x, mouse_y, obj_astronaut_playable);
-if(astro != noone)
+var window_mouse_x = window_mouse_get_x();
+var window_mouse_y = window_mouse_get_y();
+var tt_x = window_mouse_x + 16;
+var tt_y = window_mouse_y + 16;
+if(!global.hovering_over_HUD && astro != noone)
+{	
+	scr_draw_hud_tooltip(tt_x, tt_y, astro.name);
+}
+else if(hover_astro != noone) // hud hover astro
 {
-	var window_mouse_x = window_mouse_get_x();
-	var window_mouse_y = window_mouse_get_y();
-	draw_set_font(font_small);
-	var sw = string_width(astro.name);
-	var sh = string_height(astro.name);
-	var tt_x = window_mouse_x + 16;
-	var tt_y = window_mouse_y + 16;
-	// box
-	draw_set_color(c_dkgray);
-	draw_set_alpha(0.9);
-	draw_rectangle(tt_x, tt_y, tt_x + sw + 8, tt_y + sh + 8, false);
-	// outline
-	draw_set_alpha(1.0);
-	draw_set_color(c_white);
-	draw_rectangle(tt_x, tt_y, tt_x + sw + 8, tt_y + sh + 8, true);
-	// text
-	draw_set_halign(fa_left);
-	draw_set_valign(fa_top);
-	draw_text(tt_x + 4, tt_y + 4, astro.name);
+	switch(other.hover_part)
+	{
+		case hud_part.auto_attack:
+			scr_draw_hud_tooltip(tt_x, tt_y, "toggle auto attack");
+			break;
+		case hud_part.auto_construct:
+			scr_draw_hud_tooltip(tt_x, tt_y, "toggle auto construct");
+			break;
+		case hud_part.auto_eat:
+			scr_draw_hud_tooltip(tt_x, tt_y, "toggle auto eat");
+			break;
+		case hud_part.auto_sleep:
+			scr_draw_hud_tooltip(tt_x, tt_y, "toggle auto sleep");
+			break;
+		case hud_part.food_bar:
+			scr_draw_hud_tooltip(tt_x, tt_y, "food: " + string(hover_astro.food_level));
+			break;
+		case hud_part.sleep_bar:
+			scr_draw_hud_tooltip(tt_x, tt_y, "sleep: " + string(hover_astro.sleep_level));
+			break;
+		case hud_part.oxygen_bar:
+			scr_draw_hud_tooltip(tt_x, tt_y, "oxygen: " + string(hover_astro.suit_oxygen));
+			break;
+	}
 }
 
 #endregion

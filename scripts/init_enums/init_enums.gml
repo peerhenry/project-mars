@@ -45,3 +45,16 @@ enum reach_state
 	reachable,
 	adjacent
 }
+
+// astronaut hud panel
+enum hud_part
+{
+	none,
+	auto_attack,
+	auto_construct,
+	auto_eat,
+	auto_sleep,
+	food_bar,
+	sleep_bar,
+	oxygen_bar
+}

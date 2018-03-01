@@ -1,8 +1,8 @@
 {
-    "id": "3c2dd182-a393-4be8-ac29-9db45ca252d7",
+    "id": "ef5cb8f8-e583-4a34-bc85-b75c6e68e141",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "test_step_sleep_and_speed",
+    "name": "scr_draw_hud_tooltip",
     "IsCompatibility": false,
     "IsDnD": false
 }

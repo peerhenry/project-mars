@@ -10,7 +10,7 @@ movement_speed = macro_astronaut_move_speed;
 name = "John Doe";
 astro_id = 0;  // todo: find out and write here why this is used or remove it
 suit_oxygen = 100;
-energy = 100;
+sleep_level = 100;
 food_level = 100;
 oxygen_consumption = global.astro_oxygen_consumption; // absolute value
 

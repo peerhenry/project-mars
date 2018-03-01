@@ -3954,7 +3954,7 @@
             "Key": "6522b9d6-bc58-42ba-894c-cbb4be9ac141",
             "Value": {
                 "id": "24bc8f3d-bf29-4d6e-a2cc-87bf50c2e338",
-                "resourcePath": "scripts\\scr_step_energy_and_speed\\scr_step_energy_and_speed.yy",
+                "resourcePath": "scripts\\scr_step_sleep_and_speed\\scr_step_sleep_and_speed.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -8871,6 +8871,14 @@
             }
         },
         {
+            "Key": "ef5cb8f8-e583-4a34-bc85-b75c6e68e141",
+            "Value": {
+                "id": "e51b11bb-e186-453e-ac76-a27b275dfb87",
+                "resourcePath": "scripts\\scr_draw_hud_tooltip\\scr_draw_hud_tooltip.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ef8ad73c-9135-458b-bbbe-531489e22e0c",
             "Value": {
                 "id": "05278639-45b1-4f14-a271-1a44f370ec73",
@@ -10013,6 +10021,7 @@
         "62caa15e-10c1-47cf-be25-ec89d22b849e",
         "a60dc21d-e68b-4206-ad3d-495d8634a5cb",
         "59406f94-2c45-4437-a3ce-fa410e00cc9b",
+        "ef5cb8f8-e583-4a34-bc85-b75c6e68e141",
         "e54e69c8-aa1c-4879-a367-7665fb5b3f4b",
         "e76441f8-d763-43cd-acb8-b4651b06261c",
         "ef55de64-c8d9-4c2b-8d7e-0711b44f5bb5",

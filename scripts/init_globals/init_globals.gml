@@ -15,7 +15,6 @@ var section = "common";
 // -- GAMEPLAY
 section = "astronauts";
 global.regeneration_speed = init_global_real(section, "regeneration_speed", 0.01);
-global.energy_depletion = init_global_real(section, "energy_depletion", 0.01); // how fast is idle astronaut losing energy PP/frame
 
 // -- OXYGEN
 // TODO: refactor oxygen to make absolute calculations instead of percentages
@@ -39,6 +38,7 @@ global.auto_eat_hunger_level = init_global_real(section, "auto_eat_hunger_level"
 
 // - SLEEP
 section = "sleep";
+global.sleep_level_depletion = init_global_real(section, "sleep_level_depletion", 0.01); // how fast is idle astronaut losing energy PP/frame
 global.auto_sleep_level = init_global_real(section, "auto_sleep_level", 20);
 global.sleep_speed = init_global_real(section, "sleep_speed", 0.06);
 

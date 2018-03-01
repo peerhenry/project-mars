@@ -2,9 +2,9 @@
 
 if(occupant != noone)
 {
-	occupant.energy += sleep_speed;
-	if(occupant.energy > 100){
-		occupant.energy = 100;
+	occupant.sleep_level += sleep_speed;
+	if(occupant.sleep_level > 100){
+		occupant.sleep_level = 100;
 		instance_activate_object(occupant);
 		occupant = noone;
 		image_index++;

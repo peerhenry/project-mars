@@ -3,7 +3,7 @@ test_init(test_auto_sleep_under_construction);
 // arrange
 var astro = instance_create_depth(32,32,0,obj_astronaut);
 astro.wears_suit = false;
-astro.energy = astro.auto_sleep_level - 1;
+astro.sleep_level = astro.auto_sleep_level - 1;
 var bed = instance_create_depth(200,200,0,obj_bed);
 bed.under_construction = true;
 // act

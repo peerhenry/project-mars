@@ -103,6 +103,7 @@ resources_center_y = (resources_top + resources_bottom)/2;
 cursor_sprite = spr_cursor;
 
 // -- Astronaut panel --
+
 ap_margin = 20;
 ap_padding = 4;
 ap_name_w = 126;
@@ -116,3 +117,5 @@ health_bar_color = global.health_bar_color;
 flash_counter = 0;
 double_click_timer = 0;
 double_click_astro = noone;
+hover_astro = noone;
+hover_part = hud_part.none;

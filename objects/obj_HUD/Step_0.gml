@@ -40,6 +40,7 @@ var offset = 0;
 var hover_over_ap = false;
 var panel_selected_astro = noone;
 var details_astro = noone;
+hover_part = hud_part.none;
 with(obj_astronaut_playable)
 {
 	var ap_left = other.ap_origin_left;
@@ -55,25 +56,45 @@ with(obj_astronaut_playable)
 	if(hover_over_ap)
 	{
 		other.mouse_over_HUD = true;
+		other.hover_astro = id;
+		
+		// determine what part mouse hovers over
+		var icon_x_or = other.ap_origin_left + other.ap_name_w + 2 * other.ap_padding;
+		var next_icon_left = icon_x_or;
+		var icon_offset = (16 + other.ap_padding);
+		if(window_mouse_x > next_icon_left && window_mouse_x < next_icon_left + 16) other.hover_part = hud_part.auto_attack;
+		next_icon_left = next_icon_left + icon_offset;
+		if(window_mouse_x > next_icon_left && window_mouse_x < next_icon_left + 16) other.hover_part = hud_part.auto_construct;
+		next_icon_left = next_icon_left + icon_offset;
+		if(window_mouse_x > next_icon_left && window_mouse_x < next_icon_left + 16) other.hover_part = hud_part.auto_sleep;
+		next_icon_left = next_icon_left + icon_offset;
+		if(window_mouse_x > next_icon_left && window_mouse_x < next_icon_left + 16) other.hover_part = hud_part.auto_eat;
+		var bw = 3;
+		var bspace = 5;
+		// food_level bar
+		var name_x = other.ap_origin_left + other.ap_padding;
+		var hbx = name_x + other.ap_name_w - bw;
+		if(window_mouse_x > hbx-1 && window_mouse_x < hbx + bw + 1) other.hover_part = hud_part.food_bar;
+		// sleep bar
+		hbx = hbx - bspace - bw;
+		if(window_mouse_x > hbx-1 && window_mouse_x < hbx + bw + 1) other.hover_part = hud_part.sleep_bar;
+		// oxygen bar
+		if(wears_suit)
+		{
+			hbx = hbx - bspace - bw;
+			if(window_mouse_x > hbx-1 && window_mouse_x < hbx + bw + 1) other.hover_part = hud_part.oxygen_bar;
+		}
+		
 		if(clicked)
 		{
 			// check if any auto button was clicked
-			
-			var counter = 0;
-			var icon_x_or = other.ap_origin_left + other.ap_name_w + 2 * other.ap_padding;
-			var icon_offset = (16 + other.ap_padding);
-			
-			var next_icon_left = icon_x_or;
-			if(window_mouse_x <= next_icon_left) panel_selected_astro = id;
+			if(window_mouse_x <= icon_x_or) panel_selected_astro = id;
 			else
 			{
-				if(window_mouse_x > next_icon_left && window_mouse_x < next_icon_left + 16) auto_attack = !auto_attack;
-				next_icon_left = next_icon_left + icon_offset;
-				if(window_mouse_x > next_icon_left && window_mouse_x < next_icon_left + 16) auto_construct = !auto_construct;
-				next_icon_left = next_icon_left + icon_offset;
-				if(window_mouse_x > next_icon_left && window_mouse_x < next_icon_left + 16) auto_sleep = !auto_sleep;
-				next_icon_left = next_icon_left + icon_offset;
-				if(window_mouse_x > next_icon_left && window_mouse_x < next_icon_left + 16) auto_eat = !auto_eat;
+				if(other.hover_part == hud_part.auto_attack) auto_attack = !auto_attack;
+				else if(other.hover_part == hud_part.auto_construct) auto_construct = !auto_construct;
+				else if(other.hover_part == hud_part.auto_sleep) auto_sleep = !auto_sleep;
+				else if(other.hover_part == hud_part.auto_eat) auto_eat = !auto_eat;
 			}
 		}
 		else if(right_clicked)
@@ -82,6 +103,8 @@ with(obj_astronaut_playable)
 		}
 		break;
 	}
+	else other.hover_astro = noone;
+	
 	offset = offset + other.ap_offset;
 }
 if(panel_selected_astro != noone)
@@ -158,7 +181,7 @@ if(!hovers_over_selectable)
 if(!hovers_over_selectable)
 {
 	// Grid selectors, fridges and sensors are selectable
-	if(scr_any_task_actors_selected())
+	if( scr_any_task_actors_selected() )
 	{
 		var hovers_over_enemy = false;
 		if(entity != noone)
