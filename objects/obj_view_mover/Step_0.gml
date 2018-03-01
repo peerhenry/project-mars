@@ -13,27 +13,27 @@ var dx = 0;
 var dy = 0;
 
 // up
-var moveUp = device_mouse_y_to_gui(0) < scroll_border || keyboard_check(ord("W"));
+var moveUp = device_mouse_y_to_gui(0) < scroll_border || keyboard_check(ord("W")) || keyboard_check(vk_up);
 if(moveUp && camy >= scroll_speed ){
 	dy += -scroll_speed;
 }
 
 
 // down
-var moveDown = device_mouse_y_to_gui(0) > (viewH - scroll_border) || keyboard_check(ord("S"));
+var moveDown = device_mouse_y_to_gui(0) > (viewH - scroll_border) || keyboard_check(ord("S")) || keyboard_check(vk_down);
 if(moveDown && camy + camH < room_height - scroll_speed ){
 	dy += scroll_speed;
 }
 
 
 // right
-var moveRight = device_mouse_x_to_gui(0) > (viewW-  scroll_border) || keyboard_check(ord("D"));
+var moveRight = device_mouse_x_to_gui(0) > (viewW-  scroll_border) || keyboard_check(ord("D")) || keyboard_check(vk_right);
 if(moveRight && camx + camW < room_width - scroll_speed ){
 	dx += scroll_speed;
 }
 
 // left
-var moveLeft = device_mouse_x_to_gui(0) < scroll_border || keyboard_check(ord("A"));
+var moveLeft = device_mouse_x_to_gui(0) < scroll_border || keyboard_check(ord("A")) || keyboard_check(vk_left);
 if(moveLeft && camx > scroll_speed ){
 	dx += -scroll_speed;
 }

@@ -20,4 +20,12 @@ with(arg_entity)
 			is_moving = true;
 		}
 	}
+	
+	if(object_index == obj_robot || object_index == obj_cart)
+	{
+		if(battery_charge == 0)
+		{
+			speed = 0;
+		}
+	}
 }

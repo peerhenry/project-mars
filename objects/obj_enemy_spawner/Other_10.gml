@@ -1,5 +1,6 @@
 var wave_size = power(20, wave_number/7); // 20 enemies on wave number 7
 wave_size = min(wave_size, 50);
+if(instance_number(obj_astronaut) > 100) exit;
 
 repeat(wave_size)
 {

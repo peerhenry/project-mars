@@ -4,7 +4,6 @@ wears_suit = true;
 event_inherited();
 
 // things to overwrite from base classes
-moveDir = macro_down;
 movement_speed = macro_astronaut_move_speed;
 
 // astronaut props

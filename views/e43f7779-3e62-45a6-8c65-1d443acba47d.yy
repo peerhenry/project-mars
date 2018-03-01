@@ -17,7 +17,10 @@
         "2e083671-9f77-4de7-a112-e38bd4d96263",
         "5ff6a5c5-8f65-42fa-8b10-332c1d880943",
         "f4d907f7-ae5f-4256-a0b1-6445c37de9d2",
-        "1003cdc5-5b9f-4013-b629-4cadeaacbcb5"
+        "1003cdc5-5b9f-4013-b629-4cadeaacbcb5",
+        "2f1256f0-7e23-44e7-87e7-00ba078e442b",
+        "716d936d-04e1-46e9-afb1-61a44a2064ab",
+        "49da9287-dea1-4d4a-a6e3-b5af21c3a057"
     ],
     "filterType": "GMSprite",
     "folderName": "astronaut",

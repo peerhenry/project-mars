@@ -43,7 +43,7 @@ if(orders_given)
 	{
 		if(is_selected && id != assigned_actor)
 		{
-			 scr_command_move_to(id, arg_x, arg_y);
+			 scr_command_move_to(id, arg_assignable.x, arg_assignable.y);
 		}
 	}
 }

@@ -1,5 +1,8 @@
 var wave_size = power(20, wave_number/7); // 20 enemies on wave number 7
-wave_size = min(wave_size, 100);
+wave_size = min(wave_size, 20);
+alarm[0] = 30*wave_time;
+
+if(instance_number(obj_astronaut) > 100) exit;
 
 var counter = 0;
 repeat(wave_size)
@@ -19,4 +22,3 @@ wave_number++;
 
 scr_alert_player("wave " + string(wave_number));
 show_debug_message("wave " + string(wave_number) + " spawned " + string(wave_size) + " astronauts.");
-alarm[0] = 30*wave_time;

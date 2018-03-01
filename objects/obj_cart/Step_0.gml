@@ -4,6 +4,8 @@
 // Inherit the parent event
 event_inherited();
 
+scr_update_robot(id);
+
 if(carrying_instance != noone)
 {
 	carrying_instance.x = x;

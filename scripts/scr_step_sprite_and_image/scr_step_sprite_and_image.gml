@@ -10,25 +10,25 @@ with(arg_astronaut)
 		var dy = y - prev_y;
 		if(dx > 0)
 		{
-			moveDir = macro_right;
+			move_dir = macro_right;
 		}
 		else if(dx < 0)
 		{
-			moveDir = macro_left;
+			move_dir = macro_left;
 		}
 		if(dy < 0)
 		{
-			if(dy < dx - 0.1) moveDir = macro_up;
+			if(dy < dx - 0.1) move_dir = macro_up;
 		}
 		else if(dy > 0 && dy > dx + 0.1)
 		{
-			moveDir = macro_down;
+			move_dir = macro_down;
 		}
 	
 		prev_x = x;
 		prev_y = y;
 	
-		switch(moveDir)
+		switch(move_dir)
 		{
 			case macro_up:
 			{

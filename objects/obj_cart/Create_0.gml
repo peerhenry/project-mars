@@ -4,6 +4,8 @@
 // Inherit the parent event
 event_inherited();
 
+battery_charge = 100;
+
 sprite_down = spr_cart_down;
 sprite_right = spr_cart_right;
 sprite_up = spr_cart_up;
