@@ -1,0 +1,1 @@
+global.hud_entity_panel_offset = 48; // screen y where do the entity hud panels begin

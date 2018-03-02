@@ -56,7 +56,7 @@ if ( show_details )
 	
 	var energy_line_y = tl_y + 128 + counter*24;
 	draw_text(x_or, energy_line_y, "Sleep:");
-	draw_healthbar(bar_x_or, energy_line_y - half_bar, tl_x + width - 16, energy_line_y + half_bar, energy, c_black, sleep_bar_color, sleep_bar_color, 0, true, true);
+	draw_healthbar(bar_x_or, energy_line_y - half_bar, tl_x + width - 16, energy_line_y + half_bar, sleep_level, c_black, sleep_bar_color, sleep_bar_color, 0, true, true);
 	counter++;
 	
 	var food_line_y = tl_y + 128 + counter*24;

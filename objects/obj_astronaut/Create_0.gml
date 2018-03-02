@@ -22,10 +22,10 @@ if(wears_suit) mask_color = mask_color_suit;
 image_speed = 0;
 
 // automatic behavior
-auto_attack = false;
-auto_construct = true;
 auto_eat = false;
+if(owner != macro_player) auto_eat = true;
 auto_sleep = false;
+if(owner != macro_player) auto_sleep = true;
 auto_eat_level = global.auto_eat_hunger_level;
 auto_sleep_level = global.auto_sleep_level;
 

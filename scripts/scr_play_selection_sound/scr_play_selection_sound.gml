@@ -1,6 +1,10 @@
-var s = irandom(2);
-switch s{
-	case 0: audio_play_sound(sound_cmd_yes,1,false); break;
-	case 1: audio_play_sound(sound_cmd_commands,1,false); break;
-	case 2:	audio_play_sound(sound_cmd_orders,1,false);	break;
+/// @arg entity
+var arg_entity = argument0;
+if(scr_instance_inherits(arg_entity, obj_astronaut))
+{
+	scr_play_astro_selection_sound();
+}
+else
+{
+	audio_play_sound(sound_robot_ask, 1, false);
 }

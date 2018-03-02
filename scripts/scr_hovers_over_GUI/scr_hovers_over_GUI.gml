@@ -37,4 +37,9 @@ if(!hovering_over_gui)
 	}
 }
 
+with(obj_HUD_entity_panel)
+{
+	if(hover) hovering_over_gui = true;
+}
+
 return hovering_over_gui;

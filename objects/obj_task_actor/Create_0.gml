@@ -18,3 +18,6 @@ shoot_path = path_add();
 
 // draw/gui stuff
 show_details = false;
+
+auto_attack = false;
+auto_construct = true;

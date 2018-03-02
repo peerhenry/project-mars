@@ -15,6 +15,19 @@ draw_set_color(global.btn_color);
 draw_text(menu_btn_center_x, menu_btn_center_y, "Menu");
 #endregion
 
+var window_mouse_x = window_mouse_get_x();
+var window_mouse_y = window_mouse_get_y();
+for(var n = 0; n< ds_list_size(buttons); n++)
+{
+	var button = buttons[| n];
+	var hovers = 
+		window_mouse_x > button[? "left"] 
+		&& window_mouse_x < button[? "right"]
+		&& window_mouse_y > button[? "top"] 
+		&& window_mouse_y < button[? "bottom"];
+	scr_draw_hud_button(button, hovers);
+}
+
 #region RESOURCE COUNTER
 // box
 draw_set_color(global.btn_bg_color);
@@ -54,6 +67,7 @@ draw_set_alpha(1);
 
 #region ASTRONAUT PANELS
 
+/*
 var offset = 0;
 with(obj_astronaut_playable)
 {
@@ -181,24 +195,14 @@ with(obj_astronaut_playable)
 	counter++;
 	draw_sprite_ext(spr_auto_feed_small, 2, icon_x_or + icon_offset * counter, icon_top, 1, 1, 0, c_food, 1);
 	
-	/*draw_sprite(spr_auto_attack_small, auto_attack, icon_x_or + icon_offset * counter, icon_top);
-	counter++;
-	draw_sprite(spr_auto_construct_small, auto_construct, icon_x_or + icon_offset * counter, icon_top);
-	counter++;
-	draw_sprite(spr_auto_sleep_small, auto_sleep, icon_x_or + icon_offset * counter, icon_top);
-	counter++;
-	draw_sprite(spr_auto_feed_small, auto_eat, icon_x_or + icon_offset * counter, icon_top);*/
-	
 	// increment offset
 	offset = offset + other.ap_offset;
 }
-
+*/
 #endregion
 
-// todo: robot panels
-
 #region TOOLTIPS
-
+/*
 // hover over astro tooltip
 var astro = instance_position(mouse_x, mouse_y, obj_astronaut_playable);
 var window_mouse_x = window_mouse_get_x();
@@ -236,5 +240,5 @@ else if(hover_astro != noone) // hud hover astro
 			break;
 	}
 }
-
+*/
 #endregion

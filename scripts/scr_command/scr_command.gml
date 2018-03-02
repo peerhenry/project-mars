@@ -87,6 +87,6 @@ if(orders_given)
 	}
 	else 
 	{
-		// play robot sound
+		script_execute(play_sound, sound_robot_confirm);
 	}
 }

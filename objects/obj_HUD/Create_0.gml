@@ -1,6 +1,13 @@
 if( instance_number(object_index) > 1 ) instance_destroy();
 
+buttons = ds_list_create();
 mouse_over_HUD = false;
+
+var gui_w = display_get_gui_width();
+// scr_add_hud_button_text(id, 300, 300, font_small, "yoyoyo", 8, hud_action.toggle_menu); // debug
+
+scr_add_hud_button_sprite(id, gui_w - 20-16-8, 20, spr_robot_panels, 4, hud_action.toggle_robot_panels);
+scr_add_hud_button_sprite(id, gui_w - 20-16-8-16-8-8, 20, spr_astro_panels, 4, hud_action.toggle_astro_panels);
 
 // ### GLOBAL SETTINGS
 
@@ -104,13 +111,15 @@ cursor_sprite = spr_cursor;
 
 // -- Astronaut panel --
 
+global.hud_entity_panel_offset = 40;
+
+// the rest is to become obsolete...
 ap_margin = 20;
 ap_padding = 4;
 ap_name_w = 126;
 ap_w = ap_name_w + ap_padding + 4*(ap_padding+16);
 ap_h = 28;
 ap_offset = ap_h + 4;
-var gui_w = display_get_gui_width();
 ap_origin_left = gui_w - (ap_w + ap_margin);
 ap_origin_top = 40;
 health_bar_color = global.health_bar_color;

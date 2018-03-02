@@ -40,6 +40,6 @@ else if(single_select_ent == noone) // select grid selector
 // play selection sounds
 if( just_selected_any_entity )
 {
-	if(selection_includes_astro) scr_play_selection_sound();
-	exit;
+	if(selection_includes_astro) scr_play_astro_selection_sound();
+	else audio_play_sound(sound_robot_ask, 1, false);	
 }

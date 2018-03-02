@@ -52,7 +52,7 @@ is_dragging = false;
 // play selection sounds
 if( just_selected_any_entity )
 {
-	if(selection_includes_astro) scr_play_selection_sound();
-	exit;
+	if(selection_includes_astro) scr_play_astro_selection_sound();
+	else audio_play_sound(sound_robot_ask, 1, false);
 }
 else if(mouse_check_button_released(mb_left)) scr_deselect_all();

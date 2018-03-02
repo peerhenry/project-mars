@@ -58,3 +58,12 @@ enum hud_part
 	sleep_bar,
 	oxygen_bar
 }
+
+enum hud_action
+{
+	none,
+	toggle_astro_panels,
+	toggle_robot_panels,
+	toggle_menu,
+	toggle_zoom
+}

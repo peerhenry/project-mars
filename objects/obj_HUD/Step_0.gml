@@ -7,6 +7,21 @@ mouse_over_HUD = false;
 flash_counter = flash_counter + 1;
 if(flash_counter == 30) flash_counter = 0;
 
+#region buttons
+
+for(var n = 0; n < ds_list_size(buttons); n++)
+{
+	var button = buttons[| n];
+	var hovers = 
+		window_mouse_x > button[? "left"] 
+		&& window_mouse_x < button[? "right"]
+		&& window_mouse_y > button[? "top"] 
+		&& window_mouse_y < button[? "bottom"];
+	if(hovers && clicked) scr_execute_hud_action(button);
+}
+
+#endregion
+
 #region menu button
 
 mouse_over_menu = 
@@ -35,6 +50,7 @@ if(mouse_over_menu)
 
 #region astro panels
 
+/*
 if(double_click_timer > 0) double_click_timer = double_click_timer - 1;
 var offset = 0;
 var hover_over_ap = false;
@@ -148,9 +164,11 @@ else if(details_astro != noone)
 	exit;
 }
 
+*/
+
 #endregion
 
-if(mouse_over_HUD || global.hovering_over_HUD)
+if( mouse_over_HUD || global.hovering_over_HUD )
 {
 	cursor_sprite = spr_cursor;
 	exit;
