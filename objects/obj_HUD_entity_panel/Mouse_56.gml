@@ -3,13 +3,13 @@ if(hover)
 {
 	if(gui_x < left + need_bar_offset)
 	{
-		var add_to_select = keyboard_key_press(vk_shift) || keyboard_key_press(vk_control);
+		var add_to_select = keyboard_check(vk_shift) || keyboard_check(vk_control);
 		if( !add_to_select )
 		{
 			with(obj_movable) is_selected = false;
 		}
-		entity.is_selected = true;
-		scr_play_selection_sound(entity);
+		entity.is_selected = !entity.is_selected;
+		if(entity.is_selected) scr_play_selection_sound(entity);
 	}
 	else
 	{
