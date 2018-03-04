@@ -56,7 +56,7 @@ with(astro)
 	assert_true(has_path, "has_path");
 	if(has_path)
 	{
-		assert_true(is_moving, "is moving");
+		assert_true(path_exists(path), "path_exists(path)");
 		assert_equal(fourth, x, "x");
 		assert_equal(c_y, y, "y");
 		assert_equal(0, path_position, "path_position");

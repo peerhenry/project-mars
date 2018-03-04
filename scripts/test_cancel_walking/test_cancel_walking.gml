@@ -32,19 +32,16 @@ scr_navgrid_free(old_i, old_j);
 var result = scr_cancel_walking(astro);
 
 // assert
-assert_equal(path_get_x(astro.path, 0.5), half_x, "half of path");
 assert_equal(cancel_walking_result.stop, result, "cancel_walking_result");
 assert_true(can_go, "astronaut can navigate");
 with(astro)
 {
-	assert_false(is_moving, "is walking");
+	assert_false(path_exists(path), "path_exists(path)");
 	assert_equal(half_x, x, "x");
 	assert_equal(half_y, y, "y");
 	assert_equal(0, image_speed, "image_speed");
 	assert_equal(0, image_index, "image_index");
 	assert_equal(1, path_position, "path_position");
-	assert_equal(half_x, path_get_point_x(path, 1), "end path x");
-	assert_equal(half_y, path_get_point_y(path, 1), "end path y");
 }
 
 // cleanup

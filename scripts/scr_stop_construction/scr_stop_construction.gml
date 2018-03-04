@@ -10,5 +10,5 @@ with(arg_astronaut)
 	assigned_object = noone;
 	current_action = astronaut_action.idle;
 	construction = noone;
-	if(is_moving) scr_cancel_walking(arg_astronaut);
+	if(path_exists(path)) scr_cancel_walking(arg_astronaut);
 }

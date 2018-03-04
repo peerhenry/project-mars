@@ -1,7 +1,6 @@
 test_init(test_step_sprite_and_image);
 //arrange
 var astro = instance_create_depth(0,0,0,obj_astronaut);
-astro.is_moving = false;
 // act
 scr_step_sprite_and_image(astro);
 // assert

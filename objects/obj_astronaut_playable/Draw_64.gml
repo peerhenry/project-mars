@@ -1,5 +1,6 @@
-if ( show_details )
+if(show_details)
 {
+	#region settings
 	draw_set_font(font_hud);
 	
 	var width = details_panel_width;
@@ -8,7 +9,9 @@ if ( show_details )
 	var display_height = display_get_gui_height();
 	var tl_x = display_width - width - ap_offset;
 	var tl_y = 0;
+	#endregion
 	
+	#region panel, avatar, text
 	// panel
 	var tl_x2 = tl_x + width;
 	var tl_y2 = tl_y + height;
@@ -31,6 +34,7 @@ if ( show_details )
 	draw_text(x_or, tl_y + 16, name);
 	var half_bar = 8;
 	var bar_x_or = tl_x + 128;
+	#endregion
 	
 	#region prop bars
 	
@@ -98,7 +102,7 @@ if ( show_details )
 		draw_text(x_or, after_grid_y, "construction: " + string(construction));
 		draw_text(x_or, after_grid_y+24, "current_action: " + scr_action_to_string(current_action));
 		draw_text(x_or, after_grid_y+48, "assigned_object: " + string(assigned_object));
-		draw_text(x_or, after_grid_y+72, "is_moving: " + string(is_moving));
+		draw_text(x_or, after_grid_y+72, "path_exists(path): " + string(path_exists(path)));
 		draw_text(x_or, after_grid_y+96, "path_position: " + string(path_position));
 		draw_text(x_or, after_grid_y+120, "target: " + string(target));
 	}

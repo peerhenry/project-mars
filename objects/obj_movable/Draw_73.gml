@@ -1,4 +1,4 @@
-if(keyboard_check(vk_shift) && is_moving && owner == macro_player)
+if(keyboard_check(vk_shift) && path_exists(path) && owner == macro_player)
 {
 	var dest_x = scr_gi_to_rc(dest_i);
 	var dest_y = scr_gi_to_rc(dest_j);

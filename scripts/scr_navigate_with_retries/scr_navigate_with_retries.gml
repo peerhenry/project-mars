@@ -19,7 +19,7 @@ var navigation_grid = scr_get_nav_grid();
 
 with(arg_entity)
 {
-	if(!is_moving && end_i == occ_i && end_j == occ_j) return false;
+	if(!path_exists(path) && end_i == occ_i && end_j == occ_j) return false;
 }
 
 // Clear all character cells before trying to navigate
@@ -44,6 +44,7 @@ with(obj_gate)
 }
 
 var path_found = false;
+if(!path_exists(arg_entity.path)) arg_entity.path = path_add();
 
 if( scr_destination_is_legal(snap_end_x, snap_end_y, arg_entity) )
 {
@@ -73,7 +74,14 @@ if(path_found)
 		dest_i = end_i;
 		dest_j = end_j;
 		path_start(path, movement_speed, path_action_stop, false); // path, speed, end action, absolute
-		is_moving = true;
+	}
+}
+else
+{
+	with(arg_entity)
+	{
+		path_delete(path);
+		path = noone;
 	}
 }
 

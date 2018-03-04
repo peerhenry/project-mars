@@ -1,7 +1,6 @@
 with(obj_astronaut)
 {
-	// if(path_position > 0 && path_position < 1) // alternatively if(dest_i != occ_i && dest_j != occ_j)
-	if(is_moving)
+	if(path_exists(path))
 	{
 		// path_end();
 		// recalculate path

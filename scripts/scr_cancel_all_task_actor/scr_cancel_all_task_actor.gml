@@ -24,5 +24,5 @@ with(arg_entity)
 	target = noone;
 	current_action = astronaut_action.idle;
 	
-	if(is_moving) scr_cancel_walking(id);
+	if(path_exists(path)) scr_cancel_walking(id);
 }

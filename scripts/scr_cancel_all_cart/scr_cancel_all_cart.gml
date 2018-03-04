@@ -19,5 +19,5 @@ with(arg_entity)
 			break;
 	}
 	action = cart_action.idle;
-	if(is_moving) scr_cancel_walking(id);
+	if(path_exists(path)) scr_cancel_walking(id);
 }

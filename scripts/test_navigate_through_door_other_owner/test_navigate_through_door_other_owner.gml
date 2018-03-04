@@ -20,12 +20,12 @@ var d_j = 10;
 scr_navigate(enemy, scr_gi_to_rc(d_i), scr_gi_to_rc(d_j));
 
 // assert
-//assert_false(enemy.is_moving, "is walking");
 with(enemy)
 {
 	assert_false(d_i == dest_i && d_j == dest_j, "destination is through door");
 	var d_x = scr_gi_to_rc(d_i);
 	var d_y = scr_gi_to_rc(d_j);
+	assert_true(path_exists(path), "path_exists(path)");
 	assert_false(d_x == path_get_x(path, 1) && d_y == path_get_y(path, 1), "path destination is through door");
 }
 

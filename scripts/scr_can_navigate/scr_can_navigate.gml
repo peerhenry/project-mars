@@ -35,7 +35,9 @@ var path_found = false;
 // # meat and bones
 if(scr_navgrid_cell_is_free(end_i, end_j) && scr_destination_is_legal(snap_end_x, snap_end_y, arg_astronaut))
 {
-	path_found = mp_grid_path(navigation_grid, arg_astronaut.path, start_x, start_y, snap_end_x, snap_end_y, true);
+	var dummy_path = path_add();
+	path_found = mp_grid_path(navigation_grid, dummy_path, start_x, start_y, snap_end_x, snap_end_y, true);
+	path_delete(dummy_path);
 }
 
 // reset all navgrid cells at astronaut positions.

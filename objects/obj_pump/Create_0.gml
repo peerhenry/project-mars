@@ -2,6 +2,7 @@ scr_trace("pump create event");
 //show_debug_message("pump create event");
 
 event_inherited();
+draw_cables = true;
 
 // occupy map grid & nav grid
 scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.occupy);

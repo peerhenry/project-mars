@@ -3,7 +3,7 @@ var arg_astronaut = argument0;
 
 with(arg_astronaut)
 {
-	if(is_moving)
+	if(path_exists(path))
 	{
 		image_speed = 1.2;
 		var dx = x - prev_x;

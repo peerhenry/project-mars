@@ -1,7 +1,6 @@
 script_container = global.script_container;
 // movement and drawing
-path = path_add();
-is_moving = false;
+path = noone;
 occ_i = (x - 16) div 32;
 occ_j = (y - 16) div 32;
 dest_i = occ_i;

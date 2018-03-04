@@ -17,15 +17,15 @@ switch(arg_assignable.object_index)
 		// todo; write hydroponics assignment condition: 
 		// hydroponics food must be done & astronaut must have space in inventory
 		var hydroponics_has_food = scr_hydroponics_has_food(arg_assignable);
-		var enough_space = scr_astronaut_has_big_space(arg_astronaut);
+		var enough_space = scr_inventory_has_big_space(arg_astronaut.inventory);
 		return enough_space && hydroponics_has_food;
 	case obj_fridge:
-		var astronaut_carries_food = scr_astronaut_has(arg_astronaut, macro_inventory_food);
+		var astronaut_carries_food = scr_inventory_has_item(arg_astronaut.inventory, macro_inventory_food);
 		if(astronaut_carries_food) return scr_inventory_has_space_for_item(arg_assignable.inventory, macro_inventory_food);
 		else return scr_inventory_has_item(arg_assignable.inventory, macro_inventory_food);
 	case obj_mdu_pile:
 		// astronaut has mdu and pile has less than 8
-		if(scr_astronaut_has(arg_astronaut, macro_inventory_module))
+		if(scr_inventory_has_item(arg_astronaut.inventory, macro_inventory_module))
 		{
 			return (arg_assignable.image_index < 7);
 		}
