@@ -2,8 +2,8 @@
 
 if(hover)
 {
-	var gui_x = display_mouse_get_x();
-	var gui_y = display_mouse_get_y();
+	var gui_x = window_mouse_get_x();
+	var gui_y = window_mouse_get_y();
 	var tt_x = gui_x + 16;
 	var tt_y = gui_y + 16;
 	if(gui_x < left + need_bar_offset)

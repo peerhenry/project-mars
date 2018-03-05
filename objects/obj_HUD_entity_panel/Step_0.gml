@@ -4,8 +4,8 @@ if(!instance_exists(entity) || entity == noone)
 	exit;
 }
 
-var gui_x = display_mouse_get_x();
-var gui_y = display_mouse_get_y();
+var gui_x = window_mouse_get_x();
+var gui_y = window_mouse_get_y();
 
 if( gui_x > left && gui_x < right && gui_y > top && gui_y < bottom ) hover = true;
 else hover = false;

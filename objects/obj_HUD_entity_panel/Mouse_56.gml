@@ -1,4 +1,4 @@
-var gui_x = display_mouse_get_x();
+var gui_x = window_mouse_get_x();
 if(hover)
 {
 	if(gui_x < left + need_bar_offset)
