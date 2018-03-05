@@ -1,4 +1,4 @@
-/// @description Update astronaut
+/// @description Update movable
 
 if(has_died) exit;
 

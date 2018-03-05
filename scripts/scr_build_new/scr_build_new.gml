@@ -25,6 +25,8 @@ var top = 0;
 var mdu_count = 0;
 var total_required_metal = 0;
 var total_required_carbon = 0;
+var total_x = 0; // used to calculate average x for construction
+var total_y = 0;
 
 for(var n = 0; n < cell_count; n++)
 {
@@ -106,6 +108,8 @@ for(var n = 0; n < cell_count; n++)
 	
 	if(instance_exists(new_instance)) // post creation could destroy the instance
 	{
+		total_x += new_instance.x;
+		total_y += new_instance.y;
 		ds_list_add(new_instances, new_instance);
 		// create construction cell
 		var new_construction_cell = scr_create_construction_cell(cell_i, cell_j, add_layer, map_buffer_action, new_instance, object_to_remove);
@@ -114,13 +118,14 @@ for(var n = 0; n < cell_count; n++)
 }
 
 // Create construction and register in queue
-if(cell_count > 0 && ds_list_size(new_instances) > 0)
+var new_instance_count = ds_list_size(new_instances);
+if(cell_count > 0 && new_instance_count > 0)
 {
 	var owner = global.default_owner;
 	var new_construction = scr_new_construction(construction_cell_list, prerequisite, right, top, left, bottom, owner, total_required_metal);
 	scr_register_new_construction(new_construction);
 	scr_recalculate_paths();
-	for(var n = 0; n < ds_list_size(new_instances); n++)
+	for(var n = 0; n < new_instance_count; n++)
 	{
 		var next_instance = ds_list_find_value(new_instances, n);
 		next_instance.construction_instance = new_construction;

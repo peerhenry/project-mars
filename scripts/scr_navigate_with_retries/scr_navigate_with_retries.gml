@@ -17,6 +17,11 @@ var snap_end_y = scr_gi_to_rc(end_j);
 var counter = 0;
 var navigation_grid = scr_get_nav_grid();
 
+if(start_x == snap_end_x && start_y = snap_end_y)
+{
+	scr_stop_moving(arg_entity);
+	return false;
+}
 with(arg_entity)
 {
 	if(!path_exists(path) && end_i == occ_i && end_j == occ_j) return false;
@@ -67,7 +72,7 @@ while ( !path_found && counter < arg_max_loop )
 }
 
 // Navigate the path
-if(path_found)
+if(path_found && !(snap_end_x == arg_entity.x && snap_end_x == arg_entity.y))
 {
 	with(arg_entity)
 	{
@@ -78,11 +83,7 @@ if(path_found)
 }
 else
 {
-	with(arg_entity)
-	{
-		path_delete(path);
-		path = noone;
-	}
+	scr_stop_moving(arg_entity);
 }
 
 // Reset all navgrid cells at astronaut positions.

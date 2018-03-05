@@ -21,6 +21,7 @@ if(room1 != noone && room1.oxygen_level < 100)
 	/*if(room1.oxygen_level < global.oxygen_empty_level){
 		draw_sprite(spr_oxygen_depleted, -1, xx, yy);
 	}//*/
+	draw_set_alpha(1);
 }
 
 if(room2 != noone && room2.oxygen_level < 100)
@@ -39,12 +40,9 @@ if(room2 != noone && room2.oxygen_level < 100)
 	/*if(room1.oxygen_level < global.oxygen_empty_level){
 		draw_sprite(spr_oxygen_depleted, -1, xx, yy);
 	}*/
+	draw_set_alpha(1);
 }
 
-//if(temperature < 20){}
-
-// reset drawing parameters
-draw_set_alpha(1);
 
 draw_self();
 

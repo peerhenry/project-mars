@@ -26,10 +26,7 @@ with(obj_movable)
 }
 
 if(!any_selected) exit;
-else // DEBUG
-{
-	show_debug_message("selection_contains_cart: " + string(selection_contains_cart));
-}
+else show_debug_message("scr_command executing..."); // DEBUG
 
 // Set possible clickables
 var el_assignable = instance_position(arg_x, arg_y, obj_assignable);

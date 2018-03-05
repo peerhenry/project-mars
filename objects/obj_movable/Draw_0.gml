@@ -1,3 +1,5 @@
+/// @description selection box, self, mask and health bar
+
 // selected box
 if(is_selected)
 {

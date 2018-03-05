@@ -37,3 +37,5 @@ mask_color = [0,0,0,0]; // not regular color; array for shader
 sprite_index = sprite_down;
 mask_sprite = sprite_mask_down;
 health_bar_color = global.health_bar_color;
+
+last_cancel_walking_result = 0; // debug

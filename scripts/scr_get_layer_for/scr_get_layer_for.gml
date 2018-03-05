@@ -6,6 +6,7 @@ switch(argument0)
 	case obj_cart_assign_icon:
 	case obj_leak:
 	case obj_hit:
+	case obj_construction:
 		return macro_logic_layer;
 	case obj_wall:
 	case obj_construction_mdu_pile:

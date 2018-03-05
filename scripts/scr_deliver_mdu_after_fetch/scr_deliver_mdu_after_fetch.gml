@@ -10,18 +10,18 @@ if(construction == noone || construction[? construction_build_state] != construc
 	exit;
 }
 
-var reach_state = scr_get_reach_state(arg_astronaut, construction);
+var state = scr_get_reach_state(arg_astronaut, construction);
 
-switch(reach_state)
+switch(state)
 {
-	case macro_adjacent:
+	case reach_state.adjacent:
 		scr_transfer_mdu(script_container, arg_astronaut, construction);
 		break;
-	case macro_reachable:
+	case reach_state.reachable:
 		scr_navigate_to_construction(arg_astronaut, construction);
 		arg_astronaut.current_action = astronaut_action.delivering_mdu;
 		break;
-	case macro_unreachable:
+	case reach_state.unreachable:
 		var deliveries_decr = construction[? construction_mdu_deliveries] - 1;
 		ds_map_replace(construction, construction_mdu_deliveries, deliveries_decr);
 		scr_update_astro_props(arg_astronaut, noone, astronaut_action.idle);

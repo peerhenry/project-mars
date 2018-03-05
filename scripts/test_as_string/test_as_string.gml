@@ -8,11 +8,11 @@ switch(name){
 	case "reach_state":
 	case "reach state":
 		switch(value){
-			case macro_unreachable:
+			case reach_state.unreachable:
 				return "unreachable";
-			case macro_reachable:
+			case reach_state.reachable:
 				return "reachable";
-			case macro_adjacent:
+			case reach_state.adjacent:
 				return "adjacent";
 			default:
 				return string(value);

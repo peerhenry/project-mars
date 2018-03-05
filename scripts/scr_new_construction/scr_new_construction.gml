@@ -22,7 +22,8 @@ var arg_left = argument4;
 var arg_bottom = argument5;
 var arg_owner = argument6;
 var arg_required_metal = argument7;
-var calc_mdu = script_container_resolve(global.script_container, "calculate_required_mdu_count");
+var script_container = global.script_container;
+var calc_mdu = script_container_resolve(script_container, "calculate_required_mdu_count");
 var mdu_count = script_execute(calc_mdu, arg_construction_cell_list);
 
 var new_construction = ds_map_create();
@@ -48,4 +49,12 @@ ds_map_add(new_construction, construction_mdu_deliveries, 0);
 ds_map_add(new_construction, construction_mdu_piles, ds_list_create());
 ds_map_add(new_construction, construction_owner, arg_owner);
 ds_map_add(new_construction, construction_required_metal, arg_required_metal);
+
+var av_x = (arg_left + arg_right)/2;
+var av_y = (arg_top + arg_bottom)/2;
+var create_instance = resolve(script_container, "create_instance");
+var con_obj = script_execute(create_instance, av_x, av_y, obj_construction);
+ds_map_add(new_construction, construction_object, con_obj);
+with(con_obj) construction = new_construction;
+
 return new_construction;

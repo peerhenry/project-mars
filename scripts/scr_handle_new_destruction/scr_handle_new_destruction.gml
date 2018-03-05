@@ -83,7 +83,7 @@ for(var n = 0; n < count; n++) // loop over cells
 			// todo: Gates must not be allowed to be active while under deconstruction...
 			with(removal)
 			{
-				if(is_open) scr_gate_toggle();
+				if(is_open) scr_gate_toggle(removal);
 				scr_navgrid_occupy(occ_i, occ_j);
 				under_destruction = true; // boolean to prevent mouse control over gate
 			}

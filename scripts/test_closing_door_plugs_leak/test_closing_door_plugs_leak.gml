@@ -15,7 +15,7 @@ ds_list_add(room2.doors, door);
 door.is_open = true;
 
 // act
-with(door) scr_gate_toggle();
+with(door) scr_gate_toggle(door);
 
 // assert
 assert_false(door.is_open, "door.is_open");

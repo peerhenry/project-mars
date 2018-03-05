@@ -6,7 +6,7 @@ if(under_construction || under_destruction)
 }
 if(!is_open && !locked && scr_get_selected_constr_type() == noone){
 	auto_close = false;
-	scr_gate_toggle();
+	scr_gate_toggle(id);
 }
 else{
 	auto_close = true;

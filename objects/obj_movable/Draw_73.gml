@@ -1,3 +1,5 @@
+/// @description shift arrow
+
 if(keyboard_check(vk_shift) && path_exists(path) && owner == macro_player)
 {
 	var dest_x = scr_gi_to_rc(dest_i);

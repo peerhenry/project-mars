@@ -1,5 +1,5 @@
 /// @arg astronaut
-scr_trace("scr_autotask");
+// scr_trace("scr_autotask");
 debug_instance_inherits(argument0, obj_astronaut);
 var arg_astronaut = argument0;
 

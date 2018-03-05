@@ -105,6 +105,10 @@ if(show_details)
 		draw_text(x_or, after_grid_y+72, "path_exists(path): " + string(path_exists(path)));
 		draw_text(x_or, after_grid_y+96, "path_position: " + string(path_position));
 		draw_text(x_or, after_grid_y+120, "target: " + string(target));
+		draw_text(x_or, after_grid_y+144, "last_cancel_walking_result: " + string(last_cancel_walking_result));
+		draw_text(x_or, after_grid_y+168, "path_index: " + string(path_index));
+		draw_text(x_or, after_grid_y+192, "path: " + string(path));
+		draw_text(x_or, after_grid_y+216, "path_positionprevious: " + string(path_positionprevious));
 	}
 	#endregion
 	

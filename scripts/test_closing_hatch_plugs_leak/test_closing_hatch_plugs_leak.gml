@@ -8,7 +8,7 @@ hatch.is_open = true;
 base_room.oxygen_is_leaking = true;
 
 // act
-with(hatch) scr_gate_toggle();
+with(hatch) scr_gate_toggle(hatch);
 
 // assert
 assert_false(hatch.is_open, "hatch.is_open");

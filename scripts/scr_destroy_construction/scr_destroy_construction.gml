@@ -12,4 +12,6 @@ with(obj_astronaut)
 {
 	if(construction == arg_construction) scr_stop_construction(id);
 }
+with(arg_construction[? construction_object]) instance_destroy();
+arg_construction[? construction_object] = noone;
 ds_map_destroy(arg_construction);

@@ -129,6 +129,7 @@
 #macro construction_mdu_piles 14
 #macro construction_owner 15
 #macro construction_required_metal 16
+#macro construction_object 17
 
 // construction ghost
 #macro macro_ghost_stack 0

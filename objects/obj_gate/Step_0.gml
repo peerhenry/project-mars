@@ -4,16 +4,18 @@ if(image_index == target_frame)
 	image_speed = 0;
 }
 
-if(is_open){
+if(is_open)
+{
 	if(auto_close)
 	{
-		var astronaut = collision_rectangle(x-15, y-15, x+15, y+15, obj_movable, false, true);
-		if(astronaut == noone) scr_gate_toggle();	
+		var entity = collision_rectangle(x-15, y-15, x+15, y+15, obj_movable, false, true);
+		if(entity == noone) scr_gate_toggle(id);	
 	}
-} else {
+} else
+{
 	if(!locked)
 	{
-		var astronaut = collision_rectangle(x-15, y-15, x+15, y+15, obj_movable, false, true);
-		if(astronaut != noone) scr_gate_toggle();
+		var entity = collision_rectangle(x-15, y-15, x+15, y+15, obj_movable, false, true);
+		if(entity != noone) scr_gate_toggle(id);
 	}
 }

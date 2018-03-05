@@ -1,5 +1,5 @@
 /// @description Autotask
-scr_trace("astronaut alarm 1");
+// scr_trace("astronaut alarm 1");
 
 if(!path_exists(path) && current_action = astronaut_action.idle)
 {

@@ -11,8 +11,8 @@ scr_navgrid_occupy(1,0);
 // assert the setup went as expected
 assert_true(is_fetching, "is_fetching");
 assert_equal(1, constr[? construction_mdu_deliveries], "construction_deliveries");
-var reach_state = scr_get_reach_state(astro, constr);
-assert_equal(macro_unreachable, reach_state, "reach_state");
+var reach = scr_get_reach_state(astro, constr);
+assert_equal(reach_state.unreachable, reach, "reach_state");
 
 // act
 scr_deliver_mdu_after_fetch(astro);
