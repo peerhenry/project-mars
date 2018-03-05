@@ -1,4 +1,4 @@
-if(entity == noone)
+if(!instance_exists(entity) || entity == noone)
 {
 	instance_destroy();
 	exit;

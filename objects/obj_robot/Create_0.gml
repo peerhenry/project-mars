@@ -5,3 +5,4 @@
 event_inherited();
 
 battery_charge = 100;
+movement_speed = global.robot_move_speed;
