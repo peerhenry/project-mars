@@ -72,6 +72,11 @@ if( !orders_given && !position_meeting(arg_x, arg_y, obj_gate) )	// Or move
 
 if(orders_given)
 {
+	with(obj_movable)
+	{
+		if(is_selected) autotasking = false;
+	}
+	
 	var play_sound = script_container_resolve(script_container, "play_sound");
 	if(selection_contains_astronaut)
 	{

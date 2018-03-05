@@ -47,6 +47,7 @@ if(oxygen_level < 100 && !oxygen_is_leaking && scr_can_draw_from_grid(id, macro_
 	var replenishment = min(100 - oxygen_level, o2_replenishment);
 	new_consumption = replenishment*ds_list_size(tiles);
 	oxygen_level += o2_replenishment;
+	if(oxygen_level > 100) oxygen_level = 100;
 }
 
 if(current_consumption != new_consumption)

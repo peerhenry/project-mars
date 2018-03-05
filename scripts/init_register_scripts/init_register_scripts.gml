@@ -1,4 +1,4 @@
-show_debug_message("init_register_scripts");
+scr_trace("init_register_scripts");
 var container = script_container_create();
 script_container_register(container, "room_logic_basetile", scr_room_logic_basetile);
 script_container_register(container, "play_sound", scr_play_sound);
@@ -11,5 +11,6 @@ script_container_register(container, "get_reach_state", scr_get_reach_state);
 script_container_register(container, "room_logic_door", scr_room_logic_door);
 script_container_register(container, "door_destroy_logic", scr_door_destroy_logic);
 script_container_register(container, "create_explosion_and_rubble", scr_create_explosion_and_rubble);
+script_container_register(container, "room_remove_tile_and_part", scr_room_remove_tile_and_part);
 global.script_container = container;
 return container;

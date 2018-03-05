@@ -15,3 +15,4 @@ carrying_instance = noone;
 assigned_instance = noone;
 ghost = noone;
 action = cart_action.idle;
+autotasking = false;

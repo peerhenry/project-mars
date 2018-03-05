@@ -10,6 +10,12 @@ debug_finish_all_constructions();
 // assert setup
 assert_object_count(5, obj_base_tile);
 assert_object_count(16, obj_wall);
+assert_object_count(1, obj_room);
+with(obj_base_tile)
+{
+	var grid = scr_get_grid(id, macro_grid_oxygen);
+	assert_equal(obj_grid, grid.object_index, "grid.object_index");
+}
 var room_count = 0;
 with(obj_room)
 {
@@ -39,9 +45,9 @@ with(obj_room)
 }
 
 // cleanup
-script_container_register(container, "room_logic_basetile", scr_mock);
 with(obj_wall) instance_destroy();
 with(obj_base_tile) instance_destroy(); // should also destroy the rooms
 assert_object_count(0, obj_room);
+script_container_register(container, "room_logic_basetile", scr_mock);
 
 test_result();

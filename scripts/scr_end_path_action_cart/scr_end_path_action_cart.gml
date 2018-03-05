@@ -12,8 +12,9 @@ with(arg_cart)
 		case cart_action.pickup:
 			if(assigned_instance != noone)
 			{
+				scr_navgrid_clear_cell( assigned_instance.occ_i, assigned_instance.occ_j );
 				// disconnect instance from grid and destroy icon
-				scr_destroy_instance_grid_logic(assigned_instance);
+				scr_decouple_from_grid(assigned_instance);
 				if(variable_instance_exists(assigned_instance, "icon") && assigned_instance.icon != noone) instance_destroy(assigned_instance.icon);
 				// set carrying instance and update position
 				carrying_instance = assigned_instance;

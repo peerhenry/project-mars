@@ -10,7 +10,7 @@ var right = argument3;
 var bottom = argument4;
 
 var container = global.script_container;
-var get_layer = script_container_resolve(container, "get_layer_for");
+var get_layer = resolve(container, "get_layer_for");
 var rooms_layer = script_execute(get_layer, obj_room);
 var new_room = instance_create_layer(left, top, rooms_layer, obj_room);
 with(new_room){

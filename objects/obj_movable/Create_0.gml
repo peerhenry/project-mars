@@ -39,3 +39,4 @@ mask_sprite = sprite_mask_down;
 health_bar_color = global.health_bar_color;
 
 last_cancel_walking_result = 0; // debug
+autotasking = false;

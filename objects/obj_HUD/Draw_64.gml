@@ -241,4 +241,16 @@ else if(hover_astro != noone) // hud hover astro
 	}
 }
 */
+var tile = instance_position(mouse_x, mouse_y, obj_base_tile);
+var comp = instance_position(mouse_x, mouse_y, obj_base_component);
+if(tile != noone && comp == noone)
+{
+	var window_mouse_x = window_mouse_get_x();
+	var window_mouse_y = window_mouse_get_y();
+	var tt_x = window_mouse_x + 16;
+	var tt_y = window_mouse_y + 16;
+	var le_room = scr_room_at(mouse_x, mouse_y);
+	scr_draw_hud_tooltip(tt_x, tt_y, "oxygen: " + string(le_room.oxygen_level) + "%");
+}
+
 #endregion

@@ -29,12 +29,14 @@ with(arg_entity)
 				break;
 			case astronaut_action.moving_by_command:
 				current_action = astronaut_action.idle;
+				autotasking = false;
 				break;
 			case astronaut_action.moving_to_shoot:
 				current_action = astronaut_action.in_combat;
 				break;
 			default:
 				current_action = astronaut_action.idle;
+				autotasking = false;
 				break;
 		}
 	}

@@ -17,6 +17,7 @@ if(state != reach_state.unreachable)
 	arg_assignable.icon = icon;
 	arg_assignable.assigned_astronaut = arg_astronaut;
 	arg_astronaut.assigned_object = arg_assignable;
+	arg_astronaut.current_action = astronaut_action.executing_assignment;
 	if(state == reach_state.adjacent)
 	{
 		// navigate to center of tile
