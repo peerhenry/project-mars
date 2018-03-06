@@ -22,7 +22,7 @@ if(state == button_state.hover || state == button_state.selected)
 // tooltip
 if(state == button_state.hover)
 {
-	var tt_left = right;
+	/*var tt_left = right;
 	var tt_right = right + 320;
 	var tt_center_x = (tt_left + tt_right)/2;
 	var tt_center_y = (top + bottom)/2;
@@ -35,9 +35,9 @@ if(state == button_state.hover)
 	draw_set_font(font_hud);
 	var tt_text = tooltip_text;
 	draw_set_color(btn_color);
-	draw_text(tt_center_x, tt_center_y, tt_text);
+	draw_text(tt_center_x, tt_center_y, tt_text);*/
 }
-	
+
 // outline
 draw_set_color(c_black);
 draw_rectangle(left, top, right, bottom, true);

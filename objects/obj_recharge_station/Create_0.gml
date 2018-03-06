@@ -1,4 +1,5 @@
 event_inherited();
+name = "recharge station";
 draw_cables = true;
 has_power = false;
 image_speed = 0;

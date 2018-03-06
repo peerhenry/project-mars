@@ -1,6 +1,6 @@
-var hud_menu_active = false;
-with(obj_HUD_menu) hud_menu_active = is_active;
-if(show_details && !hud_menu_active)
+var gui_menu_active = false;
+with(obj_gui_menu) gui_menu_active = is_active;
+if(show_details && !gui_menu_active)
 {
 	// check if clicked on grid
 	var window_mouse_y = window_mouse_get_y();

@@ -1,5 +1,5 @@
 event_inherited();
-
+name = "med bed";
 heal_speed = global.sleep_speed;
 rot_param = global.construction_ghost[? macro_ghost_rotation];
 di = 0;

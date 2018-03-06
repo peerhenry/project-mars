@@ -3,15 +3,24 @@
 scr_hide_categories();
 
 var construction_list = global.active_constructions;
-var counter = 0;
+var item_count = 0;
 for(var n = 0; n < ds_list_size(construction_list); n++){
 	var next_build = ds_list_find_value(construction_list, n);
 	if(scr_get_category(next_build) == category){
-		counter++;
+		item_count++;
 	}
 }
 
-scr_create_category_panel(x_offset - padding, y_offset - padding, x_offset + 32 + padding, y_offset + counter*32 + padding);
+var gui_w = display_get_gui_width();
+var gui_h = display_get_gui_height();
+var x_offset = (gui_w - item_count*32)/2;
+var y_offset = gui_h - 64 - 2*padding;
+
+scr_create_category_panel(
+	x_offset - padding, 
+	y_offset - padding, 
+	x_offset + item_count*32 + padding, 
+	y_offset + 32 + padding);
 
 // Create buttons for this category
 
@@ -23,8 +32,8 @@ for(var n = 0; n < ds_list_size(construction_list); n++){
 	var next_image_index = scr_hud_image_for_build(next_build);
 
 	if(scr_get_category(next_build) == category){
-		var left = x_offset;
-		var top = y_offset + (32 + y_spacing)*counter;
+		var left = x_offset + (32 + spacing)*counter;
+		var top = y_offset;
 		counter++;
 		var new_item = instance_create_layer(left, top, macro_logic_layer, obj_HUD_construction_button);
 		with(new_item)

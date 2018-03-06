@@ -1,4 +1,5 @@
 event_inherited();
+name = "drill";
 scr_trace("obj_drill create");
 scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.occupy);
 depth = -occ_j;

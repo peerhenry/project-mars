@@ -1,4 +1,5 @@
 event_inherited();
+name = "oxygen tank";
 scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.occupy);
 
 // oxygen grid

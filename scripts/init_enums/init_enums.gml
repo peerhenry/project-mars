@@ -65,5 +65,12 @@ enum hud_action
 	toggle_astro_panels,
 	toggle_robot_panels,
 	toggle_menu,
-	toggle_zoom
+	toggle_zoom,
+	
+	// new HUD
+	toggle_outliner,
+	toggle_outliner_astronauts,
+	toggle_outliner_robots,
+	toggle_outliner_carts,
+	toggle_minimap
 }

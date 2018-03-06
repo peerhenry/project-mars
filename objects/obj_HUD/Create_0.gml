@@ -4,6 +4,8 @@ buttons = ds_list_create();
 mouse_over_HUD = false;
 
 var gui_w = display_get_gui_width();
+var gui_h = display_get_gui_height();
+
 // scr_add_hud_button_text(id, 300, 300, font_small, "yoyoyo", 8, hud_action.toggle_menu); // debug
 
 scr_add_hud_button_sprite(id, gui_w - 20-16-8, 20, spr_robot_panels, 4, hud_action.toggle_robot_panels);
@@ -49,9 +51,11 @@ instance_create_layer(8, bottom, macro_logic_layer, obj_HUD_zoom_button);
 // -- Construction panel --
 
 item_count = 0;
-var left = x_offset;
-var top = y_offset + (32 + y_spacing)*item_count;
-
+// var left = x_offset;
+// var top = y_offset + (32 + y_spacing)*item_count;
+var gui_half_w = gui_w/2;
+var top = gui_h - 32 - 8;
+var left = gui_half_w - 1.5*32;
 deconstruction_item = instance_create_layer(left, top, macro_logic_layer, obj_HUD_category_select_button);
 with(deconstruction_item){
 	tooltip_text = "Deconstruction";
@@ -60,7 +64,8 @@ with(deconstruction_item){
 }
 item_count++;
 
-var top = y_offset + (32 + y_spacing)*item_count;
+// var top = y_offset + (32 + y_spacing)*item_count;
+var left = gui_half_w - 0.5*32;
 foundation_item = instance_create_layer(left, top, macro_logic_layer, obj_HUD_category_select_button);
 with(foundation_item){
 	tooltip_text = "Base Foundation";
@@ -69,7 +74,7 @@ with(foundation_item){
 }
 item_count++;
 
-var top = y_offset + (32 + y_spacing)*item_count;
+var left = gui_half_w + 0.5*32;
 inside_item = instance_create_layer(left, top, macro_logic_layer, obj_HUD_category_select_button);
 with(inside_item){
 	tooltip_text = "Inside constructions";
@@ -78,7 +83,7 @@ with(inside_item){
 }
 item_count++;
 
-var top = y_offset + (32 + y_spacing)*item_count;
+var left = gui_half_w + 1.5*32;
 outside_item = instance_create_layer(left, top, macro_logic_layer, obj_HUD_category_select_button);
 with(outside_item){
 	tooltip_text = "Outside constructions";
@@ -96,8 +101,8 @@ menu_btn_center_x = (menu_btn_left + menu_btn_right)/2;
 menu_btn_center_y = (menu_btn_top + menu_btn_bottom)/2;
 mouse_over_menu = false;
 
-hud_menu = instance_create_layer(-500, 500, macro_logic_layer, obj_HUD_menu_main);
-sound_menu = instance_create_layer(-500, 500, macro_logic_layer, obj_HUD_menu_sound);
+gui_menu = instance_create_layer(-500, 500, macro_logic_layer, obj_gui_menu_main);
+sound_menu = instance_create_layer(-500, 500, macro_logic_layer, obj_gui_menu_sound);
 
 // -- Resource panel settings --
 resources_left = 480;

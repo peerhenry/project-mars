@@ -1,6 +1,6 @@
-var hud_menu_active = false;
-with(obj_HUD_menu) hud_menu_active = is_active;
-if(show_details && !hud_menu_active)
+var gui_menu_active = false;
+with(obj_gui_menu) gui_menu_active = is_active;
+if(show_details && !gui_menu_active)
 {
 	var display_height = display_get_gui_height();
 	var icon_top = display_height - 40;
@@ -27,11 +27,5 @@ if(show_details && !hud_menu_active)
 		else if(window_mouse_x > icon_left4 && window_mouse_x < icon_left4 + 32){
 			auto_eat = !auto_eat;
 		}
-		
-		// DEBUG
-		//auto_attack = !auto_attack;
-		//auto_construct = !auto_construct;
-		//auto_sleep = !auto_sleep;
-		//auto_eat = !auto_eat;
 	}
 }
