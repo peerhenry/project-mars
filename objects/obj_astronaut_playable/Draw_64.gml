@@ -1,27 +1,18 @@
 if(show_details)
-{
-	#region settings
-	draw_set_font(font_hud);
-	
-	var width = details_panel_width;
-	var height = details_panel_height;// padding + spaces + lines + inventory + avatar
-	var gui_width = display_get_gui_width();
-	var gui_height = display_get_gui_height();
-	var tl_x = 0; // gui_width - width - ap_offset;
-	var tl_y = gui_height - height; // 0;
-	#endregion
+{	
+	draw_set_font(font_small_bold);
 	
 	#region panel, avatar, text
 	// panel
-	var tl_x2 = tl_x + width;
-	var tl_y2 = tl_y + height;
+	var tl_x2 = tl_x + details_panel_width;
+	var tl_y2 = tl_y + details_panel_height;
 	scr_draw_panel(tl_x, tl_y, tl_x2, tl_y2);
 	
 	// avatar
 	draw_set_color(c_black);
 	var av_w = 96;
 	var av_h = 96;
-	var av_x = tl_x + width - 16 - av_w;
+	var av_x = tl_x + details_panel_width - 16 - av_w;
 	var av_y = tl_y + 16
 	draw_rectangle(av_x, av_y, av_x + av_w, av_y + av_h, false);
 	draw_sprite(spr_avatar, 0, av_x, av_y);

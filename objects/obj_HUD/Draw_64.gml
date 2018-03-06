@@ -1,19 +1,8 @@
-#region MENU BUTTON
-// box
-var color = global.btn_bg_color;
-if(mouse_over_menu) color = global.btn_bg_color_hover;
-draw_set_color(color);
-draw_rectangle(menu_btn_left, menu_btn_top, menu_btn_right, menu_btn_bottom, false);
-// outline
-draw_set_color(c_black);
-draw_rectangle(menu_btn_left, menu_btn_top, menu_btn_right, menu_btn_bottom, true);
-// text
-draw_set_halign(fa_center); 
-draw_set_valign(fa_middle);
-draw_set_font(font_hud);
-draw_set_color(global.btn_color);
-draw_text(menu_btn_center_x, menu_btn_center_y, "Menu");
-#endregion
+#region BAR AND BUTTONS
+
+draw_set_alpha(0.9);
+draw_rectangle_color(0, 0, gui_w, hud_bar_h, c_teal, c_teal, c_black, c_black, false);
+draw_set_alpha(1.0);
 
 var window_mouse_x = window_mouse_get_x();
 var window_mouse_y = window_mouse_get_y();
@@ -25,22 +14,20 @@ for(var n = 0; n< ds_list_size(buttons); n++)
 		&& window_mouse_x < button[? "right"]
 		&& window_mouse_y > button[? "top"] 
 		&& window_mouse_y < button[? "bottom"];
-	scr_draw_hud_button(button, hovers);
+	if(button[? "bar_button"]) scr_draw_hud_bar_button(button, hovers);
+	else scr_draw_hud_button(button, hovers);
 }
 
+#endregion
+
 #region RESOURCE COUNTER
-// box
-draw_set_color(global.btn_bg_color);
-draw_rectangle(resources_left, resources_top, resources_right, resources_bottom, false);
-// outline
-draw_set_color(c_black);
-draw_rectangle(resources_left, resources_top, resources_right, resources_bottom, true);
 // text
 draw_set_halign(fa_center); 
 draw_set_valign(fa_middle);
 draw_set_font(font_hud);
-draw_set_color(global.btn_color);
-draw_text(resources_center_x, resources_center_y, "Metal: " + string(scr_get_metal_amount()));
+draw_set_color(c_white);
+draw_text(resources_center_x - 100, resources_center_y, "Metal: " + string(scr_get_metal_amount()));
+draw_text(resources_center_x + 100, resources_center_y, "Gold: " + string(0));
 #endregion
 
 #region BUILD PANEL
@@ -82,3 +69,10 @@ if(comp != noone)
 }
 
 #endregion
+
+// BAR BOTTOM LINE
+draw_set_alpha(0.2);
+draw_line_width_color(0, hud_bar_h, gui_w, hud_bar_h, 3, c_aqua, c_aqua);
+draw_set_alpha(0.5);
+draw_line_width_color(0, hud_bar_h, gui_w, hud_bar_h, 1, c_aqua, c_aqua);
+draw_set_alpha(1.0);

@@ -8,21 +8,23 @@ var bottom = arg_button[?"bottom"];
 
 var sprite = arg_button[?"sprite"];
 
+draw_set_alpha(0.9);
 if(arg_hovers)
 {
 	if(mouse_check_button_pressed(mb_left))
 	{
-		scr_draw_panel_inverse(left, top, right, bottom);
+		draw_rectangle_color(left, top, right, bottom, c_black, c_black, c_black, c_black, false);
 	}
 	else
 	{
-		scr_draw_panel_light(left, top, right, bottom);
+		draw_rectangle_color(left, top, right, bottom, c_gray, c_gray, c_dkgray, c_dkgray, false);
 	}
 }
 else
 {
-	scr_draw_panel(left, top, right, bottom);
+	draw_rectangle_color(left, top, right, bottom, c_dkgray, c_dkgray, c_black, c_black, false);
 }
+draw_set_alpha(1.0);
 
 if(sprite != noone)
 {

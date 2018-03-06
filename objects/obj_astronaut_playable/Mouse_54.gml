@@ -6,11 +6,6 @@ if(show_details && !gui_menu_active)
 	var window_mouse_y = window_mouse_get_y();
 	var window_mouse_x = window_mouse_get_x();
 	
-	var width = details_panel_width;
-	var height = details_panel_height;
-	var display_width = display_get_gui_width();
-	var tl_x = display_width - width - ap_offset;
-	var tl_y = 0;
 	var x_or = tl_x + 8;
 	var grid_x = x_or + 96;
 	var grid_y = tl_y + 128 + 5*24; // 5 lines before inventory

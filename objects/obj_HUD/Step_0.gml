@@ -4,46 +4,22 @@ var clicked = mouse_check_button_released(mb_left);
 var right_clicked = mouse_check_button_released(mb_right);
 mouse_over_HUD = false;
 
-flash_counter = flash_counter + 1;
-if(flash_counter == 30) flash_counter = 0;
-
 #region buttons
 
 for(var n = 0; n < ds_list_size(buttons); n++)
 {
 	var button = buttons[| n];
-	var hovers = 
+	var hover = 
 		window_mouse_x > button[? "left"] 
 		&& window_mouse_x < button[? "right"]
 		&& window_mouse_y > button[? "top"] 
 		&& window_mouse_y < button[? "bottom"];
-	if(hovers && clicked) scr_execute_hud_action(button);
-}
-
-#endregion
-
-#region menu button
-
-mouse_over_menu = 
-	window_mouse_x > menu_btn_left && 
-	window_mouse_x < menu_btn_right && 
-	window_mouse_y > menu_btn_top && 
-	window_mouse_y < menu_btn_bottom;
-	
-if(mouse_over_menu)
-{
-	mouse_over_HUD = true;
-	if(clicked)
+	if(hover)
 	{
-		with(gui_menu){
-			event_user(0); // toggle menu
-		}
-		with(obj_gui_menu)
-		{
-			if(id != other.gui_menu) event_user(1); // close other menus
-		}
+		hovers = true;
+		if(clicked) scr_execute_hud_action(button);
+		break;
 	}
-	exit;
 }
 
 #endregion

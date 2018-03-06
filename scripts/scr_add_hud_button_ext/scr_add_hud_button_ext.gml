@@ -35,4 +35,11 @@ ds_map_add(new_button, "height", b-t);
 ds_map_add(new_button, "action", arg_action);
 ds_map_add(new_button, "active", false);
 
+ds_map_add(new_button, "halign", fa_center);
+ds_map_add(new_button, "valign", fa_middle);
+ds_map_add(new_button, "text_color", c_white);
+ds_map_add(new_button, "bar_button", false);
+
 with(hud) ds_list_add(buttons, new_button);
+
+return new_button;

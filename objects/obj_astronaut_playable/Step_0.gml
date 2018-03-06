@@ -5,12 +5,11 @@ if(show_details)
 {
 	var width = 384;
 	var height = 32 + 16 + 24*5 + 64*3 + 96;// padding + spaces + lines + inventory + avatar
-	var display_width = display_get_gui_width();
-	var display_height = display_get_gui_height();
-	var left = display_width - width - ap_offset;
-	var top = 0;
+	var gui_width = display_get_gui_width();
+	var gui_height = display_get_gui_height();
 	
-	// panel
+	var left = tl_x;
+	var top = tl_y;
 	var right = left + width;
 	var bottom = top + height;
 	
@@ -25,10 +24,10 @@ if(show_details)
 	else{
 		var atw = 4*32 + 2*8 + 3*4; // icons + padding + spacing
 		var ath = 48;
-		var at_left = display_width - atw;
-		var at_top = display_height - ath;
-		var at_right = display_width;
-		var at_bottom = display_height;
+		var at_left = gui_width - atw;
+		var at_top = gui_height - ath;
+		var at_right = gui_width;
+		var at_bottom = gui_height;
 		var mouse_over_at_panel = window_mouse_x > at_left 
 			&& window_mouse_x < at_right
 			&& window_mouse_y > at_top

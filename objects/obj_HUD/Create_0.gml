@@ -1,17 +1,20 @@
 if( instance_number(object_index) > 1 ) instance_destroy();
 
+hud_bar_h = 36;
 buttons = ds_list_create();
 mouse_over_HUD = false;
 
-var gui_w = display_get_gui_width();
-var gui_h = display_get_gui_height();
+gui_w = display_get_gui_width();
+gui_h = display_get_gui_height();
 
-// scr_add_hud_button_text(id, 300, 300, font_small, "yoyoyo", 8, hud_action.toggle_menu); // debug
+scr_add_hud_bar_button(id, 0, 0, font_hud_bar, "menu", hud_action.toggle_menu); // debug
+scr_add_hud_bar_button(id, 108, 0, font_hud_bar, "objectives", hud_action.none); // debug
+scr_add_hud_bar_button(id, 216, 0, font_hud_bar, "mission control", hud_action.none); // debug
 
-scr_add_hud_button_sprite(id, gui_w - 20-16-8, 20, spr_robot_panels, 4, hud_action.toggle_robot_panels);
-scr_add_hud_button_sprite(id, gui_w - 20-16-8-16-8-8, 20, spr_astro_panels, 4, hud_action.toggle_astro_panels);
+scr_add_hud_button_sprite(id, gui_w - 20-16-8, 40, spr_robot_panels, 4, hud_action.toggle_robot_panels);
+scr_add_hud_button_sprite(id, gui_w - 20-16-8-16-8-8, 40, spr_astro_panels, 4, hud_action.toggle_astro_panels);
 
-// ### GLOBAL SETTINGS
+// ### GLOBAL SETTINGS todo: make it obsolete and remove
 
 global.hovering_over_HUD = false; // write @ begin step, read @ step
 global.hovering_over_hud_panel = false; // read & reset @ begin step, write @ step
@@ -44,9 +47,7 @@ y_spacing = 0;
 x_offset = padding;
 
 // -- zoom button --
-var bottom = window_get_height() - 32 - padding;
-show_debug_message("zoom button @: " + string(bottom));
-instance_create_layer(8, bottom, macro_logic_layer, obj_HUD_zoom_button);
+instance_create_layer(gui_w - 40, 2, macro_logic_layer, obj_HUD_zoom_button);
 
 // -- Construction panel --
 
@@ -92,15 +93,7 @@ with(outside_item){
 }
 item_count++;
 
-// -- Menu button settings --
-menu_btn_left = 4;
-menu_btn_top = 4;
-menu_btn_right = 128;
-menu_btn_bottom = 32;
-menu_btn_center_x = (menu_btn_left + menu_btn_right)/2;
-menu_btn_center_y = (menu_btn_top + menu_btn_bottom)/2;
-mouse_over_menu = false;
-
+// -- gui menu --
 gui_menu = instance_create_layer(-500, 500, macro_logic_layer, obj_gui_menu_main);
 sound_menu = instance_create_layer(-500, 500, macro_logic_layer, obj_gui_menu_sound);
 
@@ -118,7 +111,8 @@ cursor_sprite = spr_cursor;
 
 global.hud_entity_panel_offset = 40;
 
-// the rest is to become obsolete...
+// the rest is to become obsolete... todo: remove
+
 ap_margin = 20;
 ap_padding = 4;
 ap_name_w = 126;
@@ -128,7 +122,6 @@ ap_offset = ap_h + 4;
 ap_origin_left = gui_w - (ap_w + ap_margin);
 ap_origin_top = 40;
 health_bar_color = global.health_bar_color;
-flash_counter = 0;
 double_click_timer = 0;
 double_click_astro = noone;
 hover_astro = noone;
