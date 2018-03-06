@@ -26,12 +26,11 @@ if(single_select_ent != noone && single_select_ent.owner == macro_player) // (de
 else if(single_select_ent == noone) // select grid selector
 {
 	scr_deselect_all();
-	var single_select_ent = instance_position(mouse_x, mouse_y, obj_grid_selector);
+	var single_select_ent = instance_position(mouse_x, mouse_y, obj_base_component);
 	if(single_select_ent != noone && single_select_ent.owner == macro_player)
 	{
 		with(single_select_ent)
 		{
-			global.selected_grid = scr_get_grid(id, grid_type_to_select);
 			is_selected = true;
 		}
 	}

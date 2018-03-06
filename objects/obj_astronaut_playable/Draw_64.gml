@@ -1,8 +1,8 @@
-if(show_details)
+if(show_details && false)
 {	
 	draw_set_font(font_small_bold);
 	
-	#region panel, avatar, text
+	#region panel, avatar, name
 	// panel
 	var tl_x2 = tl_x + details_panel_width;
 	var tl_y2 = tl_y + details_panel_height;
@@ -17,7 +17,7 @@ if(show_details)
 	draw_rectangle(av_x, av_y, av_x + av_w, av_y + av_h, false);
 	draw_sprite(spr_avatar, 0, av_x, av_y);
 	
-	// text
+	// name
 	draw_set_color(c_white);
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);

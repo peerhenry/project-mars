@@ -80,7 +80,6 @@ if( !is_dragging )
 	
 	if( mouse_check_button_released(mb_right) )
 	{
-		// deselect everything
 		scr_hide_categories();
 		var hover_actor = instance_position(mouse_x, mouse_y, obj_task_actor);
 		if(
@@ -95,8 +94,7 @@ if( !is_dragging )
 		else scr_command(mouse_x, mouse_y);
 	}
 	
-	// Left release & not dragging
-	// Either select 1 astronaut or command selected astronauts
+	// Left release & not dragging: select 1 unit
 	if(mouse_check_button_released(mb_left))
 	{
 		scr_handle_left_released();

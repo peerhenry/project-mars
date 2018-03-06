@@ -1,4 +1,4 @@
-if(global.selected_grid == id)
+if( show_details )
 {
 	var tl_x = display_get_gui_width() - width - ap_offset;
 	var tl_y = 0;
@@ -20,6 +20,7 @@ if(global.selected_grid == id)
 	
 	grid_type_string = "";
 	
+	// todo: move to script, also call that script from obj_HUD
 	switch(grid_type)
 	{
 		case macro_grid_electric:
