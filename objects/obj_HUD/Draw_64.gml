@@ -135,14 +135,15 @@ if(select != noone) // draw details panel
 	// needs / grid props
 	var prop_font = font_small_bold;
 	draw_set_font(prop_font);
-	var line_height = font_get_size(prop_font) + 12;
+	var font_height = font_get_size(prop_font)
+	var line_height = font_height + 12;
 	
 	if(scr_instance_inherits(select, obj_movable))
 	{
 		var bar_height = 4;
 		
 		var bar_left = hb_left + 100;
-		var bar_top = next_y_offset + (line_height - bar_height)/2;
+		var bar_top = next_y_offset + (font_height - bar_height)/2;
 		var bar_right = right - padding;
 		var bar_bottom = bar_top + bar_height;
 		
@@ -157,23 +158,23 @@ if(select != noone) // draw details panel
 			}
 			
 			// sleep
-			bar_top = next_y_offset + (line_height - bar_height)/2;
+			bar_top = next_y_offset + (font_height - bar_height)/2;
 			draw_text(x_or, next_y_offset, "Sleep ");
-			draw_healthbar(bar_left, bar_top, bar_right, next_y_offset + bar_height, select.sleep_level, c_black, sleep_bar_color, sleep_bar_color, 0, true, true);
+			draw_healthbar(bar_left, bar_top, bar_right, bar_top + bar_height, select.sleep_level, c_black, sleep_bar_color, sleep_bar_color, 0, true, true);
 			next_y_offset += line_height;
 			
 			// food
-			bar_top = next_y_offset + (line_height - bar_height)/2;
+			bar_top = next_y_offset + (font_height - bar_height)/2;
 			draw_text(x_or, next_y_offset, "Food ");
-			draw_healthbar(bar_left, bar_top, bar_right, next_y_offset + bar_height, select.food_level, c_black, food_bar_color, food_bar_color, 0, true, true);
+			draw_healthbar(bar_left, bar_top, bar_right, bar_top + bar_height, select.food_level, c_black, food_bar_color, food_bar_color, 0, true, true);
 			next_y_offset += line_height;
 		}
 		else
 		{
 			// battery charge
-			bar_top = next_y_offset + (line_height - bar_height)/2;
+			bar_top = next_y_offset + (font_height - bar_height)/2;
 			draw_text(x_or, next_y_offset, "Battery " + string(floor(select.battery_charge)) + "%");
-			draw_healthbar(bar_left, bar_top, bar_right, next_y_offset + bar_height, select.battery_charge, c_black, c_aqua, c_aqua, 0, true, true);
+			draw_healthbar(bar_left, bar_top, bar_right, bar_top + bar_height, select.battery_charge, c_black, c_aqua, c_aqua, 0, true, true);
 			next_y_offset += line_height;
 		}
 	}

@@ -7,9 +7,11 @@ mouse_over_HUD = false;
 gui_w = display_get_gui_width();
 gui_h = display_get_gui_height();
 
+global.hud_bar_button_width = 148;
+var bw = global.hud_bar_button_width;
 scr_add_hud_bar_button(id, 0, 0, font_hud_bar, "menu", hud_action.toggle_menu); // debug
-scr_add_hud_bar_button(id, 108, 0, font_hud_bar, "objectives", hud_action.none); // debug
-scr_add_hud_bar_button(id, 216, 0, font_hud_bar, "mission control", hud_action.none); // debug
+scr_add_hud_bar_button(id, bw, 0, font_hud_bar, "objectives", hud_action.none); // debug
+scr_add_hud_bar_button(id, bw*2, 0, font_hud_bar, "mission control", hud_action.none); // debug
 
 scr_add_hud_button_sprite(id, gui_w - 20-16-8, 40, spr_robot_panels, 4, hud_action.toggle_robot_panels);
 scr_add_hud_button_sprite(id, gui_w - 20-16-8-16-8-8, 40, spr_astro_panels, 4, hud_action.toggle_astro_panels);
