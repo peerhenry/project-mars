@@ -254,3 +254,49 @@ if(tile != noone && comp == noone)
 }
 
 #endregion
+
+#region MINIMAP
+
+var map_dim = [ceil(room_width / 32), ceil(room_height / 32)];
+var map_pos = [5, 240];
+var map_entities = ds_list_create();
+ds_list_add(map_entities, [obj_base_tile, c_gray]);
+ds_list_add(map_entities, [obj_astronaut, c_lime]);
+
+if(!surface_exists(surf_minimap)) surf_minimap = surface_create(map_dim[0], map_dim[1]);
+if(!surface_exists(surf_minimap_bg))
+{
+	surf_minimap_bg = surface_create(room_width, room_height);
+	surface_set_target(surf_minimap_bg);
+	
+	draw_clear(c_black);
+	
+	draw_sprite_tiled(spr_default, 0, 0, 0);
+	
+	var _tilemap = layer_tilemap_get_id(layer_get_id("Tiles_surface"));
+	draw_tilemap(_tilemap, 0, 0);
+	
+	surface_reset_target();
+}
+
+surface_set_target(surf_minimap);
+
+draw_clear(c_black);
+draw_surface_stretched(surf_minimap_bg, 0, 0, map_dim[0], map_dim[1]);
+for(var n = 0; n < ds_list_size(map_entities); n++) //draw entities
+{
+	var item = map_entities[|n];
+	with(item[0]) draw_point_color(x / 32, y / 32, item[1]);
+}
+
+var map_cam_pos = [camera_get_view_x(view_camera[0]) / 32, camera_get_view_y(view_camera[0]) / 32];
+var map_cam_dim = [camera_get_view_width(view_camera[0]) / 32, camera_get_view_height(view_camera[0]) / 32];
+draw_rectangle_color(map_cam_pos[0], map_cam_pos[1], map_cam_pos[0] + map_cam_dim[0], map_cam_pos[1] + map_cam_dim[1], c_white, c_white, c_white, c_white, true);
+
+surface_reset_target();
+
+//draw to screen
+draw_rectangle_color(map_pos[0], map_pos[1], map_pos[0] + map_dim[0], map_pos[1] + map_dim[1], c_black, c_black, c_black, c_black, true);
+draw_surface(surf_minimap, map_pos[0], map_pos[1]);
+
+#endregion

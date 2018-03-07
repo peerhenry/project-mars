@@ -113,6 +113,11 @@ cursor_sprite = spr_cursor;
 
 global.hud_entity_panel_offset = 40;
 
+// -- Minimap
+
+surf_minimap = noone;
+surf_minimap_bg = noone;
+
 // the rest is to become obsolete...
 ap_margin = 20;
 ap_padding = 4;
