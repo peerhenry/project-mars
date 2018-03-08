@@ -11,6 +11,3 @@ scr_set_new_grid_props(id, macro_grid_electric, macro_grid_role_consumer, 1);
 inv_w = 4;
 inv_h = 6;
 inventory = ds_grid_create(inv_w, inv_h);
-
-// selectable
-is_selected = false;
