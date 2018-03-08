@@ -1,11 +1,17 @@
 if(!instance_exists(entity) || entity == noone)
 {
 	instance_destroy();
+	with(obj_HUD_outliner) reset = true;
 	exit;
 }
 
-var gui_x = window_mouse_get_x();
-var gui_y = window_mouse_get_y();
+var mouse_gui_x = window_mouse_get_x();
+var mouse_gui_y = window_mouse_get_y();
 
-if( gui_x > left && gui_x < right && gui_y > top && gui_y < bottom ) hover = true;
+if( 
+	mouse_gui_x > left 
+	&& mouse_gui_x < right 
+	&& mouse_gui_y > top 
+	&& mouse_gui_y < top + panel_height
+) hover = true;
 else hover = false;

@@ -2,7 +2,6 @@ hover = false;
 entity = noone;
 
 top = 0;
-bottom = 0;
 left = 0;
 right = 0;
 
@@ -27,3 +26,4 @@ icon_width = 16;
 icon_space = 4;
 
 panel_width = icon_offset + 4*(icon_width + icon_space) + padding;
+// 122 + 3*(3 + 5) + 4*(16 + 4) + 4 = 230

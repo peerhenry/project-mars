@@ -1,11 +1,8 @@
-var panel_top = global.hud_entity_panel_offset;
-var panel_bottom = panel_top + panel_height;
-var panel_left = display_get_gui_width() - (panel_width + margin);
-var panel_right = panel_left + panel_width;
-top = panel_top;
-bottom = panel_bottom;
-left = panel_left;
-right = panel_right;
+
+var panel_top = top;
+var panel_bottom = top + panel_height;
+var panel_left = left;
+var panel_right = left + panel_width;
 
 #region draw panel
 draw_set_color(c_dkgray);
