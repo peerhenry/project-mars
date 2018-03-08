@@ -6,16 +6,18 @@ draw_set_alpha(1.0);
 
 var window_mouse_x = window_mouse_get_x();
 var window_mouse_y = window_mouse_get_y();
+var hover_button = noone;
 for(var n = 0; n< ds_list_size(buttons); n++)
 {
 	var button = buttons[| n];
 	var hovers = 
-		window_mouse_x > button[? "left"] 
-		&& window_mouse_x < button[? "right"]
-		&& window_mouse_y > button[? "top"] 
-		&& window_mouse_y < button[? "bottom"];
-	if(button[? "bar_button"]) scr_draw_hud_bar_button(button, hovers);
-	else scr_draw_hud_button(button, hovers);
+		window_mouse_x > button.left
+		&& window_mouse_x < button.right
+		&& window_mouse_y > button.top
+		&& window_mouse_y < button.bottom;
+	if(hovers) hover_button = button;
+	if(button.draw_as_panel) scr_draw_hud_button(button, hovers);
+	else scr_draw_hud_bar_button(button, hovers);
 }
 
 #endregion
@@ -74,6 +76,27 @@ if(tile != noone && comp == noone)
 if(comp != noone)
 {
 	scr_draw_tooltip(string( comp.name ));
+}
+if(hover_button != noone)
+{
+	switch(hover_button.action)
+	{
+		case hud_action.toggle_menu:
+			scr_draw_tooltip("menu");
+			break;
+		case hud_action.toggle_outliner:
+			scr_draw_tooltip("toggle outliner");
+			break;
+		case hud_action.toggle_minimap:
+			scr_draw_tooltip("toggle minimap");
+			break;
+		case hud_action.toggle_objectives:
+			scr_draw_tooltip("objectives");
+			break;
+		case hud_action.mission_control:
+			scr_draw_tooltip("mission control");
+			break;
+	}
 }
 
 #endregion
@@ -135,14 +158,15 @@ if(select != noone) // draw details panel
 	// needs / grid props
 	var prop_font = font_small_bold;
 	draw_set_font(prop_font);
-	var line_height = font_get_size(prop_font) + 12;
+	var font_height = font_get_size(prop_font)
+	var line_height = font_height + 12;
 	
 	if(scr_instance_inherits(select, obj_movable))
 	{
 		var bar_height = 4;
 		
 		var bar_left = hb_left + 100;
-		var bar_top = next_y_offset + (line_height - bar_height)/2;
+		var bar_top = next_y_offset + (font_height - bar_height)/2;
 		var bar_right = right - padding;
 		var bar_bottom = bar_top + bar_height;
 		
@@ -157,23 +181,23 @@ if(select != noone) // draw details panel
 			}
 			
 			// sleep
-			bar_top = next_y_offset + (line_height - bar_height)/2;
+			bar_top = next_y_offset + (font_height - bar_height)/2;
 			draw_text(x_or, next_y_offset, "Sleep ");
-			draw_healthbar(bar_left, bar_top, bar_right, next_y_offset + bar_height, select.sleep_level, c_black, sleep_bar_color, sleep_bar_color, 0, true, true);
+			draw_healthbar(bar_left, bar_top, bar_right, bar_top + bar_height, select.sleep_level, c_black, sleep_bar_color, sleep_bar_color, 0, true, true);
 			next_y_offset += line_height;
 			
 			// food
-			bar_top = next_y_offset + (line_height - bar_height)/2;
+			bar_top = next_y_offset + (font_height - bar_height)/2;
 			draw_text(x_or, next_y_offset, "Food ");
-			draw_healthbar(bar_left, bar_top, bar_right, next_y_offset + bar_height, select.food_level, c_black, food_bar_color, food_bar_color, 0, true, true);
+			draw_healthbar(bar_left, bar_top, bar_right, bar_top + bar_height, select.food_level, c_black, food_bar_color, food_bar_color, 0, true, true);
 			next_y_offset += line_height;
 		}
 		else
 		{
 			// battery charge
-			bar_top = next_y_offset + (line_height - bar_height)/2;
+			bar_top = next_y_offset + (font_height - bar_height)/2;
 			draw_text(x_or, next_y_offset, "Battery " + string(floor(select.battery_charge)) + "%");
-			draw_healthbar(bar_left, bar_top, bar_right, next_y_offset + bar_height, select.battery_charge, c_black, c_aqua, c_aqua, 0, true, true);
+			draw_healthbar(bar_left, bar_top, bar_right, bar_top + bar_height, select.battery_charge, c_black, c_aqua, c_aqua, 0, true, true);
 			next_y_offset += line_height;
 		}
 	}

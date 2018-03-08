@@ -18,15 +18,15 @@ draw_set_font(font);
 var button = scr_add_hud_button_ext(
 	hud, 
 	arg_x, 
-	arg_x + 108, 
+	arg_x + global.hud_bar_button_width, 
 	arg_y, 
 	arg_y + hud.hud_bar_h, 
 	font, 
 	text, 
-	arg_x + 54, 
+	arg_x + global.hud_bar_button_width/2, 
 	arg_y + hud.hud_bar_h/2, 
 	noone, 
 	arg_action
 );
 
-button[? "bar_button"] = true;
+button.draw_as_panel = false;

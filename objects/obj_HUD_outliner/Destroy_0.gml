@@ -1,0 +1,1 @@
+with(obj_HUD_entity_panel) instance_destroy();

@@ -7,12 +7,24 @@ mouse_over_HUD = false;
 gui_w = display_get_gui_width();
 gui_h = display_get_gui_height();
 
-scr_add_hud_bar_button(id, 0, 0, font_hud_bar, "Menu", hud_action.toggle_menu); // debug
-scr_add_hud_bar_button(id, 108, 0, font_hud_bar, "Objectives", hud_action.none); // debug
-scr_add_hud_bar_button(id, 216, 0, font_hud_bar, "Mission Control", hud_action.none); // debug
+global.hud_bar_button_width = 36;
+var bw = global.hud_bar_button_width;
+scr_add_hud_bar_sprite_button(id, 0, 0, spr_menu, hud_action.toggle_menu);
+scr_add_hud_bar_sprite_button(id, bw, 0, spr_objectives, hud_action.toggle_objectives);
+scr_add_hud_bar_sprite_button(id, bw*2, 0, spr_mission_control, hud_action.mission_control);
 
-scr_add_hud_button_sprite(id, gui_w - 20-16-8, 40, spr_robot_panels, 4, hud_action.toggle_robot_panels);
-scr_add_hud_button_sprite(id, gui_w - 20-16-8-16-8-8, 40, spr_astro_panels, 4, hud_action.toggle_astro_panels);
+outliner_button_margin = 12;
+outliner_button_padding = 4;
+outliner_sprite = spr_astro_panels;
+outliner = instance_create_layer(0, 0, macro_logic_layer, obj_HUD_outliner);
+scr_add_hud_button_sprite(
+	id, 
+	gui_w - sprite_get_width(outliner_sprite) - 2*outliner_button_padding - outliner_button_margin,
+	hud_bar_h + outliner_button_margin, 
+	outliner_sprite, 
+	outliner_button_padding, 
+	hud_action.toggle_outliner
+);
 
 global.hovering_over_HUD = false; // write @ begin step, read @ step
 global.hovering_over_hud_panel = false; // read & reset @ begin step, write @ step

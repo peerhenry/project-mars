@@ -10,10 +10,10 @@ for(var n = 0; n < ds_list_size(buttons); n++)
 {
 	var button = buttons[| n];
 	var hover = 
-		window_mouse_x > button[? "left"] 
-		&& window_mouse_x < button[? "right"]
-		&& window_mouse_y > button[? "top"] 
-		&& window_mouse_y < button[? "bottom"];
+		window_mouse_x > button.left
+		&& window_mouse_x < button.right
+		&& window_mouse_y > button.top
+		&& window_mouse_y < button.bottom
 	if(hover)
 	{
 		hovers = true;
@@ -75,17 +75,27 @@ if(!hovers_over_selectable)
 		}
 		else
 		{
+			/*
 			var hovers_over_assignable = instance_position(mouse_x, mouse_y, obj_assignable) != noone;
 			if(hovers_over_assignable)
 			{
 				cursor_sprite = spr_cursor_assign;
 			}
-			else cursor_sprite = spr_cursor_move;
+			else */
+			cursor_sprite = spr_cursor_move;
 		}
 	}
 	else cursor_sprite = spr_cursor;
 }
-else
+else // hovers over selectable
 {
-	cursor_sprite = spr_cursor_select;
+	if(scr_any_task_actors_selected())
+	{
+		var hovers_over_assignable = instance_position(mouse_x, mouse_y, obj_assignable) != noone;
+		if(hovers_over_assignable)
+		{
+			cursor_sprite = spr_cursor_assign;
+		}
+	}
+	else cursor_sprite = spr_cursor_select;
 }
