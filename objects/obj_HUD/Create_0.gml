@@ -17,7 +17,7 @@ outliner_button_margin = 12;
 outliner_button_padding = 4;
 outliner_sprite = spr_astro_panels;
 outliner = instance_create_layer(0, 0, macro_logic_layer, obj_HUD_outliner);
-scr_add_hud_button_sprite(
+outliner_button = scr_add_hud_button_sprite(
 	id, 
 	gui_w - sprite_get_width(outliner_sprite) - 2*outliner_button_padding - outliner_button_margin,
 	hud_bar_h + outliner_button_margin, 
@@ -25,6 +25,7 @@ scr_add_hud_button_sprite(
 	outliner_button_padding, 
 	hud_action.toggle_outliner
 );
+outliner_button.draw_as_panel = true;
 
 global.hovering_over_HUD = false; // write @ begin step, read @ step
 global.hovering_over_hud_panel = false; // read & reset @ begin step, write @ step
