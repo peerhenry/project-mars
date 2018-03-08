@@ -812,7 +812,7 @@
     "roomSettings":     {
         "id": "d8b6e319-db9d-4a22-8def-bc7de87a5593",
         "Height": 8192,
-        "inheritRoomSettings": true,
+        "inheritRoomSettings": false,
         "modelName": "GMRoomSettings",
         "persistent": false,
         "mvc": "1.0",

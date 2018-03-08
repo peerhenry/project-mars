@@ -4359,6 +4359,14 @@
             }
         },
         {
+            "Key": "6e1cbd23-36b6-44fc-a7f3-91f219ff8d5e",
+            "Value": {
+                "id": "b9a4322f-e1d5-4544-ad64-c3d0253bd990",
+                "resourcePath": "scripts\\scr_draw_rectangle_width_color\\scr_draw_rectangle_width_color.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "6e23ed82-ee2e-4b95-b551-3341cf415054",
             "Value": {
                 "id": "bafddd20-07e4-449a-ab4b-654c5b6f4c77",
@@ -10212,6 +10220,7 @@
         "6ab7e654-37a7-424f-8b07-237d5c51de2d",
         "eb6cbfd6-8a33-4b12-bcc8-839c1e5ea3d4",
         "b55e0e19-8d2d-48aa-9f56-7b5ca057627f",
+        "6e1cbd23-36b6-44fc-a7f3-91f219ff8d5e",
         "dbf4e913-3d01-437e-9e72-fe79239aa833",
         "5d9c43e9-61da-48ec-9290-d62111e0bbef",
         "d1d60135-4dcc-4627-9a50-f5650f760d98",
