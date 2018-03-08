@@ -3,8 +3,26 @@
 
 if(unit != noone) // draw details panel
 {
-	#region panel
+	#region panel & top buttons
+	
+	if(hover_deselect)
+	{
+		if(mouse_check_button(mb_left)) scr_draw_panel_inverse(deselect_button_left, deselect_button_top, deselect_button_right, deselect_button_bottom);
+		else scr_draw_panel_light(deselect_button_left, deselect_button_top, deselect_button_right, deselect_button_bottom);
+	}
+	else scr_draw_panel(deselect_button_left, deselect_button_top, deselect_button_right, deselect_button_bottom);
+	draw_sprite(spr_deselect_icon, 0, deselect_button_left + 4, deselect_button_top + 4);
+	
+	if(hover_center)
+	{
+		if(mouse_check_button(mb_left)) scr_draw_panel_inverse(center_cam_button_left, center_cam_button_top, center_cam_button_right, center_cam_button_bottom);
+		else scr_draw_panel_light(center_cam_button_left, center_cam_button_top, center_cam_button_right, center_cam_button_bottom);
+	}
+	else scr_draw_panel(center_cam_button_left, center_cam_button_top, center_cam_button_right, center_cam_button_bottom);
+	draw_sprite(spr_center_cam_icon, 0, center_cam_button_left + 4, center_cam_button_top + 4);
+	
 	scr_draw_panel(left, top, right, bottom);
+	
 	#endregion
 	
 	#region avatar
@@ -150,7 +168,7 @@ if(unit != noone) // draw details panel
 		inventory_y = next_y_offset;
 		inventory_w = sprite_get_width(inv_sprite);
 		inventory_h = sprite_get_height(inv_sprite);
-		scr_draw_inventory(unit.inventory, spr_inventory_grid, inventory_x, inventory_y);
+		scr_draw_inventory(unit.inventory, inv_sprite, inventory_x, inventory_y);
 	}
 	#endregion 
 	
@@ -158,6 +176,8 @@ if(unit != noone) // draw details panel
 	if(hover)
 	{
 		if(hover_inventory) scr_draw_tooltip("inventory");
+		else if(hover_deselect) scr_draw_tooltip("deselect unit");
+		else if(hover_center) scr_draw_tooltip("center camera");
 		else scr_draw_tooltip("details panel");
 	}
 }

@@ -1071,6 +1071,14 @@
             }
         },
         {
+            "Key": "1b2def2c-ef5d-461c-b67b-a372eba4652f",
+            "Value": {
+                "id": "75d4e3ee-2d56-431a-a0ee-17c0fd0861bd",
+                "resourcePath": "sprites\\spr_center_cam_icon\\spr_center_cam_icon.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1b5cc8cd-ce14-42c9-8040-e33c2a0cdc60",
             "Value": {
                 "id": "3848f3a4-5a52-412f-936f-d8dd8e3e166f",
@@ -2596,6 +2604,14 @@
                 "id": "8e640935-a919-46c6-8879-59a34d23c6b4",
                 "resourcePath": "objects\\obj_enemy_spawner\\obj_enemy_spawner.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "3f37b771-f689-4a65-ae91-bdb62a1d3ddd",
+            "Value": {
+                "id": "0c89e489-c3a9-4447-aa30-f4c9d93817d2",
+                "resourcePath": "sprites\\spr_deselect_icon\\spr_deselect_icon.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
