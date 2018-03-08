@@ -42,4 +42,9 @@ with(obj_HUD_entity_panel)
 	if(hover) hovering_over_gui = true;
 }
 
+with(obj_HUD_minimap)
+{
+	if(hover) hovering_over_gui = true;	
+}
+
 return hovering_over_gui;

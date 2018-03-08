@@ -1,6 +1,6 @@
 scr_trace("hatch create event");
 event_inherited();
-
+name = "hatch";
 scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.wall_like);
 
 depth = -occ_j;	// set depth for tall structures

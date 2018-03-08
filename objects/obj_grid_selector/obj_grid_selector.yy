@@ -5,16 +5,6 @@
     "name": "obj_grid_selector",
     "eventList": [
         {
-            "id": "f562531b-5bd6-462b-8e3b-2dab8e739f34",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 7,
-            "eventtype": 6,
-            "m_owner": "ca3bf83d-2cbe-4a97-9b77-46cddd292247"
-        },
-        {
             "id": "a71dc60c-cd36-4a18-adbc-82087b132989",
             "modelName": "GMEvent",
             "mvc": "1.0",

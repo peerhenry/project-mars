@@ -1,32 +1,23 @@
-if(show_details)
-{
-	#region settings
-	draw_set_font(font_hud);
+if(show_details && false)
+{	
+	draw_set_font(font_small_bold);
 	
-	var width = details_panel_width;
-	var height = details_panel_height;// padding + spaces + lines + inventory + avatar
-	var display_width = display_get_gui_width();
-	var display_height = display_get_gui_height();
-	var tl_x = display_width - width - ap_offset;
-	var tl_y = 0;
-	#endregion
-	
-	#region panel, avatar, text
+	#region panel, avatar, name
 	// panel
-	var tl_x2 = tl_x + width;
-	var tl_y2 = tl_y + height;
+	var tl_x2 = tl_x + details_panel_width;
+	var tl_y2 = tl_y + details_panel_height;
 	scr_draw_panel(tl_x, tl_y, tl_x2, tl_y2);
 	
 	// avatar
 	draw_set_color(c_black);
 	var av_w = 96;
 	var av_h = 96;
-	var av_x = tl_x + width - 16 - av_w;
+	var av_x = tl_x + details_panel_width - 16 - av_w;
 	var av_y = tl_y + 16
 	draw_rectangle(av_x, av_y, av_x + av_w, av_y + av_h, false);
 	draw_sprite(spr_avatar, 0, av_x, av_y);
 	
-	// text
+	// name
 	draw_set_color(c_white);
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
@@ -117,12 +108,12 @@ if(show_details)
 	// panel
 	var atw = 4*32 + 2*8 + 3*4; // icons + padding + spacing
 	var ath = 48;
-	scr_draw_panel(display_width - atw, display_height - ath, display_width, display_height);
+	scr_draw_panel(gui_width - atw, gui_height - ath, gui_width, gui_height);
 	
 	// icons
 	var counter = 0;
-	var icon_top = display_height - ath + 8;
-	var icon_x_or = display_width - atw + 8;
+	var icon_top = gui_height - ath + 8;
+	var icon_x_or = gui_width - atw + 8;
 	draw_sprite(spr_auto_attack, auto_attack, icon_x_or + (32+4)*counter, icon_top);
 	counter++;
 	draw_sprite(spr_auto_construct, auto_construct, icon_x_or + (32+4)*counter, icon_top);

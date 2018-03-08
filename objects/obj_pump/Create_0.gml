@@ -1,6 +1,4 @@
-scr_trace("pump create event");
-//show_debug_message("pump create event");
-
+name = "pump";
 event_inherited();
 draw_cables = true;
 

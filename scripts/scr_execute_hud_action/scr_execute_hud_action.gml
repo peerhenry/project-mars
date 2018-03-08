@@ -50,10 +50,10 @@ switch( arg_button[? "action"] )
 		}
 		break;
 	case hud_action.toggle_menu:
-		with(hud_menu) event_user(0); // toggle menu
-		with(obj_HUD_menu)
+		with(gui_menu) event_user(0); // toggle menu
+		with(obj_gui_menu)
 		{
-			if(id != other.hud_menu) event_user(1); // close other menus
+			if(id != other.gui_menu) event_user(1); // close other menus
 		}
 		break;
 	case hud_action.toggle_zoom:

@@ -3,6 +3,7 @@
 
 // Inherit the parent event
 event_inherited();
+name = "cart";
 
 battery_charge = 100;
 

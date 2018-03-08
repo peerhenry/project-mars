@@ -37,3 +37,5 @@ width = 384;
 height = 160;
 ap_offset = 0;
 with(obj_HUD) other.ap_offset = ap_w + ap_margin;
+
+show_details = false;

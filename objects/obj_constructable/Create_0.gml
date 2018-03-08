@@ -1,4 +1,6 @@
 scr_trace("constructable create event");
+name = "constructable";
+description = "";
 script_container = global.script_container;
 construction_instance = noone;
 under_construction = true;
@@ -9,6 +11,7 @@ occ_j = scr_rc_to_gi(y);
 encoded_ij = scr_encode_grid_coord(occ_i, occ_j);
 grid_props_map = ds_map_create();	// contains grid props per grid type
 owner = scr_get_owner(id);
+is_selected = false;
 
 cable_adjacency = 0;
 pipe_adjacency = 0;

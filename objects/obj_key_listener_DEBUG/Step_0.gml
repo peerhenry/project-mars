@@ -107,3 +107,12 @@ if(keyboard_check_pressed(ord("C")))
 {
 	with(obj_astronaut_playable) scr_cancel_walking(id);
 }
+
+if(keyboard_check_pressed(ord("N")))
+{
+	with(obj_astronaut_playable)
+	{
+		sleep_level = 20;
+		food_level = 20;
+	}
+}

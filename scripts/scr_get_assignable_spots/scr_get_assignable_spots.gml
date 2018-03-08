@@ -25,7 +25,7 @@ else
 switch(arg_assignable.object_index)
 {
 	case obj_bed:
-	case obj_operating_table:
+	case obj_med_bed:
 		return scr_get_spots_rec(arg_assignable, arg_astronaut, closest_side);
 	default:
 		return scr_get_spots_square(arg_assignable, arg_astronaut, closest_side);

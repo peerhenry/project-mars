@@ -1,4 +1,5 @@
 script_container = global.script_container;
+name = "movable";
 // movement and drawing
 path = noone;
 occ_i = (x - 16) div 32;

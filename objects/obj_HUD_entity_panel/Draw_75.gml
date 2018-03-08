@@ -4,11 +4,9 @@ if(hover)
 {
 	var gui_x = window_mouse_get_x();
 	var gui_y = window_mouse_get_y();
-	var tt_x = gui_x + 16;
-	var tt_y = gui_y + 16;
 	if(gui_x < left + need_bar_offset)
 	{
-		scr_draw_hud_tooltip(tt_x, tt_y, "health: " + string(floor(entity.entity_health)) + "/100");
+		scr_draw_tooltip("health: " + string(floor(entity.entity_health)) + "/100");
 	}
 	else
 	{
@@ -18,22 +16,22 @@ if(hover)
 		var next_bar_right = next_bar_left + need_bar_width;
 		if(gui_x >= next_bar_left && gui_x <= next_bar_right)
 		{
-			if(is_astro) scr_draw_hud_tooltip(tt_x, tt_y, "food: " + string(floor(entity.food_level)) + "/100");
-			else if(entity.object_index == obj_robot) scr_draw_hud_tooltip(tt_x, tt_y, "battery charge: " + string(floor(entity.battery_charge)) + "/100");
+			if(is_astro) scr_draw_tooltip( "food: " + string(floor(entity.food_level)) + "/100");
+			else if(entity.object_index == obj_robot) scr_draw_tooltip( "battery charge: " + string(floor(entity.battery_charge)) + "/100");
 			exit;
 		}
 		next_bar_left = next_bar_right + need_bar_space;
 		next_bar_right = next_bar_left + need_bar_width;
 		if(gui_x >= next_bar_left && gui_x <= next_bar_right && is_astro)
 		{
-			scr_draw_hud_tooltip(tt_x, tt_y, "sleep: " + string(floor(entity.sleep_level)) + "/100");
+			scr_draw_tooltip( "sleep: " + string(floor(entity.sleep_level)) + "/100");
 			exit;
 		}
 		next_bar_left = next_bar_right + need_bar_space;
 		next_bar_right = next_bar_left + need_bar_width;
 		if(gui_x >= next_bar_left && gui_x <= next_bar_right && is_astro && entity.wears_suit)
 		{
-			scr_draw_hud_tooltip(tt_x, tt_y, "suit oxygen: " + string(floor(entity.suit_oxygen)) + "/100");
+			scr_draw_tooltip( "suit oxygen: " + string(floor(entity.suit_oxygen)) + "/100");
 			exit;
 		}
 		
@@ -43,14 +41,14 @@ if(hover)
 		{
 			if(gui_x > next_icon_left && gui_x < next_icon_right)
 			{
-				scr_draw_hud_tooltip(tt_x, tt_y, "toggle auto attack");
+				scr_draw_tooltip( "toggle auto attack");
 				exit;
 			}
 			next_icon_left = next_icon_right + other.icon_space;
 			next_icon_right = next_icon_left + other.icon_width;
 			if(gui_x > next_icon_left && gui_x < next_icon_right)
 			{
-				scr_draw_hud_tooltip(tt_x, tt_y, "toggle auto construct");
+				scr_draw_tooltip( "toggle auto construct");
 				exit;
 			}
 			if(is_astro)
@@ -59,14 +57,14 @@ if(hover)
 				next_icon_right = next_icon_left + other.icon_width;
 				if(gui_x > next_icon_left && gui_x < next_icon_right)
 				{
-					scr_draw_hud_tooltip(tt_x, tt_y, "toggle auto sleep");
+					scr_draw_tooltip( "toggle auto sleep");
 					exit;
 				}
 				next_icon_left = next_icon_right + other.icon_space;
 				next_icon_right = next_icon_left + other.icon_width;
 				if(gui_x > next_icon_left && gui_x < next_icon_right)
 				{
-					scr_draw_hud_tooltip(tt_x, tt_y, "toggle auto eat");
+					scr_draw_tooltip( "toggle auto eat");
 					exit;
 				}
 			}

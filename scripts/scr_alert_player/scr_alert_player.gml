@@ -1,6 +1,5 @@
 /// @description show message to the player
 /// @param message
-// show_debug_message(argument0);
 if(instance_exists(obj_player_message))
 {
 	with(obj_player_message)

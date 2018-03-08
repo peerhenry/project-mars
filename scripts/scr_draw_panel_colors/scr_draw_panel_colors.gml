@@ -17,7 +17,7 @@ draw_rectangle(argument0, argument1, argument2, argument3, false);
 draw_set_color(arg_col_top);
 draw_line(argument0, argument1, argument2, argument1);
 draw_line(argument0, argument1, argument0, argument3);
-	
+
 draw_set_color(arg_col_bottom);
 draw_line(argument2, argument1, argument2, argument3);
 draw_line(argument0, argument3, argument2, argument3);

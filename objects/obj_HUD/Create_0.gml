@@ -1,30 +1,21 @@
 if( instance_number(object_index) > 1 ) instance_destroy();
 
+hud_bar_h = 36;
 buttons = ds_list_create();
 mouse_over_HUD = false;
 
-var gui_w = display_get_gui_width();
-// scr_add_hud_button_text(id, 300, 300, font_small, "yoyoyo", 8, hud_action.toggle_menu); // debug
+gui_w = display_get_gui_width();
+gui_h = display_get_gui_height();
 
-scr_add_hud_button_sprite(id, gui_w - 20-16-8, 20, spr_robot_panels, 4, hud_action.toggle_robot_panels);
-scr_add_hud_button_sprite(id, gui_w - 20-16-8-16-8-8, 20, spr_astro_panels, 4, hud_action.toggle_astro_panels);
+scr_add_hud_bar_button(id, 0, 0, font_hud_bar, "Menu", hud_action.toggle_menu); // debug
+scr_add_hud_bar_button(id, 108, 0, font_hud_bar, "Objectives", hud_action.none); // debug
+scr_add_hud_bar_button(id, 216, 0, font_hud_bar, "Mission Control", hud_action.none); // debug
 
-// ### GLOBAL SETTINGS
+scr_add_hud_button_sprite(id, gui_w - 20-16-8, 40, spr_robot_panels, 4, hud_action.toggle_robot_panels);
+scr_add_hud_button_sprite(id, gui_w - 20-16-8-16-8-8, 40, spr_astro_panels, 4, hud_action.toggle_astro_panels);
 
 global.hovering_over_HUD = false; // write @ begin step, read @ step
 global.hovering_over_hud_panel = false; // read & reset @ begin step, write @ step
-
-// COLORS
-global.btn_bg_color = c_dkgray;
-global.btn_color = c_white;
-global.btn_bg_color_hover = c_gray;
-global.btn_color_hover = c_white;
-
-// active for toggle buttons
-global.btn_active_bg_color = c_teal;
-global.btn_active_color = c_white;
-global.btn_active_bg_color_hover = c_teal;
-global.btn_active_color_hover = c_white;
 
 enum button_state
 {
@@ -36,22 +27,22 @@ enum button_state
 // -- Construction panel settings --
 
 padding = 8;
-global.hud_padding = padding;
+global.hud_padding = padding; // used in obj_HUD_category_select_button
 y_offset = 64; // offset for build buttons
 y_spacing = 0;
 x_offset = padding;
 
 // -- zoom button --
-var bottom = window_get_height() - 32 - padding;
-show_debug_message("zoom button @: " + string(bottom));
-instance_create_layer(8, bottom, macro_logic_layer, obj_HUD_zoom_button);
+instance_create_layer(gui_w - 40, 2, macro_logic_layer, obj_HUD_zoom_button);
 
 // -- Construction panel --
 
 item_count = 0;
-var left = x_offset;
-var top = y_offset + (32 + y_spacing)*item_count;
-
+// var left = x_offset;
+// var top = y_offset + (32 + y_spacing)*item_count;
+var gui_half_w = gui_w/2;
+var top = gui_h - 32 - 8;
+var left = gui_half_w - 1.5*32;
 deconstruction_item = instance_create_layer(left, top, macro_logic_layer, obj_HUD_category_select_button);
 with(deconstruction_item){
 	tooltip_text = "Deconstruction";
@@ -60,7 +51,8 @@ with(deconstruction_item){
 }
 item_count++;
 
-var top = y_offset + (32 + y_spacing)*item_count;
+// var top = y_offset + (32 + y_spacing)*item_count;
+var left = gui_half_w - 0.5*32;
 foundation_item = instance_create_layer(left, top, macro_logic_layer, obj_HUD_category_select_button);
 with(foundation_item){
 	tooltip_text = "Base Foundation";
@@ -69,7 +61,7 @@ with(foundation_item){
 }
 item_count++;
 
-var top = y_offset + (32 + y_spacing)*item_count;
+var left = gui_half_w + 0.5*32;
 inside_item = instance_create_layer(left, top, macro_logic_layer, obj_HUD_category_select_button);
 with(inside_item){
 	tooltip_text = "Inside constructions";
@@ -78,7 +70,7 @@ with(inside_item){
 }
 item_count++;
 
-var top = y_offset + (32 + y_spacing)*item_count;
+var left = gui_half_w + 1.5*32;
 outside_item = instance_create_layer(left, top, macro_logic_layer, obj_HUD_category_select_button);
 with(outside_item){
 	tooltip_text = "Outside constructions";
@@ -87,17 +79,9 @@ with(outside_item){
 }
 item_count++;
 
-// -- Menu button settings --
-menu_btn_left = 4;
-menu_btn_top = 4;
-menu_btn_right = 128;
-menu_btn_bottom = 32;
-menu_btn_center_x = (menu_btn_left + menu_btn_right)/2;
-menu_btn_center_y = (menu_btn_top + menu_btn_bottom)/2;
-mouse_over_menu = false;
-
-hud_menu = instance_create_layer(-500, 500, macro_logic_layer, obj_HUD_menu_main);
-sound_menu = instance_create_layer(-500, 500, macro_logic_layer, obj_HUD_menu_sound);
+// -- gui menu --
+gui_menu = instance_create_layer(-500, 500, macro_logic_layer, obj_gui_menu_main);
+sound_menu = instance_create_layer(-500, 500, macro_logic_layer, obj_gui_menu_sound);
 
 // -- Resource panel settings --
 resources_left = 480;
@@ -109,16 +93,22 @@ resources_center_y = (resources_top + resources_bottom)/2;
 
 cursor_sprite = spr_cursor;
 
+// -- details panel --
+
+oxygen_bar_color = global.oxygen_bar_color;
+food_bar_color= global.food_bar_color;
+sleep_bar_color = global.sleep_bar_color;
+health_bar_color = global.health_bar_color;
+
 // -- Astronaut panel --
 
 global.hud_entity_panel_offset = 40;
 
 // -- Minimap
+minimap = instance_create_layer(5, 240, macro_logic_layer, obj_HUD_minimap);
 
-surf_minimap = noone;
-surf_minimap_bg = noone;
+// the rest is to become obsolete... todo: remove
 
-// the rest is to become obsolete...
 ap_margin = 20;
 ap_padding = 4;
 ap_name_w = 126;
@@ -128,7 +118,6 @@ ap_offset = ap_h + 4;
 ap_origin_left = gui_w - (ap_w + ap_margin);
 ap_origin_top = 40;
 health_bar_color = global.health_bar_color;
-flash_counter = 0;
 double_click_timer = 0;
 double_click_astro = noone;
 hover_astro = noone;

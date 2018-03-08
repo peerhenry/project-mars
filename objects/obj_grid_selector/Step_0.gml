@@ -1,5 +1,8 @@
 /// @description reset global.selected_grid
 event_inherited();
+
+// todo: remove
+/*
 if(is_selected)
 {
 	// mouse click may deselect this
@@ -16,3 +19,4 @@ if(is_selected)
 		}
 	}
 }
+*/

@@ -1,19 +1,8 @@
-#region MENU BUTTON
-// box
-var color = global.btn_bg_color;
-if(mouse_over_menu) color = global.btn_bg_color_hover;
-draw_set_color(color);
-draw_rectangle(menu_btn_left, menu_btn_top, menu_btn_right, menu_btn_bottom, false);
-// outline
-draw_set_color(c_black);
-draw_rectangle(menu_btn_left, menu_btn_top, menu_btn_right, menu_btn_bottom, true);
-// text
-draw_set_halign(fa_center); 
-draw_set_valign(fa_middle);
-draw_set_font(font_hud);
-draw_set_color(global.btn_color);
-draw_text(menu_btn_center_x, menu_btn_center_y, "Menu");
-#endregion
+#region BAR AND BUTTONS
+
+draw_set_alpha(0.9);
+draw_rectangle_color(0, 0, gui_w, hud_bar_h, c_teal, c_teal, c_black, c_black, false);
+draw_set_alpha(1.0);
 
 var window_mouse_x = window_mouse_get_x();
 var window_mouse_y = window_mouse_get_y();
@@ -25,27 +14,26 @@ for(var n = 0; n< ds_list_size(buttons); n++)
 		&& window_mouse_x < button[? "right"]
 		&& window_mouse_y > button[? "top"] 
 		&& window_mouse_y < button[? "bottom"];
-	scr_draw_hud_button(button, hovers);
+	if(button[? "bar_button"]) scr_draw_hud_bar_button(button, hovers);
+	else scr_draw_hud_button(button, hovers);
 }
 
+#endregion
+
 #region RESOURCE COUNTER
-// box
-draw_set_color(global.btn_bg_color);
-draw_rectangle(resources_left, resources_top, resources_right, resources_bottom, false);
-// outline
-draw_set_color(c_black);
-draw_rectangle(resources_left, resources_top, resources_right, resources_bottom, true);
 // text
 draw_set_halign(fa_center); 
 draw_set_valign(fa_middle);
-draw_set_font(font_hud);
-draw_set_color(global.btn_color);
-draw_text(resources_center_x, resources_center_y, "Metal: " + string(scr_get_metal_amount()));
+draw_set_font(font_hud_bar);
+draw_set_color(c_white);
+draw_text(resources_center_x - 100, resources_center_y, "Metal: " + string(scr_get_metal_amount()));
+draw_text(resources_center_x + 100, resources_center_y, "Gold: " + string(0));
 #endregion
 
 #region BUILD PANEL
+
 // draw background
-draw_set_color(c_black);
+/*draw_set_color(c_black);
 // draw_rectangle(x_offset, y_offset, x_offset + 31, y_offset + (32 + y_spacing)*build_count - y_spacing, false);
 draw_rectangle(
 	0, 
@@ -63,240 +51,168 @@ draw_rectangle(
 	y_offset + (32 + y_spacing)*item_count - y_spacing + 10, 
 	false);
 draw_set_alpha(1);
+*/
+
 #endregion
 
-#region ASTRONAUT PANELS
-
-/*
-var offset = 0;
-with(obj_astronaut_playable)
-{
-	var ap_left = other.ap_origin_left;
-	var ap_right = ap_left + other.ap_w;
-	var ap_top = other.ap_origin_top + offset;
-	var ap_bottom = ap_top + other.ap_h;
-	var name_x = ap_left + other.ap_padding;
-	var name_y = ap_top + other.ap_padding;
-	
-	// draw panel
-	draw_set_color(c_dkgray);
-	draw_set_alpha(0.7);
-	draw_rectangle(ap_left, ap_top, ap_right, ap_bottom, false);
-	draw_set_alpha(1.0);
-	if(is_selected)
-	{
-		draw_set_color(c_aqua);
-		draw_rectangle(ap_left, ap_top, ap_right, ap_bottom, true);
-	}
-	
-	// draw name
-	draw_set_font(font_small);	
-	draw_set_color(c_silver);
-	draw_set_halign(fa_left);
-	draw_set_valign(fa_top);
-	draw_text(name_x, name_y, name);
-	
-	// draw need bars (vertically)
-	var oc = global.oxygen_bar_color;
-	var sc = global.sleep_bar_color;
-	var fc = global.food_bar_color;
-	
-	var healthbar_x = name_x;
-	var healthbar_y = ap_bottom - 2 - other.ap_padding;
-	
-	var bw = 3;
-	var bspace = 5;
-	var hby = healthbar_y-20;
-	draw_set_color(c_red);
-	// food_level bar
-	var hbx = name_x + other.ap_name_w - bw;
-	draw_healthbar(hbx, hby, hbx + bw, hby + 22, food_level, c_black, fc, fc, 3, true, true);
-	if(food_level < 20 && other.flash_counter > 15)
-	{
-		draw_rectangle(hbx - 1, hby - 1, hbx + bw + 1, hby + 22 + 1, true);
-	}
-	// sleep bar
-	hbx = hbx - bspace - bw;
-	draw_healthbar(hbx, hby, hbx + bw, hby + 22, sleep_level, c_black, sc, sc, 3, true, true);
-	if(sleep_level < 20 && other.flash_counter > 15)
-	{
-		draw_rectangle(hbx - 1, hby - 1, hbx + bw + 1, hby + 22 + 1, true);
-	}
-	// oxygen bar
-	if(wears_suit)
-	{
-		hbx = hbx - bspace - bw;
-		draw_healthbar(hbx, hby, hbx + bw, hby + 22, suit_oxygen, c_black, oc, oc, 3, true, true);
-		if(suit_oxygen < 20 && other.flash_counter > 15)
-		{
-			draw_rectangle(hbx - 1, hby - 1, hbx + bw + 1, hby + 22 + 1, true);
-		}
-	}
-	
-	// draw healthbar
-	var hc = health_bar_color;
-	if(entity_health < 20) hc = c_red;
-	else if(entity_health < 100) hc = c_yellow;
-	draw_healthbar(healthbar_x, healthbar_y, hbx - bspace, healthbar_y + 2, entity_health, c_black, hc, hc, 0, true, true);
-	
-	
-	// draw auto icons
-	var counter = 0;
-	var icon_x_or = name_x + other.ap_name_w + other.ap_padding;
-	var icon_top = name_y;
-	var icon_offset = (16 + other.ap_padding);
-	var c_attack = c_dkgray;
-	if(auto_attack) c_attack = c_aqua;
-	var c_construct = c_dkgray;
-	if(auto_construct) c_construct = c_aqua;
-	var c_sleep = c_dkgray;
-	if(auto_sleep)
-	{
-		c_sleep = c_red;
-		with(obj_bed)
-		{
-			if(owner = macro_player)
-			{
-				if(occupant != noone) c_sleep = c_yellow;
-				else{
-					c_sleep = c_aqua;
-					break;
-				}
-			}
-		}
-	}
-	var c_food = c_dkgray;
-	if(auto_eat)
-	{
-		c_food = c_red;
-		var there_is_hydroponics = false;
-		with(obj_hydroponics) if(owner = macro_player) { there_is_hydroponics = true; break; }
-		with(obj_fridge)
-		{
-			if(owner = macro_player)
-			{
-				if(!scr_inventory_has_item(inventory, macro_inventory_food))
-				{
-					if(there_is_hydroponics) c_food = c_yellow;
-				}
-				else{
-					c_food = c_aqua;
-					break;
-				}	
-			}
-		}
-	}
-	
-	draw_sprite_ext(spr_auto_attack_small, 2, icon_x_or + icon_offset * counter, icon_top, 1, 1, 0, c_attack, 1);
-	counter++;
-	draw_sprite_ext(spr_auto_construct_small, 2, icon_x_or + icon_offset * counter, icon_top, 1, 1, 0, c_construct, 1);
-	counter++;
-	draw_sprite_ext(spr_auto_sleep_small, 2, icon_x_or + icon_offset * counter, icon_top, 1, 1, 0, c_sleep, 1);
-	counter++;
-	draw_sprite_ext(spr_auto_feed_small, 2, icon_x_or + icon_offset * counter, icon_top, 1, 1, 0, c_food, 1);
-	
-	// increment offset
-	offset = offset + other.ap_offset;
-}
-*/
+#region BAR BOTTOM LINE
+draw_set_alpha(0.2);
+draw_line_width_color(0, hud_bar_h, gui_w, hud_bar_h, 3, c_aqua, c_aqua);
+draw_set_alpha(0.5);
+draw_line_width_color(0, hud_bar_h, gui_w, hud_bar_h, 1, c_aqua, c_aqua);
+draw_set_alpha(1.0);
 #endregion
 
 #region TOOLTIPS
-/*
-// hover over astro tooltip
-var astro = instance_position(mouse_x, mouse_y, obj_astronaut_playable);
-var window_mouse_x = window_mouse_get_x();
-var window_mouse_y = window_mouse_get_y();
-var tt_x = window_mouse_x + 16;
-var tt_y = window_mouse_y + 16;
-if(!global.hovering_over_HUD && astro != noone)
-{	
-	scr_draw_hud_tooltip(tt_x, tt_y, astro.name);
-}
-else if(hover_astro != noone) // hud hover astro
-{
-	switch(other.hover_part)
-	{
-		case hud_part.auto_attack:
-			scr_draw_hud_tooltip(tt_x, tt_y, "toggle auto attack");
-			break;
-		case hud_part.auto_construct:
-			scr_draw_hud_tooltip(tt_x, tt_y, "toggle auto construct");
-			break;
-		case hud_part.auto_eat:
-			scr_draw_hud_tooltip(tt_x, tt_y, "toggle auto eat");
-			break;
-		case hud_part.auto_sleep:
-			scr_draw_hud_tooltip(tt_x, tt_y, "toggle auto sleep");
-			break;
-		case hud_part.food_bar:
-			scr_draw_hud_tooltip(tt_x, tt_y, "food: " + string(hover_astro.food_level));
-			break;
-		case hud_part.sleep_bar:
-			scr_draw_hud_tooltip(tt_x, tt_y, "sleep: " + string(hover_astro.sleep_level));
-			break;
-		case hud_part.oxygen_bar:
-			scr_draw_hud_tooltip(tt_x, tt_y, "oxygen: " + string(hover_astro.suit_oxygen));
-			break;
-	}
-}
-*/
 var tile = instance_position(mouse_x, mouse_y, obj_base_tile);
 var comp = instance_position(mouse_x, mouse_y, obj_base_component);
 if(tile != noone && comp == noone)
 {
-	var window_mouse_x = window_mouse_get_x();
-	var window_mouse_y = window_mouse_get_y();
-	var tt_x = window_mouse_x + 16;
-	var tt_y = window_mouse_y + 16;
 	var le_room = scr_room_at(mouse_x, mouse_y);
-	scr_draw_hud_tooltip(tt_x, tt_y, "oxygen: " + string(le_room.oxygen_level) + "%");
+	scr_draw_tooltip("oxygen: " + string( floor(le_room.oxygen_level) ) + "%");
+}
+if(comp != noone)
+{
+	scr_draw_tooltip(string( comp.name ));
 }
 
 #endregion
 
-#region MINIMAP
+#region DETAILS PANEL
 
-var map_dim = [ceil(room_width / 32), ceil(room_height / 32)];
-var map_pos = [5, 240];
-var map_entities = ds_list_create();
-ds_list_add(map_entities, [obj_base_tile, c_gray]);
-ds_list_add(map_entities, [obj_astronaut, c_lime]);
+var select = scr_get_single_selected();
 
-if(!surface_exists(surf_minimap)) surf_minimap = surface_create(map_dim[0], map_dim[1]);
-if(!surface_exists(surf_minimap_bg))
-{
-	surf_minimap_bg = surface_create(room_width, room_height);
-	surface_set_target(surf_minimap_bg);
+if(select != noone) // draw details panel
+{	
+	// panel
+	var details_panel_width = 384;
+	var details_panel_height = 32 + 16 + 24*5 + 64*3 + 96; // padding + spaces + lines + inventory + avatar
+	var top = display_get_gui_height() - details_panel_height;
+	var left = 0;
+	var right = left + details_panel_width;
+	var bottom = top + details_panel_height;
+	var padding = 16;
+	scr_draw_panel(left, top, right, bottom);
 	
-	draw_clear(c_black);
+	// avatar
+	draw_set_color(c_black);
+	var av_w = 96;
+	var av_h = 96;
+	var av_x = left + details_panel_width - padding - av_w;
+	var av_y = top + padding;
+	draw_rectangle(av_x, av_y, av_x + av_w, av_y + av_h, false);
+	var avatar = scr_get_avatar(select);
+	if( scr_instance_inherits(select, obj_astronaut) ) draw_sprite(avatar, 0, av_x, av_y);
+	else draw_sprite_ext(avatar, 0, av_x + av_w/2, av_y + av_h/2, 1, 1, 0, c_white, 1.0);
 	
-	draw_sprite_tiled(spr_default, 0, 0, 0);
+	// name
+	draw_set_font(font_hud);
+	var name_size = font_get_size(font_hud);
+	draw_set_color(c_white);
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_top);
+	var x_or = left + padding;
+	draw_text(x_or, top + padding, select.name);
 	
-	var _tilemap = layer_tilemap_get_id(layer_get_id("Tiles_surface"));
-	draw_tilemap(_tilemap, 0, 0);
+	// health / integrity
+	var hb_left = left + padding;
+	var hb_top = top + 2 * padding + name_size;
+	var hb_right = right - 2*padding - 96;
+	var hb_bottom = hb_top + 4;
 	
-	surface_reset_target();
+	var h = 0;
+	if(scr_instance_inherits(select, obj_movable)) h = select.entity_health;
+	else h = 100 - select.damage;
+	
+	var hc = c_lime;
+	if(h < 20) hc = c_red;
+	else if(h < 50) hc = c_yellow;
+	
+	draw_healthbar(hb_left, hb_top, hb_right, hb_bottom, h, c_black, hc, hc, 0, true, true);
+	
+	var next_y_offset = top + 2*padding + 96;
+	
+	// needs / grid props
+	var prop_font = font_small_bold;
+	draw_set_font(prop_font);
+	var line_height = font_get_size(prop_font) + 12;
+	
+	if(scr_instance_inherits(select, obj_movable))
+	{
+		var bar_height = 4;
+		
+		var bar_left = hb_left + 100;
+		var bar_top = next_y_offset + (line_height - bar_height)/2;
+		var bar_right = right - padding;
+		var bar_bottom = bar_top + bar_height;
+		
+		if(scr_instance_inherits(select, obj_astronaut)) // draw need bars
+		{
+			// oxygen
+			if(select.wears_suit)
+			{
+				draw_text(x_or, next_y_offset, "Oxygen " + string(floor(select.suit_oxygen)) + "%");
+				draw_healthbar(bar_left, bar_top, bar_right, bar_bottom, select.suit_oxygen, c_black, oxygen_bar_color, oxygen_bar_color, 0, true, true);
+				next_y_offset += line_height;
+			}
+			
+			// sleep
+			bar_top = next_y_offset + (line_height - bar_height)/2;
+			draw_text(x_or, next_y_offset, "Sleep ");
+			draw_healthbar(bar_left, bar_top, bar_right, next_y_offset + bar_height, select.sleep_level, c_black, sleep_bar_color, sleep_bar_color, 0, true, true);
+			next_y_offset += line_height;
+			
+			// food
+			bar_top = next_y_offset + (line_height - bar_height)/2;
+			draw_text(x_or, next_y_offset, "Food ");
+			draw_healthbar(bar_left, bar_top, bar_right, next_y_offset + bar_height, select.food_level, c_black, food_bar_color, food_bar_color, 0, true, true);
+			next_y_offset += line_height;
+		}
+		else
+		{
+			// battery charge
+			bar_top = next_y_offset + (line_height - bar_height)/2;
+			draw_text(x_or, next_y_offset, "Battery " + string(floor(select.battery_charge)) + "%");
+			draw_healthbar(bar_left, bar_top, bar_right, next_y_offset + bar_height, select.battery_charge, c_black, c_aqua, c_aqua, 0, true, true);
+			next_y_offset += line_height;
+		}
+	}
+	else if(scr_instance_inherits(select, obj_constructable)) // grid props
+	{
+		var tab = 100;
+		// grid - role - value
+		for(var grid_type = 0; grid_type < macro_grid_type_count; grid_type++)
+		{
+			//var grid_props = scr_get_grid_props(arg_instance, grid_type);
+			if(scr_has_grid_props(select, grid_type))
+			{
+				var grid_string = "electric";
+				switch(grid_type)
+				{
+					case macro_grid_electric: grid_string = "electric"; break;
+					case macro_grid_water: grid_string = "water"; break;
+					case macro_grid_oxygen: grid_string = "oxygen"; break;
+					case macro_grid_hydrogen: grid_string = "hydrogen"; break;
+				}
+				draw_text(x_or, next_y_offset, grid_string + " grid");
+				
+				var role_s = "";
+				var role = scr_get_grid_prop(select, grid_type, macro_grid_prop_role);
+				switch(role)
+				{
+					case macro_grid_role_carrier: role_s = "carrier"; break;
+					case macro_grid_role_source: role_s = "source"; break;
+					case macro_grid_role_consumer: role_s = "consumer"; break;
+					case macro_grid_role_storage: role_s = "storage"; break;
+				}
+				draw_text(x_or + tab, next_y_offset, "role: " + role_s);
+				
+				var val = scr_get_grid_prop(select, grid_type, macro_grid_prop_value);
+				draw_text(x_or + 2*tab, next_y_offset, "value: " + string(val));
+				next_y_offset += line_height;
+			}
+		}
+	}
 }
-
-surface_set_target(surf_minimap);
-
-draw_clear(c_black);
-draw_surface_stretched(surf_minimap_bg, 0, 0, map_dim[0], map_dim[1]);
-for(var n = 0; n < ds_list_size(map_entities); n++) //draw entities
-{
-	var item = map_entities[|n];
-	with(item[0]) draw_point_color(x / 32, y / 32, item[1]);
-}
-
-var map_cam_pos = [camera_get_view_x(view_camera[0]) / 32, camera_get_view_y(view_camera[0]) / 32];
-var map_cam_dim = [camera_get_view_width(view_camera[0]) / 32, camera_get_view_height(view_camera[0]) / 32];
-draw_rectangle_color(map_cam_pos[0], map_cam_pos[1], map_cam_pos[0] + map_cam_dim[0], map_cam_pos[1] + map_cam_dim[1], c_white, c_white, c_white, c_white, true);
-
-surface_reset_target();
-
-//draw to screen
-draw_rectangle_color(map_pos[0], map_pos[1], map_pos[0] + map_dim[0], map_pos[1] + map_dim[1], c_black, c_black, c_black, c_black, true);
-draw_surface(surf_minimap, map_pos[0], map_pos[1]);
 
 #endregion

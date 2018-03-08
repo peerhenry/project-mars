@@ -1,3 +1,9 @@
+// selected box
+if(is_selected)
+{
+	draw_sprite(spr_selection, 0, x, y);
+}
+
 if(under_construction)
 {
 	shader_set(shader_noise);

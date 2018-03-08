@@ -19,4 +19,18 @@ var sw = string_width(text);
 var pad = arg_padding;
 var pad2 = pad*2;
 
-scr_add_hud_button_ext( hud, arg_x, arg_x + pad2 + sw, arg_y, arg_y + pad2 + sh, font, text, arg_x + pad, arg_y + pad, noone, arg_action );
+//scr_add_hud_button_ext( hud, arg_x, arg_x + pad2 + sw, arg_y, arg_y + pad2 + sh, font, text, arg_x + pad, arg_y + pad, noone, arg_action );
+
+scr_add_hud_button_ext( 
+	hud, 
+	arg_x, 
+	arg_x + pad2 + sw, 
+	arg_y, 
+	arg_y + pad2 + sh, 
+	font, 
+	text, 
+	arg_x + pad, 
+	arg_y + pad, 
+	noone, 
+	arg_action
+);

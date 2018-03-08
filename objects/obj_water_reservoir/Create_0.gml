@@ -1,5 +1,5 @@
 event_inherited();
-
+name = "water reservoir";
 scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.occupy);
 
 grid_type_to_select = macro_grid_water;

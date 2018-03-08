@@ -1,5 +1,6 @@
 event_inherited();
-
+name = "suit closet";
+description = "Can hold one space suit and fills it with oxygen. Right click a selected astronaut here to put on or take off a suit."
 // hardcoded constructable logic
 under_construction = true;
 damage = 0;

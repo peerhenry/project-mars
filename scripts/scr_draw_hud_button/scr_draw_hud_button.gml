@@ -6,14 +6,23 @@ var top = arg_button[?"top"];
 var right = arg_button[?"right"];
 var bottom = arg_button[?"bottom"];
 
-var sprite = arg_button[?"sprite"]
+var sprite = arg_button[?"sprite"];
 
 if(arg_hovers)
 {
-	if(mouse_check_button_pressed(mb_left)) scr_draw_panel_inverse(left, top, right, bottom);
-	else scr_draw_panel_light(left, top, right, bottom);
+	if(mouse_check_button_pressed(mb_left))
+	{
+		scr_draw_panel_inverse(left, top, right, bottom);
+	}
+	else
+	{
+		scr_draw_panel_light(left, top, right, bottom);
+	}
 }
-else scr_draw_panel(left, top, right, bottom);
+else
+{
+	scr_draw_panel(left, top, right, bottom);
+}
 
 if(sprite != noone)
 {
@@ -24,8 +33,8 @@ if(sprite != noone)
 else
 {
 	draw_set_font(arg_button[?"font"]);
-	// draw_set_halign(fa_center); draw_set_valign(fa_middle);
-	draw_set_halign(fa_left); draw_set_valign(fa_top);
-	draw_set_color(c_white);
+	draw_set_halign(arg_button[?"halign"]);
+	draw_set_valign(arg_button[?"valign"]);
+	draw_set_color(arg_button[?"text_color"]);
 	draw_text( arg_button[?"text_x"], arg_button[?"text_y"], arg_button[?"text"] );
 }
