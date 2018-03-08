@@ -29,4 +29,4 @@ var button = scr_add_hud_button_ext(
 	arg_action
 );
 
-button[? "bar_button"] = true;
+button.draw_as_panel = false;

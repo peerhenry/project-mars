@@ -35,3 +35,8 @@ text_y_offset = tab_h/2;
 
 reset = false; // flag used by a panel if an astronaut dies and therefore the panel will be destroyed
 active = true;
+
+astro_count = 0;
+robot_count = 0;
+cart_count = 0;
+alarm[0] = 1;

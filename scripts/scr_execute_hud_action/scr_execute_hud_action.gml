@@ -1,11 +1,11 @@
 /// @arg button
 var arg_button = argument0;
 
-switch( arg_button[? "action"] )
+switch( arg_button.action )
 {
 	case hud_action.toggle_astro_panels:
-		var open = arg_button[? "active"];
-		arg_button[? "active"] = !open;
+		var open = arg_button.active;
+		arg_button.active = !open;
 		if(open)
 		{
 			// destroy astro panels
@@ -27,8 +27,8 @@ switch( arg_button[? "action"] )
 		}
 		break;
 	case hud_action.toggle_robot_panels:
-		var open = arg_button[? "active"];
-		arg_button[? "active"] = !open;
+		var open = arg_button.active;
+		arg_button.active = !open;
 		if(open)
 		{
 			// close all robot panels

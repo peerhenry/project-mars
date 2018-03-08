@@ -1,3 +1,4 @@
+// todo: remove this
 if(show_details && false)
 {	
 	draw_set_font(font_small_bold);

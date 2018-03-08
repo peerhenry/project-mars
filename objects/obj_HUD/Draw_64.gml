@@ -6,16 +6,18 @@ draw_set_alpha(1.0);
 
 var window_mouse_x = window_mouse_get_x();
 var window_mouse_y = window_mouse_get_y();
+var hover_button = noone;
 for(var n = 0; n< ds_list_size(buttons); n++)
 {
 	var button = buttons[| n];
 	var hovers = 
-		window_mouse_x > button[? "left"] 
-		&& window_mouse_x < button[? "right"]
-		&& window_mouse_y > button[? "top"] 
-		&& window_mouse_y < button[? "bottom"];
-	if(button[? "bar_button"]) scr_draw_hud_bar_button(button, hovers);
-	else scr_draw_hud_button(button, hovers);
+		window_mouse_x > button.left
+		&& window_mouse_x < button.right
+		&& window_mouse_y > button.top
+		&& window_mouse_y < button.bottom;
+	if(hovers) hover_button = button;
+	if(button.draw_as_panel) scr_draw_hud_button(button, hovers);
+	else scr_draw_hud_bar_button(button, hovers);
 }
 
 #endregion
@@ -74,6 +76,27 @@ if(tile != noone && comp == noone)
 if(comp != noone)
 {
 	scr_draw_tooltip(string( comp.name ));
+}
+if(hover_button != noone)
+{
+	switch(hover_button.action)
+	{
+		case hud_action.toggle_menu:
+			scr_draw_tooltip("menu");
+			break;
+		case hud_action.toggle_outliner:
+			scr_draw_tooltip("toggle outliner");
+			break;
+		case hud_action.toggle_minimap:
+			scr_draw_tooltip("toggle minimap");
+			break;
+		case hud_action.toggle_objectives:
+			scr_draw_tooltip("objectives");
+			break;
+		case hud_action.mission_control:
+			scr_draw_tooltip("mission control");
+			break;
+	}
 }
 
 #endregion

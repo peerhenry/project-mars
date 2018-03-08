@@ -8,6 +8,7 @@
 /// @arg text_x
 /// @arg text_y
 /// @arg sprite
+/// @arg hud_action
 var hud = argument0;
 var l = argument1;
 var r = argument2;
@@ -20,25 +21,26 @@ var text_y = argument8;
 var sprite = argument9;
 var arg_action = argument10;
 
-var new_button = ds_map_create();
-ds_map_add(new_button, "sprite", sprite);
-ds_map_add(new_button, "font", font);
-ds_map_add(new_button, "text", text);
-ds_map_add(new_button, "text_x", text_x);
-ds_map_add(new_button, "text_y", text_y);
-ds_map_add(new_button, "top", t);
-ds_map_add(new_button, "bottom", b);
-ds_map_add(new_button, "left", l);
-ds_map_add(new_button, "right", r);
-ds_map_add(new_button, "width", r-l);
-ds_map_add(new_button, "height", b-t);
-ds_map_add(new_button, "action", arg_action);
-ds_map_add(new_button, "active", false);
-
-ds_map_add(new_button, "halign", fa_center);
-ds_map_add(new_button, "valign", fa_middle);
-ds_map_add(new_button, "text_color", c_white);
-ds_map_add(new_button, "bar_button", false);
+var new_button = instance_create_depth(0,0,0,dto_hud_bar_button);
+new_button.sprite = sprite;
+new_button.font = font;
+new_button.text = text;
+new_button.text_x = text_x;
+new_button.text_y = text_y;
+new_button.top = t;
+new_button.bottom = b;
+new_button.left = l;
+new_button.right = r;
+new_button.width = r-l;
+new_button.height = b-t;
+new_button.action = arg_action;
+new_button.active = false;
+new_button.color_top = c_teal;
+new_button.color_bottom = c_gray;
+new_button.color_hover_top = c_aqua;
+new_button.color_hover_bottom = c_ltgray;
+new_button.color_down_top = c_dkgray;
+new_button.color_down_bottom = c_black;
 
 with(hud) ds_list_add(buttons, new_button);
 
