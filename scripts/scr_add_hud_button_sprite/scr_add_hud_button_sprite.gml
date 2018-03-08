@@ -17,4 +17,4 @@ var sh = sprite_get_height(sprite);
 var pad = arg_padding;
 var pad2 = 2*pad;
 
-scr_add_hud_button_ext( hud, arg_x, arg_x + pad2 + sw, arg_y, arg_y + pad2 + sh, noone, "", arg_x + pad, arg_y + pad, sprite, arg_action );
+return scr_add_hud_button_ext( hud, arg_x, arg_x + pad2 + sw, arg_y, arg_y + pad2 + sh, noone, "", arg_x + pad, arg_y + pad, sprite, arg_action );

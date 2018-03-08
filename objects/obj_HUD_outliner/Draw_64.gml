@@ -8,7 +8,7 @@ var c_bottom = c_black;
 if(hover_astro_tab)
 {
 	c_top = c_gray;
-	c_bottom = c_dkgray;
+	//c_bottom = c_dkgray;
 }
 draw_rectangle_color(tab_astro_left, tab_astro_top, tab_astro_right, tab_astro_top + tab_h, c_top, c_top, c_bottom, c_bottom, false)
 draw_set_color(c_white);
@@ -32,7 +32,7 @@ c_bottom = c_black;
 if(hover_cart_tab)
 {
 	c_top = c_gray;
-	c_bottom = c_dkgray;
+	//c_bottom = c_dkgray;
 }
 draw_rectangle_color(tab_cart_left, tab_cart_top, tab_cart_right, tab_cart_top + tab_h, c_top, c_top, c_bottom, c_bottom, false)
 draw_set_color(c_white);
