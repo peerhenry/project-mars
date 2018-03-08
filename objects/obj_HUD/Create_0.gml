@@ -118,7 +118,7 @@ health_bar_color = global.health_bar_color;
 global.hud_entity_panel_offset = 40;
 
 // -- Minimap
-minimap = instance_create_layer(window_get_width() - 200, 40, macro_logic_layer, obj_HUD_minimap);
+minimap = instance_create_layer(window_get_width() - 200 - 300, 40, macro_logic_layer, obj_HUD_minimap);
 
 // the rest is to become obsolete... todo: remove
 
