@@ -3,18 +3,19 @@ scr_trace("MDU pile interact event");
 
 // either dump a module here or astronaut takes one.
 var astro_inv = assigned_astronaut.inventory;
-if(scr_inventory_has_item(astro_inv, macro_inventory_module))
+if(scr_inventory_has_item_type(astro_inv,  inv_space.mdu))
 {
-	var success = scr_inventory_extract(astro_inv, macro_inventory_module);
-	if(success)
+	var mdu = scr_inventory_extract(astro_inv, inv_space.mdu);
+	if(mdu != noone)
 	{
 		image_index++;
 		mdu_count++;
+		instance_destroy(mdu);
 	}
 }
 else
 {
-	var success = scr_inventory_insert(astro_inv, macro_inventory_module);
+	var success = scr_inventory_insert_new(astro_inv, inv_space.mdu);
 	if(success)
 	{
 		mdu_count--;

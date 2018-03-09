@@ -21,9 +21,9 @@ ds_map_replace(arg_construction, construction_mdu_piles, noone);
 //var construction_cells_array = arg_construction[construction_cells];
 var instances_to_finalize = ds_stack_create();
 var construction_cells_list = ds_map_find_value(arg_construction, construction_cells);
-var count = ds_list_size(construction_cells_list);
+var cell_count = ds_list_size(construction_cells_list);
 var room_logic_instance = noone;
-for(var n = 0; n < count; n++) // loop over cells
+for(var n = 0; n < cell_count; n++) // loop over cells
 {
 	// - get construction cell parameters
 	var next_cell = construction_cells_list[|n];

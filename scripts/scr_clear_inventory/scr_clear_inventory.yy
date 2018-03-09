@@ -1,8 +1,8 @@
 {
-    "id": "209cda3b-6547-471d-bf6f-0b50f6711bd4",
+    "id": "732f9115-e2da-42f5-bac4-36c77a5a77ee",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_inventory_create",
+    "name": "scr_clear_inventory",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -1,3 +1,4 @@
+// todo: refactor new inventory
 var arg_item_type = argument0;
 
 enum item_type

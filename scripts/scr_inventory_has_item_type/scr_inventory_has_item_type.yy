@@ -1,8 +1,8 @@
 {
-    "id": "ddb654f4-9003-4846-a1aa-71fb76cf8944",
+    "id": "b53358c1-f5b8-4994-adf7-728cea19b95e",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_inventory_has_space_for_item",
+    "name": "scr_inventory_has_item_type",
     "IsCompatibility": false,
     "IsDnD": false
 }

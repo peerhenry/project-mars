@@ -5,11 +5,11 @@ var container = argument0;
 var shooter = argument1;
 var target = argument2;
 
-if( scr_inventory_has_item(shooter.inventory, macro_inventory_rifle) )
+if( scr_inventory_has_item_type(shooter.inventory, inv_space.rifle) )
 {
 	scr_create_rifle_shot(shooter, target);
 }
-else if( scr_inventory_has_item(shooter.inventory, macro_inventory_pistol) )
+else if( scr_inventory_has_item_type(shooter.inventory, inv_space.pistol) )
 {
 	var shot = scr_create_projectile(shooter, target);
 	if(shot)

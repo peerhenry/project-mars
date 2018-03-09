@@ -1,14 +1,14 @@
-/// @param item
-var arg_item = argument0;
+/// @param item_type
+var arg_item_type = argument0;
 
-switch(arg_item)
+switch(arg_item_type)
 {
-	case macro_inventory_pistol:
+	case inv_space.pistol:
 		return spr_inv_pistol;
-	case macro_inventory_food:
+	case inv_space.food:
 		return spr_inv_food;
-	case macro_inventory_module:
+	case inv_space.mdu:
 		return spr_inv_module;
-	case macro_inventory_rifle:
+	case inv_space.rifle:
 		return spr_inv_rifle;
 }

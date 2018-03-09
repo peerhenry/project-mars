@@ -76,3 +76,13 @@ enum hud_action
 	toggle_objectives,
 	mission_control
 }
+
+enum inv_space
+{
+	empty = 0,
+	occupied = 1,
+	pistol = 2,
+	rifle = 3,
+	food = 4,
+	mdu = 5
+}

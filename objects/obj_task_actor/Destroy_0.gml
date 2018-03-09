@@ -1,2 +1,2 @@
 event_inherited();
-ds_grid_destroy(inventory);
+instance_destroy( inventory );

@@ -12,7 +12,7 @@ var room_h = 5;
 scr_setup_six_rooms(base_or_i, base_or_j, room_w, room_h, 2);
 // player astronauts...
 init_skirmish_add_astronauts(80, 70, astro_count, macro_player); // attack check
-with(obj_astronaut) scr_inventory_insert(inventory, macro_inventory_rifle);
+with(obj_astronaut) scr_inventory_insert_new(inventory, inv_space.rifle);
 init_skirmish_add_astronauts(base_or_i + 1, base_or_j + 3, astro_count, macro_player); 
 
 // 2. enemy base

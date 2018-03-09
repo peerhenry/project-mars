@@ -2,7 +2,7 @@
 event_inherited();
 
 // inventory
-inventory = ds_grid_create(3,3);
+inventory = instance_create_depth(3,3,0,dto_inventory);
 
 // tasks
 assigned_object = noone;

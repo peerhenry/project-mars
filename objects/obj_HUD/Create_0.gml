@@ -125,3 +125,6 @@ double_click_timer = 0;
 double_click_astro = noone;
 hover_astro = noone;
 hover_part = hud_part.none;
+
+var di = instance_create_depth(1, 1, 0, dto_inventory);
+instance_destroy(di);

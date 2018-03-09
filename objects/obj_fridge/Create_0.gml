@@ -10,4 +10,4 @@ scr_set_new_grid_props(id, macro_grid_electric, macro_grid_role_consumer, 1);
 // Create inventory
 inv_w = 4;
 inv_h = 6;
-inventory = ds_grid_create(inv_w, inv_h);
+inventory = instance_create_depth(inv_w, inv_h, 0, dto_inventory);

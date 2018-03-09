@@ -2,15 +2,24 @@ test_init(test_astronaut_inventory);
 
 // arrange
 var astro = instance_create_depth(0,0,0,obj_astronaut);
-ds_grid_set_region(astro.inventory, 0, 0, ds_grid_width(astro.inventory) - 1, ds_grid_height(astro.inventory) - 1, macro_inventory_empty);
+var astro_inv = astro.inventory;
+scr_clear_inventory(astro_inv);
 
-// act & assert
-scr_inventory_insert(astro.inventory, macro_inventory_module);
-assert_true(scr_inventory_has_item(astro.inventory, macro_inventory_module), "astro has mdu");
-assert_true(scr_inventory_has_item(astro.inventory, macro_inventory_occupied), "astro has occupied space in inventory");
-scr_inventory_extract(astro.inventory, macro_inventory_module);
-assert_false(scr_inventory_has_item(astro.inventory, macro_inventory_module), "astro has mdu");
-assert_false(scr_inventory_has_item(astro.inventory, macro_inventory_occupied), "astro has occupied space in inventory");
+// act
+var succeeded = scr_inventory_insert_new(astro_inv, inv_space.mdu);
+assert_true(succeeded, "insert new succeeded");
+
+// assert
+assert_true(scr_inventory_has_item_type(astro_inv, inv_space.mdu), "astro has mdu");
+assert_true(scr_ds_grid_has(astro_inv.space, inv_space.occupied), "astro has occupied space in inventory");
+
+// act 2
+var item = scr_inventory_extract(astro_inv, inv_space.mdu);
+instance_destroy(item);
+
+// assert
+assert_false(scr_inventory_has_item_type(astro_inv, inv_space.mdu), "astro has mdu");
+assert_false(scr_ds_grid_has(astro_inv.space, inv_space.occupied), "astro has occupied space in inventory");
 
 // cleanup
 instance_destroy(astro);
