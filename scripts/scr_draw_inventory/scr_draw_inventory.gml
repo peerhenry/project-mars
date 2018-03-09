@@ -23,6 +23,17 @@ for (var i = 0; i < grid_w; i++)
 		{
 			var sprite = scr_get_inventory_item_sprite(value);
 			draw_sprite(sprite, 0, grid_x + 64*i, grid_y + 64*j);
+			var item = ds_grid_get(arg_inventory.ids, i, j);
+			if(value == inv_space.pistol)
+			{
+				// draw small charge bar
+				draw_healthbar(grid_x + 64*i + 8, grid_y + 64*j + 60, grid_x + 64*(i+1) - 8, grid_y + 64*j + 56, item.charge, c_black, c_aqua, c_aqua, 0, true, true);
+			}
+			else if(value == inv_space.rifle)
+			{
+				// draw wide charge bar
+				draw_healthbar(grid_x + 64*i + 8, grid_y + 64*j + 60, grid_x + 64*(i+2) - 8, grid_y + 64*j + 56, item.charge, c_black, c_aqua, c_aqua, 0, true, true);
+			}
 		}
     }
 }
