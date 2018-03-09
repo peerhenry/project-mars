@@ -3,7 +3,7 @@ var selection_includes_astro = false;
 
 var add_to_selection = keyboard_check(vk_shift) || keyboard_check(vk_control);
 
-scr_hide_all_panels();
+with(obj_HUD_details_panel) instance_destroy();
 var single_select_ent = instance_position(mouse_x, mouse_y, obj_movable);
 if(single_select_ent != noone && single_select_ent.owner == macro_player) // (de)select astronaut
 {	
@@ -34,6 +34,11 @@ else if(single_select_ent == noone) // select grid selector
 			is_selected = true;
 		}
 	}
+}
+
+if(single_select_ent != noone)
+{
+	instance_create_depth(single_select_ent, 0, 0, obj_HUD_details_panel);
 }
 
 // play selection sounds

@@ -17,3 +17,5 @@ assigned_instance = noone;
 ghost = noone;
 action = cart_action.idle;
 autotasking = false;
+
+deploy = false; // deploy mode boolean

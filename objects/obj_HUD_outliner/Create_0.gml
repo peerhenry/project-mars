@@ -7,6 +7,8 @@ hover_astro_tab = false;
 hover_robot_tab = false;
 hover_cart_tab = false;
 
+tab_text_color = make_color_rgb(128, 255, 255);
+
 tab_w = 230;
 tab_h = 24;
 var gui_w = display_get_gui_width();

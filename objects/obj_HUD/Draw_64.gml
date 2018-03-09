@@ -41,17 +41,7 @@ draw_set_alpha(1.0);
 #endregion
 
 #region TOOLTIPS
-var tile = instance_position(mouse_x, mouse_y, obj_base_tile);
-var comp = instance_position(mouse_x, mouse_y, obj_base_component);
-if(tile != noone && comp == noone)
-{
-	var le_room = scr_room_at(mouse_x, mouse_y);
-	scr_draw_tooltip("oxygen: " + string( floor(le_room.oxygen_level) ) + "%");
-}
-if(comp != noone)
-{
-	scr_draw_tooltip(string( comp.name ));
-}
+
 if(hover_button != noone)
 {
 	switch(hover_button.action)
@@ -72,6 +62,19 @@ if(hover_button != noone)
 			scr_draw_tooltip("mission control");
 			break;
 	}
+}
+
+if(global.hovering_over_HUD) exit;
+var tile = instance_position(mouse_x, mouse_y, obj_base_tile);
+var comp = instance_position(mouse_x, mouse_y, obj_base_component);
+if(tile != noone && comp == noone)
+{
+	var le_room = scr_room_at(mouse_x, mouse_y);
+	scr_draw_tooltip("oxygen: " + string( floor(le_room.oxygen_level) ) + "%");
+}
+if(comp != noone)
+{
+	scr_draw_tooltip(string( comp.name ));
 }
 
 #endregion

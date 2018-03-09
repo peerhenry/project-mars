@@ -28,9 +28,6 @@ outliner_button = scr_add_hud_button_sprite(
 );
 outliner_button.draw_as_panel = true;
 
-// details panel
-details = instance_create_layer(0, 0, macro_logic_layer, obj_HUD_details_panel);
-
 global.hovering_over_HUD = false; // write @ begin step, read @ step
 global.hovering_over_hud_panel = false; // read & reset @ begin step, write @ step
 

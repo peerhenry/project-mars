@@ -1,73 +1,43 @@
-unit = scr_get_single_selected();
 var clicked = mouse_check_button_pressed(mb_left);
-hover_deselect = false;
-hover_center = false;
-if(unit != noone)
+var r_clicked = mouse_check_button_pressed(mb_right);
+
+hover_component = noone;
+
+for(var n = 0; n < ds_list_size(component_list); n++)
 {
-	var wmx = window_mouse_get_x();
-	var wmy = window_mouse_get_y();
-	var hover_main = (
-		wmx >= left
-		&& wmx <= right
-		&& wmy >= top
-		&& wmy <= bottom
-	);
-	
-	if(hover_main)
+	var next_component = component_list[| n];
+	scr_step_details_panel_component(next_component);
+	if(next_component.hover)
 	{
-		if(clicked)
-		{
-			// whered you click
-		}
-		
-		#region inventory
-		if(scr_instance_inherits(unit, obj_task_actor) || unit.object_index == obj_fridge)
-		{
-			// 3x3 inventory
-			hover_inventory = (
-				wmx >= inventory_x
-				&& wmx <= inventory_x + inventory_w
-				&& wmy >= inventory_y
-				&& wmy <= inventory_y + inventory_h
-			);
-		}
-		#endregion 
-		
-		hover = true;
+		hover_component = next_component;
 	}
-	else
+}
+
+var wmx = window_mouse_get_x();
+var wmy = window_mouse_get_y();
+hover = hover_component != noone || (
+	wmx >= left
+	&& wmx <= right
+	&& wmy >= top
+	&& wmy <= bottom
+);
+
+inv_hover_item = noone;
+if( hover_component != noone && hover_component.class == details_panel_component_class.inventory )
+{
+	// get item hovers over
+	var inv_x = floor((wmx - hover_component.left)/64);
+	var inv_y = floor((wmy - hover_component.top)/64);
+	inv_hover_item = scr_inventory_get_item(unit.inventory, inv_x, inv_y);
+	if(inv_hover_item != noone && scr_instance_inherits(unit, obj_task_actor))
 	{
-		// check buttons
-		hover_deselect = (
-			wmx >= deselect_button_left
-			&& wmx <= deselect_button_right
-			&& wmy >= deselect_button_top
-			&& wmy <= deselect_button_bottom
-		);
-		if(!hover_deselect)
+		if((r_clicked || clicked) && inv_hover_item.class == item_class.weapon)
 		{
-			hover_center = (
-				wmx >= center_cam_button_left
-				&& wmx <= center_cam_button_right
-				&& wmy >= center_cam_button_top
-				&& wmy <= center_cam_button_bottom
-			);
+			unit.equipped_item = inv_hover_item;
 		}
-		
-		hover = hover_deselect || hover_center;
-		
-		if(clicked)
+		else if(r_clicked && inv_hover_item.class == item_class.food)
 		{
-			if(hover_deselect)
-			{
-				unit.is_selected = false;
-				unit = noone;
-			}
-			else if(hover_center)
-			{
-				scr_center_screen_on(unit);
-			}
+			scr_eat(unit);
 		}
 	}
 }
-else hover = false;

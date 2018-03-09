@@ -6,4 +6,3 @@ for(var n = 0; n< ds_list_size(buttons); n++)
 ds_list_destroy(buttons);
 
 instance_destroy(outliner);
-instance_destroy(details);

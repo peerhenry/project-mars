@@ -26,7 +26,6 @@ with(obj_movable)
 }
 
 if(!any_selected) exit;
-else show_debug_message("scr_command executing..."); // DEBUG
 
 // Set possible clickables
 var el_assignable = instance_position(arg_x, arg_y, obj_assignable);
