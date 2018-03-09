@@ -6,7 +6,7 @@ var astro_inv = astro.inventory;
 scr_clear_inventory(astro_inv);
 
 // act
-var succeeded = scr_inventory_insert_new(astro_inv, inv_space.mdu);
+var succeeded = scr_give_entity_new_item(astro, inv_space.mdu);
 assert_true(succeeded, "insert new succeeded");
 
 // assert

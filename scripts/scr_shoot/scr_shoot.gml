@@ -5,20 +5,28 @@ var container = argument0;
 var shooter = argument1;
 var target = argument2;
 
-if( scr_inventory_has_item_type(shooter.inventory, inv_space.rifle) )
+var weapon = shooter.equipped_item;
+var shot = false;
+
+if( weapon.type == inv_space.rifle  && weapon.charge > 0 )
 {
 	scr_create_rifle_shot(shooter, target);
+	weapon.charge -= 1;
+	if(weapon.charge < 0) weapon.charge = 0;
 }
-else if( scr_inventory_has_item_type(shooter.inventory, inv_space.pistol) )
+else if( weapon.type == inv_space.pistol  && weapon.charge > 0 )
 {
-	var shot = scr_create_projectile(shooter, target);
+	shot = scr_create_projectile(shooter, target);
 	if(shot)
 	{
 		// play laser 1
+		weapon.charge -= 1;
 		var play_sound = script_container_resolve(shooter.script_container, "play_sound");
 		script_execute(play_sound, sound_fx_laser);
 	}
 }
+
+if(!shot) return false;
 
 // orient shooter towards target
 with(shooter)

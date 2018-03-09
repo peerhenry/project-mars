@@ -33,7 +33,7 @@ var is_inside = position_meeting(x, y, obj_base_tile);
 is_outside = !is_inside;
 scr_set_suit(id, !is_inside);
 
-scr_inventory_insert_new(inventory, inv_space.pistol);
+scr_give_entity_new_item(id, inv_space.pistol);
 
 oxygen_bar_color = global.oxygen_bar_color;
 

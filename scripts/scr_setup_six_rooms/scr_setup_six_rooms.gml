@@ -99,7 +99,7 @@ if(global.default_owner == macro_player)
 	scr_setup_single_tile_construction(i_or + i_step + r_width - 1, j_or + j_step, macro_fridge, 0);
 	with(obj_fridge)
 	{
-		scr_inventory_insert_new(inventory, inv_space.food);
+		scr_give_entity_new_item(id, inv_space.food);
 	}
 }
 

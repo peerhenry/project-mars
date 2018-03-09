@@ -86,3 +86,12 @@ enum inv_space
 	food = 4,
 	mdu = 5
 }
+
+enum item_class
+{
+	none,
+	food,
+	weapon,
+	construction,
+	resource
+}

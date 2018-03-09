@@ -3,6 +3,7 @@ event_inherited();
 
 // inventory
 inventory = instance_create_depth(3,3,0,dto_inventory);
+equipped_item = noone;
 
 // tasks
 assigned_object = noone;

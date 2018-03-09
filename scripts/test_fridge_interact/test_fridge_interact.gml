@@ -3,7 +3,7 @@ test_init(test_fridge_interact);
 // arrange
 var fridge = instance_create_depth(0,0,0,obj_fridge);
 var astro = instance_create_depth(0,0,0,obj_astronaut_playable);
-scr_inventory_insert_new(fridge.inventory, inv_space.food);
+scr_give_entity_new_item(fridge.inventory, inv_space.food);
 fridge.assigned_astronaut = astro;
 
 // assert setup

@@ -168,7 +168,7 @@ if(unit != noone) // draw details panel
 		inventory_y = next_y_offset;
 		inventory_w = sprite_get_width(inv_sprite);
 		inventory_h = sprite_get_height(inv_sprite);
-		scr_draw_inventory(unit.inventory, inv_sprite, inventory_x, inventory_y);
+		scr_draw_unit_inventory(unit, inv_sprite, inventory_x, inventory_y);
 	}
 	#endregion 
 	

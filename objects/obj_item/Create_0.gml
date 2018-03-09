@@ -1,2 +1,3 @@
-show_debug_message("item created: " + string(id)); // debug
 type = 0;
+class = item_class.none;
+size = 1;

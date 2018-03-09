@@ -15,7 +15,7 @@ if(scr_inventory_has_item_type(astro_inv,  inv_space.mdu))
 }
 else
 {
-	var success = scr_inventory_insert_new(astro_inv, inv_space.mdu);
+	var success = scr_give_entity_new_item(assigned_astronaut, inv_space.mdu);
 	if(success)
 	{
 		mdu_count--;
