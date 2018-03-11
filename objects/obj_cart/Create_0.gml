@@ -1,6 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+#macro macro_toggle_deploy_event 0
+global.cart_deploy_mode = false;
+
 // Inherit the parent event
 event_inherited();
 name = "cart";
@@ -14,7 +17,7 @@ image_speed = 1;
 
 carrying_instance = noone;
 assigned_instance = noone;
-ghost = noone;
+deploy_ghost = noone;
 action = cart_action.idle;
 autotasking = false;
 

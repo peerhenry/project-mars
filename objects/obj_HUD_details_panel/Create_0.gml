@@ -9,8 +9,9 @@ left = 0;
 right = left + width;
 bottom = top + height;
 padding = 16;
-unit = x;
+unit = x; // abuse x to inject unit
 x = 0;
 inv_hover_item = noone;
+destroy = false; // flag is used to destroy this during update
 
 scr_build_details_component_list(id);

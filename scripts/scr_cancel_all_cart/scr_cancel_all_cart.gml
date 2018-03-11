@@ -2,13 +2,13 @@
 /// @arg entity
 var arg_entity = argument0;
 
-
 with(arg_entity)
 {
 	switch(action)
 	{
 		case cart_action.deploy:
-			if(ghost != noone) instance_destroy(ghost);
+			deploy = false;
+			if(deploy_ghost != noone) instance_destroy(deploy_ghost);
 			break;
 		case cart_action.pickup:
 			if(assigned_instance != noone)

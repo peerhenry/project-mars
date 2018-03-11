@@ -6,6 +6,7 @@ mouse_over_HUD = window_mouse_y < 36; // hud top bar
 
 #region buttons
 
+hover_button = noone;
 for(var n = 0; n < ds_list_size(buttons); n++)
 {
 	var button = buttons[| n];
@@ -17,6 +18,7 @@ for(var n = 0; n < ds_list_size(buttons); n++)
 	if(hover)
 	{
 		hovers = true;
+		hover_button = button;
 		if(clicked) scr_execute_hud_action(button);
 		break;
 	}

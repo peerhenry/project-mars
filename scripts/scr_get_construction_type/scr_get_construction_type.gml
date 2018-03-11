@@ -24,6 +24,12 @@ switch(arg_instance.object_index)
 	case obj_pump:
 		c_type = macro_pump;
 		break;
+	case obj_battery:
+		c_type = macro_battery;
+		break;
+	case obj_recharge_station:
+		c_type = macro_recharge_station;
+		break;
 }
 
 return c_type;

@@ -25,9 +25,14 @@ scr_navgrid_occupy(occ_i + di, occ_j + dj);
 scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.occupy);
 scr_execute_map_buffer_action(occ_i + di, occ_j + dj, map_buffer_action.occupy);
 
+scr_set_new_grid_props(id, macro_grid_electric, macro_grid_role_consumer, 1); // todo: move to config
+
 depth = -occ_j;
 
 // sleep variables
 occupant = noone;
 zzz_index = 0; // there is a zzz animation for when an astronaut sleeps
 zzz_counter = 0;
+
+// will not draw electricity if noone uses it
+scr_set_grid_prop(id, macro_grid_electric, macro_grid_prop_can_perform_role, false);

@@ -11,6 +11,8 @@ var any_selected = false;
 var selection_contains_cart = false;
 var selection_contains_task_actor = false;
 var selection_contains_astronaut = false;
+var selected_cart = noone;
+var selected_cart_count = 0;
 
 // Cancel active task for selected entities
 with(obj_movable)
@@ -21,7 +23,12 @@ with(obj_movable)
 		scr_cancel_all(id);
 		if(scr_instance_inherits(id, obj_astronaut)) selection_contains_astronaut = true;
 		if(scr_instance_inherits(id, obj_task_actor)) selection_contains_task_actor = true;
-		if(scr_instance_inherits(id, obj_cart)) selection_contains_cart = true;
+		if(scr_instance_inherits(id, obj_cart))
+		{
+			selected_cart = id;
+			selection_contains_cart = true;
+			selected_cart_count++;
+		}
 	}
 }
 
@@ -50,11 +57,20 @@ if(selection_contains_task_actor)
 		orders_given = scr_command_attack(enemy);
 	}
 }
-else if(selection_contains_cart)
+else if(selection_contains_cart && selected_cart_count == 1)
 {
-	if(component != noone && component.owner == macro_player)
+	if(
+		selected_cart.carrying_instance == noone
+		&& component != noone
+		&& component.owner == macro_player
+	)
 	{
 		orders_given = scr_command_cart_pickup(component);
+	}
+	
+	if(selected_cart.carrying_instance != noone && selected_cart.deploy)
+	{
+		orders_given = scr_command_cart_deploy(selected_cart);
 	}
 }
 

@@ -3,15 +3,22 @@ if( instance_number(object_index) > 1 ) instance_destroy();
 hud_bar_h = 36;
 buttons = ds_list_create();
 mouse_over_HUD = false;
+hover_button = noone;
 
 gui_w = display_get_gui_width();
 gui_h = display_get_gui_height();
 
 global.hud_bar_button_width = 36;
 var bw = global.hud_bar_button_width;
-scr_add_hud_bar_sprite_button(id, 0, 0, spr_menu, hud_action.toggle_menu);
-scr_add_hud_bar_sprite_button(id, bw, 0, spr_objectives, hud_action.toggle_objectives);
-scr_add_hud_bar_sprite_button(id, bw*2, 0, spr_mission_control, hud_action.mission_control);
+
+// left
+scr_add_hud_bar_sprite_button(id, 0, 0, spr_objectives, hud_action.toggle_objectives);
+scr_add_hud_bar_sprite_button(id, bw, 0, spr_mission_control, hud_action.mission_control);
+
+// right
+scr_add_hud_bar_sprite_button(id, gui_w - bw, 0, spr_menu, hud_action.toggle_menu);
+scr_add_hud_bar_sprite_button(id, gui_w - bw*2, 0, spr_zoom_button, hud_action.toggle_zoom);
+scr_add_hud_bar_sprite_button(id, gui_w - bw*3, 0, spr_high_walls, hud_action.toggle_high_walls);
 
 // outliner
 outliner_button_margin = 12;
@@ -45,9 +52,6 @@ global.hud_padding = padding; // used in obj_HUD_category_select_button
 y_offset = 64; // offset for build buttons
 y_spacing = 0;
 x_offset = padding;
-
-// -- zoom button --
-instance_create_layer(gui_w - 40, 2, macro_logic_layer, obj_HUD_zoom_button);
 
 // -- Construction panel --
 

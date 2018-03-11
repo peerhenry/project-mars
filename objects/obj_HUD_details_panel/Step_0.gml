@@ -7,6 +7,11 @@ for(var n = 0; n < ds_list_size(component_list); n++)
 {
 	var next_component = component_list[| n];
 	scr_step_details_panel_component(next_component);
+	if(destroy)
+	{
+		instance_destroy();
+		exit;
+	}
 	if(next_component.hover)
 	{
 		hover_component = next_component;

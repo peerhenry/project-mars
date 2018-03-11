@@ -39,6 +39,22 @@ else if(single_select_ent == noone) // select grid selector
 if(single_select_ent != noone)
 {
 	instance_create_depth(single_select_ent, 0, 0, obj_HUD_details_panel);
+	if(
+		single_select_ent.object_index == obj_cart 
+		&& single_select_ent.carrying_instance != noone
+		&& single_select_ent.deploy
+	)
+	{
+		var constr_type = noone;
+		switch(single_select_ent.object_index)
+		{
+			case obj_battery: constr_type = macro_battery; break;
+			case obj_oxygen_tank: constr_type = macro_oxygen_tank; break;
+			case obj_hydroponics: constr_type = macro_hydroponics; break;
+			case obj_suit_closet: constr_type = macro_suit_closet; break;
+		}
+		scr_ghost_reset_with_constr_type(construction);
+	}
 }
 
 // play selection sounds

@@ -36,18 +36,9 @@ with(arg_component)
 	
 	if(hover && mouse_check_button_pressed(mb_left))
 	{
-		switch(action)
+		with(obj_HUD_details_panel)
 		{
-			case details_panel_action.deselect:
-				unit.is_selected = false;
-				instance_destroy();
-				break;
-			case details_panel_action.center:
-				scr_center_screen_on(unit);
-				break;
-			case details_panel_action.deploy:
-				unit.deploy = !unit.deploy;
-				break;
+			scr_execute_details_panel_action(id, other.action);
 		}
 	}
 }

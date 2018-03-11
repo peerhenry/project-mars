@@ -1,6 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
-
 // Inherit the parent event
 event_inherited();
 
@@ -12,4 +9,10 @@ if(carrying_instance != noone)
 	carrying_instance.y = y;
 	carrying_instance.occ_i = occ_i;
 	carrying_instance.occ_j = occ_j;
+}
+
+if(!is_selected && deploy)
+{
+	deploy = false;
+	global.cart_deploy_mode = false;
 }
