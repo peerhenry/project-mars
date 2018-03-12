@@ -13,6 +13,7 @@ scr_add_hud_bar_sprite_button(id, 0, 0, spr_menu, hud_action.toggle_menu);
 scr_add_hud_bar_sprite_button(id, bw, 0, spr_objectives, hud_action.toggle_objectives);
 scr_add_hud_bar_sprite_button(id, bw*2, 0, spr_mission_control, hud_action.mission_control);
 
+// outliner
 outliner_button_margin = 12;
 outliner_button_padding = 4;
 outliner_sprite = spr_astro_panels;
@@ -26,6 +27,9 @@ outliner_button = scr_add_hud_button_sprite(
 	hud_action.toggle_outliner
 );
 outliner_button.draw_as_panel = true;
+
+// details panel
+details = instance_create_layer(0, 0, macro_logic_layer, obj_HUD_details_panel);
 
 global.hovering_over_HUD = false; // write @ begin step, read @ step
 global.hovering_over_hud_panel = false; // read & reset @ begin step, write @ step
@@ -105,17 +109,6 @@ resources_center_x = (resources_left + resources_right)/2;
 resources_center_y = (resources_top + resources_bottom)/2;
 
 cursor_sprite = spr_cursor;
-
-// -- details panel --
-
-oxygen_bar_color = global.oxygen_bar_color;
-food_bar_color= global.food_bar_color;
-sleep_bar_color = global.sleep_bar_color;
-health_bar_color = global.health_bar_color;
-
-// -- Astronaut panel --
-
-global.hud_entity_panel_offset = 40;
 
 // -- Minimap
 minimap = instance_create_layer(window_get_width() - 200 - 300, 40, macro_logic_layer, obj_HUD_minimap);

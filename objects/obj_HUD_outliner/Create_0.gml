@@ -2,6 +2,7 @@ show_astro_panels = false;
 show_robot_panels = false;
 show_cart_panels = false;
 
+hover = false; // hover over any tab
 hover_astro_tab = false;
 hover_robot_tab = false;
 hover_cart_tab = false;
@@ -22,11 +23,11 @@ tab_astro_top = top;
 tab_astro_left = gui_w - tab_w;
 tab_astro_right = gui_w;
 
-tab_robot_top = top + tab_h;
+tab_robot_top = top + tab_h + 1;
 tab_robot_left = gui_w - tab_w;
 tab_robot_right = gui_w;
 
-tab_cart_top = top + 2*tab_h;
+tab_cart_top = top + 2*(tab_h + 1);
 tab_cart_left = gui_w - tab_w;
 tab_cart_right = gui_w;
 

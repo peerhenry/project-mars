@@ -37,9 +37,28 @@ if(!hovering_over_gui)
 	}
 }
 
-with(obj_HUD_entity_panel)
+if(!hovering_over_gui)
 {
-	if(hover) hovering_over_gui = true;
+	with(obj_HUD_entity_panel)
+	{
+		if(hover) hovering_over_gui = true;
+	}
+}
+
+if(!hovering_over_gui)
+{
+	with(obj_HUD_details_panel)
+	{
+		if(hover) hovering_over_gui = true;
+	}
+}
+
+if(!hovering_over_gui)
+{
+	with(obj_HUD_outliner)
+	{
+		if(hover) hovering_over_gui = true;
+	}
 }
 
 with(obj_HUD_minimap)

@@ -2,7 +2,7 @@ var window_mouse_x = window_mouse_get_x();
 var window_mouse_y = window_mouse_get_y();
 var clicked = mouse_check_button_released(mb_left);
 var right_clicked = mouse_check_button_released(mb_right);
-mouse_over_HUD = false;
+mouse_over_HUD = window_mouse_y < 36; // hud top bar
 
 #region buttons
 
@@ -30,6 +30,7 @@ if( mouse_over_HUD || global.hovering_over_HUD )
 	exit;
 }
 
+#region set cursor
 // ---  Check hovers over selectable 
 
 // hovers over movable
@@ -99,3 +100,5 @@ else // hovers over selectable
 	}
 	else cursor_sprite = spr_cursor_select;
 }
+
+#endregion

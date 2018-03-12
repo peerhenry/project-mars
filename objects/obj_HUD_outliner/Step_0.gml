@@ -16,6 +16,8 @@ hover_cart_tab = window_mouse_x > tab_cart_left
 	&& window_mouse_y > tab_cart_top
 	&& window_mouse_y < tab_cart_top + tab_h;
 
+hover = hover_astro_tab || hover_robot_tab || hover_cart_tab;
+
 var clicked = mouse_check_button_pressed(mb_left);
 
 if(clicked)
