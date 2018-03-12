@@ -4,7 +4,6 @@ if(mouse_check_button_pressed(mb_left))
 {
 	click_x = mouse_x;
 	click_y = mouse_y;
-	scr_hide_all_panels();
 }
 	
 // Drag
