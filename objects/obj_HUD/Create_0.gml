@@ -20,6 +20,9 @@ scr_add_hud_bar_sprite_button(id, gui_w - bw, 0, spr_menu, hud_action.toggle_men
 scr_add_hud_bar_sprite_button(id, gui_w - bw*2, 0, spr_zoom_button, hud_action.toggle_zoom);
 scr_add_hud_bar_sprite_button(id, gui_w - bw*3, 0, spr_high_walls, hud_action.toggle_high_walls);
 
+// minimap
+minimap = instance_create_layer(window_get_width() - 200, 40, macro_logic_layer, obj_HUD_minimap);
+
 // outliner
 outliner_button_margin = 12;
 outliner_button_padding = 4;
@@ -28,7 +31,7 @@ outliner = instance_create_layer(0, 0, macro_logic_layer, obj_HUD_outliner);
 outliner_button = scr_add_hud_button_sprite(
 	id, 
 	gui_w - sprite_get_width(outliner_sprite) - 2*outliner_button_padding - outliner_button_margin,
-	hud_bar_h + outliner_button_margin, 
+	hud_bar_h + 2*outliner_button_margin + 200, 
 	outliner_sprite, 
 	outliner_button_padding, 
 	hud_action.toggle_outliner
@@ -38,6 +41,7 @@ outliner_button.draw_as_panel = true;
 global.hovering_over_HUD = false; // write @ begin step, read @ step
 global.hovering_over_hud_panel = false; // read & reset @ begin step, write @ step
 
+// todo: is this relevant?
 enum button_state
 {
 	none,
