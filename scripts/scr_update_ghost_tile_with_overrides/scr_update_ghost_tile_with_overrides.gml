@@ -78,7 +78,6 @@ if(tile_is_valid && new_ghost_cell != noone)
 }
 else if(!tile_is_valid)
 {
-	show_debug_message("invalid tile @ " + string(target_i) + ", " + string(target_j)); // DEBUG
 	ds_stack_push(ghost_invalid_stack, target_i, target_j, sprite);
 	ds_map_replace(ghost, macro_ghost_valid, false);
 }

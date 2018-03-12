@@ -14,4 +14,4 @@ with(obj_grid_selector)
 global.selected_grid = noone;
 */
 
-with(obj_grid) is_selected = false;
+// with(obj_grid) is_selected = false;

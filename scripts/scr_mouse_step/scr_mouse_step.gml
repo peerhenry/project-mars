@@ -37,31 +37,28 @@ if(mouse_check_button(mb_left))
 
 var constr_type = scr_get_selected_constr_type();
 if(constr_type != noone) // BUILD MODE
-{
-	// Left pressed: set click origin and hide astronaut panels
-	if(mouse_check_button_pressed(mb_left))
-	{
-		scr_hide_all_panels();
-	}
-	
-	// Place new construction on left release
-	if(mouse_check_button_released(mb_left))
-	{
-		scr_build_new();
-		is_dragging	= false;
-	}
-	
+{	
 	var rot = global.construction_ghost[? macro_ghost_rotation];
 	scr_update_ghost(click_x, click_y, mouse_x, mouse_y, constr_type, rot, is_dragging);
 	
-	// exit BUILD MODE on RIGHT CLICK
-	if(mouse_check_button_pressed(mb_right))
+	if(!global.cart_deploy_mode)
 	{
-		scr_ghost_reset();
-		scr_hide_categories();
-	}
+		// Place new construction on left release
+		if(mouse_check_button_released(mb_left))
+		{
+			scr_build_new();
+			is_dragging	= false;
+		}
 	
-	exit;
+		// exit BUILD MODE on RIGHT CLICK
+		if(mouse_check_button_pressed(mb_right))
+		{
+			scr_ghost_reset();
+			scr_hide_categories();
+		}
+		
+		exit;
+	}
 }
 #endregion
 

@@ -17,6 +17,12 @@ with(arg_entity)
 		if(assigned_object != noone) scr_unassign_task(assigned_object);
 		construction = noone;
 	}
+	else if(scr_instance_inherits(id, obj_cart))
+	{
+		instance_destroy(deploy_ghost);
+		deploy_ghost = noone;
+		current_action = cart_action.idle;
+	}
 }
 
 var result = cancel_walking_result.stop;

@@ -3,7 +3,7 @@ var selection_includes_astro = false;
 
 var add_to_selection = keyboard_check(vk_shift) || keyboard_check(vk_control);
 
-scr_hide_all_panels();
+with(obj_HUD_details_panel) instance_destroy();
 var single_select_ent = instance_position(mouse_x, mouse_y, obj_movable);
 if(single_select_ent != noone && single_select_ent.owner == macro_player) // (de)select astronaut
 {	
@@ -33,6 +33,27 @@ else if(single_select_ent == noone) // select grid selector
 		{
 			is_selected = true;
 		}
+	}
+}
+
+if(single_select_ent != noone)
+{
+	instance_create_depth(single_select_ent, 0, 0, obj_HUD_details_panel);
+	if(
+		single_select_ent.object_index == obj_cart 
+		&& single_select_ent.carrying_instance != noone
+		&& single_select_ent.deploy
+	)
+	{
+		var constr_type = noone;
+		switch(single_select_ent.object_index)
+		{
+			case obj_battery: constr_type = macro_battery; break;
+			case obj_oxygen_tank: constr_type = macro_oxygen_tank; break;
+			case obj_hydroponics: constr_type = macro_hydroponics; break;
+			case obj_suit_closet: constr_type = macro_suit_closet; break;
+		}
+		scr_ghost_reset_with_constr_type(construction);
 	}
 }
 

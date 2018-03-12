@@ -1,3 +1,3 @@
 /// @param inventory
 var arg_inventory = argument0;
-return scr_inventory_has_item(arg_inventory, macro_inventory_empty);
+return scr_inventory_has_item_type(arg_inventory, inv_space.empty);

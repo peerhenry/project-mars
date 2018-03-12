@@ -3,14 +3,16 @@
 var check_x = argument0;
 var check_y = argument1;
 
-var north_instance = noone;
-north_instance = instance_position(check_x, check_y, obj_robot);
-if(north_instance == noone) north_instance = instance_position(check_x, check_y, obj_cart);
-if(north_instance != noone)
+var instance = noone;
+instance = instance_position(check_x, check_y, obj_robot);
+if(instance == noone) instance = instance_position(check_x, check_y, obj_cart);
+
+// recharge robot/cart battery
+if(instance != noone)
 {
-	if(north_instance.owner == owner)
+	if(instance.owner == owner)
 	{
-		with(north_instance)
+		with(instance)
 		{
 			if(battery_charge < 100)
 			{
@@ -20,12 +22,23 @@ if(north_instance != noone)
 		}
 	}
 }
-else north_instance = instance_position(check_x, check_y, obj_astronaut);
+else instance = instance_position(check_x, check_y, obj_astronaut);
 
-if(north_instance != noone)
+// recharge inventory
+if(instance != noone && scr_instance_inherits(instance, obj_task_actor))
 {
-	if(north_instance.owner == owner)
+	with(instance)
 	{
-		// todo: recharge weapons
+		if(owner == macro_player)
+		{
+			if(
+				equipped_item != noone 
+				&& (equipped_item.type == inv_space.pistol || equipped_item.type == inv_space.rifle))
+				&& equipped_item.charge < 100
+			{
+				equipped_item.charge += 0.1;
+				if(equipped_item.charge > 100) equipped_item.charge = 100;
+			}
+		}
 	}
 }

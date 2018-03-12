@@ -1,4 +1,3 @@
-show_debug_message("RECALCULATING PATHS...");	// DEBUG
 with(obj_movable)
 {
 	if(path_exists(path))

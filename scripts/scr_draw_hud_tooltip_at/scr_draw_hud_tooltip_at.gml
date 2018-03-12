@@ -12,8 +12,8 @@ var gui_w = display_get_gui_width();
 var gui_h = display_get_gui_height();
 var tt_w = sw + 8;
 var tt_h = sh + 8;
-if(arg_x + sw > gui_w) arg_x = gui_w - tt_w;
-if(arg_y + sh > gui_h) arg_y  = gui_h - tt_h;
+if(arg_x + tt_w >= gui_w) arg_x = gui_w - tt_w;
+if(arg_y + tt_h >= gui_h) arg_y  = gui_h - tt_h;
 
 // box
 draw_set_color(c_dkgray);

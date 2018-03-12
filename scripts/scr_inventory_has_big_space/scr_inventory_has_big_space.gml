@@ -2,8 +2,8 @@
 var arg_inventory = argument0;
 
 // consider grid quads, one for each group of grid cells that form a square (meaning quads can overlap)
-var q_width = ds_grid_width(arg_inventory) - 1;
-var q_height = ds_grid_height(arg_inventory) - 1;
+var q_width = arg_inventory.width - 1;
+var q_height = arg_inventory.height- 1;
 var quad_count = q_width*q_height; // the amount of quads in grid
 
 var invalid_quads;
@@ -18,10 +18,10 @@ for(var j = 0; j < q_height; j++)
 		var quad_can_be_valid = true;
 		if(quad_can_be_valid)
 		{
-			var tl = ds_grid_get(arg_inventory, i, j) == macro_inventory_empty;
-			var tr = ds_grid_get(arg_inventory, i+1, j) == macro_inventory_empty;
-			var bl = ds_grid_get(arg_inventory, i, j+1) == macro_inventory_empty;
-			var br = ds_grid_get(arg_inventory, i+1, j+1) == macro_inventory_empty;
+			var tl = ds_grid_get(arg_inventory.space, i, j) == inv_space.empty;
+			var tr = ds_grid_get(arg_inventory.space, i+1, j) == inv_space.empty;
+			var bl = ds_grid_get(arg_inventory.space, i, j+1) == inv_space.empty;
+			var br = ds_grid_get(arg_inventory.space, i+1, j+1) == inv_space.empty;
 			if(tl && tr && bl && br) return true;
 			if(!br)	// if the bottom right cell of the quad is not empty
 			{

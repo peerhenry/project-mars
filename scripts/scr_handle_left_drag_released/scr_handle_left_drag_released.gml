@@ -3,7 +3,7 @@ var selection_includes_astro = false;
 
 var add_to_selection = keyboard_check(vk_shift) || keyboard_check(vk_control);
 
-scr_hide_all_panels();
+with(obj_HUD_details_panel) instance_destroy();
 var rec_left = min(click_x, mouse_x);
 var rec_right = max(click_x, mouse_x);
 var rec_top = min(click_y, mouse_y);
@@ -48,6 +48,13 @@ else // selection rectangle is so small, it only selects if it is contained in a
 }
 	
 is_dragging = false;
+
+var single_select = scr_get_single_selected();
+if(single_select != noone)
+{
+	// abuse x argument as a constructor argument for unit
+	instance_create_depth(single_select, 0, 0, obj_HUD_details_panel);
+}
 
 // play selection sounds
 if( just_selected_any_entity )

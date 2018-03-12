@@ -62,17 +62,37 @@ enum hud_part
 enum hud_action
 {
 	none,
-	toggle_astro_panels,
-	toggle_robot_panels,
+	// toggle_astro_panels,
+	// toggle_robot_panels,
 	toggle_menu,
 	toggle_zoom,
-	
-	// new HUD
+	toggle_high_walls,
+	toggle_minimap,
+	toggle_objectives,
+	mission_control,
 	toggle_outliner,
+	
+	// outliner
 	toggle_outliner_astronauts,
 	toggle_outliner_robots,
 	toggle_outliner_carts,
-	toggle_minimap,
-	toggle_objectives,
-	mission_control
+}
+
+enum inv_space
+{
+	empty = 0,
+	occupied = 1,
+	pistol = 2,
+	rifle = 3,
+	food = 4,
+	mdu = 5
+}
+
+enum item_class
+{
+	none,
+	food,
+	weapon,
+	construction,
+	resource
 }

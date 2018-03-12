@@ -4,18 +4,10 @@ draw_set_alpha(0.9);
 draw_rectangle_color(0, 0, gui_w, hud_bar_h, c_teal, c_teal, c_black, c_black, false);
 draw_set_alpha(1.0);
 
-var window_mouse_x = window_mouse_get_x();
-var window_mouse_y = window_mouse_get_y();
-var hover_button = noone;
 for(var n = 0; n< ds_list_size(buttons); n++)
 {
 	var button = buttons[| n];
-	var hovers = 
-		window_mouse_x > button.left
-		&& window_mouse_x < button.right
-		&& window_mouse_y > button.top
-		&& window_mouse_y < button.bottom;
-	if(hovers) hover_button = button;
+	var hovers = hover_button == button;
 	if(button.draw_as_panel) scr_draw_hud_button(button, hovers);
 	else scr_draw_hud_bar_button(button, hovers);
 }
@@ -41,6 +33,37 @@ draw_set_alpha(1.0);
 #endregion
 
 #region TOOLTIPS
+
+if(hover_button != noone)
+{
+	// todo: put tooltip in button and use scr_draw_tooltip(hover_button.tooltip_text)
+	switch(hover_button.action)
+	{
+		case hud_action.toggle_objectives:
+			scr_draw_tooltip("Objectives");
+			break;
+		case hud_action.mission_control:
+			scr_draw_tooltip("Mission control");
+			break;
+		case hud_action.toggle_menu:
+			scr_draw_tooltip("Menu");
+			break;
+		case hud_action.toggle_outliner:
+			scr_draw_tooltip("Toggle outliner");
+			break;
+		case hud_action.toggle_minimap:
+			scr_draw_tooltip("Toggle minimap");
+			break;
+		case hud_action.toggle_high_walls:
+			scr_draw_tooltip("Toggle high walls");
+			break;
+		case hud_action.toggle_zoom:
+			scr_draw_tooltip("Toggle zoom");
+			break;
+	}
+}
+
+if(global.hovering_over_HUD) exit;
 var tile = instance_position(mouse_x, mouse_y, obj_base_tile);
 var comp = instance_position(mouse_x, mouse_y, obj_base_component);
 if(tile != noone && comp == noone)
@@ -51,27 +74,6 @@ if(tile != noone && comp == noone)
 if(comp != noone)
 {
 	scr_draw_tooltip(string( comp.name ));
-}
-if(hover_button != noone)
-{
-	switch(hover_button.action)
-	{
-		case hud_action.toggle_menu:
-			scr_draw_tooltip("menu");
-			break;
-		case hud_action.toggle_outliner:
-			scr_draw_tooltip("toggle outliner");
-			break;
-		case hud_action.toggle_minimap:
-			scr_draw_tooltip("toggle minimap");
-			break;
-		case hud_action.toggle_objectives:
-			scr_draw_tooltip("objectives");
-			break;
-		case hud_action.mission_control:
-			scr_draw_tooltip("mission control");
-			break;
-	}
 }
 
 #endregion

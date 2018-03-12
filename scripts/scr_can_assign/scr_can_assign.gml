@@ -20,12 +20,12 @@ switch(arg_assignable.object_index)
 		var enough_space = scr_inventory_has_big_space(arg_astronaut.inventory);
 		return enough_space && hydroponics_has_food;
 	case obj_fridge:
-		var astronaut_carries_food = scr_inventory_has_item(arg_astronaut.inventory, macro_inventory_food);
-		if(astronaut_carries_food) return scr_inventory_has_space_for_item(arg_assignable.inventory, macro_inventory_food);
-		else return scr_inventory_has_item(arg_assignable.inventory, macro_inventory_food);
+		var astronaut_carries_food = scr_inventory_has_item_type(arg_astronaut.inventory, inv_space.food);
+		if(astronaut_carries_food) return scr_inventory_has_space_for_item_type(arg_assignable.inventory, inv_space.food);
+		else return scr_inventory_has_item_type(arg_assignable.inventory, inv_space.food);
 	case obj_mdu_pile:
 		// astronaut has mdu and pile has less than 8
-		if(scr_inventory_has_item(arg_astronaut.inventory, macro_inventory_module))
+		if(scr_inventory_has_item_type(arg_astronaut.inventory, inv_space.mdu))
 		{
 			return (arg_assignable.image_index < 7);
 		}

@@ -7,9 +7,14 @@ with(arg_cart)
 {
 	switch(action)
 	{
+		case cart_action.idle:
+			// show_debug_message("cart end path action idle"); // debug
+			break;
 		case cart_action.move:
+			// show_debug_message("cart end path action move"); // debug
 			break;
 		case cart_action.pickup:
+			// show_debug_message("cart end path action pickup"); // debug
 			if(assigned_instance != noone)
 			{
 				scr_navgrid_clear_cell( assigned_instance.occ_i, assigned_instance.occ_j );
@@ -27,17 +32,21 @@ with(arg_cart)
 			break;
 		case cart_action.deploy:
 			// place instance on location
-			if(ghost != noone)
+			// show_debug_message("cart end path action deploy"); // debug
+			if(deploy_ghost != noone)
 			{
-				carrying_instance.x = ghost.x;
-				carrying_instance.y = ghost.y;
-				carrying_instance.occ_i = ghost.occ_i;
-				carrying_instance.occ_j = ghost.occ_j;
+				carrying_instance.x = deploy_ghost.x;
+				carrying_instance.y = deploy_ghost.y;
+				carrying_instance.occ_i = deploy_ghost.occ_i;
+				carrying_instance.occ_j = deploy_ghost.occ_j;
 				carrying_instance.visible = true;
-				instance_destroy(ghost);
+				instance_destroy(deploy_ghost);
 				scr_grid_logic(carrying_instance);
 				assigned_instance = noone;
-				carrying_instance = noone;	
+				carrying_instance = noone;
+				if(global.cart_deploy_mode) scr_ghost_reset();
+				deploy = false;
+				global.cart_deploy_mode = false;
 			}
 			break;
 	}

@@ -1,3 +1,5 @@
+// todo: move to obj_astronaut
+
 if(current_action == astronaut_action.constructing)
 {
 	var completion = construction[? construction_completion];

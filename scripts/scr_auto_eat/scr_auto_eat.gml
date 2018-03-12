@@ -14,7 +14,7 @@ with(arg_astro)
 			var dts_min = 999999999;
 			with(obj_fridge)
 			{
-				var fridge_has_food = scr_inventory_has_item(inventory, macro_inventory_food);
+				var fridge_has_food = scr_inventory_has_item_type(inventory, inv_space.food);
 				if(fridge_has_food)
 				{
 					var di = occ_i - other.occ_i;

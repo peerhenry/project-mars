@@ -5,7 +5,7 @@ var constr = scr_create_dummy_mdu_construction();
 scr_register_new_construction(constr);
 var astro = instance_create_depth(0,0,0,obj_astronaut_playable);
 astro.auto_construct = true;
-scr_inventory_insert(astro.inventory, macro_item_mdu);
+scr_give_entity_new_item(astro, inv_space.mdu);
 var enemy = scr_create_enemy_astronaut(64,64);
 enemy.entity_health = 1;
 astro.target = enemy;

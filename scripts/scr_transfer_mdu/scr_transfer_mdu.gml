@@ -6,7 +6,8 @@ var arg_script_container = argument0;
 var arg_astronaut = argument1;
 var arg_construction = argument2;
 
-scr_inventory_extract(arg_astronaut.inventory, macro_item_mdu);
+var mdu = scr_inventory_extract(arg_astronaut.inventory, inv_space.mdu);
+instance_destroy(mdu);
 scr_incr_construction_mdu(arg_script_container, arg_construction);
 
 // if the astronaut was delivering, decrement deliveries

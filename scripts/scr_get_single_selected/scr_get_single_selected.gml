@@ -21,5 +21,5 @@ if(select_count == 0)
 		}
 	}
 }
-if(select_count != 1) select = noone;
+if( select_count != 1 ) select = noone;
 return select;

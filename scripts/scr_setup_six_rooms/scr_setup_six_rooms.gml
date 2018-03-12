@@ -97,11 +97,9 @@ scr_setup_single_tile_construction(i_or + i_step + r_width - 1, j_or + j_step + 
 if(global.default_owner == macro_player)
 {
 	scr_setup_single_tile_construction(i_or + i_step + r_width - 1, j_or + j_step, macro_fridge, 0);
-	//show_debug_message("NOW ADDING FOOD TO ALL FRIDGES");
 	with(obj_fridge)
 	{
-		//show_debug_message("INSERTING FOOD INTO A FRIDGE...");
-		scr_inventory_insert(inventory, macro_inventory_food);
+		scr_give_entity_new_item(id, inv_space.food);
 	}
 }
 

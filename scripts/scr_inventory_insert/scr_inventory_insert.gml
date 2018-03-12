@@ -3,8 +3,8 @@
 var arg_inventory = argument0;
 var arg_item = argument1;
 
-// Get size of item
-var size = scr_item_size(arg_item);
+var item_type = arg_item.type;
+var size = arg_item.size;
 
 // Find a space in astronaut inventory for item
 var space = -1;
@@ -17,15 +17,17 @@ if(space < 0) return false;
 // Insert item into astronaut inventory
 var inv_x = space >> 8;
 var inv_y = space & 255;
-// show_debug_message("INSERTING INTO: " + string(inv_x) + " " + string(inv_y)); // DEBUG
 if(size == 2)
 {
-	ds_grid_set_region(arg_inventory, inv_x, inv_y, inv_x + 1, inv_y, macro_inventory_occupied);
+	ds_grid_set_region(arg_inventory.space, inv_x, inv_y, inv_x + 1, inv_y, inv_space.occupied);
+	ds_grid_set_region(arg_inventory.ids, inv_x, inv_y, inv_x + 1, inv_y, arg_item);
 }
 else if(size == 4)
 {
-	ds_grid_set_region(arg_inventory, inv_x, inv_y, inv_x + 1, inv_y + 1, macro_inventory_occupied);
+	ds_grid_set_region(arg_inventory.space, inv_x, inv_y, inv_x + 1, inv_y + 1, inv_space.occupied);
+	ds_grid_set_region(arg_inventory.ids, inv_x, inv_y, inv_x + 1, inv_y + 1, arg_item);
 }
-ds_grid_set(arg_inventory, inv_x, inv_y, arg_item);
+ds_grid_set(arg_inventory.ids, inv_x, inv_y, arg_item);
+ds_grid_set(arg_inventory.space, inv_x, inv_y, item_type);
 
 return true;
