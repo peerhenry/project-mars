@@ -85,7 +85,6 @@ if( !is_dragging )
 			&& hover_actor.owner = macro_player
 		)
 		{
-			scr_hide_all_panels();
 			hover_actor.show_details = true;
 		}
 		else scr_command(mouse_x, mouse_y);

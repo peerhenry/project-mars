@@ -8,7 +8,7 @@ dest_i = occ_i;
 dest_j = occ_j;
 mp_grid_add_cell(scr_get_nav_grid(), occ_i, occ_j);
 move_dir = macro_down;
-movement_speed = macro_astronaut_move_speed;
+movement_speed = global.astro_move_speed;
 owner = scr_get_owner(id);
 is_moving_through_gate = false;
 has_died = false;

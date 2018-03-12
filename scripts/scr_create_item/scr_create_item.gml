@@ -1,4 +1,3 @@
-// todo: refactor new inventory
 var arg_item_type = argument0;
 
 var new_item = instance_create_depth(0, 0, 0, obj_item);

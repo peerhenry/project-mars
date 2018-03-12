@@ -49,8 +49,6 @@
 #macro macro_event_interact 1		// Astronaut interact with assignable object
 #macro macro_event_finalize 2		// finalize construction event
 
-#macro macro_astronaut_move_speed 3 // todo: move to settings
-
 // x, y coordinate encodings for 3x3 grid
 #macro macro_astronaut_inventory_0_0 0
 #macro macro_astronaut_inventory_0_1 1	// x: 0, y: 1

@@ -42,6 +42,32 @@ new_button.color_hover_bottom = c_ltgray;
 new_button.color_down_top = c_dkgray;
 new_button.color_down_bottom = c_black;
 
+// set tooltip based on action
+switch(hover_button.action)
+{
+	case hud_action.toggle_objectives:
+		new_button.tooltip_text = "Objectives";
+		break;
+	case hud_action.mission_control:
+		new_button.tooltip_text = ("Mission control");
+		break;
+	case hud_action.toggle_menu:
+		new_button.tooltip_text = ("Menu");
+		break;
+	case hud_action.toggle_outliner:
+		new_button.tooltip_text = ("Toggle outliner");
+		break;
+	case hud_action.toggle_minimap:
+		new_button.tooltip_text = ("Toggle minimap");
+		break;
+	case hud_action.toggle_high_walls:
+		new_button.tooltip_text = ("Toggle high walls");
+		break;
+	case hud_action.toggle_zoom:
+		new_button.tooltip_text = ("Toggle zoom");
+		break;
+}
+
 with(hud) ds_list_add(buttons, new_button);
 
 return new_button;

@@ -14,8 +14,6 @@ switch(arg_assignable.object_index)
 	case obj_bed:
 		return arg_assignable.occupant == noone; //!arg_astronaut.wears_suit;
 	case obj_hydroponics:
-		// todo; write hydroponics assignment condition: 
-		// hydroponics food must be done & astronaut must have space in inventory
 		var hydroponics_has_food = scr_hydroponics_has_food(arg_assignable);
 		var enough_space = scr_inventory_has_big_space(arg_astronaut.inventory);
 		return enough_space && hydroponics_has_food;

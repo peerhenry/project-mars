@@ -15,6 +15,7 @@ var section = "common";
 // -- GAMEPLAY
 section = "astronauts";
 global.regeneration_speed = init_global_real(section, "regeneration_speed", 0.01);
+global.astro_move_speed = init_global_real(section, "move_speed", 3);
 
 // -- OXYGEN
 // TODO: refactor oxygen to make absolute calculations instead of percentages
@@ -42,6 +43,11 @@ global.sleep_level_depletion = init_global_real(section, "sleep_level_depletion"
 global.auto_sleep_level = init_global_real(section, "auto_sleep_level", 20);
 global.sleep_speed = init_global_real(section, "sleep_speed", 0.06);
 
+// -- MED BED
+section = "med_bed"
+global.heal_speed = init_global_real(section, "heal_speed", 0.06);
+global.med_bed_energy_consumption = init_global_real(section, "energy_consumption", 1);
+
 // -- OXYGEN RENDERING
 section = "oxygen_graphics";
 global.oxygen_empty_level = init_global_real(section, "red_stripes_percentage", 1); // if oxygen_level falls below this number, red stripes are drawn.
@@ -56,7 +62,7 @@ global.health_bar_color = c_lime; // make_color_rgb(h_r, h_g, h_b);
 global.sleep_bar_color = c_yellow; // make_color_rgb(s_r, s_g, s_b);
 global.food_bar_color = c_orange; // make_color_rgb(f_r, f_g, f_b);
 
-// -- SHOOTING --
+// -- SHOOTING -- // todo: replace this section with "weapons"
 section = "shooting";
 global.time_to_shoot = init_global_real(section, "time_to_shoot", 1);
 global.projectile_speed  = init_global_real(section, "projectile_speed", 30);

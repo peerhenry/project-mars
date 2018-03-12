@@ -41,7 +41,7 @@ if(state != reach_state.unreachable)
 {
 	var get_layer_for = script_container_resolve(arg_component.script_container, "get_layer_for");
 	var logic_layer = script_execute(get_layer_for, obj_cart_assign_icon);
-	arg_component.icon = instance_create_layer(arg_component.x, arg_component.y-16, logic_layer, obj_cart_assign_icon); // todo: make cart assigned icon
+	arg_component.icon = instance_create_layer(arg_component.x, arg_component.y-16, logic_layer, obj_cart_assign_icon);
 	closest_cart.assigned_instance = arg_component;
 	closest_cart.action = cart_action.pickup;
 	if(state == reach_state.adjacent)

@@ -60,12 +60,10 @@ with(obj_task_actor)
 
 ds_map_replace(arg_construction, construction_astronaut, noone);
 
-// todo: cleanup this green mess
-// do not destroy because construction may be needed after completion
-// 31-10-2017: but is it ever used?
-// 05-03-2018: yes it is for dependent constructions...
-
+// do not destroy because construction may be needed for dependent constructions
 // scr_destroy_construction(arg_construction);
+// todo: refactor so it can be destroyed
+
 var ciz = arg_construction[? construction_object];
 if(ciz != noone)
 {

@@ -1,2 +1,2 @@
 /// @arg_energy
-return 0.5*(1 + sqrt(argument0/100))*macro_astronaut_move_speed;
+return 0.5*(1 + sqrt(argument0/100))*global.astro_move_speed;

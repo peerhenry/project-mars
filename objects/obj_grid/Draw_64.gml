@@ -18,25 +18,7 @@ if( show_details )
 	var half_bar = 8;
 	var bar_x_or = tl_x;
 	
-	grid_type_string = "";
-	
-	// todo: move to script, also call that script from obj_HUD
-	switch(grid_type)
-	{
-		case macro_grid_electric:
-			grid_type_string = "electric grid";
-			break;
-		case macro_grid_water:
-			grid_type_string = "water grid";
-			break;
-		case macro_grid_oxygen:
-			grid_type_string = "oxygen grid";
-			break;
-		case macro_grid_hydrogen:
-			grid_type_string = "hydrogen grid";
-			break;
-	}
-	
+	var grid_type_string = scr_grid_type_to_string(grid_type);
 	draw_text(x_or, 8, grid_type_string);
 	
 	var line1_y = y_or;

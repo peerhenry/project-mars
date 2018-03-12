@@ -4,11 +4,11 @@ wears_suit = true;
 event_inherited();
 
 // things to overwrite from base classes
-movement_speed = macro_astronaut_move_speed;
+movement_speed = global.astro_move_speed;
 
 // astronaut props
 name = "John Doe";
-astro_id = 0;  // todo: find out and write here why this is used or remove it
+astro_id = 0;  // used to identify specific astronauts
 suit_oxygen = 100;
 sleep_level = 100;
 food_level = 100;

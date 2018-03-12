@@ -128,7 +128,7 @@ with(arg_details_panel)
 	}
 	#endregion
 	
-	#region prop bars
+	#region grid props
 	if(scr_instance_inherits(unit, obj_constructable)) // grid props
 	{
 		var tab = floor((right - left - 2*padding)/3);
@@ -138,15 +138,7 @@ with(arg_details_panel)
 			//var grid_props = scr_get_grid_props(arg_instance, grid_type);
 			if(scr_has_grid_props(unit, grid_type))
 			{
-				var grid_string = "electric";
-				switch(grid_type)
-				{
-					case macro_grid_electric: grid_string = "Electric"; break;
-					case macro_grid_water: grid_string = "Water"; break;
-					case macro_grid_oxygen: grid_string = "Oxygen"; break;
-					case macro_grid_hydrogen: grid_string = "Hydrogen"; break;
-				}
-				
+				var grid_string = scr_grid_type_to_string(grid_type);
 				var gridlabel = scr_create_details_component_text(unit, left + padding, next_y_offset, panel_font, grid_string, text_valign, text_halign);
 				gridlabel.tooltip_text = "Grid type this component is connected to";
 				ds_list_add(component_list, gridlabel);
@@ -194,7 +186,7 @@ with(arg_details_panel)
 			next_y_offset, 
 			32, 
 			32, 
-			spr_center_cam_icon, 
+			spr_deploy, 
 			details_panel_action.deploy
 		);
 		deploybtn.tooltip_text = "Toggle deploy mode";

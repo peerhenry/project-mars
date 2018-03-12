@@ -25,7 +25,7 @@ switch(arg_entity.object_index)
 			output[5] = spr_male_mask_up;
 		}
 		break;
-	case obj_robot: // todo: make robot sprites
+	case obj_robot: // todo: make cart and robot mask
 		output[0] = spr_robot_down;
 		output[1] = spr_robot_right;
 		output[2] = spr_robot_up;
@@ -33,7 +33,7 @@ switch(arg_entity.object_index)
 		output[4] = noone;
 		output[5] = noone;
 		break;
-	case obj_cart: // todo: make cart mask
+	case obj_cart:
 		output[0] = spr_cart_down;
 		output[1] = spr_cart_right;
 		output[2] = spr_cart_up;

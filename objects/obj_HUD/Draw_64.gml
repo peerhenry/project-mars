@@ -36,31 +36,7 @@ draw_set_alpha(1.0);
 
 if(hover_button != noone)
 {
-	// todo: put tooltip in button and use scr_draw_tooltip(hover_button.tooltip_text)
-	switch(hover_button.action)
-	{
-		case hud_action.toggle_objectives:
-			scr_draw_tooltip("Objectives");
-			break;
-		case hud_action.mission_control:
-			scr_draw_tooltip("Mission control");
-			break;
-		case hud_action.toggle_menu:
-			scr_draw_tooltip("Menu");
-			break;
-		case hud_action.toggle_outliner:
-			scr_draw_tooltip("Toggle outliner");
-			break;
-		case hud_action.toggle_minimap:
-			scr_draw_tooltip("Toggle minimap");
-			break;
-		case hud_action.toggle_high_walls:
-			scr_draw_tooltip("Toggle high walls");
-			break;
-		case hud_action.toggle_zoom:
-			scr_draw_tooltip("Toggle zoom");
-			break;
-	}
+	scr_draw_tooltip(hover_button.tooltip_text);
 }
 
 if(global.hovering_over_HUD) exit;

@@ -1,6 +1,6 @@
 event_inherited();
 name = "med bed";
-heal_speed = global.sleep_speed;
+heal_speed = global.heal_speed;
 rot_param = global.construction_ghost[? macro_ghost_rotation];
 di = 0;
 dj = 0;	// second space the bed occupies
@@ -25,7 +25,7 @@ scr_navgrid_occupy(occ_i + di, occ_j + dj);
 scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.occupy);
 scr_execute_map_buffer_action(occ_i + di, occ_j + dj, map_buffer_action.occupy);
 
-scr_set_new_grid_props(id, macro_grid_electric, macro_grid_role_consumer, 1); // todo: move to config
+scr_set_new_grid_props(id, macro_grid_electric, macro_grid_role_consumer, global.med_bed_energy_consumption);
 
 depth = -occ_j;
 
