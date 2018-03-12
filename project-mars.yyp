@@ -3679,6 +3679,14 @@
             }
         },
         {
+            "Key": "59e5f3e3-3387-4248-96f1-dbf157ffbaa0",
+            "Value": {
+                "id": "300f2998-501b-4a4a-b09a-60e0aadbb4f0",
+                "resourcePath": "objects\\obj_basic_spaceship\\obj_basic_spaceship.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "59e6e10a-a1d6-4ba7-b273-9ff11b8a7eb0",
             "Value": {
                 "id": "14ca838f-55ca-4eba-9097-7850fe8dde19",
@@ -8588,6 +8596,14 @@
                 "id": "b60ff8e0-37da-48c1-b310-a4449a9ad7d2",
                 "resourcePath": "sounds\\song_explore\\song_explore.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "db0cf913-0151-49ce-842d-46bbe74d8acd",
+            "Value": {
+                "id": "ad9bb299-996b-42a2-b92e-59a4b09252c6",
+                "resourcePath": "sprites\\spr_basic_spaceship\\spr_basic_spaceship.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
