@@ -4247,6 +4247,14 @@
             }
         },
         {
+            "Key": "68022e0f-43d1-475f-b08f-b656bb16be87",
+            "Value": {
+                "id": "f7cbc2d8-bb8e-43e2-bb71-fdc1c1962e60",
+                "resourcePath": "sprites\\spr_big_rock\\spr_big_rock.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "681e8fc6-9363-4e69-88f9-f3e343b46545",
             "Value": {
                 "id": "4b3bc228-3990-4813-bec4-a0bdb7303895",
@@ -7172,6 +7180,14 @@
                 "id": "d4307ef3-c1c1-49ff-a230-75af80953339",
                 "resourcePath": "sprites\\spr_mission_control\\spr_mission_control.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b943d247-0787-4e57-913c-f2b6575dfba2",
+            "Value": {
+                "id": "967c869c-2cf6-4733-83cc-92ec00a1720c",
+                "resourcePath": "objects\\obj_rock_big\\obj_rock_big.yy",
+                "resourceType": "GMObject"
             }
         },
         {
