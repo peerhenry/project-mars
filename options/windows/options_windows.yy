@@ -6,6 +6,7 @@
     "option_windows_allow_fullscreen_switching": true,
     "option_windows_borderless": false,
     "option_windows_company_info": "PeerHenry",
+    "option_windows_copy_exe_to_dest": false,
     "option_windows_copyright_info": "(c) 2017 PeerHenry",
     "option_windows_description_info": "The Conquest For Mars",
     "option_windows_display_cursor": false,
