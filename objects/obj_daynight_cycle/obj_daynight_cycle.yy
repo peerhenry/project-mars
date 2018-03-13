@@ -2,7 +2,7 @@
     "id": "f289e7eb-a290-44cd-9760-bce4efb9bbcc",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_daynight",
+    "name": "obj_daynight_cycle",
     "eventList": [
         {
             "id": "52a5ecb9-98d2-4872-bdc2-aa9194ca9088",

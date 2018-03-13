@@ -1,4 +1,4 @@
-image_alpha += (sun_setting) ? 0.001 : -0.001;
+image_alpha += (sun_setting) ? tween_speed : -tween_speed;
 if(image_alpha >= 1)
 {
 	sun_setting = false;
