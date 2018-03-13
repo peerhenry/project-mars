@@ -1,6 +1,3 @@
-
-temp1 = instance_create_depth(0, 0, 599, obj_daynight);
-
 width = 200;
 height = 200;
 border_size = 2;

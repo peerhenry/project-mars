@@ -13,7 +13,9 @@ if(hover)
 		if(
 			hover_component.class == details_panel_component_class.inventory 
 			&& inv_hover_item != noone
-		) scr_draw_tooltip(inv_hover_item.name);
+		){
+			scr_draw_tooltip(inv_hover_item.name);
+		}
 		else scr_draw_tooltip(hover_component.tooltip_text);
 	}
 	else scr_draw_tooltip("Details panel");

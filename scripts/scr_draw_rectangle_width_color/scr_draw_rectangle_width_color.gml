@@ -1,12 +1,18 @@
-///scr_draw_rectangle_width_color(x1, y1, x2, y2, w, c, a)
-var x1, x2, y1, y2, w, c;
-x1 = argument0;
-x2 = argument2 - 1;
-y1 = argument1;
-y2 = argument3 - 1;
-w = argument4 - 1;
-c = argument5;
-a = argument6;
+/// @description scr_draw_rectangle_width_color(x1, y1, x2, y2, w, c, a)
+/// @arg left
+/// @arg top
+/// @arg right
+/// @arg bottom
+/// @arg width
+/// @arg color
+/// @arg alpha
+var x1 = argument0;
+var y1 = argument1;
+var x2 = argument2 - 1;
+var y2 = argument3 - 1;
+var w = argument4 - 1;
+var c = argument5;
+var a = argument6;
 
 var org_a = draw_get_alpha();
 draw_set_alpha(a);

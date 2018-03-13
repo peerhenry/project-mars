@@ -13,12 +13,16 @@ tab_w = 230;
 tab_h = 24;
 var gui_w = display_get_gui_width();
 var gui_h = display_get_gui_height();
-var top = 88;
+var top = 0;
 with(obj_HUD)
 {
-	// offset is: bar + margin + button_height + margin
-	// = bar + 2*(margin + padding) + sprite height
-	top =  hud_bar_h + 2*(outliner_button_margin + outliner_button_padding) + sprite_get_height(outliner_sprite);
+	// offset is: bar + margin + minimap_height + margin + button_height + margin
+	// = bar + 2*(margin + padding) + sprite height + minimap.height + margin
+	top +=  
+		hud_bar_h
+		+ 2*(outliner_button_margin + outliner_button_padding) 
+		+ sprite_get_height(outliner_sprite)
+		+ minimap.height + outliner_button_margin;
 }
 
 tab_astro_top = top;

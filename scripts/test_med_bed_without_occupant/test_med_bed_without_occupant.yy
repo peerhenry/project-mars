@@ -1,8 +1,8 @@
 {
-    "id": "40b76bfe-181e-44ce-89a7-82484a936b63",
+    "id": "b1699140-7aa6-4a2d-8d9c-7b32c1a79853",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_draw_rectangle_width_color",
+    "name": "test_med_bed_without_occupant",
     "IsCompatibility": false,
     "IsDnD": false
 }

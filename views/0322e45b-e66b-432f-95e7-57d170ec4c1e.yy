@@ -12,7 +12,9 @@
         "e8f66319-444b-4e3a-8b37-468ed3bc2625",
         "41da01f0-4626-4d85-a055-080852622cb2",
         "219d6aed-e3cb-4e38-9b77-f7b497a80893",
-        "92dcf424-666c-4045-a474-d075f9b971b0"
+        "92dcf424-666c-4045-a474-d075f9b971b0",
+        "b086a10b-a0c1-4a8a-8bb1-4e6344411518",
+        "adddfd90-f6f9-409c-817d-538442cff225"
     ],
     "filterType": "GMSprite",
     "folderName": "outside",

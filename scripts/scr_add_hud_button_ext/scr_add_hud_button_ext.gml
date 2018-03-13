@@ -43,7 +43,7 @@ new_button.color_down_top = c_dkgray;
 new_button.color_down_bottom = c_black;
 
 // set tooltip based on action
-switch(hover_button.action)
+switch(arg_action)
 {
 	case hud_action.toggle_objectives:
 		new_button.tooltip_text = "Objectives";

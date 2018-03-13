@@ -1,4 +1,5 @@
-/// @param instance
+/// @arg x
+/// @arg y
 var arg_x = argument0;
 var arg_y = argument1;
 
@@ -10,7 +11,8 @@ var cam_y = camera_get_view_y(cam);
 var new_x = arg_x - cam_w/2;
 var new_y = arg_y - cam_h/2;
 
-// prevent cam zooming out from going out of bounds //todo: refactor with set_cam_pos_safe (also center_screen_on)?
+// todo: refactor with set_cam_pos_safe (also center_screen_on)?
+// prevent cam zooming out from going out of bounds
 if(new_y + cam_h > room_height)
 {
 	new_y = room_height - cam_h;
