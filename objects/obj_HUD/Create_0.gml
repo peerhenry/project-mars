@@ -111,6 +111,9 @@ resources_center_y = (resources_top + resources_bottom)/2;
 
 cursor_sprite = spr_cursor;
 
+// -- Minimap
+minimap = instance_create_layer(window_get_width() - 200 - 300, 40, macro_logic_layer, obj_HUD_minimap);
+
 // the rest is to become obsolete... todo: remove
 
 ap_margin = 20;

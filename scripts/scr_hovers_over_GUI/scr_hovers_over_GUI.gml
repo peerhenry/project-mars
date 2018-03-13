@@ -53,4 +53,9 @@ if(!hovering_over_gui)
 	}
 }
 
+with(obj_HUD_minimap)
+{
+	if(hover) hovering_over_gui = true;	
+}
+
 return hovering_over_gui;
