@@ -25,11 +25,7 @@ draw_text(resources_center_x + 100, resources_center_y, "Gold: " + string(0));
 #endregion
 
 #region BAR BOTTOM LINE
-draw_set_alpha(0.2);
-draw_line_width_color(0, hud_bar_h, gui_w, hud_bar_h, 3, c_aqua, c_aqua);
-draw_set_alpha(0.5);
-draw_line_width_color(0, hud_bar_h, gui_w, hud_bar_h, 1, c_aqua, c_aqua);
-draw_set_alpha(1.0);
+scr_draw_shiny_line(0, hud_bar_h, gui_w, hud_bar_h, hud_border_color);
 #endregion
 
 #region TOOLTIPS

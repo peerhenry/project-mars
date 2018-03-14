@@ -111,6 +111,7 @@ global.sensor_selected = false;
 global.selected_grid = noone;
 
 // colors
+global.hud_border_color = c_aqua;
 global.enemy_suit_color = [0,0,0,1];
 global.laser_sound_time = 0;
 global.cart_deploy_mode = false;
