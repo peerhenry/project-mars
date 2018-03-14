@@ -56,10 +56,15 @@ global.voice_volume = volume_voice;
 
 global.active_constructions = ds_list_create();
 
-// Skirmish settings
+// Skirmish/level settings
 var skirmish_settings = ds_map_create();
 ds_map_add(skirmish_settings, macro_skirmish_victory_condition, victory.domination);
 ds_map_add(skirmish_settings, macro_skirmish_astro_count, 5);
 ds_map_add(skirmish_settings, macro_skirmish_mdu_pile_count, 4);
 
 global.skirmish_settings = skirmish_settings;
+global.level_object_index = noone;
+global.mission_accomplished_return_room = room_menu;
+global.mission_failed_return_room = room_menu;
+global.mission_control_site = noone; // used to flag when mission accomplished
+global.next_level = 1;

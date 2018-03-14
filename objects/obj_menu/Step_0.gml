@@ -33,12 +33,14 @@ else
 				fader.target_room = mission_control;
 				break;
 			case menu_index.tutorial:
+				global.level_object_index = noone;
 				room_goto(tutorial);
 				break;
 			case menu_index.skirmish:
-				room_goto(room_skirmish);
+				room_goto(room_skirmish); // skirmish setup menu
 				break;
 			case menu_index.survival:
+				global.level_object_index = noone;
 				room_goto(mars_survival);
 				break;
 			case menu_index.settings:

@@ -113,3 +113,4 @@ global.selected_grid = noone;
 // colors
 global.enemy_suit_color = [0,0,0,1];
 global.laser_sound_time = 0;
+global.cart_deploy_mode = false;

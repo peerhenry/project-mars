@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "obj_mission_failed",
     "eventList": [
-        
+        {
+            "id": "7542a9c0-229d-4cb0-b36b-01abd5768539",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "6eab7bf1-235d-4093-ae7a-25a6d236d813"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

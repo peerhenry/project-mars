@@ -3,6 +3,9 @@ var arg_button = argument0;
 
 switch( arg_button.action )
 {
+	case hud_action.mission_control:
+		room_goto(mission_control);
+		break;
 	case hud_action.toggle_menu:
 		with(gui_menu) event_user(0); // toggle menu
 		with(obj_gui_menu)
@@ -33,6 +36,22 @@ switch( arg_button.action )
 				scr_set_outliner_part(outliner, obj_cart, outliner.show_cart_panels);
 				scr_reset_outliner(outliner);
 				outliner.active = true;
+			}
+		}
+		break;
+	case hud_action.toggle_minimap:
+		with(obj_HUD)
+		{
+			if(minimap_is_active)
+			{
+				// minimap = instance_create_layer(window_get_width() - 200, 40, macro_logic_layer, obj_HUD_minimap);
+				instance_deactivate_object(minimap);
+				minimap_is_active = false;
+			}
+			else
+			{
+				instance_activate_object(minimap);
+				minimap_is_active = true;
 			}
 		}
 		break;

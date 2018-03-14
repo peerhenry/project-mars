@@ -17,11 +17,13 @@ scr_add_hud_bar_sprite_button(id, bw, 0, spr_mission_control, hud_action.mission
 
 // right
 scr_add_hud_bar_sprite_button(id, gui_w - bw, 0, spr_menu, hud_action.toggle_menu);
-scr_add_hud_bar_sprite_button(id, gui_w - bw*2, 0, spr_zoom_button, hud_action.toggle_zoom);
-scr_add_hud_bar_sprite_button(id, gui_w - bw*3, 0, spr_high_walls, hud_action.toggle_high_walls);
+scr_add_hud_bar_sprite_button(id, gui_w - bw*2, 0, spr_minimap_icon, hud_action.toggle_minimap);
+scr_add_hud_bar_sprite_button(id, gui_w - bw*3, 0, spr_zoom_button, hud_action.toggle_zoom);
+scr_add_hud_bar_sprite_button(id, gui_w - bw*4, 0, spr_high_walls, hud_action.toggle_high_walls);
 
 // minimap
 minimap = instance_create_layer(window_get_width() - 200, 40, macro_logic_layer, obj_HUD_minimap);
+minimap_is_active = true;
 
 // outliner
 outliner_button_margin = 12;
