@@ -34,7 +34,7 @@ if(sprite != noone)
 {
 	var colour = c_black;
 	if(active) colour = c_aqua;
-	draw_sprite_ext( sprite, 0, text_x, text_y, 1, 1, 0, colour, 1 );
+	draw_sprite_ext( sprite, subimg, text_x, text_y, 1, 1, 0, colour, 1 );
 }
 else
 {

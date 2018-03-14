@@ -1,6 +1,8 @@
 event_inherited();
 
 sprite = noone;
+subimg = 0;
+toggle_subimg = false;
 font = font_small;
 text = "button";
 text_x = 0;

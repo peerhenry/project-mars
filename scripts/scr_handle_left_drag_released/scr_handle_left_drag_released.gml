@@ -22,7 +22,7 @@ if(rec_right - rec_left > 15 || rec_bottom - rec_top > 15)
 			{
 				is_selected = true;
 				just_selected_any_entity = true;
-				if(object_is_ancestor(object_index, obj_astronaut)) selection_includes_astro = true;
+				if(scr_instance_inherits(id, obj_astronaut)) selection_includes_astro = true;
 			}
 			else if(!add_to_selection) is_selected = false;
 		}
@@ -40,7 +40,7 @@ else // selection rectangle is so small, it only selects if it is contained in a
 			{
 				is_selected = true;
 				just_selected_any_entity = true;
-				if(object_is_ancestor(object_index, obj_astronaut)) selection_includes_astro = true;
+				if(scr_instance_inherits(id, obj_astronaut)) selection_includes_astro = true;
 			}
 			else if(!add_to_selection) is_selected = false;
 		}

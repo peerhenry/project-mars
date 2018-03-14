@@ -13,14 +13,14 @@ global.hud_bar_button_width = 36;
 var bw = global.hud_bar_button_width;
 
 // left
-scr_add_hud_bar_sprite_button(id, 0, 0, spr_objectives, hud_action.toggle_objectives);
-scr_add_hud_bar_sprite_button(id, bw, 0, spr_mission_control, hud_action.mission_control);
+scr_add_hud_bar_sprite_button(id, 0, 0, spr_objectives, 0, false, hud_action.toggle_objectives);
+scr_add_hud_bar_sprite_button(id, bw, 0, spr_mission_control, 0, false, hud_action.mission_control);
 
 // right
-scr_add_hud_bar_sprite_button(id, gui_w - bw, 0, spr_menu, hud_action.toggle_menu);
-scr_add_hud_bar_sprite_button(id, gui_w - bw*2, 0, spr_minimap_icon, hud_action.toggle_minimap);
-scr_add_hud_bar_sprite_button(id, gui_w - bw*3, 0, spr_zoom_button, hud_action.toggle_zoom);
-scr_add_hud_bar_sprite_button(id, gui_w - bw*4, 0, spr_high_walls, hud_action.toggle_high_walls);
+scr_add_hud_bar_sprite_button(id, gui_w - bw, 0, spr_menu, 0, false, hud_action.toggle_menu);
+scr_add_hud_bar_sprite_button(id, gui_w - bw*2, 0, spr_minimap_icon, 0, false, hud_action.toggle_minimap);
+scr_add_hud_bar_sprite_button(id, gui_w - bw*3, 0, spr_zoom_button, 0, true, hud_action.toggle_zoom);
+scr_add_hud_bar_sprite_button(id, gui_w - bw*4, 0, spr_high_walls, global.draw_tall_walls, true, hud_action.toggle_high_walls);
 
 // minimap
 minimap = instance_create_layer(0, hud_bar_h, macro_logic_layer, obj_HUD_minimap);

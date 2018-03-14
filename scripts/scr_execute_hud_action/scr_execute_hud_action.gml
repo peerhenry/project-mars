@@ -1,7 +1,7 @@
 /// @arg button
-var arg_button = argument0;
+var arg_action = argument0;
 
-switch( arg_button.action )
+switch( arg_action )
 {
 	case hud_action.mission_control:
 		room_goto(mission_control);

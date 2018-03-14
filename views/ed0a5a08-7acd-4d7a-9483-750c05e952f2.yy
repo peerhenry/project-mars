@@ -16,7 +16,8 @@
         "17df1782-5ea4-400c-8d97-34914b1a5193",
         "d8af3cf2-f998-44bd-a20f-bb64ea77573f",
         "db5ce886-c83e-43ec-9d6c-5cf49d2e2a45",
-        "e6e4ac4c-d41d-4b15-8126-aa51f6d9f975"
+        "e6e4ac4c-d41d-4b15-8126-aa51f6d9f975",
+        "65ceeace-6227-49da-8d82-81837626afbc"
     ],
     "filterType": "GMScript",
     "folderName": "GUI",

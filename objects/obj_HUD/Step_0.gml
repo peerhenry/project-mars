@@ -19,7 +19,7 @@ for(var n = 0; n < ds_list_size(buttons); n++)
 	{
 		hovers = true;
 		hover_button = button;
-		if(clicked) scr_execute_hud_action(button);
+		if(clicked) scr_hud_button_click(button);
 		break;
 	}
 }

@@ -110,7 +110,7 @@ with(arg_details_panel)
 	{
 		#region battery charge
 		var blabel = scr_create_details_component_text(unit, left + padding, next_y_offset, panel_font, "Battery charge", text_valign, text_halign);
-		blabel.tooltip_text = "Robots and carts run on battery charge. They stop functioning if this reaches zero.";
+		blabel.tooltip_text = "If battery charge reach zero, this unit will stop functioning.";
 		ds_list_add(component_list, blabel);
 		var bbar = scr_create_details_component_bar(
 			unit, 
@@ -200,7 +200,7 @@ with(arg_details_panel)
 	
 	if( scr_instance_inherits(unit, obj_task_actor) || unit.object_index == obj_fridge )
 	{
-		var inv_comp = scr_create_details_component_inventory(unit, left + padding, next_y_offset);
+		var inv_comp = scr_create_details_component_inventory(unit, left + padding, next_y_offset + padding);
 		inv_comp.tooltip_text = "inventory";
 		ds_list_add(component_list, inv_comp);
 	}

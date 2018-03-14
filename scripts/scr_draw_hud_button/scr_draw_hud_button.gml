@@ -7,6 +7,7 @@ var top = arg_button.top;
 var right = arg_button.right;
 var bottom = arg_button.bottom;
 var sprite = arg_button.sprite;
+var subimg = arg_button.subimg;
 
 if(arg_hovers)
 {
@@ -28,7 +29,7 @@ if(sprite != noone)
 {
 	var colour = c_black;
 	if(arg_button.active) colour = c_aqua;
-	draw_sprite_ext( sprite, 0, arg_button.text_x, arg_button.text_y, 1, 1, 0, colour, 1 );
+	draw_sprite_ext( sprite, subimg, arg_button.text_x, arg_button.text_y, 1, 1, 0, colour, 1 );
 }
 else
 {
