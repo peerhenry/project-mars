@@ -1431,6 +1431,14 @@
             }
         },
         {
+            "Key": "23226ef5-5903-41dc-acf2-c8fbd85f53f3",
+            "Value": {
+                "id": "d2c5bffa-00f7-4f07-b20c-f307cc8363d3",
+                "resourcePath": "scripts\\init_create_spaceship_and_astros\\init_create_spaceship_and_astros.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "23443a20-6bcf-4d95-9a44-cd27098f80fb",
             "Value": {
                 "id": "1536ce84-fb64-4920-b084-769d5312d88d",
@@ -3564,6 +3572,14 @@
                 "id": "45b01272-2e59-41cc-bbfc-1309db1efd0f",
                 "resourcePath": "scripts\\scr_command_attack\\scr_command_attack.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "526065d0-4170-4fc5-9314-41344fca63d1",
+            "Value": {
+                "id": "2f745ecd-09d5-4a27-934f-531588c3c1be",
+                "resourcePath": "views\\526065d0-4170-4fc5-9314-41344fca63d1.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -10382,6 +10398,7 @@
         "1e3dbe4c-0873-4852-957d-59eef3e79f10",
         "1709bdf1-fe50-49cd-8b69-db9cf111cedc",
         "1dd37cb6-f98e-4133-8a5d-952bc1778aed",
+        "359d8422-a01d-4ad1-9d62-98e05c4d1553",
         "c910c6cb-228c-4cab-9fdf-5133958c0899",
         "bc0179c9-1a07-4d79-a769-665080431680",
         "af12af79-2d47-4381-aecc-622d34aacf2e",
@@ -10444,7 +10461,7 @@
         "ffb7386f-7e99-4862-b02b-2114e595dbd7",
         "d38155b6-05ea-41ac-af9e-0163c26a1d4b",
         "b2253daf-e8ab-46b5-a140-6f8103da1488",
-        "359d8422-a01d-4ad1-9d62-98e05c4d1553",
+        "23226ef5-5903-41dc-acf2-c8fbd85f53f3",
         "10b6178a-76dc-4368-95c3-c861bd61878c",
         "599b424d-fcba-4054-9d12-3601d378ecc2",
         "2098a558-efa7-43bb-8402-341e21443579",

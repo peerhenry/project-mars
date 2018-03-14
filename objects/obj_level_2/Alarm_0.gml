@@ -1,0 +1,1 @@
+init_create_spaceship_and_astros(30, 30);
