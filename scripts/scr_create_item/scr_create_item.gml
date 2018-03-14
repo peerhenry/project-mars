@@ -16,7 +16,7 @@ switch(arg_item_type)
 		new_item.class = item_class.weapon;
 		break;
 	case inv_space.food:
-		new_item.name = "Food";
+		new_item.name = "Food (restores food level 100%)";
 		new_item.class = item_class.food;
 		break;
 	case inv_space.mdu:
