@@ -56,6 +56,4 @@ for(var n = 0; n < construction_count; n++)
 	}
 }
 
-scr_trace("found_one: " + string(found_one));
-
 return found_one;
