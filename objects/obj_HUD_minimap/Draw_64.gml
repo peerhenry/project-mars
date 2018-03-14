@@ -1,6 +1,14 @@
 
 //border
-scr_draw_rectangle_width_color(x, y, x + width, y + height, border_size, border_color, border_alpha);
+if(border_size > 0)
+{
+	scr_draw_rectangle_width_color(x, y, x + width, y + height, border_size, border_color, border_alpha);
+}
+else
+{
+	scr_draw_shiny_line(x - 1, y, x - 1, y + height, border_color); //left
+	scr_draw_shiny_line(x - 1, y + height, x + width, y + height, border_color); //bottom
+}
 
 //background
 draw_sprite_ext(spr_background, 0, x + border_size, y + border_size, 1, 1, 0, c_white, background_alpha);

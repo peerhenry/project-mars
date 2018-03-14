@@ -1,7 +1,7 @@
-width = 200;
-height = 200;
-border_size = 2;
-border_color = c_aqua;
+width = 230 - 1; //outliner width minus half of shiny border line
+height = width; //forcing square design as maps are currently all square (prevent letterbox)
+border_size = 0;
+border_color = global.hud_border_color;
 border_alpha = 0.5
 background_color = noone; //noone = transparent bg fill
 background_alpha = 1;
@@ -39,6 +39,7 @@ surface_reset_target();
 surface_set_target(surf_bg);
 
 if(background_color != noone) draw_clear(background_color);
+else draw_clear(c_black);
 draw_surface_stretched(surf_room, inner_left, inner_top, inner_width, inner_height);
 var _org_a = draw_get_alpha();
 draw_set_alpha(0.15);

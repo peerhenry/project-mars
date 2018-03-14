@@ -20,9 +20,9 @@ with(obj_HUD)
 	// = bar + 2*(margin + padding) + sprite height + minimap.height + margin
 	top +=  
 		hud_bar_h
+		+ minimap.height
 		+ 2*(outliner_button_margin + outliner_button_padding) 
-		+ sprite_get_height(outliner_sprite)
-		+ minimap.height + outliner_button_margin;
+		+ sprite_get_height(outliner_sprite);
 }
 
 tab_astro_top = top;

@@ -1,6 +1,7 @@
 if( instance_number(object_index) > 1 ) instance_destroy();
 
 hud_bar_h = 36;
+hud_border_color = global.hud_border_color;
 buttons = ds_list_create();
 mouse_over_HUD = false;
 hover_button = noone;
@@ -22,7 +23,8 @@ scr_add_hud_bar_sprite_button(id, gui_w - bw*3, 0, spr_zoom_button, hud_action.t
 scr_add_hud_bar_sprite_button(id, gui_w - bw*4, 0, spr_high_walls, hud_action.toggle_high_walls);
 
 // minimap
-minimap = instance_create_layer(window_get_width() - 200, 40, macro_logic_layer, obj_HUD_minimap);
+minimap = instance_create_layer(0, hud_bar_h, macro_logic_layer, obj_HUD_minimap);
+minimap.x = window_get_width() - minimap.width; //anchor to right
 minimap_is_active = true;
 
 // outliner
@@ -33,7 +35,7 @@ outliner = instance_create_layer(0, 0, macro_logic_layer, obj_HUD_outliner);
 outliner_button = scr_add_hud_button_sprite(
 	id, 
 	gui_w - sprite_get_width(outliner_sprite) - 2*outliner_button_padding - outliner_button_margin,
-	hud_bar_h + 2*outliner_button_margin + 200, 
+	hud_bar_h + minimap.height + outliner_button_margin, 
 	outliner_sprite, 
 	outliner_button_padding, 
 	hud_action.toggle_outliner

@@ -2095,6 +2095,14 @@
             }
         },
         {
+            "Key": "31ff7801-ab8a-49bb-8a1f-ce6ac0110ab2",
+            "Value": {
+                "id": "0e3bcf03-eada-4d1a-b9fe-fb1e7e4fcf02",
+                "resourcePath": "scripts\\scr_draw_shiny_line\\scr_draw_shiny_line.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "321d2d96-89f1-4dc3-bd4f-ef883707a2bc",
             "Value": {
                 "id": "3f25fa9a-8c33-4a33-a564-3c64c98a2712",
@@ -10816,6 +10824,7 @@
         "9d4f893e-7bd7-4a8a-ba6a-2633e6922496",
         "c1730536-e87f-4fd5-b27c-b60b17626c4a",
         "eed784f2-bfc4-47fa-a2fb-99f73faba087",
+        "31ff7801-ab8a-49bb-8a1f-ce6ac0110ab2",
         "b2abc277-eb1b-4eec-9e43-b0592dd3c744",
         "f45f22df-a053-4804-910b-1fb31f179f3c",
         "ec5bdffd-41f8-4ae6-a194-6133e6428ad4",
