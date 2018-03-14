@@ -10,3 +10,6 @@ for(var i = -1; i <= 1; i++)
 }
 
 depth = - (occ_j + 1);
+owner = global.default_owner;
+mask_sprite = spr_basic_spaceship_mask;
+mask_color = scr_get_suit_color(macro_enemy);

@@ -14,6 +14,7 @@ ds_list_add(singletons, obj_view_mover);
 ds_list_add(singletons, obj_key_listener);
 ds_list_add(singletons, obj_HUD);
 ds_list_add(singletons, obj_noise_shader);
+ds_list_add(singletons, obj_level_set);
 if(global.dev_env)
 {
 	ds_list_add(singletons, obj_key_listener_DEBUG);

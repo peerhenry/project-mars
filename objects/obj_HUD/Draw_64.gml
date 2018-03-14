@@ -42,10 +42,10 @@ if(hover_button != noone)
 if(global.hovering_over_HUD) exit;
 var tile = instance_position(mouse_x, mouse_y, obj_base_tile);
 var comp = instance_position(mouse_x, mouse_y, obj_base_component);
-if(tile != noone && comp == noone)
+if(tile != noone && comp == noone && !tile.under_construction)
 {
 	var le_room = scr_room_at(mouse_x, mouse_y);
-	scr_draw_tooltip("oxygen: " + string( floor(le_room.oxygen_level) ) + "%");
+	if(le_room != noone) scr_draw_tooltip("oxygen: " + string( floor(le_room.oxygen_level) ) + "%");
 }
 if(comp != noone)
 {
