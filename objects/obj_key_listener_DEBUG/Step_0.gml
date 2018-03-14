@@ -60,10 +60,11 @@ if(keyboard_check_pressed(ord("L")))
 	with(obj_room) oxygen_level = 100;
 }
 
+// Kill a selected movable, or a movable over which mouse hovers
 if(keyboard_check_pressed(ord("K")))
 {
 	var found = false;
-	with(obj_astronaut_playable)
+	with(obj_movable)
 	{
 		if(is_selected)
 		{
@@ -74,7 +75,7 @@ if(keyboard_check_pressed(ord("K")))
 	}
 	if(!found)
 	{
-		var astro = instance_position(mouse_x, mouse_y, obj_astronaut);
+		var astro = instance_position(mouse_x, mouse_y, obj_movable);
 		if(astro != noone) scr_kill(astro);
 	}
 }
@@ -105,14 +106,30 @@ if(keyboard_check_pressed(ord("O")))
 
 if(keyboard_check_pressed(ord("C")))
 {
-	with(obj_astronaut_playable) scr_cancel_walking(id);
+	with(obj_movable)
+	{
+		if(is_selected) scr_cancel_walking(id);
+	}
 }
 
-if(keyboard_check_pressed(ord("N")))
+if(keyboard_check_pressed(vk_numpad5))
 {
-	with(obj_astronaut_playable)
+	var enemy_count = scr_count_live_astronauts(macro_enemy);
+	show_debug_message("live enemies: " + string(enemy_count));
+	with(obj_level)
 	{
-		sleep_level = 20;
-		food_level = 20;
+		for(var n = 0; n < ds_list_size(objective_list); n++)
+		{
+			var next_obj = objective_list[|n];
+			next_obj.accomplished = true;
+		}
+	}
+}
+
+if(keyboard_check_pressed(vk_numpad4))
+{
+	with(obj_level)
+	{
+		show_debug_message("nr of objectives: " + string(ds_list_size(objective_list)));
 	}
 }

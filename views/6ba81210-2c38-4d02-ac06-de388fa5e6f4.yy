@@ -6,7 +6,8 @@
     "children": [
         "c0eabb04-b37c-4998-8a5c-fc6d4b1b3a8e",
         "9666ffc4-18dc-451d-b925-f68dc1afa127",
-        "e5729d60-46f9-4ad2-be76-745b861208de"
+        "e5729d60-46f9-4ad2-be76-745b861208de",
+        "c7226f1c-e5fa-40d1-b456-6d059234246a"
     ],
     "filterType": "GMRoom",
     "folderName": "GAME",

@@ -5,7 +5,6 @@ var output = [0,0,0,0,0,0];
 switch(arg_entity.object_index)
 {
 	case obj_astronaut:
-	case obj_astronaut_playable:
 		if(arg_entity.wears_suit)
 		{
 			output[0] = spr_astronaut_suit_down;

@@ -3,7 +3,7 @@ test_init(test_deliver_mdu_after_combat);
 // arrange
 var constr = scr_create_dummy_mdu_construction();
 scr_register_new_construction(constr);
-var astro = instance_create_depth(0,0,0,obj_astronaut_playable);
+var astro = instance_create_depth(0,0,0,obj_astronaut);
 astro.auto_construct = true;
 scr_give_entity_new_item(astro, inv_space.mdu);
 var enemy = scr_create_enemy_astronaut(64,64);

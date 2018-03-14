@@ -1,4 +1,4 @@
-with(obj_astronaut_playable)
+with(obj_astronaut)
 {
-	show_debug_message("astronaut action: " + string(current_action));
+	show_debug_message("current action: " + string(current_action));
 }

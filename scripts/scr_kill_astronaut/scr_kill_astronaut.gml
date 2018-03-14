@@ -9,7 +9,7 @@ scr_cancel_all(astronaut);
 with(astronaut)
 {
 	has_died = true;
-	if(object_index == obj_astronaut_playable)
+	if(owner == macro_player)
 	{
 		if(!audio_is_playing(sound_fx_flatline))
 		{

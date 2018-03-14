@@ -9,10 +9,13 @@ repeat(wave_size)
 {
 	var enemy = scr_create_enemy_astronaut(x + 32*counter, y);
 	var target = noone;
-	with(obj_astronaut_playable)
+	with(obj_astronaut) // todo: attack construction if no astronaut can be attacked #225
 	{
-		target = id;
-		break;
+		if(owner == macro_player)
+		{
+			target = id;
+			break;
+		}
 	}
 	if(target != noone) scr_attack(enemy, target);
 	

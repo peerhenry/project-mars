@@ -1,8 +1,8 @@
 test_init(test_two_constructions_get_picked_up);
 
 // arrange
-var astro1 = instance_create_depth(128, 128, 0, obj_astronaut_playable);
-var astro2 = instance_create_depth(128, 128, 0, obj_astronaut_playable);
+var astro1 = instance_create_depth(128, 128, 0, obj_astronaut);
+var astro2 = instance_create_depth(128, 128, 0, obj_astronaut);
 var constr1 = scr_create_dummy_mdu_construction();
 scr_register_new_construction(constr1);
 var constr2 = scr_create_dummy_mdu_construction();

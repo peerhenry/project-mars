@@ -33,9 +33,9 @@ repeat(wave_size)
 	scr_set_suit(enemy, true);
 	
 	var target = noone;
-	with(obj_astronaut_playable)
+	with(obj_astronaut)
 	{
-		target = id;
+		if(owner == macro_player) target = id;
 		break;
 	}
 	if(target != noone) scr_attack(enemy, target);

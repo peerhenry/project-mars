@@ -1135,14 +1135,6 @@
             }
         },
         {
-            "Key": "1b6b59d8-bccc-4f86-a8e6-e21c7bd5a65d",
-            "Value": {
-                "id": "64b3cd3a-433c-4f31-9f15-50ed90fb0baf",
-                "resourcePath": "objects\\obj_astronaut_playable\\obj_astronaut_playable.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "1b745382-3ded-49f1-84e3-c9da47e7fd7d",
             "Value": {
                 "id": "faabd153-d1ee-47f8-b586-9d74027c8e7b",
@@ -2404,6 +2396,14 @@
                 "id": "10fed6da-fdb7-41e5-b671-12ae0dc22f3f",
                 "resourcePath": "sprites\\spr_metal\\spr_metal.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "374ca6b4-9356-4b66-ac1d-19d0f18f7944",
+            "Value": {
+                "id": "65dc49de-b56a-4444-9075-03aea30c4ac2",
+                "resourcePath": "scripts\\init_skirmish_six_rooms_and_astros\\init_skirmish_six_rooms_and_astros.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -7983,6 +7983,14 @@
             }
         },
         {
+            "Key": "c7226f1c-e5fa-40d1-b456-6d059234246a",
+            "Value": {
+                "id": "36d9e979-6990-4f1f-bae2-6485531eddbd",
+                "resourcePath": "rooms\\room_credits\\room_credits.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "c75f24f6-01d1-4519-a40e-bff735c68345",
             "Value": {
                 "id": "bc376407-be37-416f-8082-24560e6b1352",
@@ -10460,8 +10468,9 @@
         "7d237c50-ea92-4b6c-bb2e-5ab62aafd6ca",
         "ffb7386f-7e99-4862-b02b-2114e595dbd7",
         "d38155b6-05ea-41ac-af9e-0163c26a1d4b",
-        "b2253daf-e8ab-46b5-a140-6f8103da1488",
+        "374ca6b4-9356-4b66-ac1d-19d0f18f7944",
         "23226ef5-5903-41dc-acf2-c8fbd85f53f3",
+        "b2253daf-e8ab-46b5-a140-6f8103da1488",
         "10b6178a-76dc-4368-95c3-c861bd61878c",
         "599b424d-fcba-4054-9d12-3601d378ecc2",
         "2098a558-efa7-43bb-8402-341e21443579",

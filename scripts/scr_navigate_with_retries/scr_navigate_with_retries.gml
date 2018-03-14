@@ -36,12 +36,12 @@ with(obj_movable)
 
 // Astronauts without suits may not go through hatches
 
-with(obj_gate)
+with(obj_gate) // Make gate impassable IF
 {
-	// a gate is impassable if it is of different owner
-	// OR entity is an astronaut without suit and gate is a hatch
+	// - it is of different owner
+	// - entity is an astronaut without suit and gate is a hatch
 	var impassable = arg_entity.owner != owner;
-	if(!impassable && (arg_entity.object_index == obj_astronaut || arg_entity.object_index == obj_astronaut_playable))
+	if(!impassable && scr_instance_inherits(arg_entity, obj_astronaut))
 	{
 		impassable = object_index == obj_hatch && !arg_entity.wears_suit;
 	}

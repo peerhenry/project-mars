@@ -29,9 +29,11 @@ for(var n = 0; n < arg_count; n++)
 		target_x = scr_gi_to_rc(next_i);
 		target_y = scr_gi_to_rc(astro_or_j);
 	}
-	var object = obj_astronaut_playable;
-	if(arg_owner == macro_enemy) object = obj_astronaut;
-	var astro = instance_create_layer(target_x, target_y, macro_astronaut_layer, object);
+	global.default_owner = arg_owner;
+	var astro = instance_create_layer(target_x, target_y, macro_astronaut_layer, obj_astronaut);
+	{
+		astro.owner = arg_owner;
+	}
 	var outside = !position_meeting(target_x, target_y, obj_base_tile);
 	scr_set_suit(astro, outside);
 	astro.is_outside = outside;

@@ -68,3 +68,4 @@ global.mission_accomplished_return_room = room_menu;
 global.mission_failed_return_room = room_menu;
 global.mission_control_site = noone; // used to flag when mission accomplished
 global.next_level = 1;
+global.last_level_index = 6;

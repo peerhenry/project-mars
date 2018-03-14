@@ -1,7 +1,7 @@
 test_init(test_move_command_should_cancel_combat);
 
 // arrange
-var astro = instance_create_depth(32, 32, 0, obj_astronaut_playable);
+var astro = instance_create_depth(32, 32, 0, obj_astronaut);
 var enemy = scr_create_enemy_astronaut(512, 512);
 astro.target = enemy;
 var can_pursue = scr_pursue_target(astro);
