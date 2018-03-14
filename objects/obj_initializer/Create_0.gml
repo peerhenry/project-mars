@@ -2,7 +2,7 @@ if( instance_number(object_index) > 1 ) show_error("more than one: " + string( o
 global.init_stage = true;
 init_view_and_camera();
 init_game();
-alarm[0] = 1;
+alarm[0] = 2;
 
 var singletons = ds_list_create();
 ds_list_add(singletons, obj_map_initializer);

@@ -44,9 +44,10 @@ if(entity != noone)
 }
 
 // hovers over grid selector
+var component = noone;
 if(!hovers_over_selectable)
 {
-	var component = instance_position(mouse_x, mouse_y, obj_base_component);
+	component = instance_position(mouse_x, mouse_y, obj_base_component);
 	if(component != noone)
 	{
 		hovers_over_selectable = (component.owner == macro_player);
@@ -94,13 +95,24 @@ else // hovers over selectable
 {
 	if(scr_any_task_actors_selected())
 	{
-		var hovers_over_assignable = instance_position(mouse_x, mouse_y, obj_assignable) != noone;
-		if(hovers_over_assignable)
+		if(component != noone && scr_instance_inherits(component, obj_assignable))
 		{
 			cursor_sprite = spr_cursor_assign;
 		}
 	}
-	else cursor_sprite = spr_cursor_select;
+	else
+	{
+		if(component != noone && scr_instance_inherits(component, obj_gate))
+		{
+			if(!component.locked)
+			{
+				if(component.is_open) cursor_sprite = spr_gate_close;
+				else cursor_sprite = spr_gate_open;
+			}
+			else cursor_sprite = spr_cursor;
+		}
+		else cursor_sprite = spr_cursor_select;
+	}
 }
 
 #endregion

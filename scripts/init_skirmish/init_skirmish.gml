@@ -21,7 +21,7 @@ with(obj_astronaut)
 init_skirmish_six_rooms_and_astros(macro_enemy, 80, 80, astro_count);
 
 // enemy spawner
-instance_create_layer(scr_gi_to_rc(base_or_i), scr_gi_to_rc(base_or_j) + 32*20, macro_logic_layer, obj_skirmish_spawner);
+instance_create_layer(scr_gi_to_rc(80), scr_gi_to_rc(80) + 32*20, macro_logic_layer, obj_skirmish_spawner);
 
 // 3. create mdu piles...
 global.default_owner = macro_player;
