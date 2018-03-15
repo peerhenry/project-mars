@@ -101,5 +101,6 @@ enum mousedrag_from
 {
 	none = 0,
 	world = 1,
-	minimap = 2
+	minimap = 2,
+	gui = 3
 }
