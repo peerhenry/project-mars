@@ -1,0 +1,1 @@
+if(is_active) scr_handle_menu(); //return to main menu

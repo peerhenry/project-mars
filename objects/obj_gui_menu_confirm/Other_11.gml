@@ -1,15 +1,18 @@
 event_inherited();
-if(confirm_state == true)
+if(is_active)
 {
-	if(yes_callback != noone && script_exists(yes_callback))
+	if(confirm_state == true)
 	{
-		script_execute(yes_callback);
+		if(yes_callback != noone && script_exists(yes_callback))
+		{
+			script_execute(yes_callback);
+		}
 	}
-}
-else
-{
-	if(no_callback != noone && script_exists(no_callback))
+	else
 	{
-		script_execute(no_callback);
+		if(no_callback != noone && script_exists(no_callback))
+		{
+			script_execute(no_callback);
+		}
 	}
 }

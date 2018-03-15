@@ -1,5 +1,4 @@
 if(is_active)
 {
-	confirm_state = false;
-	event_user(1);
+	scr_handle_confirm_no();
 }
