@@ -3311,6 +3311,14 @@
             }
         },
         {
+            "Key": "4b7e2f1d-231a-4282-80ea-aa0c3109d792",
+            "Value": {
+                "id": "115773f1-e5b2-4e7f-9431-95f1003f9ff5",
+                "resourcePath": "objects\\obj_HUD_objectives\\obj_HUD_objectives.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "4b81e1d0-4f55-4774-82d8-b1ff2b1fb6c9",
             "Value": {
                 "id": "eb44bef3-3cdb-40db-a437-f5585d0f127a",
@@ -5487,6 +5495,14 @@
             }
         },
         {
+            "Key": "84135fac-13e4-4dae-b335-1e0f136029e1",
+            "Value": {
+                "id": "6f4f50e4-3027-4e02-907b-6b1df46ce09f",
+                "resourcePath": "sprites\\spr_zoom_button\\spr_zoom_button.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "841fad72-7732-4e74-8f7d-4956133132ba",
             "Value": {
                 "id": "5de40b9d-87e2-4e50-a638-462236155ceb",
@@ -6015,6 +6031,14 @@
             }
         },
         {
+            "Key": "943e2771-7383-4834-a0b5-0b2b03bfa78b",
+            "Value": {
+                "id": "881f8154-9817-4e50-bd25-8bacb53fc92d",
+                "resourcePath": "sprites\\spr_unchecked\\spr_unchecked.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "948608d8-ca1c-42e1-8975-110b2385596b",
             "Value": {
                 "id": "6f1372bd-604a-449d-93bc-dda388fd6397",
@@ -6375,6 +6399,14 @@
             }
         },
         {
+            "Key": "9ec97bf8-80cf-4dff-a620-96d4b8b3f75e",
+            "Value": {
+                "id": "3038878c-d29c-4191-914d-c2e97d478c80",
+                "resourcePath": "sprites\\spr_minimap_icon_old\\spr_minimap_icon_old.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "9eea8348-51ba-4d4f-936b-d08116a2186c",
             "Value": {
                 "id": "ea438c35-2bdc-452c-ae6e-7e2fc8ba6740",
@@ -6636,6 +6668,14 @@
                 "id": "d8e8bd8f-8293-4174-abcb-d44298d9857d",
                 "resourcePath": "scripts\\test_stop_moving\\test_stop_moving.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "a53ec209-82af-4b58-9512-7aa3df941e27",
+            "Value": {
+                "id": "ee25d908-47e4-451a-81d7-ed063a14b4d7",
+                "resourcePath": "sprites\\spr_mission_control_old\\spr_mission_control_old.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -8231,6 +8271,14 @@
             }
         },
         {
+            "Key": "cc234810-e42b-4614-bcf9-cb7465f29c19",
+            "Value": {
+                "id": "dd54641c-6eaa-430e-8b78-47a9c9ca80bf",
+                "resourcePath": "sprites\\spr_checked\\spr_checked.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "cc3214a2-4a52-4ed3-b6c9-d3489312bbc5",
             "Value": {
                 "id": "ca80ff53-3b5f-4916-bd89-77183a0ac9c8",
@@ -9266,7 +9314,7 @@
             "Key": "e6604321-41ea-49ac-a7cb-a296bc708291",
             "Value": {
                 "id": "71093aba-44ad-40b6-acd2-6d382b0e1797",
-                "resourcePath": "sprites\\spr_zoom_button\\spr_zoom_button.yy",
+                "resourcePath": "sprites\\spr_zoom_button_old\\spr_zoom_button_old.yy",
                 "resourceType": "GMSprite"
             }
         },

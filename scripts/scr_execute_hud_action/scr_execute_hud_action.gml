@@ -39,6 +39,7 @@ switch( arg_action )
 				scr_reset_outliner(outliner);
 				outliner.active = true;
 			}
+			outliner.reset = true;
 		}
 		break;
 	case hud_action.toggle_minimap:
@@ -57,5 +58,14 @@ switch( arg_action )
 			}
 			outliner.reset = true;
 		}
+		break;
+	case hud_action.toggle_objectives:
+		var exists = false;
+		with(obj_HUD_objectives)
+		{
+			instance_destroy();
+			exists = true;
+		}
+		if(!exists) instance_create_depth(0, 0, 0, obj_HUD_objectives);
 		break;
 }

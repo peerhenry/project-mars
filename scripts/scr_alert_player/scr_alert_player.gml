@@ -10,3 +10,7 @@ if(instance_exists(obj_player_message))
 
 var inst = instance_create_layer(0,0, macro_logic_layer, obj_player_message);
 inst.text = argument0;
+with(obj_HUD_objectives)
+{
+	inst.top += height;
+}

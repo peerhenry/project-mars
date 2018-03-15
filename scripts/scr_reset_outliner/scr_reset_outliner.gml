@@ -19,7 +19,7 @@ with(obj_HUD)
 }
 with(obj_HUD_minimap)
 {
-	arg_outliner.tab_astro_top += height;
+	arg_outliner.tab_astro_top += height + 1;
 }
 
 with(obj_HUD_entity_panel)

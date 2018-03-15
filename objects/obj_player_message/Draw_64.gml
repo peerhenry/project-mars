@@ -1,7 +1,7 @@
 var w = 200;
 var h = 120;
 var margin_left = 8;
-var margin_top = 44;
+var margin_top = top;
 var pad = 4;
 var font = font_small;
 

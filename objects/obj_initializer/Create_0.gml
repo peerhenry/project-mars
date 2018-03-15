@@ -21,9 +21,9 @@ if(global.dev_env)
 	ds_list_add(singletons, obj_HUD_DEBUG);
 }
 
-for(var n = 0; n < ds_list_size(singletons); n++)
+for( var n = 0; n < ds_list_size(singletons); n++ )
 {
-	var next_instance = instance_create_layer(-1, -1, "logic", singletons[|n]);
+	var next_instance = instance_create_layer( -1, -1, "logic", singletons[|n] );
 }
 
 ds_list_destroy(singletons);
