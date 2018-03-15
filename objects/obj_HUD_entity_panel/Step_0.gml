@@ -5,7 +5,7 @@ if(!instance_exists(entity) || entity == noone)
 	exit;
 }
 
-if(global.mousedrag_from != mousedrag_from.none) exit; //prevent hover when dragging into from outside
+if(global.mousedrag_from == mousedrag_from.world) exit; //prevent hover when dragging into from outside
 
 var mouse_gui_x = window_mouse_get_x();
 var mouse_gui_y = window_mouse_get_y();

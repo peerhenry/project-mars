@@ -1,4 +1,4 @@
-if(global.mousedrag_from != mousedrag_from.none) exit; //prevent hover when dragging into from outside
+if(global.mousedrag_from == mousedrag_from.world) exit; //prevent hover when dragging into from outside
 
 var window_mouse_x = window_mouse_get_x();
 var window_mouse_y = window_mouse_get_y();
