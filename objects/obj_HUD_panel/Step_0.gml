@@ -1,3 +1,5 @@
+if(global.mousedrag_from != mousedrag_from.none) exit; // prevent step when dragging into this from outside
+
 var window_mouse_x = window_mouse_get_x();
 var window_mouse_y = window_mouse_get_y();
 

@@ -1,6 +1,9 @@
 /// @arg arg_button_dto
+/// @arg hovers
+/// @arg press_button
 var arg_button = argument0;
 var arg_hovers = argument1;
+var arg_press_button = argument2;
 
 var left = arg_button.left;
 var top = arg_button.top;
@@ -14,12 +17,12 @@ var c_top = arg_button.color_top;
 var c_bottom = arg_button.color_bottom;
 if(arg_hovers)
 {
-	if(mouse_check_button(mb_left))
+	if(mouse_check_button(mb_left) && arg_press_button == arg_button)
 	{
 		c_top = arg_button.color_down_top;
 		c_bottom = arg_button.color_down_bottom;
 	}
-	else
+	else if(arg_press_button == noone)
 	{
 		c_top = arg_button.color_hover_top;
 		c_bottom = arg_button.color_hover_bottom;
@@ -27,7 +30,7 @@ if(arg_hovers)
 }
 else
 {
-	draw_rectangle_color(left, top, right, bottom, c_dkgray, c_dkgray, c_black, c_black, false);
+	// draw_rectangle_color(left, top, right, bottom, c_dkgray, c_dkgray, c_black, c_black, false);
 }
 
 draw_rectangle_color(left, top, right, bottom, c_top, c_top, c_bottom, c_bottom, false);

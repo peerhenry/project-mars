@@ -1,8 +1,9 @@
-if(global.mousedrag_from != mousedrag_from.none) exit; //prevent hover when dragging into from outside
+if(global.mousedrag_from == mousedrag_from.world) exit; //prevent hover when dragging into from outside
 
 var window_mouse_x = window_mouse_get_x();
 var window_mouse_y = window_mouse_get_y();
-var clicked = mouse_check_button_released(mb_left);
+var pressed = mouse_check_button_pressed(mb_left);
+var released = mouse_check_button_released(mb_left);
 var right_clicked = mouse_check_button_released(mb_right);
 mouse_over_HUD = window_mouse_y < 36; // hud top bar
 
@@ -21,9 +22,10 @@ for(var n = 0; n < ds_list_size(buttons); n++)
 	{
 		hovers = true;
 		hover_button = button;
-		if(clicked) scr_hud_button_click(button);
-		break;
+		if(pressed) press_button = button;
+		else if(released) scr_hud_button_click(button);
 	}
+	if(press_button == button && released) press_button = noone;
 }
 
 #endregion

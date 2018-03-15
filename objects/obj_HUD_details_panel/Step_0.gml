@@ -1,3 +1,5 @@
+if(global.mousedrag_from == mousedrag_from.world) exit; // prevent step when dragging into this from outside
+
 var clicked = mouse_check_button_pressed(mb_left);
 var r_clicked = mouse_check_button_pressed(mb_right);
 

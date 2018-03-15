@@ -1,6 +1,9 @@
 /// @arg arg_button
+/// @arg hovers
+/// @arg press_button
 var arg_button = argument0;
 var arg_hovers = argument1;
+var arg_press_button = argument2;
 
 var left = arg_button.left;
 var top = arg_button.top;
@@ -11,14 +14,15 @@ var subimg = arg_button.subimg;
 
 if(arg_hovers)
 {
-	if(mouse_check_button_pressed(mb_left))
+	if(mouse_check_button_pressed(mb_left) && arg_press_button == arg_button)
 	{
 		scr_draw_panel_inverse(left, top, right, bottom);
 	}
-	else
+	else if(arg_press_button == noone)
 	{
 		scr_draw_panel_light(left, top, right, bottom);
 	}
+	else scr_draw_panel(left, top, right, bottom);
 }
 else
 {

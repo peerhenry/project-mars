@@ -8,8 +8,8 @@ for(var n = 0; n< ds_list_size(buttons); n++)
 {
 	var button = buttons[| n];
 	var hovers = hover_button == button;
-	if(button.draw_as_panel) scr_draw_hud_button(button, hovers);
-	else scr_draw_hud_bar_button(button, hovers);
+	if(button.draw_as_panel) scr_draw_hud_button(button, hovers, press_button);
+	else scr_draw_hud_bar_button(button, hovers, press_button);
 }
 
 #endregion

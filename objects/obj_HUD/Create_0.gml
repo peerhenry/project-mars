@@ -5,6 +5,7 @@ hud_border_color = global.hud_border_color;
 buttons = ds_list_create();
 mouse_over_HUD = false;
 hover_button = noone;
+press_button = noone;
 
 gui_w = display_get_gui_width();
 gui_h = display_get_gui_height();
