@@ -1,5 +1,7 @@
-/// @description Insert description here
-// You can write your code in this editor
+if(mouse_check_button(mb_middle))
+{
+	exit; //don't propagate view movement when dragging the map outside window with middle mouse
+} //todo: don't start scrolling after releasing middle btn outside window (only scroll when cursor exactly at specific border region?)
 
 var camx = camera_get_view_x(cam);
 var camy = camera_get_view_y(cam);

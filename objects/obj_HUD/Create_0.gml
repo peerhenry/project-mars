@@ -108,6 +108,7 @@ item_count++;
 // -- gui menu --
 gui_menu = instance_create_layer(-500, 500, macro_logic_layer, obj_gui_menu_main);
 sound_menu = instance_create_layer(-500, 500, macro_logic_layer, obj_gui_menu_sound);
+confirm_dialog = instance_create_layer(-500, 500, macro_logic_layer, obj_gui_menu_confirm);
 
 // -- Resource panel settings --
 resources_left = 480;

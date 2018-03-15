@@ -96,3 +96,10 @@ enum item_class
 	construction,
 	resource
 }
+
+enum mousedrag_from
+{
+	none = 0,
+	world = 1,
+	minimap = 2
+}

@@ -1,6 +1,8 @@
 /// @description Initialize gamewide globals
 
 global.init_stage = true;
+global.hovering_over_HUD = false;
+global.mousedrag_from = mousedrag_from.none;
 
 // # DEBUG settings
 global.draw_room_bb = false;
