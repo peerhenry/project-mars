@@ -1,3 +1,6 @@
+
+if(global.mousedrag_from == mousedrag_from.world) exit;
+
 var window_mouse_x = window_mouse_get_x();
 var window_mouse_y = window_mouse_get_y();
 
@@ -13,10 +16,13 @@ if(mouse_over)
 	hover = true;
 	if(mouse_down)
 	{
+		global.mousedrag_from = mousedrag_from.minimap;
 		event_user(0);
 	}
+	else if(global.mousedrag_from == mousedrag_from.minimap) global.mousedrag_from = mousedrag_from.none; //reset
 }
 else
 {
 	hover = false;
+	if(!mouse_down && global.mousedrag_from == mousedrag_from.minimap) global.mousedrag_from = mousedrag_from.none; //reset
 }

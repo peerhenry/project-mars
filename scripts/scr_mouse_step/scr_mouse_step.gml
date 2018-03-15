@@ -18,6 +18,11 @@ var left_released = false;
 
 if(mouse_check_button(mb_left))
 {
+	if(global.mousedrag_from != mousedrag_from.none && global.mousedrag_from != mousedrag_from.world)
+	{
+		exit; //not starting or continuing drag from the world
+	}
+	
 	// larger than 5 pixels
 	var sig_x = abs(mouse_x - click_x) > 5;
 	var sig_y = abs(mouse_y - click_y) > 5;

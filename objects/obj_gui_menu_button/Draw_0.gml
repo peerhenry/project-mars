@@ -1,0 +1,1 @@
+// empty draw event to prevent it from drawing at x, y
