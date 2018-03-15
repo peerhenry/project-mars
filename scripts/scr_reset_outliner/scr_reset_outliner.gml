@@ -13,6 +13,15 @@ var c_count = 0;
 var d_tab = 1; // the height offset per outliner tab
 var d_panel = 1; // the height offset per panel
 
+with(obj_HUD)
+{
+	arg_outliner.tab_astro_top = hud_bar_h;
+}
+with(obj_HUD_minimap)
+{
+	arg_outliner.tab_astro_top += height;
+}
+
 with(obj_HUD_entity_panel)
 {
 	if(scr_instance_inherits(entity, obj_astronaut))

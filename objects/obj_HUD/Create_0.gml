@@ -20,20 +20,22 @@ scr_add_hud_bar_sprite_button(id, bw, 0, spr_mission_control, 0, false, hud_acti
 // right
 scr_add_hud_bar_sprite_button(id, gui_w - bw, 0, spr_menu, 0, false, hud_action.toggle_menu);
 scr_add_hud_bar_sprite_button(id, gui_w - bw*2, 0, spr_minimap_icon, 0, false, hud_action.toggle_minimap);
-scr_add_hud_bar_sprite_button(id, gui_w - bw*3, 0, spr_zoom_button, 0, true, hud_action.toggle_zoom);
+scr_add_hud_bar_sprite_button(id, gui_w - bw*3, 0, spr_outliner, 0, false, hud_action.toggle_outliner);
 scr_add_hud_bar_sprite_button(id, gui_w - bw*4, 0, spr_high_walls, global.draw_tall_walls, true, hud_action.toggle_high_walls);
+scr_add_hud_bar_sprite_button(id, gui_w - bw*5, 0, spr_zoom_button, 0, true, hud_action.toggle_zoom);
+
 
 // minimap
 minimap = instance_create_layer(0, hud_bar_h, macro_logic_layer, obj_HUD_minimap);
 minimap.x = window_get_width() - minimap.width; //anchor to right
 minimap_is_active = true;
 
-// outliner
+// outliner: todo: remove obsolete stuff
 outliner_button_margin = 12;
 outliner_button_padding = 4;
 outliner_sprite = spr_astro_panels;
 outliner = instance_create_layer(0, 0, macro_logic_layer, obj_HUD_outliner);
-outliner_button = scr_add_hud_button_sprite(
+/*outliner_button = scr_add_hud_button_sprite(
 	id, 
 	gui_w - sprite_get_width(outliner_sprite) - 2*outliner_button_padding - outliner_button_margin,
 	hud_bar_h + minimap.height + outliner_button_margin, 
@@ -41,10 +43,9 @@ outliner_button = scr_add_hud_button_sprite(
 	outliner_button_padding, 
 	hud_action.toggle_outliner
 );
-outliner_button.draw_as_panel = true;
+outliner_button.draw_as_panel = true;*/
 
 global.hovering_over_HUD = false; // write @ begin step, read @ step
-global.hovering_over_hud_panel = false; // read & reset @ begin step, write @ step
 
 // todo: is this relevant?
 enum button_state

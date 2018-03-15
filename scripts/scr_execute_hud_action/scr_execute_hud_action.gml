@@ -61,6 +61,7 @@ switch( arg_action )
 				instance_activate_object(minimap);
 				minimap_is_active = true;
 			}
+			outliner.reset = true;
 		}
 		break;
 }
