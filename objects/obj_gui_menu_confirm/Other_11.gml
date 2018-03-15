@@ -1,18 +1,22 @@
-event_inherited();
+/// @description Close
+/*
 if(is_active)
 {
 	if(confirm_state == true)
 	{
-		if(yes_callback != noone && script_exists(yes_callback))
+		if(script_exists(yes_callback))
 		{
 			script_execute(yes_callback);
 		}
 	}
 	else
 	{
-		if(no_callback != noone && script_exists(no_callback))
+		if(script_exists(no_callback))
 		{
 			script_execute(no_callback);
 		}
 	}
 }
+*/
+event_inherited();
+instance_destroy();

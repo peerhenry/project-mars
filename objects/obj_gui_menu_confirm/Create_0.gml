@@ -1,10 +1,10 @@
 event_inherited();
 confirm_text = "Confirm";
-confirm_state = noone;
-yes_callback = noone;
-no_callback = noone;
+/*confirm_state = noone;
+yes_callback = noone;*/
+no_callback = y;
 button_objects = [
-	["Yes", scr_handle_confirm_yes],
-	["No", scr_handle_confirm_no]
+	["Yes", x],
+	["No", y]
 ];
 event_user(2); // initialize menu

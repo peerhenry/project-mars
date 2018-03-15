@@ -1,4 +1,4 @@
 if(is_active)
 {
-	scr_handle_confirm_no();
+	script_execute(no_callback);
 }

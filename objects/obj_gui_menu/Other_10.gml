@@ -16,6 +16,7 @@ if(is_active)
 		button = instance_create_layer(left + 8, top + 8 + (b_height+8)*counter, macro_logic_layer, obj_gui_menu_button);
 		button.text = object_to_create[0];
 		button.callback = object_to_create[1];
+		if(array_length_1d(object_to_create) > 2) button.callback_arg = object_to_create[2];
 		button.width = width - 16;
 		button.depth = panel.depth - 1;
 		ds_list_add(button_list, button);

@@ -2,10 +2,11 @@ with(obj_gui_menu_main)
 {
 	event_user(1); // close main menu
 }
+
+instance_create_layer(scr_quit, scr_handle_menu, macro_logic_layer, obj_gui_menu_confirm);
+
 with(obj_gui_menu_confirm)
 {
-	event_user(0); // open (toggle) confirm dialog
+	event_user(0);
 	confirm_text = "Exit to Main Menu";
-	yes_callback = scr_quit;
-	no_callback = scr_handle_menu;
 }

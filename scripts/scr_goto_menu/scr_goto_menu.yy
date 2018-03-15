@@ -1,8 +1,8 @@
 {
-    "id": "0475fa0f-273c-4514-9b63-cc5c58f80fcc",
+    "id": "0a120225-07c8-4d9e-b7b7-b578a0df8c05",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_handle_controls",
+    "name": "scr_goto_menu",
     "IsCompatibility": false,
     "IsDnD": false
 }
