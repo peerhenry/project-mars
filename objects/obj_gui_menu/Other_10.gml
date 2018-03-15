@@ -8,13 +8,14 @@ if(is_active)
 	var right = left + width;
 	var bottom = top + height;
 	panel = scr_create_panel(left, top, right, bottom);
-	// options, save, load, quit, return to game
 	
 	var counter = 0;
 	repeat(button_count)
 	{
 		var object_to_create = button_objects[counter];
-		button = instance_create_layer(left + 8, top + 8 + (b_height+8)*counter, macro_logic_layer, object_to_create);
+		button = instance_create_layer(left + 8, top + 8 + (b_height+8)*counter, macro_logic_layer, obj_gui_menu_button);
+		button.text = object_to_create[0];
+		button.callback = object_to_create[1];
 		button.width = width - 16;
 		button.depth = panel.depth - 1;
 		ds_list_add(button_list, button);
