@@ -21,7 +21,9 @@
         "992847ab-d348-4ae2-9b60-3263c16db67c",
         "70661142-3f8e-4d03-9fa6-b391231a1868",
         "c8eaf9f7-f3cc-4bbf-89c3-56c5423c4889",
-        "d89820bc-2d73-46a2-a741-aedf62525173"
+        "d89820bc-2d73-46a2-a741-aedf62525173",
+        "0c26604e-fc1d-4193-b692-a847397ab6e9",
+        "0475fa0f-273c-4514-9b63-cc5c58f80fcc"
     ],
     "filterType": "GMScript",
     "folderName": "INPUT",

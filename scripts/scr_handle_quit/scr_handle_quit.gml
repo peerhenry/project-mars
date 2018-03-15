@@ -7,5 +7,5 @@ with(obj_gui_menu_confirm)
 	event_user(0); // open (toggle) confirm dialog
 	confirm_text = "Exit to Main Menu";
 	yes_callback = scr_quit;
-	no_callback = noone;
+	no_callback = scr_handle_menu;
 }

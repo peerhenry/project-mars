@@ -1,6 +1,6 @@
-with(obj_gui_menu_main)
+with(obj_gui_menu)
 {
-	event_user(1); // close main menu
+	event_user(1); // close all menus
 }
 with(obj_gui_menu_sound)
 {
