@@ -15,27 +15,31 @@ var dx = 0;
 var dy = 0;
 
 // up
-var moveUp = device_mouse_y_to_gui(0) < scroll_border || keyboard_check(ord("W")) || keyboard_check(vk_up);
+var up_by_mouse = device_mouse_y_to_gui(0) >= 0 && device_mouse_y_to_gui(0) < scroll_border;
+var moveUp = up_by_mouse || keyboard_check(ord("W")) || keyboard_check(vk_up);
 if(moveUp && camy >= scroll_speed ){
 	dy += -scroll_speed;
 }
 
 
 // down
-var moveDown = device_mouse_y_to_gui(0) > (viewH - scroll_border) || keyboard_check(ord("S")) || keyboard_check(vk_down);
+var down_by_mouse = device_mouse_y_to_gui(0) > (viewH - scroll_border) && device_mouse_y_to_gui(0) <= viewH;
+var moveDown = down_by_mouse || keyboard_check(ord("S")) || keyboard_check(vk_down);
 if(moveDown && camy + camH < room_height - scroll_speed ){
 	dy += scroll_speed;
 }
 
 
 // right
-var moveRight = device_mouse_x_to_gui(0) > (viewW-  scroll_border) || keyboard_check(ord("D")) || keyboard_check(vk_right);
+var right_by_mouse = device_mouse_x_to_gui(0) >= (viewW-  scroll_border) && device_mouse_x_to_gui(0) <= viewW;
+var moveRight = right_by_mouse || keyboard_check(ord("D")) || keyboard_check(vk_right);
 if(moveRight && camx + camW < room_width - scroll_speed ){
 	dx += scroll_speed;
 }
 
 // left
-var moveLeft = device_mouse_x_to_gui(0) < scroll_border || keyboard_check(ord("A")) || keyboard_check(vk_left);
+var left_by_mouse = device_mouse_x_to_gui(0) >= 0 && device_mouse_x_to_gui(0) < scroll_border;
+var moveLeft = left_by_mouse || keyboard_check(ord("A")) || keyboard_check(vk_left);
 if(moveLeft && camx > scroll_speed ){
 	dx += -scroll_speed;
 }
