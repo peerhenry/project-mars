@@ -14,7 +14,9 @@
         "2f82143c-d67f-47e9-97a2-b51a8aa3db8c",
         "ac63dc28-caba-42ba-8775-bc94c7da6343",
         "0b038bc2-d812-426e-b3f7-43e1759bd981",
-        "32465729-0d83-43e6-9a8c-4e24a340d213"
+        "32465729-0d83-43e6-9a8c-4e24a340d213",
+        "a6bc13c4-a8ff-4a94-ad74-737b56412ceb",
+        "b082ffd1-714b-49ff-af85-b7cf640d7f65"
     ],
     "filterType": "GMObject",
     "folderName": "menu buttons",

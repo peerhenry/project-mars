@@ -1455,6 +1455,14 @@
             }
         },
         {
+            "Key": "2377667e-c0a4-4292-b8a1-30f3ccecca69",
+            "Value": {
+                "id": "41c2cd87-1a8c-45c3-a633-1627cd1c10f7",
+                "resourcePath": "objects\\obj_gui_menu_confirm\\obj_gui_menu_confirm.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "2384e654-2a68-4834-b942-d0f0f7677a03",
             "Value": {
                 "id": "059adcc4-c0a2-4ba9-a22b-84f35523f98e",
@@ -2923,6 +2931,14 @@
             "Value": {
                 "id": "982758bb-e799-4534-b80c-dca685054c4c",
                 "resourcePath": "scripts\\scr_set_new_grid_props\\scr_set_new_grid_props.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "42cbfc7e-90c3-4e18-b9df-4afb00a632e6",
+            "Value": {
+                "id": "4b810cfa-e1b7-4d34-81c9-e5a3818d52c1",
+                "resourcePath": "scripts\\scr_handle_exit\\scr_handle_exit.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -6663,6 +6679,14 @@
             }
         },
         {
+            "Key": "a6bc13c4-a8ff-4a94-ad74-737b56412ceb",
+            "Value": {
+                "id": "46270296-8f8e-4db2-a758-37940d97018e",
+                "resourcePath": "objects\\obj_gui_menu_button_confirm_yes\\obj_gui_menu_button_confirm_yes.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "a7660d71-b0ad-4d66-aa14-2fa6bd84c7ca",
             "Value": {
                 "id": "4ec13ba3-afc6-4017-9c26-d1f1cda1fc95",
@@ -7039,6 +7063,14 @@
             }
         },
         {
+            "Key": "b082ffd1-714b-49ff-af85-b7cf640d7f65",
+            "Value": {
+                "id": "9a455427-6516-4e29-9d7a-0d00e0c68fdb",
+                "resourcePath": "objects\\obj_gui_menu_button_confirm_no\\obj_gui_menu_button_confirm_no.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "b086a10b-a0c1-4a8a-8bb1-4e6344411518",
             "Value": {
                 "id": "a81fce26-bcf3-4e52-b63f-7c033a82a49d",
@@ -7211,6 +7243,14 @@
             "Value": {
                 "id": "267620ac-6df3-4d7a-87b1-7764aec9b36a",
                 "resourcePath": "scripts\\test_room_remove_edge_tile\\test_room_remove_edge_tile.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "b51735a7-abc5-4e70-87f4-a3d1f2a84236",
+            "Value": {
+                "id": "71014311-0bfa-4db8-9a98-59035f7063fa",
+                "resourcePath": "scripts\\scr_handle_quit\\scr_handle_quit.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -10855,6 +10895,8 @@
         "b3be0912-fbfd-4bc7-b2cd-4dd07a2e08c2",
         "1bfa18c9-624c-419f-b60d-5f0aa711bc78",
         "c8f41b1d-486a-442c-b534-6d0d5c7f20b7",
+        "b51735a7-abc5-4e70-87f4-a3d1f2a84236",
+        "42cbfc7e-90c3-4e18-b9df-4afb00a632e6",
         "d007503e-3829-4b3f-821d-53d83dc283dc",
         "41ac20c3-b861-4ddf-9c39-e6a35ffbc263",
         "682e825c-3f4e-4ffa-b4c6-3e8d2cd3a9f4",

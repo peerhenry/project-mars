@@ -7,11 +7,19 @@ switch( arg_action )
 		room_goto(mission_control);
 		break;
 	case hud_action.toggle_menu:
-		with(gui_menu) event_user(0); // toggle menu
-		with(obj_gui_menu)
+		var menu_was_active = false;
+		with(obj_gui_menu_main) menu_was_active = is_active;
+		with(obj_gui_menu) event_user(1); //close all menus
+		if(!menu_was_active)
 		{
-			if(id != other.gui_menu) event_user(1); // close other menus
+			with(obj_gui_menu_main) event_user(0); //toggle menu
 		}
+		//todo: remove buggy code with error: "gui_menu" not set?
+		//with(gui_menu) event_user(0); // toggle menu
+		//with(obj_gui_menu)
+		//{
+		//	if(id != other.gui_menu) event_user(1); // close other menus
+		//}
 		break;
 	case hud_action.toggle_zoom:
 		scr_toggle_zoom();
