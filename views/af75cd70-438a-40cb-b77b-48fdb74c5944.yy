@@ -5,8 +5,7 @@
     "name": "af75cd70-438a-40cb-b77b-48fdb74c5944",
     "children": [
         "edebf18f-7b53-42a4-8fec-9705cc332ffb",
-        "6c3d53ee-bd25-4661-9701-33fb37ebe171",
-        "a0bed5a8-5226-416f-a9cf-0d6ff158a211"
+        "6c3d53ee-bd25-4661-9701-33fb37ebe171"
     ],
     "filterType": "GMObject",
     "folderName": "logic",

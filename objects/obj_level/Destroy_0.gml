@@ -1,1 +1,1 @@
-ds_list_destroy(objective_list);
+ds_list_destroy(trigger_list);

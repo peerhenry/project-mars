@@ -114,14 +114,12 @@ if(keyboard_check_pressed(ord("C")))
 
 if(keyboard_check_pressed(vk_numpad5))
 {
-	var enemy_count = scr_count_live_astronauts(macro_enemy);
-	show_debug_message("live enemies: " + string(enemy_count));
 	with(obj_level)
 	{
-		for(var n = 0; n < ds_list_size(objective_list); n++)
+		for(var n = 0; n < ds_list_size(trigger_list); n++)
 		{
-			var next_obj = objective_list[|n];
-			next_obj.accomplished = true;
+			var next_trigger = trigger_list[|n];
+			if(next_trigger.type == trigger_type.objective) next_trigger.accomplished = true;
 		}
 	}
 }
@@ -130,6 +128,19 @@ if(keyboard_check_pressed(vk_numpad4))
 {
 	with(obj_level)
 	{
-		show_debug_message("nr of objectives: " + string(ds_list_size(objective_list)));
+		show_debug_message("");
+		show_debug_message("### LISTING TRIGGERS ###");
+		
+		show_debug_message("nr of triggers: " + string(ds_list_size(trigger_list)));
+		for(var n = 0; n < ds_list_size(trigger_list); n++)
+		{
+			var next_trigger = trigger_list[|n];
+			var text = next_trigger.name;
+			if(next_trigger.type == trigger_type.objective) text = text + " - accomplished: " + string(next_trigger.accomplished);
+			show_debug_message(text);
+			show_debug_message("trigger count: " + string(next_trigger.trigger_count)); // DEBUG
+		}
+		
+		show_debug_message("");
 	}
 }

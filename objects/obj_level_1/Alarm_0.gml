@@ -1,6 +1,4 @@
-/*var container = global.script_container;
-var create_instance = resolve(container, "create_instance");
-script_execute(create_instance, x, y, obj_astronaut);*/
+/// @description Initialize
 
 init_create_spaceship_and_astros(30, 30);
 
