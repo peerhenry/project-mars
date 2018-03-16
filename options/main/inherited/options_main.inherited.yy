@@ -1,7 +1,8 @@
 1.0.0←ed6a955d-5826-4f98-a450-10b414266c27←ed6a955d-5826-4f98-a450-10b414266c27|{
     "option_gameguid": "b80abd30-4ec9-4a94-b888-9436419cdb71",
-    "option_lastchanged": "03 May 2017 15:12:01",
-    "option_sci_usesci": true
+    "option_lastchanged": "16 March 2018 20:56:33",
+    "option_sci_usesci": true,
+    "option_allow_game_statistics": false
 }←be5f1418-b31b-48af-a023-f04cdf6e5121|{
     "textureGroups": {
         "Additions": [
