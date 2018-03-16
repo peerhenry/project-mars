@@ -1,5 +1,9 @@
 /// @description The very first script to run on startup
 
+//todo: randomize seed?
+global.player_session_id = scr_generate_guid();
+show_debug_message("Generated player session ID: " + global.player_session_id);
+
 global.enable_trace = debug_mode;
 global.dev_env = true;
 //show_debug_message("working_directory: " + string(working_directory));
