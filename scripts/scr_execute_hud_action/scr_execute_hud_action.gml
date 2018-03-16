@@ -4,7 +4,19 @@ var arg_action = argument0;
 switch( arg_action )
 {
 	case hud_action.mission_control:
-		room_goto(mission_control);
+		if(true) //needs user confirm //todo: implement check all objectives accomplished?
+		{
+			instance_create_layer(scr_quit_to_mission_control, noone, macro_logic_layer, obj_gui_menu_confirm);
+			with(obj_gui_menu_confirm)
+			{
+				event_user(0);
+				confirm_text = "Return to Mission Control";
+			}
+		}
+		else //doesn't need confirm
+		{
+			scr_quit_to_mission_control();
+		}
 		break;
 	case hud_action.toggle_menu:
 		var menu_was_active = false;

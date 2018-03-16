@@ -13,7 +13,8 @@
         "0220550f-590a-4483-9034-37db01c07df0",
         "a240fb9f-587f-4199-b769-e35bc575a9df",
         "cb24a28d-3bee-43dd-946f-715d9e3b49a3",
-        "0a120225-07c8-4d9e-b7b7-b578a0df8c05"
+        "0a120225-07c8-4d9e-b7b7-b578a0df8c05",
+        "1a9e3ee9-4559-4ec4-b849-bfcd1f275f25"
     ],
     "filterType": "GMScript",
     "folderName": "menu",

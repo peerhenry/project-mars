@@ -14,8 +14,8 @@ global.hud_bar_button_width = 36;
 var bw = global.hud_bar_button_width;
 
 // left
-scr_add_hud_bar_sprite_button(id, 0, 0, spr_objectives, 0, false, hud_action.toggle_objectives);
-scr_add_hud_bar_sprite_button(id, bw, 0, spr_mission_control, 0, false, hud_action.mission_control);
+scr_add_hud_bar_sprite_button(id, 0, 0, spr_mission_control, 0, false, hud_action.mission_control);
+scr_add_hud_bar_sprite_button(id, bw, 0, spr_objectives, 0, false, hud_action.toggle_objectives);
 
 // right
 scr_add_hud_bar_sprite_button(id, gui_w - bw, 0, spr_menu, 0, false, hud_action.toggle_menu);

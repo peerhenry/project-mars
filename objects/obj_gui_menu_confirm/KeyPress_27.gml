@@ -1,4 +1,4 @@
 if(is_active)
 {
-	script_execute(no_callback);
+	if(script_exists(no_callback)) script_execute(no_callback);
 }
