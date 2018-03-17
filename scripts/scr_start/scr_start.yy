@@ -1,8 +1,8 @@
 {
-    "id": "51cbba67-ec07-493e-91dc-e3cce5b04e1e",
+    "id": "38c7ddfe-e1b1-4314-a622-c18137de8359",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_exit",
+    "name": "scr_start",
     "IsCompatibility": false,
     "IsDnD": false
 }

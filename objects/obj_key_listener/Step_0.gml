@@ -1,11 +1,10 @@
-if(keyboard_check_pressed(vk_f11))
+if(keyboard_check_pressed(vk_f11)) // restart
 {
-	room_goto(0); // should use fade shit
+	room_goto(0); // todo: should use fade shit
 }
 
-if(keyboard_check_pressed(vk_f12))
+if(keyboard_check_pressed(vk_f12)) // application exit
 {
-	// application quit
 	game_end();
 }
 

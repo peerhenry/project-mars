@@ -53,7 +53,6 @@ else
 			/*case menu_index.test:
 				room_goto(room_tests);*/
 			case menu_index.quit:
-				audio_stop_all();
 				game_end();
 				break;
 		}
@@ -61,4 +60,4 @@ else
 	}
 }
 
-if(keyboard_check_pressed(vk_escape)) game_end();
+if(keyboard_check_pressed(vk_escape)) game_end(); //exit via ESC-key pressed

@@ -1,11 +1,21 @@
 /// @description The very first script to run on startup
 
-//todo: randomize seed?
+scr_force_trace("Application Boot");
+scr_debug_header(scr_get_application_info());
+global.game_end_listener = instance_create_depth(0, 0, 0, obj_game_end_listener);
+
+// Set seed for builtin random generators
+randomise();
+
+// Set global game speed
+game_set_speed(30, gamespeed_fps); //todo: discuss
+
+// Generate player session ID
 global.player_session_id = scr_generate_guid();
 show_debug_message("Generated player session ID: " + global.player_session_id);
 
 global.enable_trace = debug_mode;
-global.dev_env = true;
+global.dev_env = true; //todo: via ENV var and/or external file 'dev_env.flag' present?
 //show_debug_message("working_directory: " + string(working_directory));
 
 // Set cursor sprite
@@ -73,3 +83,6 @@ global.mission_failed_return_room = room_menu;
 global.mission_control_site = noone; // used to flag when mission accomplished
 global.next_level = 1;
 global.last_level_index = 6;
+
+// Start application main route
+scr_start();

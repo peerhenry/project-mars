@@ -1,3 +1,6 @@
+// application
+#macro macro_application_title "Pioneers Mars"
+
 // # layers
 #macro macro_grid_layer "logic"
 #macro macro_logic_layer "logic"
