@@ -22,7 +22,10 @@
         "71d9f50a-c426-4f69-83d9-8087290dddce",
         "6e23ed82-ee2e-4b95-b551-3341cf415054",
         "435a3d9a-215a-4565-b4fe-ed46e149b1c4",
-        "f9d2c18c-e8dc-465e-a068-023f3d4b925d"
+        "f9d2c18c-e8dc-465e-a068-023f3d4b925d",
+        "21c68eb5-ccd2-40f2-81c1-622f1e42de48",
+        "3b5807e7-9d41-4639-8bb2-c9c42a4cf419",
+        "b9c9672b-fcb7-410f-b5e3-0cccc028f44b"
     ],
     "filterType": "GMScript",
     "folderName": "INITIALIZATION",

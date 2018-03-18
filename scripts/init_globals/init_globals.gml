@@ -96,6 +96,7 @@ global.build_time_sec_minimum = 2;
 global.build_time_sec_per_mdu = 1;
 
 // # Gameplay stuff
+global.active_constructions = ds_list_create();
 global.setup_mdu_pile_size = 1;
 global.resource_amount_metal = 200000;
 global.default_resource_amount = 10000;

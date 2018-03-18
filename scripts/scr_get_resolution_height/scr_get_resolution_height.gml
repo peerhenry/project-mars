@@ -1,1 +1,0 @@
-return global.resolution_width;

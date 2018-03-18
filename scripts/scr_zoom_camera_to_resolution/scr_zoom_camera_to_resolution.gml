@@ -1,1 +1,1 @@
-scr_resolution(global.resolution_width, global.resolution_height);
+//scr_resolution(global.window_width, global.window_height); //todo: check why implemented at all rooms?

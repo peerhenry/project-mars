@@ -1,8 +1,8 @@
 {
-    "id": "e3cb7117-98d3-4ec9-a5af-c61b65aceecd",
+    "id": "b9c9672b-fcb7-410f-b5e3-0cccc028f44b",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_get_resolution_width",
+    "name": "init_settings",
     "IsCompatibility": false,
     "IsDnD": false
 }
