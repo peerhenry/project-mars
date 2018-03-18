@@ -20,7 +20,7 @@ if(in_campaign)
 {
 	scr_add_hud_bar_sprite_button(id, 0, 0, spr_mission_control, 0, false, hud_action.mission_control);
 	scr_add_hud_bar_sprite_button(id, bw, 0, spr_objectives, 0, false, hud_action.toggle_objectives);
-{
+}
 else //todo: auto alignment to left instead of this if/else method
 {
 	scr_add_hud_bar_sprite_button(id, 0, 0, spr_objectives, 0, false, hud_action.toggle_objectives);
