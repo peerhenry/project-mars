@@ -120,6 +120,13 @@ if(keyboard_check_pressed(vk_numpad5))
 		{
 			var next_trigger = trigger_list[|n];
 			if(next_trigger.type == trigger_type.objective) next_trigger.accomplished = true;
+			if(next_trigger.object_index == obj_trigger_standard_victory){
+				with(next_trigger)
+				{
+					if(script_exists(script_trigger)) script_execute(script_trigger, id);
+					with(level) event_user(macro_trigger_callback);
+				}
+			}
 		}
 	}
 }

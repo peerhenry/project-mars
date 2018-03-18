@@ -7,8 +7,7 @@ switch(arg_entity.object_index)
 		scr_kill_astronaut(arg_entity);
 		break;
 	case obj_cart:
-		break;
 	case obj_robot:
-		// todo: add robot kill events
+		scr_kill_robot(arg_entity);
 		break;
 }

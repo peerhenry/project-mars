@@ -4,7 +4,4 @@ left = 0;
 right = 1;
 text = "button";
 hover = false;
-
-mission_accomplished = true;
-level = noone;
 return_room = room_menu;

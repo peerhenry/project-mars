@@ -6,7 +6,7 @@ draw_set_font(font_menu);
 draw_set_color(c_white);
 
 var m;
-for(m = 0; m <= menu_index_max; m++)
+for(m = 0; m < array_length_1d(menu); m++)
 {
 	draw_set_color(colors[m]);
 	

@@ -11,16 +11,16 @@ if(!script_exists(script_trigger))
 	exit;
 }
 
-// show_debug_message("obj_trigger alarm[0] for " + name); // DEBUG
-
 if(script_execute(script_condition, id))
 {
-	script_execute(script_trigger, id);
+	if(script_exists(script_trigger)) script_execute(script_trigger, id);
+	with(level) event_user(macro_trigger_callback);
 	trigger_count++;
 	if(!once && continue_after_trigger) alarm[0] = trigger_delay;
 }
 else
 {
 	if(script_exists(script_else)) script_execute(script_else, id);
+	with(level) event_user(macro_else_callback);
 	if(!once) alarm[0] = trigger_delay;
 }
