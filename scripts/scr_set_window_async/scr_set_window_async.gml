@@ -1,3 +1,13 @@
+/// @description Set window asynchronous via obj_window_setter
+/// @arg width
+/// @arg height
+/// @arg fullscreen
+/// @arg aa_level
+/// @arg vsync
+/// @arg display_x
+/// @arg display_y
+/// @arg callback
+
 var arg_width = argument0;
 var arg_height = argument1;
 var arg_fullscreen = argument2;

@@ -3,6 +3,8 @@
 var arg_width = argument0;
 var arg_height = argument1;
 
+//todo: this method is obsolete?
+
 var window_x = global.window_x;
 var window_y = global.window_y;
 
