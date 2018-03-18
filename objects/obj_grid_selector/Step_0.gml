@@ -1,7 +1,7 @@
 /// @description reset global.selected_grid
 event_inherited();
 
-// todo: remove
+// todo: remove this grid selection logic, put it somewhere else
 /*
 if(is_selected)
 {

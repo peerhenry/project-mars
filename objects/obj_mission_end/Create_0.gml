@@ -1,5 +1,6 @@
-var panel = scr_create_panel(x - 360, y - 90, x + 360, y + 170);
+with(obj_gui_menu) event_user(1); //close all menus
 
+var panel = scr_create_panel(x - 360, y - 90, x + 360, y + 170);
 // create continue button
 button = instance_create_layer(x, y + 130, "logic", obj_gui_end_level_button);
 with(button)

@@ -1,0 +1,3 @@
+/// @description Escape
+
+// Intentionally empty

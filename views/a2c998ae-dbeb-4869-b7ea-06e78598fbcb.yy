@@ -8,7 +8,8 @@
         "3bc9cb73-c5b1-499c-9206-25761b1b0fb4",
         "6b9e99bf-24b8-406c-b1d1-1af8138ce7e0",
         "37305cd7-3537-4fc0-b50d-e94477d3f2ba",
-        "108dc22c-3b8e-4854-9f37-9d8543b1a3da"
+        "108dc22c-3b8e-4854-9f37-9d8543b1a3da",
+        "e0e86bbb-47dd-45b4-95e7-6eaac5cc4148"
     ],
     "filterType": "GMScript",
     "folderName": "GAMEPLAY",

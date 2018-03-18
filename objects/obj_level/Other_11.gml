@@ -1,1 +1,3 @@
-/// @description Mission failed
+/// @description Defeat Callback
+
+// intentionally empty

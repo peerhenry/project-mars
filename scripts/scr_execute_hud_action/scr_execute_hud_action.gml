@@ -4,21 +4,13 @@ var arg_action = argument0;
 switch( arg_action )
 {
 	case hud_action.mission_control:
-		if(true) //needs user confirm //todo: implement check all objectives accomplished?
-		{
-			instance_create_layer(scr_quit_to_mission_control, noone, macro_logic_layer, obj_gui_menu_confirm);
-			with(obj_gui_menu_confirm)
-			{
-				event_user(0);
-				confirm_text = "Return to Mission Control";
-			}
-		}
-		else //doesn't need confirm
-		{
-			scr_quit_to_mission_control();
-		}
+		room_persistent = true;
+		global.mission_control_return_room = room;
+		room_goto(mission_control);
+		//todo: check unused scr_quit_to_mission_control?
 		break;
 	case hud_action.toggle_menu:
+		with(obj_mission_end) exit;
 		var menu_was_active = false;
 		with(obj_gui_menu_main) menu_was_active = is_active;
 		with(obj_gui_menu) event_user(1); //close all menus

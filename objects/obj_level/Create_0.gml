@@ -1,6 +1,12 @@
-global.mission_accomplished_return_room = mission_control;
+global.mission_accomplished_return_room = room_menu;
 global.mission_failed_return_room = room_menu;
-if(global.next_level == global.last_level_index) global.mission_accomplished_return_room = room_credits;
-site = global.mission_control_site;
 alarm[0] = 1;
-objective_list = ds_list_create();
+trigger_list = ds_list_create();
+
+// Always make sure these macros correspond to the proper user events
+#macro macro_victory_callback 0
+#macro macro_defeat_callback 1
+
+// Triggers will always make a callback to level, usage is optional
+#macro macro_trigger_callback 2
+#macro macro_else_callback 3

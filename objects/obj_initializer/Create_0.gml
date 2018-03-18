@@ -6,6 +6,8 @@ alarm[0] = 2;
 
 var singletons = ds_list_create();
 ds_list_add(singletons, obj_map_initializer);
+var level = global.level_object_index;
+if(level != noone) ds_list_add(singletons, level);
 ds_list_add(singletons, obj_music);
 ds_list_add(singletons, obj_sensor_range_draw);
 ds_list_add(singletons, obj_surface_renderer);
@@ -14,7 +16,6 @@ ds_list_add(singletons, obj_view_mover);
 ds_list_add(singletons, obj_key_listener);
 ds_list_add(singletons, obj_HUD);
 ds_list_add(singletons, obj_noise_shader);
-ds_list_add(singletons, obj_level_set);
 if(global.dev_env)
 {
 	ds_list_add(singletons, obj_key_listener_DEBUG);
