@@ -1,4 +1,4 @@
 if(hover)
 {
-	room_goto(return_room);
+	scr_exit_level_to(return_room);
 }

@@ -4,9 +4,12 @@ var arg_action = argument0;
 switch( arg_action )
 {
 	case hud_action.mission_control:
+		room_persistent = true;
+		global.mission_control_return_room = room;
 		room_goto(mission_control);
 		break;
 	case hud_action.toggle_menu:
+		with(obj_mission_end) exit;
 		var menu_was_active = false;
 		with(obj_gui_menu_main) menu_was_active = is_active;
 		with(obj_gui_menu) event_user(1); //close all menus

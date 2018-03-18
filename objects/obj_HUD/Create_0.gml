@@ -15,7 +15,9 @@ var bw = global.hud_bar_button_width;
 
 // left
 scr_add_hud_bar_sprite_button(id, 0, 0, spr_objectives, 0, false, hud_action.toggle_objectives);
-scr_add_hud_bar_sprite_button(id, bw, 0, spr_mission_control, 0, false, hud_action.mission_control);
+var in_campaign = false;
+with(obj_level) in_campaign = scr_instance_inherits(id, obj_level_campaign);
+if(in_campaign) scr_add_hud_bar_sprite_button(id, bw, 0, spr_mission_control, 0, false, hud_action.mission_control);
 
 // right
 scr_add_hud_bar_sprite_button(id, gui_w - bw, 0, spr_menu, 0, false, hud_action.toggle_menu);
@@ -135,8 +137,6 @@ ap_offset = ap_h + 4;
 ap_origin_left = gui_w - (ap_w + ap_margin);
 ap_origin_top = 40;
 health_bar_color = global.health_bar_color;
-double_click_timer = 0;
-double_click_astro = noone;
 hover_astro = noone;
 hover_part = hud_part.none;
 
