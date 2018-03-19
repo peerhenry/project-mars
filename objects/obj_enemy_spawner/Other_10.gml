@@ -35,17 +35,12 @@ repeat(wave_size)
 	var target = noone;
 	with(obj_astronaut)
 	{
-		if(owner == macro_player) target = id;
-		break;
+		if(owner == macro_player){
+			target = id;
+			break;
+		}
 	}
 	if(target != noone) scr_attack(enemy, target);
-	
-/*	with(enemy)
-	{
-		path_endaction = path_action_stop;
-		path_add_point(path, room_width/2, room_height/2, 100);
-		path_start(path, movement_speed, path_action_stop, false);
-	}*/
 }
 wave_number++;
 
