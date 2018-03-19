@@ -1,8 +1,8 @@
 {
-    "id": "3b5807e7-9d41-4639-8bb2-c9c42a4cf419",
+    "id": "a96c4790-c248-4078-ae30-8555208f54e5",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "init_audio",
+    "name": "scr_hex_to_dec",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -1,8 +1,8 @@
 {
-    "id": "b9c9672b-fcb7-410f-b5e3-0cccc028f44b",
+    "id": "34c88e7a-050e-48d9-9e80-4f56b15e1863",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "init_settings",
+    "name": "scr_debug_supported_aa_levels",
     "IsCompatibility": false,
     "IsDnD": false
 }

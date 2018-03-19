@@ -5,5 +5,5 @@ with(obj_gui_menu)
 }
 with(argument0)
 {
-	event_user(0); // open argument menu
+	event_user(0); // open argument menu //todo: properly create and destroy
 }

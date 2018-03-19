@@ -1,1 +1,1 @@
-show_message("todo load");
+show_message("todo load game");

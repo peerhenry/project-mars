@@ -1,5 +1,5 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Toggle shader (vk_alt)
+
 use_shader=!use_shader;
 if(use_shader)
 {

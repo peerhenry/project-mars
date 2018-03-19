@@ -36,7 +36,7 @@ scr_add_hud_bar_sprite_button(id, gui_w - bw*5, 0, spr_zoom_button, 0, true, hud
 
 // minimap
 minimap = instance_create_layer(0, hud_bar_h, macro_logic_layer, obj_HUD_minimap);
-minimap.x = window_get_width() - minimap.width; //anchor to right
+minimap.x = gui_w - minimap.width; //anchor to right
 minimap_is_active = true;
 
 // outliner: todo: remove obsolete stuff
@@ -72,7 +72,7 @@ y_offset = 64; // offset for build buttons
 y_spacing = 0;
 x_offset = padding;
 
-// -- Construction panel --
+// -- Construction panel -- //todo: via dynamic container which anchors to bottom
 
 item_count = 0;
 // var left = x_offset;
@@ -122,6 +122,7 @@ options_menu = instance_create_layer(-500, 500, macro_logic_layer, obj_gui_menu_
 sound_menu = instance_create_layer(-500, 500, macro_logic_layer, obj_gui_menu_sound);
 controls_menu = instance_create_layer(-500, 500, macro_logic_layer, obj_gui_menu_controls);
 // confirm_dialog = instance_create_layer(-500, 500, macro_logic_layer, obj_gui_menu_confirm);
+debug_menu = instance_create_layer(-500, 500, macro_logic_layer, obj_gui_menu_debug);
 
 // -- Resource panel settings --
 resources_left = 480;

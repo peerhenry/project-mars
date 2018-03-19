@@ -1,15 +1,13 @@
 // application
 #macro macro_application_title			"Pioneers Mars"
 #macro macro_init_game_speed			30
-#macro macro_init_window_width			1280 //1920
-#macro macro_init_window_height			720 //1080
+#macro macro_init_window_width			1920 //-1 = auto display width
+#macro macro_init_window_height			1080 //-1 = auto display height
 #macro macro_init_window_fullscreen		false
-#macro macro_init_window_aa_level		9
+#macro macro_init_window_aa_level		0
 #macro macro_init_window_vsync			false
-//#macro macro_init_window_x				(display_get_width() - macro_init_window_width) / 2
-//#macro macro_init_window_y				(display_get_height() - macro_init_window_height) / 2
-#macro macro_init_window_x				-2 //-2 = auto center
-#macro macro_init_window_y				-2 //-2 = auto center
+#macro macro_init_window_x				-2 //-2 = auto display center
+#macro macro_init_window_y				-2 //-2 = auto display middle
 
 #macro macro_window_max_width			-1
 #macro macro_window_max_height			-1

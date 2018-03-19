@@ -1,0 +1,1 @@
+if(is_active) scr_goto_menu(obj_gui_menu_main);

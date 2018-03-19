@@ -11,7 +11,7 @@
 /// @arg hud_action
 var hud = argument0;
 var l = argument1;
-var r = argument2;
+var r = argument2; //todo: should change to use x,y, width and height as to simplify relative coordinates (anchoring) and updating them on window resize
 var t = argument3;
 var b = argument4;
 var font = argument5;

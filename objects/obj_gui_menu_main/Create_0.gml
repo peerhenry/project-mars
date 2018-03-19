@@ -7,4 +7,5 @@ button_objects = [
 	["Exit to Main Menu", scr_handle_quit],
 	["Exit to Desktop", scr_handle_exit]
 ];
+if(global.dev_env) button_objects[array_length_1d(button_objects)] = ["Debug", scr_goto_menu, obj_gui_menu_debug];
 event_user(2); // initialize menu

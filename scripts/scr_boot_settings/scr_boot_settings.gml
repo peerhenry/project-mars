@@ -2,13 +2,14 @@
 
 if(file_exists(macro_settings_file))
 {
-	if(true) //reinitialize settings
+	if(false) //reinitialize settings //todo: this, via flag?
 	{
-		scr_force_trace("Reinitializing settings file: " + macro_settings_file);
+		show_debug_message("Reinitializing settings file: " + macro_settings_file);
 		file_delete(macro_settings_file);
 	}
-	else scr_force_trace("Using settings file: " + macro_settings_file);
+	else show_debug_message("Loading settings file: " + macro_settings_file);
 }
+else show_debug_message("Initializing settings file: " + macro_settings_file);
 
 settings = ds_map_create();
 

@@ -9,3 +9,7 @@ global.default_owner = macro_player;
 // debug finish construction for example results in ownership to this value
 // test if this is also true for astronauts making the construction themselves
 // and think about a good pattern for all of this ownership magic
+
+// Tim: can't construction have an owner already?
+// astros should be able to only work on their own constructions? and how about alliances?
+// is construction progress related to amount of hitpoints in case of enemy fire damage?

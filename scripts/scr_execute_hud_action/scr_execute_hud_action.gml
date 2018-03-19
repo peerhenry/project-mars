@@ -7,7 +7,6 @@ switch( arg_action )
 		room_persistent = true;
 		global.mission_control_return_room = room;
 		room_goto(mission_control);
-		//todo: check unused scr_quit_to_mission_control?
 		break;
 	case hud_action.toggle_menu:
 		with(obj_mission_end) exit;

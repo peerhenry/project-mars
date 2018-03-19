@@ -1,3 +1,10 @@
+if(gui_w != display_get_gui_width() || gui_h != display_get_gui_height()) //update responsive screen positions
+{
+	gui_w = display_get_gui_width();
+	gui_h = display_get_gui_height();
+	minimap.x = gui_w - minimap.width; //anchor to right
+}
+
 if(global.mousedrag_from == mousedrag_from.world) exit; //prevent hover when dragging into from outside
 
 var window_mouse_x = window_mouse_get_x();

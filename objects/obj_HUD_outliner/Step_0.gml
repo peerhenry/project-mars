@@ -1,3 +1,26 @@
+if(gui_w != display_get_gui_width() || gui_h != display_get_gui_height()) //update responsive screen positions
+{
+	gui_w = display_get_gui_width();
+	gui_h = display_get_gui_height();
+
+	//anchor everything to right //todo: via dynamic container
+	tab_astro_left = gui_w - tab_w;
+	tab_astro_right = gui_w;
+
+	tab_robot_left = gui_w - tab_w;
+	tab_robot_right = gui_w;
+
+	tab_cart_left = gui_w - tab_w;
+	tab_cart_right = gui_w;
+
+	text_left = gui_w - tab_w + 4;
+	
+	with(obj_HUD_entity_panel)
+	{
+		left = other.gui_w - other.tab_w;
+	}
+}
+
 if(global.mousedrag_from == mousedrag_from.world) exit; //prevent hover when dragging into from outside
 
 var window_mouse_x = window_mouse_get_x();
