@@ -151,3 +151,12 @@ if(keyboard_check_pressed(vk_numpad4))
 		show_debug_message("");
 	}
 }
+
+if(keyboard_check_pressed(vk_numpad1))
+{
+	with(obj_astronaut)
+	{
+		food_level = 1;
+		sleep_level = 1;
+	}
+}
