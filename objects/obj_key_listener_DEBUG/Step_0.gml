@@ -156,6 +156,12 @@ if(keyboard_check_pressed(vk_numpad1))
 {
 	with(obj_astronaut)
 	{
+		show_debug_message("");
+		show_debug_message("food_level " + string(food_level));
+		show_debug_message("floor(food_level) " + string(floor(food_level)));
+		show_debug_message("");
+		show_debug_message("sleep_level " + string(sleep_level));
+		show_debug_message("floor(sleep_level) " + string(floor(sleep_level)));
 		food_level = 1;
 		sleep_level = 1;
 	}

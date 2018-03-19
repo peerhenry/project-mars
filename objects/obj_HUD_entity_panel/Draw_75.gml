@@ -6,7 +6,7 @@ if(hover)
 	var gui_y = window_mouse_get_y();
 	if(gui_x < left + need_bar_offset)
 	{
-		scr_draw_tooltip("health: " + string(floor(entity.entity_health)) + "/100");
+		scr_draw_tooltip("health: " + string(ceil(entity.entity_health)) + "/100");
 	}
 	else
 	{
@@ -16,22 +16,22 @@ if(hover)
 		var next_bar_right = next_bar_left + need_bar_width;
 		if(gui_x >= next_bar_left && gui_x <= next_bar_right)
 		{
-			if(is_astro) scr_draw_tooltip( "food: " + string(floor(entity.food_level)) + "/100");
-			else if(entity.object_index == obj_robot) scr_draw_tooltip( "battery charge: " + string(floor(entity.battery_charge)) + "/100");
+			if(is_astro) scr_draw_tooltip( "food: " + string(ceil(entity.food_level)) + "/100");
+			else if(entity.object_index == obj_robot) scr_draw_tooltip( "battery charge: " + string(ceil(entity.battery_charge)) + "/100");
 			exit;
 		}
 		next_bar_left = next_bar_right + need_bar_space;
 		next_bar_right = next_bar_left + need_bar_width;
 		if(gui_x >= next_bar_left && gui_x <= next_bar_right && is_astro)
 		{
-			scr_draw_tooltip( "sleep: " + string(floor(entity.sleep_level)) + "/100");
+			scr_draw_tooltip( "sleep: " + string(ceil(entity.sleep_level)) + "/100");
 			exit;
 		}
 		next_bar_left = next_bar_right + need_bar_space;
 		next_bar_right = next_bar_left + need_bar_width;
 		if(gui_x >= next_bar_left && gui_x <= next_bar_right && is_astro && entity.wears_suit)
 		{
-			scr_draw_tooltip( "suit oxygen: " + string(floor(entity.suit_oxygen)) + "/100");
+			scr_draw_tooltip( "suit oxygen: " + string(ceil(entity.suit_oxygen)) + "/100");
 			exit;
 		}
 		
