@@ -5,16 +5,6 @@
     "name": "obj_back_button",
     "eventList": [
         {
-            "id": "058421c3-55d0-4d78-bcba-e4d25e10da52",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 8,
-            "m_owner": "9c1d8ebc-6ade-464f-8ccf-0ee0c81d85e3"
-        },
-        {
             "id": "8eb31fab-af40-4603-b40b-fdaa323a235a",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -22,6 +12,16 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 4,
             "eventtype": 6,
+            "m_owner": "9c1d8ebc-6ade-464f-8ccf-0ee0c81d85e3"
+        },
+        {
+            "id": "b73ed7b4-b388-4770-830f-89fa1d955e34",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
             "m_owner": "9c1d8ebc-6ade-464f-8ccf-0ee0c81d85e3"
         }
     ],
