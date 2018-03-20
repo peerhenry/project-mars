@@ -1,3 +1,8 @@
+/// @description Read/overwrite key in section
+/// @arg section
+/// @arg key
+/// @arg value
+
 var arg_section = argument0;
 var arg_key = argument1;
 var arg_value = argument2;

@@ -1,1 +1,0 @@
-global.room_is_transitioning = false;

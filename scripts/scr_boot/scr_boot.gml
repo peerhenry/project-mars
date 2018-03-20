@@ -9,7 +9,11 @@ global.dev_env = false;
 if(environment_get_variable("__PIONEERS_DEV") != "") global.dev_env = true;
 else if(file_exists("dev_env.flag")) global.dev_env = true;
 
-scr_debug_header(scr_get_application_info());
+//todo: implement/print gml_release_mode
+
+// Print info to log
+debug_format_header(scr_get_application_info());
+show_debug_message("runtime version: " + GM_runtime_version);
 show_debug_message("program_directory: " + string(program_directory));
 show_debug_message("working_directory: " + string(working_directory));
 //show_debug_message("temp_directory: " + string(temp_directory));
@@ -22,7 +26,7 @@ scr_boot_settings();
 global.random_seed = randomise();
 
 // Set global game speed
-game_set_speed(macro_init_game_speed, gamespeed_fps); //todo: discuss
+game_set_speed(default_game_speed, gamespeed_fps);
 
 // Generate player session ID
 global.player_session_id = scr_generate_guid();
@@ -30,5 +34,5 @@ show_debug_message("Generated player session ID: " + global.player_session_id);
 //todo: send app start statistic to server?
 
 // Set window async and callback scr_preloader
-scr_boot_window();
-exit; //last line of code
+scr_boot_window(); //important: needs to be last line of code
+exit;

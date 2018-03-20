@@ -1,8 +1,8 @@
 {
-    "id": "51183cf0-6135-4c95-a626-c1c71c2bf44e",
+    "id": "39474c50-3051-4603-a824-db3b3e297f65",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_set_window_async",
+    "name": "macro_keys",
     "IsCompatibility": false,
     "IsDnD": false
 }

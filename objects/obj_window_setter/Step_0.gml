@@ -19,7 +19,7 @@ switch(step_number)
 
     default:
 		scr_trace("obj_window_setter: instance_destroy");
-		scr_debug_window_info();
+		debug_window_info();
         instance_destroy();
 		if(script_exists(callback)) script_execute(callback);
         break;

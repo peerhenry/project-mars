@@ -1,4 +1,4 @@
-/// @description Initialize gamewide globals
+/// @description Initialize level globals
 
 global.init_stage = true;
 global.hovering_over_HUD = false;

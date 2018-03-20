@@ -5,23 +5,23 @@
 ## PREFIXES
 
 resources are prefixed as follows:
-Resource				Prefix
-Sprites					spr_
-Scripts					scr_
-Objects					obj_
-macro					macro_
-Initialization script	init_
-Script arguments		arg_
+Resource						Prefix
+Sprites							spr_
+Scripts							scr_
+Scripts (boot)					scr_boot_
+Scripts (preload)				scr_preload_
+Scripts (level init)			init_
+Scripts (debug)					debug_			//todo: rename files in /debug/ accordingly
+Scripts (test)					test_
+Scripts (assert)				assert_
+Objects							obj_
+macro (general)					macro_
+macro (for map keys)			key_
+macro (for defaults)			default_
+Script arguments				arg_
 
 
 ## SCRIPTS
 
 - to avoid copying arrays on write, always use the character @ when writing to an array.
 my_array[@22] = 139;
-
-Scripts may get a different prefix if they have any of the following specific purposed:
-
-Purpose					Prefix
-Debugging				debug_
-Testing					test_
-Asserting				assert_

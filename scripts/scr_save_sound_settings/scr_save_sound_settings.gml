@@ -1,9 +1,9 @@
 ini_open(macro_settings_file);
 
-var ini_volume_master = ini_read_real("sound", "master", macro_master_default);
-var ini_volume_voice = ini_read_real("sound", "voice", macro_voice_default);
-var ini_volume_sfx = ini_read_real("sound", "sfx", macro_sfx_default);
-var ini_volume_music = ini_read_real("sound", "music", macro_music_default);
+var ini_volume_master = ini_read_real("sound", "master", default_sound_volume_master);
+var ini_volume_voice = ini_read_real("sound", "voice", default_sound_volume_voice);
+var ini_volume_sfx = ini_read_real("sound", "sfx", default_sound_volume_sfx);
+var ini_volume_music = ini_read_real("sound", "music", default_sound_volume_music);
 
 var volume_master = round(audio_get_master_gain(0)*100);
 var volume_voice = global.voice_volume;

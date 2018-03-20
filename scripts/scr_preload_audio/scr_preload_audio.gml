@@ -1,10 +1,10 @@
 /// @description Audio initializer called at boot only
 
 var settings = global.settings;
-var volume_master = settings[? "volume_master"];
-var volume_voice = settings[? "volume_voice"];
-var volume_sfx = settings[? "volume_sfx"];
-var volume_music = settings[? "volume_music"];
+var volume_master = settings[? key_settings_sound_volume_master];
+var volume_voice = settings[? key_settings_sound_volume_voice];
+var volume_sfx = settings[? key_settings_sound_volume_sfx];
+var volume_music = settings[? key_settings_sound_volume_music];
 
 // # load audio groups
 audio_group_load(audiogroup_voice);
