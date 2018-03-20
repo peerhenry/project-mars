@@ -13,7 +13,7 @@
         "bd7dccff-7cda-4347-9929-b5d08c275f4d"
     ],
     "filterType": "GMObject",
-    "folderName": "astronauts",
+    "folderName": "entities",
     "isDefaultView": false,
     "localisedFolderName": ""
 }
