@@ -38,7 +38,7 @@ with(arg_component)
 	{
 		with(obj_HUD_details_panel)
 		{
-			scr_execute_details_panel_action(id, other.action);
+			scr_execute_details_panel_action(arg_component, id, other.action);
 		}
 	}
 }

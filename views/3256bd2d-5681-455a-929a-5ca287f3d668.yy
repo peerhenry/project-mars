@@ -8,6 +8,7 @@
         "f45f22df-a053-4804-910b-1fb31f179f3c",
         "ec5bdffd-41f8-4ae6-a194-6133e6428ad4",
         "f8d00176-a052-4753-b805-cb4f1f947c1d",
+        "089cd622-3c0e-4150-a6d3-e33465c99da7",
         "5c13a2dd-185d-4038-b6d6-ceb1e33c260d"
     ],
     "filterType": "GMScript",

@@ -161,6 +161,20 @@ with(arg_details_panel)
 				val_label.tooltip_text = "Value of the role in the grid";
 				ds_list_add(component_list, val_label);
 				
+				// grid button
+				var grid = scr_get_grid(unit, grid_type);
+				var grid_btn = scr_create_grid_details_button(
+					unit, 
+					right - padding - 24, 
+					next_y_offset, 
+					24, 
+					24, 
+					spr_auto_attack_small, // todo: make dedicated icon for this
+					grid
+				);
+				grid_btn.tooltip_text = "Show grid details";
+				ds_list_add(component_list, grid_btn);
+				
 				next_y_offset += line_height;
 			}
 		}

@@ -34,3 +34,5 @@ colors[menu_index.settings] = c_white;
 colors[menu_index.skirmish] = c_white;
 colors[menu_index.debug] = c_white;
 //colors[menu_index.test] = c_gray;
+
+global.mission_control_return_room = room_menu;
