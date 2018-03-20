@@ -6,6 +6,10 @@ if(global.music_is_playing)
 global.mission_is_active = false;
 room_persistent = false;
 
+with(obj_constructable)
+{
+	instance_destroy();
+}
 with(all)
 {
 	instance_destroy();
