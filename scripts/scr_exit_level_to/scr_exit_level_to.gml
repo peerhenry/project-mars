@@ -5,4 +5,10 @@ if(global.music_is_playing)
 }
 global.mission_is_active = false;
 room_persistent = false;
-room_goto(argument0);
+
+with(all)
+{
+	instance_destroy();
+}
+
+room_goto(argument0); // todo: find all places where this is called, check for memory leaks

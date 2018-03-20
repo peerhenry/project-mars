@@ -10,6 +10,6 @@ with(arg_astronaut)
 	else
 	{
 		food_level -= global.hunger_speed;
-		if(food_level < 0) food_level  = 0;
+		if(food_level <= 0) food_level = 0;
 	}
 }

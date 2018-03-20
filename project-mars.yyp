@@ -7775,6 +7775,14 @@
             }
         },
         {
+            "Key": "b9ecbbf7-76ac-4769-8af3-4cef97916200",
+            "Value": {
+                "id": "e1d14dd3-0469-48a5-b0c4-201a5122e4d5",
+                "resourcePath": "sprites\\spr_worm\\spr_worm.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ba1dece1-72bd-4f6e-a873-50d784a45340",
             "Value": {
                 "id": "0bd16b3d-c4c5-41fc-8f06-b9836b3a0986",
@@ -8783,6 +8791,14 @@
             }
         },
         {
+            "Key": "cf56156f-ead6-488e-aa43-ca8d4a9243a8",
+            "Value": {
+                "id": "58fcc29a-3d51-468b-b216-437fd3d207a8",
+                "resourcePath": "sprites\\spr_worm_sensor_alert\\spr_worm_sensor_alert.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "cf75b1cd-9dec-40c6-b9ce-7970398ed03b",
             "Value": {
                 "id": "06836d51-7999-41e4-88c7-edbfbb6fc93f",
@@ -9156,6 +9172,14 @@
                 "id": "f474381a-dcf9-4cd0-9ed6-266797398e55",
                 "resourcePath": "views\\d698b476-1b3c-481a-a882-510d5d525e5c.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "d75f5d0d-1107-4039-a3ed-241334d5404b",
+            "Value": {
+                "id": "a60cde9e-8cb4-4c18-bdbb-a3433c3fa749",
+                "resourcePath": "sprites\\spr_base_tile_broken\\spr_base_tile_broken.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -10412,6 +10436,14 @@
                 "id": "037cda61-e191-405d-9e4f-989cc9b94a6b",
                 "resourcePath": "scripts\\scr_cancel_all_cart\\scr_cancel_all_cart.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "f66242a3-36de-4e28-955b-e0a582c3eb19",
+            "Value": {
+                "id": "7b5c57b6-3c4c-4218-9f76-765bc5aaf4f8",
+                "resourcePath": "sprites\\spr_worm_basetile_bump\\spr_worm_basetile_bump.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

@@ -34,7 +34,7 @@ var healthbar_x = panel_left + padding;
 var healthbar_y = panel_bottom - 2 - padding;
 var hc = health_color;
 if(entity.entity_health < 20) hc = c_red;
-else if(entity.entity_health < 100) hc = c_yellow;
+else if(entity.entity_health < 50) hc = c_yellow;
 draw_healthbar(healthbar_x, healthbar_y, healthbar_x + need_bar_offset - padding, healthbar_y + 2, entity.entity_health, c_black, hc, hc, 0, true, true);
 
 #endregion

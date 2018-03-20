@@ -9,5 +9,5 @@ with(arg_astronaut)
 		movement_speed = scr_calculate_movement_speed(sleep_level);
 	}
 	if(sleep_level > 0) sleep_level -= dE;
-	else if(sleep_level < 0) sleep_level = 0;
+	if(sleep_level <= 0) sleep_level = 0;
 }
