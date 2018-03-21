@@ -1,0 +1,1 @@
+if(instance_exists(tooltip_data)) instance_destroy(tooltip_data);

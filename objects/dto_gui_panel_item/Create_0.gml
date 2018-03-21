@@ -1,4 +1,5 @@
 #region enums
+
 enum details_panel_component_class
 {
 	text,		// pure text
@@ -23,12 +24,15 @@ enum details_panel_action
 enum unit_prop
 {
 	none,
-	health_integrity,
+	health_integrity, // todo: this is to become obsolete
+	entity_health,
+	integrity,
 	sleep,
 	food,
 	battery_charge,
 	suit_oxygen
 }
+
 #endregion
 
 hover = false;
@@ -44,7 +48,7 @@ down = 0;
 width = 0;
 height = 0;
 
-tooltip_text = "";
+tooltip_text = ""; // todo: refactor to dto_tooltip
 
 // for: text, label & text_button
 font = font_small;

@@ -18,7 +18,7 @@ if(!hovering_over_gui)
 			hovering_over_gui = true;
 			break;
 		}
-	}	
+	}
 }
 
 if(!hovering_over_gui)
