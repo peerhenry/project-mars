@@ -11,12 +11,14 @@ if(position_meeting(mouse_x, mouse_y, self))
 	{
 		var y_incr = sprite_get_height(spr_dropdown);
 		var yy = y + y_incr - 2;
-		for(var n = 0; n < ds_list_size(item_labels); n++)
+		var list = global.window[? key_window_resolutions_list];
+		for(var i = 0; i < ds_list_size(list); i++)
 		{
-			var item = instance_create_layer(x, yy, layer, obj_res_dropdown_item);
-			item.text = ds_list_find_value(item_labels, n);
-			item.width = ds_list_find_value(item_widths, n);
-			item.height = ds_list_find_value(item_heights, n);
+			var list_item = list[|i];
+			var dropdown_item = instance_create_layer(x, yy, layer, obj_res_dropdown_item);
+			dropdown_item.text = string(list_item[0]) + " x " + string(list_item[1]); //todo: refactor format "width x height"
+			dropdown_item.width = list_item[0];
+			dropdown_item.height = list_item[1];
 			yy += y_incr - 2;
 		}
 	}

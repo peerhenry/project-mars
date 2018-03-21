@@ -1,38 +1,33 @@
 /// @arg hud
-/// @arg left
-/// @arg right
-/// @arg top
-/// @arg bottom
+/// @arg arg_x
+/// @arg arg_y
 /// @arg font
 /// @arg text
-/// @arg text_x
-/// @arg text_y
+/// @arg padding_x
+/// @arg padding_y
 /// @arg sprite
 /// @arg hud_action
 var hud = argument0;
-var l = argument1;
-var r = argument2; //todo: should change to use x,y, width and height as to simplify relative coordinates (anchoring) and updating them on window resize
-var t = argument3;
-var b = argument4;
-var font = argument5;
-var text = argument6;
-var text_x = argument7;
-var text_y = argument8;
-var sprite = argument9;
-var arg_action = argument10;
+var arg_x = argument1;
+var arg_y = argument2;
+var font = argument3;
+var text = argument4;
+var padding_x = argument5;
+var padding_y = argument6;
+var sprite = argument7;
+var arg_action = argument8;
 
-var new_button = instance_create_depth(0,0,0,dto_hud_bar_button);
+//todo: refactor all scr_add_hud_b*() funcs
+
+var new_button = instance_create_depth(arg_x, arg_y, 0, dto_hud_bar_button);
 new_button.sprite = sprite;
 new_button.font = font;
 new_button.text = text;
-new_button.text_x = text_x;
-new_button.text_y = text_y;
-new_button.top = t;
-new_button.bottom = b;
-new_button.left = l;
-new_button.right = r;
-new_button.width = r-l;
-new_button.height = b-t;
+new_button.padding_x = padding_x;
+new_button.padding_y = padding_y;
+new_button.width = 36; //todo: auto size for text content
+new_button.height = 36; //todo: non hardcoded values for x/y?
+new_button.anchor = 0;
 new_button.action = arg_action;
 new_button.active = false;
 new_button.color_top = c_teal;
@@ -42,29 +37,36 @@ new_button.color_hover_bottom = c_ltgray;
 new_button.color_down_top = c_dkgray;
 new_button.color_down_bottom = c_black;
 
-// set tooltip based on action
+// set tooltip and anchor based on action
 switch(arg_action)
 {
 	case hud_action.toggle_objectives:
 		new_button.tooltip_text = "Objectives";
+		new_button.anchor = -1;
 		break;
 	case hud_action.mission_control:
 		new_button.tooltip_text = ("Mission control");
+		new_button.anchor = -1;
 		break;
 	case hud_action.toggle_menu:
 		new_button.tooltip_text = ("Menu");
+		new_button.anchor = 1;
 		break;
 	case hud_action.toggle_outliner:
 		new_button.tooltip_text = ("Toggle outliner");
+		new_button.anchor = 1;
 		break;
 	case hud_action.toggle_minimap:
 		new_button.tooltip_text = ("Toggle minimap");
+		new_button.anchor = 1;
 		break;
 	case hud_action.toggle_high_walls:
 		new_button.tooltip_text = ("Toggle high walls");
+		new_button.anchor = 1;
 		break;
 	case hud_action.toggle_zoom:
 		new_button.tooltip_text = ("Toggle zoom");
+		new_button.anchor = 1;
 		break;
 }
 

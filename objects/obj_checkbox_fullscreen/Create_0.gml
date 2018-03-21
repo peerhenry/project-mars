@@ -1,4 +1,4 @@
 event_inherited();
 label.text = "Fullscreen";
-checked = global.window_fullscreen;
+checked = window_get_fullscreen();
 image_index = checked;

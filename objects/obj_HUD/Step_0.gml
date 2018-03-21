@@ -1,8 +1,19 @@
-if(gui_w != display_get_gui_width() || gui_h != display_get_gui_height()) //update responsive screen positions
+if(gui_w != display_get_gui_width()) //update responsive horizontal screen positions
 {
 	gui_w = display_get_gui_width();
 	gui_h = display_get_gui_height();
 	minimap.x = gui_w - minimap.width; //anchor to right
+	
+	var btns_left = 0;
+	var btns_right = 0;
+	for(var i = 0; i < ds_list_size(buttons); i++) //todo: should change to use x,y, width and height as to simplify relative coordinates
+	{
+		var button = buttons[|i];
+		if(button.anchor == 0) continue; //fixed position //todo: shift to scaled relative horizontal position?
+		
+		if(button.anchor == -1) button.x = btns_left++ * button.width; //anchor left //todo: what about text btns with variable size?
+		else if(button.anchor == 1) button.x = gui_w - (++btns_right * button.width); //anchor right
+	}
 }
 
 if(global.mousedrag_from == mousedrag_from.world) exit; //prevent hover when dragging into from outside
@@ -21,10 +32,10 @@ for(var n = 0; n < ds_list_size(buttons); n++)
 {
 	var button = buttons[| n];
 	var hover = 
-		window_mouse_x > button.left
-		&& window_mouse_x < button.right
-		&& window_mouse_y > button.top
-		&& window_mouse_y < button.bottom
+		window_mouse_x > button.x
+		&& window_mouse_x < button.x + button.width
+		&& window_mouse_y > button.y
+		&& window_mouse_y < button.y + button.height
 	if(hover)
 	{
 		hovers = true;

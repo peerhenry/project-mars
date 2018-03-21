@@ -14,16 +14,14 @@ var arg_toggle_subimg = argument5;
 var arg_action = argument6;
 
 var button = scr_add_hud_button_ext(
-	hud, 
-	arg_x, 
-	arg_x + 36, 
-	arg_y, 
-	arg_y + 36, 
-	noone, 
-	"", 
-	arg_x + 2, 
-	arg_y + 2, 
-	arg_sprite, 
+	hud,
+	arg_x,
+	arg_y,
+	noone,
+	"",
+	2, //todo: non hardcoded margin x/y?
+	2,
+	arg_sprite,
 	arg_action
 );
 

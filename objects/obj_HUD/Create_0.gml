@@ -10,7 +10,7 @@ press_button = noone;
 gui_w = display_get_gui_width();
 gui_h = display_get_gui_height();
 
-global.hud_bar_button_width = 36;
+global.hud_bar_button_width = 36; //todo: refactor/move
 var bw = global.hud_bar_button_width;
 
 // left
@@ -44,15 +44,6 @@ outliner_button_margin = 12;
 outliner_button_padding = 4;
 outliner_sprite = spr_astro_panels;
 outliner = instance_create_layer(0, 0, macro_logic_layer, obj_HUD_outliner);
-/*outliner_button = scr_add_hud_button_sprite(
-	id, 
-	gui_w - sprite_get_width(outliner_sprite) - 2*outliner_button_padding - outliner_button_margin,
-	hud_bar_h + minimap.height + outliner_button_margin, 
-	outliner_sprite, 
-	outliner_button_padding, 
-	hud_action.toggle_outliner
-);
-outliner_button.draw_as_panel = true;*/
 
 global.hovering_over_HUD = false; // write @ begin step, read @ step
 
@@ -81,7 +72,8 @@ var gui_half_w = gui_w/2;
 var top = gui_h - 32 - 8;
 var left = gui_half_w - 1.5*32;
 deconstruction_item = instance_create_layer(left, top, macro_logic_layer, obj_HUD_category_select_button);
-with(deconstruction_item){
+with(deconstruction_item)
+{
 	tooltip_text = "Deconstruction";
 	sprite_index = spr_destruct;
 	category = macro_category_deconstruction;
@@ -91,7 +83,8 @@ item_count++;
 // var top = y_offset + (32 + y_spacing)*item_count;
 var left = gui_half_w - 0.5*32;
 foundation_item = instance_create_layer(left, top, macro_logic_layer, obj_HUD_category_select_button);
-with(foundation_item){
+with(foundation_item)
+{
 	tooltip_text = "Base Foundation";
 	sprite_index = spr_category_foundation;
 	category = macro_category_foundation;
@@ -100,7 +93,8 @@ item_count++;
 
 var left = gui_half_w + 0.5*32;
 inside_item = instance_create_layer(left, top, macro_logic_layer, obj_HUD_category_select_button);
-with(inside_item){
+with(inside_item)
+{
 	tooltip_text = "Inside constructions";
 	sprite_index = spr_category_inside;
 	category = macro_category_inside;
@@ -109,7 +103,8 @@ item_count++;
 
 var left = gui_half_w + 1.5*32;
 outside_item = instance_create_layer(left, top, macro_logic_layer, obj_HUD_category_select_button);
-with(outside_item){
+with(outside_item)
+{
 	tooltip_text = "Outside constructions";
 	sprite_index = spr_category_outside;
 	category = macro_category_outside;

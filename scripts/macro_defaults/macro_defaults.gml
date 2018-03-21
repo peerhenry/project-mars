@@ -1,7 +1,7 @@
 // application
 #macro default_game_speed				30
-#macro default_window_width				1920 //-1 = auto display width
-#macro default_window_height			1080 //-1 = auto display height
+#macro default_window_width				1920 //-2 = auto display width
+#macro default_window_height			1080 //-2 = auto display height
 #macro default_window_fullscreen		false
 #macro default_window_aa_level			0
 #macro default_window_vsync				false

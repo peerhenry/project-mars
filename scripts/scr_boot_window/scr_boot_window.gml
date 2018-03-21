@@ -10,7 +10,7 @@ window_set_min_width(default_window_min_width);
 window_set_min_height(default_window_min_height);
 
 // Detect display size
-show_debug_message("Detected display size: " + string(display_get_width()) + "x" + string(display_get_height()));
+show_debug_message("Detected display size: " + scr_format_size(display_get_width(), display_get_height()));
 
 // Show supported aa levels
 debug_supported_aa_levels();
@@ -25,12 +25,12 @@ var window_vsync = settings[? key_settings_window_vsync];
 var window_x = settings[? key_settings_window_x];
 var window_y = settings[? key_settings_window_y];
 
-// Auto size window
+// Auto size window //todo: use same settings as obj_window_setter (e.g.: -2 is auto) //todo: implement -3 = read from current and -2 = read from state global.window?
 if(window_width == -1) window_width = display_get_width();
 if(window_height == -1) window_height = display_get_height();
 
-// Init resolutions cycler //todo: link with settings screen
-var resolutions = ds_list_create(); //todo: refactor to map with list and current
+// Init resolutions cycler
+var resolutions = ds_list_create();
 ds_list_add(resolutions, [640, 480], [800, 600], [1024, 768], [1152, 864], [1280, 720], [1280, 768], [1280, 800], [1280, 960], [1280, 1024], [1600, 1200], [1680, 1050], [1920, 1080], [1920, 1200]);
 var current_resolution = -1;
 for(var i = 0; i < ds_list_size(resolutions); i++)
@@ -42,13 +42,16 @@ for(var i = 0; i < ds_list_size(resolutions); i++)
 		break;
 	}
 }
-global.resolutions_list = resolutions;
-global.resolutions_current = current_resolution;
 
-// Init AA and vsync
-global.window_aa_level = 0; //needs to initialize as 0 //todo: refactor global.window_ ?
-global.window_vsync = false; //needs to initialize as false
+// Init window state
+var window = ds_map_create();
+window[? key_window_resolutions_list] = resolutions;
+window[? key_window_resolutions_current] = current_resolution;
+window[? key_window_aa_level] = 0; //needs to initialize as 0
+window[? key_window_vsync] = false; //needs to initialize as false
+global.window = window;
 
 // Set window async, when done start preloader
+//todo: check feeding auto vars does not cause reading from non-existent global.window[item], which needs to be set initially now
 scr_set_window(window_width, window_height, window_fullscreen, window_aa_level, window_vsync, window_x, window_y, scr_preload);  //important: needs to be last line of code
 exit;

@@ -5,14 +5,11 @@ subimg = 0;
 toggle_subimg = false;
 font = font_small;
 text = "button";
-text_x = 0;
-text_y = 0;
-top = 0;
-bottom = 0;
-left = 0;
-right = 0;
+padding_x = 0;
+padding_y = 0;
 width = 0;
 height = 0;
+anchor = 0; //-1 = left, 0 = fixed, 1 = right
 action = hud_action.none;
 active = false;
 draw_as_panel = false;

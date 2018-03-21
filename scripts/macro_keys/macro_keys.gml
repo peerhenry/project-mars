@@ -11,3 +11,13 @@
 #macro key_settings_sound_volume_voice		"sound_volume_voice"
 #macro key_settings_sound_volume_sfx		"sound_volume_sfx"
 #macro key_settings_sound_volume_music		"sound_volume_music"
+
+#macro key_window_resolutions_list			"resolutions_list"
+#macro key_window_resolutions_current		"resolutions_current"
+#macro key_window_width						"width"
+#macro key_window_height					"height"
+#macro key_window_fullscreen				"fullscreen"
+#macro key_window_aa_level					"aa_level"
+#macro key_window_vsync						"vsync"
+#macro key_window_x							"x"
+#macro key_window_y							"y"

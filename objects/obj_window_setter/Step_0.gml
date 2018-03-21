@@ -1,18 +1,18 @@
 switch(step_number)
 {
     case 0:
-		var info = "Set window async: ";
-		info += "size=" + string(width) + "x" + string(height);
-		info += ", pos=" + string(display_x) + "," + string(display_y);
-		info += ", fullscreen=" + string(fullscreen);
-		info += ", aa=" + string(aa_level);
-		info += ", vsync=" + string(vsync);
+		var info = "Set window: " + scr_format_size(width, height) + " ";
+		info += fullscreen ? "fullscreen" : "windowed at " + scr_format_pos(window_x, window_y);
+		info += ", aa=" + string(aa_level) + ", vsync=" + string(vsync);
 		scr_force_trace(info);
 		
 		event_user(0); // Set AA-level and vsync
+		event_user(3); // Set fullscreen or windowed
+		break;
+	
+	case 1:
 		event_user(1); // Set window size and position (contents will scale to fit with letterbox effect)
 		event_user(2); // Set GUI size
-		event_user(3); // Set fullscreen or windowed
 		event_user(4); // Resize application surface
 		event_user(5); // Set camera size and view port
         break;

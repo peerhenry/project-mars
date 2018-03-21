@@ -1,8 +1,9 @@
-enum settings_index{
+enum settings_index //todo: discuss refactor/naming?
+{
 	back
 }
 
-// highest index first
+// highest index first //todo: discuss why
 menu[settings_index.back] = "Back";
 
 menu_index_max = array_length_1d(menu) - 1;

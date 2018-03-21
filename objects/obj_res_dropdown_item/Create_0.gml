@@ -1,4 +1,4 @@
-width = 1920;
-height = 1080;
-text = "1920 x 1080";
+width = 0;
+height = 0;
+text = "";
 image_speed = 0;
