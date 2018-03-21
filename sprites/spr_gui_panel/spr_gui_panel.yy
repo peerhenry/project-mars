@@ -2,7 +2,7 @@
     "id": "168e0bf8-b18e-419d-bbf9-a646f0371240",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "spr_hud_panel",
+    "name": "spr_gui_panel",
     "For3D": false,
     "HTile": false,
     "VTile": false,

@@ -1042,7 +1042,7 @@
             "Key": "168e0bf8-b18e-419d-bbf9-a646f0371240",
             "Value": {
                 "id": "cb60c2cc-b75f-424d-805a-03bf499fffb3",
-                "resourcePath": "sprites\\spr_hud_panel\\spr_hud_panel.yy",
+                "resourcePath": "sprites\\spr_gui_panel\\spr_gui_panel.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -7242,7 +7242,7 @@
             "Key": "ab09bb41-f747-48a3-a073-dbed9d3eda24",
             "Value": {
                 "id": "a7b89652-da5a-43d6-8317-b7ede4a0eeab",
-                "resourcePath": "objects\\obj_HUD_panel\\obj_HUD_panel.yy",
+                "resourcePath": "objects\\obj_gui_panel_empty\\obj_gui_panel_empty.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -8084,6 +8084,14 @@
                 "id": "f5981991-e9b2-4a19-b0de-1d4ae87bd01a",
                 "resourcePath": "sprites\\spr_init\\spr_init.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "beb2e08c-e473-41e3-aba0-2ca3e76ea05a",
+            "Value": {
+                "id": "c8b0ef0d-64aa-4ca8-91eb-32c57a3dbedf",
+                "resourcePath": "objects\\obj_gui_panel\\obj_gui_panel.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -9906,7 +9914,7 @@
             "Key": "e78b876b-ec81-43f7-8d9a-7e2a18d9e7de",
             "Value": {
                 "id": "42e4eb1b-1b52-4fa1-bfff-6d0e9fc2a56e",
-                "resourcePath": "objects\\dto_details_panel_component\\dto_details_panel_component.yy",
+                "resourcePath": "objects\\dto_gui_panel_item\\dto_gui_panel_item.yy",
                 "resourceType": "GMObject"
             }
         },

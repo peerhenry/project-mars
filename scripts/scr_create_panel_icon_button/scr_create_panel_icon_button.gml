@@ -13,7 +13,7 @@ var arg_height = argument4;
 var arg_sprite = argument5;
 var arg_action = argument6;
 
-var dto = instance_create_depth(0, 0, 0, dto_details_panel_component);
+var dto = instance_create_depth(0, 0, 0, dto_gui_panel_item);
 
 with(dto)
 {

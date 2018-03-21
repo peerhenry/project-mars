@@ -5,7 +5,7 @@ var arg_unit = argument0;
 var arg_x = argument1;
 var arg_y = argument2;
 
-var dto = instance_create_depth(0,0,0,dto_details_panel_component);
+var dto = instance_create_depth(0,0,0,dto_gui_panel_item);
 
 with(dto)
 {

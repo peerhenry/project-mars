@@ -1,8 +1,8 @@
 var hovering_over_gui = false;
 
-with(obj_HUD_panel)
+with(obj_gui_panel_empty)
 {
-	if(hovers)
+	if(hover)
 	{
 		hovering_over_gui = true;
 		break;

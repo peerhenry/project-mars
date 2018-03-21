@@ -1,7 +1,7 @@
 /// @arg panel_component
 /// @arg panel
 /// @arg action
-var arg_panel_component = argument0; // dto_details_panel_component
+var arg_panel_component = argument0; // dto_gui_panel_item
 var arg_panel = argument1;
 var arg_action = argument2;
 
@@ -20,12 +20,17 @@ switch(arg_action)
 		with(unit) event_user(macro_toggle_deploy_event);
 		break;
 	case details_panel_action.show_grid_details:
+		var grid_off = false;
 		if(instance_exists(arg_panel.sub_panel))
 		{
-			with(obj_HUD_grid_details_panel) instance_destroy();
+			with(obj_HUD_grid_details_panel)
+			{
+				instance_destroy();
+				grid_off = grid == arg_panel_component.grid;
+			}
 			arg_panel.sub_panel = noone;
 		}
-		else
+		if(!grid_off)
 		{
 			var grid_panel = instance_create_layer(0, 0, macro_logic_layer, obj_HUD_grid_details_panel);
 			grid_panel.grid = arg_panel_component.grid;

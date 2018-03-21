@@ -8,5 +8,5 @@ var mouse_over = window_mouse_x > left &&
 	window_mouse_y > top && 
 	window_mouse_y < bottom;
 	
-if(mouse_over) hovers = true;
-else hovers = false;
+if(mouse_over) hover = true;
+else hover = false;
