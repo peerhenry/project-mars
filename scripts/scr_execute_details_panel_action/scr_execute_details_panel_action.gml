@@ -27,7 +27,7 @@ switch(arg_action)
 		}
 		else
 		{
-			var grid_panel = instance_create_depth(0, 0, 0, obj_HUD_grid_details_panel);
+			var grid_panel = instance_create_layer(0, 0, macro_logic_layer, obj_HUD_grid_details_panel);
 			grid_panel.grid = arg_panel_component.grid;
 			arg_panel.sub_panel = grid_panel;
 		}

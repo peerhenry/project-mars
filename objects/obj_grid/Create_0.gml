@@ -7,7 +7,7 @@ for(var role = 0; role < macro_grid_role_count; role++)
 	ds_map_add(logic_map, role, ds_list_create());
 }
 
-// A map of components by encoded grid index coordinate: for floodfill
+// A map of components by encoded grid index coordinate: for floodfill and grid highlight
 tile_map = ds_map_create();
 tile_key_list = ds_list_create();
 

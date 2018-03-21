@@ -45,10 +45,10 @@ var tt_right = tt_left + tt_w;
 // # confine tt to display
 // ####################
 
-var gui_w = display_get_gui_width();
-var gui_h = display_get_gui_height();
-if(arg_x + tt_w >= gui_w) arg_x = gui_w - tt_w;
-if(arg_y + tt_h >= gui_h) arg_y  = gui_h - tt_h;
+var confine_w = window_get_width(); // display_get_gui_width();
+var confine_h = window_get_height(); // display_get_gui_height();
+if(tt_left + tt_w >= confine_w) tt_left = confine_w - tt_w - 1; // extra -1 to prevent losing the outline
+if(tt_top + tt_h >= confine_h) tt_top  = confine_h - tt_h - 1;
 
 // ####################
 // # draw title
@@ -59,11 +59,16 @@ var title_box_bottom = tt_top + title_box_h;
 // box
 draw_set_color(c_teal);
 draw_set_alpha(0.9);
-draw_rectangle(tt_left, tt_top + 2, tt_right, title_box_bottom, false);
+draw_rectangle(tt_left, tt_top + 2, tt_right - 1, title_box_bottom, false);
 // outline
 draw_set_alpha(1.0);
 draw_set_color(c_white);
-draw_rectangle(tt_left, tt_top, tt_right, title_box_bottom, true);
+draw_rectangle(
+	tt_left - 1,
+	tt_top + 1,
+	tt_right,
+	title_box_bottom + 1,
+	true);
 // text
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
@@ -75,17 +80,17 @@ draw_text_ext(tt_left + pad, tt_top + pad, arg_title, line_jump, max_width);
 
 if(has_description)
 {
-	var descr_box_top = arg_y + title_box_h;
+	var descr_box_top = tt_top + title_box_h;
 	var descr_box_bottom = descr_box_top + descr_box_h;
 	
 	// box
 	draw_set_color(c_dkgray);
 	draw_set_alpha(0.9);
-	draw_rectangle(tt_left, descr_box_top + 2, tt_right, descr_box_bottom, false);
+	draw_rectangle(tt_left, descr_box_top + 2, tt_right - 1, descr_box_bottom, false);
 	// outline
 	draw_set_alpha(1.0);
 	draw_set_color(c_white);
-	draw_rectangle(tt_left, descr_box_top, tt_right, descr_box_bottom, true);
+	draw_rectangle(tt_left - 1, descr_box_top + 1, tt_right, descr_box_bottom + 1, true);
 	// text
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
