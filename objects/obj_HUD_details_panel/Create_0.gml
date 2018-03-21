@@ -9,6 +9,8 @@ left = 0;
 right = left + width;
 bottom = top + height;
 padding = 16;
+
+// specific for hud details panel:
 unit = x; // inject unit in x
 x = 0;
 inv_hover_item = noone;

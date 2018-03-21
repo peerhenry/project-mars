@@ -169,7 +169,7 @@ with(arg_details_panel)
 					next_y_offset, 
 					24, 
 					24, 
-					spr_auto_attack_small, // todo: make dedicated icon for this
+					spr_eye_16, // todo: make dedicated icon for this
 					grid
 				);
 				grid_btn.tooltip_text = "Show grid details";
@@ -183,11 +183,14 @@ with(arg_details_panel)
 	
 	#region buttons
 	
+	var button_h = 24;
+	var button_w = 24;
+	
 	// top buttons
-	var dbtn = scr_create_panel_icon_button(unit, right - 32, top - 32, 32, 32, spr_deselect_icon, details_panel_action.deselect);
+	var dbtn = scr_create_panel_icon_button(unit, right - button_w, top - button_h, button_w, button_h, spr_deselect_icon, details_panel_action.deselect);
 	dbtn.tooltip_text = "Deselect unit";
 	ds_list_add(component_list, dbtn);
-	var cbtn = scr_create_panel_icon_button(unit, right - 64, top - 32, 32, 32, spr_center_cam_icon, details_panel_action.center);
+	var cbtn = scr_create_panel_icon_button(unit, right - button_w*2, top - button_h, button_w, button_h, spr_center_cam_icon, details_panel_action.center);
 	cbtn.tooltip_text = "Center camera on unit";
 	ds_list_add(component_list, cbtn);
 	

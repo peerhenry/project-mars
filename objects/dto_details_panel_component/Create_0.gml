@@ -60,6 +60,7 @@ sprite = noone;
 subimg = 0;
 sprite_x = 0;
 sprite_y = 0;
+sprite_color = c_white;
 
 // for: label, avatar, sprite_button, text_button
 rectangle_color_top = c_black;
