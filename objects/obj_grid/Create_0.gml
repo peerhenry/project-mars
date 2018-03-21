@@ -7,7 +7,7 @@ for(var role = 0; role < macro_grid_role_count; role++)
 	ds_map_add(logic_map, role, ds_list_create());
 }
 
-// A map of components by encoded grid index coordinate: for floodfill
+// A map of components by encoded grid index coordinate: for floodfill and grid highlight
 tile_map = ds_map_create();
 tile_key_list = ds_list_create();
 
@@ -32,10 +32,11 @@ cum_td = 0;
 cum_no = 0;
 cum_s = 0;
 
+// obsolete: todo: remove
 // gui panel
-width = 384;
+/*width = 384;
 height = 160;
 ap_offset = 0;
 with(obj_HUD) other.ap_offset = ap_w + ap_margin;
 
-show_details = false;
+show_details = false;*/

@@ -1,7 +1,9 @@
+/// @arg panel_component
 /// @arg panel
 /// @arg action
-var arg_panel = argument0;
-var arg_action = argument1;
+var arg_panel_component = argument0; // dto_details_panel_component
+var arg_panel = argument1;
+var arg_action = argument2;
 
 var unit = arg_panel.unit;
 
@@ -16,5 +18,18 @@ switch(arg_action)
 		break;
 	case details_panel_action.deploy:
 		with(unit) event_user(macro_toggle_deploy_event);
+		break;
+	case details_panel_action.show_grid_details:
+		if(instance_exists(arg_panel.sub_panel))
+		{
+			with(obj_HUD_grid_details_panel) instance_destroy();
+			arg_panel.sub_panel = noone;
+		}
+		else
+		{
+			var grid_panel = instance_create_layer(0, 0, macro_logic_layer, obj_HUD_grid_details_panel);
+			grid_panel.grid = arg_panel_component.grid;
+			arg_panel.sub_panel = grid_panel;
+		}
 		break;
 }

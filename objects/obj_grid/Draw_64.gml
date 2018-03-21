@@ -1,3 +1,5 @@
+// todo: remove
+/*
 if( show_details )
 {
 	var tl_x = display_get_gui_width() - width - ap_offset;
@@ -35,4 +37,4 @@ if( show_details )
 	
 	var line5_y = y_or + 96;
 	draw_text(x_or, line5_y, "net output: " + string(display_net_output));
-}
+}*/

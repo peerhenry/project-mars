@@ -76,7 +76,7 @@ if(entity.object_index == obj_robot || scr_instance_inherits(entity, obj_astrona
 
 	var c_attack = c_dkgray;
 	if(entity.auto_attack) c_attack = c_aqua;
-	draw_sprite_ext(spr_auto_attack_small, 2, icon_x, icon_top, 1, 1, 0, c_attack, 1);
+	draw_sprite_ext(spr_auto_attack_small, 0, icon_x, icon_top, 1, 1, 0, c_attack, 1);
 
 	icon_x = icon_x + icon_width + icon_space;
 	var c_construct = c_dkgray;

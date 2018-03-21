@@ -4,6 +4,7 @@
 /// @arg width
 /// @arg height
 /// @arg sprite
+/// @arg action
 var arg_unit = argument0;
 var arg_left = argument1;
 var arg_top = argument2;

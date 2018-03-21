@@ -11,6 +11,7 @@ for(var n = 0; n < ds_list_size(component_list); n++)
 	scr_step_details_panel_component(next_component);
 	if(destroy)
 	{
+		if(instance_exists(sub_panel)) instance_destroy(sub_panel);
 		instance_destroy();
 		exit;
 	}

@@ -16,7 +16,8 @@ enum details_panel_action
 	none,
 	center,
 	deselect,
-	deploy
+	deploy,
+	show_grid_details
 }
 
 enum unit_prop
@@ -31,7 +32,7 @@ enum unit_prop
 #endregion
 
 hover = false;
-prop_value = 0;
+prop_value = 0; // used if the component represents a property
 
 class = details_panel_component_class.text;
 unit = noone;
@@ -59,6 +60,7 @@ sprite = noone;
 subimg = 0;
 sprite_x = 0;
 sprite_y = 0;
+sprite_color = c_white;
 
 // for: label, avatar, sprite_button, text_button
 rectangle_color_top = c_black;

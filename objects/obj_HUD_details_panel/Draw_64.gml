@@ -18,5 +18,5 @@ if(hover)
 		}
 		else scr_draw_tooltip(hover_component.tooltip_text);
 	}
-	else scr_draw_tooltip("Details panel");
+	else scr_draw_tooltip_description("Details panel", "Here you can view the relevant details when a single unit is selected.");
 }

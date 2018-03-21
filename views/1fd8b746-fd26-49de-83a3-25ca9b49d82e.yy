@@ -9,7 +9,7 @@
         "254e8788-7ebc-4958-bdfa-8304021d42e6"
     ],
     "filterType": "GMObject",
-    "folderName": "entities",
+    "folderName": "units",
     "isDefaultView": false,
     "localisedFolderName": ""
 }
