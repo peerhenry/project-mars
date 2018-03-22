@@ -10,6 +10,16 @@ if(hover)
 		}
 		entity.is_selected = !entity.is_selected;
 		if(entity.is_selected) scr_play_selection_sound(entity);
+		
+		//show/hide details panel //todo: refactor with map selection method
+		if(instance_exists(global.hud_details_panel))
+		{
+			instance_destroy(global.hud_details_panel);
+			global.hud_details_panel = noone;
+		}
+		var count_selected = 0;
+		with(obj_movable) if(is_selected) count_selected++;
+		if(count_selected == 1) global.hud_details_panel = scr_create_hud_details_panel(entity);
 	}
 	else
 	{
