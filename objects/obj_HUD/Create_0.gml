@@ -68,6 +68,8 @@ x_offset = padding;
 item_count = 0;
 // var left = x_offset;
 // var top = y_offset + (32 + y_spacing)*item_count;
+/*
+// todo: to become obsolete
 var gui_half_w = gui_w/2;
 var top = gui_h - 32 - 8;
 var left = gui_half_w - 1.5*32;
@@ -110,6 +112,7 @@ with(outside_item)
 	category = macro_category_outside;
 }
 item_count++;
+*/
 
 // -- gui menu --
 gui_menu = instance_create_layer(-500, 500, macro_logic_layer, obj_gui_menu_main);

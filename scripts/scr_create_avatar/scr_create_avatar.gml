@@ -9,7 +9,7 @@ var arg_y = argument2;
 var arg_width = argument3;
 var arg_height = argument4;
 
-var dto = instance_create_depth(0,0,0,dto_details_panel_component);
+var dto = instance_create_depth(0,0,0,dto_gui_panel_item);
 
 with(dto)
 {

@@ -1,3 +1,5 @@
+
+/*
 if(!instance_exists(grid)) exit;
 if(grid.object_index != obj_grid) show_error("Grid in grid details panel is not a grid", true);
 
@@ -16,3 +18,4 @@ for(var n = 0; n < ds_list_size(cell_list); n++)
 	draw_rectangle(left, top, right, bottom, false);
 }
 draw_set_alpha(1);
+*/

@@ -3,7 +3,13 @@ var selection_includes_astro = false;
 
 var add_to_selection = keyboard_check(vk_shift) || keyboard_check(vk_control);
 
-with(obj_HUD_details_panel) instance_destroy();
+//with(obj_HUD_details_panel) instance_destroy(); // to become obsolet
+if( instance_exists(global.hud_details_panel) )
+{
+	instance_destroy(global.hud_details_panel);
+	global.hud_details_panel = noone;
+}
+
 var single_select_ent = instance_position(mouse_x, mouse_y, obj_movable);
 if(single_select_ent != noone && single_select_ent.owner == macro_player) // (de)select astronaut
 {	
@@ -38,7 +44,10 @@ else if(single_select_ent == noone) // select grid selector
 
 if(single_select_ent != noone)
 {
-	instance_create_depth(single_select_ent, 0, 0, obj_HUD_details_panel);
+	// instance_create_depth(single_select_ent, 0, 0, obj_HUD_details_panel); // todo: make this obsolete
+	global.hud_details_panel = scr_create_hud_details_panel(single_select_ent);
+	
+	// set cart ghost
 	if(
 		single_select_ent.object_index == obj_cart 
 		&& single_select_ent.carrying_instance != noone

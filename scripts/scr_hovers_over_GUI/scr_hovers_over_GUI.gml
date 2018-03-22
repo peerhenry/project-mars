@@ -1,8 +1,19 @@
 var hovering_over_gui = false;
 
-with(obj_HUD_panel)
+with(obj_gui)
 {
-	if(hovers)
+	for(var n = 0; n < ds_list_size(gui_item_list); n++)
+	{
+		var next = gui_item_list[|n];
+		if(next.hover) return true;
+	}
+}
+
+// the rest is to become obsolete...
+
+with(obj_gui_panel_empty)
+{
+	if(hover)
 	{
 		hovering_over_gui = true;
 		break;
@@ -18,7 +29,7 @@ if(!hovering_over_gui)
 			hovering_over_gui = true;
 			break;
 		}
-	}	
+	}
 }
 
 if(!hovering_over_gui)
@@ -32,14 +43,6 @@ if(!hovering_over_gui)
 if(!hovering_over_gui)
 {
 	with(obj_HUD_entity_panel)
-	{
-		if(hover) hovering_over_gui = true;
-	}
-}
-
-if(!hovering_over_gui)
-{
-	with(obj_HUD_details_panel)
 	{
 		if(hover) hovering_over_gui = true;
 	}
