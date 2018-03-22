@@ -18,56 +18,7 @@ right = left + width;
 bottom = top + height;
 should_draw_panel = true;
 
-var b1 = scr_create_gui_item_sprite(id, b_left, b_top, spr_destruct); // sprite is 32
-with(b1)
-{
-	sprite_x += 16;
-	sprite_y += 16;
-	should_draw_panel = true;
-	tooltip_title = "Deconstruction";
-	category = macro_category_deconstruction;
-}
-
-// b1.mouse_enter_script = 
-
-var b2 = scr_create_gui_item_sprite(id, b_left + 32, b_top, spr_category_foundation); // sprite is 24
-with(b2)
-{
-	sprite_x += 16;
-	sprite_y += 16;
-	should_draw_panel = true;
-	tooltip_title = "Base Foundation";
-	category = macro_category_foundation;
-	width = 32;
-	height = 32;
-	bottom = top + height;
-	right = left + width;
-}
-
-var b3 = scr_create_gui_item_sprite(id, b_left + 64, b_top, spr_category_inside); // sprite is 24
-with(b3)
-{
-	sprite_x += 16;
-	sprite_y += 16;
-	should_draw_panel = true;
-	tooltip_title = "Inside Constructions";
-	category = macro_category_inside;
-	width = 32;
-	height = 32;
-	bottom = top + height;
-	right = left + width;
-}
-
-var b4 = scr_create_gui_item_sprite(id, b_left + 96, b_top, spr_category_outside); // sprite is 24
-with(b4)
-{
-	sprite_x += 16;
-	sprite_y += 16;
-	should_draw_panel = true;
-	tooltip_title = "Outside Constructions";
-	category = macro_category_outside;
-	width = 32;
-	height = 32;
-	bottom = top + height;
-	right = left + width;
-}
+scr_create_construction_category_button(id, b_left, b_top, spr_destruct, macro_category_deconstruction, "Deconstruction");
+scr_create_construction_category_button(id, b_left + 32, b_top, spr_category_foundation, macro_category_foundation, "Foundation");
+scr_create_construction_category_button(id, b_left + 64, b_top, spr_category_inside, macro_category_inside, "Inside Constructions");
+scr_create_construction_category_button(id, b_left + 96, b_top, spr_category_outside, macro_category_outside, "Outside Constructions");
