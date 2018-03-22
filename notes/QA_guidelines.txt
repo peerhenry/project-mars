@@ -1,0 +1,4 @@
+- Check if scripts have documentation description and arguments
+- Check if instances and data structures are properly destroyed (follow paths from creation)
+- Make sure to always initialize globals centrally
+- Make sure to always initialize object members in their Create method

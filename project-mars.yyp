@@ -3711,6 +3711,14 @@
             }
         },
         {
+            "Key": "4e2df198-c500-4884-9232-159fb7790b4e",
+            "Value": {
+                "id": "4f7dcca0-9c56-4b3b-a7ca-0126bcd44e1d",
+                "resourcePath": "notes\\QA_guidelines.yy",
+                "resourceType": "GMNotes"
+            }
+        },
+        {
             "Key": "4e9080aa-4d48-4f85-a4ad-de1025e58730",
             "Value": {
                 "id": "3561ef5c-fee3-44b5-bd4c-ecc4fd151d5b",

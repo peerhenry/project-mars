@@ -1,4 +1,4 @@
-event_inherited();
+event_inherited(); //todo: put mainmenu stuff in seperate folder, like settings and skirmish, rest goes to e.g.: misc/helpers
 
 enum menu_index{
 	game_continue,
@@ -11,7 +11,7 @@ enum menu_index{
 	quit
 }
 
-// highest index first
+// highest index first (to initialize the array size)
 menu[menu_index.quit] = "";
 
 menu[menu_index.game_continue] = "Continue";

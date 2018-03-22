@@ -19,7 +19,8 @@ for(m = 0; m <= menu_index_max; m++)
 	
 	draw_text(ox, oy, str_Name);
 	
-	if(mouse_x > ox && mouse_x < ox + w && mouse_y > oy && mouse_y < oy + h){
+	if(mouse_x > ox && mouse_x < ox + w && mouse_y > oy && mouse_y < oy + h)
+	{
 		menu_focus_index = m;
 	}
 }
