@@ -32,6 +32,6 @@ if(keyboard_check_pressed(vk_delete)) //Reset window to known values
 }
 if(room == room_window_test && keyboard_check_pressed(vk_escape))
 {
-	//todo: when opened from ingame, return to persistent room (e.g.: globals.previous_room_index?)
-	room_goto(room_menu);
+	if(global.room_origin != noone) room_goto(global.room_origin); //return to last known room
+	else room_goto(room_menu);
 }

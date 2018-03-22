@@ -2202,7 +2202,7 @@
             "Key": "30c997e3-fb62-476b-a22e-de0ebc77968e",
             "Value": {
                 "id": "a308c519-91ac-4377-83b4-1e21392fcb8c",
-                "resourcePath": "objects\\obj_game_end_listener\\obj_game_end_listener.yy",
+                "resourcePath": "objects\\obj_persistent_listener\\obj_persistent_listener.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -3996,14 +3996,6 @@
                 "id": "a68596c3-be72-40af-b60c-91750fb4955e",
                 "resourcePath": "views\\543b4f49-89e6-424d-9bd8-97db39d48df5.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "5487cfef-fb07-478e-a4d1-d9814588734f",
-            "Value": {
-                "id": "3b1347fe-4e83-49f6-971b-cfa6094b4c2a",
-                "resourcePath": "scripts\\scr_zoom_camera_to_resolution\\scr_zoom_camera_to_resolution.yy",
-                "resourceType": "GMScript"
             }
         },
         {
@@ -11376,7 +11368,6 @@
         "50faffb1-f8e0-4c47-abbc-b26293156225",
         "4f95b87d-54a7-4e58-b12b-cd4598637fce",
         "75aff7d1-fcb3-4216-8ff6-34c7c14da4d3",
-        "5487cfef-fb07-478e-a4d1-d9814588734f",
         "d0526bef-e9e5-4d74-88e4-6d59c907a507",
         "11a8263d-095f-470d-beae-2ae9d5ab6a2f",
         "4d3a8e4c-cb93-4618-acc0-153fa0ffe09c",

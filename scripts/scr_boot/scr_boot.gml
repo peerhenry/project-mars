@@ -2,8 +2,9 @@
 
 scr_force_trace("Application Boot");
 
-// -- Create game_end_listener --
-global.game_end_listener = instance_create_depth(0, 0, 0, obj_game_end_listener); //persistent
+// -- Create persistent application events listener --
+global.persistent_listener = instance_create_depth(0, 0, 0, obj_persistent_listener);
+global.room_origin = noone;
 
 // -- CMD parameters --
 //todo: check cmd line parameters (set/overwrite flags?)

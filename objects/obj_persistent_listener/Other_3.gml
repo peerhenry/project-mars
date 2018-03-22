@@ -1,4 +1,4 @@
-scr_force_trace("obj_game_end_listener_Game_End");
+scr_force_trace("Game End event called");
 
 audio_stop_all();
 //todo: send total app running time statistic to server?

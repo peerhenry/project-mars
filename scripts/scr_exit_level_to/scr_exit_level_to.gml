@@ -12,6 +12,7 @@ with(obj_constructable)
 }
 with(all)
 {
+	if(object_index == obj_persistent_listener) continue; //exclude	
 	instance_destroy();
 }
 
