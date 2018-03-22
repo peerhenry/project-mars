@@ -31,8 +31,8 @@ with(argument0)
 	if(string_length(text) > 0)
 	{
 		draw_set_font(font);
-		draw_set_halign(halign);
-		draw_set_valign(valign);
+		draw_set_halign(text_halign);
+		draw_set_valign(text_valign);
 		draw_set_color(text_color);
 		draw_text(text_x, text_y, text);
 	}
