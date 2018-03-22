@@ -4,7 +4,7 @@ switch(menu_focus_index)
 	case menu_index.game_continue:
 		break;
 	case menu_index.new_game:
-		var fader = instance_create_layer(0, 0, "layer_fade", obj_fade);
+		var fader = instance_create_layer(0, 0, "layer_fade", obj_menu_fade);
 		fader.target_room = mission_control;
 		break;
 	case menu_index.tutorial:
@@ -21,7 +21,7 @@ switch(menu_focus_index)
 		room_goto(room_settings);
 		break;
 	case menu_index.debug:
-		var fader = instance_create_layer(0, 0, "layer_fade", obj_fade);
+		var fader = instance_create_layer(0, 0, "layer_fade", obj_menu_fade);
 		fader.target_room = room_test_map;
 		break;
 	/*case menu_index.test:

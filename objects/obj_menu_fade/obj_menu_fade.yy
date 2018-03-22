@@ -2,7 +2,7 @@
     "id": "4d62cafc-f8b8-4da3-b98d-b19e548034df",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_fade",
+    "name": "obj_menu_fade",
     "eventList": [
         {
             "id": "9acd6c1b-2d0b-4ff8-a00d-03a9ccfafc20",
