@@ -13,7 +13,7 @@ gui_h = display_get_gui_height();
 global.hud_bar_button_width = 36; //todo: refactor/move
 var bw = global.hud_bar_button_width;
 
-// left
+// hud bar left buttons
 var in_campaign = false;
 with(obj_level) in_campaign = scr_instance_inherits(id, obj_level_campaign);
 if(in_campaign)
@@ -26,13 +26,16 @@ else //todo: auto alignment to left instead of this if/else method
 	scr_add_hud_bar_sprite_button(id, 0, 0, spr_objectives, 0, false, hud_action.toggle_objectives);
 }
 
-// right
+// hud bar right buttons
 scr_add_hud_bar_sprite_button(id, gui_w - bw, 0, spr_menu, 0, false, hud_action.toggle_menu);
 scr_add_hud_bar_sprite_button(id, gui_w - bw*2, 0, spr_minimap_icon, 0, false, hud_action.toggle_minimap);
 scr_add_hud_bar_sprite_button(id, gui_w - bw*3, 0, spr_outliner, 0, false, hud_action.toggle_outliner);
 scr_add_hud_bar_sprite_button(id, gui_w - bw*4, 0, spr_high_walls, global.draw_tall_walls, true, hud_action.toggle_high_walls);
 scr_add_hud_bar_sprite_button(id, gui_w - bw*5, 0, spr_zoom_button, 0, true, hud_action.toggle_zoom);
 
+// objectives panel
+objectives = instance_create_depth(0, 0, 0, obj_HUD_objectives);
+objectives_is_active = true; //todo: method to calculate amount/check has objectives
 
 // minimap
 minimap = instance_create_layer(0, hud_bar_h, macro_logic_layer, obj_HUD_minimap);

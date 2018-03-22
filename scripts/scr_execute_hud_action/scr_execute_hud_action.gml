@@ -63,12 +63,6 @@ switch( arg_action )
 		}
 		break;
 	case hud_action.toggle_objectives:
-		var exists = false;
-		with(obj_HUD_objectives)
-		{
-			instance_destroy();
-			exists = true;
-		}
-		if(!exists) instance_create_depth(0, 0, 0, obj_HUD_objectives);
+		with(obj_HUD) objectives_is_active ^= 1;
 		break;
 }

@@ -1,4 +1,4 @@
-/// @description
+with(obj_HUD) if(!objectives_is_active) exit;
 
 scr_draw_panel(left, top, left + 300, top + height); // todo: calculate width based on content
 
