@@ -28,7 +28,7 @@ with(arg_healthbar)
 			break;
 		case unit_prop.suit_oxygen:
 			bar_amount = 100;
-			if(unit.wears_suit) bar_amount = unit.suit_oxygen_level;
+			if(unit.wears_suit) bar_amount = unit.suit_oxygen;
 			break;
 	}
 }

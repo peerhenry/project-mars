@@ -1,4 +1,8 @@
 /// @description sets hover and unit prop_value
+
+// obsolete
+// todo: remove
+
 var arg_component = argument0;
 
 var wmx = window_mouse_get_x();
@@ -36,9 +40,9 @@ with(arg_component)
 	
 	if(hover && mouse_check_button_pressed(mb_left))
 	{
-		with(obj_HUD_details_panel)
+		/*with(obj_HUD_details_panel)
 		{
 			scr_execute_details_panel_action(arg_component, id, other.action);
-		}
+		}*/
 	}
 }

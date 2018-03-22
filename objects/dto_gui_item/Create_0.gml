@@ -11,11 +11,15 @@ enum gui_item_class
 
 class = gui_item_class.none;
 hover = false;
-container = noone;
+container = x; // inject container in x
+ds_list_add(container.gui_item_list, id);
 
-tooltip_data = noone; // dto_tooltip
-update_script = noone;
+tooltip_title = "";
+tooltip_description = "";
+step_script = scr_gui_item_step_set_hover;
 draw_script = scr_guit_item_draw_standard;
+mouse_enter_script = noone;
+mouse_leave_script = noone;
 
 left = 0;
 top = 0;
@@ -23,12 +27,6 @@ right = 0;
 bottom = 0;
 width = 0;
 height = 0;
-
-// 1. panel
-// 2. rectangle
-// 3. sprite
-// 4. healthbar
-// 5. text
 
 should_draw_panel = false;
 should_draw_rectangle = false;

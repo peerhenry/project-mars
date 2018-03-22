@@ -1,9 +1,5 @@
-// # Check if container should update
-
-var new_count = ds_list_size(gui_item_list);
-// use reset flag for example when removing and adding an item
-if(gui_item_count != new_count || reset)
+for(var n = 0; n < ds_list_size(gui_item_list); n++)
 {
-	event_user(0);
-	gui_item_count = new_count;
+	var next_gui_item = gui_item_list[| n];
+	with(next_gui_item) event_user(macro_gui_event_update);
 }

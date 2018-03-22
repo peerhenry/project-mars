@@ -9,7 +9,7 @@
         "f437b90b-f5cd-43f3-98a1-efd6b85f38a9"
     ],
     "filterType": "GMScript",
-    "folderName": "gui_container",
+    "folderName": "gui_items",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

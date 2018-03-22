@@ -20,7 +20,7 @@ with(argument0)
 		// 2. make callback to container
 		with(container)
 		{
-			click_item = other.id;
+			callback_item = other.id;
 			event_user(macro_gui_container_click_callback);
 		}
 	}

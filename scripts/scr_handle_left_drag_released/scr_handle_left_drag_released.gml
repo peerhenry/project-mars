@@ -3,7 +3,13 @@ var selection_includes_astro = false;
 
 var add_to_selection = keyboard_check(vk_shift) || keyboard_check(vk_control);
 
-with(obj_HUD_details_panel) instance_destroy();
+// with(obj_HUD_details_panel) instance_destroy(); // to become obsolet
+if(instance_exists(global.hud_details_panel))
+{
+	instance_destroy(global.hud_details_panel);
+	global.hud_details_panel = noone;
+}
+
 var rec_left = min(click_x, mouse_x);
 var rec_right = max(click_x, mouse_x);
 var rec_top = min(click_y, mouse_y);
@@ -53,7 +59,8 @@ var single_select = scr_get_single_selected();
 if(single_select != noone)
 {
 	// abuse x argument as a constructor argument for unit
-	instance_create_depth(single_select, 0, 0, obj_HUD_details_panel);
+	// instance_create_depth(single_select, 0, 0, obj_HUD_details_panel); // todo: to become obsolete
+	global.hud_details_panel = scr_create_hud_details_panel(single_select);
 }
 
 // play selection sounds

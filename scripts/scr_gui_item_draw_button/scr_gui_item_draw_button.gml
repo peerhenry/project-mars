@@ -1,5 +1,5 @@
 /// @description Gui button draw behavior
-
+/// @arg button
 with(argument0)
 {
 	// 1 draw panel

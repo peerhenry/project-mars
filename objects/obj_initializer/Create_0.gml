@@ -14,7 +14,8 @@ ds_list_add(singletons, obj_surface_renderer);
 ds_list_add(singletons, obj_mouse_listener);
 ds_list_add(singletons, obj_view_mover);
 ds_list_add(singletons, obj_key_listener);
-ds_list_add(singletons, obj_HUD);
+ds_list_add(singletons, obj_gui);
+ds_list_add(singletons, obj_HUD); // todo: remove once it has become obsolete
 ds_list_add(singletons, obj_noise_shader);
 if(global.dev_env)
 {

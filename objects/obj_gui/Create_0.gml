@@ -1,14 +1,6 @@
 gui_item_list = ds_list_create();
-gui_item_count = ds_list_size(gui_item_list);
-reset = false;
+global.gui = id;
+global.hud_details_panel = noone; // todo: move to init_globals
+global.gui_hover_item = noone;
 
-top = 0;
-bottom = 0;
-left = 0;
-right = 0;
-
-width = 0;
-height = 0;
-
-class = gui_container_item_class.container;
-hover_item = noone;
+instance_create_depth(id, 0, 0, dto_hud_construction_menu);

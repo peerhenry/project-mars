@@ -1,10 +1,12 @@
-var w = 200;
-var h = 120;
-var margin_left = 8;
+/// @description Draw
+var w = width;
+var h = height;
+var margin_left = left;
 var margin_top = top;
 var pad = 4;
 var font = font_small;
 
+// draw rectangle with outline
 var l = margin_left;
 var r = l + w;
 var t = margin_top;
@@ -16,6 +18,7 @@ draw_set_alpha(1.0);
 draw_set_color(c_aqua);
 draw_rectangle(l, t, r, b, true);
 
+// draw text
 draw_set_color(c_white);
 draw_set_font(font);
 draw_set_valign(fa_top);

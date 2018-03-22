@@ -1,13 +1,22 @@
 // draw gui items
-for(var n = 0; n < gui_item_count; n++)
+for(var n = 0; n < ds_list_size(gui_item_list); n++)
 {
 	var next_gui_item = gui_item_list[| n];
-	with(next_gui_item) event_user(0);
+	with(next_gui_item) event_user(macro_gui_event_draw);
 }
 
-// draw gui tooltip
-if(hover_item != noone)
-{
-	var tooltip = hover_item.tooltip_data;
-	if(instance_exists(tooltip)) scr_draw_tooltip_dto(tooltip);
+// draw gui tooltip here
+var hover_item = global.gui_hover_item;
+if(
+	hover_item != noone 
+	&& instance_exists(hover_item) 
+	&& hover_item.hover
+){
+	with(hover_item)
+	{
+		if(string_length(tooltip_title) > 0)
+		{
+			scr_draw_tooltip_description(tooltip_title, tooltip_description);
+		}
+	}
 }

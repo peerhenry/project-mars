@@ -1,4 +1,5 @@
 
+/*
 with(obj_HUD_details_panel)
 {
 	other.left = width + 1;
@@ -40,3 +41,4 @@ draw_text(x_or, line4_y, "demand: " + string(grid.display_total_demand));
 	
 var line5_y = y_or + 96;
 draw_text(x_or, line5_y, "net output: " + string(grid.display_net_output));
+*/
