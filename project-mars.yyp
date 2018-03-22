@@ -3730,7 +3730,7 @@
             "Key": "4d62cafc-f8b8-4da3-b98d-b19e548034df",
             "Value": {
                 "id": "3002393b-3be3-490b-818c-7229e381fb23",
-                "resourcePath": "objects\\obj_fade\\obj_fade.yy",
+                "resourcePath": "objects\\obj_menu_fade\\obj_menu_fade.yy",
                 "resourceType": "GMObject"
             }
         },
