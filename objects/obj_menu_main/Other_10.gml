@@ -1,4 +1,5 @@
 /// @description Menu Select Event
+
 switch(menu_focus_index)
 {
 	case menu_index.game_continue:
@@ -24,10 +25,8 @@ switch(menu_focus_index)
 		var fader = instance_create_layer(0, 0, "layer_fade", obj_menu_fade);
 		fader.target_room = room_test_map;
 		break;
-	/*case menu_index.test:
-		room_goto(room_tests);*/
 	case menu_index.quit:
-		audio_stop_all();
 		game_end();
 		break;
+	//default ignore unfocussed or index not found
 }

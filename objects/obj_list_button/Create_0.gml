@@ -1,0 +1,9 @@
+font = font_menu;
+caption = "";
+index = noone;
+enabled = true;
+focussed = false;
+focus_indent = 48;
+hover = false;
+text_width = -1;
+text_height = -1;

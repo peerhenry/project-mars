@@ -17,7 +17,10 @@ valign = align_v.top;
 class = gui_item_class.none;
 hover = false;
 container = x; // inject container in x
-ds_list_add(container.gui_item_list, id);
+if(container != noone) //todo: discuss circular ref / root container has no container
+{
+	ds_list_add(container.gui_item_list, id);
+}
 
 
 tooltip_title = "";

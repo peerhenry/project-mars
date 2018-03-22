@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+// todo: deprecated / unused object?
 
 draw_set_halign(fa_left);
 draw_set_valign(fa_middle);

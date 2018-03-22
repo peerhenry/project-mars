@@ -1023,6 +1023,14 @@
             }
         },
         {
+            "Key": "153263f2-0b9a-42bb-85c9-5d32432c7654",
+            "Value": {
+                "id": "200a7d25-2f90-48b5-9168-fc0975f789bb",
+                "resourcePath": "objects\\obj_div\\obj_div.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "15379f2d-e22a-4ddd-aa36-45fb91bda00d",
             "Value": {
                 "id": "0d6c644f-b1ed-493d-8b81-1f8fb0be21be",
@@ -10527,14 +10535,6 @@
             }
         },
         {
-            "Key": "efe612f3-a627-4c3c-811b-8e2e9e9d43b0",
-            "Value": {
-                "id": "0246685d-621d-4ec5-94b0-f72f8de9925d",
-                "resourcePath": "objects\\obj_settings\\obj_settings.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "f03536b1-fde1-4257-adda-96507bd89b50",
             "Value": {
                 "id": "a8a59f43-4e61-45b5-9756-110f0f797260",
@@ -11012,6 +11012,14 @@
                 "id": "5367113b-b67e-46bc-8e75-41954c597caa",
                 "resourcePath": "scripts\\scr_handle_new_destruction\\scr_handle_new_destruction.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "fac45099-1551-4c9a-b080-49105a23c99a",
+            "Value": {
+                "id": "a26a856d-adef-4ab8-908a-4f4c704d52d5",
+                "resourcePath": "objects\\obj_list_button\\obj_list_button.yy",
+                "resourceType": "GMObject"
             }
         },
         {
