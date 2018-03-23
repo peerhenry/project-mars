@@ -10,4 +10,4 @@ cursor_sprite = spr_cursor;
 
 //todo: discuss this
 //when entering a room, the defined camera size causes auto scaling to the current window size
-camera_set_view_size(view_camera[view_current], window_get_width(), window_get_height());
+//camera_set_view_size(view_camera[view_current], window_get_width(), window_get_height());

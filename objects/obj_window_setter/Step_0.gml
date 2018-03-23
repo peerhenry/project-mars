@@ -6,6 +6,17 @@ switch(step_number)
 		info += ", aa=" + string(aa_level) + ", vsync=" + string(vsync);
 		scr_force_trace(info);
 		
+		//save revert data
+		global.window[? key_window_revert] = [
+			global.window[? key_window_width],
+			global.window[? key_window_height],
+			global.window[? key_window_fullscreen],
+			global.window[? key_window_aa_level],
+			global.window[? key_window_vsync],
+			global.window[? key_window_x],
+			global.window[? key_window_y]
+		];
+		
 		event_user(0); // Set AA-level and vsync
 		event_user(3); // Set fullscreen or windowed
 		break;

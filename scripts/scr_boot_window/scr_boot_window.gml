@@ -47,11 +47,15 @@ for(var i = 0; i < ds_list_size(resolutions); i++)
 var window = ds_map_create();
 window[? key_window_resolutions_list] = resolutions;
 window[? key_window_resolutions_current] = current_resolution;
+window[? key_window_width] = window_width;
+window[? key_window_height] = window_height;
+window[? key_window_fullscreen] = window_fullscreen;
 window[? key_window_aa_level] = 0; //needs to initialize as 0
 window[? key_window_vsync] = false; //needs to initialize as false
+window[? key_window_x] = window_x;
+window[? key_window_y] = window_y;
 global.window = window;
 
 // Set window async, when done start preloader
-//todo: check feeding auto vars does not cause reading from non-existent global.window[item], which needs to be set initially now
 scr_set_window(window_width, window_height, window_fullscreen, window_aa_level, window_vsync, window_x, window_y, scr_preload);  //important: needs to be last line of code
 exit;

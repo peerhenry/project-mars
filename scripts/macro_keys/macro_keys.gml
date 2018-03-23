@@ -21,3 +21,4 @@
 #macro key_window_vsync						"vsync"
 #macro key_window_x							"x"
 #macro key_window_y							"y"
+#macro key_window_revert					"revert"
