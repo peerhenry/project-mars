@@ -20,5 +20,5 @@ shoot_path = path_add();
 // draw/gui stuff
 show_details = false;
 
-auto_attack = false;
-auto_construct = true;
+auto_attack = (owner == macro_player) ? global.auto_attack_player : global.auto_attack_nonplayer;
+auto_construct = (owner == macro_player) ? global.auto_construct_player : global.auto_construct_nonplayer;

@@ -38,12 +38,23 @@ section = "food";
 global.hunger_speed = init_global_real(section, "hunger_speed", 0.01);
 global.starvation_speed = init_global_real(section, "starvation_speed", 0.01);
 global.auto_eat_hunger_level = init_global_real(section, "auto_eat_hunger_level", 20);
+global.auto_eat_player = init_global_real(section, "auto_eat_player", 0);
+global.auto_eat_nonplayer = init_global_real(section, "auto_eat_nonplayer", 1);
 
 // - SLEEP
 section = "sleep";
 global.sleep_level_depletion = init_global_real(section, "sleep_level_depletion", 0.01); // how fast is idle astronaut losing energy PP/frame
-global.auto_sleep_level = init_global_real(section, "auto_sleep_level", 20);
 global.sleep_speed = init_global_real(section, "sleep_speed", 0.06);
+global.auto_sleep_level = init_global_real(section, "auto_sleep_level", 20);
+global.auto_sleep_player = init_global_real(section, "auto_sleep_player", 0);
+global.auto_sleep_nonplayer = init_global_real(section, "auto_sleep_nonplayer", 1);
+
+// - obj_task_actor
+section = "actor";
+global.auto_attack_player = init_global_real(section, "auto_attack_player", 0);
+global.auto_attack_nonplayer = init_global_real(section, "auto_attack_nonplayer", 0);
+global.auto_construct_player = init_global_real(section, "auto_construct_player", 1);
+global.auto_construct_nonplayer = init_global_real(section, "auto_construct_nonplayer", 1);
 
 // -- MED BED
 section = "med_bed"

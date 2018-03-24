@@ -22,10 +22,8 @@ if(wears_suit) mask_color = mask_color_suit;
 image_speed = 0;
 
 // automatic behavior
-auto_eat = false;
-if(owner != macro_player) auto_eat = true;
-auto_sleep = false;
-if(owner != macro_player) auto_sleep = true;
+auto_eat = (owner == macro_player) ? global.auto_eat_player : global.auto_eat_nonplayer;
+auto_sleep = (owner == macro_player) ? global.auto_sleep_player : global.auto_sleep_nonplayer;
 auto_eat_level = global.auto_eat_hunger_level;
 auto_sleep_level = global.auto_sleep_level;
 
