@@ -1,6 +1,8 @@
 /// @description Click callback
 
-switch(click_item.click_action)
+if(!instance_exists(callback_item)) exit; //todo: discuss possible error flow
+
+switch(callback_item.click_action)
 {
 	case details_panel_action.deselect:
 		unit.is_selected = false;
