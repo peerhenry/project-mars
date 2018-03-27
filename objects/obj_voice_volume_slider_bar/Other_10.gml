@@ -1,6 +1,6 @@
 /// @description On change
 audio_group_set_gain(audiogroup_voice, slider.percentage/100, 0);
-global.voice_volume = slider.percentage;
+global.settings[? key_settings_sound_volume_voice] = slider.percentage;
 var s = irandom(2);
 var chosen = noone;
 switch s
