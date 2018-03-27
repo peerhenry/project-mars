@@ -7,7 +7,7 @@ if(enabled && focussed && text_height != -1)
 //draw label
 var color = c_white;
 if(!enabled) color = c_gray;
-else if(hover) color = c_green;
+else if(hover) color = c_aqua; //scr_hex_to_color("00ffff");
 
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
