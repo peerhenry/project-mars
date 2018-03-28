@@ -3,5 +3,7 @@ height = 50;
 text = "button";
 callback = noone;
 callback_arg = noone;
-mouse_over = false;
+hover = false;
 global.gui_press_button = noone;
+script_container = global.script_container;
+#macro macro_event_gui_button_click 0

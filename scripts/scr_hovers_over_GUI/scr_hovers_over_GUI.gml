@@ -24,7 +24,7 @@ if(!hovering_over_gui)
 {
 	with(obj_HUD_item)
 	{
-		if(mouse_over)
+		if(hover)
 		{
 			hovering_over_gui = true;
 			break;

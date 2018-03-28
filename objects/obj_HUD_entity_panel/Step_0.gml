@@ -15,5 +15,8 @@ if(
 	&& mouse_gui_x < right 
 	&& mouse_gui_y > top 
 	&& mouse_gui_y < top + panel_height
-) hover = true;
+){
+	if(!hover) resolve_execute(global.script_container, "play_sound", sound_hover);
+	hover = true;
+}
 else hover = false;

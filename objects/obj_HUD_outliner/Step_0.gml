@@ -26,22 +26,33 @@ if(global.mousedrag_from == mousedrag_from.world) exit; //prevent hover when dra
 var window_mouse_x = window_mouse_get_x();
 var window_mouse_y = window_mouse_get_y();
 
-hover_astro_tab = window_mouse_x > tab_astro_left
+var new_hover_astro_tab = window_mouse_x > tab_astro_left
 	&& window_mouse_x < tab_astro_right
 	&& window_mouse_y > tab_astro_top
 	&& window_mouse_y < tab_astro_top + tab_h;
 
-hover_robot_tab = window_mouse_x > tab_robot_left
+var new_hover_robot_tab = window_mouse_x > tab_robot_left
 	&& window_mouse_x < tab_robot_right
 	&& window_mouse_y > tab_robot_top
 	&& window_mouse_y < tab_robot_top + tab_h;
 
-hover_cart_tab = window_mouse_x > tab_cart_left
+var new_hover_cart_tab = window_mouse_x > tab_cart_left
 	&& window_mouse_x < tab_cart_right
 	&& window_mouse_y > tab_cart_top
 	&& window_mouse_y < tab_cart_top + tab_h;
 
-hover = hover_astro_tab || hover_robot_tab || hover_cart_tab;
+var new_hover = 
+	hover_astro_tab != new_hover_astro_tab
+	|| hover_robot_tab != new_hover_robot_tab
+	|| hover_cart_tab != new_hover_cart_tab;
+if(new_hover)
+{
+	resolve_execute(global.script_container, "play_sound", sound_hover);
+	hover_astro_tab = new_hover_astro_tab;
+	hover_robot_tab = new_hover_robot_tab;
+	hover_cart_tab = new_hover_cart_tab;
+	hover = hover_astro_tab || hover_robot_tab || hover_cart_tab;
+}
 
 var clicked = mouse_check_button_pressed(mb_left);
 

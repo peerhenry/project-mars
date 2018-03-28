@@ -17,5 +17,5 @@
 // sound
 #macro default_sound_volume_master		80
 #macro default_sound_volume_voice		50
-#macro default_sound_volume_sfx			100
-#macro default_sound_volume_music		100
+#macro default_sound_volume_sfx			80
+#macro default_sound_volume_music		35

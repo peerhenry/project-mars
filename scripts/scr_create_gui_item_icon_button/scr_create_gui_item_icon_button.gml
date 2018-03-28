@@ -20,8 +20,8 @@ with(item)
 	sprite = arg_sprite;
 	var spr_w = sprite_get_width(sprite);
 	var spr_h = sprite_get_height(sprite);
-	sprite_x = arg_left + arg_pad;
-	sprite_y = arg_top + arg_pad;
+	sprite_x = arg_left + arg_pad + 1;
+	sprite_y = arg_top + arg_pad + 1;
 	
 	left = arg_left;
 	top = arg_top;
@@ -32,6 +32,7 @@ with(item)
 	
 	step_script = scr_gui_item_step_button;
 	draw_script = scr_gui_item_draw_button;
+	mouse_enter_script = scr_gui_item_enter_sound;
 	click_action = arg_action;
 }
 return item;

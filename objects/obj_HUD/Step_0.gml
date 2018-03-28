@@ -27,24 +27,27 @@ mouse_over_HUD = window_mouse_y < 36; // hud top bar
 
 #region buttons
 
-hover_button = noone;
+var mouse_over_one = false;
 for(var n = 0; n < ds_list_size(buttons); n++)
 {
 	var button = buttons[| n];
-	var hover = 
+	var mouse_over = 
 		window_mouse_x > button.x
 		&& window_mouse_x < button.x + button.width
 		&& window_mouse_y > button.y
 		&& window_mouse_y < button.y + button.height
-	if(hover)
+	if(mouse_over)
 	{
+		if(hover_button != button) resolve_execute(global.script_container, "play_sound", sound_hover);
 		hovers = true;
 		hover_button = button;
+		mouse_over_one = true;
 		if(pressed) press_button = button;
 		else if(released) scr_hud_button_click(button);
 	}
 	if(press_button == button && released) press_button = noone;
 }
+if(!mouse_over_one) hover_button = noone;
 
 #endregion
 

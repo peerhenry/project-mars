@@ -1,0 +1,1 @@
+audio_play_sound(sound_fx_wind, 1, false);

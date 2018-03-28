@@ -14,7 +14,7 @@ else show_debug_message("Creating settings file: " + macro_settings_file);
 
 var settings = ds_map_create();
 
-ini_open(macro_settings_file);
+ini_open(macro_settings_file); // %LOCALAPPDATA%/project_mars
 
 // -- section: settings --
 settings[? key_settings_creation_date] = init_global_real("settings", "creation_date", scr_date_format(date_current_datetime()));

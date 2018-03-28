@@ -192,10 +192,10 @@ with(container)
 	var button_w = 24;
 	var button_h = 24;
 	// top buttons
-	var ds_btn = scr_create_gui_item_icon_button(container, right - button_w + 1, top - button_h, spr_deselect_icon, 4, details_panel_action.deselect);
+	var ds_btn = scr_create_gui_item_icon_button(container, right - button_w, top - button_h - 1, spr_deselect_icon, 4, details_panel_action.deselect);
 	ds_btn.tooltip_text = "Deselect unit";
 	
-	var center_button = scr_create_gui_item_icon_button(container, right - button_w*2 + 1, top - button_h, spr_center_cam_icon, 4, details_panel_action.center);
+	var center_button = scr_create_gui_item_icon_button(container, right - button_w*2 - 1, top - button_h - 1, spr_center_cam_icon, 4, details_panel_action.center);
 	center_button.tooltip_text = "Center camera on unit";
 	
 	// button section

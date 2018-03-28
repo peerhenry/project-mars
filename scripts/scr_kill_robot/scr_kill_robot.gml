@@ -5,6 +5,6 @@ var robot = argument0;
 if(path_exists(robot.path)) scr_stop_moving(robot);
 scr_cancel_all(robot);
 
-// todo: robot death sound
+resolve_execute(robot.script_container, "play_sound", sound_fx_robot_down);
 
 instance_destroy(robot);

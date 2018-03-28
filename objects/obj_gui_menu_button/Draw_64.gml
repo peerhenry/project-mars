@@ -1,4 +1,4 @@
-if(mouse_over)
+if(hover)
 {
 	var gui_press_button = global.gui_press_button;
 	if(mouse_check_button(mb_left) && gui_press_button == id) scr_draw_panel_inverse(x, y, x+width, y+height);

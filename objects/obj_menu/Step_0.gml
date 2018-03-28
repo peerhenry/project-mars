@@ -27,8 +27,11 @@ if(last_mouse_x != mouse_x || last_mouse_y != mouse_y) //mouse has moved
 		if(!list_button.enabled) continue;
 		if(mouse_y >= list_button.y && mouse_y < list_button.y + list_button.text_height) //check only y-coordinate hover
 		{
-			with(obj_list_button) focussed = false;
 			list_button.focussed = true;
+			with(obj_list_button)
+			{
+				if(id != list_button) focussed = false;
+			}
 			menu_focus_index = i;
 			break;
 		}
@@ -52,8 +55,11 @@ if(move != 0)
 		var list_button = list_buttons[|next_index]; //todo: list_buttons index needs to match it's .index member (enum deprecated/overhead?)
 		if(list_button.enabled)
 		{
-			with(obj_list_button) focussed = false;
 			list_button.focussed = true;
+			with(obj_list_button)
+			{
+				if(id != list_button) focussed = false;
+			}
 			menu_focus_index = list_button.index;
 			break;
 		}
