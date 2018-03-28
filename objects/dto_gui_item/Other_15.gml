@@ -28,3 +28,6 @@ right = left + width;
 		
 sprite_x = origin_x + sprite_offset_x;
 sprite_y = origin_y + sprite_offset_y;
+
+text_x = origin_x + text_offset_x;
+text_y = origin_y + text_offset_y;

@@ -27,7 +27,7 @@ ds_list_add(container.gui_item_list, id);
 tooltip_title = "";
 tooltip_description = "";
 step_script = scr_gui_item_step_set_hover;
-draw_script = scr_guit_item_draw_standard;
+draw_script = scr_gui_item_draw_standard;
 mouse_enter_script = noone;
 mouse_leave_script = noone;
 
@@ -45,6 +45,7 @@ should_draw_rectangle = false;
 should_draw_healthbar = false;
 
 // rectangle
+rectangle_alpha = 1.0;
 rectangle_color_top = c_black;
 rectangle_color_bottom = c_black;
 

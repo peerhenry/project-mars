@@ -82,6 +82,7 @@ else
 
 var offset_x = left + padding;
 var offset_y = top + padding;
+
 for(var n = 0; n < item_count; n++)
 {
 	var next_gui_item = gui_item_list[| n];
@@ -89,6 +90,7 @@ for(var n = 0; n < item_count; n++)
 	{
 		if(other.orientation == stack.vertical)
 		{
+			// set origin based on proper alignment
 			origin_x = offset_x;
 			if(halign == align_h.center) origin_x += width/2;
 			else if(halign == align_h.right) origin_x += width;
@@ -96,16 +98,27 @@ for(var n = 0; n < item_count; n++)
 			if(valign == align_v.mid) origin_y += height/2;
 			else if(valign == align_v.bottom) origin_y += height;
 			
+			// offset origin based on content alignment
+			var content_width = other.width - 2*other.padding;
+			if(other.content_align_h == align_v.mid) origin_x += (content_width - width)/2;
+			else if(other.content_align_h == align_v.bottom) origin_x += content_width;
+			
 			offset_y += height + other.spacing;
 		}
 		else if(other.orientation == stack.horizontal)
 		{
+			// set origin based on proper alignment
 			origin_x = offset_x;
 			if(halign == align_h.center) origin_x += width/2;
 			else if(halign == align_h.right) origin_x += width;
 			origin_y = offset_y;
 			if(valign == align_v.mid) origin_y += height/2;
 			else if(valign == align_v.bottom) origin_y += height;
+			
+			// offset origin based on content alignment
+			var content_height = other.height - 2*other.padding;
+			if(other.content_align_v == align_v.mid) origin_y += (content_height - height)/2;
+			else if(other.content_align_v == align_v.bottom) origin_y += content_height;
 			
 			offset_x += width + other.spacing;
 		}

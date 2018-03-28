@@ -8,7 +8,9 @@ with(argument0)
 	// 2 draw rectangle
 	if(should_draw_rectangle)
 	{
+		draw_set_alpha(rectangle_alpha);
 		draw_rectangle_color(left, top, right, bottom, rectangle_color_top, rectangle_color_top, rectangle_color_bottom, rectangle_color_bottom, false);
+		draw_set_alpha(1.0);
 	}
 
 	// 3 draw sprite

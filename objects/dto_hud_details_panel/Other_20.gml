@@ -13,16 +13,16 @@ switch(callback_item.click_action)
 		with(unit) event_user(macro_toggle_deploy_event);
 		break;
 	case details_panel_action.show_grid_details:
-		show_debug_message("details_panel_action.show_grid_details");
-		var exists = false;
+		var make_new_one = true;
+		var this_grid = callback_item.grid;
 		with(obj_HUD_grid_details_panel)
 		{
-			exists = true;
+			if(this_grid == grid) make_new_one = false;
 			instance_destroy();
 		}
-		if(!exists)
+		if(make_new_one)
 		{
-			var grid_panel = instance_create_depth(id, callback_item.grid, 0, obj_HUD_grid_details_panel);
+			var grid_panel = instance_create_depth(id, this_grid, 0, obj_HUD_grid_details_panel);
 		}
 		break;
 }
