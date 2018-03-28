@@ -17,11 +17,12 @@ valign = align_v.top;
 class = gui_item_class.none;
 hover = false;
 container = x; // inject container in x
-if(container != noone) //todo: discuss circular ref / root container has no container
-{
-	ds_list_add(container.gui_item_list, id);
-}
 
+var container_is_correct = 
+	scr_instance_inherits(container, dto_gui_container)
+	|| scr_instance_inherits(container, obj_gui);
+if(!container_is_correct) show_error("Gui item did not get a gui container injected", true);
+ds_list_add(container.gui_item_list, id);
 
 tooltip_title = "";
 tooltip_description = "";
