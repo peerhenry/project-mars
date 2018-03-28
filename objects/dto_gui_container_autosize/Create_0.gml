@@ -1,6 +1,6 @@
 event_inherited();
 gui_item_count = 0;
-
+anchor_item = noone;
 enum stack
 {
 	vertical,

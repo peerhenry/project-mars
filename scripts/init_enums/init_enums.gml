@@ -104,3 +104,23 @@ enum mousedrag_from
 	minimap = 2,
 	gui = 3
 }
+
+enum details_panel_action
+{
+	none,
+	center,
+	deselect,
+	deploy,
+	show_grid_details
+}
+
+enum unit_prop
+{
+	none,
+	entity_health,
+	integrity,
+	sleep,
+	food,
+	battery_charge,
+	suit_oxygen
+}

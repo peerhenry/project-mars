@@ -57,7 +57,7 @@ sprite_x = 0;
 sprite_y = 0;
 sprite_color = c_white;
 sprite_alpha = 1;
-sprite_overflow = false; //true=allow overflow, false=auto crop and center to requested width/height
+sprite_crop = false; // draw partial sprite to gui item size
 
 // text, label, text_button
 font = noone;

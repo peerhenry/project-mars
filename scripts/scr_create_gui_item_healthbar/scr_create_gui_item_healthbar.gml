@@ -32,7 +32,6 @@ with(item)
 	should_draw_healthbar = true;
 	switch(arg_prop)
 	{
-		case unit_prop.health_integrity:
 		case unit_prop.integrity:
 		case unit_prop.entity_health:
 			bar_color = c_lime;

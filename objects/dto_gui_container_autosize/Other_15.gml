@@ -36,33 +36,45 @@ else if(orientation == stack.horizontal)
 
 #region update left top right bottom
 
-switch(halign)
+if(anchor_item != noone)
 {
-	case align_h.left:
-		left = origin_x;
-		break;
-	case align_h.center:
-		left = origin_x - width/2;
-		break;
-	case align_h.right:
-		left = origin_x - width;
-		break;
+	// anchor to bottom right of the anchor item
+	// todo: use enums to enable anchoring anywhere relative to anchor item 
+	left = anchor_item.right + 1;
+	bottom = anchor_item.bottom;
+	top = bottom - height;
+	right = left + width;
 }
-right = left + width;
+else
+{
+	switch(halign)
+	{
+		case align_h.left:
+			left = origin_x;
+			break;
+		case align_h.center:
+			left = origin_x - width/2;
+			break;
+		case align_h.right:
+			left = origin_x - width;
+			break;
+	}
+	right = left + width;
 
-switch(valign)
-{
-	case align_v.top:
-		top = origin_y;
-		break;
-	case align_v.mid:
-		top = origin_y - height/2;
-		break;
-	case align_v.bottom:
-		top = origin_y - height;
-		break;
+	switch(valign)
+	{
+		case align_v.top:
+			top = origin_y;
+			break;
+		case align_v.mid:
+			top = origin_y - height/2;
+			break;
+		case align_v.bottom:
+			top = origin_y - height;
+			break;
+	}
+	bottom = top + height;
 }
-bottom = top + height;
 
 #endregion
 

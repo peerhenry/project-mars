@@ -33,6 +33,7 @@ with(container)
 	with(avatar)
 	{
 		sprite = arg_unit.sprite_index;
+		sprite_crop = sprite_get_height(sprite) > 96;
 		sprite_x = av_x + 48;
 		sprite_y = av_y + 48;
 		should_draw_rectangle = true;
@@ -191,14 +192,14 @@ with(container)
 	
 	var button_w = 24;
 	var button_h = 24;
-	// top buttons
+	// Deselect button
 	var ds_btn = scr_create_gui_item_icon_button(container, right - button_w, top - button_h - 1, spr_deselect_icon, 4, details_panel_action.deselect);
 	ds_btn.tooltip_text = "Deselect unit";
-	
+	// Center cam button
 	var center_button = scr_create_gui_item_icon_button(container, right - button_w*2 - 1, top - button_h - 1, spr_center_cam_icon, 4, details_panel_action.center);
 	center_button.tooltip_text = "Center camera on unit";
 	
-	// button section
+	// Deploy button
 	if(arg_unit.object_index == obj_cart)
 	{
 		scr_create_gui_item_icon_button(container, content_left, next_y_offset, spr_deploy, 0, details_panel_action.deploy);

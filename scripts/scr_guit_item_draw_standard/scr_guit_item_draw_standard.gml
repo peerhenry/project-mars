@@ -14,13 +14,13 @@ with(argument0)
 	// 3 draw sprite
 	if(sprite != noone)
 	{
-		if(sprite_overflow) draw_sprite_ext(sprite, subimg, sprite_x, sprite_y, 1, 1, 0, sprite_color, sprite_alpha); //allow overflow of item width and height
-		else //crop to needed size and auto center
+		if(sprite_crop)
 		{
 			var sw = min(width, sprite_get_width(sprite));
 			var sh = min(height, sprite_get_height(sprite));
 			draw_sprite_part_ext(sprite, subimg, 0, 0, sw, sh, sprite_x - sw/2, sprite_y - sh/2, 1, 1, sprite_color, sprite_alpha);
 		}
+		else draw_sprite_ext(sprite, subimg, sprite_x, sprite_y, 1, 1, 0, sprite_color, sprite_alpha);
 	}
 
 	// 4 healthbar

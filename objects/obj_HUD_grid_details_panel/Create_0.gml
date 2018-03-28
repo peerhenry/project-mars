@@ -1,4 +1,20 @@
 event_inherited();
-grid = noone;
-width = 384;
-height = 160;
+grid = y;
+if(!instance_exists(grid)) exit;
+if(grid.object_index != obj_grid) show_error("Grid in grid details panel is not a grid", true);
+orientation = stack.horizontal;
+anchor_item = container;
+halign = align_h.left;
+valign = align_v.bottom;
+content_align_h = align_h.center;
+content_align_v = align_v.mid;
+should_draw_panel = true;
+step_script = scr_gui_item_step_set_hover;
+padding = 16;
+spacing = 8;
+
+scr_create_gui_item_sprite(id, 0, 0, spr_grid_electric_source);
+scr_create_gui_item_sprite(id, 0, 0, spr_grid_flow_arrow);
+scr_create_gui_item_sprite(id, 0, 0, spr_grid_electric_storage_fill);
+scr_create_gui_item_sprite(id, 0, 0, spr_grid_flow_arrow);
+scr_create_gui_item_sprite(id, 0, 0, spr_grid_electric_consumption);

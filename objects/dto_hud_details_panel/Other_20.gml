@@ -13,23 +13,16 @@ switch(callback_item.click_action)
 		with(unit) event_user(macro_toggle_deploy_event);
 		break;
 	case details_panel_action.show_grid_details:
-		/* todo: implement
-		var grid_off = false;
-		if(instance_exists(arg_panel.sub_panel))
+		show_debug_message("details_panel_action.show_grid_details");
+		var exists = false;
+		with(obj_HUD_grid_details_panel)
 		{
-			with(obj_HUD_grid_details_panel)
-			{
-				instance_destroy();
-				grid_off = grid == arg_panel_component.grid;
-			}
-			arg_panel.sub_panel = noone;
+			exists = true;
+			instance_destroy();
 		}
-		if(!grid_off)
+		if(!exists)
 		{
-			var grid_panel = instance_create_layer(0, 0, macro_logic_layer, obj_HUD_grid_details_panel);
-			grid_panel.grid = arg_panel_component.grid;
-			arg_panel.sub_panel = grid_panel;
+			var grid_panel = instance_create_depth(id, callback_item.grid, 0, obj_HUD_grid_details_panel);
 		}
-		*/
 		break;
 }
