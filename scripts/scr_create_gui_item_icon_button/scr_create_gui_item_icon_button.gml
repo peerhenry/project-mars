@@ -34,5 +34,10 @@ with(item)
 	draw_script = scr_gui_item_draw_button;
 	mouse_enter_script = scr_gui_item_enter_sound;
 	click_action = arg_action;
+	
+	// new test, todo: remove if there are no issues
+	sprite_button_color = c_aqua;
+	sprite_hover_color = c_white;
+	sprite_down_color = c_gray;
 }
 return item;

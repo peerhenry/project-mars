@@ -57,11 +57,13 @@ for(var n = 0; n < ds_list_size(construction_list); n++)
 		var new_btn = scr_create_gui_item_icon_button(build_select_panel, 0, 0, next_sprite, 0, 0);
 		with(new_btn)
 		{
+			should_draw_rectangle = true;
 			should_draw_panel = false;
 			construction = next_build;
 			tooltip_title = scr_get_tooltip_text(next_build);
 			halign = align_h.center;
 			valign = align_v.mid;
+			click_script = scr_click_select_construction;
 		}
 	}
 }

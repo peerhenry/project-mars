@@ -1,5 +1,10 @@
 with(argument0)
 {
-	text = string(grid.net_output);
-	text_color = grid.net_output > 0 ? c_lime : c_red;
+	var net_output = grid.net_output;
+	text = string(net_output);
+	text_color = net_output > 0 ? c_lime : c_red;
+	with(grid_part_sprite)
+	{
+		sprite = net_output > 0 ? spr_grid_electric_storage_fill : spr_grid_electric_storage_drain;	
+	}
 }

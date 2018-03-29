@@ -1,8 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
-
-// Inherit the parent event
-event_inherited();
+/// @description Update
 
 if(
 	active_build_panel != noone 
@@ -14,3 +10,5 @@ if(
 	active_build_panel.visible = false;
 	active_build_panel = noone;
 }
+
+event_inherited();

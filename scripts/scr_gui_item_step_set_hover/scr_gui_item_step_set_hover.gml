@@ -3,7 +3,7 @@ with(argument0)
 {
 	var wmx = window_mouse_get_x();
 	var wmy = window_mouse_get_y();
-	var new_hover = wmx >= left && wmx <= right && wmy >= top && wmy <= bottom;
+	var new_hover = (wmx >= left && wmx <= right && wmy >= top && wmy <= bottom);
 	if(new_hover != hover)
 	{
 		hover = new_hover;

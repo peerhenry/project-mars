@@ -47,10 +47,11 @@ with(c2)
 	should_draw_rectangle = true;
 	rectangle_alpha = 0.5;
 }
-scr_create_gui_item_sprite(c2, 0, 0, spr_grid_electric_storage_fill);
+var sprite_thing = scr_create_gui_item_sprite(c2, 0, 0, spr_grid_electric_storage_fill);
 var l2 = instance_create_depth(c2, grid, 0, obj_gui_grid_prop_label);
 with(l2)
 {
+	grid_part_sprite = sprite_thing;
 	font = grid_font;
 	text_halign = fa_center;
 	step_script = scr_gui_item_step_grid_net_label;
