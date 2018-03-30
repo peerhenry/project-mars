@@ -23,7 +23,8 @@ enum astronaut_action // these are assigned to astronaut objects
 	delivering_mdu,
 	constructing,
 	executing_assignment,
-	in_combat
+	in_combat,
+	repairing
 }
 
 enum cart_action

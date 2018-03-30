@@ -2,6 +2,7 @@ scr_trace("basetile create event");
 
 event_inherited();
 wall_adjacency = 0;
+is_broken = false; // used in step and for setting cursor sprite
 
 // carrier of all grids
 scr_set_new_grid_props(id, macro_grid_electric, macro_grid_role_carrier, 0);

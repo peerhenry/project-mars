@@ -25,7 +25,7 @@ var released = mouse_check_button_released(mb_left);
 var right_clicked = mouse_check_button_released(mb_right);
 mouse_over_HUD = window_mouse_y < 36; // hud top bar
 
-#region buttons
+#region buttons hover & click logic
 
 var mouse_over_one = false;
 for(var n = 0; n < ds_list_size(buttons); n++)
@@ -51,66 +51,76 @@ if(!mouse_over_one) hover_button = noone;
 
 #endregion
 
+#region set cursor sprite
+
 if( mouse_over_HUD || global.hovering_over_HUD )
 {
 	cursor_sprite = spr_cursor;
 	exit;
 }
 
-#region set cursor
-// ---  Check hovers over selectable 
+#region set hover_over_selectable
 
 // hovers over movable
-var hovers_over_selectable = false;
+var hover_over_selectable = false;
 var entity = instance_position(mouse_x, mouse_y, obj_movable);
 if(entity != noone)
 {
-	hovers_over_selectable = entity.owner == macro_player;
+	hover_over_selectable = entity.owner == macro_player;
 }
 
-// hovers over grid selector
+// hovers over component
 var component = noone;
-if(!hovers_over_selectable)
+if(!hover_over_selectable)
 {
 	component = instance_position(mouse_x, mouse_y, obj_base_component);
 	if(component != noone)
 	{
-		hovers_over_selectable = (component.owner == macro_player);
+		hover_over_selectable = (component.owner == macro_player);
 	}
 }
 
-// --- End Check hovers over selectable
+var base_tile = noone;
+if(!hover_over_selectable)
+{
+	base_tile = instance_position(mouse_x, mouse_y, obj_base_tile);
+}
 
-if(!hovers_over_selectable)
+#endregion
+
+if(!hover_over_selectable)
 {
 	// Grid selectors, fridges and sensors are selectable
 	if( scr_any_task_actors_selected() )
 	{
-		var hovers_over_enemy = false;
+		var hover_over_enemy = false;
+		var hover_over_broken_basetile = false;
 		if(entity != noone)
 		{
-			hovers_over_enemy = entity.owner == macro_enemy;
+			hover_over_enemy = entity.owner == macro_enemy;
 		}
 
-		if(!hovers_over_enemy)
+		if(!hover_over_enemy)
 		{
 			var constr = scr_enemy_component_position(mouse_x, mouse_y);
-			if(constr != noone) hovers_over_enemy = true;
+			if(constr != noone) hover_over_enemy = true;
 		}
 		
-		if(hovers_over_enemy)
+		if(!hover_over_enemy)
+		{
+			hover_over_broken_basetile = (base_tile != noone && base_tile.owner == macro_player && base_tile.is_broken);
+		}
+		
+		if(hover_over_enemy)
 		{
 			cursor_sprite = spr_cursor_attack;
 		}
+		else if(hover_over_broken_basetile)
+		{
+			cursor_sprite = spr_cursor_repair;
+		}
 		else
 		{
-			/*
-			var hovers_over_assignable = instance_position(mouse_x, mouse_y, obj_assignable) != noone;
-			if(hovers_over_assignable)
-			{
-				cursor_sprite = spr_cursor_assign;
-			}
-			else */
 			cursor_sprite = spr_cursor_move;
 		}
 	}

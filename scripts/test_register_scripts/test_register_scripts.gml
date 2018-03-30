@@ -11,4 +11,5 @@ script_container_register(container, "room_logic_door", scr_mock);
 script_container_register(container, "door_destroy_logic", scr_mock);
 script_container_register(container, "create_explosion_and_rubble", scr_mock);
 script_container_register(container, "room_remove_tile_and_part", scr_room_remove_tile_and_part); // todo: move construction tests to scenario tests
+script_container_register(container, "init_gui", scr_mock);
 return container;

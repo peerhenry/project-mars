@@ -1,6 +1,7 @@
 gui_item_list = ds_list_create();
 global.gui = id;
-global.hud_details_panel = noone; // todo: move to init_globals
-global.gui_hover_item = noone;
+global.hud_details_panel = noone;	// needs to be global for destroying when deselecting astros
+global.gui_hover_item = noone;		// in global for tooltip
+being_destroyed = false;
 
-instance_create_depth(id, 0, 0, dto_hud_construction_menu);
+resolve_execute(global.script_container, "init_gui", id);

@@ -77,6 +77,11 @@ if(keyboard_check_pressed(ord("K")))
 	{
 		var astro = instance_position(mouse_x, mouse_y, obj_movable);
 		if(astro != noone) scr_kill(astro);
+		else
+		{
+			var con = instance_position(mouse_x, mouse_y, obj_constructable);
+			if(con != noone) con.damage = 100;
+		}
 	}
 }
 

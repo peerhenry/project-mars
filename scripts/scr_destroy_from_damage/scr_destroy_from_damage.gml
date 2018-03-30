@@ -13,7 +13,7 @@ var leak_layer = script_execute(get_layer_for, obj_leak);
 
 if(arg_constructable.object_index == obj_hatch)
 {
-	// add a leak to 
+	// add a leak room
 	var new_leak = instance_create_layer(0,0,leak_layer, obj_leak);
 	ds_list_add(arg_constructable.base_room.leaks, new_leak);
 }

@@ -38,6 +38,7 @@ with(build_select_panel)
 	should_draw_panel = true;
 	visible = false;
 	padding = arg_container.padding;
+	spacing = 2;
 	orientation = stack.horizontal;
 }
 

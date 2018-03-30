@@ -10,7 +10,8 @@
         "1cf9be95-3651-4a16-b337-b7551160815a",
         "0726d936-4133-4cf2-a2c5-684882998649",
         "ebcb58d8-7ff6-4523-b9bc-0adfadcd97f5",
-        "6935423d-c3aa-4228-93af-e7f92d351174"
+        "6935423d-c3aa-4228-93af-e7f92d351174",
+        "2502fe99-60c0-4ccd-bce9-93415bd0e94f"
     ],
     "filterType": "GMSprite",
     "folderName": "cursor",

@@ -8,4 +8,5 @@ with(arg_button)
 		if(subimg == 0) subimg = 1;
 		else subimg = 0;
 	}
+	resolve_execute(global.script_container, "play_sound", sound_click);
 }

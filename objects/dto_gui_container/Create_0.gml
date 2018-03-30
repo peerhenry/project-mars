@@ -2,6 +2,7 @@ event_inherited();
 gui_item_list = ds_list_create();
 gui_item_count = ds_list_size(gui_item_list);
 reset = false;
+being_destroyed = false; // prevent items from removing themselves from gui_item_list
 
 step_script = noone;
 class = gui_item_class.container;

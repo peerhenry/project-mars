@@ -9,6 +9,8 @@ equipped_item = noone;
 assigned_object = noone;
 current_action = astronaut_action.idle;
 construction = noone;
+repair_target = noone;
+repair_speed = 1; // todo: move to settings
 
 // combat stuff
 target = noone;			// thing to pursue

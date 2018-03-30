@@ -9,5 +9,6 @@ test_suite_construction();
 test_suite_astronauts();
 test_suite_rooms();
 test_suite_misc();
+test_suite_gui();
 
 script_container_destroy(container);

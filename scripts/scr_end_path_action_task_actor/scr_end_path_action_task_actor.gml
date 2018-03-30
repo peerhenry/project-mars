@@ -13,12 +13,11 @@ with(arg_entity)
 	{
 		switch(current_action)
 		{
-			// If astronaut was moving to construction...
 			case astronaut_action.moving_to_construction:
 				current_action = astronaut_action.constructing;
 				break;
-			case astronaut_action.fetching_mdu:	// it's handled in scr_perform(assigned_object)
-				
+			case astronaut_action.fetching_mdu:
+				// it's handled in scr_perform(assigned_object)
 				break;
 			case astronaut_action.delivering_mdu:
 				scr_transfer_mdu(arg_entity.script_container, id, construction);
