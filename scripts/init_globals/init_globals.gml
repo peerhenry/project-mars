@@ -1,7 +1,7 @@
 /// @description Initialize level globals
 
 global.init_stage = true;
-global.hovering_over_HUD = false;
+global.hovering_over_gui = false;
 global.mousedrag_from = mousedrag_from.none;
 
 // # DEBUG settings
@@ -99,6 +99,11 @@ section = "robots"
 global.robot_idle_battery_drain = init_global_real(section, "idle_battery_drain", 0.001);
 global.robot_move_battery_drain = init_global_real(section, "move_battery_drain", 0.01);
 global.robot_move_speed = init_global_real(section, "move_speed", 3);
+
+// -- WORMS --
+section = "worms"
+global.worm_speed = init_global_real(section, "worm_speed", 1);
+global.worm_speed_underground = init_global_real(section, "worm_speed_underground", 1);
 
 ini_close();
 

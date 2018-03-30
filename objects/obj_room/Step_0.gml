@@ -28,7 +28,7 @@ for(var n = 0; n < leak_count; n++)
 	var next_leak = ds_list_find_value(leaks, n);
 	if(oxygen_level > 0)
 	{
-		oxygen_level -= room_drainage_per_hatch; // each open hatch contributes to leakage.
+		oxygen_level -= room_drainage_per_hatch; // todo: set leak specific drainage
 		if(oxygen_level < 0) oxygen_level  = 0;
 	}
 }

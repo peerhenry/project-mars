@@ -53,7 +53,7 @@ if(!mouse_over_one) hover_button = noone;
 
 #region set cursor sprite
 
-if( mouse_over_HUD || global.hovering_over_HUD )
+if( mouse_over_HUD || global.hovering_over_gui )
 {
 	cursor_sprite = spr_cursor;
 	exit;

@@ -1,16 +1,30 @@
-var time_to_destroy = 5;
-var d_damage = 1/(room_speed*time_to_destroy);
-if(current_action == worm_action.attacking_basetile)
+// update worm action
+
+switch(current_action)
 {
-	with(basetile_target)
-	{
-		damage += d_damage;
-		if(damage > 100)
+	case worm_action.navigating_to_basetile:
+		if(path_position == 1)
 		{
-			damage = 100;
-			sprite = spr_base_tile_broken;
-			other.current_action = worm_action.emerging;
-			other.visible = true;
+			path_end();
+			path_delete(path);
+			path = noone;
+			x = basetile_target.x; // snap to proper location
+			y = basetile_target.y;
+			if(basetile_target != noone && instance_exists(basetile_target) && !basetile_target.is_broken)
+			{
+				current_action = worm_action.attacking_basetile;
+			}
+			else
+			{
+				scr_worm_emerge(id);
+			}
 		}
-	}
+		break;
+	case worm_action.attacking_basetile:
+		if(!is_bumping)
+		{
+			is_bumping = true;
+			alarm[0] = 1;
+		}
+		break;
 }

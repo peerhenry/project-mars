@@ -5,7 +5,7 @@ if(has_died) exit;
 // Kill if health reached zero
 if(entity_health <= 0)
 {
-	scr_kill(id); // destroys astronaut and replaces it with a corpse object.
+	scr_kill(id); // sets has_died, destroys astronaut and replaces it with a corpse object.
 	exit;
 }
 

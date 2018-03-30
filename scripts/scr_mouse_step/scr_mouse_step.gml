@@ -1,4 +1,4 @@
-if(global.hovering_over_HUD)
+if(global.hovering_over_gui)
 {
 	is_dragging	= false;
 	exit; // HUD clicks must not propagate here.

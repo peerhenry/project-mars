@@ -48,8 +48,6 @@ outliner_button_padding = 4;
 outliner_sprite = spr_astro_panels;
 outliner = instance_create_layer(0, 0, macro_logic_layer, obj_HUD_outliner);
 
-global.hovering_over_HUD = false; // write @ begin step, read @ step
-
 // todo: is this relevant?
 enum button_state
 {

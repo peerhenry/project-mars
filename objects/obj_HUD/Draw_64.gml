@@ -30,12 +30,14 @@ scr_draw_shiny_line(0, hud_bar_h, gui_w, hud_bar_h, hud_border_color);
 
 #region TOOLTIPS
 
+// gui tooltip
 if(hover_button != noone)
 {
 	scr_draw_tooltip(hover_button.tooltip_text);
 }
+if(global.hovering_over_gui) exit;
 
-if(global.hovering_over_HUD) exit;
+// map tooltip
 var tile = instance_position(mouse_x, mouse_y, obj_base_tile);
 var comp = instance_position(mouse_x, mouse_y, obj_base_component);
 if(tile != noone && comp == noone && !tile.under_construction)

@@ -11,7 +11,7 @@
         "68022e0f-43d1-475f-b08f-b656bb16be87",
         "c85a6ee2-2684-44ea-a9fd-72070441ddf2",
         "ec67da5c-149b-4f15-a10d-72cad938f562",
-        "2f512c1a-6597-4db4-963e-060fbd1fbc55"
+        "5dcfb66a-3c57-4df2-b1a1-6a6661a5382e"
     ],
     "filterType": "GMSprite",
     "folderName": "MARS",

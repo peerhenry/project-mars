@@ -1,0 +1,1 @@
+resolve_execute(global.script_container, "play_sound", sound_click); // todo: set bump sound

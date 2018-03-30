@@ -9,7 +9,8 @@
         "73e5f942-361d-4d2d-94ba-25e42a7e11f2",
         "2b614443-0015-424f-b6ec-9bddd9b1bb15",
         "3f4029a9-5718-44e1-ac7f-756c97469f58",
-        "805c5116-cb04-4783-82fd-d1879d1d6959"
+        "805c5116-cb04-4783-82fd-d1879d1d6959",
+        "46bb1c97-b252-455b-8276-a3cd06abd07c"
     ],
     "filterType": "GMObject",
     "folderName": "animations",

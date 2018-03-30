@@ -1,6 +1,6 @@
 
 // don't draw if hovering over hud
-if(global.hovering_over_HUD) exit;
+if(global.hovering_over_gui) exit;
 
 var construction = scr_get_selected_constr_type();
 

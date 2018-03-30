@@ -117,27 +117,34 @@ if(keyboard_check_pressed(ord("C")))
 	}
 }
 
-if(keyboard_check_pressed(vk_numpad5))
+if(keyboard_check_pressed(vk_numpad1))
 {
-	with(obj_level)
+	#region deplete food & sleep
+	with(obj_astronaut)
 	{
-		for(var n = 0; n < ds_list_size(trigger_list); n++)
-		{
-			var next_trigger = trigger_list[|n];
-			if(next_trigger.type == trigger_type.objective) next_trigger.accomplished = true;
-			if(next_trigger.object_index == obj_trigger_standard_victory){
-				with(next_trigger)
-				{
-					if(script_exists(script_trigger)) script_execute(script_trigger, id);
-					with(level) event_user(macro_trigger_callback);
-				}
-			}
-		}
+		show_debug_message("");
+		show_debug_message("food_level " + string(food_level));
+		show_debug_message("floor(food_level) " + string(floor(food_level)));
+		show_debug_message("");
+		show_debug_message("sleep_level " + string(sleep_level));
+		show_debug_message("floor(sleep_level) " + string(floor(sleep_level)));
+		food_level = 1;
+		sleep_level = 1;
 	}
+	#endregion
+}
+
+if(keyboard_check_pressed(vk_numpad2))
+{
+}
+
+if(keyboard_check_pressed(vk_numpad3))
+{
 }
 
 if(keyboard_check_pressed(vk_numpad4))
 {
+	#region list triggers
 	with(obj_level)
 	{
 		show_debug_message("");
@@ -155,19 +162,47 @@ if(keyboard_check_pressed(vk_numpad4))
 		
 		show_debug_message("");
 	}
+	#endregion
 }
 
-if(keyboard_check_pressed(vk_numpad1))
+if(keyboard_check_pressed(vk_numpad5))
 {
-	with(obj_astronaut)
+	#region trigger victory
+	with(obj_level)
 	{
-		show_debug_message("");
-		show_debug_message("food_level " + string(food_level));
-		show_debug_message("floor(food_level) " + string(floor(food_level)));
-		show_debug_message("");
-		show_debug_message("sleep_level " + string(sleep_level));
-		show_debug_message("floor(sleep_level) " + string(floor(sleep_level)));
-		food_level = 1;
-		sleep_level = 1;
+		for(var n = 0; n < ds_list_size(trigger_list); n++)
+		{
+			var next_trigger = trigger_list[|n];
+			if(next_trigger.type == trigger_type.objective) next_trigger.accomplished = true;
+			if(next_trigger.object_index == obj_trigger_standard_victory){
+				with(next_trigger)
+				{
+					if(script_exists(script_trigger)) script_execute(script_trigger, id);
+					with(level) event_user(macro_trigger_callback);
+				}
+			}
+		}
 	}
+	#endregion
+}
+
+if(keyboard_check_pressed(vk_numpad6))
+{
+	scr_spawn_worm();
+}
+
+if(keyboard_check_pressed(vk_numpad7))
+{
+}
+
+if(keyboard_check_pressed(vk_numpad8))
+{
+}
+
+if(keyboard_check_pressed(vk_numpad9))
+{
+}
+
+if(keyboard_check_pressed(vk_numpad0))
+{
 }
