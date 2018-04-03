@@ -1,4 +1,4 @@
-scr_force_trace("Room Start: id=" + string(room) + ", name=" + room_get_name(room));
+scr_trace("Room Start: id=" + string(room) + ", name=" + room_get_name(room));
 
 // -- exclusions --
 if(room == room_boot) exit;

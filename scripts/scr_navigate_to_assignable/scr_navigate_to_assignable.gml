@@ -24,7 +24,6 @@ else // Try to navigate to any cell adjacent to the component
 	with(arg_entity)
 	{
 		scr_navgrid_clear_cell(occ_i, occ_j);
-		scr_navgrid_clear_cell(dest_i, dest_j);
 	}
 		
 	var free_spots = ds_list_create();
@@ -57,7 +56,6 @@ else // Try to navigate to any cell adjacent to the component
 	with(arg_entity)
 	{
 		scr_navgrid_occupy(occ_i, occ_j);
-		scr_navgrid_occupy(dest_i, dest_j);
 	}
 		
 	ds_list_destroy(free_spots);

@@ -6,7 +6,7 @@ scr_register_new_construction(constr);
 var astro = instance_create_depth(0,0,0,obj_astronaut);
 astro.auto_construct = true;
 scr_give_entity_new_item(astro, inv_space.mdu);
-var enemy = scr_create_enemy_astronaut(64,64);
+var enemy = scr_create_astronaut_safe(64, 64, macro_enemy);
 enemy.entity_health = 1;
 astro.target = enemy;
 enemy.entity_health = 0;

@@ -15,9 +15,10 @@ repair_speed = 1; // todo: move to settings
 // combat stuff
 target = noone;			// thing to pursue
 auto_target = noone;	// thing to auto attack when in range
-alarm[0] = 30*global.time_to_shoot + round(random_range(-5,5));
+alarm[0] = room_speed*global.time_to_shoot + round(random_range(-5,5));
 enemy = scr_get_enemy(owner);
 shoot_path = path_add();
+is_rampaging = false;
 
 // draw/gui stuff
 show_details = false;

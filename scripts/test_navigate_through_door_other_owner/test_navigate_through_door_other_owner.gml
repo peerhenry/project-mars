@@ -6,7 +6,7 @@ assert_true(scr_navgrid_cell_is_free(2,2), "22 is free");
 // arrange
 scr_setup_room(2, 2, 1, 10);
 scr_setup_door(2,5,0);
-var enemy = scr_create_enemy_astronaut(scr_gi_to_rc(2), scr_gi_to_rc(2));
+var enemy = scr_create_astronaut_safe(scr_gi_to_rc(2), scr_gi_to_rc(2), macro_enemy);
 
 // assert setup
 with(obj_door) assert_false(enemy.owner == owner, "door and enemy owners are different");

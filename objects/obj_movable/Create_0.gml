@@ -1,12 +1,14 @@
+scr_trace("movable create event");
+
 script_container = global.script_container;
 name = "movable";
 // movement and drawing
 path = noone;
-occ_i = (x - 16) div 32;
-occ_j = (y - 16) div 32;
+occ_i = scr_rc_to_gi(x);
+occ_j = scr_rc_to_gi(y);
 dest_i = occ_i;
 dest_j = occ_j;
-mp_grid_add_cell(scr_get_nav_grid(), occ_i, occ_j);
+scr_navgrid_occupy(occ_i, occ_j);
 move_dir = macro_down;
 movement_speed = global.astro_move_speed;
 owner = scr_get_owner(id);

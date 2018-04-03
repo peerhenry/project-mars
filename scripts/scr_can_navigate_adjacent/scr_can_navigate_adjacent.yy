@@ -1,8 +1,8 @@
 {
-    "id": "fb0590c0-81cf-4136-bf51-072c4ba73efa",
+    "id": "4982f188-f73c-41eb-989a-72274500f762",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_create_enemy_astronaut",
+    "name": "scr_can_navigate_adjacent",
     "IsCompatibility": false,
     "IsDnD": false
 }

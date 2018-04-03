@@ -1,2 +1,2 @@
 event_user(0);
-alarm[0] = 30*wave_time;
+alarm[0] = room_speed*wave_time;

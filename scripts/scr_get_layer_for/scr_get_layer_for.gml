@@ -21,11 +21,11 @@ switch(argument0)
 	case obj_resource_metal:
 	case obj_resource_gold:
 		return macro_resource_layer;
-	//case obj_robot: // upcoming
+	case obj_robot:
 	case obj_cart:
 	case obj_astronaut:
-	case obj_corpse:
 		return macro_astronaut_layer;
+	case obj_corpse:
 	default:
 		return macro_base_layer;
 }

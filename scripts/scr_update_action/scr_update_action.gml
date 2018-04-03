@@ -1,13 +1,23 @@
 /// @arg astronaut
 var arg_astronaut = argument0;
 
-if( !scr_instance_inherits(arg_astronaut, obj_astronaut) ) exit;
+if( !scr_instance_inherits(arg_astronaut, obj_task_actor) )
+{
+	show_message("scr_update_action called with wrong argument: not an obj_task_actor");
+	exit;
+}
 
 with(arg_astronaut)
 {
 	switch(current_action)
 	{
 		case astronaut_action.idle:
+			if(is_rampaging)
+			{
+				var attacking = scr_attack_anything(id);
+				if(!attacking) is_rampaging = false;
+				exit;
+			}
 			var tile = instance_position(x, y, obj_base_tile);
 			if(tile != noone && tile.is_broken)
 			{
@@ -24,7 +34,15 @@ with(arg_astronaut)
 			}
 			break;
 		case astronaut_action.in_combat:
-			if(target == noone && auto_target == noone) current_action = astronaut_action.idle;
+			if(target == noone && auto_target == noone)
+			{
+				current_action = astronaut_action.idle;
+				if(is_rampaging)
+				{
+					var attacking = scr_attack_anything(id);
+					if(!attacking) is_rampaging = false;
+				}
+			}
 			break;
 		case astronaut_action.repairing:
 			repair_target.damage -= repair_speed;

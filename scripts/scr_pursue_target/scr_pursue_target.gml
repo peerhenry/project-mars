@@ -32,6 +32,11 @@ with(arg_attacker)
 	{
 		end_i += scr_get_delta_i(counter);
 		end_j += scr_get_delta_j(counter);
+		if(end_i == target.occ_i && end_j == target.occ_j)
+		{
+			counter++;
+			continue; // never go on top of target
+		}
 		var snap_end_x = scr_gi_to_rc(end_i);
 		var snap_end_y = scr_gi_to_rc(end_j);
 		var is_a_shooting_spot = false;
@@ -52,7 +57,7 @@ with(arg_attacker)
 		var dsign = 1 - 2*floor(counter/2);
 		var dx = dsign *(counter % 2)*32;
 		var dy = dsign * ((counter+1) % 2)*32;
-		can_pursue = scr_navigate_with_retries(id, target.x + dx, target.y + dy, 10);
+		can_pursue = scr_navigate_with_retries(id, target.x + dx, target.y + dy, 1);
 		counter++;
 	}
 	

@@ -31,7 +31,6 @@ with(arg_entity)
 with(obj_movable)
 {
 	mp_grid_clear_cell(navigation_grid, occ_i, occ_j);
-	mp_grid_clear_cell(navigation_grid, dest_i, dest_j);
 }
 
 // Astronauts without suits may not go through hatches
@@ -90,7 +89,6 @@ else
 with(obj_movable)
 {
 	mp_grid_add_cell(navigation_grid, occ_i, occ_j);
-	mp_grid_add_cell(navigation_grid, dest_i, dest_j);
 }
 
 // Free hatches and doors again
