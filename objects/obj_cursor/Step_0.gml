@@ -81,26 +81,20 @@ else // hovers over selectable
 {
 	#region set hover over selectable cursor
 	
-	if(scr_any_task_actors_selected())
+	if(scr_any_task_actors_selected() && component != noone && scr_instance_inherits(component, obj_assignable))
 	{
-		if(component != noone && scr_instance_inherits(component, obj_assignable))
-		{
-			sprite_index = spr_cursor_assign;
-		}
+		sprite_index = spr_cursor_assign;
 	}
-	else
+	else if(component != noone && scr_instance_inherits(component, obj_gate))
 	{
-		if(component != noone && scr_instance_inherits(component, obj_gate))
+		if(!component.locked)
 		{
-			if(!component.locked)
-			{
-				if(component.is_open) sprite_index = spr_gate_close;
-				else sprite_index = spr_gate_open;
-			}
-			else sprite_index = spr_cursor;
+			if(component.is_open) sprite_index = spr_gate_close;
+			else sprite_index = spr_gate_open;
 		}
 		else sprite_index = spr_cursor_select;
 	}
+	else sprite_index = spr_cursor_select;
 	
 	#endregion
 }

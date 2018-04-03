@@ -3,7 +3,6 @@ var selection_includes_astro = false;
 
 var add_to_selection = keyboard_check(vk_shift) || keyboard_check(vk_control);
 
-//with(obj_HUD_details_panel) instance_destroy(); // to become obsolet
 if( instance_exists(global.hud_details_panel) )
 {
 	instance_destroy(global.hud_details_panel);

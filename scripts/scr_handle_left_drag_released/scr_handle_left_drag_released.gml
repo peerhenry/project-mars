@@ -3,7 +3,6 @@ var selection_includes_astro = false;
 
 var add_to_selection = keyboard_check(vk_shift) || keyboard_check(vk_control);
 
-// with(obj_HUD_details_panel) instance_destroy(); // to become obsolet
 if(instance_exists(global.hud_details_panel))
 {
 	instance_destroy(global.hud_details_panel);
@@ -66,6 +65,7 @@ if(single_select != noone)
 // play selection sounds
 if( just_selected_any_entity )
 {
+	with(obj_constructable) is_selected = false; // deselect the rest
 	if(selection_includes_astro) scr_play_astro_selection_sound();
 	else audio_play_sound(sound_robot_ask, 1, false);
 }
