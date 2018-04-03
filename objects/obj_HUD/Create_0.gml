@@ -131,8 +131,6 @@ resources_bottom = 32;
 resources_center_x = (resources_left + resources_right)/2;
 resources_center_y = (resources_top + resources_bottom)/2;
 
-cursor_sprite = spr_cursor;
-
 // the rest is to become obsolete... todo: remove
 
 ap_margin = 20;

@@ -1,5 +1,5 @@
-occ_i = scr_rc_to_gi(x);
-occ_j = scr_rc_to_gi(y);
+event_inherited();
+name = "Mars Transit Module";
 
 for(var i = -1; i <= 1; i++)
 {

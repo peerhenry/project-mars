@@ -2,7 +2,7 @@
 
 if( global.hovering_over_gui )
 {
-	cursor_sprite = spr_cursor;
+	sprite_index = spr_cursor;
 	exit;
 }
 
@@ -37,6 +37,8 @@ if(!hover_over_selectable)
 
 if(!hover_over_selectable)
 {
+	#region set cursor not hovering over selectable
+	
 	// Grid selectors, fridges and sensors are selectable
 	if( scr_any_task_actors_selected() )
 	{
@@ -72,9 +74,13 @@ if(!hover_over_selectable)
 		}
 	}
 	else sprite_index = spr_cursor;
+	
+	#endregion
 }
 else // hovers over selectable
 {
+	#region set hover over selectable cursor
+	
 	if(scr_any_task_actors_selected())
 	{
 		if(component != noone && scr_instance_inherits(component, obj_assignable))
@@ -95,4 +101,6 @@ else // hovers over selectable
 		}
 		else sprite_index = spr_cursor_select;
 	}
+	
+	#endregion
 }

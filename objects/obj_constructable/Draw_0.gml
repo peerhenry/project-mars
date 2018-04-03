@@ -1,8 +1,8 @@
-// selected box
+/* old selected box
 if(is_selected)
 {
 	draw_sprite(spr_selection, 0, x, y);
-}
+}*/
 
 if(under_construction)
 {
@@ -44,4 +44,12 @@ else
 		draw_sprite(spr_pipe, pipe_adjacency, x, y);
 	}
 	draw_self();
+}
+
+if(is_selected)
+{
+	var h = sprite_get_height(sprite_index);
+	var w_half = sprite_get_width(sprite_index)/2;
+	draw_set_color(c_aqua);
+	draw_rectangle(x - w_half, y + 16 - h, x + w_half, y + 15, true);
 }

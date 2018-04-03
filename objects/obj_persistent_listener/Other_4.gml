@@ -6,7 +6,6 @@ if(room == room_tests) exit;
 
 // -- for all rooms --
 application_surface_draw_enable(true); //reenable after obj_surface_renderer //todo: exclude for game rooms with shader enabled
-cursor_sprite = spr_cursor;
 
 //todo: discuss this
 //when entering a room, the defined camera size causes auto scaling to the current window size

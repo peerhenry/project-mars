@@ -5887,14 +5887,6 @@
             }
         },
         {
-            "Key": "805c5116-cb04-4783-82fd-d1879d1d6959",
-            "Value": {
-                "id": "fd5ff263-bec3-4689-b909-ea677e87cd8b",
-                "resourcePath": "objects\\obj_cursor_attack\\obj_cursor_attack.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "80aecc34-f708-47a6-bf5c-2bd9aa4d4021",
             "Value": {
                 "id": "d19c5c0f-c46d-4263-abc5-cabe74d23edf",
