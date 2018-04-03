@@ -62,4 +62,4 @@ if(can_shoot && instance_exists(shootable))
 	}
 }
 
-alarm[0] = 30*global.time_to_shoot + round(random_range(-5,5));
+alarm[0] = room_speed*global.time_to_shoot + round(random_range(-5,5));

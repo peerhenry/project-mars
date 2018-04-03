@@ -2,6 +2,7 @@
 wears_suit = true;
 
 event_inherited();
+script_update = scr_astro_update;
 
 // things to overwrite from base classes
 movement_speed = global.astro_move_speed;
