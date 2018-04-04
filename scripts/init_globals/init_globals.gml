@@ -104,6 +104,7 @@ global.robot_move_speed = init_global_real(section, "move_speed", 3);
 section = "worms"
 global.worm_speed = init_global_real(section, "worm_speed", 1);
 global.worm_speed_underground = init_global_real(section, "worm_speed_underground", 1);
+global.worm_bump_damage = init_global_real(section, "bump_damage", 20);
 
 ini_close();
 

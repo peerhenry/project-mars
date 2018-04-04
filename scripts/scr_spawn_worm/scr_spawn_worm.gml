@@ -2,6 +2,7 @@
 var wx = 32;
 var wy = 32;
 var worm = instance_create_layer(wx, wy, macro_astronaut_layer, obj_worm);
+worm.sprite_index = spr_worm_sensor_alert;
 
 #region pick random tile to attack
 var target_tile = noone;

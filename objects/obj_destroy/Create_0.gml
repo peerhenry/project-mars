@@ -1,0 +1,1 @@
+audio_play_sound(sound_fx_destroy, 1, 0);

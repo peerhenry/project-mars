@@ -10,6 +10,7 @@
         "487e5cb3-181e-431b-a4d7-854ac6297f30",
         "c7f5a9fb-1be1-4bb5-83b5-e8d016171025",
         "0fca0a20-303b-4ff9-9633-88cf3a9d1014",
+        "bfabb8a8-b5c1-41c9-b1cb-84607a917e4c",
         "440d827e-0667-4363-a12d-c9cfb9640c9b",
         "5bdc7d67-c576-4457-b031-e1045905632c",
         "a7660d71-b0ad-4d66-aa14-2fa6bd84c7ca",
@@ -18,8 +19,10 @@
         "6707726d-2630-4725-b2c0-485e3ae5f590",
         "af1fb066-2c96-49a3-8b44-eb65e637d3ed",
         "5ef4cbf9-8748-457a-9539-31f7b196f3c4",
-        "bfabb8a8-b5c1-41c9-b1cb-84607a917e4c",
-        "54509528-c910-4406-ac2f-0faf47b48c1b"
+        "54509528-c910-4406-ac2f-0faf47b48c1b",
+        "94a6fbf0-9d95-4fc3-b879-22444cadc8a7",
+        "add31174-e6b1-4c2f-92cb-a71c6f7b8248",
+        "c8b3d3ee-66bf-4624-9c4f-5bf3a0d3eabf"
     ],
     "filterType": "GMSound",
     "folderName": "sfx",

@@ -8,7 +8,8 @@
         "7dba5a90-07bb-4070-9807-c9522bbcfdf0",
         "b9c2bc7b-1fe2-48ec-b66c-9ffc8aca0df7",
         "a2e55b00-b5a3-442d-a9e1-a9eae29bd395",
-        "0542f887-dda9-4273-a19f-3854bc0c207f"
+        "0542f887-dda9-4273-a19f-3854bc0c207f",
+        "7a12a80e-a69e-4bc6-837f-10af48e41465"
     ],
     "filterType": "GMSprite",
     "folderName": "combat",
