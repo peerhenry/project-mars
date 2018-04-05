@@ -33,8 +33,8 @@ for(var m = 0; m < array_length_1d(arg_actions); m++)
 	var metal_cost = next_action[macro_metal_cost];
 	
 	// validate
-	var validation_passed = scr_validate_cell(target_i, target_j, validation_i, validation_o, owner);
-	if(validation_passed) validation_passed = scr_validate_object_to_add(target_i, target_j, object_to_add);
+	var validation_passed = scr_validate_cell(target_i, target_j, validation_i, validation_o, owner); // validate i, o and ownership
+	if(validation_passed) validation_passed = scr_validate_object_to_add(target_i, target_j, object_to_add); // special validation (for example hatch)
 	
 	if(validation_passed)
 	{

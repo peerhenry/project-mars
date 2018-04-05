@@ -14,6 +14,12 @@ switch(validation_o)
 	case build_validation_o.vacant_or_reserved:
 		result = (map_o == map_value_vacant || map_o == map_value_reserved) && scr_navgrid_cell_is_free(arg_i, arg_j);
 		break;
+	case build_validation_o.vacant_or_cable:
+		result = (map_o == map_value_vacant || map_o == map_value_cable) && scr_navgrid_cell_is_free(arg_i, arg_j);
+		break;
+	case build_validation_o.vacant_or_pipe:
+		result = (map_o == map_value_vacant || map_o == map_value_pipe) && scr_navgrid_cell_is_free(arg_i, arg_j);
+		break;
 	case build_validation_o.wall_like:
 		result = map_o == map_value_wall_like || map_o == map_value_wall_pure;
 		break;

@@ -111,11 +111,11 @@ init_construction_set_rotation_parameter(macro_rotation_3, macro_image, 7);
 
 // # drill
 init_construction_new_single(macro_drill, "drill", spr_drill_bottom, 1, macro_category_outside);
-init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,		map_buffer_action.occupy,	base_tall_layer, obj_drill,		noone, 100);
+init_construction_set_action(build_validation_i.outside, build_validation_o.vacant_or_cable,		map_buffer_action.occupy,	base_tall_layer, obj_drill,		noone, 100);
 
 // # sensor
 init_construction_new_single(macro_sensor, "sensor", spr_sensor, 1, macro_category_outside);
-init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_sensor,		noone, 100);
+init_construction_set_action(build_validation_i.outside, build_validation_o.vacant_or_cable,		map_buffer_action.occupy,	base_layer,		obj_sensor,		noone, 100);
 
 // # battery
 init_construction_new_single(macro_battery, "battery", spr_battery_hud, 1, macro_category_inside);
@@ -127,7 +127,7 @@ init_construction_set_action(build_validation_i.inside, build_validation_o.vacan
 
 // # pump
 init_construction_new_single(macro_pump, "pump", spr_pump, 1, macro_category_outside);
-init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_pump,		noone, 100);
+init_construction_set_action(build_validation_i.outside, build_validation_o.vacant_or_cable,		map_buffer_action.occupy,	base_layer,		obj_pump,		noone, 100);
 
 // # cable
 init_construction_new_single(macro_cable, "cable", spr_cable, 1, macro_category_outside);
@@ -196,7 +196,7 @@ init_construction_set_rotation_parameter(macro_rotation_3, macro_image, 3);
 
 // # solar panel
 init_construction_new_single(macro_solar_panel, "solar panel", spr_solar_panel, 1, macro_category_outside);
-init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_solar_panel,		noone, 100);
+init_construction_set_action(build_validation_i.outside, build_validation_o.vacant_or_cable,		map_buffer_action.occupy,	base_layer,		obj_solar_panel,		noone, 100);
 init_construction_set_dragging_simple(dragging.rectangular);
 
 // # destruction

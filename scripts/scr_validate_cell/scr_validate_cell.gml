@@ -1,3 +1,4 @@
+/// @descr validate i, o and owndership
 /// @arg i
 /// @arg j
 /// @arg validation_inside
@@ -28,7 +29,7 @@ if(validation_passed && !global.init_stage) // validate ownership
 	if(validation_passed && validation_o == build_validation_o.wall)
 	{
 		var wall = instance_position(target_x, target_y, obj_wall);
-		validation_passed = wall.owner == arg_owner ;
+		validation_passed = wall.owner == arg_owner;
 	}
 }
 return validation_passed;

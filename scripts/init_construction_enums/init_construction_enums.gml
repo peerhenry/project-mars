@@ -37,6 +37,8 @@ enum build_validation_o
 {
 	vacant,
 	vacant_or_reserved,
+	vacant_or_cable,
+	vacant_or_pipe,
 	wall_like,
 	any,
 	wall,

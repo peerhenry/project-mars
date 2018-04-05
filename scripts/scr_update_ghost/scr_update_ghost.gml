@@ -1,3 +1,4 @@
+/// @descr The ghost hovers under mouse when player has selected a construction. During update the ghost must validated, sized if dragging and sprites and colors are set. The result is put on the "ghost_stack" which is later used for rendering and construction placement.
 /// @arg origin_x
 /// @arg origin_y
 /// @arg mouse_x
