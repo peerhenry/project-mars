@@ -59,7 +59,6 @@ if(constr_type != noone) // BUILD MODE
 		if(mouse_check_button_pressed(mb_right))
 		{
 			scr_ghost_reset();
-			scr_hide_categories();
 		}
 		
 		exit;
@@ -73,16 +72,9 @@ var just_selected_any_entity = false;
 var selection_includes_astro = false;
 
 if( !is_dragging )
-{
-	// LEFT CLICK: set click origin for dragging
-	if( mouse_check_button_pressed(mb_left) )
-	{
-		scr_hide_categories(); // hide construction menu
-	}
-	
+{	
 	if( mouse_check_button_released(mb_right) )
 	{
-		scr_hide_categories();
 		var hover_actor = instance_position(mouse_x, mouse_y, obj_task_actor);
 		if(
 			hover_actor != noone

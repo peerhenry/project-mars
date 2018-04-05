@@ -40,5 +40,4 @@ scr_update_ghost(click_x, click_y, mouse_x, mouse_y, constr_type, rot, is_draggi
 if(mouse_check_button_pressed(mb_right))
 {
 	scr_ghost_reset();
-	scr_hide_categories();
 }
