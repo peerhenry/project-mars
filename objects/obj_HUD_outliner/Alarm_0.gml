@@ -1,4 +1,4 @@
-// initialize
+/// @descr initialize
 astro_count = 0;
 robot_count = 0;
 cart_count = 0;

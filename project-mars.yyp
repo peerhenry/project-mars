@@ -1343,6 +1343,14 @@
             }
         },
         {
+            "Key": "1c2303be-efcd-474b-9a62-4eabddb772b2",
+            "Value": {
+                "id": "bd48c1dd-036f-4a77-97f3-311d729cfe40",
+                "resourcePath": "scripts\\scr_gui_item_step_objectives\\scr_gui_item_step_objectives.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "1c5040f8-b067-4bb1-8c00-ab5ef35146d7",
             "Value": {
                 "id": "66d16e43-535a-454c-887a-094ae393b717",
@@ -3684,14 +3692,6 @@
                 "id": "2fe219bd-15f7-4bc1-b79c-45ec574cb4da",
                 "resourcePath": "scripts\\scr_any_task_actors_selected\\scr_any_task_actors_selected.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "4b7e2f1d-231a-4282-80ea-aa0c3109d792",
-            "Value": {
-                "id": "115773f1-e5b2-4e7f-9431-95f1003f9ff5",
-                "resourcePath": "objects\\obj_HUD_objectives\\obj_HUD_objectives.yy",
-                "resourceType": "GMObject"
             }
         },
         {
@@ -7071,6 +7071,14 @@
             }
         },
         {
+            "Key": "9d7e3e87-1705-46c3-8460-f805e17f2834",
+            "Value": {
+                "id": "f7fc1ab0-3513-4730-a983-9d862de3d306",
+                "resourcePath": "scripts\\scr_gui_item_draw_objectives\\scr_gui_item_draw_objectives.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "9de4fdbc-7560-4561-8c09-6a0d502d7dc6",
             "Value": {
                 "id": "4f536bbd-0ed3-408c-bb7f-452e417551b8",
@@ -8883,6 +8891,14 @@
             "Value": {
                 "id": "d67001e7-ff3e-4a50-b3cf-3e005b860952",
                 "resourcePath": "scripts\\test_get_reach_state\\test_get_reach_state.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "c5636f5b-ee98-4b6d-a615-207230421c26",
+            "Value": {
+                "id": "ef62bda1-7f01-4231-b11d-fcd5374565fa",
+                "resourcePath": "scripts\\scr_create_gui_objectives_panel\\scr_create_gui_objectives_panel.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -12104,12 +12120,14 @@
         "563fc53e-9d63-4bcf-8b0e-2a033d891a11",
         "24b1ad00-152b-463a-8089-5e8a7e6a66bd",
         "4ea7e87c-4eef-4357-a341-6ad6ee068a4f",
+        "9d7e3e87-1705-46c3-8460-f805e17f2834",
         "0e99d05b-f3d0-426d-a51f-50eb6e64ac44",
         "2da4cc28-b62f-40dd-b928-5e64e452ee33",
         "b1df6f80-ad4a-420c-88ef-4cdd44b29abf",
         "7624a2c6-2d62-4879-b1af-a5c625162579",
         "5ca164bc-1937-4a7b-9003-2d131a040c2b",
         "848df272-a686-4494-96b4-bbe6fedab5fa",
+        "1c2303be-efcd-474b-9a62-4eabddb772b2",
         "a49bb1d5-1276-45dc-9474-c2a343526dfd",
         "ab6215b5-8b69-4fb3-b089-4588eaaf2446",
         "5a59f8d6-61ff-4020-8d02-74e27b22df5b",
@@ -12117,6 +12135,7 @@
         "eaa943ce-6be3-4a58-a0fe-7b3533092b18",
         "9289474c-b693-4304-a69a-9085d0a3496f",
         "9c888ad3-0e13-4cea-9d54-d362888263b3",
+        "c5636f5b-ee98-4b6d-a615-207230421c26",
         "8b9493ac-21e1-4fc3-9b41-ca0f3206d614",
         "d9b6f6b7-f390-472d-b7e3-5591c3bd5a79",
         "59406f94-2c45-4437-a3ce-fa410e00cc9b",

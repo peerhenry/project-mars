@@ -1,3 +1,5 @@
+/// @descr check keys
+
 if(keyboard_check_pressed(ord("G")))
 {
 	show_grid = !show_grid;
@@ -193,6 +195,7 @@ if(keyboard_check_pressed(vk_numpad6))
 
 if(keyboard_check_pressed(vk_numpad7))
 {
+	scr_notify_player("This is a dummy message.");
 }
 
 if(keyboard_check_pressed(vk_numpad8))

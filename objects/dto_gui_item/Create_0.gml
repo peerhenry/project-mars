@@ -19,10 +19,16 @@ hover = false;
 container = x; // inject container in x
 
 var container_is_correct = 
-	scr_instance_inherits(container, dto_gui_container)
-	|| scr_instance_inherits(container, obj_gui);
-if(!container_is_correct) show_error("Gui item did not get a gui container injected", true);
-ds_list_add(container.gui_item_list, id);
+	container != noone
+	&& instance_exists(container)
+	&& (
+		scr_instance_inherits(container, dto_gui_container)
+		|| scr_instance_inherits(container, obj_gui)
+	);
+if(container_is_correct)
+{
+	ds_list_add(container.gui_item_list, id);
+}
 
 tooltip_title = "";
 tooltip_description = "";
@@ -66,7 +72,7 @@ text_halign = fa_left;
 text_valign = fa_top;
 text = "";
 text_color = c_white;
-text_offset_x = 0;
+text_offset_x = 0; // offset from origin
 text_offset_y = 0;
 text_x = 0;
 text_y = 0;

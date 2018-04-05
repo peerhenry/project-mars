@@ -1,1 +1,0 @@
-// Leave empty draw event

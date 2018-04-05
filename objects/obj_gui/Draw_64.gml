@@ -1,3 +1,4 @@
+/// @descr draw gui items and tooltip
 // draw gui items
 for(var n = 0; n < ds_list_size(gui_item_list); n++)
 {

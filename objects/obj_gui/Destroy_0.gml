@@ -1,3 +1,4 @@
+/// @descr clear gui_item_list
 being_destroyed = true; // prevent items from removing themselves from list
 for(var n = 0; n < ds_list_size(gui_item_list); n++)
 {

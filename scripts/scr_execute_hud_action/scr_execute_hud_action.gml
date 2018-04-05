@@ -63,6 +63,13 @@ switch( arg_action )
 		}
 		break;
 	case hud_action.toggle_objectives:
-		with(obj_HUD) objectives_is_active ^= 1;
+		if(instance_exists(global.gui_objectives_panel))
+		{
+			instance_destroy(global.gui_objectives_panel);
+			global.gui_objectives_panel = noone;
+		}
+		else{
+			global.gui_objectives_panel = scr_create_gui_objectives_panel(global.gui_topleft);
+		}
 		break;
 }

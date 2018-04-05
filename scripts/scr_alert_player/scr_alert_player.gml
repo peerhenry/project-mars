@@ -8,9 +8,5 @@ if(instance_exists(obj_player_message))
 	}
 }
 
-var inst = instance_create_depth(global.gui, 0, 0, obj_player_message);
+var inst = instance_create_depth(global.gui_topleft, 0, 0, obj_player_message);
 inst.text = argument0;
-with(obj_HUD_objectives)
-{
-	inst.top += height;
-}

@@ -1,5 +1,7 @@
 event_inherited();
 gui_item_count = 0;
+reset = false;
+
 anchor_item = noone;
 enum stack
 {

@@ -1,3 +1,5 @@
+/// @descr responsive stuff & buttons hover/click
+
 if(gui_w != display_get_gui_width()) //update responsive horizontal screen positions
 {
 	gui_w = display_get_gui_width();

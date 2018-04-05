@@ -1,3 +1,4 @@
+/// @descr
 gui_item_list = ds_list_create();
 global.gui = id;
 global.hud_details_panel = noone;	// needs to be global for destroying when deselecting astros

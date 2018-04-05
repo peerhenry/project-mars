@@ -33,10 +33,6 @@ scr_add_hud_bar_sprite_button(id, gui_w - bw*3, 0, spr_outliner, 0, false, hud_a
 scr_add_hud_bar_sprite_button(id, gui_w - bw*4, 0, spr_high_walls, global.draw_tall_walls, true, hud_action.toggle_high_walls);
 scr_add_hud_bar_sprite_button(id, gui_w - bw*5, 0, spr_zoom_button, 0, true, hud_action.toggle_zoom);
 
-// objectives panel
-objectives = instance_create_depth(0, 0, 0, obj_HUD_objectives);
-objectives_is_active = true; //todo: method to calculate amount/check has objectives
-
 // minimap
 minimap = instance_create_layer(0, hud_bar_h, macro_logic_layer, obj_HUD_minimap);
 minimap.x = gui_w - minimap.width; //anchor to right
