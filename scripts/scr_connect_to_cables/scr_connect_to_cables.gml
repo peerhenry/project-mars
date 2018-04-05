@@ -1,22 +1,7 @@
-/// @param instance
-var arg_instance = argument0;
-var adjacents = scr_get_adjacent_instances(arg_instance, obj_cable); // ENWS
-
-for(var n = 0; n < 4; n++)
+/// @arg instance
+show_debug_message("connect to cables...");
+with(argument0)
 {
-	var next_cable = adjacents[n];
-	if(next_cable != noone && next_cable.owner == arg_instance.owner)
-	{
-		var bit = power(2, n);
-		if(cable_adjacency & bit == 0)
-		{
-			cable_adjacency += bit;
-		}
-		var cable_bit = power(2, (n+2)%4);
-		if(next_cable.adjacency_number & cable_bit == 0)
-		{
-			next_cable.adjacency_number += cable_bit;
-			scr_set_cable_image(next_cable);
-		}
-	}
+	show_debug_message("inside argument0: " + object_get_name(object_index));
+	scr_connect_cable_adjacency(id);
 }

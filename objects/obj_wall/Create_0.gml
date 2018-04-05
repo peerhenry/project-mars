@@ -17,9 +17,7 @@ scr_set_new_grid_props(id, macro_grid_hydrogen, macro_grid_role_carrier, 0);
 
 if(!global.init_stage)
 {
-	scr_connect_to_cables(id);
-	scr_connect_to_pipes(id);
-	
+	scr_connect_to_pipes(id);	
 	scr_set_basetile_lights(id);
 	scr_connect_wall(id);
 }

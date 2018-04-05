@@ -1,8 +1,8 @@
 {
-    "id": "2fa138cd-145e-4de8-b33d-92c78d720344",
+    "id": "aaf6656a-b73d-4e3e-8227-6d98f97d45c0",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_determine_adjacency_number",
+    "name": "scr_connect_cable_adjacency",
     "IsCompatibility": false,
     "IsDnD": false
 }

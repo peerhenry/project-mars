@@ -1,7 +1,10 @@
 scr_trace("Calling init_game_post");
 
 with(obj_pipe) scr_connect_pipe(id);
-with(obj_cable) scr_connect_cable(id);
+with(obj_constructable)
+{
+	scr_connect_to_cables(id);
+}
 with(obj_wall)
 {
 	scr_set_basetile_lights(id);

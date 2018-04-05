@@ -2183,14 +2183,6 @@
             }
         },
         {
-            "Key": "2fa138cd-145e-4de8-b33d-92c78d720344",
-            "Value": {
-                "id": "fad42a35-ecc5-4d60-9d0f-4b5d765d6b98",
-                "resourcePath": "scripts\\scr_determine_adjacency_number\\scr_determine_adjacency_number.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "2fa549cd-0e9c-441a-90e9-1a2fee6d008e",
             "Value": {
                 "id": "bc56da34-5684-45a6-95d9-950b5aa952d6",
@@ -7623,6 +7615,14 @@
             }
         },
         {
+            "Key": "aaf6656a-b73d-4e3e-8227-6d98f97d45c0",
+            "Value": {
+                "id": "49f5986e-e374-4bfa-aea1-dd05d2cfc1b1",
+                "resourcePath": "scripts\\scr_connect_cable_adjacency\\scr_connect_cable_adjacency.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ab006cbc-63ad-4c67-b2cb-e49ae6c572c7",
             "Value": {
                 "id": "0aeaadf5-e269-4c8e-b1ff-891a0913105d",
@@ -9347,14 +9347,6 @@
             "Value": {
                 "id": "c3f8d1ec-1510-419c-9752-98b07e73db33",
                 "resourcePath": "scripts\\debug_show_astronaut_actions\\debug_show_astronaut_actions.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "ce4cb4d7-f340-4d0a-a9fa-f541560cbe7a",
-            "Value": {
-                "id": "47d20f39-8ee5-4aed-a101-e150e85f8785",
-                "resourcePath": "scripts\\scr_connect_cable\\scr_connect_cable.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -11924,9 +11916,8 @@
         "cb161da4-e5fd-490a-b3a3-5aaf118814ff",
         "d83b74eb-4064-4c66-b365-dcfd69148c0a",
         "4bdfd39f-95e1-43ca-9814-08ef917435e9",
-        "ce4cb4d7-f340-4d0a-a9fa-f541560cbe7a",
-        "2fa138cd-145e-4de8-b33d-92c78d720344",
         "d0c58490-273c-43a4-957c-4e0b8f2b2966",
+        "aaf6656a-b73d-4e3e-8227-6d98f97d45c0",
         "dd4566ff-9b23-4870-9f40-5511b3e302af",
         "68ea13c9-523c-424d-841f-1edead27bcb9",
         "a9498562-017c-4ed4-bd5e-6e0e07c85918",

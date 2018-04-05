@@ -19,3 +19,4 @@ draw_cables = false;
 draw_pipes = false;
 
 if(occupy_navgrid) scr_navgrid_occupy(occ_i, occ_j);
+if(!global.init_stage) scr_connect_to_cables(id);

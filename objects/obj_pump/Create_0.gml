@@ -13,7 +13,6 @@ scr_set_new_grid_props(id, macro_grid_electric, macro_grid_role_consumer, global
 scr_set_new_grid_props(id, macro_grid_water, macro_grid_role_source, global.pump_water_production);
 if(!global.init_stage)
 {
-	scr_connect_to_cables(id);
 	scr_connect_to_pipes(id);
 	scr_drill_pump_connection(id);
 }
