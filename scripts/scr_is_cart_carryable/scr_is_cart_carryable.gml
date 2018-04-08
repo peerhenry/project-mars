@@ -12,4 +12,4 @@ switch(arg_component.object_index)
 		cart_can_carry = true;
 		break;
 }
-return cart_can_carry;
+return cart_can_carry && !arg_component.under_construction;

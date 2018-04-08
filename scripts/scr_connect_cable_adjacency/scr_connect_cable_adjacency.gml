@@ -2,17 +2,13 @@
 var arg_instance = argument0;
 var adjacents = scr_get_adjacent_grid_components(arg_instance, macro_grid_electric);
 
-show_debug_message("connect to adjacent components...");
-
 with(arg_instance)
 {
 	for(var n = 0; n < 4; n++)
 	{
 		var next_comp = adjacents[n];
 		if(next_comp != noone)
-		{
-			show_debug_message("next_comp != noone");
-			
+		{	
 			var bit = power(2, n);
 			if(cable_adjacency & bit == 0)
 			{

@@ -1,7 +1,6 @@
 /// @param i
 /// @param j
 /// @param action
-/// @param previous_o	previous map buffer cell occupation
 var arg_i = argument0;
 var arg_j = argument1;
 var arg_action = argument2;

@@ -1,16 +1,16 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description destroy 
 
-// Inherit the parent event
 event_inherited();
-if(is_selected && deploy)
+if(carrying_instance != noone && instance_exists(carrying_instance))
 {
-	global.cart_deploy_mode = false;
+	instance_destroy(carrying_instance);
+	carrying_instance = noone;
 }
 
-if(cart_action.deploy)
+if(deploy_ghost != noone && instance_exists(deploy_ghost))
 {
 	instance_destroy(deploy_ghost);
 	deploy_ghost = noone;
-	current_action = cart_action.idle;
 }
+
+current_action = cart_action.idle;

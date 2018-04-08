@@ -13,6 +13,10 @@ if(will_go)
 	{
 		arg_entity.current_action = astronaut_action.moving_by_command;
 	}
+	else if(scr_instance_inherits(arg_entity, obj_cart))
+	{
+		arg_entity.action = cart_action.move;
+	}
 	orders_given = true;
 }
 

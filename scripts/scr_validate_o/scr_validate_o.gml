@@ -30,10 +30,10 @@ switch(validation_o)
 		result = map_o == map_value_wall_pure;
 		break;
 	case build_validation_o.cable:
-		result = map_o == map_value_cable || map_o = map_value_pipe_and_cable;
+		result = map_o == map_value_cable || map_o == map_value_pipe_and_cable;
 		break;
 	case build_validation_o.pipe:
-		result = map_o == map_value_pipe || map_o = map_value_pipe_and_cable;
+		result = map_o == map_value_pipe || map_o == map_value_pipe_and_cable;
 		break;
 	case build_validation_o.for_pipe:
 		with(obj_movable)

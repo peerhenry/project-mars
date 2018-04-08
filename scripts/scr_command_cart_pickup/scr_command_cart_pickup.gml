@@ -1,8 +1,6 @@
 /// @arg component
 var arg_component = argument0;
 
-show_debug_message("command cart"); // DEBUG
-
 // check if component can be carried by cart
 var cart_can_carry = scr_is_cart_carryable(arg_component);
 if(!cart_can_carry) return false;
@@ -46,9 +44,8 @@ if(state != reach_state.unreachable)
 	closest_cart.action = cart_action.pickup;
 	if(state == reach_state.adjacent)
 	{
-		// navigate to center of tile
-		scr_end_path_action(arg_astronaut);
-		scr_cancel_walking(arg_astronaut);
+		scr_end_path_action(closest_cart);
+		scr_cancel_walking(closest_cart); // todo: rename this script to cancel_moving
 	}
 	return true;
 }

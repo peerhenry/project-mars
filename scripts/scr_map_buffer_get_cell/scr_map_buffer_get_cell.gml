@@ -1,3 +1,5 @@
+/// @arg i
+/// @arg j
 var arg_i = argument0;
 var arg_j = argument1;
 var buff = global.map_buffer;

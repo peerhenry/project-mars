@@ -57,20 +57,17 @@ if(selection_contains_task_actor)
 		orders_given = scr_command_attack(enemy);
 	}
 }
-else if(selection_contains_cart && selected_cart_count == 1)
+else if(selection_contains_cart && selected_cart_count == 1) // CART SHIT
 {
+	// PICKUP
 	if(
 		selected_cart.carrying_instance == noone
 		&& component != noone
 		&& component.owner == macro_player
+		&& !component.under_construction
 	)
 	{
 		orders_given = scr_command_cart_pickup(component);
-	}
-	
-	if(selected_cart.carrying_instance != noone && selected_cart.deploy)
-	{
-		orders_given = scr_command_cart_deploy(selected_cart);
 	}
 }
 
@@ -79,8 +76,7 @@ if( !orders_given && !position_meeting(arg_x, arg_y, obj_gate) )	// Or move
 	orders_given = scr_command_move(arg_x, arg_y);
 	if(orders_given)
 	{
-		var create_instance = script_container_resolve(script_container, "create_instance");
-		script_execute(create_instance, arg_x, arg_y, obj_command);
+		resolve_execute(script_container, "create_instance", arg_x, arg_y, obj_command);
 	}
 }
 

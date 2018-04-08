@@ -10,7 +10,12 @@ switch(callback_item.click_action)
 		scr_center_screen_on(unit);
 		break;
 	case details_panel_action.deploy:
-		with(unit) event_user(macro_toggle_deploy_event);
+		with(unit)
+		{
+			event_user(macro_toggle_deploy_event);
+			if(deploy) other.sprite_color = c_aqua;
+			else other.sprite_color = c_black;
+		}
 		break;
 	case details_panel_action.show_grid_details:
 		var make_new_one = true;

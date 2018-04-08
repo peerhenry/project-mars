@@ -4,4 +4,3 @@ assigned_astronaut = noone;
 frames = 6;
 frame_counter = 0;
 i_index = 0;
-icon = noone;

@@ -9,8 +9,8 @@ var cable3 = instance_create_depth(112,48,0,obj_cable);
 instance_destroy(cable2);
 
 // assert
-assert_equal(0, cable1.image_index, "image index");
-assert_equal(0, cable3.image_index, "image index");
+assert_equal(5, cable1.image_index, "image index");
+assert_equal(5, cable3.image_index, "image index");
 
 // cleanup
 instance_destroy(cable1);

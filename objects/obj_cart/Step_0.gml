@@ -14,5 +14,4 @@ if(carrying_instance != noone)
 if(!is_selected && deploy)
 {
 	deploy = false;
-	global.cart_deploy_mode = false;
 }

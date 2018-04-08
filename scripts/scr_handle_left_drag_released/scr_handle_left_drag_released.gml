@@ -1,3 +1,9 @@
+/// @arg mouse_listener
+var arg_mouse_listener = argument0;
+
+var click_x = arg_mouse_listener.click_x;
+var click_y = arg_mouse_listener.click_y;
+
 var just_selected_any_entity = false;
 var selection_includes_astro = false;
 
@@ -52,7 +58,7 @@ else // selection rectangle is so small, it only selects if it is contained in a
 	}
 }
 	
-is_dragging = false;
+arg_mouse_listener.is_dragging = false;
 
 var single_select = scr_get_single_selected();
 if(single_select != noone)

@@ -7,7 +7,6 @@ enum worm_action
 }
 script_container = global.script_container;
 
-path = noone;
 worm_speed_underground = global.worm_speed_underground;
 worm_speed = global.worm_speed;
 current_action = worm_action.idle;

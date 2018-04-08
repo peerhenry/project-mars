@@ -1,5 +1,5 @@
 /// @descr performs and updates the current action
-/// @arg task_actor
+/// @arg cart
 var arg_cart = argument0;
 debug_instance_inherits(arg_cart, obj_cart);
 
@@ -21,6 +21,7 @@ with(arg_cart)
 				// disconnect instance from grid and destroy icon
 				scr_decouple_from_grid(assigned_instance);
 				if(variable_instance_exists(assigned_instance, "icon") && assigned_instance.icon != noone) instance_destroy(assigned_instance.icon);
+				scr_execute_map_buffer_action(assigned_instance.occ_i, assigned_instance.occ_j, map_buffer_action.clear);
 				// set carrying instance and update position
 				carrying_instance = assigned_instance;
 				carrying_instance.visible = false; // drawn in cart draw event
@@ -44,9 +45,8 @@ with(arg_cart)
 				scr_grid_logic(carrying_instance);
 				assigned_instance = noone;
 				carrying_instance = noone;
-				if(global.cart_deploy_mode) scr_ghost_reset();
 				deploy = false;
-				global.cart_deploy_mode = false;
+				scr_ghost_reset();
 			}
 			break;
 	}

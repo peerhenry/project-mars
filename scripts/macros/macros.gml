@@ -23,6 +23,7 @@
 #macro macro_eu 4
 #macro macro_japan 5
 #macro macro_un 6
+#macro macro_aliens 7
 
 // ownership behavior
 #macro macro_ownership_default 0

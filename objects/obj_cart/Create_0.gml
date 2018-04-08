@@ -2,7 +2,6 @@
 // You can write your code in this editor
 
 #macro macro_toggle_deploy_event 0
-global.cart_deploy_mode = false;
 
 // Inherit the parent event
 event_inherited();

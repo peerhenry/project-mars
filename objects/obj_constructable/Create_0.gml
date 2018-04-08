@@ -1,6 +1,7 @@
 scr_trace("constructable create event");
 name = "constructable";
 description = "";
+icon = noone; // icon above the constructable (eg. assigned_icon)
 script_container = global.script_container;
 construction_instance = noone;
 under_construction = true;

@@ -1,8 +1,8 @@
 {
-    "id": "b3be0912-fbfd-4bc7-b2cd-4dd07a2e08c2",
+    "id": "36d4e163-8418-438f-affd-886eaa284236",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_handle_construction_click",
+    "name": "scr_hdp_create_topleft_buttons",
     "IsCompatibility": false,
     "IsDnD": false
 }

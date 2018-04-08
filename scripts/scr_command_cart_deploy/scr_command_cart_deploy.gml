@@ -1,13 +1,17 @@
 /// @arg cart
+/// @arg x
+/// @arg y
 var arg_cart = argument0;
+var arg_x = argument1;
+var arg_y = argument2;
 
 // var new_construction = scr_build_new();
 var ghost = global.construction_ghost;
 var valid = ghost[?macro_ghost_valid];
 if(valid)
 {
-	var gx = scr_rc_clamp_center(mouse_x);
-	var gy = scr_rc_clamp_center(mouse_y);
+	var gx = scr_rc_clamp_center(arg_x);
+	var gy = scr_rc_clamp_center(arg_y);
 	arg_cart.deploy_ghost = instance_create_depth(gx, gy, 0, arg_cart.carrying_instance.object_index);
 	arg_cart.action = cart_action.deploy;
 	
