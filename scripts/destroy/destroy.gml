@@ -1,0 +1,1 @@
+call(argument0, OBJECT.DESTROY);

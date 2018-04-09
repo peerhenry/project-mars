@@ -3,6 +3,7 @@
 #macro macro_category_foundation 2
 #macro macro_category_inside 3
 #macro macro_category_outside 4
+#macro macro_category_landers 5
 
 // the different constructions
 #macro macro_basetile 0

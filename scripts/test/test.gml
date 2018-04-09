@@ -1,0 +1,1 @@
+script_execute(argument0, OBJECT.TEST);

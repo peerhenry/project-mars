@@ -13,6 +13,7 @@ orientation = stack.horizontal;
 height = 32 + 2*padding; // required by build_select_panel in scr_create_construction_category_button
 active_build_panel = noone;
 
+scr_create_construction_category_button(id, spr_category_landers, macro_category_landers, "Landing Modules");
 scr_create_construction_category_button(id, spr_destruct, macro_category_deconstruction, "Deconstruction");
 scr_create_construction_category_button(id, spr_category_foundation, macro_category_foundation, "Foundation");
 scr_create_construction_category_button(id, spr_category_inside, macro_category_inside, "Inside Constructions");
