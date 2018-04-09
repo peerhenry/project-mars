@@ -36,6 +36,7 @@ for(var grid_type = 0; grid_type < macro_grid_type_count; grid_type++)
 					scr_grid_part(grid);
 				}
 			}
+			scr_set_grid_prop(arg_instance, grid_type, macro_grid_prop_grid, noone);
 		}
 	}
 }

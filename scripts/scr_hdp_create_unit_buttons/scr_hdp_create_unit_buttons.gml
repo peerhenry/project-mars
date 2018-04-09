@@ -12,10 +12,10 @@ var next_y_offset = arg_y_offset;
 // Deploy button
 if(arg_unit.object_index == obj_cart)
 {
-	var deploybtn = scr_create_gui_item_icon_button(arg_container, arg_content_left, next_y_offset, spr_deploy, 0, details_panel_action.deploy);
+	var deploybtn = scr_create_gui_state_button(arg_container, arg_content_left, next_y_offset, spr_deploy, 0, details_panel_action.deploy, scr_button_state_cart_deploy);
+	deploybtn.cart = arg_unit;
 	deploybtn.tooltip_title = "Toggle deploy mode";
 	deploybtn.tooltip_description = "If cart is carrying a component, you can use this button to order the cart to place the component on any location on the map."; 
-	deploybtn.sprite_color = c_black;
 	next_y_offset += deploybtn.height + padding;
 }
 

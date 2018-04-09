@@ -1,6 +1,6 @@
 /// @param instance
 var arg_instance = argument0;
-var adjacents = scr_get_adjacent_grid_components(id, macro_grid_electric);
+var adjacents = scr_get_adjacent_grid_components(arg_instance, macro_grid_electric);
 
 for(var n = 0; n < 4; n++)
 {

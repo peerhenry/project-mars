@@ -5,4 +5,8 @@ test_cart_command_pickup();
 test_cart_command_pickup_under_construction();
 test_cart_command_deploy();
 test_cart_interact_pickup();
-// test_cart_deploy(); // WTF!? All tests after this fail
+test_cart_deploy();
+test_cart_deploy_cables();
+test_cart_deploy_grid();
+test_cart_pickup_cables();
+test_cart_pickup_grid();

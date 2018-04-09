@@ -12,7 +12,11 @@
         "409439d6-49a6-4559-a5c8-ba38b69ffe39",
         "0a3833df-b952-4d1b-8685-19f11e73a4cc",
         "a9b3705b-f99d-4453-8049-a643c65b545d",
-        "6fa08206-66fa-44ce-aa85-c5f4fccf5979"
+        "6fa08206-66fa-44ce-aa85-c5f4fccf5979",
+        "4a6c272d-5eba-4a46-9cf2-54d935a1bec7",
+        "d06732d5-470e-4e65-99b5-6b0e56601d46",
+        "ecedc4ec-4626-427d-baf3-7334eb2f19d1",
+        "6a74d12e-ab42-4239-ae7d-8fe8e7daaadb"
     ],
     "filterType": "GMScript",
     "folderName": "cart",

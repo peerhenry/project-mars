@@ -19,6 +19,8 @@ with(arg_cart)
 			{
 				scr_navgrid_clear_cell( assigned_instance.occ_i, assigned_instance.occ_j );
 				// disconnect instance from grid and destroy icon
+				scr_disconnect_from_cables(assigned_instance);
+				scr_disconnect_from_pipes(assigned_instance);
 				scr_decouple_from_grid(assigned_instance);
 				if(variable_instance_exists(assigned_instance, "icon") && assigned_instance.icon != noone) instance_destroy(assigned_instance.icon);
 				scr_execute_map_buffer_action(assigned_instance.occ_i, assigned_instance.occ_j, map_buffer_action.clear);
@@ -42,7 +44,9 @@ with(arg_cart)
 				carrying_instance.occ_j = deploy_ghost.occ_j;
 				carrying_instance.visible = true;
 				instance_destroy(deploy_ghost);
+				deploy_ghost = noone;
 				scr_grid_logic(carrying_instance);
+				scr_connect_to_cables(carrying_instance);
 				assigned_instance = noone;
 				carrying_instance = noone;
 				deploy = false;
