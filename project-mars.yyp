@@ -5959,6 +5959,14 @@
             }
         },
         {
+            "Key": "7af6ff3e-58b6-405b-ab22-16b07bf52309",
+            "Value": {
+                "id": "18cc0a8b-37c7-4752-94c8-bf07584d78fa",
+                "resourcePath": "sounds\\sound_fx_exhaust\\sound_fx_exhaust.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "7b1b52aa-ec45-495e-9760-7056ed75a3e4",
             "Value": {
                 "id": "45c504a9-3e76-4ee2-9aba-676ff819e93f",

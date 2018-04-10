@@ -1,3 +1,5 @@
+event_inherited();
+
 enum worm_action
 {
 	idle,

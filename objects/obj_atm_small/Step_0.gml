@@ -1,5 +1,6 @@
 if(begin_landing_animation)
 {
+	if(!audio_is_playing(sound_fx_exhaust)) resolve_execute(global.script_container, "play_sound", sound_fx_exhaust);
 	begin_landing_animation = false;
 	
 	if(!path_exists(path)) path = path_add();
@@ -17,6 +18,7 @@ if(is_landing)
 	occ_j = scr_rc_to_gi(y);
 	if(path_position == 1)
 	{
+		if(audio_is_playing(sound_fx_exhaust)) audio_stop_sound(sound_fx_exhaust);
 		image_index = 0;
 		is_landing = false;
 		path_delete(path);

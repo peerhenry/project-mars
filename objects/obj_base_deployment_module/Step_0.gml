@@ -2,6 +2,7 @@ if(begin_landing_animation)
 {
 	image_index = 0;
 	begin_landing_animation = false;
+	if(!audio_is_playing(sound_fx_exhaust)) resolve_execute(global.script_container, "play_sound", sound_fx_exhaust);
 	
 	if(!path_exists(path)) path = path_add();
 	//mp_linear_path(path, basetile_target.x, basetile_target.y, worm_speed_underground, false); // does not go through solids
@@ -22,10 +23,9 @@ if(is_landing)
 	}
 	if(path_position == 1)
 	{
-		// create base
 		is_landing = false;
 		path_delete(path);
-		
+		if(audio_is_playing(sound_fx_exhaust)) audio_stop_sound(sound_fx_exhaust);
 		
 		for(var i = -2; i <= 2; i++)
 		{
