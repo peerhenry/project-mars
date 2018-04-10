@@ -1,7 +1,7 @@
 scr_trace("scr_build_new");
 var ghost = global.construction_ghost;
-var construct_type = ghost[?macro_ghost_constr_type];;
-if(construct_type == macro_alm_3) // todo: move to more general lander check script
+var construct_type = ghost[?macro_ghost_constr_type];
+if(scr_is_lander(construct_type)) // todo: make it so it just checks construction category
 {
 	scr_land(ghost);
 	exit;

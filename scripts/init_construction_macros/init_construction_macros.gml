@@ -32,9 +32,11 @@
 #macro macro_med_bed 23
 #macro macro_recharge_station 24
 
-#macro macro_alm_3 2003 // 3x3 astronaut landing module
-#macro macro_alm_4 2004
-#macro macro_alm_5 2005 // 5x5
+#macro macro_atm_3 2003 // 3x3 astronaut transit module
+#macro macro_atm_4 2004
+#macro macro_atm_5 2005 // 5x5
+
+#macro macro_bdm 2006 // base deployment module
 
 #macro macro_destruct 101
 #macro macro_destruct_safe 102

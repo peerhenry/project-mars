@@ -7,7 +7,7 @@ init_skirmish_add_astronauts(start_i, start_j, 5, macro_player); // todo: rename
 // create player spaceship
 var ship_x = scr_gi_to_rc(start_i);
 var ship_y = scr_gi_to_rc(start_j-5);
-var ship = instance_create_layer(ship_x, ship_y, macro_base_layer, obj_basic_spaceship);
+var ship = instance_create_layer(ship_x, ship_y, macro_base_layer, obj_atm_small);
 scr_center_screen_on(ship);
 
 // mdus

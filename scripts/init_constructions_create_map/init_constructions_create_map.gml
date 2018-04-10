@@ -270,14 +270,28 @@ init_construction_set_action(build_validation_i.outside, build_validation_o.vaca
 
 #region astronaut landing module
 
-init_construction_new_multitile(macro_alm_3, "small astronaut landing module", spr_category_landers, 1, macro_category_landers);
+init_construction_new_multitile(macro_atm_3, "Astronaut Transit Module (small)", spr_category_landers, 1, macro_category_landers);
 
 for(var di = -1; di < 2; di++)
 {
 	for(var dj = -1; dj < 2; dj++)
 	{
 		init_construction_set_tile(di, dj, 1); // di, dj, action_count
-		init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,	map_buffer_action.occupy, base_tall_layer, obj_empty, noone, 0);		
+		init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,	map_buffer_action.occupy, base_tall_layer, noone, noone, 0);		
+	}
+}
+
+#endregion
+
+#region base deploy module
+
+init_construction_new_multitile(macro_bdm, "Base Deployment Module", spr_category_landers, 1, macro_category_landers);
+for(var di = -2; di < 3; di++)
+{
+	for(var dj = -2; dj < 3; dj++)
+	{
+		init_construction_set_tile(di, dj, 1); // di, dj, action_count
+		init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,	map_buffer_action.occupy, base_tall_layer, noone, noone, 0);		
 	}
 }
 
@@ -319,4 +333,5 @@ ds_list_add(active_constructions, macro_destruct);
 ds_list_add(active_constructions, macro_destruct_safe);
 ds_list_add(active_constructions, macro_destruct_room);
 
-ds_list_add(active_constructions, macro_alm_3);
+ds_list_add(active_constructions, macro_atm_3);
+ds_list_add(active_constructions, macro_bdm);
