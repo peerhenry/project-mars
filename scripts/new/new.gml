@@ -9,7 +9,7 @@ if(argument_count == 0) show_error("new must be called with at least the object 
 
 var script = argument[0];
 var this = instance_create_depth(0, 0, 0, obj_empty);
-this.script = script;
+this.script = script; // implicitly defines the object type
 
 switch(argument_count)
 {

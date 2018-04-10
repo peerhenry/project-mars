@@ -6,7 +6,7 @@ var method = argument[0]; // argument0 is method call
 var this = (argument_count > 1) ? argument[1] : noone; // argument1 is the instance
 
 // Define method names
-enum EXAMPLE // enum should be the script name without 'o_' prefix in caps
+enum EXAMPLE // enum should be in caps, resembling the script name without the prefix 'c_' (stands for class)
 {
 	my_method
 }
@@ -32,7 +32,7 @@ switch(method)
 		instance_destroy(this);
 		break;
 	
-	// call this usign 'test(o_example)'
+	// call this usign 'test(c_example)'
 	// all object unit tests should be called from here
 	case OBJECT.TEST:
 		// write object unit tests

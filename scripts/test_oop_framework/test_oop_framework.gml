@@ -1,1 +1,1 @@
-test(o_tester);
+test_objects();
