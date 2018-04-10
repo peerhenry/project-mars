@@ -1,1 +1,2 @@
-call(argument0, OBJECT.DESTROY);
+#macro destructor "destroy"
+call(argument0, destructor);

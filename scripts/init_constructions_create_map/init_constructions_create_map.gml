@@ -5,11 +5,6 @@ var basetile_layer = argument0;
 var base_layer = argument1;
 var base_tall_layer = argument2;
 
-// old
-/*var basetile_layer = layer_get_id(macro_base_tile_layer);
-var base_layer = layer_get_id(macro_base_layer);
-var base_tall_layer = layer_get_id(macro_base_tall_layer);*/
-
 // read from file
 /*var i, file, file_string;
 show_debug_message(" === The working directory is: " + string(working_directory));
@@ -197,6 +192,7 @@ init_construction_new_single(macro_hydroponics, "hydroponics", spr_hydroponics_h
 init_construction_set_action(build_validation_i.inside, build_validation_o.vacant,		map_buffer_action.occupy,	base_tall_layer, obj_hydroponics,		noone, 100);
 #endregion
 
+#region magic generators
 if(debug_mode)
 {
 	// # magic generator
@@ -207,6 +203,7 @@ if(debug_mode)
 	init_construction_new_single(macro_magic_pump, "magic pump", spr_magic_pump, 1, macro_category_outside);
 	init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,		map_buffer_action.occupy,	base_layer,		obj_magic_pump,			noone, 100);
 }
+#endregion
 
 #region fridge
 init_construction_new_single(macro_fridge, "refridgerator", spr_fridge_hud, 1, macro_category_inside);
@@ -269,6 +266,23 @@ init_construction_new_single(macro_recharge_station, "recharge station", spr_rec
 init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,		map_buffer_action.occupy,	base_tall_layer, obj_recharge_station,			noone, 100);
 #endregion
 
+// LANDERS
+
+#region astronaut landing module
+
+init_construction_new_multitile(macro_alm_3, "small astronaut landing module", spr_category_landers, 1, macro_category_landers);
+
+for(var di = -1; di < 2; di++)
+{
+	for(var dj = -1; dj < 2; dj++)
+	{
+		init_construction_set_tile(di, dj, 1); // di, dj, action_count
+		init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,	map_buffer_action.occupy, base_tall_layer, obj_empty, noone, 0);		
+	}
+}
+
+#endregion
+
 // List of active constructions:
 var active_constructions = ds_list_create();
 ds_list_destroy(global.active_constructions);
@@ -304,3 +318,5 @@ ds_list_add(active_constructions, macro_recharge_station);
 ds_list_add(active_constructions, macro_destruct);
 ds_list_add(active_constructions, macro_destruct_safe);
 ds_list_add(active_constructions, macro_destruct_room);
+
+ds_list_add(active_constructions, macro_alm_3);

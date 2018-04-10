@@ -30,6 +30,7 @@ if(target_tile == noone)
 }
 #endregion
 
+#region make path
 with(worm)
 {
 	current_action = worm_action.navigating_to_basetile;
@@ -39,8 +40,9 @@ with(worm)
 	path_add_point(path, x, y, 100);
 	path_add_point(path, basetile_target.x, basetile_target.y, 100);
 	path_set_closed(path, false); // so it doesnt go back
-	//path_start(path, worm_speed_underground, path_action_stop, false);
-	path_start(path, 10, path_action_stop, false); // DEBUG
+	path_start(path, worm_speed_underground, path_action_stop, false);
+	// path_start(path, 10, path_action_stop, false); // DEBUG
 }
+#endregion
 
 return worm;

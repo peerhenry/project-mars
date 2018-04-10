@@ -1,8 +1,8 @@
 {
-    "id": "46172359-4045-430f-9fc9-0aa05d63063f",
+    "id": "e38d3f6e-a681-4ee3-a732-2dd842fd415c",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "c_level",
+    "name": "scr_land",
     "IsCompatibility": false,
     "IsDnD": false
 }

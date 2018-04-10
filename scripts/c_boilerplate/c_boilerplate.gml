@@ -1,20 +1,18 @@
 var method = argument[0];
 var this = (argument_count > 1) ? argument[1] : noone;
 
-// define method names in enum
-
 switch(method)
 {
-	case OBJECT.NEW:
+	case constructor:
 		return this;
 
 	// methods
 
-	case OBJECT.DESTROY:
+	case "destroy":
 		instance_destroy(this);
 		break;
 	
-	case OBJECT.TEST:
+	case "test":
 		break;
 	
 	default:

@@ -1,13 +1,19 @@
 scr_trace("scr_build_new");
 var ghost = global.construction_ghost;
+var construct_type = ghost[?macro_ghost_constr_type];;
+if(construct_type == macro_alm_3) // todo: move to more general lander check script
+{
+	scr_land(ghost);
+	exit;
+}
 var valid = ghost[?macro_ghost_valid];
 var payable = ghost[?macro_ghost_payable];
-var script_container = global.script_container
+var script_container = global.script_container;
 var alert_player = script_container_resolve(script_container, "alert_player")
 if(!valid) script_execute(alert_player, "Invalid construction.");
 if(!payable) script_execute(alert_player, "Insufficient building materials.");
 var can_construct = valid && payable;
-if(!can_construct) return;
+if(!can_construct) exit;
 
 // read from the ghost stack
 var ghost_stack = ghost[?macro_ghost_stack];
@@ -16,7 +22,6 @@ var new_construction;
 var construction_cell_list = ds_list_create();
 var prerequisite = noone;
 
-var construct_type = ghost[?macro_ghost_constr_type];;
 var new_instances = ds_list_create();
 var left = 0;
 var right = 0;

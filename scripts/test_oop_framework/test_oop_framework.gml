@@ -1,1 +1,1 @@
-test_objects();
+test_classes();

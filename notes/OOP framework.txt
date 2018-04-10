@@ -24,12 +24,12 @@ c_tester - a dummy object used for unit testing the framework
 The following code sample demonstrates possible usage of the OOP framework:
 
 	var my_instance = new(c_my_object);							always use 'new' to create a new instance
-	var foo = call(my_instance, MY_OBJECT.get_foo);				use 'call' to call methods defined in the CDS enum
-	var bar = call(my_instance, "get_bar");						In this case, an alias is used to call a method.
+	var foo = call(my_instance, "get_foo");						use 'call' to call methods defined in the CDS enum
+	var bar = call(my_instance, "get_bar");
 	var foobar = foo + bar;
-	if(get_type(my_instance) == "c_my_object")
+	if(get_type(my_instance) == "c_my_object")					get_type will return the name of the class definition script
 	{
-		call(my_instance, MY_OBJECT.set_foobar, foobar);
+		call(my_instance, "set_foobar", foobar);
 	}
 	destroy(my_instance)
 
@@ -38,23 +38,8 @@ The following code sample demonstrates possible usage of the OOP framework:
 script			|		arguments						|	description	
 --------------------------------------------------------------------------------
 new					(cds, arguments...)						Create a new instance and calls the constructor. The first parameter must be the CDS, other parameters are constructor arguments.
-call				(instance, script, arguments...)		Use this to call a method on an instance. The first parameter must be the instance, the second the method id or method alias
+call				(instance, method, arguments...)		Use this to call a method on an instance. The first parameter must be the instance, the second the method id or method alias
 call_static			(cds, arguments...)						Calls a method on a class without an instance.
 destroy				(instance)								Calls the classes destructor
-test				(cds)									Use this method to call unit tests of the class. For each class, this method should be called from the "test_objects" script.
+test_class			(cds)									Use this method to call unit tests of the class. For each class, this method should be called from the "test_objects" script.
 get_type			(instance)								Returns the CDS* as a string
-
-============ METHOD ALIAS ============
-
-It's not great having to always write the enum whenever calling a method.
-Especially if the class name is very long. Imagine for example:
-
-	call(handler, INPUT_OUTPUT_ROUTER_LOGIC_HANDLER.my_method);
-
-To soften this pain a little bit, you can use a method alias. In the constructor, add the following line:
-
-	this.method_alias = INPUT_OUTPUT_ROUTER_LOGIC_HANDLER.my_method;
-
-Now the method can be called with a string:
-
-	call(handler, "method_alias");
