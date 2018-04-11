@@ -1,4 +1,5 @@
-// note: there is also test_suite_room under suites/objects/room
+test_room_step();
+test_parted_rooms_have_grids();
 test_room_is_connected_to_leak_1();
 test_room_is_connected_to_leak_2();
 test_room_is_connected_to_leak_3();

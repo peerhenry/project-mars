@@ -14,16 +14,6 @@ for(var n = 0; n< ds_list_size(buttons); n++)
 
 #endregion
 
-#region RESOURCE COUNTER
-// text
-draw_set_halign(fa_center); 
-draw_set_valign(fa_middle);
-draw_set_font(font_small);
-draw_set_color(c_white);
-draw_text(resources_center_x - 100, resources_center_y, "Metal: " + string(scr_get_metal_amount()));
-draw_text(resources_center_x + 100, resources_center_y, "Gold: " + string(0));
-#endregion
-
 #region BAR BOTTOM LINE
 scr_draw_shiny_line(0, hud_bar_h, gui_w, hud_bar_h, hud_border_color);
 #endregion

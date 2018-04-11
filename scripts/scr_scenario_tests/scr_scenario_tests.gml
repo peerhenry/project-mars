@@ -9,7 +9,7 @@ test_hatch_clears_navgrid();
 test_destroy_from_damage_wall_door();
 
 // moved here from suites
-test_suite_pump();
 test_suite_cart();
+test_suite_constructables();
 
 script_container_destroy(container);

@@ -335,10 +335,13 @@ ds_list_add(active_constructions, macro_solar_panel);
 ds_list_add(active_constructions, macro_electrolyser);
 ds_list_add(active_constructions, macro_printer);
 ds_list_add(active_constructions, macro_recharge_station);
+ds_list_add(active_constructions, macro_bucket);
 
+// Destructions
 ds_list_add(active_constructions, macro_destruct);
 ds_list_add(active_constructions, macro_destruct_safe);
 ds_list_add(active_constructions, macro_destruct_room);
 
+// Landers
 ds_list_add(active_constructions, macro_atm_3);
 ds_list_add(active_constructions, macro_bdm);
