@@ -8,33 +8,30 @@ var create_explosion_and_rubble = resolve(arg_constructable.script_container, "c
 script_execute(create_explosion_and_rubble, c_x, c_y);
 arg_constructable.destroyed = true;
 
-var get_layer_for = resolve(arg_constructable.script_container, "get_layer_for");
-var leak_layer = script_execute(get_layer_for, obj_leak);
-
 if(arg_constructable.object_index == obj_hatch)
 {
 	// add a leak room
-	var new_leak = instance_create_layer(0,0,leak_layer, obj_leak);
+	var new_leak = new(c_leak, global.gate_drainage_speed);
 	ds_list_add(arg_constructable.base_room.leaks, new_leak);
 }
 else if(arg_constructable.object_index == obj_wall && !position_meeting(c_x, c_y, obj_base_tile)) // outside wall is destroyed
 {
 	var adjacent_doors = scr_get_adjacent_instances(arg_constructable, obj_door);
-	var adjacents = scr_get_adjacent_instances(arg_constructable, obj_base_tile);
+	var adjacent_tiles = scr_get_adjacent_instances(arg_constructable, obj_base_tile);
 	for(var n = 0; n < 4; n ++)
 	{
 		var next_door = adjacent_doors[n];
-		var next = adjacents[n];
+		var tile = adjacent_tiles[n];
 		if(next_door != noone)
 		{
-			var new_leak = instance_create_layer(c_x, c_y, leak_layer, obj_leak);
+			var new_leak = new(c_leak, global.gate_drainage_speed);
 			ds_list_add(next_door.room1.leaks, new_leak);
 			ds_list_add(next_door.room2.leaks, new_leak);
 		}
-		else if(next != noone)
+		else if(tile != noone)
 		{
-			var base_room = scr_room_at(next.x, next.y);
-			var new_leak = instance_create_layer(c_x, c_y, leak_layer, obj_leak);
+			var base_room = scr_room_at(tile.x, tile.y);
+			var new_leak = new(c_leak, global.gate_drainage_speed);
 			ds_list_add(base_room.leaks, new_leak);
 		}
 	}

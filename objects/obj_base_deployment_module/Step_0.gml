@@ -16,7 +16,11 @@ if(begin_landing_animation)
 if(is_landing)
 {
 	occ_j = scr_rc_to_gi(y);
-	if(image_speed == 0 && path_position > 0.7) image_speed = 2; // at 70% of path, retract exhaust pipes
+	if(image_speed == 0 && path_position > 0.7)
+	{
+		image_speed = 2; // at 70% of path, retract exhaust pipes
+		if(audio_is_playing(sound_fx_exhaust)) audio_stop_sound(sound_fx_exhaust);
+	}
 	if(image_speed > 0 && image_index >= (sprite_get_number(sprite_index) - 1) )
 	{
 		image_speed = 0; // stop animation when pipes have been retracted
@@ -25,7 +29,6 @@ if(is_landing)
 	{
 		is_landing = false;
 		path_delete(path);
-		if(audio_is_playing(sound_fx_exhaust)) audio_stop_sound(sound_fx_exhaust);
 		
 		for(var i = -2; i <= 2; i++)
 		{

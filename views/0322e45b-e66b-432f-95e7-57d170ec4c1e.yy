@@ -15,7 +15,8 @@
         "219d6aed-e3cb-4e38-9b77-f7b497a80893",
         "92dcf424-666c-4045-a474-d075f9b971b0",
         "b086a10b-a0c1-4a8a-8bb1-4e6344411518",
-        "adddfd90-f6f9-409c-817d-538442cff225"
+        "adddfd90-f6f9-409c-817d-538442cff225",
+        "7bfe629b-0657-4ef1-99a1-023233ebde5a"
     ],
     "filterType": "GMSprite",
     "folderName": "outside",

@@ -59,7 +59,7 @@ switch(method)
 		// arrange
 		var tester = new(c_tester);
 		// act
-		var result = call(tester, TESTER.get_full_name);
+		var result = call(tester, "get_full_name");
 		// assert
 		assert_equal("John Smith", result, "test object name");
 		// cleanup
@@ -72,7 +72,7 @@ switch(method)
 		// arrange
 		var tester = new(c_tester, "Pietje", "Puk");
 		// act
-		var result = call(tester, TESTER.get_full_name);
+		var result = call(tester, "get_full_name");
 		// assert
 		assert_equal("Pietje Puk", result, "test object name");
 		// cleanup

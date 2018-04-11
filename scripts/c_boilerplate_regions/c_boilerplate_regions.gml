@@ -7,13 +7,14 @@ switch(method)
 {
 	#region CONSTRUCTOR
 	
+	// params begin at argument[2]
 	case constructor:
 		return this;
 		
 	#endregion
 
 	#region METHODS
-	
+	// params begin at argument[2]
 	#endregion
 
 	#region DESTRUCTOR

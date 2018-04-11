@@ -1,10 +1,15 @@
 test_init(test_pump_adjacent_to_drill);
 
 // arrange
-var water = instance_create_depth(64, 32, 0, obj_resource_water);
-var drill = instance_create_depth(64, 32, 0, obj_drill);
+var xx = scr_gi_to_rc(5);
+var yy = scr_gi_to_rc(5);
+var water = instance_create_depth(xx, yy, 0, obj_resource_water);
+var drill = instance_create_depth(xx, yy, 0, obj_drill);
 with(drill){ event_user(macro_event_finalize); }
-var pump = instance_create_depth(32, 32, 0, obj_pump);
+var pump = instance_create_depth(xx - 32, yy, 0, obj_pump);
+
+// assert setup
+assert_equal(water, drill.resource_instance, "drill.resource_instance");
 
 // act
 with(pump){	event_user(macro_event_finalize); }

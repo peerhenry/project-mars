@@ -1,16 +1,9 @@
 scr_trace("Calling init_game_post");
 
-with(obj_pipe) scr_connect_pipe(id);
 with(obj_constructable)
 {
-	scr_connect_to_cables(id);
+	event_user(macro_post_init);
 }
-with(obj_wall)
-{
-	scr_set_basetile_lights(id);
-	scr_connect_wall(id);
-}
-with(obj_gate) scr_connect_gate(id);
 
 // Finalize, foundation first
 with(obj_base_tile)

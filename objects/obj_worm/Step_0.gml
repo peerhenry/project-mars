@@ -27,33 +27,35 @@ switch(current_action)
 			alarm[0] = 1;
 		}
 		break;
-}
+	case worm_action.idle:
+		#region update sprite
 
-#endregion
-
-#region update sprite
-
-if(sprite_index == spr_worm)
-{
-	if(animating)
-	{
-		if(animate_forward)
+		if(sprite_index == spr_worm)
 		{
-			image_index += (8/room_speed);
-			if(image_index > image_number - 1) animating = false;
-		}
-		else
-		{
-			image_index -= (8/room_speed);
-			if(image_index < 0.1) animating = false;
-		}
+			if(animating)
+			{
+				if(animate_forward)
+				{
+					image_index += (8/room_speed);
+					if(image_index > image_number - 1) animating = false;
+				}
+				else
+				{
+					image_index -= (8/room_speed);
+					if(image_index < 0.1) animating = false;
+				}
 		
-		if(!animating)
-		{
-			animate_forward = !animate_forward;
-			alarm[1] = 2*room_speed;
+				if(!animating)
+				{
+					animate_forward = !animate_forward;
+					alarm[1] = 2*room_speed;
+				}
+			}
 		}
-	}
+
+		#endregion
+		break;
 }
 
 #endregion
+

@@ -31,6 +31,7 @@
 #macro macro_printer 22
 #macro macro_med_bed 23
 #macro macro_recharge_station 24
+#macro macro_bucket 25
 
 #macro macro_atm_3 2003 // 3x3 astronaut transit module
 #macro macro_atm_4 2004

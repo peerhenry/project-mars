@@ -3,16 +3,18 @@ var this = (argument_count > 1) ? argument[1] : noone;
 
 switch(method)
 {
+	// params begin at argument[2]
 	case constructor:
 		return this;
 
 	// methods
+	// params begin at argument[2]
 
-	case "destroy":
+	case destructor:
 		instance_destroy(this);
 		break;
 	
-	case "test":
+	case test:
 		break;
 	
 	default:

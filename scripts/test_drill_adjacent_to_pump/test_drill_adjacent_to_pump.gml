@@ -1,12 +1,16 @@
-test_init(test_pump_adjacent_to_drill);
+test_init(test_drill_adjacent_to_pump);
 
 // arrange
 var water = instance_create_depth(64, 32, 0, obj_resource_water);
 var pump = instance_create_depth(32, 32, 0, obj_pump);
 with(pump){	event_user(macro_event_finalize); }
+var drill = instance_create_depth(64, 32, 0, obj_drill);
+
+// assert setup
+assert_equal(water, drill.resource_instance, "drill.resource_instance");
+assert_true(drill.has_resource, "drill.has_resource");
 
 // act
-var drill = instance_create_depth(64, 32, 0, obj_drill);
 with(drill){ event_user(macro_event_finalize); }
 var water_grid = scr_get_grid_prop(pump, macro_grid_water, macro_grid_prop_grid);
 var electric_grid = scr_get_grid_prop(pump, macro_grid_electric, macro_grid_prop_grid);

@@ -3,7 +3,6 @@
 /// @arg arguments...
 var script = argument[0];
 var method = argument[1];
-return script_execute(script, method);
 
 switch(argument_count)
 {

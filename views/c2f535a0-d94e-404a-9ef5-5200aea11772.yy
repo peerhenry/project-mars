@@ -11,7 +11,8 @@
         "2f881597-244e-4a43-9111-a93fd858509e",
         "17ee9f27-60a2-42d7-af2d-12e9b8c056ca",
         "948608d8-ca1c-42e1-8975-110b2385596b",
-        "abcad706-abcd-4206-becc-4119262632cf"
+        "abcad706-abcd-4206-becc-4119262632cf",
+        "8f184eeb-5405-4a6a-a01c-f03450e56cb1"
     ],
     "filterType": "GMObject",
     "folderName": "outside",

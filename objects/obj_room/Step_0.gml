@@ -3,6 +3,7 @@
 //var all_hatches_closed = true;
 var room_drainage_per_hatch = hatch_o2_drainage_for_one_tile / max(ds_list_size(tiles),1);
 
+#region check open hatch drainage
 var next_hatch = undefined;
 for(var n = 0; n < ds_list_size(hatches); n++)
 {
@@ -20,7 +21,9 @@ for(var n = 0; n < ds_list_size(hatches); n++)
 	}
 	n++;
 }
+#endregion
 
+#region check leak drainage
 var leak_count = ds_list_size(leaks);
 if(leak_count > 0) oxygen_is_leaking = true;
 for(var n = 0; n < leak_count; n++)
@@ -28,10 +31,11 @@ for(var n = 0; n < leak_count; n++)
 	var next_leak = ds_list_find_value(leaks, n);
 	if(oxygen_level > 0)
 	{
-		oxygen_level -= room_drainage_per_hatch; // todo: set leak specific drainage
+		oxygen_level -= next_leak.drain_per_step;
 		if(oxygen_level < 0) oxygen_level  = 0;
 	}
 }
+#endregion
 
 if(oxygen_is_leaking)
 {

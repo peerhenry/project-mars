@@ -14,11 +14,6 @@ with(arg_gate)
 		scr_check_if_gate_close_plugs_leak();
 	}
 	// play sound
-	if(is_open)
-	{
-		var play_sound = resolve(script_container, "play_sound");
-		script_execute(play_sound, sound_fx_door);
-	}
+	if(is_open) resolve_execute(script_container, "play_sound", sound_fx_door);
+	else {} // todo: play closing sound
 }
-
-// scr_recalculate_paths();

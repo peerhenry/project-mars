@@ -12,10 +12,10 @@ var arg_map_buffer_action = argument2;
 var arg_layer = argument3;
 var arg_object_to_add = argument4;
 var arg_object_to_remove = argument5;
-var arg_metal_cost = argument6;
+var arg_metal_cost = argument6; // obsolete
 
 var new_action;
-new_action[macro_metal_cost] = arg_metal_cost;
+new_action[macro_metal_cost] = 0;
 new_action[macro_object_to_remove] = arg_object_to_remove;
 new_action[macro_object_to_add] = arg_object_to_add;
 new_action[macro_layer] = arg_layer;

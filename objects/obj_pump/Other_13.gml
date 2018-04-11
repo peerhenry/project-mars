@@ -1,5 +1,6 @@
-name = "pump";
+/// @description Init
 event_inherited();
+name = "pump";
 draw_cables = true;
 
 // occupy map grid & nav grid
@@ -11,8 +12,3 @@ grid_type_to_select = macro_grid_water;
 // set grid props; for obj_grid_component
 scr_set_new_grid_props(id, macro_grid_electric, macro_grid_role_consumer, global.pump_energy_consumption);
 scr_set_new_grid_props(id, macro_grid_water, macro_grid_role_source, global.pump_water_production);
-if(!global.init_stage)
-{
-	scr_connect_to_pipes(id);
-	scr_drill_pump_connection(id);
-}

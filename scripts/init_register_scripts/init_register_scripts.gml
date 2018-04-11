@@ -13,5 +13,6 @@ script_container_register(container, "door_destroy_logic", scr_door_destroy_logi
 script_container_register(container, "create_explosion_and_rubble", scr_create_explosion_and_rubble);
 script_container_register(container, "room_remove_tile_and_part", scr_room_remove_tile_and_part);
 script_container_register(container, "init_gui", init_gui);
+script_container_register(container, "can_draw_power", scr_can_draw_power);
 global.script_container = container;
 return container;

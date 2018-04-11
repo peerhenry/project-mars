@@ -1,0 +1,1 @@
+test_fs(f_drill_mine);

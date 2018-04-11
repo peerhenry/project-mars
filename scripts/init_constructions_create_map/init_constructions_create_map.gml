@@ -263,7 +263,14 @@ init_construction_set_rotation_parameter(macro_rotation_3, macro_sprite, spr_med
 
 #region Recharge station
 init_construction_new_single(macro_recharge_station, "recharge station", spr_recharge_station_HUD, 1, macro_category_outside);
-init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,		map_buffer_action.occupy,	base_tall_layer, obj_recharge_station,			noone, 100);
+init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,		map_buffer_action.occupy,	base_tall_layer, obj_recharge_station,	noone, 100);
+#endregion
+
+#region bucket
+
+init_construction_new_single(macro_bucket, "bucket", spr_bucket, 1, macro_category_outside);
+init_construction_set_action(build_validation_i.outside, build_validation_o.vacant,	map_buffer_action.occupy, base_tall_layer, obj_bucket, noone, 0);
+
 #endregion
 
 // LANDERS
