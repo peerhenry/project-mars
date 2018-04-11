@@ -5,16 +5,6 @@
     "name": "obj_hydrogen_tank",
     "eventList": [
         {
-            "id": "e72fa15a-780c-40e2-8720-4278b653350c",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "9ad5ce57-8da1-4020-9476-7b803ba5b69e"
-        },
-        {
             "id": "e79bc550-93f6-4362-8197-7b8789f3c8a5",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -22,6 +12,16 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 1,
+            "m_owner": "9ad5ce57-8da1-4020-9476-7b803ba5b69e"
+        },
+        {
+            "id": "7955db31-0d43-4cd2-a488-f31f5f942c92",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 13,
+            "eventtype": 7,
             "m_owner": "9ad5ce57-8da1-4020-9476-7b803ba5b69e"
         }
     ],

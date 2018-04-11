@@ -1,4 +1,6 @@
+/// @description Init
 event_inherited();
+
 name = "battery";
 // Occupy navgrid & execute map buffer action
 scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.occupy);

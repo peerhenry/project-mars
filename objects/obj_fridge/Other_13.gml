@@ -1,4 +1,6 @@
+/// @description Init
 event_inherited();
+
 name = "refrigerator";
 image_speed = 0;
 depth = -occ_j;

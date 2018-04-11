@@ -5,16 +5,6 @@
     "name": "obj_water_reservoir",
     "eventList": [
         {
-            "id": "a912d003-cb5b-4a11-8bb7-5fedaf8d2c1c",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "456afd4c-d68c-410a-9ee9-feb5a1109721"
-        },
-        {
             "id": "e45d11b3-4d0c-4f5e-9834-1fa6304d469b",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -32,6 +22,16 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 8,
+            "m_owner": "456afd4c-d68c-410a-9ee9-feb5a1109721"
+        },
+        {
+            "id": "3f509237-fb8d-45b1-9f19-8ac43b695961",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 13,
+            "eventtype": 7,
             "m_owner": "456afd4c-d68c-410a-9ee9-feb5a1109721"
         }
     ],

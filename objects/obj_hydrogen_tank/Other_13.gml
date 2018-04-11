@@ -1,4 +1,6 @@
+/// @description Init
 event_inherited();
+
 scr_navgrid_occupy(occ_i, occ_j);
 
 // oxygen grid

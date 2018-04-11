@@ -2,4 +2,4 @@
 show_debug_message("drill post init"); // DEBUG
 event_inherited();
 scr_drill_pump_connection(id);
-scr_connect_drill_to_buckets(id);
+event_user(macro_event_drill_mine_check);

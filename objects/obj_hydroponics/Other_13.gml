@@ -1,3 +1,4 @@
+/// @description Init
 event_inherited();
 name = "hydroponics";
 scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.occupy);

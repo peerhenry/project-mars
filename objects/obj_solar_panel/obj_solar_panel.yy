@@ -5,16 +5,6 @@
     "name": "obj_solar_panel",
     "eventList": [
         {
-            "id": "cdaa7116-2aa6-4fee-b179-68f8df001467",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "2f881597-244e-4a43-9111-a93fd858509e"
-        },
-        {
             "id": "8b0ac5ec-a4d7-4e85-91c1-b677e628e7fd",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -22,6 +12,16 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 1,
+            "m_owner": "2f881597-244e-4a43-9111-a93fd858509e"
+        },
+        {
+            "id": "1a4104c9-06c6-4bf0-b680-9efa48b54a05",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 13,
+            "eventtype": 7,
             "m_owner": "2f881597-244e-4a43-9111-a93fd858509e"
         }
     ],

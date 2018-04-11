@@ -40,6 +40,7 @@ switch(arg_function)
 			for(var n = 0; n < 4; n++)
 			{
 				var other_bucket = adjacent_buckets[n];
+				if(other_bucket == noone || other_bucket.under_construction) continue;
 				with(other_bucket)
 				{
 					var is_full = in(here, "bucket_is_full", other_bucket);
@@ -59,6 +60,7 @@ switch(arg_function)
 	
 	#region dump: drill => void
 	case "dump":
+		show_debug_message("f_drill_mine.dump");
 		var arg_drill = argument[1];
 		with(arg_drill)
 		{
@@ -76,26 +78,25 @@ switch(arg_function)
 	
 	#region mine: drill => void
 	case "mine":
+		show_debug_message("f_drill_mine.mine"); // DEBUG
 		var arg_drill = argument[1];
 		with(arg_drill)
 		{
 			var can_draw_power = resolve(global.script_container, "can_draw_power");
 			var can_mine = in(here, "can_mine", arg_drill, can_draw_power);
+			show_debug_message("can_mine: " + string(can_mine)); // DEBUG
 			if(can_mine)
 			{
 				var needs_new_bucket = in(here, "needs_new_bucket", arg_drill)
+				show_debug_message("needs_new_bucket : " + string(needs_new_bucket)); // DEBUG
 				if(needs_new_bucket)
 				{
 					active_bucket = in(here, "find_bucket_with_space", arg_drill);
 				}
 				var can_dump = active_bucket != noone;
-				scr_set_grid_prop(other, macro_grid_electric, macro_grid_prop_can_perform_role, can_dump);
+				show_debug_message("can_dump: " + string(can_dump)); // DEBUG
 				if(can_dump) in(here, "dump", arg_drill);
-			}
-			// As long as resource is not depleted, always repeat the alarm to see if mining can continue
-			if(instance_exists(resource_instance) && resource_instance.amount > 0)
-			{
-				alarm_set(macro_alarm_mine_metal, 30);
+				else event_user(macro_event_drill_mine_check);
 			}
 		}
 		break;
@@ -201,6 +202,7 @@ switch(arg_function)
 	
 	case "find_bucket_with_space_test":
 		run_fs_test(here, "find_bucket_with_space_test none");
+		run_fs_test(here, "find_bucket_with_space_test one under construction");
 		run_fs_test(here, "find_bucket_with_space_test one");
 		break;
 	
@@ -215,10 +217,25 @@ switch(arg_function)
 		instance_destroy(drill);
 		break;
 	
+	case "find_bucket_with_space_test one under construction":
+		// arrange
+		var drill = instance_create_depth(48, 48, 0, obj_drill);
+		var bucket = instance_create_depth(48, 48 + 32, 0, obj_bucket);
+		bucket.under_construction = true;
+		// act
+		var result = in(here, "find_bucket_with_space", drill);
+		// assert
+		assert_equal(noone, result, "bucket");
+		// cleanup
+		instance_destroy(drill);
+		instance_destroy(bucket);
+		break;
+	
 	case "find_bucket_with_space_test one":
 		// arrange
 		var drill = instance_create_depth(48, 48, 0, obj_drill);
 		var bucket = instance_create_depth(48, 48 + 32, 0, obj_bucket);
+		bucket.under_construction = false;
 		// act
 		var result = in(here, "find_bucket_with_space", drill);
 		// assert

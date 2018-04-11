@@ -5,16 +5,6 @@
     "name": "obj_cable",
     "eventList": [
         {
-            "id": "af728a65-2f4d-459e-b838-bc28b2ed0491",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "17ee9f27-60a2-42d7-af2d-12e9b8c056ca"
-        },
-        {
             "id": "39f2bc66-1581-4b04-944d-8d08b67a19ce",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -41,6 +31,26 @@
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 12,
+            "eventtype": 7,
+            "m_owner": "17ee9f27-60a2-42d7-af2d-12e9b8c056ca"
+        },
+        {
+            "id": "f3e3d723-a7c2-4a78-b599-f205db4be06d",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 13,
+            "eventtype": 7,
+            "m_owner": "17ee9f27-60a2-42d7-af2d-12e9b8c056ca"
+        },
+        {
+            "id": "c2d5637e-30b2-42b7-b0a5-bd5ce2822640",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 14,
             "eventtype": 7,
             "m_owner": "17ee9f27-60a2-42d7-af2d-12e9b8c056ca"
         }

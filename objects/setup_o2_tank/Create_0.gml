@@ -1,4 +1,4 @@
-var layer_name = "base_tall";
+/*var layer_name = "base_tall";
 var object = obj_oxygen_tank;
 var build_type = macro_oxygen_tank;
 
@@ -9,4 +9,4 @@ with(inst)
 {
 	//event_user(macro_event_finalize);
 }
-instance_destroy();
+instance_destroy();*/

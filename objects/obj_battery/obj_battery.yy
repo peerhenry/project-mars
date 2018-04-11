@@ -5,16 +5,6 @@
     "name": "obj_battery",
     "eventList": [
         {
-            "id": "c49843f0-2743-4421-8b18-0a4dc6e3633b",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "36ab0900-2107-492b-9f7a-1c3a26f952bf"
-        },
-        {
             "id": "b025a8fc-7a32-4533-a5c8-70011456eba4",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -22,6 +12,16 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 1,
+            "m_owner": "36ab0900-2107-492b-9f7a-1c3a26f952bf"
+        },
+        {
+            "id": "8fcfdd2a-21b9-4cd9-a2af-d31b23da55f5",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 13,
+            "eventtype": 7,
             "m_owner": "36ab0900-2107-492b-9f7a-1c3a26f952bf"
         }
     ],

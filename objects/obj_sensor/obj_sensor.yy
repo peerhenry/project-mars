@@ -5,16 +5,6 @@
     "name": "obj_sensor",
     "eventList": [
         {
-            "id": "f4a507af-4020-44ea-b150-ca0c1009c7c7",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "3c3a8c33-12a2-4c23-ae2f-6cadb7ed682b"
-        },
-        {
             "id": "921ab352-c7c0-47ba-bc3f-78f55f6bd56f",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -52,6 +42,16 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 7,
             "eventtype": 6,
+            "m_owner": "3c3a8c33-12a2-4c23-ae2f-6cadb7ed682b"
+        },
+        {
+            "id": "99d6023e-df1a-4d8b-bece-662a9701cb3a",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 13,
+            "eventtype": 7,
             "m_owner": "3c3a8c33-12a2-4c23-ae2f-6cadb7ed682b"
         }
     ],

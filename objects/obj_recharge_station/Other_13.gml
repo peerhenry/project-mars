@@ -1,4 +1,6 @@
+/// @description Init
 event_inherited();
+
 name = "recharge station";
 draw_cables = true;
 has_power = false;

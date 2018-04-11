@@ -9,7 +9,7 @@ with(arg_pump)
 		var next_drill = adjacent_drills[n];
 		if(next_drill != noone)
 		{
-			next_drill.pump_count++;
+			next_drill.pump_count--;
 			with(next_drill) event_user(macro_event_drill_mine_check);
 		}
 	}

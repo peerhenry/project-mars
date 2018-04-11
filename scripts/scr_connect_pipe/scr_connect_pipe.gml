@@ -16,5 +16,4 @@ with(arg_pipe)
 			}
 		}
 	}
-	scr_set_pipe_image(id);
 }

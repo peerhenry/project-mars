@@ -5,16 +5,6 @@
     "name": "obj_hydroponics",
     "eventList": [
         {
-            "id": "7233f9b4-f127-4792-85f0-fd32aee73f47",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "d26032bd-01c6-487f-b49e-33bce308cc73"
-        },
-        {
             "id": "3ef3fec9-ef41-4c40-8145-87a9349a9b0c",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -62,6 +52,16 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 1,
+            "m_owner": "d26032bd-01c6-487f-b49e-33bce308cc73"
+        },
+        {
+            "id": "67629fbd-4920-4815-be1a-f23c00e5b3a7",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 13,
+            "eventtype": 7,
             "m_owner": "d26032bd-01c6-487f-b49e-33bce308cc73"
         }
     ],

@@ -1,3 +1,4 @@
+/// @description Init
 event_inherited();
 name = "solar panel";
 scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.occupy);

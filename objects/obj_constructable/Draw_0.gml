@@ -33,12 +33,8 @@ else
 {
 	if(draw_cables)
 	{
-		var can_draw_power = resolve_execute(script_container, "can_draw_power", id);
-		if(can_draw_power)
-		{
-			draw_sprite(spr_connection_cable, cable_adjacency + 16, x, y);
-		}
-		else draw_sprite(spr_connection_cable, cable_adjacency, x, y);
+		var cable_on = scr_can_draw_power(id) ? 16 : 0;
+		draw_sprite(spr_connection_cable, cable_adjacency + cable_on, x, y);
 	}
 	if(draw_pipes)
 	{

@@ -7,6 +7,7 @@ depth = -occ_j;
 image_speed = 0;
 //noise_scale_x = 2;
 
+pump_count = 0; // used to determine if bucket can perform
 active_bucket = noone;
 
 #macro macro_alarm_mine_metal 0

@@ -5,16 +5,6 @@
     "name": "obj_oxygen_tank",
     "eventList": [
         {
-            "id": "eae90002-9258-4f90-bc3c-af7116f4d8bc",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "9eb73b8f-d242-462d-bc1c-2e5d67139f1e"
-        },
-        {
             "id": "2515f6eb-3186-4aec-ae38-e5f282a0c7e8",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -32,6 +22,16 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 3,
+            "m_owner": "9eb73b8f-d242-462d-bc1c-2e5d67139f1e"
+        },
+        {
+            "id": "4e6f42ac-81c2-475c-af59-6a662f989100",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 13,
+            "eventtype": 7,
             "m_owner": "9eb73b8f-d242-462d-bc1c-2e5d67139f1e"
         }
     ],

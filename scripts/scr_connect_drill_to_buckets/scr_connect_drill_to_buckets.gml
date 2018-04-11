@@ -1,14 +1,11 @@
-var arg_instance = argument0;
-debug_instance_type(arg_instance, obj_drill);
-with(arg_instance)
+/// @arg drill
+var arg_drill = argument0;
+debug_instance_type(arg_drill, obj_drill);
+with(arg_drill)
 {
-	if(has_resource)
+	if(resource_instance != noone && scr_instance_inherits(resource_instance, obj_resource_solid))
 	{
-		var adjacent_buckets = scr_get_adjacent_instances(id, obj_bucket);
-		for(var n = 0; n < 4; n++) // ENWS
-		{
-			var bucket = adjacent_buckets[n];
-			buckets[n] = bucket;
-		}
+		active_bucket = in(f_drill_mine, "find_bucket_with_space", arg_drill);
+		if(active_bucket != noone) is_active = true;
 	}
 }

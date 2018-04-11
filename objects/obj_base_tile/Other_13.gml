@@ -1,5 +1,4 @@
-scr_trace("basetile create event");
-
+/// @description Init
 event_inherited();
 wall_adjacency = 0;
 is_broken = false; // used in step and for setting cursor sprite
