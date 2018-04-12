@@ -8,10 +8,10 @@ with(arg_pipe)
 		var next_adjacent = adjacents[n];
 		if(next_adjacent != noone)
 		{
-			adjacency_number += power(2, n);
+			pipe_adjacency += power(2, n);
 			if(next_adjacent.object_index == obj_pipe)
 			{
-				next_adjacent.adjacency_number += power(2, (n+2)%4);
+				next_adjacent.pipe_adjacency += power(2, (n+2)%4);
 				scr_set_pipe_image(next_adjacent);
 			}
 		}

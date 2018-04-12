@@ -4,7 +4,7 @@ var arg_pipe = argument0;
 
 with(arg_pipe)
 {
-	switch(adjacency_number)
+	switch(pipe_adjacency)
 	{
 		case 0:
 		case 1:

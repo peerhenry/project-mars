@@ -34,6 +34,7 @@ switch(callback_item.click_action)
 		with(obj_HUD_grid_details_panel)
 		{
 			if(this_grid == grid) make_new_one = false;
+			instance_destroy();
 		}
 		if(make_new_one)
 		{

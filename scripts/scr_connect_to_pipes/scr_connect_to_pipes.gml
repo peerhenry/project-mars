@@ -7,9 +7,9 @@ for(var n = 0; n < 4; n++) // ENWS
 	if(next_adjacent != noone)
 	{
 		var bit = power(2, (n+2)%4);
-		if(next_adjacent.adjacency_number & bit == 0)
+		if(next_adjacent.pipe_adjacency & bit == 0)
 		{
-			next_adjacent.adjacency_number += bit;
+			next_adjacent.pipe_adjacency += bit;
 			scr_set_pipe_image(next_adjacent);
 		}
 	}
