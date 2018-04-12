@@ -25,3 +25,8 @@ show_details = false;
 
 auto_attack = (owner == macro_player) ? global.auto_attack_player : global.auto_attack_nonplayer;
 auto_construct = (owner == macro_player) ? global.auto_construct_player : global.auto_construct_nonplayer;
+
+var sprite_set = scr_get_sprite_set(id);
+sprite_down_pistol = sprite_set[6];
+sprite_right_pistol = sprite_set[7];
+sprite_up_pistol = sprite_set[8];

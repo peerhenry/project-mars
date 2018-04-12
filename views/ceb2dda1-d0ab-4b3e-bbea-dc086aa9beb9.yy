@@ -9,7 +9,8 @@
         "98dac2ce-9cf9-4873-8650-5e5d90c9583a",
         "13257907-3d45-43aa-9ceb-c5901b23bd54",
         "9f3f22cf-dc9d-4b71-beb2-01628ae6403e",
-        "adfa1a64-bf61-4885-815a-67616e040175"
+        "adfa1a64-bf61-4885-815a-67616e040175",
+        "96149565-7f8c-4a40-90bc-889d5821b60d"
     ],
     "filterType": "GMSprite",
     "folderName": "details_panel",

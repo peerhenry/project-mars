@@ -19,4 +19,10 @@ if(arg_unit.object_index == obj_cart)
 	next_y_offset += deploybtn.height + padding;
 }
 
+if(scr_instance_inherits(arg_unit, obj_transit_module))
+{
+	var liftoff_btn = scr_create_gui_item_icon_button(arg_container, arg_content_left, next_y_offset, spr_takeoff, 0, details_panel_action.takeoff);
+	next_y_offset += liftoff_btn.height + padding;
+}
+
 return next_y_offset;

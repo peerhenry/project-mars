@@ -13,6 +13,10 @@ switch(arg_entity.object_index)
 			output[3] = spr_suit_mask_down;
 			output[4] = spr_suit_mask_right;
 			output[5] = spr_suit_mask_up;
+			
+			output[6] = spr_astro_suit_down_pistol;
+			output[7] = spr_astro_suit_right_pistol;
+			output[8] = spr_astro_suit_up_pistol;
 		}
 		else
 		{
@@ -22,6 +26,10 @@ switch(arg_entity.object_index)
 			output[3] = spr_male_mask_down;
 			output[4] = spr_male_mask_right;
 			output[5] = spr_male_mask_up;
+			
+			output[6] = spr_male_down_pistol;
+			output[7] = spr_male_right_pistol;
+			output[8] = spr_male_up;
 		}
 		break;
 	case obj_robot: // todo: make cart and robot mask
@@ -31,6 +39,10 @@ switch(arg_entity.object_index)
 		output[3] = noone;
 		output[4] = noone;
 		output[5] = noone;
+		
+		output[6] = spr_robot_down;
+		output[7] = spr_robot_right;
+		output[8] = spr_robot_up;
 		break;
 	case obj_cart:
 		output[0] = spr_cart_down;

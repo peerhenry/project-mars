@@ -1,5 +1,5 @@
 event_inherited();
-name = "Astronaut Transit Module";
+name = "A.T.M. (small)";
 
 for(var i = -1; i <= 1; i++)
 {
@@ -14,7 +14,3 @@ image_speed = 0;
 owner = global.default_owner;
 mask_sprite = spr_atm_small_mask;
 mask_color = scr_get_suit_color(owner);
-
-is_landing = true;
-begin_landing_animation = true;
-path = noone;

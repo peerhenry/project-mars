@@ -1,8 +1,11 @@
 event_inherited();
-for(var i = -1; i <= 1; i++)
+if(!is_taking_off)
 {
-	for(var j = -1; j <= 1; j++)
+	for(var i = -1; i <= 1; i++)
 	{
-		scr_navgrid_free(occ_i + i, occ_j + j);
+		for(var j = -1; j <= 1; j++)
+		{
+			scr_navgrid_free(occ_i + i, occ_j + j);
+		}
 	}
 }

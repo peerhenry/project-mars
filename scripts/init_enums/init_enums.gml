@@ -109,10 +109,14 @@ enum mousedrag_from
 enum details_panel_action
 {
 	none,
+	// top buttons
 	center,
 	deselect,
+	// grid section
+	show_grid_details,
+	// unit actions
 	deploy,
-	show_grid_details
+	takeoff
 }
 
 enum unit_prop

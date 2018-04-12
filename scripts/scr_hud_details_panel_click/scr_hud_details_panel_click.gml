@@ -17,17 +17,7 @@ switch(callback_item.click_action)
 	case details_panel_action.center:
 		scr_center_screen_on(unit);
 		break;
-	case details_panel_action.deploy:
-		with(unit)
-		{
-			if(carrying_instance != noone)
-			{
-				event_user(macro_toggle_deploy_event);
-				if(deploy) callback_item.sprite_button_color = c_aqua;
-				else callback_item.sprite_button_color = c_black;
-			}
-		}
-		break;
+
 	case details_panel_action.show_grid_details:
 		var make_new_one = true;
 		var this_grid = callback_item.grid;
@@ -42,5 +32,21 @@ switch(callback_item.click_action)
 			callback_item.sprite_button_color = c_aqua;
 		}
 		else callback_item.sprite_button_color = c_black;
+		break;
+		
+	case details_panel_action.deploy:
+		with(unit)
+		{
+			if(carrying_instance != noone)
+			{
+				event_user(macro_toggle_deploy_event);
+				if(deploy) callback_item.sprite_button_color = c_aqua;
+				else callback_item.sprite_button_color = c_black;
+			}
+		}
+		break;
+	
+	case details_panel_action.takeoff:
+		f_transit_modules("takeoff", unit);
 		break;
 }

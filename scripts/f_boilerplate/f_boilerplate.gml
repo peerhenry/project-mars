@@ -1,4 +1,4 @@
-var here = f_boilerplate;
+var here = f_boilerplate; // CHANGE THIS TO YOUR SCRIPT NAME
 switch(argument[0])
 {
 	// functions

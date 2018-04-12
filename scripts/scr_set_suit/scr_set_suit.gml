@@ -31,6 +31,9 @@ with(arg_astro)
 	sprite_mask_down = sprite_set[3];
 	sprite_mask_right = sprite_set[4];
 	sprite_mask_up = sprite_set[5];
+	sprite_down_pistol = sprite_set[6];
+	sprite_right_pistol = sprite_set[7];
+	sprite_up_pistol = sprite_set[8];
 	
 	// update mask color
 	if(arg_wear) mask_color = mask_color_suit;

@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "005508f7-7e7b-4139-bc60-b00ba3d0bc96",
+            "Value": {
+                "id": "f5d7965b-4ed9-46d8-b90b-9772155cb3df",
+                "resourcePath": "scripts\\new_override\\new_override.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "006fee23-4e98-4087-9168-bd45399a6546",
             "Value": {
                 "id": "968b2a39-b2fd-4edb-b9c2-d93d9383b9c9",
@@ -231,6 +239,14 @@
             }
         },
         {
+            "Key": "04ba17c2-7b85-4b3e-a95c-105cccda7089",
+            "Value": {
+                "id": "e7d4b25a-9239-4983-a739-c21676b9a6b5",
+                "resourcePath": "sprites\\spr_male_down_pistol\\spr_male_down_pistol.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0522cedc-3dd8-4b2b-87ea-c38e1199b84c",
             "Value": {
                 "id": "daa76b90-5657-435c-a90a-0ea7c17135f6",
@@ -252,6 +268,14 @@
                 "id": "d1f4cbcb-f511-4d56-8b50-2e3e1297327b",
                 "resourcePath": "scripts\\scr_16bit_coord_y\\scr_16bit_coord_y.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "05927929-f45b-47ac-b9e9-ab96987a160c",
+            "Value": {
+                "id": "6afd50ad-580f-439a-8114-beb5ab67bba2",
+                "resourcePath": "sprites\\spr_astro_suit_down_pistol\\spr_astro_suit_down_pistol.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1932,6 +1956,14 @@
                 "id": "92f37b8b-b571-472f-a322-4f006c348161",
                 "resourcePath": "scripts\\test_create_corpse_with_suit\\test_create_corpse_with_suit.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "270ed58e-c0b2-4477-86d0-b9823581a361",
+            "Value": {
+                "id": "ad9c89f6-5afe-448d-b119-3cf659cb8f49",
+                "resourcePath": "views\\270ed58e-c0b2-4477-86d0-b9823581a361.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -3751,6 +3783,14 @@
             }
         },
         {
+            "Key": "484e2fcc-d2fd-4f60-833d-e7e9c1ab2d55",
+            "Value": {
+                "id": "7279d33f-378b-4878-bce7-8271dc994911",
+                "resourcePath": "objects\\obj_lander\\obj_lander.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "485832f9-85c1-4f75-a779-9ebb457c17ac",
             "Value": {
                 "id": "f116cda7-dc45-4ad2-9a85-666d9d9c8a37",
@@ -4943,6 +4983,14 @@
             }
         },
         {
+            "Key": "6119a088-d637-4753-9d29-3945114e716e",
+            "Value": {
+                "id": "841ee254-79c6-40c1-abcb-ad9f54f6700e",
+                "resourcePath": "objects\\obj_transit_module\\obj_transit_module.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "616101ae-ad20-4b9c-8906-f0aa1ee8b9c2",
             "Value": {
                 "id": "356252a1-7e2b-4f0c-b7cf-e59aa86727bf",
@@ -5196,6 +5244,14 @@
                 "id": "c249356c-102a-431c-8c4f-bf12cdc9d506",
                 "resourcePath": "objects\\obj_game_over\\obj_game_over.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "674d36e3-33c6-45de-8fe7-2f773c13ddd5",
+            "Value": {
+                "id": "20576bfa-3d71-4647-a13f-061d400b0e2d",
+                "resourcePath": "sprites\\spr_male_right_pistol\\spr_male_right_pistol.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -6871,6 +6927,14 @@
             }
         },
         {
+            "Key": "8c614f61-9926-4a8d-b970-650efa1dc087",
+            "Value": {
+                "id": "7656bacc-ab99-4ce5-ad18-93bf218613e2",
+                "resourcePath": "scripts\\f_transit_modules\\f_transit_modules.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "8c6b1ab6-c63c-42d8-9553-bb3366e66e32",
             "Value": {
                 "id": "f8d9e68f-59b1-4c46-9755-4419ef09abbc",
@@ -7183,6 +7247,14 @@
             }
         },
         {
+            "Key": "944d4b92-a362-4cd1-9983-7d7e0167b81f",
+            "Value": {
+                "id": "ceee8dbe-4a5f-4494-b84a-eeb812732402",
+                "resourcePath": "sprites\\spr_astro_suit_up_pistol\\spr_astro_suit_up_pistol.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "948608d8-ca1c-42e1-8975-110b2385596b",
             "Value": {
                 "id": "6f1372bd-604a-449d-93bc-dda388fd6397",
@@ -7244,6 +7316,14 @@
                 "id": "2687ea5b-b2a8-4ac7-9453-72ea0b7bb505",
                 "resourcePath": "scripts\\scr_ghost_destruct_safe_surrounding_hatch\\scr_ghost_destruct_safe_surrounding_hatch.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "96149565-7f8c-4a40-90bc-889d5821b60d",
+            "Value": {
+                "id": "b5768d81-7489-454a-8ce0-1db3cf96dfe9",
+                "resourcePath": "sprites\\spr_takeoff\\spr_takeoff.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -8724,6 +8804,14 @@
                 "id": "94d3c7a3-ab10-467f-8240-d37df635e2d3",
                 "resourcePath": "scripts\\scr_mock\\scr_mock.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "b77a51e2-c99e-44b5-a9ce-c3712ccbe7f3",
+            "Value": {
+                "id": "649f3518-5890-455a-a314-9e361505d9db",
+                "resourcePath": "sprites\\spr_category_landers_old\\spr_category_landers_old.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -12087,6 +12175,14 @@
             }
         },
         {
+            "Key": "fc5d0959-e4ee-4288-8a1c-804875c4c8e4",
+            "Value": {
+                "id": "62a481c5-989f-4c68-96bb-53c4c9767969",
+                "resourcePath": "sprites\\spr_astro_suit_right_pistol\\spr_astro_suit_right_pistol.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "fc722e2d-1c80-417b-b3f7-240372ca0033",
             "Value": {
                 "id": "ce9a216e-56db-42d7-8997-2c2d4cc5bb8e",
@@ -12850,6 +12946,7 @@
         "15f61e00-f283-46a1-bbe0-ff444613617f",
         "6b13d309-2f31-4662-8c98-f2633d2b87c9",
         "86ed19e1-3dcf-4d7a-9ec7-ef61f2dde099",
+        "005508f7-7e7b-4139-bc60-b00ba3d0bc96",
         "b4a374fe-bff1-4fe3-acb0-14154c16e51a",
         "7ce9ab61-8418-48fe-b20e-597f4363b063",
         "442f09f3-168a-4d54-a25d-426cea4fb447",
@@ -12863,6 +12960,7 @@
         "366b5b62-7628-4f64-9eac-f49b1ce5d79f",
         "8775c54c-d047-4e07-977c-a521e4e287b3",
         "ff8829f9-169e-41f4-ae73-2951612e328d",
+        "8c614f61-9926-4a8d-b970-650efa1dc087",
         "a40f757e-7f86-4e63-a545-4eb040329bd1",
         "e76441f8-d763-43cd-acb8-b4651b06261c",
         "ef55de64-c8d9-4c2b-8d7e-0711b44f5bb5",

@@ -10,7 +10,7 @@ var shot = false;
 
 if( weapon.type == inv_space.rifle  && weapon.charge > 0 )
 {
-	scr_create_rifle_shot(shooter, target);
+	shot = scr_create_rifle_shot(shooter, target);
 	weapon.charge -= 1;
 	if(weapon.charge < 0) weapon.charge = 0;
 }
@@ -39,13 +39,13 @@ with(shooter)
 		if(dy > -dx)
 		{
 			// look south
-			sprite_index = sprite_down;
+			sprite_index = sprite_down_pistol;
 			mask_sprite = sprite_mask_down;
 		}
 		else
 		{
 			// look east
-			sprite_index = sprite_right;
+			sprite_index = sprite_right_pistol;
 			mask_sprite = sprite_mask_right;
 			image_xscale = -1;
 		}
@@ -55,14 +55,14 @@ with(shooter)
 		if(dy > -dx)
 		{
 			// look west
-			sprite_index = sprite_right;
+			sprite_index = sprite_right_pistol;
 			mask_sprite = sprite_mask_right;
 			image_xscale = 1;
 		}
 		else
 		{
 			// look north
-			sprite_index = sprite_up;
+			sprite_index = sprite_up_pistol;
 			mask_sprite = sprite_mask_up;
 		}
 	}
