@@ -1,20 +1,22 @@
 test_init(test_destruct_safe_hatch);
 
 // arrange
-scr_setup_room(1, 1, 1, 3);
-scr_setup_single_tile_construction(1, 4, macro_hatch, 0);
+var ii = 2;
+var jj = 2;
+scr_setup_room(ii, jj, 1, 3);
+scr_setup_single_tile_construction(ii, jj+3, macro_hatch, 0);
 
 // assert setup
 assert_object_count(1, obj_hatch);
 with(obj_hatch)
 {
-	assert_equal(x, scr_gi_to_rc(1), "hatch x");
-	assert_equal(y, scr_gi_to_rc(4), "hatch y");
+	assert_equal(x, scr_gi_to_rc(ii), "hatch x");
+	assert_equal(y, scr_gi_to_rc(jj+3), "hatch y");
 }
 
 // act
-var tx = scr_gi_to_rc(1);
-var ty = scr_gi_to_rc(2);
+var tx = scr_gi_to_rc(ii);
+var ty = scr_gi_to_rc(jj+1);
 scr_update_ghost(tx,ty,tx,ty, macro_destruct_safe, 0, false);
 scr_build_new();
 debug_finish_all_constructions();

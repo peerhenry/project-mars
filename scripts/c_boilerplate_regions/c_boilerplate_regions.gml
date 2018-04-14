@@ -33,5 +33,5 @@ switch(method)
 	#endregion
 	
 	default:
-		show_error("Refused request: function not defined", true);
+		return refused();
 }

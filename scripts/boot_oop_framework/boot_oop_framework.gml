@@ -1,0 +1,1 @@
+global.class_hierarchy = ds_map_create();

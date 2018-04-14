@@ -36,6 +36,7 @@ if(!any_selected) exit;
 
 // Set possible clickables
 var el_assignable = instance_position(arg_x, arg_y, obj_assignable);
+if(el_assignable == noone) el_assignable = instance_position(arg_x, arg_y, obj_atm); // astro transit module
 var component = instance_position(arg_x, arg_y, obj_base_component);
 var movable = instance_position(arg_x, arg_y, obj_movable);
 var wall = instance_position(arg_x, arg_y, obj_wall);

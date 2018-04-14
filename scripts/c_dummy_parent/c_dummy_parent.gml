@@ -7,10 +7,10 @@ switch(method)
 		return this;
 
 	case "method1":
-		return 2*argument[2];
+		return ok(2*argument[2]);
 	
 	case "method2":
-		return 2;
+		return ok(2);
 
 	case destructor:
 		instance_destroy(this);
@@ -20,5 +20,5 @@ switch(method)
 		break;
 	
 	default:
-		show_error("Refused request: function not defined", true);
+		return refused();
 }

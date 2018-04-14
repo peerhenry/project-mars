@@ -1,2 +1,3 @@
 #macro destructor "destroy"
-call(argument0, destructor);
+var instance = argument0;
+script_execute(instance.class, destructor, instance);

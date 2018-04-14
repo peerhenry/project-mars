@@ -35,5 +35,5 @@ switch(method)
 	
 	// default should throw an error: trying to call a method that is not defined.
 	default:
-		show_error("Refused request: function not defined", true);
+		return refused();
 }

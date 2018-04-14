@@ -16,6 +16,16 @@ var map_o = (map_value >> 1) & 127; // next 7 bytes store o
 
 var i_is_valid = scr_validate_i(validation_i, map_i);
 var o_is_valid = scr_validate_o(validation_o, map_o, arg_i, arg_j);
+if(!o_is_valid)	// DEBUG
+{
+	show_debug_message("o is not valid");
+	show_debug_message("validation_o: " + string(validation_o)); // DEBUG
+	show_debug_message("map_o: " + string(map_o)); // DEBUG
+	var free = scr_navgrid_cell_is_free(arg_i, arg_j);
+	show_debug_message("i,j: " + string(arg_i) + ", " + string(arg_j));
+	show_debug_message("navgrid free: " + string(free));
+	show_debug_message("");
+}
 var validation_passed = i_is_valid && o_is_valid;
 if(validation_passed && !global.init_stage) // validate ownership
 {

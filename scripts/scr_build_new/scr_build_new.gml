@@ -10,7 +10,11 @@ var valid = ghost[?macro_ghost_valid];
 var payable = ghost[?macro_ghost_payable];
 var script_container = global.script_container;
 var alert_player = script_container_resolve(script_container, "alert_player")
-if(!valid) script_execute(alert_player, "Invalid construction.");
+if(!valid)
+{
+	script_execute(alert_player, "Invalid construction.");
+	// todo: log reason why it's invalid
+}
 if(!payable) script_execute(alert_player, "Insufficient building materials.");
 var can_construct = valid && payable;
 if(!can_construct) exit;

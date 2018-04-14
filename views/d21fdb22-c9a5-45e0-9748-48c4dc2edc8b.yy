@@ -12,7 +12,8 @@
         "0435e854-426e-4c45-acbc-475d243f91c6",
         "c779763c-2d8b-40ac-b549-6a9cfaa09882",
         "3d222cec-5c0d-4242-9721-b1659b1726ff",
-        "750a5976-9586-46c8-b9bb-d3ded7bd39f8"
+        "750a5976-9586-46c8-b9bb-d3ded7bd39f8",
+        "5c75663d-3a31-4cf9-9dab-da9c6c6f28c4"
     ],
     "filterType": "GMScript",
     "folderName": "navigation grid",

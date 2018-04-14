@@ -1,19 +1,21 @@
 test_init(test_room_remove_middle_tile);
 
 // arrange
-scr_setup_room(1,1,1,3);
+var ii = 2;
+var jj = 2;
+scr_setup_room(ii,jj,1,3);
 
 // act
-var tx = scr_gi_to_rc(1);
-var ty = scr_gi_to_rc(2);
+var tx = scr_gi_to_rc(ii);
+var ty = scr_gi_to_rc(jj+1);
 var bt = instance_position(tx, ty, obj_base_tile);
 instance_destroy(bt);
 
 // assert
 assert_object_count(2, obj_room);
 
-var rx = scr_gi_to_rc(1);
-var ry = scr_gi_to_rc(3);
+var rx = scr_gi_to_rc(ii);
+var ry = scr_gi_to_rc(jj+2);
 var le_room = scr_room_at(rx, ry);
 assert_false(le_room == noone, "le_room == noone");
 with(le_room)
@@ -27,7 +29,7 @@ with(le_room)
 	assert_equal(ry + 16, bb_bottom, "bb_bottom");
 }
 
-ry = scr_gi_to_rc(1);
+ry = scr_gi_to_rc(jj);
 var le_room_top = scr_room_at(rx, ry);
 assert_false(le_room_top == noone, "le_room == noone");
 assert_false(le_room == le_room_top, le_room == le_room_top);

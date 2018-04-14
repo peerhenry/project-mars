@@ -1,32 +1,37 @@
 /// @arg instance
 /// @arg method
 /// @arg arguments...
-if(argument_count < 2) show_error("call must be supplied with at least an instance and a method", true);
+if(argument_count < 2) scr_panic("call must be supplied with at least an instance and a method");
 var instance = argument[0];
 var method = argument[1];
 
-if(!instance_exists(instance)) show_error("call error: invalid instance", true);
-if(!script_exists(instance.script)) show_error("call error: instance has no script", true);
-if(typeof(method) != "string") show_error("call error: method name was not of type string", true);
+if(!instance_exists(instance)) scr_panic("call error: invalid instance");
+if(!script_exists(instance.class)) scr_panic("call error: instance has no class");
+if(typeof(method) != "string") scr_panic("call error: method name was not of type string");
+
+var result = noone;
 
 switch(argument_count)
 {
 	case 2:
-		return script_execute(instance.script, method, instance);
+		result = call_static(instance.class, method, instance);
+		break;
 	case 3:
-		return script_execute(instance.script, method, instance, argument[2]);
+		result = call_static(instance.class, method, instance, argument[2]);
+		break;
 	case 4:
-		return script_execute(instance.script, method, instance, argument[2], argument[3]);
+		result = call_static(instance.class, method, instance, argument[2], argument[3]);
+		break;
 	case 5:
-		return script_execute(instance.script, method, instance, argument[2], argument[3], argument[4]);
+		result = call_static(instance.class, method, instance, argument[2], argument[3], argument[4]);
+		break;
 	case 6:
-		return script_execute(instance.script, method, instance, argument[2], argument[3], argument[4], argument[5]);
+		result = call_static(instance.class, method, instance, argument[2], argument[3], argument[4], argument[5]);
+		break;
 	case 7:
-		return script_execute(instance.script, method, instance, argument[2], argument[3], argument[4], argument[5], argument[6]);
-	case 8:
-		return script_execute(instance.script, method, instance, argument[2], argument[3], argument[4], argument[5], argument[6], argument[7]);
-	case 9:
-		return script_execute(instance.script, method, instance, argument[2], argument[3], argument[4], argument[5], argument[6], argument[7], argument[8]);
+		result = call_static(instance.class, method, instance, argument[2], argument[3], argument[4], argument[5], argument[6]);
+		break;
 	default:
-		show_error("call error: Too many arguments (argument_count: " + string(argument_count) + ")", true);
+		scr_panic("call error: Too many arguments (argument_count: " + string(argument_count) + ")");
 }
+return result;

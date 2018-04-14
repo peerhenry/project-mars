@@ -2,6 +2,8 @@
 
 scr_force_trace("Application Boot");
 
+boot_oop_framework();
+
 // -- Create persistent application events listener --
 global.persistent_listener = instance_create_depth(0, 0, 0, obj_persistent_listener);
 global.room_origin = noone;

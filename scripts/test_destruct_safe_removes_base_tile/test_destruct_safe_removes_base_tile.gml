@@ -1,11 +1,13 @@
 test_init(test_destruct_safe_removes_base_tile);
 
 // arrange
-scr_setup_room(1,1,1,3);
+var ii = 2;
+var jj = 2;
+scr_setup_room(ii,jj,1,3);
 
 // act
-var tx = scr_gi_to_rc(1);
-var ty = scr_gi_to_rc(3);
+var tx = scr_gi_to_rc(ii);
+var ty = scr_gi_to_rc(jj+2);
 scr_update_ghost(tx,ty,tx,ty, macro_destruct_safe, 0, false);
 scr_build_new();
 debug_finish_all_constructions();

@@ -5,7 +5,8 @@ if(argument_count < 2) show_error("new_override expects a class definition scrip
 
 var script = argument[0];
 var this = instance_create_depth(0, 0, 0, argument[1]);
-this.script = script;
+this.class = script;
+inherits(class, c_object); // default inherit object
 
 switch(argument_count)
 {

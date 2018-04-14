@@ -4,33 +4,29 @@ var this = (argument_count > 1) ? argument[1] : noone;
 switch(method)
 {
 	case constructor:
+		inherits(c_dummy_child, c_dummy_parent);
 		return this;
-
-	// implement parent method
-	case "method1":
-		return call_static(c_dummy_parent, method, this, argument[2]);
 	
 	// override parent method
 	case "method2":
-		return 5;
-
-	case destructor:
-		instance_destroy(this);
-		break;
+		return ok(5);
 	
 	case test:
 		test_init("c_dummy_child");
 		// arrange
 		var child = new(c_dummy_child);
+		assert_equal(c_dummy_parent, get_parent(c_dummy_child), "parent");
 		// act
-		var result1 = call(child, "method1", 2);
-		var result2 = call(child, "method2");
+		var result1 = call_unwrap(child, "method1", 2);
+		var result2 = call_unwrap(child, "method2");
 		// assert
 		assert_equal(4, result1, "result1");
 		assert_equal(5, result2, "result2");
+		// cleanup
+		destroy(child);
 		test_result();
 		break;
 	
 	default:
-		show_error("Refused request: function not defined", true);
+		return refused();
 }
