@@ -1,8 +1,8 @@
 {
-    "id": "2e4aa353-4071-4ade-b57f-8f0f75718cb1",
+    "id": "0ecaa6bf-f005-4899-bc62-769a833fae02",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "f_astro_disappear",
+    "name": "c_astro_appear_setter",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -10,13 +10,13 @@ switch(method)
 		switch(argument_count) // constructor oveloading
 		{
 			case 2: // zero arguments
-				call(this, "set_name", "John", "Smith");
+				call_unwrap(this, "set_name", "John", "Smith");
 				break;
 			case 3:
-				call(this, "set_name", argument[2], "Smith");
+				call_unwrap(this, "set_name", argument[2], "Smith");
 				break;
 			case 4:
-				call(this, "set_name", argument[2], argument[3]);
+				call_unwrap(this, "set_name", argument[2], argument[3]);
 				break;
 			default:
 				scr_panic("Refused request: no constructor for argument count: " + string(argument_count));
@@ -28,7 +28,6 @@ switch(method)
 	#region METHODS
 	
 	case "set_name":
-		var this = argument[1];
 		this.first_name = argument[2];
 		this.last_name = argument[3];
 		return ok();
@@ -43,8 +42,23 @@ switch(method)
 	#region UNIT TESTS
 	
 	case test:
+		test_method(c_tester, "test_new_leaves_no_trailing_results");
 		test_method(c_tester, "test_parameterless_constructor");
 		test_method(c_tester,  "test_constructor_with_parameters");
+		break;
+	
+	case "test_new_leaves_no_trailing_results":
+		// arrange
+		// act
+		var tester = new(c_tester);
+		// assert
+		assert_object_count(0, obj_result);
+		with(obj_result)
+		{
+			show_debug_message("result.value: " + string(value)); // DEBUG
+		}
+		// cleanup
+		destroy(tester);
 		break;
 	
 	case "test_parameterless_constructor":

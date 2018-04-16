@@ -17,6 +17,7 @@ assert_equal(cart_action.move, cart.action, "cart action");
 assert_equal(noone, cart.assigned_instance, "assigned instance");
 
 // cleanup
+with(obj_command) instance_destroy(); // todo: prevent this thing from being created in the first place.
 instance_destroy(cart);
 instance_destroy(pump);
 

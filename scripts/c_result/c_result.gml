@@ -5,7 +5,13 @@ var here = c_result;
 enum STATUS
 {
 	OK,
+	PROBLEM
+}
+
+enum PROBLEM
+{
 	REFUSED,
+	EXCEPTION,
 	ERROR
 }
 
@@ -18,20 +24,31 @@ switch(method)
 		{
 			case STATUS.OK:
 				if(argument_count == 4) this.value = argument[3];
+				else this.value = noone;
 				break;
-			case STATUS.REFUSED:
-				this.message = "Refused request: function not defined";
-				break;
-			case STATUS.ERROR:
-				this.value = noone;
+			case STATUS.PROBLEM:
+				if(argument_count > 3) this.value = argument[3];
+				if(argument_count == 5) this.message = argument[4]; // 5 arguments: (method, this, status, problem, message)
+				else this.message = "Unspecified";
 				break;
 		}
 		return this;
 
 	// methods
 	case "unwrap":
-		if(this.status != STATUS.OK) scr_panic("Cannot unwrap a result that is not OK");
+		if(this.status != STATUS.OK)
+		{
+			var problem = "PROBLEM.REFUSED";
+			if(this.value = PROBLEM.EXCEPTION) problem = "PROBLEM.EXCEPTION";
+			if(this.value = PROBLEM.ERROR) problem = "PROBLEM.ERROR";
+			scr_panic("The result is not OK: " + problem + ": " + this.message);
+		}
 		return this.value;
+	
+	// Result needs its own destructor
+	case destructor:
+		instance_destroy(this);
+		break;
 	
 	case test:
 		test_method(here, "test_ok");
@@ -54,10 +71,11 @@ switch(method)
 	
 	case "test_refused":
 		var result = refused();
-		assert_equal(STATUS.REFUSED, result.status, "status is refused");
+		assert_equal(STATUS.PROBLEM, result.status, "status is refused");
+		assert_equal(PROBLEM.REFUSED, result.value, "val is refused");
 		destroy(result);
 		break;
 	
 	default:
-		refused();
+		scr_panic("Not allowed to call method in result: " + method);
 }

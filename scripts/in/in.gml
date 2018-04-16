@@ -1,4 +1,4 @@
-/// @descr same as call_static, but here for purpose of syntactic sugar; read as "in <script> call <method> with <arguments>" => in(script, method, arguments...)
+/// @descr Syntactic sugar; read as "in <script> call <method> with <arguments>" => in(script, method, arguments...)
 /// @arg script
 /// @arg method
 /// @arg arguments...

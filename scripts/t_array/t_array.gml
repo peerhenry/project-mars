@@ -1,0 +1,1 @@
+return new_override(c_type, obj_type, TYPE.ARRAY, argument0);

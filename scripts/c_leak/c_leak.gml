@@ -9,7 +9,7 @@ switch(method)
 	case constructor: // number => object
 		this.drain_per_step = argument[2];
 		return this;
-	
+
 	// UNIT TESTS
 	case test:
 		test_method(here, "test_constructor");

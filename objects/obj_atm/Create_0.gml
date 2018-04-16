@@ -1,3 +1,3 @@
 event_inherited();
-is_full = false;
+capacity = 3;
 embarked_astronauts = ds_list_create();

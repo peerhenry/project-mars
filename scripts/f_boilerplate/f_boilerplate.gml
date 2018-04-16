@@ -1,5 +1,6 @@
+var function = argument[0];
 var here = f_boilerplate; // CHANGE THIS TO YOUR SCRIPT NAME
-switch(argument[0])
+switch(function)
 {
 	// functions
 	
@@ -8,5 +9,5 @@ switch(argument[0])
 		break;
 	
 	default:
-		show_error("Function undefined: " + string(argument[0]), true);
+		show_error("Function undefined: " + string(function), true);
 }
