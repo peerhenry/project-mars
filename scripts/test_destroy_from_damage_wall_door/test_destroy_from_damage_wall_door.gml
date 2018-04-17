@@ -29,6 +29,7 @@ assert_equal(1, ds_list_size(room_2.leaks), "ds_list_size(room_2.leaks)");
 with(obj_base_tile) instance_destroy();
 with(obj_wall) instance_destroy();
 with(obj_door) instance_destroy();
+with(obj_empty) instance_destroy();
 
 // assert cleanup
 assert_object_count(0, obj_room);

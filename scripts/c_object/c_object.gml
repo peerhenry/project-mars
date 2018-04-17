@@ -8,7 +8,6 @@ switch(method)
 		return this;
 
 	case destructor:
-		show_debug_message("calling default destructor..."); // DEBUG
 		instance_destroy(this);
 		break;
 	

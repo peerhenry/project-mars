@@ -41,14 +41,22 @@ switch(method)
 		test_method(here, "disembark_test");
 		test_method(here, "embark_test");
 		test_method(here, "embark_atm_is_full");
+		test_method(here, "test_dependency_interface");
 		break;
 	
 	// mock verify will check if dependencies are called with correct argument types
 	case register_dependencies:
 		set_dependency(here, "appear_setter", interface([
 			["disappear", t_void(), t_object(obj_astronaut)],
-			["reappear", t_void(), t_object(obj_astronaut)],
+			["reappear", t_void(), t_object(obj_astronaut)]
 		]));
+		break;
+	
+	case "test_dependency_interface":
+		var intf = get_dependency(here, "appear_setter");
+		assert_equal(2, array_length_1d(intf.methods), "method count");
+		assert_equal("disappear", intf.methods[0], "method 0");
+		assert_equal("reappear", intf.methods[1], "method 1");
 		break;
 	
 	case "get_testable":

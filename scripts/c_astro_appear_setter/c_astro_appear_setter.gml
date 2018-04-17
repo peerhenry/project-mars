@@ -31,8 +31,8 @@ switch(argument[0])
 			if(spot_result.status == STATUS.OK)
 			{
 				script_update = scr_astro_update;
-				var spot = unwrap(spot_result);
 				visible = true;
+				var spot = unwrap(spot_result);
 				occ_i = spot.item0;
 				occ_j = spot.item1;
 				x = scr_gi_to_rc(occ_i);
@@ -51,29 +51,36 @@ switch(argument[0])
 	
 	#region TESTS
 	
-	case register_dependencies:
-		var intf = interface([
-			["clear_astronaut", t_void(), [t_object(obj_astronaut)]],
-			["get_nearest_free_cell", t_object(obj_empty), [t_number(), t_number()]],
-			["occupy", t_void(), [t_number(), t_number()]],
-		])
-		set_dependency(here, "navgrid", intf);
-		break;
-	
 	case test:
 		// unit test your functions
 		test_method(here, "disappear_test");
 		test_method(here, "reappear_test");
 		test_method(here, "cannot_reappear");
-		test_method(here, "service");
+		test_method(here, "can serve c_atm_embarker");
+		test_method(here, "test_register_dependencies");
 		break;
 	
-	case "service":
+	case register_dependencies:
+		var intf = interface([
+			["clear_astronaut", t_void(), [t_object(obj_astronaut)]],
+			["get_nearest_free_cell", t_object(obj_empty), [t_number(), t_number()]],
+			["occupy", t_void(), [t_number(), t_number()]]
+		])
+		set_dependency(here, "navgrid", intf);
+		break;
+		
+	case "test_register_dependencies":
+		var dep_interface = get_dependency(here, "navgrid");
+		assert_equal(3, array_length_1d(dep_interface.methods), "method count");
+		break;
+	
+	case "can serve c_atm_embarker":
 		var testable = in(here, "get_testable");
 		var dummytuple = tuple(1,1);
 		var mock_navgrid = testable.navgrid;
 		mock_setup_unwrapped(mock_navgrid, "get_nearest_free_cell", dummytuple);
 		assert_can_serve(testable, c_atm_embarker, "appear_setter"); // dependency inversion
+		assert_false(instance_exists(dummytuple), "dummytuple exists");
 		destroy(mock_navgrid);
 		destroy(testable);
 		break;

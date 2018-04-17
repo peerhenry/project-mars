@@ -75,7 +75,6 @@ with(door)
 	}
 	else if(adj_door_count == 2)
 	{
-		show_debug_message("Two adjacent doors in scr_door_connect_rooms...");
 		// The room at this position should have been destroyed because there are no tiles left
 		room1 = scr_create_room_between_doors(door1, id);
 		room2 = scr_create_room_between_doors(id, door2);
@@ -86,7 +85,7 @@ with(door)
 	}
 	
 	if(room1 == noone) show_debug_message("room1 is noone"); // DEBUG
-	if(room1 == noone || room2 == noone) show_error("room1 or room2 did not exist for door in scr_door_connect_rooms", true);
+	if(room1 == noone || room2 == noone) scr_panic("room1 or room2 did not exist for door in scr_door_connect_rooms");
 	
 	// Add this door the the adjacent rooms if it aint there yet.
 	if(ds_list_find_index(room1.doors, door) == -1)

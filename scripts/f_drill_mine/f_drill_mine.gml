@@ -78,23 +78,19 @@ switch(arg_function)
 	
 	#region mine: drill => void
 	case "mine":
-		show_debug_message("f_drill_mine.mine"); // DEBUG
 		var arg_drill = argument[1];
 		with(arg_drill)
 		{
 			var can_draw_power = resolve(global.script_container, "can_draw_power");
 			var can_mine = in(here, "can_mine", arg_drill, can_draw_power);
-			show_debug_message("can_mine: " + string(can_mine)); // DEBUG
 			if(can_mine)
 			{
 				var needs_new_bucket = in(here, "needs_new_bucket", arg_drill)
-				show_debug_message("needs_new_bucket : " + string(needs_new_bucket)); // DEBUG
 				if(needs_new_bucket)
 				{
 					active_bucket = in(here, "find_bucket_with_space", arg_drill);
 				}
 				var can_dump = active_bucket != noone;
-				show_debug_message("can_dump: " + string(can_dump)); // DEBUG
 				if(can_dump) in(here, "dump", arg_drill);
 				else event_user(macro_event_drill_mine_check);
 			}

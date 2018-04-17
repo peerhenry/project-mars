@@ -26,8 +26,6 @@ assert_equal(noone, cart.carrying_instance, "cart.carrying_instance");
 assert_equal(noone, cart.deploy_ghost, "cart.deploy_ghost");
 assert_false(instance_exists(ghost_pump), "ghost_pump exists");
 
-show_debug_message("test_cart_deploy past assertions");
-
 // cleanup
 instance_destroy(cart);
 instance_destroy(carry_pump);

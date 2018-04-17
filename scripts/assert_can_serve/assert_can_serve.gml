@@ -8,37 +8,21 @@ var arg_dependency_name = argument2;
 
 var class_name = script_get_name(arg_instance.class);
 var client_class_name = script_get_name(arg_client);
-// test_init(class_name + " can serve " + client_class_name + " as " + arg_dependency_name);
 
 var intf = get_dependency(arg_client, arg_dependency_name);
 var methods = intf.methods;
-for(var n = 0; n < array_length_1d(methods); n++)
+var method_count = array_length_1d(methods);
+assert_true(method_count > 0, "method_count > 0");
+for(var m = 0; m < method_count; m++)
 {
-	var method = methods[n];
+	#region create dummy arguments
+	var method = methods[m];
 	var sig = intf.signatures[?method];
 	var dummies = call_unwrap(sig, "get_dummy_arguments");
-	var result;
-	switch(array_length_1d(dummies))
-	{
-		case 0:
-			result = call(arg_instance, method);
-			break;
-		case 1:
-			result = call(arg_instance, method, dummies[0]);
-			break;
-		case 2:
-			result = call(arg_instance, method, dummies[0], dummies[1]);
-			break;
-		case 3:
-			result = call(arg_instance, method, dummies[0], dummies[1], dummies[2]);
-			break;
-		case 4:
-			result = call(arg_instance, method, dummies[0], dummies[1], dummies[2], dummies[3]);
-			break;
-		case 5:
-			result = call(arg_instance, method, dummies[0], dummies[1], dummies[2], dummies[3], dummies[4]);
-			break;
-	}
+	#endregion
+	
+	#region assert result
+	var result = call_with_array(arg_instance, method, dummies);
 	var exists = instance_exists(result);
 	assert_true(exists, "instance_exists(result)");
 	if(exists)
@@ -46,6 +30,19 @@ for(var n = 0; n < array_length_1d(methods); n++)
 		call_unwrap(sig.return_type, "assert_type", result.value);
 		destroy(result);
 	}
+	#endregion
+	
+	#region cleanup dummies
+	for(var n = 0; n < array_length_1d(dummies); n++)
+	{
+		var next = dummies[n];
+		if(instance_exists(next))
+		{
+			if(variable_instance_exists(next, "class") && script_exists(next.class)) destroy(next);
+			else instance_destroy(next);
+		}
+		else if(ds_exists(next, ds_type_map)) ds_map_destroy(next);
+		else if(ds_exists(next, ds_type_list)) ds_list_destroy(next);
+	}
+	#endregion
 }
-
-// test_result();

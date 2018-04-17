@@ -30,7 +30,9 @@ if(counter > expected_instance_count)
 				// test_message("Accepted instance: " + object_get_name(object_index));
 				break;
 			default:
-				test_message("Trailing instance: " + object_get_name(object_index));
+				var obj_details = object_get_name(object_index);
+				if(variable_instance_exists(id, "class") && script_exists(class)) obj_details = obj_details + " " + script_get_name(class);
+				test_message("Trailing instance: " + obj_details);
 				instance_destroy();
 				break;
 		}
