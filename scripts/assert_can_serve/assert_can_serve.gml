@@ -13,8 +13,10 @@ var intf = get_dependency(arg_client, arg_dependency_name);
 var methods = intf.methods;
 var method_count = array_length_1d(methods);
 assert_true(method_count > 0, "method_count > 0");
+var counter = 0;
 for(var m = 0; m < method_count; m++)
 {
+	counter++;
 	#region create dummy arguments
 	var method = methods[m];
 	var sig = intf.signatures[?method];
@@ -46,3 +48,6 @@ for(var m = 0; m < method_count; m++)
 	}
 	#endregion
 }
+
+// assert all methods have been checked
+assert_equal(method_count, counter, "check counter");
