@@ -52,7 +52,7 @@ ds_map_add(new_construction, construction_required_metal, arg_required_metal);
 
 var av_x = (arg_left + arg_right)/2;
 var av_y = (arg_top + arg_bottom)/2;
-var create_instance = resolve(script_container, "create_instance");
+var create_instance = resolve_script(script_container, "create_instance");
 var con_obj = script_execute(create_instance, av_x, av_y, obj_construction);
 ds_map_add(new_construction, construction_object, con_obj);
 with(con_obj) construction = new_construction;

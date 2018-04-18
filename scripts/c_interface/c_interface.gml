@@ -9,9 +9,11 @@ switch(method)
 		this.signatures = ds_map_create();
 		this.methods = [];
 		var funcs = argument[2];
+		if(!is_array(funcs)) scr_panic("Interface must receive an array of arrays, which must consist of method name, return type and argument types.");
 		for(var n = 0; n < array_length_1d(funcs); n++)
 		{
 			var next = funcs[n];
+			if(!is_array(next)) scr_panic("Interface must receive an array of arrays, which must consist of method name, return type and argument types.");
 			var name = next[0];
 			var return_type = next[1];
 			var arg_types = next[2];

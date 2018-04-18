@@ -1,7 +1,7 @@
 /// @arg container
 /// @arg script_name
 /// @arg arguments...
-var script = resolve(argument[0], argument[1]);
+var script = resolve_script(argument[0], argument[1]);
 switch(argument_count)
 {
 	case 2:

@@ -1,3 +1,5 @@
+/// @descr Wrapper for method return values
+// Necessary for allowing inheritance and exception handling
 var method = argument[0];
 var this = (argument_count > 1) ? argument[1] : noone;
 var here = c_result;
@@ -43,9 +45,10 @@ switch(method)
 			if(this.value = PROBLEM.ERROR) problem = "PROBLEM.ERROR";
 			scr_panic("The result is not OK: " + problem + ": " + this.message);
 		}
+		// todo: consider if result needs to be destroyed here instead of in the unwrap script
 		return this.value;
 	
-	// Result needs its own destructor
+	// Result needs its own destructor, otherwise destructor inheritance will cause infinite loop of result instances.
 	case destructor:
 		instance_destroy(this);
 		break;

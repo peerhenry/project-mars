@@ -11,12 +11,11 @@ switch(method)
 	// methods
 	// params begin at argument[2]
 
-	// can be remove if not needed
 	case destructor: 
 		instance_destroy(this);
 		break;
 	
-	case register_dependencies:
+	case register_dependencies: // For interface testing
 		break;
 	
 	case test:

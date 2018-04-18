@@ -1,5 +1,4 @@
 test_init(test_create_grid);
-
 // Act
 var grid = scr_grid_new(macro_grid_electric);
 // Assert

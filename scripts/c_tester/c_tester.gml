@@ -53,10 +53,6 @@ switch(method)
 		var tester = new(c_tester);
 		// assert
 		assert_object_count(0, obj_result);
-		with(obj_result)
-		{
-			show_debug_message("result.value: " + string(value)); // DEBUG
-		}
 		// cleanup
 		destroy(tester);
 		break;

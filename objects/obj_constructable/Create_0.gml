@@ -2,6 +2,7 @@
 #macro macro_post_init 4
 
 script_container = global.script_container;
+ioc_container = global.ioc_container;
 occ_i = scr_rc_to_gi(x);
 occ_j = scr_rc_to_gi(y);
 encoded_ij = scr_encode_grid_coord(occ_i, occ_j);

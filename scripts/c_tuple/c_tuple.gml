@@ -1,3 +1,4 @@
+/// @descr Easy helper class to allow multiple return values
 var method = argument[0];
 var this = (argument_count > 1) ? argument[1] : noone;
 

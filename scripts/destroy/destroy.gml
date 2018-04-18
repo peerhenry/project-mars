@@ -1,4 +1,3 @@
-#macro destructor "destroy"
 var instance = argument[0];
 var class = argument_count == 2 ? argument[1] : instance.class;
 var result = script_execute(class, destructor, instance);

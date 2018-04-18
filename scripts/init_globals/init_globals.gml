@@ -133,4 +133,6 @@ global.selected_grid = noone;
 // colors
 global.hud_border_color = c_aqua;
 global.enemy_suit_color = [0,0,0,1];
+
 global.laser_sound_time = 0;
+global.ioc_container = noone;

@@ -1,3 +1,3 @@
 /// @arg container
 /// @arg name
-return resolve(argument0, argument1);
+return resolve_script(argument0, argument1);

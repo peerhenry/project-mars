@@ -1,6 +1,7 @@
 scr_trace("movable create event");
 
 script_container = global.script_container;
+ioc_container = global.ioc_container;
 name = "movable";
 // movement and drawing
 path = noone;

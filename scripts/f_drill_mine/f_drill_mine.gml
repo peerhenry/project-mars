@@ -81,7 +81,7 @@ switch(arg_function)
 		var arg_drill = argument[1];
 		with(arg_drill)
 		{
-			var can_draw_power = resolve(global.script_container, "can_draw_power");
+			var can_draw_power = resolve_script(global.script_container, "can_draw_power");
 			var can_mine = in(here, "can_mine", arg_drill, can_draw_power);
 			if(can_mine)
 			{

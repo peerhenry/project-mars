@@ -4,7 +4,7 @@ var arg_constructable = argument0;
 var c_x = arg_constructable.x;
 var c_y = arg_constructable.y;
 
-var create_explosion_and_rubble = resolve(arg_constructable.script_container, "create_explosion_and_rubble");
+var create_explosion_and_rubble = resolve_script(arg_constructable.script_container, "create_explosion_and_rubble");
 script_execute(create_explosion_and_rubble, c_x, c_y);
 arg_constructable.destroyed = true;
 

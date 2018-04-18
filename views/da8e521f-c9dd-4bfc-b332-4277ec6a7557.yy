@@ -12,7 +12,12 @@
         "02e4ff8c-38c3-406a-98cd-200d29e58905",
         "37d7b13b-0054-41dd-98b8-0725db37b4d4",
         "0aa23540-3ce7-4458-89ed-484e3740a4de",
-        "ad5cc5b2-dfd9-4d57-86b1-cbb2b6270d80"
+        "ad5cc5b2-dfd9-4d57-86b1-cbb2b6270d80",
+        "2f8514de-8aeb-40c7-a0b3-1097cb29aa74",
+        "3b3d1c8f-5499-4bdf-b587-3e7f71173bf3",
+        "94489f22-e027-4c29-bf2b-64aec0be3766",
+        "c19838b7-3a80-49c6-a73b-4b7fdf78c3ea",
+        "d0d4a03a-59d7-4bb9-b7df-0c45b19f1c48"
     ],
     "filterType": "GMScript",
     "folderName": "functions",

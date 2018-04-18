@@ -16,5 +16,5 @@ switch(method)
 		break;
 	
 	default:
-		scr_panic("Refused request: function not defined");
+		scr_panic("Refused request: function not defined: " + method);
 }

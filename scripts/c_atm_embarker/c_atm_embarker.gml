@@ -10,7 +10,7 @@ switch(method)
 		this.appear_setter = argument[2];
 		return this;
 	
-	#region methods
+	#region METHODS
 	case "disembark":
 		var arg_atm = argument[2];
 		var arg_astronaut = argument[3];
@@ -44,10 +44,10 @@ switch(method)
 		test_method(here, "test_dependency_interface");
 		break;
 	
-	// mock verify will check if dependencies are called with correct argument types
+	// calling a method on a mock will check if dependencies are called with correct argument types
 	case register_dependencies:
-		set_dependency(here, "appear_setter", interface([
-			["disappear", t_void(), t_object(obj_astronaut)],
+		set_dependency(here, "appear_setter", interface([ // interface creates signatures
+			["disappear", t_void(), t_object(obj_astronaut)], // [method_name, return_type, argument_types]
 			["reappear", t_void(), t_object(obj_astronaut)]
 		]));
 		break;

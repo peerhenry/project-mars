@@ -38,7 +38,8 @@ switch(method)
 		break;
 	
 	case test:
-		var testable = new(here);
+		scr_warn("No tests written for: " + script_get_name(here));
+		// var testable = new(here);
 		// test_can_serve(testable, c_astro_appear_setter, "navgrid");
 		break;
 	
