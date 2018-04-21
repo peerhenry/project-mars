@@ -7,7 +7,7 @@ var here = c_navgrid;
 switch(method)
 {
 	case constructor:
-		// hopefully one day, all navgrid logic can end up here
+		// all navgrid logic should end up here
 		return this;
 
 	case "clear_astronaut":
@@ -32,9 +32,6 @@ switch(method)
 
 	case destructor: 
 		instance_destroy(this);
-		break;
-	
-	case register_dependencies:
 		break;
 	
 	case test:

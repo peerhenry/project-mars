@@ -9,7 +9,7 @@ var arg_dependency_name = argument2;
 var class_name = script_get_name(arg_instance.class);
 var client_class_name = script_get_name(arg_client);
 
-var intf = get_dependency(arg_client, arg_dependency_name);
+var intf = in(arg_client, get_dependency, arg_dependency_name);
 var methods = intf.methods;
 var method_count = array_length_1d(methods);
 assert_true(method_count > 0, "method_count > 0");

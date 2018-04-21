@@ -12,20 +12,31 @@ enum Times
 
 switch(method)
 {
+	#region construct/destruct
 	case constructor:
-		var intf = argument[2];
-		this.stubs = intf.methods;
+		this.interface = argument[2];
 		this.return_map = ds_map_create();
 		this.call_count_map = ds_map_create();
-		this.signatures = ds_map_create();
-		var stub_count = array_length_1d(this.stubs);
+		this.argument_map = ds_map_create();
+		var stubs = this.interface.methods;
+		var stub_count = array_length_1d(stubs);
 		for(var n = 0; n < stub_count; n++)
 		{
-			var stub = this.stubs[n];
-			this.call_count_map[?stub] = 0;
+			var stub = stubs[n];
+			this.call_count_map[? stub] = 0;
 		}
 		return this;
+	
+	case destructor:
+		ds_map_destroy(this.return_map);
+		ds_map_destroy(this.call_count_map);
+		ds_map_destroy(this.argument_map);
+		destroy(this.interface);
+		instance_destroy(this);
+		break;
+	#endregion
 
+	#region setup_stub
 	// Use setup to specify return values for stubs
 	// The testing client is responsible for cleaning up any data structures it contains.
 	case "setup_stub": // (method, return value) => result
@@ -35,13 +46,9 @@ switch(method)
 		this.return_map[? stub] = return_result;
 		var existing = this.call_count_map[?stub];
 		var exists = !is_undefined(existing);
-		if(!exists)
-		{
-			var apdx = array_length_1d(this.stubs);
-			this.stubs[apdx] = stub;
-			this.call_count_map[?stub] = 0;
-		}
+		if(!exists) scr_panic("Cannot setup stub; Stub does not exist in mock: " + stub);
 		return ok();
+	#endregion
 	
 	case "setup_stub_unwrapped":
 		var stub = argument[2];
@@ -49,15 +56,17 @@ switch(method)
 		call_unwrap(this, "setup_stub", stub, ok(return_val));
 		return ok();
 	
+	#region call_stub
 	case "call_stub":
 		var stub = argument[2];
 		var args = argument[3];
 		// if stub has signature, assert arguments are of correct type
-		var sig = this.signatures[?stub]
+		var sig = this.interface.signatures[?stub];
 		if(!is_undefined(sig)) call_unwrap(sig, "assert_arguments", args);
 		// increment call count for method
 		var count = this.call_count_map[?stub];
 		this.call_count_map[?stub] = count + 1;
+		this.argument_map[?stub] = args;
 		// check if stub needs to return something
 		var return_result = this.return_map[? stub];
 		if(!is_undefined(return_result))
@@ -65,7 +74,9 @@ switch(method)
 			return return_result;
 		}
 		else return ok();
-		
+	#endregion
+	
+	#region verify
 	case "verify":
 		var stub = argument[2];
 		var verification = argument[3];
@@ -83,21 +94,24 @@ switch(method)
 				break;
 		}
 		return ok();
-
-	case destructor:
-		ds_map_destroy(this.return_map);
-		ds_map_destroy(this.call_count_map);
-		ds_map_destroy(this.signatures);
-		instance_destroy(this);
-		break;
+	#endregion
+		
+	case "verify_last_call_arguments":
+		var stub = argument[2];
+		var arguments = argument[3];
+		var last_arguments = this.argument_map[?stub];
+		if(is_undefined(last_arguments)) fail("No arguments stored in mock for method: " + stub);
+		else assert_arrays_are_equal(arguments, last_arguments);
+		return ok();
 	
+	#region tests
 	case test:
 		test_method(here, "mock_test");
 		break;
 	
 	case "mock_test":
 		// arrange
-		var intf = interface([
+		var intf = new_interface([
 			["foo", t_void(), t_string()],
 			["bar", t_string(), t_number()]
 		]);
@@ -114,8 +128,9 @@ switch(method)
 		assert_equal(expect, result, "result of calling bar");
 		// cleanup
 		destroy(m);
-		destroy(intf);
+		assert_equal(0, scr_count_instances(obj_interface), "interface count");
 		break;
+	#endregion
 	
 	default:
 		#region put arguments in an array;
@@ -126,9 +141,10 @@ switch(method)
 			args[n-2] = next_arg;
 		}
 		#endregion
-		for(var n = 0; n < array_length_1d(this.stubs); n++)
+		var stubs = this.interface.methods;
+		for(var n = 0; n < array_length_1d(stubs); n++)
 		{
-			if(this.stubs[n] == method) return call(this, "call_stub", method, args);
+			if(stubs[n] == method) return call(this, "call_stub", method, args);
 		}
 		return refused();
 }

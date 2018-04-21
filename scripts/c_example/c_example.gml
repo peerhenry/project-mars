@@ -30,7 +30,7 @@ switch(method)
 	// This method is necessary if you want to be able test:
 	// 1. That the client calls its dependencies correctly (by using mock)
 	// 2. That another class is able to serve this one.
-	case register_dependencies:
+	case get_dependency:
 		break;
 	
 	// call this usign 'test(c_example)'

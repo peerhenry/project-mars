@@ -1,8 +1,8 @@
 {
-    "id": "5aa6966f-d5ce-4344-8b10-6d23dfe3fc39",
+    "id": "a2148a62-7118-45ce-be8a-a477f1a8553f",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "set_dependency",
+    "name": "get_interface",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -31,7 +31,7 @@ switch(method)
 	
 	case "test_use_ioc_container":
 		var expect = instance_create_depth(0,0,0,obj_empty);
-		var intf = interface([["resolve", t_object(obj_empty), t_script()]]);
+		var intf = new_interface([["resolve", t_object(obj_empty), t_script()]]);
 		var mock_container = mock(intf);
 		mock_setup_unwrapped(mock_container, "resolve", expect);
 		var injection = new(here, scr_mock, true);
@@ -41,7 +41,6 @@ switch(method)
 		mock_verify(mock_container, "resolve", Times.Once);
 		assert_equal(expect, result, "Injection resolve result");
 		// cleanup
-		destroy(intf);
 		destroy(mock_container);
 		instance_destroy(expect);
 		destroy(injection);

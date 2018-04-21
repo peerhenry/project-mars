@@ -12,7 +12,7 @@ with(obj_task_actor)
 		var can_assign = scr_can_assign(arg_assignable, id);
 		if(ds < d_min && can_assign){
 			d_min = ds;
-			assigned_actor = id;
+			assigned_actor = id; // TODO: allow multi assign (mdu pile/ATM)
 			break;
 		}
 	}
@@ -21,7 +21,13 @@ with(obj_task_actor)
 // Use the one astronaut to assign the assignable.
 if(assigned_actor != noone)
 {
-	orders_given = scr_assign(arg_assignable, assigned_actor);
+	orders_given = scr_assign(arg_assignable, assigned_actor); // todo: set end path action
+	
+	if(scr_instance_inherits(arg_assignable, obj_atm))
+	{
+		assigned_actor.end_path_action = new(arg_assignable.interaction, assigned_actor, arg_assignable);
+	}
+	
 	// Cancel construction
 	if(orders_given)
 	{

@@ -4,9 +4,10 @@ var here = c_signature;
 
 switch(method)
 {
-	case constructor:	// (TYPE return_type, [TYPE] argument_types, [TYPE] optional_arguments_types)
-		this.return_type = argument[2];
-		var argument_types = argument[3];	// array of types
+	case constructor:
+		this.name = argument[2];
+		this.return_type = argument[3];
+		var argument_types = argument[4];	// array of types
 		if(!is_array(argument_types)) argument_types = [argument_types];
 		this.argument_types = argument_types;
 		return this;
@@ -61,7 +62,7 @@ switch(method)
 	case "test_constructor":
 		// arrange
 		// act
-		var sig = new(here, t_string(), [t_number(), t_string()]);
+		var sig = signature("foo", t_string(), [t_number(), t_string()]);
 		// assert
 		var at1 = sig.argument_types[0];
 		var at2 = sig.argument_types[1];
@@ -76,7 +77,7 @@ switch(method)
 		// arrange
 		var astro = instance_create_depth(0,0,0,obj_astronaut);
 		// act
-		var sig = new(here, t_void(), [t_string(), t_number(), t_object(obj_astronaut)]);
+		var sig = signature("foo", t_void(), [t_string(), t_number(), t_object(obj_astronaut)]);
 		// assert
 		call_unwrap(sig, "assert_arguments", ["dummy", 25, astro]);
 		// cleanup

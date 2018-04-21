@@ -10,6 +10,14 @@ switch(method)
 		this.appear_setter = argument[2];
 		return this;
 	
+	case get_dependencies:
+		return dependencies([
+			class_dependency("appear_setter", new_interface([
+				["disappear", t_void(), t_object(obj_astronaut)],
+				["reappear", t_void(), t_object(obj_astronaut)]
+			]))
+		]);
+	
 	#region METHODS
 	case "disembark":
 		var arg_atm = argument[2];
@@ -36,32 +44,23 @@ switch(method)
 	#endregion
 	
 	#region UNIT TESTS
+	
 	case test:
-		in(here, register_dependencies);
 		test_method(here, "disembark_test");
 		test_method(here, "embark_test");
 		test_method(here, "embark_atm_is_full");
 		test_method(here, "test_dependency_interface");
 		break;
 	
-	// calling a method on a mock will check if dependencies are called with correct argument types
-	case register_dependencies:
-		set_dependency(here, "appear_setter", interface([ // interface creates signatures
-			["disappear", t_void(), t_object(obj_astronaut)], // [method_name, return_type, argument_types]
-			["reappear", t_void(), t_object(obj_astronaut)]
-		]));
-		break;
-	
-	case "test_dependency_interface":
-		var intf = get_dependency(here, "appear_setter");
+	case "test_dependency_interface": // sanity test
+		var intf = in(here, get_dependency, "appear_setter");
 		assert_equal(2, array_length_1d(intf.methods), "method count");
 		assert_equal("disappear", intf.methods[0], "method 0");
 		assert_equal("reappear", intf.methods[1], "method 1");
 		break;
 	
 	case "get_testable":
-		var intf = get_dependency(here, "appear_setter");
-		var mock_setter = mock(intf);
+		var mock_setter = mock_dependency(here, "appear_setter");
 		var testable = new(here, mock_setter);
 		return testable;
 	
@@ -93,7 +92,7 @@ switch(method)
 		// act
 		call_unwrap(object, "embark", atm, astro);
 		// assert
-		mock_verify(mock_setter, "disappear", Times.Once); // in mock_setter, verify that stub for "reappear" has been called once
+		mock_verify(mock_setter, "disappear", Times.Once);
 		// cleanup
 		instance_destroy(astro);
 		instance_destroy(atm);

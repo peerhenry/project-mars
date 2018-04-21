@@ -5,29 +5,28 @@ var this = (argument_count > 1) ? argument[1] : noone;
 
 switch(method)
 {
-	#region CONSTRUCTOR
+	#region CONSTRUCTOR / DESTRUCTOR
 	
 	// params begin at argument[2]
 	case constructor:
 		return this;
+	
+	case get_dependencies:
+		return ok();
+	
+	case destructor:
+		instance_destroy(this);
+		return ok();
 		
 	#endregion
 
 	#region METHODS
 	// params begin at argument[2]
 	#endregion
-
-	#region DESTRUCTOR
-	
-	case "destroy":
-		instance_destroy(this);
-		break;
-		
-	#endregion
 	
 	#region UNIT TESTS
 	
-	case "test":
+	case test:
 		break;
 		
 	#endregion

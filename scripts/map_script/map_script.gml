@@ -1,6 +1,5 @@
 /// @arg array
-/// @arg instance
-/// @arg method
+/// @arg script
 var array = argument0;
 var script = argument1;
 var output = [];

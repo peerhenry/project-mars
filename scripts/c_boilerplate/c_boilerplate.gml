@@ -15,9 +15,6 @@ switch(method)
 		instance_destroy(this);
 		break;
 	
-	case register_dependencies: // For interface testing
-		break;
-	
 	case test:
 		break;
 	

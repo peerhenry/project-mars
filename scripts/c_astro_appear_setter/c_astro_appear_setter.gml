@@ -10,6 +10,19 @@ switch(argument[0])
 		this.navgrid = argument[2];
 		return this;
 	
+	// todo:
+	// dependencies dont necessarily go into the constructor...
+	// so how do we let the ioc container know which dependencies are constructor injections?
+	case get_dependencies:
+		var deps = new_dependencies(
+			named("navgrid", new_interface([
+				signature( "clear_astronaut", t_void(), [ t_object(obj_astronaut) ] ),
+				signature( "get_nearest_free_cell", t_object(obj_empty), [t_number(), t_number()] ),
+				signature( "occupy", t_void(), [t_number(), t_number()] )
+			]))
+		);
+		return deps;
+	
 	#region METHODS
 	case "disappear":
 		var astro = argument[2];
@@ -57,21 +70,17 @@ switch(argument[0])
 		test_method(here, "reappear_test");
 		test_method(here, "cannot_reappear");
 		test_method(here, "can serve c_atm_embarker");
-		test_method(here, "test_register_dependencies");
-		break;
-	
-	case register_dependencies:
-		var intf = interface([
-			["clear_astronaut", t_void(), [t_object(obj_astronaut)]],
-			["get_nearest_free_cell", t_object(obj_empty), [t_number(), t_number()]],
-			["occupy", t_void(), [t_number(), t_number()]]
-		])
-		set_dependency(here, "navgrid", intf);
+		// todo: test depdencies
 		break;
 		
-	case "test_register_dependencies":
-		var dep_interface = get_dependency(here, "navgrid");
-		assert_equal(3, array_length_1d(dep_interface.methods), "method count");
+	case "get_testable":
+		var mock_navgrid = mock_dependency(here, "navgrid");
+		return new(here, mock_navgrid);
+	
+	case "cleanup":
+		var testable = argument[1];
+		destroy(testable.navgrid);
+		destroy(testable);
 		break;
 	
 	case "can serve c_atm_embarker":
@@ -81,14 +90,8 @@ switch(argument[0])
 		mock_setup_unwrapped(mock_navgrid, "get_nearest_free_cell", dummytuple);
 		assert_can_serve(testable, c_atm_embarker, "appear_setter"); // dependency inversion
 		assert_false(instance_exists(dummytuple), "dummytuple exists");
-		destroy(mock_navgrid);
-		destroy(testable);
+		in(here, "cleanup", testable);
 		break;
-	
-	case "get_testable":
-		var intf = get_dependency(here, "navgrid");
-		var mock_navgrid = mock(intf);
-		return new(here, mock_navgrid);
 	
 	case "disappear_test":
 		// arrange
@@ -104,8 +107,7 @@ switch(argument[0])
 		mock_verify(testable.navgrid, "clear_astronaut", Times.Once);
 		// cleanup
 		instance_destroy(astro);
-		destroy(testable.navgrid);
-		destroy(testable);
+		in(here, "cleanup", testable);
 		break;
 	
 	case "reappear_test":
@@ -126,8 +128,7 @@ switch(argument[0])
 		mock_verify(testable.navgrid, "get_nearest_free_cell", Times.Once);
 		// cleanup
 		instance_destroy(astro);
-		destroy(mock_navgrid);
-		destroy(testable);
+		in(here, "cleanup", testable);
 		break;
 	
 	case "cannot_reappear":
@@ -148,8 +149,7 @@ switch(argument[0])
 		assert_true(old_i == astro.occ_i && old_j == astro.occ_j, "astro is on old spot");
 		// cleanup
 		instance_destroy(astro);
-		destroy(testable.navgrid);
-		destroy(testable);
+		in(here, "cleanup", testable);
 		destroy(exc);
 		break;
 	#endregion
