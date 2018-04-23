@@ -6,7 +6,8 @@ var here = c_interface;
 switch(method)
 {
 	case constructor:
-		this.methods = argument[2];
+		this.name = argument[2];
+		this.methods = argument[3];
 		if(!is_array(this.methods)) scr_panic("Interface must receive an array of named signatures.");
 		for(var n = 0; n < array_length_1d(this.methods); n++)
 		{
@@ -23,6 +24,10 @@ switch(method)
 		}
 		instance_destroy(this);
 		break;
+		
+	case "destroy_to_mock":
+		var m = mock(this); // mock gets ownership
+		return ok(m);
 	
 	case test:
 		test_method(here, "constructor_test_one_method");
@@ -31,7 +36,7 @@ switch(method)
 	case "constructor_test_one_method":
 		// arrange
 		// act
-		var interf = new_interface([
+		var interf = new_interface("shit", [
 			signature("foo", t_number(), t_string()),
 			signature("bar", t_void(), [t_number(), t_number()])
 		]);

@@ -1,30 +1,22 @@
-/// @descr call a method in each element of the collection
+/// @descr call destroy on each element of the collection; works for arrays and lists
 /// @arg collection
-/// @arg variable
-/// @arg value
 var collection = argument0;
-var method = argument1;
 
 if(is_array(collection))
 {
-	var output = [];
 	for(var n = 0; n < array_length_1d(collection); n++)
 	{
 		var elem = collection[n];
-		var mapped = call_unwrap(elem, method);
-		output[n] = mapped;
+		destroy(elem);
 	}
-	return output;
 }
 else if(ds_exists(collection, ds_type_list))
 {
-	var output = ds_list_create();
 	for(var n = 0; n < ds_list_size(collection); n++)
 	{
 		var elem = collection[|n];
-		var mapped = call_unwrap(elem, method);
-		ds_list_add(output, mapped);
+		destroy(elem);
 	}
-	return output;
+	ds_list_destroy(collection);
 }
 scr_panic("Argument0 was not a valid collection");

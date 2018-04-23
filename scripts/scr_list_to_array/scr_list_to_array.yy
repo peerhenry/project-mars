@@ -1,8 +1,8 @@
 {
-    "id": "ca684d7a-1a85-453d-ac7f-6a5f39ad83a6",
+    "id": "6e1b8bb3-d261-4165-8f8c-b97cbd691061",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "c_type",
+    "name": "scr_list_to_array",
     "IsCompatibility": false,
     "IsDnD": false
 }

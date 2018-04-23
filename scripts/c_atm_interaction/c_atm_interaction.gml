@@ -42,16 +42,6 @@ switch(method)
 		return ok();
 	
 	#region tests
-	case get_dependency: // For interface testing
-		var name = argument[1];
-		if(name == "embarker") return new_interface([
-			["embark", t_void(), [t_object(obj_atm), t_object(obj_astronaut)]]
-		]);
-		if(name == "notifier") return new_interface([
-			["notify_player", t_void(), t_string()]
-		]);
-		scr_panic("no dependency: " + name);
-		break;
 	
 	case test:
 		// todo: interaction must be an end path action, so it must be able to serve... movable @ end path?

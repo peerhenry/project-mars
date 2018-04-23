@@ -1,6 +1,6 @@
 var method = argument[0];
 var this = (argument_count > 1) ? argument[1] : noone;
-var here = c_type;
+var here = c_type_info;
 
 #region TYPES
 enum TYPE {
@@ -10,6 +10,7 @@ enum TYPE {
 	ARRAY,
 	// the rest are numbers with interpretation
 	OBJECT,
+	OBJECT_INDEX,
 	SCRIPT,
 	MAP,
 	LIST,
@@ -20,32 +21,19 @@ enum TYPE {
 switch(method)
 {
 	#region constructor
+	
 	case constructor: // can be remove if not needed
 		var type = argument[2];
-		this.contextual_type = noone;
-		var is_simple = (type == TYPE.VOID || type == TYPE.NUMBER || type == TYPE.STRING || type == TYPE.SCRIPT);
-		if(is_simple)
-		{
-			if(argument_count != 3) scr_panic("Can't construct a simple type with argument_count: " + string(argument_count));
-		}
-		else if(argument_count != 4) scr_panic("A complex type requires a type and a contextual type, argument_count was: " + string(argument_count));
-		
-		if(!is_simple)
-		{
-			this.contextual_type = argument[3];	
-			if(type == TYPE.OBJECT)
-			{
-				if(!object_exists(this.contextual_type)) scr_panic("An object type requires an object index as contextual type");
-			}
-			else
-			{
-				// contextual_type must be a c_type
-				if(this.contextual_type.object_index != obj_type) scr_panic("Contextual type must be an obj_type");
-			}
-		}
-		
+		if(type == TYPE.OBJECT) this.object_type = argument[3];
+		else if(argument_count > 3) scr_panic("type info cant handle this many params");
 		this.type = type;
 		return this;
+		
+	case destructor: 
+		if(instance_exists(this.contextual_type) && this.contextual_type.object_index == obj_type) destroy(this.contextual_type);
+		instance_destroy(this);
+		break;
+		
 	#endregion
 
 	#region assert_type
@@ -66,12 +54,15 @@ switch(method)
 				assert_true(script_exists(value), "script_exists(arg)");
 				break;
 			// types with context:
+			case TYPE.OBJECT_INDEX:
+				assert_true(object_exists(value), "object_exists(arg)");
+				break;
 			case TYPE.OBJECT:
 				var exists = instance_exists(value); // value must be an instance
 				assert_true(exists, "instance_exists(arg)");
 				if(exists)
 				{
-					var type_matches = scr_instance_inherits(value, this.contextual_type);
+					var type_matches = scr_instance_inherits(value, this.object_type);
 					assert_true(type_matches, "object index is valid");
 				}
 				break;
@@ -111,7 +102,7 @@ switch(method)
 				break;
 			// types with context:
 			case TYPE.OBJECT:
-				dummy = instance_create_depth(0,0,0,this.contextual_type);
+				dummy = instance_create_depth(0,0,0,this.object_type);
 				break;
 			case TYPE.ARRAY:
 				dummy = [];
@@ -128,13 +119,6 @@ switch(method)
 			// todo: add grid, queue, priority	
 		}
 		return ok(dummy);
-	#endregion
-
-	#region destructor
-	case destructor: 
-		if(instance_exists(this.contextual_type) && this.contextual_type.object_index == obj_type) destroy(this.contextual_type);
-		instance_destroy(this);
-		break;
 	#endregion
 	
 	#region test

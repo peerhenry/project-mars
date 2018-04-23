@@ -1,4 +1,6 @@
-/// @arg array_name_returntype_argtypes
-var arg = argument0;
-if(!is_array(arg)) scr_panic("arg needs to be an array of signatures");
-return new_override(c_interface, obj_interface, arg);
+/// @arg name
+/// @arg array_of_signatures
+var name = argument0;
+var sigs = argument1;
+if(!is_array(sigs)) scr_panic("arg needs to be an array of signatures");
+return new_override(c_interface, obj_interface, name, sigs);

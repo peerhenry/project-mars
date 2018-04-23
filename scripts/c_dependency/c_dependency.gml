@@ -10,28 +10,31 @@ switch(method)
 	// params begin at argument[2]
 	case constructor:
 		this.name = argument[2];
-		this.type = argument[3];
+		this.type_info = argument[3];
 		this.optional = argument[4];
-		if(argument_count == 6) this.interface = argument[5];
 		return this;
 	
 	case get_dependencies:
 		var deps = dependencies([
 			dependency("name", t_string()),
-			dependency("type", t_object(obj_type)),
+			dependency("type_info", t_object(obj_type_info)),
 			dependency("optional", t_number()), // boolean
 			optional_dependency("interface", t_object(obj_interface))
 		]);
 		return deps;
 	
 	case destructor:
+		destroy(this.type_info)
 		instance_destroy(this);
 		return ok();
 		
 	#endregion
 
 	#region METHODS
-	// params begin at argument[2]
+	case "destroy_to_mock":
+		var result = call(this.type_info, "create_dummy");
+		destroy(this);
+		return result;
 	#endregion
 	
 	#region UNIT TESTS

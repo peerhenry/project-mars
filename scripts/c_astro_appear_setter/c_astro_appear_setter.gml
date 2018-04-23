@@ -15,11 +15,11 @@ switch(argument[0])
 	// so how do we let the ioc container know which dependencies are constructor injections?
 	case get_dependencies:
 		var deps = new_dependencies(
-			named("navgrid", new_interface([
+			new_interface("navgrid", [
 				signature( "clear_astronaut", t_void(), [ t_object(obj_astronaut) ] ),
 				signature( "get_nearest_free_cell", t_object(obj_empty), [t_number(), t_number()] ),
 				signature( "occupy", t_void(), [t_number(), t_number()] )
-			]))
+			])
 		);
 		return deps;
 	
