@@ -15,7 +15,7 @@ switch(method)
 		return this;
 	
 	case get_dependencies:
-		var deps = dependencies([
+		var deps = new(c_dependencies, [
 			dependency("name", t_string()),
 			dependency("type_info", t_object(obj_type_info)),
 			dependency("optional", t_number()), // boolean

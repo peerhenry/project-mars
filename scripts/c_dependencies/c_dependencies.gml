@@ -10,7 +10,7 @@ switch(method)
 	// params begin at argument[2]
 	case constructor:
 		var dep_array = argument[2];
-		this.list = array_to_list(dep_array);
+		this.list = scr_array_to_list(dep_array);
 		return this;
 	
 	case destructor:

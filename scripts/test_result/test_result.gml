@@ -8,7 +8,7 @@ with(all) counter++;
 var known_instance_count = 2; //obj_tests and obj_persistent_listener
 var interface_count = scr_count_instances(obj_interface);
 var signature_count = scr_count_instances(obj_signature);
-var type_count = scr_count_instances(obj_type);
+var type_count = scr_count_instances(obj_type_info);
 var expected_instance_count = known_instance_count + interface_count + signature_count + type_count;
 if(counter > expected_instance_count)
 {
@@ -26,7 +26,7 @@ if(counter > expected_instance_count)
 			case obj_persistent_listener:
 			case obj_interface:
 			case obj_signature:
-			case obj_type:
+			case obj_type_info:
 				// test_message("Accepted instance: " + object_get_name(object_index));
 				break;
 			default:

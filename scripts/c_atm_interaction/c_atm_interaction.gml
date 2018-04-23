@@ -23,16 +23,16 @@ switch(method)
 		break;
 	
 	case get_dependencies:
-		var deps = new_dependencies(
-			named("embarker", new_interface([
+		var deps = new(c_dependencies, [
+			new_interface("embarker", [
 				signature( "embark", t_void(), [ t_object(obj_astronaut) ] )
-			])),
-			named("notifier", new_interface([
+			]),
+			new_interface("notifier", [
 				signature( "notify_player", t_void(), t_string() )
-			])),
-			named("atm", t_object(obj_atm)),
-			named("atm", t_object(obj_astronaut))
-		);
+			]),
+			dependency("atm", t_object(obj_atm)),
+			dependency("astronaut", t_object(obj_astronaut))
+		]);
 		return deps;
 
 	case "execute":

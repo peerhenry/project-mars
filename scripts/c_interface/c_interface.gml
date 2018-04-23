@@ -11,7 +11,7 @@ switch(method)
 		if(!is_array(this.methods)) scr_panic("Interface must receive an array of named signatures.");
 		for(var n = 0; n < array_length_1d(this.methods); n++)
 		{
-			var next = this.methods;
+			var next = this.methods[n];
 			if(next.class != c_signature) scr_panic("Cannot make interface: elements must be signatures.");
 		}
 		return this;

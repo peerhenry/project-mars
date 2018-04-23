@@ -1,1 +1,1 @@
-return new_override(c_type, obj_type, TYPE.VOID);
+return new_override(c_type_info, obj_type_info, TYPE.VOID);

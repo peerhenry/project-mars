@@ -4,6 +4,8 @@ var here = c_signature;
 
 switch(method)
 {
+	#region con/des
+	
 	case constructor:
 		this.name = argument[2];
 		this.return_type = argument[3];
@@ -11,6 +13,19 @@ switch(method)
 		if(!is_array(argument_types)) argument_types = [argument_types];
 		this.argument_types = argument_types;
 		return this;
+
+	// destroys all types
+	case destructor:
+		for(var n = 0; n < array_length_1d(this.argument_types); n++)
+		{
+			var next_type = this.argument_types[n];
+			destroy(next_type);
+		}
+		destroy(this.return_type);
+		instance_destroy(this);
+		break;
+	
+	#endregion
 
 	#region assert_arguments
 	// assert if arguments comply with types in signature
@@ -40,18 +55,7 @@ switch(method)
 		return ok(array);
 	#endregion
 
-	#region destructor
-	// destroys all types
-	case destructor:
-		for(var n = 0; n < array_length_1d(this.argument_types); n++)
-		{
-			var next_type = this.argument_types[n];
-			destroy(next_type);
-		}
-		destroy(this.return_type);
-		instance_destroy(this);
-		break;
-	#endregion
+
 	
 	#region TESTS
 	case test:

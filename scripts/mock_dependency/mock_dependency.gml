@@ -2,5 +2,7 @@
 /// @arg dependency_name
 var class = argument0;
 var name = argument1;
-var interface = in(class, get_dependency, name);
+var deps = in(class, get_dependencies, name);
+var interface = call(deps, "extract_interface", name);
+destroy(deps);
 return mock(interface);

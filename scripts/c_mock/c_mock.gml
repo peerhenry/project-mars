@@ -18,7 +18,7 @@ switch(method)
 		this.return_map = ds_map_create();
 		this.call_count_map = ds_map_create();
 		this.argument_map = ds_map_create();
-		var stubs = this.interface.methods;
+		var stubs = scr_from_select(this.interface.methods, "name");
 		var stub_count = array_length_1d(stubs);
 		for(var n = 0; n < stub_count; n++)
 		{
@@ -48,7 +48,6 @@ switch(method)
 		var exists = !is_undefined(existing);
 		if(!exists) scr_panic("Cannot setup stub; Stub does not exist in mock: " + stub);
 		return ok();
-	#endregion
 	
 	case "setup_stub_unwrapped":
 		var stub = argument[2];
@@ -56,12 +55,14 @@ switch(method)
 		call_unwrap(this, "setup_stub", stub, ok(return_val));
 		return ok();
 	
+	#endregion
+	
 	#region call_stub
 	case "call_stub":
-		var stub = argument[2];
+		var sig = argument[2];
 		var args = argument[3];
+		var stub = sig.name;
 		// if stub has signature, assert arguments are of correct type
-		var sig = this.interface.signatures[?stub];
 		if(!is_undefined(sig)) call_unwrap(sig, "assert_arguments", args);
 		// increment call count for method
 		var count = this.call_count_map[?stub];
@@ -77,6 +78,7 @@ switch(method)
 	#endregion
 	
 	#region verify
+	
 	case "verify":
 		var stub = argument[2];
 		var verification = argument[3];
@@ -94,7 +96,6 @@ switch(method)
 				break;
 		}
 		return ok();
-	#endregion
 		
 	case "verify_last_call_arguments":
 		var stub = argument[2];
@@ -104,6 +105,8 @@ switch(method)
 		else assert_arrays_are_equal(arguments, last_arguments);
 		return ok();
 	
+	#endregion
+	
 	#region tests
 	case test:
 		test_method(here, "mock_test");
@@ -111,9 +114,9 @@ switch(method)
 	
 	case "mock_test":
 		// arrange
-		var intf = new_interface([
-			["foo", t_void(), t_string()],
-			["bar", t_string(), t_number()]
+		var intf = new_interface("whatever", [
+			signature("foo", t_void(), t_string()),
+			signature("bar", t_string(), t_number())
 		]);
 		var m = mock(intf);
 		var expect = "BILLY";
@@ -141,10 +144,11 @@ switch(method)
 			args[n-2] = next_arg;
 		}
 		#endregion
-		var stubs = this.interface.methods;
-		for(var n = 0; n < array_length_1d(stubs); n++)
+		var sigs = this.interface.methods;
+		for(var n = 0; n < array_length_1d(sigs); n++)
 		{
-			if(stubs[n] == method) return call(this, "call_stub", method, args);
+			var sig = sigs[n];
+			if(sig.name == method) return call(this, "call_stub", sig, args);
 		}
 		return refused();
 }

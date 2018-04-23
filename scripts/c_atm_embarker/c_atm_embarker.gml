@@ -11,11 +11,11 @@ switch(method)
 		return this;
 	
 	case get_dependencies:
-		return dependencies([
-			class_dependency("appear_setter", new_interface([
-				["disappear", t_void(), t_object(obj_astronaut)],
-				["reappear", t_void(), t_object(obj_astronaut)]
-			]))
+		return new(c_dependencies, [
+			new_interface("appear_setter", [
+				signature("disappear", t_void(), t_object(obj_astronaut)),
+				signature("reappear", t_void(), t_object(obj_astronaut))
+			])
 		]);
 	
 	#region METHODS

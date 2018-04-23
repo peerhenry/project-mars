@@ -30,7 +30,6 @@ switch(method)
 		return this;
 		
 	case destructor: 
-		if(instance_exists(this.contextual_type) && this.contextual_type.object_index == obj_type) destroy(this.contextual_type);
 		instance_destroy(this);
 		break;
 		
@@ -130,20 +129,18 @@ switch(method)
 		var tv = t_void();
 		var tn = t_number();
 		var ts = t_string();
-		var ta = t_array(t_number());
+		var ta = t_array();
 		var to = t_object(obj_empty);
-		assert_equal(obj_type, tv.object_index, "object_index");
-		assert_equal(obj_type, tn.object_index, "object_index");
-		assert_equal(obj_type, ts.object_index, "object_index");
-		assert_equal(obj_type, ta.object_index, "object_index");
-		assert_equal(obj_type, to.object_index, "object_index");
+		assert_equal(obj_type_info, tv.object_index, "object_index");
+		assert_equal(obj_type_info, tn.object_index, "object_index");
+		assert_equal(obj_type_info, ts.object_index, "object_index");
+		assert_equal(obj_type_info, ta.object_index, "object_index");
+		assert_equal(obj_type_info, to.object_index, "object_index");
 		assert_equal(TYPE.VOID, tv.type, "type");
 		assert_equal(TYPE.NUMBER, tn.type, "type");
 		assert_equal(TYPE.STRING, ts.type, "type");
 		assert_equal(TYPE.ARRAY, ta.type, "type");
 		assert_equal(TYPE.OBJECT, to.type, "type");
-		assert_equal(TYPE.NUMBER, ta.contextual_type.type, "array contextual_type");
-		assert_equal(obj_empty, to.contextual_type, "object contextual_type");
 		break;
 	#endregion
 	

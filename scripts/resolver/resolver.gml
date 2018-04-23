@@ -1,1 +1,0 @@
-return new(c_injection, argument0, true); // boolean: is the injection going to make a call to the IOC container?

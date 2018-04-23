@@ -1,8 +1,8 @@
 {
-    "id": "df11fa01-4d8e-481e-9748-3eddebb77098",
+    "id": "b3dab702-3855-4cc0-a1fd-e9f271cbbb9a",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "register_resolvers",
+    "name": "scr_from_select",
     "IsCompatibility": false,
     "IsDnD": false
 }

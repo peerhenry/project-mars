@@ -1,17 +1,21 @@
-/// @descr call a method in each element of the collection
+/// @descr call a method in each element of the array
 /// @arg collection
-/// @arg method
+/// @arg variable
 var collection = argument0;
-var method = argument1;
+var variable = argument1;
 
 if(is_array(collection))
 {
 	var output = [];
+	var head = 0;
 	for(var n = 0; n < array_length_1d(collection); n++)
 	{
 		var elem = collection[n];
-		var mapped = call_unwrap(elem, method);
-		output[n] = mapped;
+		if(variable_instance_exists(elem, variable))
+		{
+			output[head] = variable_instance_get(elem, variable);
+			head ++;
+		}
 	}
 	return output;
 }
@@ -21,8 +25,11 @@ else if(ds_exists(collection, ds_type_list))
 	for(var n = 0; n < ds_list_size(collection); n++)
 	{
 		var elem = collection[|n];
-		var mapped = call_unwrap(elem, method);
-		ds_list_add(output, mapped);
+		if(variable_instance_exists(elem, variable))
+		{
+			var val = variable_instance_get(elem, variable);
+			ds_list_add(output, val);
+		}
 	}
 	return output;
 }
