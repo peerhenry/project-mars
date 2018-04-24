@@ -4,6 +4,25 @@
 var arg_assignable = argument0;
 var arg_astronaut = argument1;
 
+#region new code
+
+var ioc_container = arg_astronaut.ioc_container;
+var factory_result = call(ioc_container, "resolve", "interaction_factory");
+if(factory_result.status == STATUS.OK)
+{
+	var factory = unwrap(factory_result);
+	var interaction = call_unwrap(factory, "create_interaction", arg_assignable, arg_astronaut);
+	arg_astronaut.end_path_action = interaction;
+	call_unwrap(ioc_container, "clear_resolvings"); // everything that was resolved will be destroyed;
+}
+else
+{
+	scr_notify_player(factory_result.value);
+	destroy(factory_result);
+}
+
+#endregion
+
 var state = reach_state.unreachable;
 
 if(!arg_assignable.is_assigned) state = scr_navigate_to_assignable(arg_assignable, arg_astronaut);

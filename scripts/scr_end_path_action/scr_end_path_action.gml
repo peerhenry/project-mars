@@ -9,7 +9,9 @@ else if( scr_instance_inherits(arg_entity.object_index, obj_cart) ) scr_end_path
 
 // todo: we want above to become obsolete and make way for OO design; command pattern
 
-if(variable_instance_exists(arg_entity, "end_path_action"))
+if(variable_instance_exists(arg_entity, "end_path_action") && arg_entity.end_path_action != noone)
 {
 	call_unwrap(arg_entity.end_path_action, "execute");
+	destroy(arg_entity.end_path_action);
+	arg_entity.end_path_action = noone;
 }

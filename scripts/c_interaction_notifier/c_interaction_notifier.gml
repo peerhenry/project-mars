@@ -1,6 +1,6 @@
 var method = argument[0];
 var this = (argument_count > 1) ? argument[1] : noone;
-var here = c_boilerplate; // <=== CHANGE THIS
+var here = c_interaction_notifier; // <=== CHANGE THIS
 
 switch(method)
 {
@@ -9,13 +9,16 @@ switch(method)
 		return this;
 
 	case get_dependencies:
-		return noone;	// return new(c_dependencies, []);
+		return new(c_dependencies, []);
 
 	case destructor: 
 		instance_destroy(this);
 		break;
 	
 	// methods
+	case "execute":
+		
+		return ok();
 	
 	case test:
 		test_method(here, "mytest");

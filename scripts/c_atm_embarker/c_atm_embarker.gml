@@ -49,7 +49,6 @@ switch(method)
 		test_method(here, "disembark_test");
 		test_method(here, "embark_test");
 		test_method(here, "embark_atm_is_full");
-		test_method(here, "test_dependency_interface");
 		break;
 	
 	case "disembark_test":

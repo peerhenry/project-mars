@@ -16,6 +16,10 @@ switch(method)
 		break;
 	
 	// methods
+	case "notify_player":
+		var msg = argument[2];
+		resolve_execute(global.script_container, "alert_player", msg);
+		return ok();
 	
 	case test:
 		test_method(here, "mytest");

@@ -1,6 +1,6 @@
 var method = argument[0];
 var this = (argument_count > 1) ? argument[1] : noone;
-var here = c_atm_interaction;
+var here = c_interaction_atm;
 
 // todo:
 // - set this class as end_path_action in astronaut in the click event
@@ -37,7 +37,7 @@ switch(method)
 
 	case "execute":
 		var result = call(this.embarker, "embark", this.atm, this.astronaut);
-		if(result.status != STATUS.OK) call(this.notifier, "notify_player", result.message);
+		if(result.status != STATUS.OK) call_unwrap(this.notifier, "notify_player", result.message);
 		destroy(result);
 		return ok();
 	
@@ -65,19 +65,35 @@ switch(method)
 	
 	case "test_notify":
 		var tup = setup_testable(here);
+		show_debug_message("result count: " + string(scr_count_instances(obj_result)));
 		var inst = tup.item0;
+		show_debug_message("result count: " + string(scr_count_instances(obj_result)));
 		var mock_embarker = tup.item1[0];
+		show_debug_message("result count: " + string(scr_count_instances(obj_result)));
 		var mock_ntf = tup.item1[1];
+		show_debug_message("result count: " + string(scr_count_instances(obj_result)));
 		var msg = "hihaho";
-		var exc = exception(msg);;
+		var exc = exception(msg);
+		show_debug_message("result count: " + string(scr_count_instances(obj_result)));
 		mock_setup(mock_embarker, "embark", exc);
+		show_debug_message("result count: " + string(scr_count_instances(obj_result)));
 		// act
 		call_unwrap(inst, "execute");
+		show_debug_message("result count: " + string(scr_count_instances(obj_result)));
 		// assert
 		mock_verify(mock_embarker, "embark", Times.Once);
+		show_debug_message("result count: " + string(scr_count_instances(obj_result)));
 		mock_verify_args(mock_ntf, "notify_player", Times.Once, [msg]);
+		show_debug_message("result count: " + string(scr_count_instances(obj_result)));
 		// cleanup
 		cleanup_testable(tup);
+		with(obj_result)
+		{
+			show_debug_message("yo, it's:");
+			show_debug_message(script_get_name(class));
+			show_debug_message(string(status));
+			show_debug_message(string(value));
+		}
 		break;
 	
 	#endregion

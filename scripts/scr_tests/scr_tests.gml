@@ -1,5 +1,7 @@
+// init script container and ioc container
 var container = test_register_scripts();
 global.script_container = container;
+
 test_message("Running tests...");
 
 test_suite_grid();

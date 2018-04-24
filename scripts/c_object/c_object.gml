@@ -11,6 +11,9 @@ switch(method)
 		instance_destroy(this);
 		break;
 	
+	case get_dependencies:
+		return noone;
+	
 	case test:
 		scr_panic("Tests not implemented!");
 		break;

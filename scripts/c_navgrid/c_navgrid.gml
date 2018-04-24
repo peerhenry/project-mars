@@ -9,6 +9,13 @@ switch(method)
 	case constructor:
 		// all navgrid logic should end up here
 		return this;
+	
+	case destructor: 
+		instance_destroy(this);
+		break;
+	
+	case get_dependencies:
+		return noone;
 
 	case "clear_astronaut":
 		var astro = argument[2];
@@ -29,10 +36,6 @@ switch(method)
 		var j = argument[3];
 		scr_navgrid_occupy(i, j);
 		return ok();
-
-	case destructor: 
-		instance_destroy(this);
-		break;
 	
 	case test:
 		scr_warn("No tests written for: " + script_get_name(here));

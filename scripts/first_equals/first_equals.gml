@@ -31,4 +31,5 @@ else if(ds_exists(collection, ds_type_list))
 		}
 	}
 }
-scr_panic("Argument0 was not a valid collection");
+else scr_panic("Argument0 was not a valid collection");
+return noone;

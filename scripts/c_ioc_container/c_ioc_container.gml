@@ -10,12 +10,26 @@ switch method
 	case constructor:
 		this.instances = ds_map_create();
 		this.class_container = ds_map_create(); // string - class
-		// this.injection_map = ds_map_create(); // client class - injections
+		this.resolvings = ds_list_create();
 		return this;
+	
+	case "destroy_resolving":
+		var res = argument[2];
+		if(instance_exists(res))
+		{
+			destroy(res);
+		}
+		return ok();
+	
+	case "clear_resolvings":
+		foreach(this.resolvings, this, "destroy_resolving");
+		return ok();
 	
 	case destructor:
 		ds_map_destroy(this.instances);
 		ds_map_destroy(this.class_container);
+		call_unwrap(this, "clear_resolvings");
+		ds_list_destroy(this.resolvings);
 		instance_destroy(this);
 		break;
 	#endregion
@@ -26,9 +40,7 @@ switch method
 		var class = argument[3];
 		this.class_container[? name] = class;
 		return ok();
-	#endregion
-	
-	#region register_instance
+
 	case "register_instance":
 		var name = argument[2];
 		var instance = argument[3];
@@ -42,26 +54,13 @@ switch method
 	#endregion
 	
 	#region resolve
-	case "resolve":
-		var name = argument[3];
-		// Check argument
-		var class = this.class_container[? name];
-		if(typeof(name) != "string") scr_panic("Cannot resolve: key was not a string!");
-		if(is_undefined(class)) scr_panic("Could not resolve: No class registered for: " + name);
-		// Check if there's an instance registerd for class
-		var instance = this.instances[? class];
-		if(!is_undefined(instance)) return ok(instance);
-		// Check if there are dependencies
-		var deps = in(class, get_dependencies);
-		var has_dependencies = is_array(deps) && array_length_1d(deps) > 0;
-		if(!has_dependencies)
-		{
-			destroy(deps);
-			instance = new(class);
-			return ok(instance);
-		}
+	case "resolve_with_dependencies":
 		// Resolve dependencies
-		var dep_names = morph(deps, "get_name");
+		var class = argument[2];
+		var deps = argument[3];
+		var d_names_list = scr_from_select(deps.list, "name");
+		var dep_names = scr_list_to_array(d_names_list);
+		ds_list_destroy(d_names_list);
 		var resolved_deps = map_method(dep_names, this, "resolve");
 		destroy(deps);
 		// Inject dependencies
@@ -83,6 +82,32 @@ switch method
 				scr_panic("Too many injections in resolve for " + script_get_name(class));
 		}
 		return ok(instance);
+	
+	case "resolve":
+		var name = argument[2];
+		// Check argument
+		var class = this.class_container[? name];
+		if(typeof(name) != "string") scr_panic("Cannot resolve: key was not a string!");
+		if(is_undefined(class)) return exception("Could not resolve: No class registered for: " + name);
+		// Check if there's an instance registerd for class
+		var instance = this.instances[? class];
+		if(!is_undefined(instance)) return ok(instance);
+		// Check if there are dependencies
+		var deps = in(class, get_dependencies);
+		var has_dependencies = deps != noone;
+		if(!has_dependencies)
+		{
+			instance = new(class);
+		}
+		else instance = call_unwrap(this, "resolve_with_dependencies", class, deps);
+		ds_list_add(this.resolvings, instance);
+		return ok(instance);
+	
+	case "unresolve":
+		var instance = argument[2];
+		var existing = this.instances[? instance.class];
+		if(is_undefined(existing)) destroy(instance); // destroy if it's not a static instance
+		return ok();
 	#endregion
 	
 	#region TESTS
@@ -93,7 +118,7 @@ switch method
 		break;
 	
 	case "test_construct_destruct":
-		var container = new(c_ioc_container);
+		var container = new_override(c_ioc_container, obj_ioc_container);
 		var map1 = container.instances;
 		var map2 = container.class_container;
 		assert_true(ds_exists(map1, ds_type_map), "instances exists");
@@ -101,6 +126,15 @@ switch method
 		destroy(container);
 		assert_false(ds_exists(map1, ds_type_map), "instances has been cleaned up");
 		assert_false(ds_exists(map2, ds_type_map), "class_container map has been cleaned up");
+		break;
+	
+	case "test_register_resolve":
+		var container = new_override(c_ioc_container, obj_ioc_container);
+		call_unwrap(container, "register", "dummy", c_tuple);
+		var result = call_unwrap(container, "resolve", "dummy");
+		assert_equal(c_tuple, result.class, "resolved class");
+		destroy(result);
+		destroy(container);
 		break;
 	
 	#endregion

@@ -1,2 +1,4 @@
 /// @arg class_definition_script
-script_execute(argument0, test);
+var class = argument0;
+//test_class_standards(class);
+script_execute(class, test);

@@ -12,7 +12,7 @@ switch(method)
 		return this;
 	
 	case get_dependencies:
-		return ok();
+		return noone;
 	
 	case destructor:
 		instance_destroy(this);

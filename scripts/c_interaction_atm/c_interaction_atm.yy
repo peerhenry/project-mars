@@ -1,8 +1,8 @@
 {
-    "id": "fcfb4a76-0125-4a0a-bf36-acd27c774c3f",
+    "id": "05e1f540-7799-43b6-8b08-3d8b3def1e6a",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "register_static",
+    "name": "c_interaction_atm",
     "IsCompatibility": false,
     "IsDnD": false
 }
