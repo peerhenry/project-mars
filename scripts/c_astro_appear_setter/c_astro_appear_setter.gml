@@ -72,30 +72,22 @@ switch(argument[0])
 		test_method(here, "can serve c_atm_embarker");
 		// todo: test depdencies
 		break;
-		
-	case "get_testable":
-		var mock_navgrid = mock_dependency(here, "navgrid");
-		return new(here, mock_navgrid);
-	
-	case "cleanup":
-		var testable = argument[1];
-		destroy(testable.navgrid);
-		destroy(testable);
-		break;
 	
 	case "can serve c_atm_embarker":
-		var testable = in(here, "get_testable");
+		var tup = setup_testable(here);
+		var testable = tup.item0;
 		var dummytuple = tuple(1,1);
 		var mock_navgrid = testable.navgrid;
 		mock_setup_unwrapped(mock_navgrid, "get_nearest_free_cell", dummytuple);
 		assert_can_serve(testable, c_atm_embarker, "appear_setter"); // dependency inversion
 		assert_false(instance_exists(dummytuple), "dummytuple exists");
-		in(here, "cleanup", testable);
+		cleanup_testable(tup);
 		break;
 	
 	case "disappear_test":
 		// arrange
-		var testable = in(here, "get_testable");
+		var tup = setup_testable(here);
+		var testable = tup.item0;
 		var astro = instance_create_depth(0,0,0,obj_astronaut);
 		// assert setup
 		assert_false(scr_navgrid_cell_is_free(astro.occ_i, astro.occ_j), "nagrid is free");
@@ -107,12 +99,13 @@ switch(argument[0])
 		mock_verify(testable.navgrid, "clear_astronaut", Times.Once);
 		// cleanup
 		instance_destroy(astro);
-		in(here, "cleanup", testable);
+		cleanup_testable(tup);
 		break;
 	
 	case "reappear_test":
 		// arrange
-		var testable = in(here, "get_testable");
+		var tup = setup_testable(here);
+		var testable = tup.item0;
 		var astro = instance_create_depth(0,0,0,obj_astronaut);
 		var mock_navgrid = testable.navgrid;
 		var dummytuple = tuple(1,1);
@@ -128,12 +121,13 @@ switch(argument[0])
 		mock_verify(testable.navgrid, "get_nearest_free_cell", Times.Once);
 		// cleanup
 		instance_destroy(astro);
-		in(here, "cleanup", testable);
+		cleanup_testable(tup);
 		break;
 	
 	case "cannot_reappear":
 		// arrange
-		var testable = in(here, "get_testable");
+		var tup = setup_testable(here);
+		var testable = tup.item0;
 		var astro = instance_create_depth(0,0,0,obj_astronaut);
 		call_unwrap(testable, "disappear", astro);
 		var old_i = astro.occ_i;
@@ -149,7 +143,7 @@ switch(argument[0])
 		assert_true(old_i == astro.occ_i && old_j == astro.occ_j, "astro is on old spot");
 		// cleanup
 		instance_destroy(astro);
-		in(here, "cleanup", testable);
+		cleanup_testable(tup);
 		destroy(exc);
 		break;
 	#endregion

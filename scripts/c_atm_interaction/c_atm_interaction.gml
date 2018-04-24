@@ -25,7 +25,7 @@ switch(method)
 	case get_dependencies:
 		var deps = new(c_dependencies, [
 			new_interface("embarker", [
-				signature( "embark", t_void(), [ t_object(obj_astronaut) ] )
+				signature( "embark", t_void(), [ t_object(obj_atm), t_object(obj_astronaut) ] )
 			]),
 			new_interface("notifier", [
 				signature( "notify_player", t_void(), t_string() )
@@ -49,47 +49,25 @@ switch(method)
 		test_method(here, "test_notify");
 		break;
 	
-	#region setup / cleanup
-	case "test_setup":
-		var i_embarker = in(here, get_dependency, "embarker");
-		var mock_embarker = mock(i_embarker);
-		var i_ntf = in(here, get_dependency, "notifier");
-		var mock_ntf = mock(i_ntf);
-		var atm = instance_create_depth(0,0,0,obj_atm_small);
-		var astro = instance_create_depth(0,0,0,obj_astronaut);
-		var inst = new(c_atm_interaction, mock_embarker, mock_ntf, atm, astro);
-		var tup = tuple(mock_embarker, mock_ntf, inst, atm, astro);
-		return tup;
-	
-	case "test_cleanup":
-		var tup = argument[1];
-		destroy(tup.item0); // embarker mock
-		destroy(tup.item1);	// notifier mock
-		destroy(tup.item2); // instance
-		instance_destroy(tup.item3); // atm
-		instance_destroy(tup.item4); // astro
-		break;
-	#endregion
-	
 	case "test_execute":
-		var tup = in(here, "test_setup");
-		var inst = tup.item2;
-		var mock_ntf = tup.item1;
-		var mock_embarker = tup.item0;
+		var tup = setup_testable(here);
+		var inst = tup.item0;
+		var mock_embarker = tup.item1[0];
+		var mock_ntf = tup.item1[1];
 		// act
 		call_unwrap(inst, "execute");
 		// assert
 		mock_verify(mock_embarker, "embark", Times.Once);
 		mock_verify(mock_ntf, "notify_player", Times.Never);
 		// cleanup
-		in(here, "test_cleanup", tup);
+		cleanup_testable(tup);
 		break;
 	
 	case "test_notify":
-		var tup = in(here, "test_setup");
-		var inst = tup.item2;
-		var mock_ntf = tup.item1;
-		var mock_embarker = tup.item0;
+		var tup = setup_testable(here);
+		var inst = tup.item0;
+		var mock_embarker = tup.item1[0];
+		var mock_ntf = tup.item1[1];
 		var msg = "hihaho";
 		var exc = exception(msg);;
 		mock_setup(mock_embarker, "embark", exc);
@@ -99,7 +77,7 @@ switch(method)
 		mock_verify(mock_embarker, "embark", Times.Once);
 		mock_verify_args(mock_ntf, "notify_player", Times.Once, [msg]);
 		// cleanup
-		in(here, "test_cleanup", tup);
+		cleanup_testable(tup);
 		break;
 	
 	#endregion

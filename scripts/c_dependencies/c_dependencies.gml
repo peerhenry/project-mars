@@ -15,7 +15,6 @@ switch(method)
 	
 	case destructor:
 		destroy_collection(this.list);
-		ds_list_destroy(this.list);
 		instance_destroy(this);
 		return ok();
 		
@@ -35,7 +34,7 @@ switch(method)
 		var mocks = scr_list_to_array(mock_list);
 		ds_list_destroy(mock_list);
 		ds_list_clear(this.list);
-		return mocks;
+		return ok(mocks);
 	#endregion
 	
 	#region UNIT TESTS

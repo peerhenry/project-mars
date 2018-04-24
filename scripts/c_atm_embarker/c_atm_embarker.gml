@@ -52,21 +52,10 @@ switch(method)
 		test_method(here, "test_dependency_interface");
 		break;
 	
-	case "test_dependency_interface": // sanity test
-		var intf = in(here, get_dependency, "appear_setter");
-		assert_equal(2, array_length_1d(intf.methods), "method count");
-		assert_equal("disappear", intf.methods[0], "method 0");
-		assert_equal("reappear", intf.methods[1], "method 1");
-		break;
-	
-	case "get_testable":
-		var mock_setter = mock_dependency(here, "appear_setter");
-		var testable = new(here, mock_setter);
-		return testable;
-	
 	case "disembark_test":
 		// setup
-		var object = in(here, "get_testable");
+		var tup = setup_testable(here);
+		var object = tup.item0;
 		var mock_setter = object.appear_setter;
 		var astro = instance_create_depth(0,0,0,obj_astronaut);
 		var atm = instance_create_depth(0,0,0,obj_atm_small);
@@ -78,15 +67,14 @@ switch(method)
 		// cleanup
 		instance_destroy(astro);
 		instance_destroy(atm);
-		destroy(mock_setter);
-		destroy(object);
+		cleanup_testable(tup);
 		break;
 	
 	case "embark_test":
 		// setup
-		var object = in(here, "get_testable");
+		var tup = setup_testable(here);
+		var object = tup.item0;
 		var mock_setter = object.appear_setter;
-		
 		var astro = instance_create_depth(0,0,0,obj_astronaut);
 		var atm = instance_create_depth(0,0,0,obj_atm_small);
 		// act
@@ -96,15 +84,14 @@ switch(method)
 		// cleanup
 		instance_destroy(astro);
 		instance_destroy(atm);
-		destroy(mock_setter);
-		destroy(object);
+		cleanup_testable(tup);
 		break;
 	
 	case "embark_atm_is_full":
 		// setup
-		var object = in(here, "get_testable");
+		var tup = setup_testable(here);
+		var object = tup.item0;
 		var mock_setter = object.appear_setter;
-		
 		var astro = instance_create_depth(0,0,0,obj_astronaut);
 		var atm = instance_create_depth(0,0,0,obj_atm_small);
 		ds_list_add(atm.embarked_astronauts, 13);
@@ -119,8 +106,7 @@ switch(method)
 		// cleanup
 		instance_destroy(astro);
 		instance_destroy(atm);
-		destroy(mock_setter);
-		destroy(object);
+		cleanup_testable(tup);
 		destroy(result);
 		break;
 	

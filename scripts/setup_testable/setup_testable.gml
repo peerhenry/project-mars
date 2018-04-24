@@ -1,7 +1,6 @@
 /// @arg class
 var class = argument0;
-var deps = in(class, get_dependencies);
-var mocks = create_mocks(deps);
+var mocks = create_mocks(class);
 var instance = noone;
 switch(array_length_1d(mocks))
 {
@@ -18,7 +17,10 @@ switch(array_length_1d(mocks))
 		instance = new(class, mocks[0], mocks[1], mocks[2]);
 		break;
 	case 4:
-		instance = new(class, mocks[0], mocks[1], mocks[2], mocks[4]);
+		instance = new(class, mocks[0], mocks[1], mocks[2], mocks[3]);
+		break;
+	case 5:
+		instance = new(class, mocks[0], mocks[1], mocks[2], mocks[3], mocks[4]);
 		break;
 }
 if(instance == noone) scr_panic("Could not setup testable");

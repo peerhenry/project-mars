@@ -31,6 +31,7 @@ switch(method)
 	// assert if arguments comply with types in signature
 	case "assert_arguments":
 		var arguments = argument[2];
+		assert_equal(array_length_1d(this.argument_types), array_length_1d(arguments), "arguments")
 		for(var n = 0; n < array_length_1d(arguments); n++)
 		{
 			var arg = arguments[n];

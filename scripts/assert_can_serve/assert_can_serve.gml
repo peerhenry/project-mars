@@ -9,7 +9,9 @@ var arg_dependency_name = argument2;
 var class_name = script_get_name(arg_instance.class);
 var client_class_name = script_get_name(arg_client);
 
-var intf = in(arg_client, get_dependency, arg_dependency_name);
+var deps = in(arg_client, get_dependencies, arg_dependency_name);
+var intf = call_unwrap(deps, "extract_interface", arg_dependency_name);
+destroy(deps);
 var methods = intf.methods;
 var method_count = array_length_1d(methods);
 assert_true(method_count > 0, "method_count > 0");
@@ -18,13 +20,12 @@ for(var m = 0; m < method_count; m++)
 {
 	counter++;
 	#region create dummy arguments
-	var method = methods[m];
-	var sig = intf.signatures[?method];
+	var sig = intf.methods[m];
 	var dummies = call_unwrap(sig, "get_dummy_arguments");
 	#endregion
 	
 	#region assert result
-	var result = call_with_array(arg_instance, method, dummies);
+	var result = call_with_array(arg_instance, sig.name, dummies);
 	var exists = instance_exists(result);
 	assert_true(exists, "instance_exists(result)");
 	if(exists)

@@ -19,4 +19,4 @@ else if(ds_exists(collection, ds_type_list))
 	}
 	ds_list_destroy(collection);
 }
-scr_panic("Argument0 was not a valid collection");
+else scr_panic("Argument0 was not a valid collection");
