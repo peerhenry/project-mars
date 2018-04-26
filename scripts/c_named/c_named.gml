@@ -1,13 +1,13 @@
-var method = argument[0];
-var this = (argument_count > 1) ? argument[1] : noone;
+var method = argument0;
+var this = argument1;
+var args = argument2;
 var here = c_named;
 
 switch(method)
 {
-	// params begin at argument[2]
 	case constructor: // can be remove if not needed
-		this.name = argument[2];
-		this.value = argument[3];
+		this.name = args[0];
+		this.value = args[1];
 		return this;
 	
 	case get_dependencies:
@@ -20,8 +20,7 @@ switch(method)
 		return ok(this.value);
 
 	case destructor: 
-		instance_destroy(this);
-		break;
+		return ok();
 	
 	case test:
 		break;

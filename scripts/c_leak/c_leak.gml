@@ -1,13 +1,14 @@
 #region set method and this
 var here = c_leak;
-var method = argument[0];
-var this = (argument_count > 1) ? argument[1] : noone;
+var method = argument0;
+var this = argument1;
+var args = argument2;
 #endregion
 
 switch(method)
 {
 	case constructor: // number => object
-		this.drain_per_step = argument[2];
+		this.drain_per_step = args[0];
 		return this;
 
 	case get_dependencies:

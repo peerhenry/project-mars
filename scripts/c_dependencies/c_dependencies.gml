@@ -1,16 +1,16 @@
 #region set method and this
-var method = argument[0];
-var this = (argument_count > 1) ? argument[1] : noone;
+var method = argument0;
+var this = argument1;
+var args = argument2;
+var here = c_dependencies;
 #endregion
 
 switch(method)
 {
 	#region CONSTRUCTOR / DESTRUCTOR
 	
-	// params begin at argument[2]
 	case constructor:
-		var dep_array = argument[2];
-		this.list = scr_array_to_list(dep_array);
+		this.list = scr_array_to_list(args);
 		return this;
 	
 	case destructor:
@@ -20,12 +20,12 @@ switch(method)
 	
 	case get_dependencies:
 		return ok(skip_standards());
-		
+	
 	#endregion
 
 	#region METHODS
 	case "extract_interface":
-		var name = argument[2];
+		var name = args[0];
 		var dep = first_equals(this.list, "name", name);
 		if(dep.class != c_interface) scr_panic(name + " is not an interface!");
 		var indx = ds_list_find_index(this.list, dep);
@@ -43,9 +43,9 @@ switch(method)
 	#region UNIT TESTS
 	
 	case test:
-		// todo
+		test_nyi(here);
 		break;
-		
+	
 	#endregion
 	
 	default:

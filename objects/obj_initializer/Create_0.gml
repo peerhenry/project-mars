@@ -4,10 +4,12 @@ init_view_and_camera();
 init_game();
 alarm[0] = 2;
 
-if(!variable_global_exists("ioc_container"))
+// I put it here for lack of a better place...
+if(variable_global_exists("ioc_container") && instance_exists(global.ioc_container))
 {
-	init_ioc_container(); // I put it here for lack of a better place...
+	destroy(global.ioc_container);
 }
+global.ioc_container = init_ioc_container();
 
 var singletons = ds_list_create();
 ds_list_add(singletons, obj_map_initializer);

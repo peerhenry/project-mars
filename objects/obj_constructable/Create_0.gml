@@ -1,6 +1,8 @@
 #macro macro_init 3
 #macro macro_post_init 4
 
+is_assigned = false; // todo: refactor so this can be removed
+is_interactable = false;
 script_container = global.script_container;
 ioc_container = global.ioc_container;
 occ_i = scr_rc_to_gi(x);

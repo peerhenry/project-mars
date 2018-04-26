@@ -1,13 +1,13 @@
-var method = argument[0];
-var this = (argument_count > 1) ? argument[1] : noone;
-var here = c_boilerplate; // <=== CHANGE THIS
+var method = argument0;
+var this = argument1;
+var args = argument2;
+var here = c_interaction_factory;
 
 switch(method)
 {
-	// params begin at argument[2]
 	case constructor: // can be remove if not needed
-		this.embarker = argument[2];	// borrowed
-		this.notifier = argument[3];	// borrowed
+		this.embarker = args[0];	// borrowed
+		this.notifier = args[1];	// borrowed
 		return this;
 
 	case get_dependencies:
@@ -25,18 +25,17 @@ switch(method)
 		return ok(noone);
 
 	case destructor: 
-		instance_destroy(this);
-		break;
+		return ok();
 	
 	case "create_interaction":
-		var interactable = argument[2];
-		var actor = argument[2];
+		var interactable = args[0];
+		var actor = args[1];
 		var interaction = noone;
 		call_unwrap(this.notifier, "notify_player", "creating interaction for : " + object_get_name(interactable.object_index));
 		switch(interactable.object_index)
 		{
 			case obj_atm_small:
-				interaction = new(c_interaction_atm, this.embarker, this.notifier, interactable, actor);
+				interaction = new(c_interaction_atm, [this.embarker, this.notifier, interactable, actor]);
 				break;
 			case obj_bed:
 			case obj_med_bed:
@@ -53,16 +52,27 @@ switch(method)
 		return ok(interaction);
 	
 	case test:
-		test_method(here, "mytest");
+		test_method(here, "test_create_atm_interaction");
 		break;
 	
-	case "mytest":
+	case "test_create_atm_interaction":
 		// arrange
 		var tup = setup_testable(here);
 		var testable = tup.item0;
+		var astro = instance_create_depth(0,0,0,obj_astronaut);
+		var atm = instance_create_depth(0,0,0,obj_atm_small);
 		// act
+		var action = call_unwrap(testable, "create_interaction", [atm, astro]);
 		// assert
+		assert_equal(c_interaction_atm, action.class, "interaction class");
+		assert_equal(tup.item1[0], action.embarker, "interaction embarker");
+		assert_equal(tup.item1[1], action.notifier, "interaction norifier");
+		assert_equal(astro, action.astronaut, "interaction astro");
+		assert_equal(atm, action.atm, "interaction atm");
 		// cleanup
+		destroy(action);
+		instance_destroy(astro);
+		instance_destroy(atm);
 		cleanup_testable(tup);
 		break;
 	

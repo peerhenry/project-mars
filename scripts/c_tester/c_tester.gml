@@ -1,25 +1,27 @@
 // Object for the soul purpose of testing the OOP framework
-var method = argument[0];
-var this = (argument_count > 1) ? argument[1] : noone;
+var method = argument0;
+var this = argument1;
+var args = argument2;
 
 switch(method)
 {
 	#region CONSTRUCTOR
 	
 	case constructor:
-		switch(argument_count) // constructor oveloading
+		var args_count = array_length_1d(args);
+		switch(array_length_1d(args)) // constructor oveloading
 		{
-			case 2: // zero arguments
-				call_unwrap(this, "set_name", "John", "Smith");
+			case 0: // zero arguments
+				call_unwrap(this, "set_name", ["John", "Smith"]);
 				break;
-			case 3:
-				call_unwrap(this, "set_name", argument[2], "Smith");
+			case 1:
+				call_unwrap(this, "set_name", [args[0], "Smith"]);
 				break;
-			case 4:
-				call_unwrap(this, "set_name", argument[2], argument[3]);
+			case 2:
+				call_unwrap(this, "set_name", args);
 				break;
 			default:
-				scr_panic("Refused request: no constructor for argument count: " + string(argument_count));
+				scr_panic("Refused request: no constructor for argument count: " + string(args_count));
 		}
 		return this;
 	
@@ -28,12 +30,11 @@ switch(method)
 	#region METHODS
 	
 	case "set_name":
-		this.first_name = argument[2];
-		this.last_name = argument[3];
+		this.first_name = args[0];
+		this.last_name = args[1];
 		return ok();
 	
 	case "get_full_name":
-		var this = argument[1];
 		var val = this.first_name + " " + this.last_name;
 		return ok(val);
 	
@@ -61,7 +62,7 @@ switch(method)
 		// arrange
 		var tester = new(c_tester);
 		// act
-		var result = call_unwrap(tester, "get_full_name");
+		var result = void_unwrap(tester, "get_full_name");
 		// assert
 		assert_equal("John Smith", result, "test object name");
 		// cleanup
@@ -70,9 +71,9 @@ switch(method)
 	
 	case "test_constructor_with_parameters":
 		// arrange
-		var tester = new(c_tester, "Pietje", "Puk");
+		var tester = new(c_tester, ["Pietje", "Puk"]);
 		// act
-		var result = call_unwrap(tester, "get_full_name");
+		var result = void_unwrap(tester, "get_full_name");
 		// assert
 		assert_equal("Pietje Puk", result, "test object name");
 		// cleanup

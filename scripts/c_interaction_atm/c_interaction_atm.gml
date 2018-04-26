@@ -1,26 +1,16 @@
-var method = argument[0];
-var this = (argument_count > 1) ? argument[1] : noone;
+var method = argument0;
+var this = argument1;
+var args = argument2;
 var here = c_interaction_atm;
-
-// todo:
-// - set this class as end_path_action in astronaut in the click event
-// - call the end path action
-// - get interface somehow, and test that it can serve the client (movable?)
-// - put this class in test_classes
-// - test that embarker can serve this
 
 switch(method)
 {
 	case constructor:
-		this.embarker = argument[2];	// borrowed
-		this.notifier = argument[3];	// borrowed
-		this.atm = argument[4];			// borrowed
-		this.astronaut = argument[5];	// borrowed
+		this.embarker = args[0];	// borrowed
+		this.notifier = args[1];	// borrowed
+		this.atm = args[2];			// borrowed
+		this.astronaut = args[3];	// borrowed
 		return this;
-
-	case destructor: 
-		instance_destroy(this);
-		break;
 	
 	case get_dependencies:
 		var deps = new(c_dependencies, [
@@ -36,7 +26,7 @@ switch(method)
 		return ok(deps);
 
 	case "execute":
-		var result = call(this.embarker, "embark", this.atm, this.astronaut);
+		var result = call(this.embarker, "embark", [this.atm, this.astronaut]);
 		if(result.status != STATUS.OK) call_unwrap(this.notifier, "notify_player", result.message);
 		destroy(result);
 		return ok();
@@ -55,7 +45,7 @@ switch(method)
 		var mock_embarker = tup.item1[0];
 		var mock_ntf = tup.item1[1];
 		// act
-		call_unwrap(inst, "execute");
+		void_unwrap(inst, "execute");
 		// assert
 		mock_verify(mock_embarker, "embark", Times.Once);
 		mock_verify(mock_ntf, "notify_player", Times.Never);
@@ -78,7 +68,7 @@ switch(method)
 		mock_setup(mock_embarker, "embark", exc);
 		show_debug_message("result count: " + string(scr_count_instances(obj_result)));
 		// act
-		call_unwrap(inst, "execute");
+		void_unwrap(inst, "execute");
 		show_debug_message("result count: " + string(scr_count_instances(obj_result)));
 		// assert
 		mock_verify(mock_embarker, "embark", Times.Once);

@@ -1,1 +1,1 @@
-return new_override(c_result, obj_result, STATUS.PROBLEM, PROBLEM.REFUSED);
+return new_override(c_result, obj_result, [STATUS.PROBLEM, PROBLEM.REFUSED]);

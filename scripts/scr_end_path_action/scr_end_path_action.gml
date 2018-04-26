@@ -11,7 +11,7 @@ else if( scr_instance_inherits(arg_entity.object_index, obj_cart) ) scr_end_path
 
 if(variable_instance_exists(arg_entity, "end_path_action") && arg_entity.end_path_action != noone)
 {
-	call_unwrap(arg_entity.end_path_action, "execute");
+	void_unwrap(arg_entity.end_path_action, "execute");
 	destroy(arg_entity.end_path_action);
 	arg_entity.end_path_action = noone;
 }

@@ -2,9 +2,9 @@
 // Define the object in a script like this
 // Call object methods using call(instance, method, arguments...)
 
-var method = argument[0]; // argument0 is method call
-var this = (argument_count > 1) ? argument[1] : noone; // argument1 is the instance
-
+var method = argument0;
+var this = argument1;
+var args = argument2;
 
 switch(method)
 {
@@ -16,27 +16,28 @@ switch(method)
 	
 	// destructor, call with 'destroy(instance)"
 	case destructor:
-		// destroy what needs destroying here
-		instance_destroy(this);
-		break;
+		// cleanup related resources
+		return ok();
 	
 	// METHODS
-	// call with 'call(instance, EXAMPLE.my_method, arguments...)'
+	// call methods with the script call if it needs arguments, or void if it takes no arguments
 	case "my_method":
 		// method body
 		// can overload by using a switch here on argument_count
 		break;
 	
-	// This method is necessary if you want to be able test:
-	// 1. That the client calls its dependencies correctly (by using mock)
-	// 2. That another class is able to serve this one.
+	// This method is necessary to enable:
+	// 1. Testing that the client calls its dependencies correctly (by using mock)
+	// 2. Testing that another class is able to serve this one.
+	// 3. Resolving dependencies in the ioc container
 	case get_dependencies:
 		return ok(noone);
-		
+	
+	// todo: write explanation here about dependency registration, and standard class testing
 	case get_clients:
 		return ok(noone);
 	
-	// call this usign 'test(c_example)'
+	// call this using 'test_class(c_example)'
 	// all object unit tests should be called from here
 	case test:
 		// write object unit tests

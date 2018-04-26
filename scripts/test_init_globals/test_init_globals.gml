@@ -2,4 +2,4 @@ init_map();
 init_globals();
 init_construction_globals();
 init_construction_enums();
-init_ioc_container();
+global.ioc_container = init_ioc_container();

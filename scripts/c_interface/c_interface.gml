@@ -1,13 +1,14 @@
 /// @descr Mock class 
-var method = argument[0];
-var this = (argument_count > 1) ? argument[1] : noone;
+var method = argument0;
+var this = argument1;
+var args = argument2;
 var here = c_interface;
 
 switch(method)
 {
 	case constructor:
-		this.name = argument[2];
-		this.methods = argument[3];
+		this.name = args[0];
+		this.methods = args[1];
 		if(!is_array(this.methods)) scr_panic("Interface must receive an array of named signatures.");
 		for(var n = 0; n < array_length_1d(this.methods); n++)
 		{
@@ -29,11 +30,10 @@ switch(method)
 			var method = this.methods[n];
 			destroy(method);
 		}
-		instance_destroy(this);
-		break;
+		return ok();
 		
 	case "destroy_to_mock":
-		var m = mock(this); // mock gets ownership
+		var m = mock(this); // mock gets ownership of the interface
 		return ok(m);
 	
 	case test:

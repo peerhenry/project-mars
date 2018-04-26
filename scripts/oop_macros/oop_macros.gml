@@ -7,3 +7,4 @@
 #macro get_dependencies "get_dependencies"
 #macro get_clients "get_clients"
 #macro get_parent "get_parent"
+#macro get_object_index "get_object_index"

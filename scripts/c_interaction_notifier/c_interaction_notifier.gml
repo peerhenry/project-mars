@@ -1,20 +1,19 @@
-var method = argument[0];
-var this = (argument_count > 1) ? argument[1] : noone;
-var here = c_interaction_notifier; // <=== CHANGE THIS
+var method = argument0;
+var this = argument1;
+var args = argument2;
+var here = c_interaction_notifier;
 
 switch(method)
 {
-	// params begin at argument[2]
 	case constructor: // can be remove if not needed
 		return this;
 
 	case destructor: 
-		instance_destroy(this);
-		break;
+		return ok();
 	
 	// methods
 	case "execute":
-		
+		resolve_execute(global.script_container, "alert_player", "execute interaction");
 		return ok();
 	
 	case test:

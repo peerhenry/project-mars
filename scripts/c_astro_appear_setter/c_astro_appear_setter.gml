@@ -1,13 +1,14 @@
 #region set here, method and this
 var here = c_astro_appear_setter;
-var method = argument[0];
-var this = (argument_count > 1) ? argument[1] : noone;
+var method = argument0;
+var this = argument1;
+var args = argument2;
 #endregion
 
-switch(argument[0])
+switch(method)
 {
 	case constructor:
-		this.navgrid = argument[2];
+		this.navgrid = args[0];
 		return this;
 	
 	// todo:
@@ -29,7 +30,7 @@ switch(argument[0])
 	
 	#region METHODS
 	case "disappear":
-		var astro = argument[2];
+		var astro = args[0];
 		call_unwrap(this.navgrid, "clear_astronaut", astro);
 		// scr_navgrid_clear_astronaut(astro); // TIGHT COUPLING
 		with(astro)
@@ -40,11 +41,11 @@ switch(argument[0])
 		return ok();
 
 	case "reappear":
-		var astro = argument[2];
+		var astro = args[0];
 		with(astro)
 		{
 			// todo: preserve inside/outside status
-			var spot_result = call(this.navgrid, "get_nearest_free_cell", occ_i, occ_j);
+			var spot_result = call(this.navgrid, "get_nearest_free_cell", [occ_i, occ_j]);
 			if(spot_result.status == STATUS.OK)
 			{
 				script_update = scr_astro_update;
@@ -56,7 +57,7 @@ switch(argument[0])
 				y = scr_gi_to_rc(occ_j);
 				encoded_ij = scr_encode_grid_coord(occ_i, occ_j);
 				destroy(spot);
-				call_unwrap(this.navgrid, "occupy", occ_i, occ_j);
+				call_unwrap(this.navgrid, "occupy", [occ_i, occ_j]);
 			}
 			else
 			{

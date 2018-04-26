@@ -1,8 +1,10 @@
 /// @descr Wrapper for method return values
 // Necessary for allowing inheritance and exception handling
-var method = argument[0];
-var this = (argument_count > 1) ? argument[1] : noone;
+var method = argument0;
+var this = argument1;
+var args = argument2;
 var here = c_result;
+var arg_count = array_length_1d(args);
 
 enum STATUS
 {
@@ -19,19 +21,18 @@ enum PROBLEM
 
 switch(method)
 {
-	// params begin at argument[2]
 	case constructor:
-		this.status = argument[2];
+		this.status = args[0];
+		this.refused_request = false;
 		switch(this.status)
 		{
 			case STATUS.OK:
-				if(argument_count == 4) this.value = argument[3];
+				if(arg_count == 2) this.value = args[1];
 				else this.value = noone;
-				this.refused_request = false;
 				break;
 			case STATUS.PROBLEM:
-				if(argument_count > 3) this.value = argument[3];
-				if(argument_count == 5) this.message = argument[4]; // 5 arguments: (method, this, status, problem, message)
+				if(arg_count > 1) this.value = args[1];
+				if(arg_count == 3) this.message = args[2]; // 3 arguments: (status, problem, message)
 				else this.message = "Unspecified";
 				this.refused_request = this.value == PROBLEM.REFUSED;
 				break;
@@ -52,11 +53,13 @@ switch(method)
 	
 	// Result needs its own destructor, otherwise destructor inheritance will cause infinite loop of result instances.
 	case destructor:
-		instance_destroy(this);
-		break;
+		return ok();
 	
 	case get_dependencies:
 		return ok(skip_standards());
+	
+	case get_object_index:
+		return ok(obj_result);
 	
 	case test:
 		test_method(here, "test_ok");

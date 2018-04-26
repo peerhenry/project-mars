@@ -1,37 +1,38 @@
 /// @descr Easy helper class to allow multiple return values
-var method = argument[0];
-var this = (argument_count > 1) ? argument[1] : noone;
+var method = argument0;
+var this = argument1;
+var args = argument2;
+var arg_count = array_length_1d(args);
 
 switch(method)
 {
 	case constructor:
-		switch(argument_count)
+		switch(arg_count)
 		{
-			case 9:
-				this.item6 = argument[8];
-			case 8:
-				this.item5 = argument[7];
 			case 7:
-				this.item4 = argument[6];
+				this.item6 = args[6];
 			case 6:
-				this.item3 = argument[5];
+				this.item5 = args[5];
 			case 5:
-				this.item2 = argument[4];
+				this.item4 = args[4];
 			case 4:
-				this.item1 = argument[3];
+				this.item3 = args[3];
 			case 3:
-				this.item0 = argument[2];
+				this.item2 = args[2];
+			case 2:
+				this.item1 = args[1];
+			case 1:
+				this.item0 = args[0];
 				break;
 			default:
-				show_error("invalid argument count: " + string(argument_count), true);
+				show_error("invalid argument count: " + string(arg_count), true);
 				break;
 		}
-		this.item_count = argument_count - 2;
+		this.item_count = arg_count;
 		return this;
 
 	case destructor:
-		instance_destroy(this);
-		break;
+		return ok();
 	
 	case get_dependencies:
 		return ok(skip_standards());

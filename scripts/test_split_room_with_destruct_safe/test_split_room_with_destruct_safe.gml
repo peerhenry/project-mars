@@ -22,7 +22,6 @@ with(obj_room)
 	room_count++;
 	var grid = scr_get_grid(id, macro_grid_oxygen);
 	assert_equal(obj_grid, grid.object_index, "grid.object_index");
-	show_debug_message("@@@ ROOM: " + string(id));
 }
 assert_equal(1, room_count, "room_count");
 assert_object_count(macro_grid_type_count, obj_grid);

@@ -1,6 +1,7 @@
 /// @descr base class for all classes
-var method = argument[0];
-var this = (argument_count > 1) ? argument[1] : noone;
+var method = argument0;
+var this = argument1;
+var args = argument2;
 
 switch(method)
 {
@@ -8,19 +9,22 @@ switch(method)
 		return this;
 
 	case destructor:
-		instance_destroy(this);
-		break;
+		return ok();
 	
 	case get_dependencies:
 		return ok(noone);
 	
 	case get_clients:
 		return ok(noone);
+		
+	case get_object_index:
+		return ok(obj_empty);
 	
 	case test:
-		scr_panic("Tests not implemented!");
+		//scr_panic("Tests not implemented!");
 		break;
 	
 	default:
-		scr_panic("Refused request: function not defined: " + method);
+		var msg = "Refused request: function not defined: " + method;
+		scr_panic(msg);
 }

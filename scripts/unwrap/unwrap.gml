@@ -2,5 +2,5 @@
 /// @arg result
 var result = argument0;
 var value = script_execute(result.class, "unwrap", result);
-destroy(result);
+instance_destroy(result);
 return value;

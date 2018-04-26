@@ -4,4 +4,4 @@
 var mocky = argument0;
 var method = argument1;
 var returny = argument2;
-call_unwrap(mocky, "setup_stub", method, returny);
+call_unwrap(mocky, "setup_stub", [method, returny]);

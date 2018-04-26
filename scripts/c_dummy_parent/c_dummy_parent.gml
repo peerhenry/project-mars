@@ -1,5 +1,6 @@
-var method = argument[0];
-var this = (argument_count > 1) ? argument[1] : noone;
+var method = argument0;
+var this = argument1;
+var args = argument2;
 
 switch(method)
 {
@@ -7,14 +8,13 @@ switch(method)
 		return this;
 
 	case "method1":
-		return ok(2*argument[2]);
+		return ok(2*args[0]);
 	
 	case "method2":
 		return ok(2);
 
 	case destructor:
-		instance_destroy(this);
-		break;
+		return ok();
 	
 	case test:
 		break;

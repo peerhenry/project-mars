@@ -1,13 +1,14 @@
 #region set here, method and this
 var here = c_atm_embarker;
-var method = argument[0];
-var this = (argument_count > 1) ? argument[1] : noone;
+var method = argument0;
+var this = argument1;
+var args = argument2;
 #endregion
 
 switch(method)
 {
 	case constructor:
-		this.appear_setter = argument[2];
+		this.appear_setter = args[0];
 		return this;
 	
 	case get_dependencies:
@@ -20,13 +21,13 @@ switch(method)
 		return ok(deps);
 	
 	case get_clients:
-		var client_array = [ tuple(c_interaction_factory, "embarker") ];
+		var client_array = [ tuple(c_interaction_factory, "embarker") ]; // this class serves interaction factory as embarker
 		return ok(client_array);
 	
 	#region METHODS
 	case "disembark":
-		var arg_atm = argument[2];
-		var arg_astronaut = argument[3];
+		var arg_atm = args[0];
+		var arg_astronaut = args[1];
 		var index = ds_list_find_index(arg_atm.embarked_astronauts, arg_astronaut);
 		if(index >= 0)
 		{
@@ -37,8 +38,8 @@ switch(method)
 		return exception("Astronaut was not in ATM.");
 
 	case "embark":
-		var arg_atm = argument[2];
-		var arg_astronaut = argument[3];
+		var arg_atm = args[0];
+		var arg_astronaut = args[1];
 		if(ds_list_size(arg_atm.embarked_astronauts) < arg_atm.capacity)
 		{
 			ds_list_add(arg_atm.embarked_astronauts, arg_astronaut);
@@ -63,9 +64,9 @@ switch(method)
 		var mock_setter = object.appear_setter;
 		var astro = instance_create_depth(0,0,0,obj_astronaut);
 		var atm = instance_create_depth(0,0,0,obj_atm_small);
-		call_unwrap(object, "embark", atm, astro);
+		call_unwrap(object, "embark", [atm, astro]);
 		// act
-		call_unwrap(object, "disembark", atm, astro);
+		call_unwrap(object, "disembark", [atm, astro]);
 		// assert
 		mock_verify(mock_setter, "reappear", Times.Once); // in mock_setter, verify that stub for "reappear" has been called once
 		// cleanup
@@ -82,7 +83,7 @@ switch(method)
 		var astro = instance_create_depth(0,0,0,obj_astronaut);
 		var atm = instance_create_depth(0,0,0,obj_atm_small);
 		// act
-		call_unwrap(object, "embark", atm, astro);
+		call_unwrap(object, "embark", [atm, astro]);
 		// assert
 		mock_verify(mock_setter, "disappear", Times.Once);
 		// cleanup
@@ -102,7 +103,7 @@ switch(method)
 		ds_list_add(atm.embarked_astronauts, 14);
 		ds_list_add(atm.embarked_astronauts, 15);
 		// act
-		var result = call(object, "embark", atm, astro);
+		var result = call(object, "embark", [atm, astro]);
 		// assert
 		mock_verify(mock_setter, "disappear", Times.Never);
 		assert_equal(STATUS.PROBLEM, result.status, "status");

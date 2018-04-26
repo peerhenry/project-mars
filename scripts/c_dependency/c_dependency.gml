@@ -1,17 +1,18 @@
 #region set method and this
-var method = argument[0];
-var this = (argument_count > 1) ? argument[1] : noone;
+var method = argument0;
+var this = argument1;
+var args = argument2;
+var here = c_dependency;
 #endregion
 
 switch(method)
 {
 	#region CONSTRUCTOR / DESTRUCTOR
 	
-	// params begin at argument[2]
 	case constructor:
-		this.name = argument[2];
-		this.type_info = argument[3];
-		this.optional = argument[4];
+		this.name = args[0];
+		this.type_info = args[1];
+		this.optional = args[2];
 		return this;
 	
 	case get_dependencies:
@@ -24,15 +25,15 @@ switch(method)
 		//return ok(skip_standards());
 	
 	case destructor:
-		destroy(this.type_info)
-		instance_destroy(this);
+		if(this.type_info != noone) destroy(this.type_info)
 		return ok();
 		
 	#endregion
 
 	#region METHODS
 	case "destroy_to_mock":
-		var result = call(this.type_info, "create_dummy");
+		var result = void(this.type_info, "create_mock"); // mock_val gets ownership of type_info
+		this.type_info = noone;
 		destroy(this);
 		return result;
 	#endregion
@@ -40,6 +41,7 @@ switch(method)
 	#region UNIT TESTS
 	
 	case test:
+		test_nyi(here);
 		break;
 		
 	#endregion

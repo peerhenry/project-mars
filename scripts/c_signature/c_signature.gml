@@ -1,5 +1,6 @@
-var method = argument[0];
-var this = (argument_count > 1) ? argument[1] : noone;
+var method = argument0;
+var this = argument1;
+var args = argument2;
 var here = c_signature;
 
 switch(method)
@@ -7,9 +8,9 @@ switch(method)
 	#region con/des
 	
 	case constructor:
-		this.name = argument[2];
-		this.return_type = argument[3];
-		var argument_types = argument[4];	// array of types
+		this.name = args[0];
+		this.return_type = args[1];
+		var argument_types = args[2];	// array of types
 		if(!is_array(argument_types)) argument_types = [argument_types];
 		this.argument_types = argument_types;
 		return this;
@@ -22,8 +23,7 @@ switch(method)
 			destroy(next_type);
 		}
 		destroy(this.return_type);
-		instance_destroy(this);
-		break;
+		return ok();
 	
 	case get_dependencies:
 		var deps = new(c_dependencies, [
@@ -33,12 +33,15 @@ switch(method)
 		]);
 		return ok(deps);
 	
+	case get_object_index:
+		return ok(obj_signature);
+	
 	#endregion
 
 	#region assert_arguments
 	// assert if arguments comply with types in signature
 	case "assert_arguments":
-		var arguments = argument[2];
+		var arguments = args;
 		assert_equal(array_length_1d(this.argument_types), array_length_1d(arguments), "arguments")
 		for(var n = 0; n < array_length_1d(arguments); n++)
 		{
@@ -58,7 +61,7 @@ switch(method)
 		for(var n = 0; n < array_length_1d(this.argument_types); n++)
 		{
 			var next_type = this.argument_types[n]
-			var dummy = call_unwrap(next_type, "create_dummy");
+			var dummy = void_unwrap(next_type, "create_dummy");
 			array[n] = dummy;
 		}
 		return ok(array);
@@ -98,5 +101,5 @@ switch(method)
 	#endregion TESTS
 	
 	default:
-		scr_panic("Refused request: function not defined");
+		scr_panic("Refused request: function not defined: " + method);
 }

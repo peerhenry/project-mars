@@ -1,11 +1,13 @@
-var method = argument[0];
-var this = (argument_count > 1) ? argument[1] : noone;
+var method = argument0;
+var this = argument1;
+var args = argument2;
 var here = c_type_info;
 
 #region TYPES
 enum TYPE {
 	VOID,
 	NUMBER,
+	INTEGER,	// extra check: floor(value) == value
 	STRING,
 	ARRAY,
 	// the rest are numbers with interpretation
@@ -20,27 +22,28 @@ enum TYPE {
 
 switch(method)
 {
-	#region constructor
+	#region constructor / destructor
 	
 	case constructor: // can be remove if not needed
-		var type = argument[2];
-		if(type == TYPE.OBJECT) this.object_type = argument[3];
-		else if(argument_count > 3) scr_panic("type info cant handle this many params");
+		var type = args[0];
+		if(type == TYPE.OBJECT) this.object_type = args[1];
 		this.type = type;
 		return this;
+	
+	case get_object_index:
+		return ok(obj_type_info);
 	
 	case get_dependencies:
 		return ok(skip_standards());
 	
 	case destructor: 
-		instance_destroy(this);
-		break;
+		return ok();
 		
 	#endregion
 
 	#region assert_type
 	case "assert_type":
-		var value = argument[2];
+		var value = args[0];
 		switch(this.type)
 		{
 			case TYPE.VOID:
@@ -48,6 +51,10 @@ switch(method)
 				break;
 			case TYPE.NUMBER:
 				assert_equal("number", typeof(value), "typeof(arg)");
+				break;
+			case TYPE.INTEGER:
+				var pass = assert_equal("number", typeof(value), "typeof(arg)");
+				if(pass) assert_equal(floor(value), value, "floor(value)");
 				break;
 			case TYPE.STRING:
 				assert_equal("string", typeof(value), "typeof(arg)");
@@ -85,7 +92,7 @@ switch(method)
 		return ok();
 	#endregion
 
-	#region create_dummy
+	#region create_mock
 	case "create_dummy":
 		var dummy;
 		switch(this.type)
@@ -121,6 +128,11 @@ switch(method)
 			// todo: add grid, queue, priority	
 		}
 		return ok(dummy);
+	
+	case "create_mock":
+		var val = void_unwrap(this, "create_dummy");
+		var mocky = new(c_mock_val, [this, val]);
+		return ok(mocky);
 	#endregion
 	
 	#region test

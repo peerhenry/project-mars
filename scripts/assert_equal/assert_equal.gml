@@ -14,3 +14,4 @@ if(!equal)
 	var assertion_list = global.assertion_map[? global.current_test];
 	ds_list_add(assertion_list, message);
 }
+return equal;

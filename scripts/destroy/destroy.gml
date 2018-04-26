@@ -1,10 +1,17 @@
 var instance = argument[0];
-var class = argument_count == 2 ? argument[1] : instance.class;
-var result = script_execute(class, destructor, instance);
-if(instance_exists(result)) // if a result is returned, it means refused request, so try parent
+var class = argument_count == 2 ? argument[1] : instance.class; // this is used for calling parent destructor
+
+var result = scr_call_destructor(class, instance);
+while(result.refused_request && class != c_object)
 {
-	destroy(result);
-	var parent = get_parent_class(class);
-	if(!is_undefined(parent)) result = destroy(instance, parent);
+	instance_destroy(result);
+	class = cs_get_parent_class(class);
+	result = scr_call_destructor(class, instance);
 }
-if(instance_exists(result)) scr_panic("Destroying " + script_get_name(instance.class) + " does not work!");
+if(result.refused_request) scr_panic("Destroying " + script_get_name(instance.class) + " does not work!");
+instance_destroy(result);
+instance_destroy(instance);
+
+// WARNING!
+// Leave instance_destroy on result here
+// Do not replace with destroy, that will cause an infinite loop

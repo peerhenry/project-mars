@@ -1,3 +1,4 @@
+/// @arg assignable
 var arg_assignable = argument0;
 var orders_given = false;
 
@@ -22,11 +23,6 @@ with(obj_task_actor)
 if(assigned_actor != noone)
 {
 	orders_given = scr_assign(arg_assignable, assigned_actor); // todo: set end path action
-	
-	if(scr_instance_inherits(arg_assignable, obj_atm))
-	{
-		assigned_actor.end_path_action = new(arg_assignable.interaction, assigned_actor, arg_assignable);
-	}
 	
 	// Cancel construction
 	if(orders_given)

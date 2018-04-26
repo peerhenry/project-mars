@@ -1,3 +1,4 @@
+/// @descr same as map_method without putting return values into a collection
 /// @arg collection
 /// @arg instance
 /// @arg method

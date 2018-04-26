@@ -1,6 +1,7 @@
 /// @descr Mock class 
-var method = argument[0];
-var this = (argument_count > 1) ? argument[1] : noone;
+var method = argument0;
+var this = argument1;
+var args = argument2;
 var here = c_mock;
 
 enum Times
@@ -14,7 +15,7 @@ switch(method)
 {
 	#region construct/destruct
 	case constructor:
-		this.interface = argument[2];
+		this.interface = args[0];
 		this.return_map = ds_map_create();
 		this.call_count_map = ds_map_create();
 		this.argument_map = ds_map_create();
@@ -35,16 +36,23 @@ switch(method)
 		ds_map_destroy(this.call_count_map);
 		ds_map_destroy(this.argument_map);
 		destroy(this.interface);
-		instance_destroy(this);
-		break;
+		return ok();
+	
+	case get_object_index:
+		return ok(obj_empty);
 	#endregion
+	
+	#region METHODS
+	
+	case "get_value":
+		return ok(this);
 
 	#region setup_stub
 	// Use setup to specify return values for stubs
 	// The testing client is responsible for cleaning up any data structures it contains.
 	case "setup_stub": // (method, return value) => result
-		var stub = argument[2];
-		var return_result = argument[3];
+		var stub = args[0];
+		var return_result = args[1];
 		if(return_result.object_index != obj_result) scr_panic("Cannot setup a method with an unwrapped result");
 		this.return_map[? stub] = return_result;
 		var existing = this.call_count_map[?stub];
@@ -53,17 +61,17 @@ switch(method)
 		return ok();
 	
 	case "setup_stub_unwrapped":
-		var stub = argument[2];
-		var return_val = argument[3];
-		call_unwrap(this, "setup_stub", stub, ok(return_val));
+		var stub = args[0];
+		var return_val = args[1];
+		call_unwrap(this, "setup_stub", [stub, ok(return_val)]);
 		return ok();
 	
 	#endregion
 	
 	#region call_stub
 	case "call_stub":
-		var sig = argument[2];
-		var args = argument[3];
+		var sig = args[0];
+		var args = args[1];
 		var stub = sig.name;
 		// if stub has signature, assert arguments are of correct type
 		if(!is_undefined(sig)) call_unwrap(sig, "assert_arguments", args);
@@ -83,8 +91,8 @@ switch(method)
 	#region verify
 	
 	case "verify":
-		var stub = argument[2];
-		var verification = argument[3];
+		var stub = args[0];
+		var verification = args[1];
 		var call_count = this.call_count_map[? stub]
 		switch(verification)
 		{
@@ -101,12 +109,14 @@ switch(method)
 		return ok();
 		
 	case "verify_last_call_arguments":
-		var stub = argument[2];
-		var arguments = argument[3];
+		var stub = args[0];
+		var arguments = args[1];
 		var last_arguments = this.argument_map[?stub];
 		if(is_undefined(last_arguments)) fail("No arguments stored in mock for method: " + stub);
 		else assert_arrays_are_equal(arguments, last_arguments);
 		return ok();
+	
+	#endregion
 	
 	#endregion
 	
@@ -139,19 +149,11 @@ switch(method)
 	#endregion
 	
 	default:
-		#region put arguments in an array;
-		var args = [];
-		for(var n = 2; n < argument_count; n++)
-		{
-			var next_arg = argument[n];
-			args[n-2] = next_arg;
-		}
-		#endregion
 		var sigs = this.interface.methods;
 		for(var n = 0; n < array_length_1d(sigs); n++)
 		{
 			var sig = sigs[n];
-			if(sig.name == method) return call(this, "call_stub", sig, args);
+			if(sig.name == method) return call(this, "call_stub", [sig, args]);
 		}
 		return refused();
 }

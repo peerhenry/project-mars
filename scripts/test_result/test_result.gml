@@ -3,6 +3,7 @@
 var pass = global.current_test_pass;
 
 #region check for trailing instances
+void_unwrap(global.ioc_container, "clear_resolvings"); // everything that was resolved will be destroyed;
 var counter = 0;
 with(all) counter++;
 var known_instance_count = 2; //obj_tests and obj_persistent_listener
@@ -41,6 +42,8 @@ if(counter > expected_instance_count)
 	}
 }
 #endregion
+
+if(!ds_exists(global.failed_test_list, ds_type_list)) scr_panic("global.failed_test_list does not exist anymore!"); // DEBUG
 
 if(pass)
 {

@@ -1,4 +1,4 @@
-/// @descr call a method in each element of the collection
+/// @descr call a parameterless method in each element of the collection and aggregate teh results
 /// @arg collection
 /// @arg method
 var collection = argument0;
@@ -10,7 +10,7 @@ if(is_array(collection))
 	for(var n = 0; n < array_length_1d(collection); n++)
 	{
 		var elem = collection[n];
-		var mapped = call_unwrap(elem, method);
+		var mapped = void_unwrap(elem, method);
 		output[n] = mapped;
 	}
 	return output;
@@ -21,7 +21,7 @@ else if(ds_exists(collection, ds_type_list))
 	for(var n = 0; n < ds_list_size(collection); n++)
 	{
 		var elem = collection[|n];
-		var mapped = call_unwrap(elem, method);
+		var mapped = void_unwrap(elem, method);
 		ds_list_add(output, mapped);
 	}
 	return output;

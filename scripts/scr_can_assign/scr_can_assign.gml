@@ -9,7 +9,7 @@ if(arg_assignable == noone || arg_assignable.owner != arg_actor.owner || arg_ass
 if(scr_instance_inherits(arg_assignable, obj_atm))
 {
 	if(!scr_instance_inherits(arg_actor, obj_astronaut)) return false;
-	return !arg_assignable.is_full;
+	return ds_list_size(arg_assignable.embarked_astronauts) < arg_assignable.capacity;
 }
 
 switch(arg_assignable.object_index)

@@ -1,6 +1,7 @@
 scr_trace("movable create event");
 script_container = global.script_container;
 ioc_container = global.ioc_container;
+if(!instance_exists(ioc_container)) scr_panic("ioc container does not exist!");
 name = "movable";
 // movement and drawing
 path = noone;

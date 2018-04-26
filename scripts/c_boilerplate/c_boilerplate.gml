@@ -1,10 +1,10 @@
-var method = argument[0];
-var this = (argument_count > 1) ? argument[1] : noone;
+var method = argument0;
+var this = argument1;
+var args = argument2;
 var here = c_boilerplate; // <=== CHANGE THIS
 
 switch(method)
 {
-	// params begin at argument[2]
 	case constructor: // can be remove if not needed
 		return this;
 
@@ -12,8 +12,7 @@ switch(method)
 		return ok(noone);	// return new(c_dependencies, []);
 
 	case destructor: 
-		instance_destroy(this);
-		break;
+		return ok();
 	
 	// methods
 	

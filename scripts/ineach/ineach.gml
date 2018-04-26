@@ -3,8 +3,9 @@
 /// @arg method
 var array = argument0;
 var method = argument1;
+var args = argument2;
 for(var n = 0; n < array_length_1d(array); n++)
 {
 	var elem = array[n];
-	call_unwrap(elem, method);
+	call_unwrap(elem, method, args);
 }

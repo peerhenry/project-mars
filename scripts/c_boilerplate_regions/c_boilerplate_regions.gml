@@ -1,13 +1,14 @@
 #region set method and this
-var method = argument[0];
-var this = (argument_count > 1) ? argument[1] : noone;
+var method = argument0;
+var this = argument1;
+var args = argument2;
+var here = c_boilerplate; // <=== CHANGE THIS
 #endregion
 
 switch(method)
 {
 	#region CONSTRUCTOR / DESTRUCTOR
 	
-	// params begin at argument[2]
 	case constructor:
 		return this;
 	
@@ -18,13 +19,14 @@ switch(method)
 		return ok(noone);
 	
 	case destructor:
-		instance_destroy(this);
 		return ok();
 		
 	#endregion
 
 	#region METHODS
-	// params begin at argument[2]
+	
+	
+	
 	#endregion
 	
 	#region UNIT TESTS

@@ -11,9 +11,8 @@ var factory_result = call(ioc_container, "resolve", "interaction_factory");
 if(factory_result.status == STATUS.OK)
 {
 	var factory = unwrap(factory_result);
-	var interaction = call_unwrap(factory, "create_interaction", arg_assignable, arg_astronaut);
-	arg_astronaut.end_path_action = interaction;
-	call_unwrap(ioc_container, "clear_resolvings"); // everything that was resolved will be destroyed;
+	var interaction = call_unwrap(factory, "create_interaction", [arg_assignable, arg_astronaut]);
+	in(f_astro, "set_end_path_action", arg_astronaut, interaction);
 }
 else
 {

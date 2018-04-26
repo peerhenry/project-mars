@@ -44,8 +44,6 @@ if(construction[macro_dragging] == dragging.rectangular)
 	}
 	#endregion: set rectangle loop variables
 	
-	show_debug_message("now going to update ghost tiles from dragging, starting at i,j: " + string(i_left) + ", " + string(j_top));
-	show_debug_message("going to: " + string(i_right) + ", " + string(j_bottom))
 	for(var ni = i_left; ni <= i_right; ni++)
 	{
 		for(var nj = j_top; nj <= j_bottom; nj++)
