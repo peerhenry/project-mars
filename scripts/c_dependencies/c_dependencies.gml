@@ -17,6 +17,9 @@ switch(method)
 		destroy_collection(this.list);
 		instance_destroy(this);
 		return ok();
+	
+	case get_dependencies:
+		return ok(skip_standards());
 		
 	#endregion
 

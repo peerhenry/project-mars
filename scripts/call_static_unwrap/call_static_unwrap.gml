@@ -4,13 +4,6 @@
 var script = argument[0];
 var method = argument[1];
 
-if(debug_mode)
-{
-	if(!script_exists(script)) scr_panic("call error: argument was not a script");
-	if(typeof(method) != "string") scr_panic("call error: method name was not of type string");
-	// show_debug_message("calling: " + script_get_name(script) + " method: " + method);
-}
-
 var result = noone;
 
 switch(argument_count)
@@ -63,4 +56,6 @@ if(
 	&& result.class != c_result
 ) scr_panic("Class method return type was not result: class: " + script_get_name(script) + " method: " + method);
 
-return result;
+var value = script_execute(result.class, "unwrap", result);
+destroy(result);
+return value;

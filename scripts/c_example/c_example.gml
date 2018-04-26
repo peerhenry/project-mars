@@ -31,7 +31,10 @@ switch(method)
 	// 1. That the client calls its dependencies correctly (by using mock)
 	// 2. That another class is able to serve this one.
 	case get_dependencies:
-		break;
+		return ok(noone);
+		
+	case get_clients:
+		return ok(noone);
 	
 	// call this usign 'test(c_example)'
 	// all object unit tests should be called from here

@@ -25,6 +25,14 @@ switch(method)
 		instance_destroy(this);
 		break;
 	
+	case get_dependencies:
+		var deps = new(c_dependencies, [
+			dependency("name", t_string()),
+			dependency("return_type", t_object(obj_type_info)),
+			dependency("argument_types", t_array())
+		]);
+		return ok(deps);
+	
 	#endregion
 
 	#region assert_arguments
@@ -55,8 +63,6 @@ switch(method)
 		}
 		return ok(array);
 	#endregion
-
-
 	
 	#region TESTS
 	case test:

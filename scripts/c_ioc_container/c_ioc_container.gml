@@ -76,7 +76,7 @@ switch method
 				instance = new(class, resolved_deps[0], resolved_deps[1], resolved_deps[2]);
 				break;
 			case 4:
-				instance = new(class, resolved_deps[0], resolved_deps[1], resolved_deps[2]);
+				instance = new(class, resolved_deps[0], resolved_deps[1], resolved_deps[2], resolved_deps[3]);
 				break;
 			default:
 				scr_panic("Too many injections in resolve for " + script_get_name(class));
@@ -93,7 +93,7 @@ switch method
 		var instance = this.instances[? class];
 		if(!is_undefined(instance)) return ok(instance);
 		// Check if there are dependencies
-		var deps = in(class, get_dependencies);
+		var deps = call_static_unwrap(class, get_dependencies);
 		var has_dependencies = deps != noone;
 		if(!has_dependencies)
 		{

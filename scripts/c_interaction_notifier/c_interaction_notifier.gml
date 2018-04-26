@@ -8,9 +8,6 @@ switch(method)
 	case constructor: // can be remove if not needed
 		return this;
 
-	case get_dependencies:
-		return new(c_dependencies, []);
-
 	case destructor: 
 		instance_destroy(this);
 		break;

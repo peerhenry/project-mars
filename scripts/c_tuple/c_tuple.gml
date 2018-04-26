@@ -24,6 +24,7 @@ switch(method)
 				break;
 			default:
 				show_error("invalid argument count: " + string(argument_count), true);
+				break;
 		}
 		this.item_count = argument_count - 2;
 		return this;
@@ -31,6 +32,9 @@ switch(method)
 	case destructor:
 		instance_destroy(this);
 		break;
+	
+	case get_dependencies:
+		return ok(skip_standards());
 	
 	case test:
 		test_init("test tuple");
@@ -44,5 +48,5 @@ switch(method)
 		break;
 	
 	default:
-		refused();
+		return refused();
 }

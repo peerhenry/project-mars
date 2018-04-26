@@ -13,9 +13,9 @@ switch(method)
 	case destructor: 
 		instance_destroy(this);
 		break;
-	
-	case get_dependencies:
-		return noone;
+		
+	case get_clients:
+		return [ tuple(c_astro_appear_setter, "navgrid") ];
 
 	case "clear_astronaut":
 		var astro = argument[2];

@@ -9,7 +9,7 @@ switch(method)
 		return this;
 
 	case get_dependencies:
-		return noone;	// return new(c_dependencies, []);
+		return ok(noone);	// return ok(new(c_dependencies, []));
 
 	case destructor: 
 		instance_destroy(this);

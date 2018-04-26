@@ -9,15 +9,15 @@ switch(method)
 		this.name = argument[2];
 		this.value = argument[3];
 		return this;
+	
+	case get_dependencies:
+		return ok(skip_standards());
 
 	case "get_name":
 		return ok(this.name);
 	
 	case "get_value":
 		return ok(this.value);
-	
-	case get_dependencies:
-		return noone;
 
 	case destructor: 
 		instance_destroy(this);

@@ -8,7 +8,6 @@ var class = argument[0];
 var obj_index = argument[1];
 var this = instance_create_depth(0, 0, 0, obj_index);
 this.class = class;
-inherits(class, c_object); // default inherit object
 var realthis = noone;
 switch(argument_count)
 {

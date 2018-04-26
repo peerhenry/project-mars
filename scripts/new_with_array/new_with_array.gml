@@ -7,8 +7,6 @@ var arguments = argument[1];
 
 var this = instance_create_depth(0, 0, 0, obj_empty);
 this.class = class;
-// this.dependencies = ds_map_create(); // FUDGE! todo: this needs to always be cleaned up in the destructor, or just not be here
-inherits(class, c_object); // default inherit object
 
 switch(array_length_1d(arguments))
 {

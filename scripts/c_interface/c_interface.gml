@@ -15,6 +15,13 @@ switch(method)
 			if(next.class != c_signature) scr_panic("Cannot make interface: elements must be signatures.");
 		}
 		return this;
+	
+	case get_dependencies:
+		var deps = new(c_dependencies, [
+			dependency("name", t_string()),
+			dependency("name", t_array()),
+		]);
+		return ok(deps);
 
 	case destructor:
 		for(var n = 0; n < array_length_1d(this.methods); n++)
@@ -36,7 +43,7 @@ switch(method)
 	case "constructor_test_one_method":
 		// arrange
 		// act
-		var interf = new_interface("shit", [
+		var interf = new_interface("dummy", [
 			signature("foo", t_number(), t_string()),
 			signature("bar", t_void(), [t_number(), t_number()])
 		]);

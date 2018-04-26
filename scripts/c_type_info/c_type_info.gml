@@ -28,7 +28,10 @@ switch(method)
 		else if(argument_count > 3) scr_panic("type info cant handle this many params");
 		this.type = type;
 		return this;
-		
+	
+	case get_dependencies:
+		return ok(skip_standards());
+	
 	case destructor: 
 		instance_destroy(this);
 		break;

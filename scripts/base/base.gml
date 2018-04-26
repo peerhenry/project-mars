@@ -5,7 +5,7 @@ if(argument_count < 2) scr_panic("call must be supplied with at least an instanc
 var instance = argument[0];
 var method = argument[1];
 var result = noone;
-var parent_class = get_parent(instance.class);
+var parent_class = get_parent_class(instance.class);
 switch(argument_count)
 {
 	case 2:

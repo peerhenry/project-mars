@@ -18,10 +18,10 @@ switch(method)
 		var deps = new(c_dependencies, [
 			dependency("name", t_string()),
 			dependency("type_info", t_object(obj_type_info)),
-			dependency("optional", t_number()), // boolean
-			optional_dependency("interface", t_object(obj_interface))
+			dependency("optional", t_number())
 		]);
-		return deps;
+		return ok(deps);
+		//return ok(skip_standards());
 	
 	case destructor:
 		destroy(this.type_info)

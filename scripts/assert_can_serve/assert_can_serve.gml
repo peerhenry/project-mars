@@ -9,7 +9,7 @@ var arg_dependency_name = argument2;
 var class_name = script_get_name(arg_instance.class);
 var client_class_name = script_get_name(arg_client);
 
-var deps = in(arg_client, get_dependencies, arg_dependency_name);
+var deps = call_static_unwrap(arg_client, get_dependencies, arg_dependency_name);
 var intf = call_unwrap(deps, "extract_interface", arg_dependency_name);
 destroy(deps);
 var methods = intf.methods;

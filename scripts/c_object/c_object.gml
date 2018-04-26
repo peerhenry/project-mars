@@ -12,7 +12,10 @@ switch(method)
 		break;
 	
 	case get_dependencies:
-		return noone;
+		return ok(noone);
+	
+	case get_clients:
+		return ok(noone);
 	
 	case test:
 		scr_panic("Tests not implemented!");

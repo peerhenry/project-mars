@@ -5,9 +5,7 @@ if(argument_count < 2) scr_panic("call must be supplied with at least an instanc
 var instance = argument[0];
 var method = argument[1];
 
-if(!instance_exists(instance)) scr_panic("call error: invalid instance");
-if(!script_exists(instance.class)) scr_panic("call error: instance has no class");
-if(typeof(method) != "string") scr_panic("call error: method name was not of type string");
+if(!instance_exists(instance)) scr_panic("call error: instance does not exist");
 
 var result = noone;
 

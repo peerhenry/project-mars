@@ -33,7 +33,7 @@ switch(method)
 			dependency("atm", t_object(obj_atm)),
 			dependency("astronaut", t_object(obj_astronaut))
 		]);
-		return deps;
+		return ok(deps);
 
 	case "execute":
 		var result = call(this.embarker, "embark", this.atm, this.astronaut);

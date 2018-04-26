@@ -27,6 +27,9 @@ switch(method)
 		}
 		return this;
 	
+	case get_dependencies:
+		return ok(skip_standards());
+	
 	case destructor:
 		ds_map_destroy(this.return_map);
 		ds_map_destroy(this.call_count_map);

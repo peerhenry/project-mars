@@ -1,8 +1,11 @@
 /// @arg class
 var class = argument0;
+
+var deps = call_static_unwrap(class, get_dependencies);
+if(variable_instance_exists(deps, "skip_class_standards") && deps.skip_class_standards) exit;
+
 test_init("Testing class standards for: " + script_get_name(class));
 
-var deps = in(class, get_dependencies);
 assert_true(deps == noone || deps.class = c_dependencies, "get_dependencies returns valid result");
 if(deps != noone) destroy(deps);
 

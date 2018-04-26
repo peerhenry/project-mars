@@ -11,7 +11,7 @@ switch(method)
 		return this;
 
 	case get_dependencies:
-		return new(c_dependencies, [
+		var deps = new(c_dependencies, [
 			new_interface( "embarker", [
 				signature( "embark", t_void(), [ t_object(obj_atm), t_object(obj_astronaut) ] )
 			]),
@@ -19,6 +19,10 @@ switch(method)
 				signature( "notify_player", t_void(), t_string() )
 			]),
 		]);
+		return ok(deps);
+	
+	case get_clients:
+		return ok(noone);
 
 	case destructor: 
 		instance_destroy(this);

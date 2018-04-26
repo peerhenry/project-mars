@@ -21,7 +21,11 @@ switch(argument[0])
 				signature( "occupy", t_void(), [t_number(), t_number()] )
 			])
 		]);
-		return deps;
+		return ok(deps);
+		
+	case get_clients:
+		var clients = [tuple(c_atm_embarker, "embarker")];
+		return clients;
 	
 	#region METHODS
 	case "disappear":

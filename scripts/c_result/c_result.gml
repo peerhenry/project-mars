@@ -12,9 +12,9 @@ enum STATUS
 
 enum PROBLEM
 {
-	REFUSED,
-	EXCEPTION,
-	ERROR
+	REFUSED = -1,
+	EXCEPTION = 0,
+	ERROR = 1
 }
 
 switch(method)
@@ -27,11 +27,13 @@ switch(method)
 			case STATUS.OK:
 				if(argument_count == 4) this.value = argument[3];
 				else this.value = noone;
+				this.refused_request = false;
 				break;
 			case STATUS.PROBLEM:
 				if(argument_count > 3) this.value = argument[3];
 				if(argument_count == 5) this.message = argument[4]; // 5 arguments: (method, this, status, problem, message)
 				else this.message = "Unspecified";
+				this.refused_request = this.value == PROBLEM.REFUSED;
 				break;
 		}
 		return this;
@@ -52,6 +54,9 @@ switch(method)
 	case destructor:
 		instance_destroy(this);
 		break;
+	
+	case get_dependencies:
+		return ok(skip_standards());
 	
 	case test:
 		test_method(here, "test_ok");

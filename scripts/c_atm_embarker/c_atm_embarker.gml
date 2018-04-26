@@ -11,12 +11,17 @@ switch(method)
 		return this;
 	
 	case get_dependencies:
-		return new(c_dependencies, [
+		var deps = new(c_dependencies, [
 			new_interface("appear_setter", [
 				signature("disappear", t_void(), t_object(obj_astronaut)),
 				signature("reappear", t_void(), t_object(obj_astronaut))
 			])
 		]);
+		return ok(deps);
+	
+	case get_clients:
+		var client_array = [ tuple(c_interaction_factory, "embarker") ];
+		return ok(client_array);
 	
 	#region METHODS
 	case "disembark":

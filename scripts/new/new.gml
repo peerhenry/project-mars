@@ -5,10 +5,7 @@ if(argument_count == 0) scr_panic("new must be called with at least the class de
 var class = argument[0];
 var this = instance_create_depth(0, 0, 0, obj_empty);
 this.class = class;
-if(class != c_object) inherits(class, c_object); // default inherit object
-
 var realthis = noone;
-
 switch(argument_count)
 {
 	case 1:

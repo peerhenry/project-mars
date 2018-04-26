@@ -4,7 +4,7 @@ var result = script_execute(class, destructor, instance);
 if(instance_exists(result)) // if a result is returned, it means refused request, so try parent
 {
 	destroy(result);
-	var parent = get_parent(class);
+	var parent = get_parent_class(class);
 	if(!is_undefined(parent)) result = destroy(instance, parent);
 }
 if(instance_exists(result)) scr_panic("Destroying " + script_get_name(instance.class) + " does not work!");
