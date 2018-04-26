@@ -2,7 +2,11 @@
 var class = argument0;
 
 var deps = call_static_unwrap(class, get_dependencies);
-if(variable_instance_exists(deps, "skip_class_standards") && deps.skip_class_standards) exit;
+if(variable_instance_exists(deps, "skip_class_standards") && deps.skip_class_standards)
+{
+	destroy(deps);
+	exit;
+}
 
 test_init("Testing class standards for: " + script_get_name(class));
 

@@ -10,6 +10,9 @@ switch(method)
 		this.drain_per_step = argument[2];
 		return this;
 
+	case get_dependencies:
+		return ok_deps([dependency("drain_per_step", t_number())]);
+
 	// UNIT TESTS
 	case test:
 		test_method(here, "test_constructor");

@@ -12063,6 +12063,14 @@
             }
         },
         {
+            "Key": "d7727bfa-df57-42b4-97f5-25c3d2489834",
+            "Value": {
+                "id": "77854b7d-7567-4b01-8985-556c185112c0",
+                "resourcePath": "scripts\\ok_deps\\ok_deps.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "d7dcfc03-f6de-4eec-9d20-c42da4058e9a",
             "Value": {
                 "id": "0efd6f79-e925-42fc-bdf2-195cc86bdc6c",
@@ -14841,6 +14849,7 @@
         "efc5bfcb-2140-44f0-9027-b6be8b597f25",
         "94198618-7050-4091-80a5-3376ab7f00f8",
         "e38dca6e-8952-4ceb-bbe1-734299fc7d01",
+        "d7727bfa-df57-42b4-97f5-25c3d2489834",
         "3a793e75-7c3b-48f9-a932-a4728975c85e",
         "3686eb71-e0c4-43f6-8786-8987fe9ffeba",
         "c5aa605f-4f82-42b0-8cbe-13bfd0ca1bd7",
