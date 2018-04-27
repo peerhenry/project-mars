@@ -6,18 +6,14 @@ var here = c_interaction_factory;
 switch(method)
 {
 	case constructor: // can be remove if not needed
-		this.embarker = args[0];	// borrowed
-		this.notifier = args[1];	// borrowed
+		this.notifier = args[0];	// borrowed
 		return this;
 
 	case get_dependencies:
 		var deps = new(c_dependencies, [
-			new_interface( "embarker", [
-				signature( "embark", t_void(), [ t_object(obj_atm), t_object(obj_astronaut) ] )
-			]),
 			new_interface( "notifier", [
 				signature( "notify_player", t_void(), t_string() )
-			]),
+			])
 		]);
 		return ok(deps);
 	
@@ -35,10 +31,10 @@ switch(method)
 		switch(interactable.object_index)
 		{
 			case obj_atm_small:
-				interaction = new(c_interaction_atm, [this.embarker, this.notifier, interactable, actor]);
-				break;
 			case obj_bed:
 			case obj_med_bed:
+				interaction = new(c_interaction_embarkable, [interactable, actor]);
+				break;
 			case obj_suit_closet:
 			case obj_hydroponics:
 			case obj_printer:
@@ -64,11 +60,9 @@ switch(method)
 		// act
 		var action = call_unwrap(testable, "create_interaction", [atm, astro]);
 		// assert
-		assert_equal(c_interaction_atm, action.class, "interaction class");
-		assert_equal(tup.item1[0], action.embarker, "interaction embarker");
-		assert_equal(tup.item1[1], action.notifier, "interaction norifier");
+		assert_equal(c_interaction_embarkable, action.class, "interaction class");
 		assert_equal(astro, action.astronaut, "interaction astro");
-		assert_equal(atm, action.atm, "interaction atm");
+		assert_equal(atm, action.embarkable, "interaction embarkable");
 		// cleanup
 		destroy(action);
 		instance_destroy(astro);

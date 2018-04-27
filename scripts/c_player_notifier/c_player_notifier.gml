@@ -11,6 +11,10 @@ switch(method)
 	case get_dependencies:
 		return ok(noone);	// return ok(new(c_dependencies, []));
 	
+	case get_clients:
+		var clients = [];
+		return ok(clients);
+	
 	// methods
 	case "notify_player":
 		var msg = args[0];

@@ -32,6 +32,9 @@ switch(method)
 			dependency("argument_types", t_array())
 		]);
 		return ok(deps);
+		
+	case get_clients:
+		return ok(noone); // todo: serves mock, but not through constructor
 	
 	case get_object_index:
 		return ok(obj_signature);
@@ -47,8 +50,6 @@ switch(method)
 		{
 			var arg = arguments[n];
 			var exp_type = this.argument_types[n];
-			// show_debug_message("Checking type for: " + string(arg)); // DEBUG
-			// show_debug_message("exp_type.type: " + string(exp_type.type)); // DEBUG
 			call_unwrap(exp_type, "assert_type", arg);
 		}
 		return ok();
@@ -56,14 +57,8 @@ switch(method)
 	
 	#region get_dummy_arguments
 	// Gets dummy arguments for signature
-	case "get_dummy_arguments":
-		var array = [];
-		for(var n = 0; n < array_length_1d(this.argument_types); n++)
-		{
-			var next_type = this.argument_types[n]
-			var dummy = void_unwrap(next_type, "create_dummy");
-			array[n] = dummy;
-		}
+	case "get_mocks":
+		var array = morph(this.argument_types, "create_mock");
 		return ok(array);
 	#endregion
 	

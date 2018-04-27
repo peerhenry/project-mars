@@ -43,7 +43,22 @@ switch(method)
 	#region UNIT TESTS
 	
 	case test:
-		test_nyi(here);
+		test_method(here, "tc");
+		break;
+	
+	case "tc":
+		// arrange
+		var intf = new_interface("hi", []);
+		var ti = new(c_dependencies, [intf]);
+		assert_true(ds_list_find_index(ti.list, intf) > -1, "interface is in list");
+		// act
+		var res_int = call_unwrap(ti, "extract_interface", "hi");
+		// assert
+		assert_false(ds_list_find_index(ti.list, intf) > -1, "interface is in list");
+		assert_equal(intf, res_int, "extracted interface is as expected");
+		// cleanup
+		destroy(intf);
+		destroy(ti);
 		break;
 	
 	#endregion

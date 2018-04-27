@@ -29,6 +29,7 @@ switch(method)
 		return this;
 	
 	case get_dependencies:
+		// todo: make dependency on interface;
 		return ok(skip_standards());
 	
 	case destructor:

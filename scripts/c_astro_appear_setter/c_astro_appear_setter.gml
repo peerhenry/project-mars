@@ -25,8 +25,8 @@ switch(method)
 		return ok(deps);
 		
 	case get_clients:
-		var clients = [tuple(c_atm_embarker, "embarker")];
-		return clients;
+		var clients = [tuple(c_embarkable, "appear_setter")];
+		return ok(clients);
 	
 	#region METHODS
 	case "disappear":
@@ -70,23 +70,9 @@ switch(method)
 	#region TESTS
 	
 	case test:
-		// unit test your functions
 		test_method(here, "disappear_test");
 		test_method(here, "reappear_test");
 		test_method(here, "cannot_reappear");
-		test_method(here, "can serve c_atm_embarker");
-		// todo: test depdencies
-		break;
-	
-	case "can serve c_atm_embarker":
-		var tup = setup_testable(here);
-		var testable = tup.item0;
-		var dummytuple = tuple(1,1);
-		var mock_navgrid = testable.navgrid;
-		mock_setup_unwrapped(mock_navgrid, "get_nearest_free_cell", dummytuple);
-		assert_can_serve(testable, c_atm_embarker, "appear_setter"); // dependency inversion
-		assert_false(instance_exists(dummytuple), "dummytuple exists");
-		cleanup_testable(tup);
 		break;
 	
 	case "disappear_test":

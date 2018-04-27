@@ -31,11 +31,21 @@ if(!ds_exists(global.failed_test_list, ds_type_list)) scr_panic("8global.failed_
 // in progress: maybe we can also do a get_clients on classes so that can_serve is automated : )
 // todo: enable this and get it to work
 /*
-var clients = in(class, get_clients);
-assert_true(clients == noone || <?>, "get_clients returns valid result");
-var testable = tup.item0;
-assert_can_serve(testable, client_name, cliend_dependency)
-
+var clients = cs_get_clients(class);
+assert_true(clients == noone || is_array(clients), "get_clients returns valid result");
+if(is_array(clients))
+{
+	var tup = setup_testable(class);
+	var testable = tup.item0;
+	for(var n = 0; n < array_length_1d(clients); n++)
+	{
+		var next_client = clients[n];
+		var client_class = next_client.item0;
+		var client_dep_name = next_client.item1;
+		assert_can_serve(testable, client_class, client_dep_name);
+	}
+	cleanup_testable(tup);
+}
 */
 
 test_result();

@@ -10,3 +10,5 @@ test_class(c_type_info);
 test_class(c_named);
 test_class(c_dependencies);
 test_class(c_dependency);
+//test_class(c_sig_var);
+test_class(c_mock_val);

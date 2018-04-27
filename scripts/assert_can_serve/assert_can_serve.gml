@@ -21,10 +21,11 @@ for(var m = 0; m < method_count; m++)
 	counter++;
 	// create dummy arguments
 	var sig = intf.methods[m];
-	var dummies = void_unwrap(sig, "get_dummy_arguments");
+	var mocks = void_unwrap(sig, "get_mocks");
+	var mock_values = morph(mocks, "get_value");
 	
 	// assert result
-	var result = call(arg_instance, sig.name, dummies);
+	var result = call(arg_instance, sig.name, mock_values);
 	var exists = instance_exists(result);
 	assert_true(exists, "instance_exists(result)");
 	if(exists)
@@ -33,19 +34,11 @@ for(var m = 0; m < method_count; m++)
 		destroy(result);
 	}
 	
-	#region cleanup dummies
-	for(var n = 0; n < array_length_1d(dummies); n++)
+	for(var n = 0; n < array_length_1d(mocks); n++)
 	{
-		var next = dummies[n];
-		if(instance_exists(next))
-		{
-			if(variable_instance_exists(next, "class") && script_exists(next.class)) destroy(next);
-			else instance_destroy(next);
-		}
-		else if(ds_exists(next, ds_type_map)) ds_map_destroy(next);
-		else if(ds_exists(next, ds_type_list)) ds_list_destroy(next);
+		var next = mocks[n];
+		destroy(next);
 	}
-	#endregion
 }
 
 // assert all methods have been checked

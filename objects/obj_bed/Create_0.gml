@@ -31,3 +31,8 @@ depth = -occ_j;
 occupant = noone;
 zzz_index = 0; // there is a zzz animation for when an astronaut sleeps
 zzz_counter = 0;
+
+is_interactable = true;
+var appear_setter = ioc_resolve(ioc_container, "appear_setter");
+scr_acquire_class(id, [appear_setter, 1]);
+full_message = "Astronaut cannot enter bed; bed is occupied."

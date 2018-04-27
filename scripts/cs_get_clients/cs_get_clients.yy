@@ -1,8 +1,8 @@
 {
-    "id": "05e1f540-7799-43b6-8b08-3d8b3def1e6a",
+    "id": "ea71d619-934d-4f06-9dd7-876b52267b6e",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "c_interaction_atm",
+    "name": "cs_get_clients",
     "IsCompatibility": false,
     "IsDnD": false
 }

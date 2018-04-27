@@ -10,7 +10,8 @@ switch(method)
 		return this;
 		
 	case get_clients:
-		return [ tuple(c_astro_appear_setter, "navgrid") ];
+		var clients = [ tuple(c_astro_appear_setter, "navgrid") ];
+		return ok(clients);
 
 	case "clear_astronaut":
 		var astro = args[0];

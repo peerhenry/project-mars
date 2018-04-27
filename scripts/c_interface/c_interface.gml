@@ -20,7 +20,7 @@ switch(method)
 	case get_dependencies:
 		var deps = new(c_dependencies, [
 			dependency("name", t_string()),
-			dependency("name", t_array()),
+			dependency("methods", t_array()),
 		]);
 		return ok(deps);
 
