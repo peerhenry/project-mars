@@ -23,10 +23,7 @@ if(deps != noone) destroy(deps);
 // assert setup & cleanup
 var tup = setup_testable(class);
 assert_equal(class, tup.item0.class, "constructor gives object with correct class");
-if(!ds_exists(global.failed_test_list, ds_type_list)) scr_panic("7global.failed_test_list does not exist anymore!"); // DEBUG
 cleanup_testable(tup);
-
-if(!ds_exists(global.failed_test_list, ds_type_list)) scr_panic("8global.failed_test_list does not exist anymore!"); // DEBUG
 
 // in progress: maybe we can also do a get_clients on classes so that can_serve is automated : )
 // todo: enable this and get it to work

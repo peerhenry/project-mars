@@ -13,6 +13,7 @@ switch(method)
 		this.name = args[0];
 		this.type_info = args[1];
 		this.optional = args[2];
+		this.owned = false; // is the client responsible for cleanup?
 		return this;
 	
 	case get_dependencies:

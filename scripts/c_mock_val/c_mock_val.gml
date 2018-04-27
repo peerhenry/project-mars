@@ -13,7 +13,11 @@ switch(method)
 		return this;
 	
 	case get_dependencies:
-		return ok(skip_standards());
+		var deps = new(c_dependencies, [
+			dependency("type_info", t_object(obj_type_info)),
+			dependency("value", t_any()),
+		]);
+		return ok(deps);
 	
 	case destructor:
 		switch(this.type_info.type)
@@ -40,7 +44,15 @@ switch(method)
 	
 	#region tests
 	case test:
-		test_nyi(here);
+		test_method(here, "test_get_value");
+		break;
+	
+	case "test_get_value":
+		var tup = setup_testable(here);
+		var thing = tup.item0;
+		var res = void_unwrap(thing, "get_value");
+		assert_equal(thing.value, res, "get_value result");
+		cleanup_testable(tup);
 		break;
 	#endregion
 	

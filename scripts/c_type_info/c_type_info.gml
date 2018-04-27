@@ -5,6 +5,7 @@ var here = c_type_info;
 
 #region TYPES
 enum TYPE {
+	ANY,
 	VOID,
 	NUMBER,
 	INTEGER,	// extra check: floor(value) == value
@@ -46,6 +47,9 @@ switch(method)
 		var value = args[0];
 		switch(this.type)
 		{
+			case TYPE.ANY:
+				// nothing to assert
+				break;
 			case TYPE.VOID:
 				assert_equal(noone, value, "argument");
 				break;
@@ -97,6 +101,9 @@ switch(method)
 		var dummy;
 		switch(this.type)
 		{
+			case TYPE.ANY:
+				dummy = 1;
+				break;
 			case TYPE.VOID:
 				dummy = noone;
 				break;
