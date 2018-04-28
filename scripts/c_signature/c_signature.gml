@@ -11,7 +11,15 @@ switch(method)
 		this.name = args[0];
 		this.return_type = args[1];
 		var argument_types = args[2];	// array of types
-		if(!is_array(argument_types)) argument_types = [argument_types];
+		if(!is_array(argument_types))
+		{
+			if(argument_types.type == TYPE.VOID)
+			{
+				destroy(argument_types);
+				argument_types = [];
+			}
+			else argument_types = [argument_types];
+		}
 		this.argument_types = argument_types;
 		return this;
 
@@ -45,7 +53,8 @@ switch(method)
 	// assert if arguments comply with types in signature
 	case "assert_arguments":
 		var arguments = args;
-		assert_equal(array_length_1d(this.argument_types), array_length_1d(arguments), "arguments")
+		var pass = assert_equal(array_length_1d(this.argument_types), array_length_1d(arguments), "c_signature: argument count");
+		if(!pass) return ok(); // don't assert further
 		for(var n = 0; n < array_length_1d(arguments); n++)
 		{
 			var arg = arguments[n];

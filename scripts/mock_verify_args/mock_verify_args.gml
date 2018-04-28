@@ -1,6 +1,7 @@
 /// @arg mock_object
 /// @arg method
 /// @arg times
+/// @arg args
 var mock_object = argument0;
 var method = argument1;
 var times = argument2;

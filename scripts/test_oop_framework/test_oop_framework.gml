@@ -12,3 +12,4 @@ test_class(c_dependencies);
 test_class(c_dependency);
 //test_class(c_sig_var);
 test_class(c_mock_val);
+test_class(c_action);

@@ -15,3 +15,8 @@ owner = global.default_owner;
 mask_sprite = spr_atm_small_mask;
 mask_color = scr_get_suit_color(owner);
 capacity = 3; // howmany astronauts can ATM hold?
+
+// apply class
+is_interactable = true;
+var appear_setter = ioc_resolve(ioc_container, "appear_setter");
+scr_apply_class(id, c_embarkable, [appear_setter, 3]);

@@ -9,7 +9,7 @@ if(occupant != noone)
 		{
 			sleep_level = 100;
 		}
-		//var spot = scr_find_free_spot_around(id);
+		// var spot = scr_find_free_spot_around(id);
 		//in(f_astro_disappear, "disappear", occupant);
 		var result = call(id, "disembark", occupant);
 		if(result.status == STATUS.OK)

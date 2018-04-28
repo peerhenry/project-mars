@@ -1,5 +1,5 @@
 #region set here, method and this
-var here = c_embarkable;
+var here = c_astro_container; // bed/med_bed
 var method = argument0;
 var this = argument1;
 var args = argument2;
@@ -9,9 +9,8 @@ switch(method)
 {
 	case constructor:
 		this.appear_setter = args[0];
-		this.capacity = args[1];
-		this.embarked_astronauts = ds_list_create();
-		this.full_message = "Astronaut cannot embark; embarkable is full";
+		this.occupant = noone;
+		this.full_message = "Cannot enter; already occupied."
 		return this;
 	
 	case destructor:
@@ -23,36 +22,46 @@ switch(method)
 			new_interface("appear_setter", [
 				signature("disappear", t_void(), t_object(obj_astronaut)),
 				signature("reappear", t_void(), t_object(obj_astronaut))
-			]),
-			dependency("capacity", t_integer())
+			])
 		]);
 		return ok(deps);
 	
 	case get_clients:
-		// todo: depend on the interaction_factory without being a constructor injection
-		return ok(noone);
+		// todo: depend on relevant interaction
+		return ok();
 	
 	#region METHODS
-	case "disembark":
+	
+	case "enter":
 		var arg_astronaut = args[0];
-		var index = ds_list_find_index(this.embarked_astronauts, arg_astronaut);
-		if(index >= 0)
+		if(this.occupant == noone)
 		{
-			ds_list_delete(this.embarked_astronauts, arg_astronaut);
-			var result = call(this.appear_setter, "reappear", arg_astronaut);
-			return result;
-		}
-		return exception("Astronaut could not disembark: it was not embarked.");
-
-	case "embark":
-		var arg_astronaut = args[0];
-		if(ds_list_size(this.embarked_astronauts) < this.capacity)
-		{
-			ds_list_add(this.embarked_astronauts, arg_astronaut);
+			this.occupant = arg_astronaut;
 			call_unwrap(this.appear_setter, "disappear", arg_astronaut);
 			return ok();
 		}
 		else return exception(this.full_message);
+	
+	case "eject":
+		if(occupant == noone) return ok(); // Don't do anything if container has no occupant
+		var result = call(this.appear_setter, "reappear", this.occupant);
+		if(result.status != STATUS.OK)
+		{
+			// todo, inject notifier
+			resolve_execute(script_container, "alert_player", "Astronaut cannot exit: " + result.value);
+			// create an alarm for when to try again to eject again
+			var action = new(c_action, [this, "eject"]);
+			var delayed = new(c_delay_destroy_action, [action, 1]);
+			void_unwrap(delayed, "set");
+		}
+		else
+		{
+			this.occupant = noone;
+			image_index++;
+		}
+		destroy(result);
+		return ok();
+		
 	#endregion
 	
 	#region UNIT TESTS
