@@ -25,9 +25,12 @@ var tup = setup_testable(class);
 assert_equal(class, tup.item0.class, "constructor gives object with correct class");
 cleanup_testable(tup);
 
+test_result();
+exit;
+
 // in progress: maybe we can also do a get_clients on classes so that can_serve is automated : )
 // todo: enable this and get it to work
-/*
+
 var clients = cs_get_clients(class);
 assert_true(clients == noone || is_array(clients), "get_clients returns valid result");
 if(is_array(clients))
@@ -43,6 +46,5 @@ if(is_array(clients))
 	}
 	cleanup_testable(tup);
 }
-*/
 
 test_result();

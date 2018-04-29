@@ -50,9 +50,15 @@ switch(method)
 			// todo, inject notifier
 			resolve_execute(script_container, "alert_player", "Astronaut cannot exit: " + result.value);
 			// create an alarm for when to try again to eject again
-			var action = new(c_action, [this, "eject"]);
-			var delayed = new(c_delay_destroy_action, [action, 1]);
-			void_unwrap(delayed, "set");
+			
+			// make eject action
+			var eject = new(c_action_decorator, [this, "eject"]);
+			// put it in a decorator
+			var dec = new(c_action_decorator, eject);
+			// append destruction of the eject action
+			dec = call_unwrap(dec, "then", new(c_action_script, [destroy, eject]));
+			var delayed = new(c_delay, [dec, 5]); // try again after this many seconds
+			void_unwrap(delayed, "set"); // start the timer
 		}
 		else
 		{

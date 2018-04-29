@@ -17,7 +17,11 @@ enum TYPE {
 	SCRIPT,
 	MAP,
 	LIST,
-	STACK
+	STACK,
+	
+	// new
+	METHOD,
+	INTERFACE
 }
 #endregion
 
@@ -92,6 +96,9 @@ switch(method)
 				assert_true(ds_exists(value, ds_type_stack), "ds_exists(arg, ds_type_list)");
 				break;
 			// todo: add grid, queue, priority	
+			case TYPE.METHOD:
+				
+				break;
 		}
 		return ok();
 	#endregion

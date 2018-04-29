@@ -12,7 +12,8 @@
         "3551871f-60f5-420a-9f3b-664900a61dc4",
         "287453b5-1a5c-460f-ac1a-764a9021ec05",
         "f45a30fe-3d82-453e-b221-8f10eccf9712",
-        "07fb76ee-a95f-48d2-adc1-5ac49d5888e7"
+        "07fb76ee-a95f-48d2-adc1-5ac49d5888e7",
+        "48eccedb-bd9a-4fd7-aa0e-258fb55d6587"
     ],
     "filterType": "GMScript",
     "folderName": "ioc",

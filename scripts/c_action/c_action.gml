@@ -18,9 +18,7 @@ switch(method)
 	
 	case get_dependencies:
 		return ok_deps([
-			new_interface("instance", [
-				signature("yo", t_void(), t_void())
-			]),
+			new_interface("instance", []),
 			dependency("method", t_string())
 		]);
 	
@@ -34,23 +32,7 @@ switch(method)
 		return ok();
 	
 	case test:
-		test_method(here, "test_execute");
 		test_method(here, "test_execute_with_args");
-		break;
-	
-	case "test_execute":
-		// arrange
-		var tup = setup_testable(here);
-		var item = tup.item0;
-		var mocky = tup.item1[0];
-		var stub_name = mocky.interface.methods[0].name;
-		item.method = stub_name;
-		// act
-		void_unwrap(item, "execute");
-		// assert
-		mock_verify(mocky, stub_name, Times.Once);
-		// cleanup
-		cleanup_testable(tup);
 		break;
 	
 	case "test_execute_with_args":
