@@ -99,6 +99,9 @@ switch(method)
 			case TYPE.METHOD:
 				
 				break;
+			case TYPE.INTERFACE:
+				
+				break;
 		}
 		return ok();
 	#endregion

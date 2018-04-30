@@ -27,7 +27,7 @@ switch(method)
 	case "extract_interface":
 		var name = args[0];
 		var dep = first_equals(this.list, "name", name);
-		if(dep.class != c_interface) scr_panic(name + " is not an interface!");
+		if(dep.class != c_interface_old) scr_panic(name + " is not an interface!");
 		var indx = ds_list_find_index(this.list, dep);
 		ds_list_delete(this.list, indx);
 		return ok(dep);

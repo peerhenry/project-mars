@@ -1,20 +1,19 @@
+/// @descr Mock class 
 var method = argument0;
 var this = argument1;
 var args = argument2;
-var here = c_parameter;
+var here = c_interface_property;
 
 switch(method)
 {
 	case constructor:
 		this.name = args[0];
 		this.type_info = args[1];
-		this.owned = false;
 		return this;
 
-	case destructor: 
+	case destructor:
+		destroy(this.type_info);
 		return ok();
-	
-	// methods
 	
 	case test:
 		break;

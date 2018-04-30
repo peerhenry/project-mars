@@ -7,66 +7,114 @@ var here = c_interface;
 switch(method)
 {
 	case constructor:
-		this.name = args[0];
-		this.methods = args[1];
-		if(!is_array(this.methods)) scr_panic("Interface must receive an array of named signatures.");
-		for(var n = 0; n < array_length_1d(this.methods); n++)
-		{
-			var next = this.methods[n];
-			if(next.class != c_signature) scr_panic("Cannot make interface: elements must be signatures.");
-		}
+		var arg_count = scr_length(args);
+		this.props = args;
+		// todo: filter constructor arguments
+		this.prop_map = ds_map_create();
+		map_method(this.props, this, "private_add_to_prop_map");
 		return this;
-	
-	case get_dependencies:
-		var deps = new(c_dependencies, [
-			dependency("name", t_string()),
-			dependency("methods", t_array()),
-		]);
-		return ok(deps);
 
 	case destructor:
-		for(var n = 0; n < array_length_1d(this.methods); n++)
+		map_script(this.props, destroy);
+		ds_map_destroy(this.prop_map);
+		return ok();
+	
+	case "private_add_to_prop_map":
+		var prop = args[0];
+		this.prop_map[? prop.name] = prop;
+		return ok();
+	
+	// should be on type_info
+	case "get_dummy_value":
+		//var m = mock(this); // mock gets ownership of the interface
+		return ok();
+
+	case "get_injection_args":
+		var data = [];
+		var head = 0;
+		for(var n = 0; n < array_length_1d(this.props); n++)
 		{
-			var method = this.methods[n];
-			destroy(method);
+			var this_prop = this.props[n];
+			if(this_prop.type_info.type != TYPE.METHOD) data[head++] = this_prop;
+		}
+		return ok(args);
+	
+	case "get_data_props":
+		var data = [];
+		var head = 0;
+		for(var n = 0; n < array_length_1d(this.props); n++)
+		{
+			var this_prop = this.props[n];
+			if(this_prop.type_info.type != TYPE.METHOD) data[head++] = this_prop;
+		}
+		return ok(data);
+	
+	case "extract_dependency":
+		// go over props and methods, filter interfaces, get the interface that matches name
+		
+		break; //	returns an interface
+	
+	// should be on type_info
+	case "assert_type":
+		var bigger_intf = args[0];
+		for(var n = 0; n < array_length_1d(this.props); n++)
+		{
+			var this_prop = this.props[n];
+			var other_prop = bigger_intf.prop_map[? this_prop.name];
+			var prop_exists = !is_undefined(other_prop);
+			assert_true(prop_exists, "prop_exists: " + this_prop.name);
+			if(prop_exists)
+			{
+				// match types
+				call_unwrap(this_prop.type_info, "assert_match", other_prop.type_info);
+			}
 		}
 		return ok();
-		
-	case "destroy_to_mock":
-		var m = mock(this); // mock gets ownership of the interface
-		return ok(m);
 	
 	case test:
-		test_method(here, "constructor_test_one_method");
+		test_method(here, "test_constructor_empty");
+		test_method(here, "test_constructor");
+		test_method(here, "test_get_data_props");
+		test_method(here, "test_extract_dependency");
+		test_method(here, "test_get_dummy_value");
+		test_method(here, "test_assert_type");
+		break;
+	
+	case "test_constructor_empty":
+		var thing = new(c_interface, []); // array of props;
+		destroy(thing);
+		break;
+	
+	case "test_constructor":
+		var thing = new(c_interface, [
+			new(c_interface_property, ["dummy_number", t_number()])
+		]);
+		assert_equal(1, scr_length(thing.props), "props length");
+		destroy(thing);
+		break;
+	
+	case "test_get_data_props":
+		var dummy_number = "dummy_number";
+		var thing = new(c_interface, [
+			new(c_interface_property, [dummy_number, t_number()]),
+			new(c_interface_property, ["dummy_method", new(c_method)])
+		]);
+		// act
+		var data = void_unwrap(thing, "get_data_props");
+		// assert
+		assert_equal(1, scr_length(data), "props length");
+		assert_equal(dummy_number, data[0].name, "prop[0] name");
+		// cleanup
+		destroy(thing);
 		break;
 		
-	case "constructor_test_one_method":
-		// arrange
-		// act
-		var interf = new_interface("dummy", [
-			signature("foo", t_number(), t_string()),
-			signature("bar", t_void(), [t_number(), t_number()])
-		]);
-		// assert
-		assert_equal(obj_interface, interf.object_index, "object_index");
-		assert_equal(2, array_length_1d(interf.methods), "methods.length");
-		assert_equal("foo", interf.methods[0].name, "methods[0].name is foo");
-		assert_equal("bar", interf.methods[1].name, "methods[1].name is bar");
-		var sig = interf.methods[0];
-		assert_equal(TYPE.NUMBER, sig.return_type.type, "foo return type");
-		assert_equal(1, array_length_1d(sig.argument_types), "argument_types has length 1");
-		var at = sig.argument_types[0];
-		assert_equal(TYPE.STRING, at.type, "foo arg type");
-		var bar_sig = interf.methods[1];
-		var bar_rt = bar_sig.return_type;
-		assert_equal(TYPE.VOID, bar_rt.type, "bar return type");
-		assert_equal(2, array_length_1d(bar_sig.argument_types), "argument_types has length 1");
-		var bar_at1 = bar_sig.argument_types[0];
-		var bar_at2 = bar_sig.argument_types[1];
-		assert_equal(TYPE.NUMBER, bar_at1.type, "bar arg 1 type");
-		assert_equal(TYPE.NUMBER, bar_at2.type, "bar arg 2 type");
-		// cleanup
-		destroy(interf);
+	case "test_extract_dependency":
+		break;
+		
+	case "test_get_dummy_value":
+		break;
+	
+	case "test_assert_type":
 		break;
 	
 	default:

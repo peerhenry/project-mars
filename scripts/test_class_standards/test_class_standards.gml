@@ -12,39 +12,42 @@ if(variable_instance_exists(deps, "skip_class_standards") && deps.skip_class_sta
 
 test_init("Testing class standards for: " + script_get_name(class));
 
-// assert object index
-var obj_indx = cs_get_object_index(class);
-assert_true(object_exists(obj_indx), "class object index exists");
-
-// assert dependencies
-assert_true(deps == noone || deps.class = c_dependencies, "get_dependencies returns valid result");
-if(deps != noone) destroy(deps);
-
-// assert setup & cleanup
-var tup = setup_testable(class);
-assert_equal(class, tup.item0.class, "constructor gives object with correct class");
-cleanup_testable(tup);
-
-test_result();
-exit;
-
-// in progress: maybe we can also do a get_clients on classes so that can_serve is automated : )
-// todo: enable this and get it to work
-
-var clients = cs_get_clients(class);
-assert_true(clients == noone || is_array(clients), "get_clients returns valid result");
-if(is_array(clients))
+var intf = in(class, get_interface);
+// mock injection arguments 
+var inj_args = void_unwrap(intf, "get_injection_args");		// loop over props, filter data props, filter injections
+var inj_type_infos = scr_from_select(inj_args, "type_info");
+var mock_args = morph(inj_type_infos, "to_mock");
+var injections = scr_from_select(mock_args, "value");
+var instance = new(class, injections);
+// assert all interface data props are inside the instance
+var data_props = void_unwrap(intf, "get_data_props");
+for(var n = 0; n < array_length_1d(data_props); n++)
 {
-	var tup = setup_testable(class);
-	var testable = tup.item0;
-	for(var n = 0; n < array_length_1d(clients); n++)
-	{
-		var next_client = clients[n];
-		var client_class = next_client.item0;
-		var client_dep_name = next_client.item1;
-		assert_can_serve(testable, client_class, client_dep_name);
-	}
-	cleanup_testable(tup);
+	var ndp = data_props[n];
+	assert_true(variable_instance_exists(instance, ndp.name), "variable exists");
 }
+// assert methods
+var data_props = void_unwrap(intf, "get_data_props");
+// destroy
+// assert owned data props are destroyed
+// destroy mocks
+
+// match interface with clients
+var clients = in(class, get_clients);
+for(var n = 0; n < array_length_1d(clients); n++)
+{
+	var client_tup = clients[n];
+	var client_class = client_tup.item0;
+	var dep_name = client_tup.item1;
+	var client_intf = in(client_class, get_interface);
+	var dep_inft = call_unwrap(client_intf, "extract_dependency", "name");
+	call_unwrap(dep_inft, "assert_implementation", intf);
+}
+
+// new methods on interface:
+// "get_injection_args"
+// "get_data_props"
+// "extract_dependency"	returns an interface
+// "assert_implementation"
 
 test_result();
