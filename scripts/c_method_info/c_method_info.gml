@@ -80,6 +80,7 @@ switch(method)
 	
 	case test:
 		test_method(here, "test_construct");
+		test_method(here, "test_factory");
 		test_method(here, "test_construct_parameters");
 		test_method(here, "test_assert_match");
 		test_method(here, "test_private_param_to_dummy");
@@ -88,12 +89,22 @@ switch(method)
 	
 	case "test_construct":
 		// setup
-		var thing = new(c_method_info, [t_void(), p_string("d1")]);
+		var thing = new(c_method_info, t_string());
 		// assert
 		assert_equal(0, scr_length(thing.parameters), "parameters length");
 		assert_equal(TYPE.STRING, thing.return_type_info.type, "return_type_info");
 		// cleanup
 		destroy(thing);
+		break;
+	
+	case "test_factory":
+		var meth = t_method();
+		assert_equal(TYPE.VOID, meth.return_type_info.type, "return type is void");
+		destroy(meth);
+		
+		var meth2 = t_method(t_number());
+		assert_equal(TYPE.NUMBER, meth2 .return_type_info.type, "return type is number");
+		destroy(meth2);
 		break;
 	
 	case "test_construct_parameters":
@@ -105,6 +116,9 @@ switch(method)
 		// assert
 		assert_equal(3, scr_length(thing.parameters), "parameters length");
 		assert_equal(TYPE.VOID, thing.return_type_info.type, "return_type_info");
+		var p3 = thing.parameters[2];
+		assert_equal("d3", p3.name, "last parameter name");
+		assert_equal(TYPE.OBJECT, p3.type_info.type, "last parameter type");
 		// cleanup
 		destroy(thing);
 		break;

@@ -225,7 +225,7 @@ switch(method)
 		assert_true(variable_instance_exists(mocky, "numby"), "mocky has numby");
 		// cleanup
 		destroy(mocky);
-		// destroy(thing); // mock has ownership
+		destroy(thing);
 		break;
 	
 	case "test_assert_match":
@@ -243,6 +243,21 @@ switch(method)
 		destroy(thing);
 		destroy(bigger);
 		break;
+	
+	case "test_assert_type":
+		var thing = new(c_class_info, [
+			new(c_class_property, ["billy", t_number()]),
+			new(c_class_property, ["something else", t_string()])
+		]);
+		var mocky = new(c_mock, thing);
+		// assert
+		fail("temp disabled; need to finish c_mock first");
+		// call_unwrap(thing, "assert_type", mocky); // assert mocky implements the interface
+		// cleanup
+		destroy(mocky);
+		destroy(thing);
+		break;
+		
 	#endregion tests
 	
 	default:
