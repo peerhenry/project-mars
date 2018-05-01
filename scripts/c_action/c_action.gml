@@ -26,13 +26,13 @@ switch(method)
 	case "make_args":
 		var value = args[0];
 		var finalized_args = [];
-		for(var n = scr_length(this.arguments); n >= 0; n--)
+		for(var n = scr_length(this.arguments) - 1; n >= 0; n--)
 		{
 			var next = this.arguments[n];
 			if(instance_exists(next) && variable_instance_exists(next, "placeholder")) finalized_args[n] = value;
 			else finalized_args[n] = next;
 		}
-		return finalized_args;
+		return ok(finalized_args);
 	
 	case "execute":
 		if(scr_length(args) == 1)

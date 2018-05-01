@@ -21,6 +21,5 @@ switch(method)
 		break;
 	
 	default:
-		var msg = "Refused request: function not defined: " + method;
-		scr_panic(msg);
+		return refused();
 }

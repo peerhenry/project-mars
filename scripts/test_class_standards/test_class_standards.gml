@@ -44,10 +44,4 @@ for(var n = 0; n < array_length_1d(clients); n++)
 	call_unwrap(dep_inft, "assert_implementation", intf);
 }
 
-// new methods on interface:
-// "get_injection_args"
-// "get_data_props"
-// "extract_dependency"	returns an interface
-// "assert_implementation"
-
 test_result();

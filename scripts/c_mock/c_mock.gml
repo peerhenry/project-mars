@@ -15,15 +15,18 @@ switch(method)
 {
 	#region construct/destruct
 	case constructor:
-		this.class_info = args[0];
 		this.signature_map = ds_map_create();
 		this.call_count_map = ds_map_create();
 		this.return_map = ds_map_create();
 		this.argument_map = ds_map_create();
-		map_method(this.class_info.props, this, "private_add_prop");
+		if(scr_length(args) == 1)
+		{
+			var class_info = args[0];
+			map_method(class_info.props, this, "add_prop");
+		}
 		return this;
 	
-	case "private_add_prop":
+	case "add_prop":
 		var prop = args[0];
 		if(prop.type_info.class == c_method_info)
 		{
@@ -42,7 +45,6 @@ switch(method)
 		ds_map_destroy(this.return_map);
 		ds_map_destroy(this.call_count_map);
 		ds_map_destroy(this.argument_map);
-		destroy(this.class_info);
 		return ok();
 	
 	case get_object_index:
@@ -153,38 +155,56 @@ switch(method)
 	
 	#region tests
 	case test:
-		test_method(here, "mock_test");
+		test_method(here, "test_add_prop");
+		test_method(here, "test_setup_stub");
+		test_method(here, "test_call_stub");
+		test_method(here, "test_verify");
+		test_method(here, "test_verify_last_call_arguments");
 		break;
 	
-	case "mock_test":
+	case "test_add_prop":
 		// arrange
-		var intf = new_interface("whatever", [
-			signature("foo", t_void(), t_string()),
-			signature("bar", t_string(), t_number())
-		]);
-		var m = mock(intf);
-		var expect = "BILLY";
-		mock_setup_unwrapped(m, "bar", expect);
+		var m = new(c_mock);
 		// act
-		call_unwrap(m, "foo", "dummy arg");
-		call_unwrap(m, "foo", "whatever");
-		var result = call_unwrap(m, "bar", 67);
+		call_unwrap(m, "add_prop", new(c_class_property, ["jim", t_number()]));
 		// assert
-		mock_verify(m, "foo", Times.AtLeastOnce);
-		mock_verify(m, "bar", Times.Once);
-		assert_equal(expect, result, "result of calling bar");
+		var dti = t_number();
+		var d_number = void_unwrap(dti, "create_dummy");
+		assert_equal(d_number, m.jim, "mock has prop");
 		// cleanup
+		destroy(dti);
 		destroy(m);
-		assert_equal(0, scr_count_instances(obj_interface), "interface count");
 		break;
+	
+	case "test_setup_stub":
+		fail("nyi");
+		break;
+	
+	case "test_call_stub":
+		// arrange
+		// act
+		// assert
+		// cleanup
+		break;
+	
+	case "test_verify":
+		// arrange
+		// act
+		// assert
+		fail("nyi");
+		// cleanup
+		break;
+		
+	case "test_verify_last_call_arguments":
+		// arrange
+		// act
+		// assert
+		fail("nyi");
+		// cleanup
+		break;
+	
 	#endregion
 	
 	default:
-		var sigs = this.interface.methods;
-		for(var n = 0; n < array_length_1d(sigs); n++)
-		{
-			var sig = sigs[n];
-			if(sig.name == method) return call(this, "call_stub", [sig, args]);
-		}
-		return refused();
+		return call(this, "call_stub", [method, args]);
 }

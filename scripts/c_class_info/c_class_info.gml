@@ -79,7 +79,6 @@ switch(method)
 		}
 		return ok(noone); // dependency not found
 	
-	// should be on type_info
 	case "assert_match":
 		var bigger_intf = args[0];
 		for(var n = 0; n < array_length_1d(this.props); n++)
@@ -95,7 +94,22 @@ switch(method)
 		}
 		return ok();
 	
-	// todo: "assert_implements"
+	case "assert_type":
+		var instance = args[0];
+		for(var n = 0; n < array_length_1d(this.props); n++)
+		{
+			var prop = this.props;
+			if(prop.type_info.type != TYPE.METHOD)
+			{
+				var exists = assert_true(variable_instance_exists(instance, prop.name), "instance variable exists");
+				if(exists) call_unwrap(prop.type_info, "assert_type", variable_instance_get(instance, prop.name));
+			}
+			else
+			{
+				call_unwrap(prop.type_info, "assert_type", [instance, prop.name]);
+			}
+		}
+		return ok();
 	#endregion
 	
 	#region tests
@@ -173,16 +187,8 @@ switch(method)
 	case "test_extract_dependency_from_method":
 		var dep_name = "deppy";
 		var expect = new(c_class_info);
-		// todo: syntactic sugar
-		var method_info = new(c_method_info, [ 
-			t_void(), 
-			new(c_parameter, [
-				dep_name, 
-				expect
-			])
-		]);
 		var thing = new(c_class_info, [
-			new(c_class_property, ["foo", method_info]) // prop_method("foo", t_void(), p_interface(dep_name, expect))
+			prop_method("foo", t_void(), new(c_parameter, [dep_name, expect])) 
 		]);
 		// assert setup
 		var prop = thing.props[0];
@@ -222,7 +228,7 @@ switch(method)
 		// destroy(thing); // mock has ownership
 		break;
 	
-	case "test_assert_type":
+	case "test_assert_match":
 		var match_prop = "nilly";
 		var thing = new(c_class_info, [
 			new(c_class_property, [match_prop, t_number()])
