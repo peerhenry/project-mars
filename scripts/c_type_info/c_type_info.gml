@@ -47,6 +47,22 @@ switch(method)
 	#endregion
 
 	#region assert_type
+	case "assert_match":
+		var other_type_info = args[0];
+		switch(this.type)
+		{
+			case TYPE.ANY:
+				break;
+			case TYPE.NUMBER:
+				var type = other_type_info.type;
+				assert_true(type == TYPE.NUMBER || type == TYPE.INTEGER, "type is number");
+				break;
+			default:
+				assert_equal(other_type_info.type, this.type, "types match");
+				break;
+		}
+		return ok();
+	
 	case "assert_type":
 		var value = args[0];
 		switch(this.type)
@@ -97,16 +113,16 @@ switch(method)
 				break;
 			// todo: add grid, queue, priority	
 			case TYPE.METHOD:
-				
+				// has its own class
 				break;
 			case TYPE.INTERFACE:
-				
+				// has its own class
 				break;
 		}
 		return ok();
 	#endregion
 
-	#region create_mock
+	#region create_dummy
 	case "create_dummy":
 		var dummy;
 		switch(this.type)
@@ -145,11 +161,6 @@ switch(method)
 			// todo: add grid, queue, priority	
 		}
 		return ok(dummy);
-	
-	case "create_mock":
-		var val = void_unwrap(this, "create_dummy");
-		var mocky = new(c_mock_val, [this, val]);
-		return ok(mocky);
 	#endregion
 	
 	#region test

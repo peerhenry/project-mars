@@ -9,8 +9,8 @@ switch(method)
 	case constructor: // can be remove if not needed
 		this.instance = args[0];
 		this.method = args[1];
-		if(scr_length(args) == 3) this.args = args[2];
-		else this.args = [];
+		if(scr_length(args) == 3) this.arguments = args[2];
+		else this.arguments = [];
 		return this;
 
 	case destructor: 
@@ -23,16 +23,34 @@ switch(method)
 		]);
 	
 	// methods
+	case "make_args":
+		var value = args[0];
+		var finalized_args = [];
+		for(var n = scr_length(this.arguments); n >= 0; n--)
+		{
+			var next = this.arguments[n];
+			if(instance_exists(next) && variable_instance_exists(next, "placeholder")) finalized_args[n] = value;
+			else finalized_args[n] = next;
+		}
+		return finalized_args;
+	
 	case "execute":
-		return call(this.instance, this.method, this.args);
+		if(scr_length(args) == 1)
+		{
+			var final_args = call_unwrap(this, "make_args", args[0]);
+			return call(this.instance, this.method, final_args);
+		}
+		// var arguments = call_unwrap(this, "make_args", this.args);
+		return call(this.instance, this.method, this.arguments);
 	
 	case "execute_destroy":
-		call_unwrap(this.instance, this.method, this.args);
+		call_unwrap(this.instance, this.method, this.arguments);
 		destroy(this);
 		return ok();
 	
 	case test:
 		test_method(here, "test_execute_with_args");
+		// todo: test with argument placemarkers
 		break;
 	
 	case "test_execute_with_args":

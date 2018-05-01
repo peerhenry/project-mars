@@ -11,6 +11,7 @@ while(result.refused_request && class != c_object)
 if(result.refused_request) scr_panic("Destroying " + script_get_name(instance.class) + " does not work!");
 instance_destroy(result);
 instance_destroy(instance);
+// ds_map_delete(global.class_instance_registry, instance);
 
 // WARNING!
 // Leave instance_destroy on result here

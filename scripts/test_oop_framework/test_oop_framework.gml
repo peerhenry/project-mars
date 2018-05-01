@@ -1,4 +1,10 @@
-test_class(c_interface);
+test_class(c_type_info);
+test_class(c_class_info);
+test_class(c_method_info);
+test_class(c_tester);
+
+// test_class(c_result);
+// test_class(c_action);
 
 
 /* TEMPORARILY DISABLED

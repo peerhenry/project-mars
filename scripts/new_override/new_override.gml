@@ -10,4 +10,5 @@ if(!is_array(args)) args = [args];
 var instance = instance_create_depth(0,0,0,obj_index);
 instance.class = class;
 scr_apply_constructor(class, instance, args);
+// global.class_instance_registry[? instance] = instance;
 return instance;

@@ -2,34 +2,47 @@
 var method = argument0;
 var this = argument1;
 var args = argument2;
-var here = c_mock_old;
+var here = c_mock;
+
+enum Times
+{
+	Never,
+	AtLeastOnce,
+	Once
+}
 
 switch(method)
 {
 	#region construct/destruct
 	case constructor:
-		this.interface = args[0];
-		this.return_map = ds_map_create();
+		this.class_info = args[0];
+		this.signature_map = ds_map_create();
 		this.call_count_map = ds_map_create();
+		this.return_map = ds_map_create();
 		this.argument_map = ds_map_create();
-		var stubs = scr_from_select(this.interface.methods, "name");
-		var stub_count = array_length_1d(stubs);
-		for(var n = 0; n < stub_count; n++)
-		{
-			var stub = stubs[n];
-			this.call_count_map[? stub] = 0;
-		}
+		map_method(this.class_info.props, this, "private_add_prop");
 		return this;
 	
-	case get_dependencies:
-		// todo: make dependency on interface;
-		return ok(skip_standards());
+	case "private_add_prop":
+		var prop = args[0];
+		if(prop.type_info.class == c_method_info)
+		{
+			this.call_count_map[? prop.name] = 0;
+			this.signature_map[? prop.name] = prop.type_info;
+		}
+		else
+		{
+			var dummy = void_unwrap(prop.type_info, "create_dummy");
+			variable_instance_set(this, prop.name, dummy);
+		}
+		return ok();
 	
 	case destructor:
+		ds_map_destroy(this.signature_map);
 		ds_map_destroy(this.return_map);
 		ds_map_destroy(this.call_count_map);
 		ds_map_destroy(this.argument_map);
-		destroy(this.interface);
+		destroy(this.class_info);
 		return ok();
 	
 	case get_object_index:
@@ -37,9 +50,6 @@ switch(method)
 	#endregion
 	
 	#region METHODS
-	
-	case "get_value":
-		return ok(this);
 
 	#region setup_stub
 	// Use setup to specify return values for stubs
@@ -63,12 +73,34 @@ switch(method)
 	#endregion
 	
 	#region call_stub
+	case "get_method_info":
+		var stub = args[0];
+		var method_info = this.signature_map[?stub];
+		if(is_undefined(method_info))
+		{
+			fail("c_mock.call_stub: method undefined: " + stub);
+			return exception("no method info");
+		}
+		return ok(method_info);
+	
+	case "assert_argument_count":
+		var method_info = args[0];
+		var param_count = scr_length(method_info.parameters);
+		var call_arg_count = args[1];
+		var pass = assert_equal(param_count, call_arg_count, "c_mock.call_stub: argument count");
+		if(!pass) return exception("fail");
+		return ok();
+	
 	case "call_stub":
-		var sig = args[0];
-		var args = args[1];
-		var stub = sig.name;
-		// if stub has signature, assert arguments are of correct type
-		if(!is_undefined(sig)) call_unwrap(sig, "assert_arguments", args);
+		var stub = args[0];
+		var call_args = args[1];
+		var method_info_result = call(this, "get_method_info", stub);
+		var arg_count_action = new(c_action, [this, "assert_argument_count", 
+			[new(c_arg_placemarker), scr_length(call_args)]
+		]);
+		var arg_count_result = call(method_info_result, "consume_action", arg_count_action);
+		var type_check_action = new(c_action, [method_info, "assert_arguments", call_args]);
+		var assert_result = call_unwrap(arg_count_result, "consume_action", type_check_action);
 		// increment call count for method
 		var count = this.call_count_map[?stub];
 		this.call_count_map[?stub] = count + 1;
@@ -79,7 +111,12 @@ switch(method)
 		{
 			return return_result;
 		}
-		else return ok();
+		else
+		{
+			var method_info = call_unwrap(this, "get_method_info", stub);
+			var dummy = void_unwrap(method_info.return_type_info, "create_dummy");
+			return ok(dummy);
+		}
 	#endregion
 	
 	#region verify

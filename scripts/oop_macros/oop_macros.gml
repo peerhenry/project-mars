@@ -11,5 +11,6 @@
 #macro get_dependencies "get_dependencies"
 // and to be replaced by:
 #macro get_interface "get_interface"
+#macro get_class_info "get_interface"
 
 #macro get_clients "get_clients"

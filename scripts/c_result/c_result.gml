@@ -51,6 +51,20 @@ switch(method)
 		// todo: consider if result needs to be destroyed here instead of in the unwrap script
 		return this.value;
 	
+	case "consume_action":
+		var action = args[0];
+		if(this.status != STATUS.OK)
+		{
+			destroy(action);
+			return this;
+		}
+		var new_result;
+		if(this.value != noone) new_result = call(action, "execute", this.value);
+		else new_result = void(action, "execute");
+		destroy(action);
+		instance_destroy(this);
+		return new_result;
+	
 	// Result needs its own destructor, otherwise destructor inheritance will cause infinite loop of result instances.
 	case destructor:
 		return ok();
@@ -65,6 +79,7 @@ switch(method)
 		test_method(here, "test_ok");
 		test_method(here, "test_ok_val");
 		test_method(here, "test_refused");
+		test_method(here, "test_consume_action");
 		break;
 	
 	case "test_ok":
@@ -85,6 +100,20 @@ switch(method)
 		assert_equal(STATUS.PROBLEM, result.status, "status is refused");
 		assert_equal(PROBLEM.REFUSED, result.value, "val is refused");
 		destroy(result);
+		break;
+	
+	case "test_consume_action":
+		var mocky = new(c_mock, new(c_class_info, [
+			new(c_method_info, ["foo", t_void(), t_void()])
+		]));
+		var result = ok();
+		var action = new(c_action, [mocky, "foo"]);
+		var new_result = call(result, "consume_action", action);
+		// assert
+		call_unwrap(mocky, "verify", ["foo", Times.Once]);
+		assert_false(instance_exists(action), "action exists");
+		assert_false(instance_exists(result), "old result exists");
+		instance_destroy(new_result);
 		break;
 	
 	default:

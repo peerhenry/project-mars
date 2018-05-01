@@ -1,12 +1,12 @@
 var method = argument0;
 var this = argument1;
 var args = argument2;
-var here = c_method;
+var here = c_method_info;
 
 switch(method)
 {
 	case constructor: // can be remove if not needed
-		this.arg_info_array = [];
+		this.parameters = [];
 		this.type = TYPE.METHOD;
 		var count = scr_length(args);
 		if(count > 0)
@@ -16,7 +16,7 @@ switch(method)
 			{
 				var arg_info = args[1];
 				if(!is_array(arg_info)) arg_info = [arg_info];
-				this.arg_info_array = arg_info;
+				this.parameters = arg_info;
 			}
 		}
 		else this.return_type_info = t_void();
@@ -25,13 +25,13 @@ switch(method)
 	case get_interface:
 		return new(c_interface, [
 			new(c_interface_property, ["return_type_info", t_object(obj_type_info)]),
-			new(c_interface_property, ["arg_info_array", t_array()])
+			new(c_interface_property, ["parameters", t_array()])
 		]);
 		break;
 
 	case destructor:
 		destroy(this.return_type_info);
-		map_script(this.arg_info_array, destroy);
+		map_script(this.parameters, destroy);
 		return ok();
 	
 	// methods
@@ -50,13 +50,7 @@ switch(method)
 		break;
 	
 	case "mytest":
-		// arrange
-		var tup = setup_testable(here);
-		var testable = tup.item0;
-		// act
-		// assert
-		// cleanup
-		cleanup_testable(tup);
+		fail("nyi");
 		break;
 	
 	default:
