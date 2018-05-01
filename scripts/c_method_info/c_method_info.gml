@@ -66,12 +66,37 @@ switch(method)
 		var dummy = void_unwrap(param.type_info, "create_dummy");
 		return ok(dummy);
 	
+	case "assert_arguments":
+		var argus = args[0];
+		for(var n = 0; n < scr_length(argus); n++)
+		{
+			var next_param = this.parameters[n];
+			call_unwrap(next_param.type_info, "assert_type", argus[n]);
+		}
+		return ok();
+		
+	case "private_cleanup_thing":
+		var thing = args[0];
+		var type_info = args[1];
+		if(type_info.type == TYPE.OBJECT) instance_destroy(thing);
+		else if(type_info.type == TYPE.LIST) ds_list_destroy(thing);
+		else if(type_info.type == TYPE.MAP) ds_map_destroy(thing);
+		return ok();
+	
 	case "assert_type": // given an instance and a method, does it respond to giver arguments - and does it return a proper type
 		var instance = args[0];
 		var method = args[1];
 		var dummy_args = map_method(this.parameters, this, "private_param_to_dummy");
 		var returned = call_unwrap(instance, method, dummy_args);
 		call_unwrap(this.return_type_info, "assert_type", returned);
+		// cleanup
+		call_unwrap(this, "private_cleanup_thing", [returned, this.return_type_info]);
+		for(var n = 0; n < scr_length(dummy_args); n++)
+		{
+			var param = this.parameters[n];
+			var argu = dummy_args[n];
+			call_unwrap(this, "private_cleanup_thing", [argu, param.type_info]);
+		}
 		return ok();
 	
 	#endregion
@@ -159,13 +184,19 @@ switch(method)
 			[p_number("d1"), p_string("d2"), p_object("d3", obj_empty)]
 		]);
 		var mocky = new(c_mock);
-		call_unwrap(mocky, "add_prop", new(c_class_property, ["foo", meth_info]));
+		show_debug_message("1 obj_empty count: " + string(scr_count_instances(obj_empty)));
+		var prop = new(c_class_property, ["foo", meth_info]);
+		show_debug_message("2 obj_empty count: " + string(scr_count_instances(obj_empty)));
+		call_unwrap(mocky, "add_prop", prop);
+		show_debug_message("3 obj_empty count: " + string(scr_count_instances(obj_empty)));
 		// assert
-		// call_unwrap(meth_info, "assert_type", [mocky, "foo"]);
-		fail("temp disabled; need to finish c_mock first");
+		call_unwrap(meth_info, "assert_type", [mocky, "foo"]);
+		show_debug_message("4 obj_empty count: " + string(scr_count_instances(obj_empty)));
 		// cleanup
 		destroy(mocky);
-		destroy(meth_info);
+		show_debug_message("5 obj_empty count: " + string(scr_count_instances(obj_empty)));
+		destroy(prop);
+		show_debug_message("6 obj_empty count: " + string(scr_count_instances(obj_empty)));
 		break;
 	
 	#endregion

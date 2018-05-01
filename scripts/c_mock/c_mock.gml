@@ -14,6 +14,7 @@ enum Times
 switch(method)
 {
 	#region construct/destruct
+	
 	case constructor:
 		this.signature_map = ds_map_create();
 		this.call_count_map = ds_map_create();
@@ -49,6 +50,7 @@ switch(method)
 	
 	case get_object_index:
 		return ok(obj_empty);
+
 	#endregion
 	
 	#region METHODS
@@ -63,7 +65,7 @@ switch(method)
 		this.return_map[? stub] = return_result;
 		var existing = this.call_count_map[?stub];
 		var exists = !is_undefined(existing);
-		if(!exists) scr_panic("Cannot setup stub; Stub does not exist in mock: " + stub);
+		if(!exists) this.call_count_map[?stub] = 0;
 		return ok();
 	
 	case "setup_stub_unwrapped":
@@ -87,8 +89,8 @@ switch(method)
 	
 	case "assert_argument_count":
 		var method_info = args[0];
-		var param_count = scr_length(method_info.parameters);
 		var call_arg_count = args[1];
+		var param_count = scr_length(method_info.parameters);
 		var pass = assert_equal(param_count, call_arg_count, "c_mock.call_stub: argument count");
 		if(!pass) return exception("fail");
 		return ok();
@@ -96,17 +98,19 @@ switch(method)
 	case "call_stub":
 		var stub = args[0];
 		var call_args = args[1];
-		var method_info_result = call(this, "get_method_info", stub);
-		var arg_count_action = new(c_action, [this, "assert_argument_count", 
-			[new(c_arg_placemarker), scr_length(call_args)]
-		]);
-		var arg_count_result = call(method_info_result, "consume_action", arg_count_action);
-		var type_check_action = new(c_action, [method_info, "assert_arguments", call_args]);
-		var assert_result = call_unwrap(arg_count_result, "consume_action", type_check_action);
+		var method_info = call_unwrap(this, "get_method_info", stub);
+		var arg_count_result = call(this, "assert_argument_count", [method_info, scr_length(call_args)]);
+		if(scr_length(call_args) > 0) 
+		{
+			var action = new(c_action, [method_info, "assert_arguments", call_args]);
+			var resx = call(arg_count_result, "consume_action", action);
+			instance_destroy(resx);
+		}
+		else instance_destroy(arg_count_result);
 		// increment call count for method
-		var count = this.call_count_map[?stub];
-		this.call_count_map[?stub] = count + 1;
-		this.argument_map[?stub] = args;
+		var count = this.call_count_map[? stub];
+		this.call_count_map[? stub] = count + 1;
+		this.argument_map[? stub] = call_args;
 		// check if stub needs to return something
 		var return_result = this.return_map[? stub];
 		if(!is_undefined(return_result))
@@ -156,9 +160,7 @@ switch(method)
 	#region tests
 	case test:
 		test_method(here, "test_add_prop");
-		test_method(here, "test_setup_stub");
 		test_method(here, "test_call_stub");
-		test_method(here, "test_verify");
 		test_method(here, "test_verify_last_call_arguments");
 		break;
 	
@@ -166,7 +168,8 @@ switch(method)
 		// arrange
 		var m = new(c_mock);
 		// act
-		call_unwrap(m, "add_prop", new(c_class_property, ["jim", t_number()]));
+		var prop = new(c_class_property, ["jim", t_number()]);
+		call_unwrap(m, "add_prop", prop);
 		// assert
 		var dti = t_number();
 		var d_number = void_unwrap(dti, "create_dummy");
@@ -174,33 +177,52 @@ switch(method)
 		// cleanup
 		destroy(dti);
 		destroy(m);
-		break;
-	
-	case "test_setup_stub":
-		fail("nyi");
+		destroy(prop);
 		break;
 	
 	case "test_call_stub":
 		// arrange
+		var m = new(c_mock);
+		var expect = 25;
 		// act
+		var prop = new(c_class_property, [
+			"foo", new(c_method_info, t_number())
+		]);
+		call_unwrap(m, "add_prop", prop);
+		call_unwrap(m, "setup_stub", ["foo", ok(expect)]);
+		var res = void_unwrap(m, "foo");
 		// assert
+		assert_equal(expect, res, "result from setup_stub");
+		call_unwrap(m, "verify", ["foo", Times.Once]);
 		// cleanup
-		break;
-	
-	case "test_verify":
-		// arrange
-		// act
-		// assert
-		fail("nyi");
-		// cleanup
+		destroy(m);
+		destroy(prop);
 		break;
 		
 	case "test_verify_last_call_arguments":
 		// arrange
+		var m = new(c_mock);
+		var expect = 25;
 		// act
+		var prop = new(c_class_property, [
+			"foo", 
+			new(c_method_info, [
+				t_number(), 
+				[p_number("a"), p_number("b"), p_number("c")]
+			])
+		]);
+		call_unwrap(m, "add_prop", prop);
+		call_unwrap(m, "setup_stub", ["foo", ok(expect)]);
+		var res = call_unwrap(m, "foo", [1,2,3]);
 		// assert
-		fail("nyi");
+		assert_equal(expect, res, "result from setup_stub");
+		call_unwrap(m, "verify_last_call_arguments", [
+			"foo", 
+			[1,2,3]
+		]);
 		// cleanup
+		destroy(m);
+		destroy(prop);
 		break;
 	
 	#endregion

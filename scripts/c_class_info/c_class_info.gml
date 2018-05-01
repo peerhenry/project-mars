@@ -98,7 +98,7 @@ switch(method)
 		var instance = args[0];
 		for(var n = 0; n < array_length_1d(this.props); n++)
 		{
-			var prop = this.props;
+			var prop = this.props[n];
 			if(prop.type_info.type != TYPE.METHOD)
 			{
 				var exists = assert_true(variable_instance_exists(instance, prop.name), "instance variable exists");
@@ -251,8 +251,7 @@ switch(method)
 		]);
 		var mocky = new(c_mock, thing);
 		// assert
-		fail("temp disabled; need to finish c_mock first");
-		// call_unwrap(thing, "assert_type", mocky); // assert mocky implements the interface
+		call_unwrap(thing, "assert_type", mocky); // assert mocky implements the interface
 		// cleanup
 		destroy(mocky);
 		destroy(thing);
