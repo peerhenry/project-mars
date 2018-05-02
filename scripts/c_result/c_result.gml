@@ -69,8 +69,8 @@ switch(method)
 	case destructor:
 		return ok();
 	
-	case get_dependencies:
-		return ok(skip_standards());
+	case get_class_info:
+		return ok_class_info([]);
 	
 	case get_object_index:
 		return ok(obj_result);
@@ -103,9 +103,10 @@ switch(method)
 		break;
 	
 	case "test_consume_action":
-		var mocky = new(c_mock, new(c_class_info, [
-			new(c_method_info, ["foo", t_void(), t_void()])
-		]));
+		var ci = new(c_class_info, [
+			prop_method_void("foo", t_void())
+		]);
+		var mocky = new(c_mock, ci);
 		var result = ok();
 		var action = new(c_action, [mocky, "foo"]);
 		var new_result = call(result, "consume_action", action);
@@ -113,7 +114,10 @@ switch(method)
 		call_unwrap(mocky, "verify", ["foo", Times.Once]);
 		assert_false(instance_exists(action), "action exists");
 		assert_false(instance_exists(result), "old result exists");
+		// cleanup
+		destroy(mocky)
 		instance_destroy(new_result);
+		destroy(ci);
 		break;
 	
 	default:

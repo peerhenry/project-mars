@@ -14,7 +14,7 @@ switch(method)
 	// todo:
 	// dependencies dont necessarily go into the constructor...
 	// so how do we let the ioc container know which dependencies are constructor injections?
-	case get_dependencies:
+	/*case get_dependencies:
 		var deps = new(c_dependencies, [
 			new_interface("navgrid", [
 				signature( "clear_astronaut", t_void(), [ t_object(obj_astronaut) ] ),
@@ -22,7 +22,16 @@ switch(method)
 				signature( "occupy", t_void(), [t_number(), t_number()] )
 			])
 		]);
-		return ok(deps);
+		return ok(deps);*/
+		
+	case get_class_info:
+		return ok_class_info([
+			prop_interface("navgrid", [
+				prop_method("clear_astronaut", t_void(), [p_object("astronaut", obj_astronaut)]),
+				prop_method("get_nearest_free_cell", t_object(obj_empty), [p_number("i"), p_number("j")]),
+				prop_method("occupy", t_void(), [p_number("i"), p_number("j")])
+			])
+		]);
 		
 	case get_clients:
 		var clients = [tuple(c_embarkable, "appear_setter")];

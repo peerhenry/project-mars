@@ -1,5 +1,5 @@
 /// @descr Mock class 
-var method = argument0;
+/*var method = argument0;
 var this = argument1;
 var args = argument2;
 var here = c_mock_old;
@@ -150,4 +150,4 @@ switch(method)
 			if(sig.name == method) return call(this, "call_stub", [sig, args]);
 		}
 		return refused();
-}
+}*/

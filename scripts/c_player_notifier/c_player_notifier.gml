@@ -8,8 +8,13 @@ switch(method)
 	case constructor: // can be remove if not needed
 		return this;
 
+	/*
 	case get_dependencies:
 		return ok(noone);	// return ok(new(c_dependencies, []));
+		*/
+
+	case get_class_info:
+		return ok_class_info([]);
 	
 	case get_clients:
 		var clients = [];

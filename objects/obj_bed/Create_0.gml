@@ -32,6 +32,10 @@ occupant = noone;
 zzz_index = 0; // there is a zzz animation for when an astronaut sleeps
 zzz_counter = 0;
 
+// temp disabled
+// until resolve dependencies is implemented
+/*
 is_interactable = true;
 var appear_setter = ioc_resolve(ioc_container, "appear_setter");
 scr_apply_class(id, c_astro_container, [appear_setter]);
+*/

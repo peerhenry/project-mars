@@ -13,14 +13,13 @@ switch(method)
 	case destructor:
 		return ok();
 	
-	case get_dependencies:
-		var deps = new(c_dependencies, [
-			new_interface("embarkable", [
-				signature("embark", t_void(), t_object(obj_astronaut))
+	case get_class_info:
+		return ok_class_info([
+			prop_interface("embarkable", [
+				prop_signature("embark", t_void(), t_object(obj_astronaut))
 			]),
-			dependency("astronaut", t_object(obj_astronaut))
+			prop_object("astronaut", t_object(obj_astronaut))
 		]);
-		return ok(deps);
 
 	case "execute":
 		var result = call(this.embarkable, "embark", this.astronaut);

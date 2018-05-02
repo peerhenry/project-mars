@@ -10,8 +10,11 @@ switch(method)
 		this.value = args[1];
 		return this;
 	
-	case get_dependencies:
-		return ok(skip_standards());
+	case get_class_info:
+		return ok_class_info([
+			prop_string("name"),
+			prop_any("value"),
+		]);
 
 	case "get_name":
 		return ok(this.name);

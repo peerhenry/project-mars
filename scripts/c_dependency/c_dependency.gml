@@ -16,14 +16,14 @@ switch(method)
 		this.owned = false; // is the client responsible for cleanup?
 		return this;
 	
-	case get_dependencies:
+	/*case get_dependencies:
 		var deps = new(c_dependencies, [
 			dependency("name", t_string()),
 			dependency("type_info", t_object(obj_type_info)),
 			dependency("optional", t_number())
 		]);
 		return ok(deps);
-		//return ok(skip_standards());
+		//return ok(skip_standards());*/
 	
 	case destructor:
 		if(this.type_info != noone) destroy(this.type_info)

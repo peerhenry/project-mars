@@ -100,8 +100,9 @@ switch(method)
 		var call_args = args[1];
 		var method_info = call_unwrap(this, "get_method_info", stub);
 		var arg_count_result = call(this, "assert_argument_count", [method_info, scr_length(call_args)]);
-		if(scr_length(call_args) > 0) 
+		if(scr_length(call_args) > 0)
 		{
+			show_debug_message("call args length: " + string(scr_length(call_args)));// DEBUG
 			var action = new(c_action, [method_info, "assert_arguments", call_args]);
 			var resx = call(arg_count_result, "consume_action", action);
 			instance_destroy(resx);
@@ -162,6 +163,27 @@ switch(method)
 		test_method(here, "test_add_prop");
 		test_method(here, "test_call_stub");
 		test_method(here, "test_verify_last_call_arguments");
+		// expect_fail(here, "test_expect_fail"); // sanity test
+		expect_fail(here, "test_call_stub_with_wrong_args");
+		break;
+	
+	case "test_expect_fail":
+		fail("check");
+		break;
+	
+	case "test_call_stub_with_wrong_args":
+		// arrange
+		var m = new(c_mock);
+		// act
+		var prop = prop_method("foo", t_number(), [
+			p_number("a")
+		]);
+		call_unwrap(m, "add_prop", prop);
+		// assert
+		call_unwrap(m, "foo", "billy"); // this should case an assertion fail
+		// cleanup
+		destroy(m);
+		destroy(prop);
 		break;
 	
 	case "test_add_prop":

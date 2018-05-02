@@ -14,14 +14,6 @@ switch(method)
 	case destructor: 
 		return ok();
 	
-	case get_dependencies:
-		return ok_deps([
-			new_interface("action", [
-				signature("execute", t_any(), t_void())
-			]),
-			dependency("delay", t_number())
-		]);
-	
 	case get_object_index:
 		return obj_alarm_action;
 	

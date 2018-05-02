@@ -6,6 +6,11 @@ var class = argument0;
 var instance = argument1;
 var method = argument2;
 var args = argument3;
+if(debug_mode)
+{
+	var prefix = (object_index > 0) ? "(@" + object_get_name(object_index) + ") " : "";
+	show_debug_message("[CALL " + prefix + "] " + script_get_name(class) + "." + method);
+}
 if(!is_array(args)) args = [args];
 var result = script_execute(class, method, instance, args);
 if(result.refused_request)

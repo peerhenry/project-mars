@@ -2,7 +2,7 @@ var method = argument0;
 var this = argument1;
 var args = argument2;
 var here = c_signature;
-
+/*
 switch(method)
 {
 	#region con/des
@@ -106,4 +106,4 @@ switch(method)
 	
 	default:
 		scr_panic("Refused request: function not defined: " + method);
-}
+}*/

@@ -67,7 +67,7 @@ switch(method)
 		return ok(dummy);
 	
 	case "assert_arguments":
-		var argus = args[0];
+		var argus = args;
 		for(var n = 0; n < scr_length(argus); n++)
 		{
 			var next_param = this.parameters[n];

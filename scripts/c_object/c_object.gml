@@ -11,8 +11,8 @@ switch(method)
 	case destructor:
 		return ok();
 	
-	case get_dependencies:
-		return ok(noone);
+	case get_class_info:
+		return ok_class_info([]);
 	
 	case get_clients:
 		return ok(noone);

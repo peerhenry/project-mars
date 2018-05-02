@@ -8,11 +8,11 @@ switch(method)
 	case constructor: // can be remove if not needed
 		return this;
 
-	case get_dependencies:
-		return ok(noone);	// return new(c_dependencies, []);
-
 	case destructor: 
 		return ok();
+
+	case get_class_info:
+		return ok_class_info([]);
 	
 	// methods
 	

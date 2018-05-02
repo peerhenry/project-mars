@@ -1,4 +1,3 @@
-// prop_method("foo", t_void(), p_interface(dep_name, expect))
 /// @arg name
 /// @arg return_type_info
 /// @arg parameters

@@ -6,6 +6,7 @@ var arg_astronaut = argument1;
 
 #region new code
 
+/*
 var ioc_container = arg_astronaut.ioc_container;
 var factory_result = call(ioc_container, "resolve", "interaction_factory");
 if(factory_result.status == STATUS.OK)
@@ -19,6 +20,7 @@ else
 	scr_notify_player(factory_result.value);
 	destroy(factory_result);
 }
+*/
 
 #endregion
 

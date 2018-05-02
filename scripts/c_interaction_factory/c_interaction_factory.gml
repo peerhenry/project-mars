@@ -8,14 +8,6 @@ switch(method)
 	case constructor: // can be remove if not needed
 		this.notifier = args[0];	// borrowed
 		return this;
-
-	case get_dependencies:
-		var deps = new(c_dependencies, [
-			new_interface( "notifier", [
-				signature( "notify_player", t_void(), t_string() )
-			])
-		]);
-		return ok(deps);
 	
 	case get_clients:
 		return ok(noone);

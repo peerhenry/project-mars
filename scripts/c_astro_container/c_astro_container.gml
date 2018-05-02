@@ -17,14 +17,14 @@ switch(method)
 		ds_list_destroy(this.embarked_astronauts);
 		return ok();
 	
-	case get_dependencies:
-		var deps = new(c_dependencies, [
-			new_interface("appear_setter", [
-				signature("disappear", t_void(), t_object(obj_astronaut)),
-				signature("reappear", t_void(), t_object(obj_astronaut))
-			])
-		]);
-		return ok(deps);
+	/*case get_dependencies:
+		return ok_class_info([
+			prop_interface("appear_setter", [
+				prop_signature("disappear", t_void(), t_object(obj_astronaut)),
+				prop_signature("reappear", t_void(), t_object(obj_astronaut))
+			]),
+			prop_object("occupant", t_object(obj_astronaut)) // example of a prop that does not get injected
+		]);*/
 	
 	case get_clients:
 		// todo: depend on relevant interaction

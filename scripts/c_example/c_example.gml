@@ -26,12 +26,12 @@ switch(method)
 		// can overload by using a switch here on argument_count
 		break;
 	
-	// This method is necessary to enable:
-	// 1. Testing that the client calls its dependencies correctly (by using mock)
+	// This method is necessary for automated testing:
+	// 1. Testing that the client calls its dependencies correctly
 	// 2. Testing that another class is able to serve this one.
 	// 3. Resolving dependencies in the ioc container
-	case get_dependencies:
-		return ok(noone);
+	case get_class_info:
+		return ok_class_info([]);
 	
 	// todo: write explanation here about dependency registration, and standard class testing
 	case get_clients:

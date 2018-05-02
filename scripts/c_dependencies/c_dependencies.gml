@@ -1,3 +1,4 @@
+/*
 #region set method and this
 var method = argument0;
 var this = argument1;
@@ -65,4 +66,4 @@ switch(method)
 	
 	default:
 		return refused();
-}
+}*/

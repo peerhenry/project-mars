@@ -9,11 +9,9 @@ switch(method)
 		this.placemarker = "placemarker";
 		return this;
 	
-	case get_interface:
-		return new(c_class_info, [
-			new(c_class_property, [
-				"placemarker", t_any()
-			])
+	case get_class_info:
+		return ok_class_info([
+			prop_any("placemarker")
 		]);
 	
 	case test:

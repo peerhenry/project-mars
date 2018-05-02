@@ -1,4 +1,5 @@
 /// @descr Mock class 
+/*
 var method = argument0;
 var this = argument1;
 var args = argument2;
@@ -58,4 +59,4 @@ switch(method)
 	
 	default:
 		return refused();
-}
+}*/

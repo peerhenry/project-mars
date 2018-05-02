@@ -33,9 +33,9 @@ switch(method)
 
 	case destructor:
 		return ok();
-	
-	case get_dependencies:
-		return ok(skip_standards());
+		
+	case get_class_info:
+		return ok_class_info([]);
 	
 	case test:
 		test_init("test tuple");

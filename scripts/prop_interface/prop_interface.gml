@@ -1,0 +1,1 @@
+return new(c_class_property, [argument0, t_interface(argument1)]);

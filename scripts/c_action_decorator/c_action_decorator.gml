@@ -16,13 +16,6 @@ switch(method)
 		if(this.previous != noone) destroy(this.previous);
 		return ok();
 	
-	case get_dependencies:
-		return ok_deps([
-			new_interface("action", [
-				signature("execute", t_any(), t_void())
-			])
-		]);
-	
 	case get_clients:
 		var clients = [tuple(c_delay, "action")];
 		return ok(clients);

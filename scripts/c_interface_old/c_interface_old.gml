@@ -1,5 +1,5 @@
 /// @descr Mock class 
-var method = argument0;
+/*var method = argument0;
 var this = argument1;
 var args = argument2;
 var here = c_interface_old;
@@ -71,4 +71,4 @@ switch(method)
 	
 	default:
 		return refused();
-}
+}*/
