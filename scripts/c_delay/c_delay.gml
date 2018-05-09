@@ -17,6 +17,9 @@ switch(method)
 	case get_object_index:
 		return obj_alarm_action;
 	
+	case get_class_info:
+		return exception_skip_standards();
+	
 	// methods
 	case "set":
 		with(this)

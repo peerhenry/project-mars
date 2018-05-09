@@ -38,6 +38,16 @@ switch(method)
 				break;
 		}
 		return this;
+	
+	// Result needs its own destructor, otherwise destructor inheritance will cause infinite loop of result instances.
+	case destructor:
+		return ok();
+	
+	case get_class_info:
+		return exception_skip_standards();
+	
+	case get_object_index:
+		return ok(obj_result);
 
 	// methods
 	case "unwrap":
@@ -79,16 +89,6 @@ switch(method)
 			str = "OK: " + string(this.value)
 		}
 		return ok(str);
-	
-	// Result needs its own destructor, otherwise destructor inheritance will cause infinite loop of result instances.
-	case destructor:
-		return ok();
-	
-	case get_class_info:
-		return ok_class_info([]);
-	
-	case get_object_index:
-		return ok(obj_result);
 	
 	case test:
 		test_method(here, "test_ok");

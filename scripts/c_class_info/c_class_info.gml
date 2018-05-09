@@ -11,19 +11,19 @@ switch(method)
 		var arg_count = scr_length(args);
 		this.props = args;
 		// todo: filter constructor arguments
-		this.prop_map = ds_map_create();
-		map_method(this.props, this, "private_add_to_prop_map");
+		this.props_map = ds_map_create();
+		map_method(this.props, this, "private_add_to_props_map");
 		this.type = TYPE.INTERFACE;
 		return this;
 
 	case destructor:
 		map_script(this.props, destroy);
-		ds_map_destroy(this.prop_map);
+		ds_map_destroy(this.props_map);
 		return ok();
 
-	case "private_add_to_prop_map":
+	case "private_add_to_props_map":
 		var prop = args[0];
-		this.prop_map[? prop.name] = prop;
+		this.props_map[? prop.name] = prop;
 		return ok();
 	#endregion
 
@@ -84,7 +84,7 @@ switch(method)
 		for(var n = 0; n < array_length_1d(this.props); n++)
 		{
 			var this_prop = this.props[n];
-			var other_prop = bigger_intf.prop_map[? this_prop.name];
+			var other_prop = bigger_intf.props_map[? this_prop.name];
 			var prop_exists = !is_undefined(other_prop);
 			assert_true(prop_exists, "prop_exists: " + this_prop.name);
 			if(prop_exists) // prop types should match

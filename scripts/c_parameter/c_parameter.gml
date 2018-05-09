@@ -8,11 +8,18 @@ switch(method)
 	case constructor:
 		this.name = args[0];
 		this.type_info = args[1];
-		this.owned = false;
+		this.is_consumed = false;
 		return this;
 
 	case destructor: 
 		return ok();
+	
+	case get_class_info:
+		return ok_class_info([
+			prop_string("name"),
+			prop_object("type_info", obj_type_info),
+			prop_bool("is_consumed", NOT_INJECTED)
+		]);
 	
 	// methods
 	

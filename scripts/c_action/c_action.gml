@@ -9,8 +9,7 @@ switch(method)
 	case constructor: // can be remove if not needed
 		this.instance = args[0];
 		this.method = args[1];
-		if(scr_length(args) == 3) this.arguments = args[2];
-		else this.arguments = [];
+		this.arguments = (scr_length(args) == 3) ? args[2] : [];
 		return this;
 
 	case destructor: 

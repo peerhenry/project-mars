@@ -13,7 +13,7 @@ if(factory_result.status == STATUS.OK)
 {
 	var factory = unwrap(factory_result);
 	var interaction = call_unwrap(factory, "create_interaction", [arg_assignable, arg_astronaut]);
-	in(f_astro, "set_end_path_action", arg_astronaut, interaction);
+	in(f_astro, "set_end_path_action", [arg_astronaut, interaction]);
 }
 else
 {

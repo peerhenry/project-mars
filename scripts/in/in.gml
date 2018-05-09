@@ -1,28 +1,18 @@
-/// @descr Syntactic sugar; read as "in <script> call <method> with <arguments>" => in(script, method, arguments...)
+/// @descr Syntactic sugar; read as "in <script> call <function> with <arguments>" => in(script, method, arguments...)
 /// @arg script
-/// @arg method
+/// @arg function
 /// @arg arguments...
 var script = argument[0];
-var method = argument[1];
+var func = argument[1];
 
 switch(argument_count)
 {
 	case 2:
-		return script_execute(script, method);
+		return script_execute(script, func, []);
 	case 3:
-		return script_execute(script, method, argument[2]);
-	case 4:
-		return script_execute(script, method, argument[2], argument[3]);
-	case 5:
-		return script_execute(script, method, argument[2], argument[3], argument[4]);
-	case 6:
-		return script_execute(script, method, argument[2], argument[3], argument[4], argument[5]);
-	case 7:
-		return script_execute(script, method, argument[2], argument[3], argument[4], argument[5], argument[6]);
-	case 8:
-		return script_execute(script, method, argument[2], argument[3], argument[4], argument[5], argument[6], argument[7]);
-	case 9:
-		return script_execute(script, method, argument[2], argument[3], argument[4], argument[5], argument[6], argument[7], argument[8]);
+		var args = argument[2];
+		if(!is_array(args)) args = [args];
+		return script_execute(script, func, args);
 	default:
 		show_error("call_static error: Too many arguments", true);
 }

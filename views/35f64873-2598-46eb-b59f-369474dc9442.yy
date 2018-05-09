@@ -12,7 +12,9 @@
         "b3f6c2de-cd29-4e52-b23d-0b1ec2338996",
         "f2f1a89d-03ac-4c8a-8884-80bcec1b5598",
         "729c8777-6884-48fa-9593-041a38a34735",
-        "7bfde01f-ad7a-40b6-8f9f-3667e0ffa458"
+        "7bfde01f-ad7a-40b6-8f9f-3667e0ffa458",
+        "190170aa-881e-4dde-a50a-03e9a17b5878",
+        "b48d4248-8984-4a81-89b3-e9642be02f44"
     ],
     "filterType": "GMScript",
     "folderName": "method calling",

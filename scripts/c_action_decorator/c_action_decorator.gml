@@ -10,7 +10,20 @@ switch(method)
 		this.action = args[0]
 		this.previous = noone;
 		return this;
-
+	
+	case get_class_info:
+		/*return ok_class_info([
+			owned_interface("action", [
+				prop_method_void("execute", t_any())
+			]),
+			prop_interface("previous", [
+				prop_method_void("execute", t_any())
+			], OWNED | NOT_INJECTED),
+			
+			prop_method("then", ) // todo: implement any args
+		]);*/
+		return exception_skip_standards();
+	
 	case destructor:
 		destroy(this.action);
 		if(this.previous != noone) destroy(this.previous);

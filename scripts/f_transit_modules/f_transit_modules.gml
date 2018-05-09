@@ -1,9 +1,12 @@
+var func = argument[0];
+var args = argument[1];
 var here = f_transit_modules;
-switch(argument[0])
+
+switch(func)
 {	
 	// functions
 	case "engage_thrusters": // lander => void
-		var arg_lander = argument[1];
+		var arg_lander = args[0];
 		if(!audio_is_playing(sound_fx_exhaust)) resolve_execute(global.script_container, "play_sound", sound_fx_exhaust);
 		with(arg_lander)
 		{
@@ -13,7 +16,7 @@ switch(argument[0])
 		break;
 	
 	case "disengage_thrusters": // lander => void
-		var arg_lander = argument[1];
+		var arg_lander = args[0];
 		var no_other_thrusters = true;
 		with(obj_lander) if(id != arg_lander && path_exists(path)) no_other_thrusters = false;
 		if(no_other_thrusters && audio_is_playing(sound_fx_exhaust)) audio_stop_sound(sound_fx_exhaust);
@@ -25,8 +28,8 @@ switch(argument[0])
 		break;
 	
 	case "plot_course":	// lander => void
-		var arg_lander = argument[1];
-		var arg_landing = argument[2];
+		var arg_lander = args[0];
+		var arg_landing = args[1];
 		with(arg_lander)
 		{
 			if(!path_exists(path)) path = path_add();
@@ -53,15 +56,15 @@ switch(argument[0])
 		break;
 	
 	case "land": // lander => void
-		var arg_lander = argument[1];
-		in(here, "plot_course", arg_lander, true);
+		var arg_lander = args[0];
+		in(here, "plot_course", [arg_lander, true]);
 		in(here, "engage_thrusters", arg_lander);
 		break;
 		
 	case "takeoff": // lander => bool
-		var arg_lander = argument[1];
+		var arg_lander = args[0];
 		if(path_exists(arg_lander.path)) return false; // it already is landing or taking off
-		in(here, "plot_course", arg_lander, false);
+		in(here, "plot_course", [arg_lander, false]);
 		in(here, "engage_thrusters", arg_lander);
 		for(var i = -1; i <= 1; i++) // todo: allow for landers of different sizes
 		{
@@ -73,14 +76,14 @@ switch(argument[0])
 		return true; // todo: do something with the return value @ client
 		
 	case "complete_landing": // lander => void
-		var arg_lander = argument[1];
+		var arg_lander = args[0];
 		in(here, "disengage_thrusters", arg_lander);
 		arg_lander.is_landing = false;
 		path_delete(path);
 		break;
 	
 	case "complete_takeoff": // lander => void
-		var arg_lander = argument[1];
+		var arg_lander = args[0];
 		in(here, "disengage_thrusters", arg_lander);
 		instance_destroy(arg_lander);
 		break;

@@ -10,6 +10,7 @@ enum TYPE {
 	NUMBER,
 	INTEGER,	// extra check: floor(value) == value
 	STRING,
+	BOOL,
 	ARRAY,
 	// the rest are numbers with interpretation
 	OBJECT,
@@ -33,6 +34,7 @@ switch(method)
 		var type = args[0];
 		if(type == TYPE.OBJECT) this.object_type = args[1];
 		this.type = type;
+		this.is_on_heap = type == TYPE.OBJECT || type == TYPE.INTERFACE || type == TYPE.LIST || type == TYPE.MAP;
 		return this;
 
 	case get_object_index:
@@ -82,6 +84,10 @@ switch(method)
 				break;
 			case TYPE.STRING:
 				assert_equal("string", typeof(value), "typeof(arg)");
+				break;
+			case TYPE.BOOL:
+				var true_or_false = value == true || value == false;
+				assert_true(true_or_false, "typeof(arg)");
 				break;
 			case TYPE.SCRIPT:
 				assert_true(script_exists(value), "script_exists(arg)");
@@ -139,6 +145,9 @@ switch(method)
 				break;
 			case TYPE.STRING:
 				dummy = "dummy";
+				break;
+			case TYPE.BOOL:
+				dummy = true;
 				break;
 			case TYPE.SCRIPT:
 				dummy = scr_mock;

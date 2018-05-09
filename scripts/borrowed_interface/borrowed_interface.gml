@@ -1,3 +1,1 @@
-var thing = new(c_class_property, [argument0, t_interface(argument1)]);
-thing.is_borrowed = true;
-return thing;
+return prop_interface(argument0, argument1);

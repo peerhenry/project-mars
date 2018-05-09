@@ -17,6 +17,14 @@ switch(method)
 		destroy(this.type_info);
 		return ok();
 	
+	case get_class_info:
+		return ok_class_info([
+			prop_string("name"),
+			owned_object("type_info", obj_type_info),
+			prop_bool("is_borrowed", NOT_INJECTED),
+			prop_bool("gets_injected", NOT_INJECTED)
+		]);
+	
 	case test:
 		break;
 	

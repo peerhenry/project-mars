@@ -35,7 +35,7 @@ switch(method)
 		return ok();
 		
 	case get_class_info:
-		return ok_class_info([]);
+		return exception_skip_standards();
 	
 	case test:
 		test_init("test tuple");

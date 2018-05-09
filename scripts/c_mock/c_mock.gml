@@ -27,6 +27,24 @@ switch(method)
 		}
 		return this;
 	
+	case get_class_info:
+		return ok_class_info([
+			prop_map("signature_map", OWNED | NOT_INJECTED),
+			owned_map("call_count_map", NOT_INJECTED),
+			owned_map("return_map", NOT_INJECTED),
+			owned_map("argument_map", NOT_INJECTED)
+		]);
+	
+	case destructor:
+		ds_map_destroy(this.signature_map);
+		ds_map_destroy(this.return_map);
+		ds_map_destroy(this.call_count_map);
+		ds_map_destroy(this.argument_map);
+		return ok();
+	
+	case get_object_index:
+		return ok(obj_empty);
+	
 	case "add_prop":
 		var prop = args[0];
 		if(prop.type_info.class == c_method_info)
@@ -40,16 +58,6 @@ switch(method)
 			variable_instance_set(this, prop.name, dummy);
 		}
 		return ok();
-	
-	case destructor:
-		ds_map_destroy(this.signature_map);
-		ds_map_destroy(this.return_map);
-		ds_map_destroy(this.call_count_map);
-		ds_map_destroy(this.argument_map);
-		return ok();
-	
-	case get_object_index:
-		return ok(obj_empty);
 
 	#endregion
 	
@@ -250,5 +258,6 @@ switch(method)
 	#endregion
 	
 	default:
-		return call(this, "call_stub", [method, args]);
+		if(!is_undefined(this) && this != noone) return call(this, "call_stub", [method, args]);
+		else return refused();
 }

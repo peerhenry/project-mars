@@ -1,7 +1,7 @@
 /// @arg function
 /// @arg arguments...
-var arg_function = argument[0];
-
+var arg_function = argument0;
+var args = argument1;
 var here = f_drill_mine;
 
 // This is used to iterate over in test function
@@ -20,20 +20,20 @@ switch(arg_function)
 	
 	#region bucket_is_full: bucket => bool
 	case "bucket_is_full":
-		var arg_bucket = argument[1];
+		var arg_bucket = args[0];
 		return arg_bucket.image_index >= sprite_get_number(arg_bucket.sprite_index)-1;
 	#endregion
 	
 	#region needs_new_bucket: drill => bool
 	case "needs_new_bucket":
-		var arg_drill = argument[1];
+		var arg_drill = args[0];
 		var drill_bucket = arg_drill.active_bucket;
 		return (drill_bucket == noone || !instance_exists(drill_bucket) || in(here, "bucket_is_full", drill_bucket));
 	#endregion
 	
 	#region find_bucket_with_space: drill => bucket?
 	case "find_bucket_with_space":
-		var arg_drill = argument[1];
+		var arg_drill = args[0];
 		var adjacent_buckets = scr_get_adjacent_instances(arg_drill, obj_bucket);
 		with(arg_drill)
 		{
@@ -53,15 +53,15 @@ switch(arg_function)
 	
 	#region can_mine: (drill, script) => bool
 	case "can_mine":
-		var arg_drill = argument[1];
-		var can_draw_power = argument[2];
+		var arg_drill = args[0];
+		var can_draw_power = args[1];
 		with(arg_drill) return !under_construction && instance_exists(resource_instance) && script_execute(can_draw_power, id);
 	#endregion
 	
 	#region dump: drill => void
 	case "dump":
 		show_debug_message("f_drill_mine.dump");
-		var arg_drill = argument[1];
+		var arg_drill = args[0];
 		with(arg_drill)
 		{
 			active_bucket.image_index += 1;
@@ -78,11 +78,11 @@ switch(arg_function)
 	
 	#region mine: drill => void
 	case "mine":
-		var arg_drill = argument[1];
+		var arg_drill = args[0];
 		with(arg_drill)
 		{
 			var can_draw_power = resolve_script(global.script_container, "can_draw_power");
-			var can_mine = in(here, "can_mine", arg_drill, can_draw_power);
+			var can_mine = in(here, "can_mine", [arg_drill, can_draw_power]);
 			if(can_mine)
 			{
 				var needs_new_bucket = in(here, "needs_new_bucket", arg_drill)
@@ -261,7 +261,7 @@ switch(arg_function)
 		var drill = instance_create_depth(xx, yy, 0, obj_drill); // create event acquires resource
 		drill.under_construction = false;
 		// act
-		var result = in(here, "can_mine", drill, scr_mock_return_true);
+		var result = in(here, "can_mine", [drill, scr_mock_return_true]);
 		// assert
 		assert_true(result, "can mine");
 		// cleanup
@@ -278,7 +278,7 @@ switch(arg_function)
 		var drill = instance_create_depth(xx, yy, 0, obj_drill); // create event acquires resource
 		drill.under_construction = false;
 		// act
-		var result = in(here, "can_mine", drill, scr_mock_return_false);
+		var result = in(here, "can_mine", [drill, scr_mock_return_false]);
 		// assert
 		assert_false(result, "can mine");
 		// cleanup
@@ -295,7 +295,7 @@ switch(arg_function)
 		var drill = instance_create_depth(xx, yy, 0, obj_drill); // create event acquires resource
 		drill.under_construction = true;
 		// act
-		var result = in(here, "can_mine", drill, scr_mock_return_true);
+		var result = in(here, "can_mine", [drill, scr_mock_return_true]);
 		// assert
 		assert_false(result, "can mine");
 		// cleanup
@@ -310,7 +310,7 @@ switch(arg_function)
 		var drill = instance_create_depth(xx, yy, 0, obj_drill); // create event acquires resource
 		drill.under_construction = false;
 		// act
-		var result = in(here, "can_mine", drill, scr_mock_return_true);
+		var result = in(here, "can_mine", [drill, scr_mock_return_true]);
 		// assert
 		assert_false(result, "can mine");
 		// cleanup

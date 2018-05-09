@@ -1,3 +1,4 @@
 /// @arg name
-var name = argument0;
-return new(c_class_property, [name, t_array()]);
+var name = argument[0];
+var handle = argument_count == 2 ? argument[1] : 0;
+return scr_create_prop(name, t_array(), handle);
