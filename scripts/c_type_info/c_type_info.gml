@@ -28,22 +28,22 @@ enum TYPE {
 switch(method)
 {
 	#region constructor / destructor
-	
+
 	case constructor: // can be remove if not needed
 		var type = args[0];
 		if(type == TYPE.OBJECT) this.object_type = args[1];
 		this.type = type;
 		return this;
-	
+
 	case get_object_index:
 		return ok(obj_type_info);
-	
-	case get_dependencies:
-		return ok(skip_standards());
-	
+
+	case get_class_info:
+		return exception_skip_standards();
+
 	case destructor: 
 		return ok();
-		
+
 	#endregion
 
 	#region assert_type
@@ -134,6 +134,7 @@ switch(method)
 				dummy = noone;
 				break;
 			case TYPE.NUMBER:
+			case TYPE.INTEGER:
 				dummy = 1;
 				break;
 			case TYPE.STRING:
@@ -157,6 +158,12 @@ switch(method)
 				break;
 			case TYPE.STACK:
 				dummy = ds_stack_create();
+				break;
+			case TYPE.METHOD:
+				scr_panic("illegal use of type_info: 1. Cannot make a dummy off a method! 2. Should use c_method_info instead of c_type_info");
+				break;
+			case TYPE.INTERFACE:
+				scr_panic("illegal use of type_info: use c_class_info with TYPE.INTERFACE");
 				break;
 			// todo: add grid, queue, priority	
 		}

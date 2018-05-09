@@ -1,10 +1,12 @@
-test_class(c_type_info);
-test_class(c_class_info);
-test_class(c_method_info);
 test_class(c_tester);
+test_class(c_standards_tester);
+test_class(c_serve_client_tester);
+test_class(c_type_info);
+/*test_class(c_class_info);
+test_class(c_method_info);
 test_class(c_mock);
 test_class(c_result);
-test_class(c_action);
+test_class(c_action);*/
 
 
 /* TEMPORARILY DISABLED

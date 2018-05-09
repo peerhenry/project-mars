@@ -1,8 +1,8 @@
 {
-    "id": "94198618-7050-4091-80a5-3376ab7f00f8",
+    "id": "91285774-f2a5-4cd1-8343-f01f19706a98",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "dependency",
+    "name": "prop_script",
     "IsCompatibility": false,
     "IsDnD": false
 }

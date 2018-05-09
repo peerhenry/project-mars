@@ -14,6 +14,10 @@ switch(method)
 	case get_class_info:
 		return ok_class_info([]);
 	
+	// array of tuples containing class and dependency name
+	case get_clients:
+		return ok(noone);
+	
 	// methods
 	
 	case test:

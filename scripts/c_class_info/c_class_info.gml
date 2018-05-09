@@ -20,28 +20,28 @@ switch(method)
 		map_script(this.props, destroy);
 		ds_map_destroy(this.prop_map);
 		return ok();
-	
+
 	case "private_add_to_prop_map":
 		var prop = args[0];
 		this.prop_map[? prop.name] = prop;
 		return ok();
 	#endregion
-	
+
 	#region methods
 	case "create_dummy":
 		var m = new(c_mock, this); // mock gets ownership of the interface
 		return ok(m);
 
-	case "get_injection_args":
+	case "get_injected_props":
 		var data = [];
 		var head = 0;
 		for(var n = 0; n < array_length_1d(this.props); n++)
 		{
 			var this_prop = this.props[n];
-			if(this_prop.type_info.type != TYPE.METHOD) data[head++] = this_prop;
+			if(this_prop.type_info.type != TYPE.METHOD && this_prop.gets_injected) data[head++] = this_prop;
 		}
-		return ok(args);
-	
+		return ok(data);
+
 	case "get_data_props":
 		var data = [];
 		var head = 0;

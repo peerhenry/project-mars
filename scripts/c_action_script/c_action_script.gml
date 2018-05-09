@@ -10,36 +10,36 @@ switch(method)
 		this.script = args[0];
 		if(scr_length(args) == 2)
 		{
-			if(!is_array(args[1])) this.args = [args[1]];
-			else this.args = args[1];
+			if(!is_array(args[1])) this.arguments = [args[1]];
+			else this.arguments = args[1];
 		}
-		else this.args = [];
+		else this.arguments = [];
 		return this;
 
 	case destructor: 
 		return ok();
 	
-	case get_dependencies:
-		return ok_deps([
-			dependency("script", t_script()),
-			dependency("args", t_array())
+	case get_class_info:
+		return ok_class_info([
+			prop_script("script")	// doing number here instead of object because it can have any object_index
+			, prop_array("arguments")
 		]);
 	
 	// methods
 	case "execute":
-		switch(scr_length(this.args))
+		switch(scr_length(this.arguments))
 		{
 			case 0:
 				var res = script_execute(this.script);
 				break;
 			case 1:
-				var res = script_execute(this.script, this.args[0]);
+				var res = script_execute(this.script, this.arguments[0]);
 				break;
 			case 2:
-				var res = script_execute(this.script, this.args[0], this.args[1]);
+				var res = script_execute(this.script, this.arguments[0], this.arguments[1]);
 				break;
 			case 3:
-				var res = script_execute(this.script, this.args[0], this.args[1], this.args[2]);
+				var res = script_execute(this.script, this.arguments[0], this.arguments[1], this.arguments[2]);
 				break;
 		}
 		return ok(res);

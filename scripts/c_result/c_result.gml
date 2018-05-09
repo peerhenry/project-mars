@@ -65,6 +65,21 @@ switch(method)
 		instance_destroy(this);
 		return new_result;
 	
+	case "to_string":
+		var str = "";
+		if(this.status != STATUS.OK)
+		{
+			var problem = "Refused Request";
+			if(this.value = PROBLEM.EXCEPTION) problem = "Exception: " + this.message;
+			if(this.value = PROBLEM.ERROR) problem = "Error: " + this.message;
+			str = str + problem;
+		}
+		else
+		{
+			str = "OK: " + string(this.value)
+		}
+		return ok(str);
+	
 	// Result needs its own destructor, otherwise destructor inheritance will cause infinite loop of result instances.
 	case destructor:
 		return ok();

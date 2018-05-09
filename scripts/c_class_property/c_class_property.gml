@@ -9,6 +9,8 @@ switch(method)
 	case constructor:
 		this.name = args[0];
 		this.type_info = args[1];
+		this.is_borrowed = true;
+		this.gets_injected = true;
 		return this;
 
 	case destructor:

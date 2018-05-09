@@ -15,7 +15,8 @@
         "14ec03f8-b753-43e7-9e84-6fbefd4a48af",
         "9a4ffe90-a482-4932-a6b5-3a3c2341aba7",
         "7b22cb7c-6fe8-4e03-b112-c3a4a411f721",
-        "4f644567-d998-4349-9e57-9c2451a8deb1"
+        "4f644567-d998-4349-9e57-9c2451a8deb1",
+        "c5b646f2-a542-4c18-b112-20f243f381dd"
     ],
     "filterType": "GMScript",
     "folderName": "unit testing",
