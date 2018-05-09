@@ -17,17 +17,7 @@ switch(method)
 		return ok();
 	
 	case test:
-		test_method(here, "mytest");
-		break;
-	
-	case "mytest":
-		// arrange
-		var tup = setup_testable(here);
-		var testable = tup.item0;
-		// act
-		// assert
-		// cleanup
-		cleanup_testable(tup);
+		// test_method(here, "mytest");
 		break;
 	
 	default:

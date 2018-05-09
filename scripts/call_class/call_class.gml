@@ -6,6 +6,7 @@ var class = argument0;
 var instance = argument1;
 var method = argument2;
 var args = argument3;
+if(!is_array(args)) args = [args];
 
 #region trace call
 var trace_it = debug_mode && class != c_result && method != get_object_index;
@@ -26,7 +27,6 @@ if(trace_it)
 }
 #endregion trace call
 
-if(!is_array(args)) args = [args];
 var result = script_execute(class, method, instance, args);
 if(result.refused_request)
 {

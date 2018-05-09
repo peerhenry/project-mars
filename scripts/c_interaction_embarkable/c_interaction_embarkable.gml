@@ -32,11 +32,10 @@ switch(method)
 		break;
 	
 	case "test_execute":
-		var tup = setup_testable(here);
-		var item = tup.item0;
+		var item = setup_testable(here);
 		void_unwrap(item, "execute");
-		mock_verify(tup.item1[0], "embark", Times.Once);
-		cleanup_testable(tup);
+		mock_verify(item.embarkable, "embark", Times.Once);
+		cleanup_testable(item);
 		break;
 	
 	#endregion

@@ -17,6 +17,7 @@ switch(method)
 	
 	case constructor:
 		this.signature_map = ds_map_create();
+		this.signature_names = ds_list_create();
 		this.call_count_map = ds_map_create();
 		this.return_map = ds_map_create();
 		this.argument_map = ds_map_create();
@@ -30,12 +31,21 @@ switch(method)
 	case get_class_info:
 		return ok_class_info([
 			prop_map("signature_map", OWNED | NOT_INJECTED),
+			prop_list("signature_names", OWNED | NOT_INJECTED),
 			owned_map("call_count_map", NOT_INJECTED),
 			owned_map("return_map", NOT_INJECTED),
 			owned_map("argument_map", NOT_INJECTED)
 		]);
 	
+	case "cleanup_signature":
+		var name = args[0];
+		var meth_info = this.signature_map[? name];
+		destroy(meth_info);
+		return ok();
+	
 	case destructor:
+		foreach(this.signature_names, this, "cleanup_signature");
+		ds_list_destroy(this.signature_names);
 		ds_map_destroy(this.signature_map);
 		ds_map_destroy(this.return_map);
 		ds_map_destroy(this.call_count_map);
@@ -48,9 +58,10 @@ switch(method)
 	case "add_prop":
 		var prop = args[0];
 		if(prop.type_info.class == c_method_info)
-		{
+		{	
+			ds_list_add(this.signature_names, prop.name);
 			this.call_count_map[? prop.name] = 0;
-			this.signature_map[? prop.name] = prop.type_info;
+			this.signature_map[? prop.name] = uvoid(prop.type_info, "copy");
 		}
 		else
 		{
@@ -107,10 +118,10 @@ switch(method)
 		var stub = args[0];
 		var call_args = args[1];
 		var method_info = call_unwrap(this, "get_method_info", stub);
+		if(!instance_exists(method_info)) return result_error("method info does not exist for: " + stub);
 		var arg_count_result = call(this, "assert_argument_count", [method_info, scr_length(call_args)]);
 		if(scr_length(call_args) > 0)
 		{
-			show_debug_message("call args length: " + string(scr_length(call_args)));// DEBUG
 			var action = new(c_action, [method_info, "assert_arguments", call_args]);
 			var resx = call(arg_count_result, "consume_action", action);
 			instance_destroy(resx);

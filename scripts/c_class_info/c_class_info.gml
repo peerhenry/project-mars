@@ -14,6 +14,7 @@ switch(method)
 		this.props_map = ds_map_create();
 		map_method(this.props, this, "private_add_to_props_map");
 		this.type = TYPE.INTERFACE;
+		this.is_on_heap = true;
 		return this;
 
 	case destructor:
@@ -28,8 +29,13 @@ switch(method)
 	#endregion
 
 	#region methods
+	case "copy":
+		var copied_props = morph(this.props, "copy");
+		var copy = new(here, copied_props);
+		return ok(copy);
+	
 	case "create_dummy":
-		var m = new(c_mock, this); // mock gets ownership of the interface
+		var m = new(c_mock, this);
 		return ok(m);
 
 	case "prop_is_injection":
@@ -218,7 +224,7 @@ switch(method)
 			])
 		]);
 		var thing = new(c_class_info, [
-			new(c_class_property, ["foo", method_info]),		// prop_method("foo", t_void(), p_interface(dep_name, expect))
+			new(c_class_property, ["foo", method_info]),
 			new(c_class_property, ["numby", t_number()])
 		]);
 		// act

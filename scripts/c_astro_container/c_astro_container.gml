@@ -80,8 +80,7 @@ switch(method)
 	
 	case "disembark_test":
 		// setup
-		var tup = setup_testable(here);
-		var object = tup.item0;
+		var object = setup_testable(here);
 		var mock_setter = object.appear_setter;
 		var astro = instance_create_depth(0,0,0,obj_astronaut);
 		call_unwrap(object, "embark", astro);
@@ -91,13 +90,12 @@ switch(method)
 		mock_verify(mock_setter, "reappear", Times.Once); // in mock_setter, verify that stub for "reappear" has been called once
 		// cleanup
 		instance_destroy(astro);
-		cleanup_testable(tup);
+		cleanup_testable(object);
 		break;
 	
 	case "embark_test":
 		// setup
-		var tup = setup_testable(here);
-		var object = tup.item0;
+		var object = setup_testable(here);
 		var mock_setter = object.appear_setter;
 		var astro = instance_create_depth(0,0,0,obj_astronaut);
 		// act
@@ -106,13 +104,12 @@ switch(method)
 		mock_verify(mock_setter, "disappear", Times.Once);
 		// cleanup
 		instance_destroy(astro);
-		cleanup_testable(tup);
+		cleanup_testable(object);
 		break;
 	
 	case "embark_atm_is_full":
 		// setup
-		var tup = setup_testable(here);
-		var object = tup.item0;
+		var object = setup_testable(here);
 		var mock_setter = object.appear_setter;
 		var astro = instance_create_depth(0,0,0,obj_astronaut);
 		ds_list_add(object.embarked_astronauts, 13);
@@ -126,7 +123,7 @@ switch(method)
 		assert_equal(PROBLEM.EXCEPTION, result.value, "problem");
 		// cleanup
 		instance_destroy(astro);
-		cleanup_testable(tup);
+		cleanup_testable(object);
 		destroy(result);
 		break;
 	

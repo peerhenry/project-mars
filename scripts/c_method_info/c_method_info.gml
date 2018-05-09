@@ -25,6 +25,7 @@ switch(method)
 			}
 		}
 		else this.return_type_info = t_void();
+		this.is_on_heap = false;
 		return this;
 
 	case get_class_info:
@@ -41,6 +42,12 @@ switch(method)
 	#endregion constructor
 	
 	#region methods
+	
+	case "copy":
+		var return_info_copy = uvoid(this.return_type_info, "copy");
+		var param_copies = morph(this.parameters, "copy");
+		var copy = new(c_method_info, [return_info_copy, param_copies]);
+		return ok(copy);
 	
 	case "create_dummy":
 		// hmm, does this have any purpose here??

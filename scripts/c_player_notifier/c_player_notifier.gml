@@ -14,7 +14,9 @@ switch(method)
 		*/
 
 	case get_class_info:
-		return ok_class_info([]);
+		return ok_class_info([
+			prop_method("notify_player", t_void(), p_string("msg"))
+		]);
 	
 	case get_clients:
 		var clients = [];
@@ -28,17 +30,6 @@ switch(method)
 	
 	case test:
 		test_nyi(here);
-		//test_method(here, "mytest");
-		break;
-	
-	case "mytest":
-		// arrange
-		var tup = setup_testable(here);
-		var testable = tup.item0;
-		// act
-		// assert
-		// cleanup
-		cleanup_testable(tup);
 		break;
 	
 	default:

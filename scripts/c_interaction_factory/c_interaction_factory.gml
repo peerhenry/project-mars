@@ -45,8 +45,7 @@ switch(method)
 	
 	case "test_create_atm_interaction":
 		// arrange
-		var tup = setup_testable(here);
-		var testable = tup.item0;
+		var testable = setup_testable(here);
 		var astro = instance_create_depth(0,0,0,obj_astronaut);
 		var atm = instance_create_depth(0,0,0,obj_atm_small);
 		// act
@@ -59,7 +58,7 @@ switch(method)
 		destroy(action);
 		instance_destroy(astro);
 		instance_destroy(atm);
-		cleanup_testable(tup);
+		cleanup_testable(testable);
 		break;
 	
 	default:

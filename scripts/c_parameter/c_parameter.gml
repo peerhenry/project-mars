@@ -21,7 +21,11 @@ switch(method)
 			prop_bool("is_consumed", NOT_INJECTED)
 		]);
 	
-	// methods
+	case "copy":
+		var info_copy = uvoid(this.type_info, "copy");
+		var copy = new(here, [this.name, info_copy]);
+		copy.is_consumed = this.is_consumed;
+		return ok(copy);
 	
 	case test:
 		break;

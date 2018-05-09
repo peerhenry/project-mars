@@ -10,27 +10,25 @@ switch(method)
 	case constructor:
 		this.navgrid = args[0];
 		return this;
-	
-	// todo:
-	// dependencies dont necessarily go into the constructor...
-	// so how do we let the ioc container know which dependencies are constructor injections?
-	/*case get_dependencies:
-		var deps = new(c_dependencies, [
-			new_interface("navgrid", [
-				signature( "clear_astronaut", t_void(), [ t_object(obj_astronaut) ] ),
-				signature( "get_nearest_free_cell", t_object(obj_empty), [t_number(), t_number()] ),
-				signature( "occupy", t_void(), [t_number(), t_number()] )
-			])
-		]);
-		return ok(deps);*/
 		
 	case get_class_info:
 		return ok_class_info([
 			prop_interface("navgrid", [
-				prop_method("clear_astronaut", t_void(), [p_object("astronaut", obj_astronaut)]),
-				prop_method("get_nearest_free_cell", t_object(obj_empty), [p_number("i"), p_number("j")]),
+				prop_method("clear_astronaut", t_void(), p_object("astronaut", obj_astronaut)),
+				prop_method("get_nearest_free_cell", 
+					t_interface([	// todo: make a tuple type
+						prop_integer("item0"),
+						prop_integer("item1")
+					]), 
+					[
+						p_integer("i"), 
+						p_integer("j")
+					]
+				),
 				prop_method("occupy", t_void(), [p_number("i"), p_number("j")])
-			])
+			]),
+			prop_method("disappear", t_void(), p_object("astro", obj_astronaut)),
+			prop_method("reappear", t_void(), p_object("astro", obj_astronaut))
 		]);
 		
 	case get_clients:
@@ -41,7 +39,6 @@ switch(method)
 	case "disappear":
 		var astro = args[0];
 		call_unwrap(this.navgrid, "clear_astronaut", astro);
-		// scr_navgrid_clear_astronaut(astro); // TIGHT COUPLING
 		with(astro)
 		{
 			script_update = scr_mock;
@@ -86,8 +83,7 @@ switch(method)
 	
 	case "disappear_test":
 		// arrange
-		var tup = setup_testable(here);
-		var testable = tup.item0;
+		var testable = setup_testable(here);
 		var astro = instance_create_depth(0,0,0,obj_astronaut);
 		// assert setup
 		assert_false(scr_navgrid_cell_is_free(astro.occ_i, astro.occ_j), "nagrid is free");
@@ -99,13 +95,12 @@ switch(method)
 		mock_verify(testable.navgrid, "clear_astronaut", Times.Once);
 		// cleanup
 		instance_destroy(astro);
-		cleanup_testable(tup);
+		cleanup_testable(testable);
 		break;
 	
 	case "reappear_test":
 		// arrange
-		var tup = setup_testable(here);
-		var testable = tup.item0;
+		var testable = setup_testable(here);
 		var astro = instance_create_depth(0,0,0,obj_astronaut);
 		var mock_navgrid = testable.navgrid;
 		var dummytuple = tuple(1,1);
@@ -121,13 +116,12 @@ switch(method)
 		mock_verify(testable.navgrid, "get_nearest_free_cell", Times.Once);
 		// cleanup
 		instance_destroy(astro);
-		cleanup_testable(tup);
+		cleanup_testable(testable);
 		break;
 	
 	case "cannot_reappear":
 		// arrange
-		var tup = setup_testable(here);
-		var testable = tup.item0;
+		var testable = setup_testable(here);
 		var astro = instance_create_depth(0,0,0,obj_astronaut);
 		call_unwrap(testable, "disappear", astro);
 		var old_i = astro.occ_i;
@@ -143,7 +137,7 @@ switch(method)
 		assert_true(old_i == astro.occ_i && old_j == astro.occ_j, "astro is on old spot");
 		// cleanup
 		instance_destroy(astro);
-		cleanup_testable(tup);
+		cleanup_testable(testable);
 		destroy(exc);
 		break;
 	#endregion

@@ -1,9 +1,7 @@
-#region set method and this
-var here = c_leak;
 var method = argument0;
 var this = argument1;
 var args = argument2;
-#endregion
+var here = c_leak;
 
 switch(method)
 {
@@ -11,10 +9,10 @@ switch(method)
 		this.drain_per_step = args[0];
 		return this;
 
-	/* todo: replace this with get_class_info
-	case get_dependencies:
-		return ok_deps([dependency("drain_per_step", t_number())]);
-	*/
+	case get_class_info:
+		return ok_class_info([
+			prop_number("drain_per_step")
+		]);
 
 	// UNIT TESTS
 	case test:

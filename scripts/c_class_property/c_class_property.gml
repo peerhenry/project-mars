@@ -25,6 +25,13 @@ switch(method)
 			prop_bool("gets_injected", NOT_INJECTED)
 		]);
 	
+	case "copy":
+		var info_copy = uvoid(this.type_info, "copy");
+		var copy = new(c_class_property, [this.name, info_copy]);
+		copy.is_borrowed = this.is_borrowed;
+		copy.gets_injected = this.gets_injected;
+		return ok(copy);
+	
 	case test:
 		break;
 	

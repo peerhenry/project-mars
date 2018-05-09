@@ -26,12 +26,11 @@ switch(method)
 	
 	case "mytest":
 		// arrange
-		var tup = setup_testable(here);
-		var testable = tup.item0;
+		var testable = setup_testable(here);
 		// act
 		// assert
 		// cleanup
-		cleanup_testable(tup);
+		cleanup_testable(testable);
 		break;
 	
 	default:

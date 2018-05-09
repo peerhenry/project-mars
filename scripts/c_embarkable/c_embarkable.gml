@@ -18,15 +18,19 @@ switch(method)
 		ds_list_destroy(this.embarked_astronauts);
 		return ok();
 	
-	/*case get_dependencies:
-		var deps = new(c_dependencies, [
-			new_interface("appear_setter", [
-				signature("disappear", t_void(), t_object(obj_astronaut)),
-				signature("reappear", t_void(), t_object(obj_astronaut))
+	case get_class_info:
+		return ok_class_info([
+			prop_interface("appear_setter", [
+				prop_method("disappear", t_void(), p_object("astro", obj_astronaut)),
+				prop_method("reappear", t_void(), p_object("astro", obj_astronaut))
 			]),
-			dependency("capacity", t_integer())
+			prop_integer("capacity"),
+			prop_list("embarked_astronauts", NOT_INJECTED),
+			prop_string("full_message", NOT_INJECTED),
+			
+			prop_method("embark", t_void(), p_object("arg_astronaut", obj_astronaut)),
+			prop_method("disembark", t_void(), p_object("arg_astronaut", obj_astronaut))
 		]);
-		return ok(deps);*/
 	
 	case get_clients:
 		// todo: depend on the interaction_factory without being a constructor injection
@@ -65,8 +69,7 @@ switch(method)
 	
 	case "disembark_test":
 		// setup
-		var tup = setup_testable(here);
-		var object = tup.item0;
+		var object = setup_testable(here);
 		var mock_setter = object.appear_setter;
 		var astro = instance_create_depth(0,0,0,obj_astronaut);
 		call_unwrap(object, "embark", astro);
@@ -76,13 +79,12 @@ switch(method)
 		mock_verify(mock_setter, "reappear", Times.Once); // in mock_setter, verify that stub for "reappear" has been called once
 		// cleanup
 		instance_destroy(astro);
-		cleanup_testable(tup);
+		cleanup_testable(object);
 		break;
 	
 	case "embark_test":
 		// setup
-		var tup = setup_testable(here);
-		var object = tup.item0;
+		var object = setup_testable(here);
 		var mock_setter = object.appear_setter;
 		var astro = instance_create_depth(0,0,0,obj_astronaut);
 		// act
@@ -91,13 +93,12 @@ switch(method)
 		mock_verify(mock_setter, "disappear", Times.Once);
 		// cleanup
 		instance_destroy(astro);
-		cleanup_testable(tup);
+		cleanup_testable(object);
 		break;
 	
 	case "embark_atm_is_full":
 		// setup
-		var tup = setup_testable(here);
-		var object = tup.item0;
+		var object = setup_testable(here);
 		var mock_setter = object.appear_setter;
 		var astro = instance_create_depth(0,0,0,obj_astronaut);
 		ds_list_add(object.embarked_astronauts, 13);
@@ -111,7 +112,7 @@ switch(method)
 		assert_equal(PROBLEM.EXCEPTION, result.value, "problem");
 		// cleanup
 		instance_destroy(astro);
-		cleanup_testable(tup);
+		cleanup_testable(object);
 		destroy(result);
 		break;
 	

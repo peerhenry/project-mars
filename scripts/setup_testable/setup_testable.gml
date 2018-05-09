@@ -1,8 +1,9 @@
 /// @arg class
-// todo: update this
 var class = argument0;
-var mocks = create_mocks(class);
-var mock_vals = morph(mocks, "get_value");
-var instance = new(class, mock_vals);
-if(instance == noone) scr_panic("Could not setup testable");
-return tuple(instance, mocks);
+
+var info = void_static_unwrap(class, get_class_info);
+var inj_props = uvoid(info, "get_injected_props");
+var dummy_values = scr_from_select_morph(inj_props, "type_info", "create_dummy");
+var instance = new(class, dummy_values);
+destroy(info);
+return instance;

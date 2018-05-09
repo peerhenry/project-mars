@@ -15,8 +15,7 @@
         "8837c27e-267d-43ca-9698-edad30e244ef",
         "e9ddd96f-f251-45f2-9d23-01658bd5046e",
         "5627023b-96eb-48dc-9721-8802e343d2e4",
-        "1acfa7d8-4bd7-423b-96b2-16de6a3db696",
-        "55651cc9-4f42-4555-ae30-466a6192d748"
+        "1acfa7d8-4bd7-423b-96b2-16de6a3db696"
     ],
     "filterType": "GMScript",
     "folderName": "functions",

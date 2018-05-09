@@ -48,6 +48,10 @@ switch(method)
 
 	#endregion
 
+	case "copy":
+		var copy = (this.type == TYPE.OBJECT) ? new(here, [this.type, this.object_type]) : new(here, this.type);
+		return ok(copy);
+
 	#region assert_type
 	case "assert_match":
 		var other_type_info = args[0];

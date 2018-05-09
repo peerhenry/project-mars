@@ -98,6 +98,10 @@ case "assert_argument_cleanup":
 	switch(type)
 	{
 		case TYPE.INTERFACE:
+			exists = instance_exists(value);
+			thing_string = "class instance";
+			if(should_exist) destroy(value);
+			break;
 		case TYPE.OBJECT:
 			exists = instance_exists(value);
 			thing_string = "object";
@@ -161,9 +165,14 @@ case "assert_serves_clients":
 				if(dep_is_ok)
 				{
 					var dep_class_info = unwrap(dependency_result);
-					var dep_is_valid = instance_exists(dep_class_info) && variable_instance_exists(dep_class_info, "class") && dep_class_info.class == c_class_info;
-					assert_true(dep_is_valid, "dependency is valid");
-					if(dep_is_valid)
+					var dep_exists = instance_exists(dep_class_info);
+					assert_true(dep_exists, "dependency is valid: it exists and is an instance of c_class_info");
+					if(dep_exists)
+					{
+						var dep_is_valid = variable_instance_exists(dep_class_info, "class") && dep_class_info.class == c_class_info;
+						assert_true(dep_is_valid, "dependency is valid: it exists and is an instance of c_class_info");
+					}
+					if(dep_exists && dep_is_valid)
 					{
 						call_unwrap(dep_class_info, "assert_match", info); // assert info fits the dependency
 					}
