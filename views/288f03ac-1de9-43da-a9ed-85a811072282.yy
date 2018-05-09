@@ -10,8 +10,7 @@
         "232e70ef-7a8a-4479-ab19-b66f258b387d",
         "9674dee7-b334-4f35-8588-0b536d773037",
         "acd90e8c-7ee6-467f-9b36-f718c2086ed7",
-        "7c60fa74-c675-41d4-bde3-8087084303a5",
-        "32a131b1-065d-437c-b72b-ad160936210a"
+        "7c60fa74-c675-41d4-bde3-8087084303a5"
     ],
     "filterType": "GMScript",
     "folderName": "framework",

@@ -7,10 +7,12 @@
 #macro get_parent "get_parent"
 #macro get_object_index "get_object_index"
 
-// to become obsolete:
-#macro get_dependencies "get_dependencies"
-// and to be replaced by:
-#macro get_interface "get_interface" // make this obsolete
 #macro get_class_info "get_class_info"
-
 #macro get_clients "get_clients"
+
+// macros that can be given to factory methods for class props and method parameter info classes
+// default is borrowed and injected
+// #macro BORROWED 0
+// #macro INJECTED 0
+#macro OWNED 1
+#macro NOT_INJECTED 2

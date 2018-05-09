@@ -22,7 +22,8 @@
         "a424da03-1594-4d29-9419-93f72fb02bae",
         "97da2b32-0ca5-4bec-ab26-f0a8bbacb77a",
         "60c84142-57c3-46ec-b183-222ce74b7d2e",
-        "1169f4eb-1ec3-4ec2-b921-f2da9d1b356c"
+        "7d7b0d6f-c8c5-4865-b172-c3fcb6fa35cb",
+        "ba5fd187-1555-424a-a150-698894d1c738"
     ],
     "filterType": "GMScript",
     "folderName": "props",

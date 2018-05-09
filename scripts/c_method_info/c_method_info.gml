@@ -27,12 +27,11 @@ switch(method)
 		else this.return_type_info = t_void();
 		return this;
 
-	case get_interface:
-		return new(c_interface, [
-			new(c_interface_property, ["return_type_info", t_object(obj_type_info)]),
-			new(c_interface_property, ["parameters", t_array()])
+	case get_class_info:
+		return ok_class_info([
+			owned_object("return_type_info", obj_type_info),
+			prop_array("parameters")
 		]);
-		break;
 
 	case destructor:
 		destroy(this.return_type_info);

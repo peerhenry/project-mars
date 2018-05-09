@@ -1,8 +1,8 @@
 {
-    "id": "e88b587d-78ab-4fd9-8792-7317a249e20d",
+    "id": "7d7b0d6f-c8c5-4865-b172-c3fcb6fa35cb",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "dep_owned",
+    "name": "prop_list",
     "IsCompatibility": false,
     "IsDnD": false
 }

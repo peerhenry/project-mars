@@ -1,4 +1,4 @@
-/// @descr call a method in each element of the array
+/// @descr to be called on a collection of objects
 /// @arg collection
 /// @arg variable
 var collection = argument0;

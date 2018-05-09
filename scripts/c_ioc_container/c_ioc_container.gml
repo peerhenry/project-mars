@@ -13,16 +13,22 @@ switch method
 		this.class_container = ds_map_create(); // string - class
 		this.resolvings = ds_list_create();
 		return this;
+	
+	case get_class_info:
+		return ok_class_info([
+			owned_map("instances", NOT_INJECTED),
+			owned_map("class_container", NOT_INJECTED),
+			owned_list("resolvings", NOT_INJECTED)
+		]);
 		
 	case get_object_index:
 		return ok(obj_ioc_container);
 	
-	case "destroy_resolving":
-		var res = args[0];
-		if(instance_exists(res))
-		{
-			destroy(res);
-		}
+	case destructor:
+		ds_map_destroy(this.instances);
+		ds_map_destroy(this.class_container);
+		void_unwrap(this, "clear_resolvings");
+		ds_list_destroy(this.resolvings);
 		return ok();
 	
 	case "clear_resolvings":
@@ -30,11 +36,12 @@ switch method
 		ds_list_clear(this.resolvings);
 		return ok();
 	
-	case destructor:
-		ds_map_destroy(this.instances);
-		ds_map_destroy(this.class_container);
-		void_unwrap(this, "clear_resolvings");
-		ds_list_destroy(this.resolvings);
+	case "destroy_resolving":
+		var res = args[0];
+		if(instance_exists(res))
+		{
+			destroy(res);
+		}
 		return ok();
 	#endregion
 	
@@ -62,13 +69,8 @@ switch method
 	case "resolve_with_dependencies":
 		// Resolve dependencies
 		var class = args[0];
-		var deps = args[1];
-		var d_names_list = scr_from_select(deps.list, "name");
-		var dep_names = scr_list_to_array(d_names_list);
-		ds_list_destroy(d_names_list);
-		var resolved_deps = map_method(dep_names, this, "resolve");
-		destroy(deps);
-		// Inject dependencies
+		var inj_names = args[1];
+		var resolved_deps = map_method(inj_names, this, "resolve");
 		instance = new(class, resolved_deps);
 		return ok(instance);
 	
@@ -76,19 +78,19 @@ switch method
 		var name = args[0];
 		// Check argument
 		var class = this.class_container[? name];
-		if(typeof(name) != "string") scr_panic("Cannot resolve: key was not a string!");
+		if(typeof(name) != "string") return result_error("Cannot resolve: key was not a string!");
 		if(is_undefined(class)) return exception("Could not resolve: No class registered for: " + name);
 		// Check if there's an instance registerd for class
 		var instance = this.instances[? class];
 		if(!is_undefined(instance)) return ok(instance);
 		// Check if there are dependencies
-		var deps = cs_get_dependencies(class);
-		var has_dependencies = deps != noone;
+		var inj_names = scr_get_injection_names(class);
+		var has_dependencies = scr_length(inj_names) > 0;
 		if(!has_dependencies)
 		{
 			instance = new(class);
 		}
-		else instance = call_unwrap(this, "resolve_with_dependencies", [class, deps]);
+		else instance = call_unwrap(this, "resolve_with_dependencies", [class, inj_names]);
 		ds_list_add(this.resolvings, instance);
 		return ok(instance);
 	#endregion

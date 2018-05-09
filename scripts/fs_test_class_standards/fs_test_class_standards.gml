@@ -93,7 +93,7 @@ case "assert_argument_cleanup":
 	var type = args[2];
 	var assertion = should_exist ? assert_true : assert_false;
 	var thing_string = "undefined";
-	var expect_do_string = should_exist ? "did not destroy borrowed " : "destroyed owned "
+	var expect_do_string = should_exist ? "should not destroy borrowed " : "should destroy owned "
 	var exists = false;
 	switch(type)
 	{

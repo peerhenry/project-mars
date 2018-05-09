@@ -32,15 +32,18 @@ switch(method)
 		var m = new(c_mock, this); // mock gets ownership of the interface
 		return ok(m);
 
+	case "prop_is_injection":
+		var prop = args[0];
+		var inj = prop.type_info.type != TYPE.METHOD && prop.gets_injected;
+		return ok(inj);
+
 	case "get_injected_props":
-		var data = [];
-		var head = 0;
-		for(var n = 0; n < array_length_1d(this.props); n++)
-		{
-			var this_prop = this.props[n];
-			if(this_prop.type_info.type != TYPE.METHOD && this_prop.gets_injected) data[head++] = this_prop;
-		}
+		var data = scr_where(this.props, this, "prop_is_injection");
 		return ok(data);
+	
+	case "get_injection_names":
+		var names = scr_from_select_where(this.props, "name", this, "prop_is_injection");
+		return ok(names);
 
 	case "get_data_props":
 		var data = [];
