@@ -24,7 +24,8 @@ switch(method)
 
 	case "private_add_to_props_map":
 		var prop = args[0];
-		this.props_map[? prop.name] = prop;
+		var name = prop.name;
+		this.props_map[? name] = prop;
 		return ok();
 	#endregion
 

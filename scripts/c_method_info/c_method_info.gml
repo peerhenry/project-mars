@@ -25,13 +25,16 @@ switch(method)
 			}
 		}
 		else this.return_type_info = t_void();
-		this.is_on_heap = false;
+		this.is_on_heap = false;		// list, map or object
+		this.throws_exception = false;	// given default dummy arguments, will it throw an exception?
 		return this;
 
 	case get_class_info:
 		return ok_class_info([
 			owned_object("return_type_info", obj_type_info),
-			prop_array("parameters")
+			prop_array("parameters"),
+			prop_bool("is_on_heap"),
+			prop_bool("throws_exception")
 		]);
 
 	case destructor:
@@ -62,7 +65,7 @@ switch(method)
 		{
 			var next_param = this.parameters[n];
 			var other_param = other_meth_info.parameters[n];
-			assert_equal(next_param.name, other_param.name, "parameter name");
+			// assert_equal(next_param.name, other_param.name, "parameter name"); // I don't think parameter name matching is that important.
 			call_unwrap(next_param.type_info, "assert_match", other_param.type_info);
 		}
 		return ok();

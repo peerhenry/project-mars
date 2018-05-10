@@ -4,6 +4,8 @@ var function = argument0;
 var args = argument1;
 var here = fs_test_class_standards;
 
+show_debug_message("fs_test_class_standards." + function);
+
 switch(function)
 {
 
@@ -62,26 +64,59 @@ case "test_run_methods":
 	var instance = args[0];
 	var info = args[1];
 	var method_props = void_unwrap(info, "get_method_props");
-	for(var n = 0; n < array_length_1d(method_props); n++)
+	foreach_f_ap(method_props, here, "test_run_method", [arg_mark(), instance]); // foreach thing, apply a function with arguments
+	break;
+#endregion
+
+#region test_run_method
+case "test_run_method":
+	var method = args[0];
+	var instance = args[1];
+	// show_debug_message("test_run_method, method class: " + script_get_name(method.class // DEBUG
+	var rt = method.type_info.return_type_info;
+	var params = method.type_info.parameters;
+	var param_type_infos = scr_from_select(params, "type_info");
+	var dummy_params = morph(param_type_infos, "create_dummy");
+	var result = call(instance, method.name, dummy_params);
+	var expect_exception = method.type_info.throws_exception;
+	var is_ok = STATUS.OK == result.status;
+		
+	if(expect_exception)
 	{
-		var method = method_props[n];
-		var rt = method.type_info.return_type_info;
-		var params = method.type_info.parameters;
-		var param_type_infos = scr_from_select(params, "type_info");
-		var dummy_params = morph(param_type_infos, "create_dummy");
-		var result = call(instance, method.name, dummy_params);
-		var is_ok = assert_equal(STATUS.OK, result.status, "result from calling " + method.name + " is OK");
-		if(is_ok)
+		assert_false(is_ok, "result from calling " + method.name + " should not be OK");
+		instance_destroy(result);
+	}
+	else assert_true(is_ok, "result from calling " + method.name + " should be OK");
+	
+	if(is_ok)
+	{
+		var returny = unwrap(result);
+		call_unwrap(rt, "assert_type", returny);
+		if(rt.is_on_heap)
 		{
-			call_unwrap(rt, "assert_type", unwrap(result));
+			switch(rt.type)
+			{
+				case TYPE.INTERFACE:
+					destroy(returny);
+					break;
+				case TYPE.OBJECT:
+					instance_destroy(returny);
+					break;
+				case TYPE.LIST:
+					ds_list_destroy(returny);
+					break;
+				case TYPE.MAP:
+					ds_map_destroy(returny);
+					break;
+			}
 		}
-		// assert cleanup dummy params
-		for(var m = 0; m < scr_length(params); m++)
-		{
-			var next_param = params[m];
-			var val = dummy_params[m];
-			if(next_param.type_info.is_on_heap) in(here, "assert_argument_cleanup", [val, !next_param.is_consumed, next_param.type_info.type]);
-		}
+	}
+	// assert cleanup dummy params
+	for(var m = 0; m < scr_length(params); m++)
+	{
+		var next_param = params[m];
+		var val = dummy_params[m];
+		if(next_param.type_info.is_on_heap) in(here, "assert_argument_cleanup", [val, !next_param.is_consumed, next_param.type_info.type]);
 	}
 	break;
 #endregion

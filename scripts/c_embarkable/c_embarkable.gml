@@ -25,11 +25,11 @@ switch(method)
 				prop_method("reappear", t_void(), p_object("astro", obj_astronaut))
 			]),
 			prop_integer("capacity"),
-			prop_list("embarked_astronauts", NOT_INJECTED),
+			owned_list("embarked_astronauts", NOT_INJECTED),
 			prop_string("full_message", NOT_INJECTED),
 			
 			prop_method("embark", t_void(), p_object("arg_astronaut", obj_astronaut)),
-			prop_method("disembark", t_void(), p_object("arg_astronaut", obj_astronaut))
+			prop_method_throws("disembark", t_void(), p_object("arg_astronaut", obj_astronaut))
 		]);
 	
 	case get_clients:

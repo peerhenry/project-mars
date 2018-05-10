@@ -16,3 +16,5 @@
 // #macro INJECTED 0
 #macro OWNED 1
 #macro NOT_INJECTED 2
+
+#macro MARK arg_mark()
