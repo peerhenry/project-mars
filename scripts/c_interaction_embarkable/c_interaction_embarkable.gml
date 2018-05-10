@@ -14,11 +14,14 @@ switch(method)
 		return ok();
 	
 	case get_class_info:
+		var siggy = prop_signature("embark", t_void(), t_object(obj_astronaut));
+		var embarky = prop_interface("embarkable", [siggy]);
+		var astro_prop = prop_object("astronaut", obj_astronaut);
+		var executy = prop_method_void("execute", t_any())
 		return ok_class_info([
-			prop_interface("embarkable", [
-				prop_signature("embark", t_void(), t_object(obj_astronaut))
-			]),
-			prop_object("astronaut", t_object(obj_astronaut))
+			embarky,
+			astro_prop,
+			executy
 		]);
 
 	case "execute":

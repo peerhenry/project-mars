@@ -13,7 +13,7 @@ switch(method)
 	
 	// methods
 	case "execute":
-		resolve_execute(global.script_container, "alert_player", "execute interaction");
+		resolve_execute(global.script_container, "alert_player", "interaction not implemented for...");
 		return ok();
 	
 	case test:

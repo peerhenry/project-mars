@@ -14,6 +14,7 @@ enum TYPE {
 	ARRAY,
 	// the rest are numbers with interpretation
 	OBJECT,
+	OBJECT_ANY,
 	OBJECT_INDEX,
 	SCRIPT,
 	MAP,
@@ -32,9 +33,14 @@ switch(method)
 
 	case constructor: // can be remove if not needed
 		var type = args[0];
-		if(type == TYPE.OBJECT) this.object_type = args[1];
+		if(type == TYPE.OBJECT)
+		{
+			var object_type = args[1];
+			if(!object_exists(object_type)) scr_panic("Could not create c_type_info for TYPE.OBJECT: received non-existing object index (" + string(object_type) + ")");
+			this.object_type = object_type;
+		}
 		this.type = type;
-		this.is_on_heap = type == TYPE.OBJECT || type == TYPE.INTERFACE || type == TYPE.LIST || type == TYPE.MAP;
+		this.is_on_heap = type == TYPE.OBJECT || type == TYPE.OBJECT_ANY || type == TYPE.INTERFACE || type == TYPE.LIST || type == TYPE.MAP;
 		return this;
 
 	case get_object_index:
@@ -156,7 +162,9 @@ switch(method)
 			case TYPE.SCRIPT:
 				dummy = scr_mock;
 				break;
-			// types with context:
+			case TYPE.OBJECT_ANY:
+				dummy = instance_create_depth(0,0,0,obj_empty);
+				break;
 			case TYPE.OBJECT:
 				dummy = instance_create_depth(0,0,0,this.object_type);
 				break;

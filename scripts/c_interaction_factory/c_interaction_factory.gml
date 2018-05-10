@@ -15,6 +15,22 @@ switch(method)
 	case destructor: 
 		return ok();
 	
+	case get_class_info:
+		return ok_class_info([
+			prop_interface("notifier", [
+				prop_method_sig("notify_player", SIG.STRING_TO_VOID)
+			]),
+			prop_method("create_interaction", 
+				t_interface([
+					prop_method_sig("execute", SIG.VOID_TO_ANY)
+				]),
+				[
+					p_object_any("interactable"),
+					p_object("actor", obj_task_actor)
+				]
+			)
+		]);
+	
 	case "create_interaction":
 		var interactable = args[0];
 		var actor = args[1];

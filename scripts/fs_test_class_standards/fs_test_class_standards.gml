@@ -88,30 +88,15 @@ case "test_run_method":
 	}
 	else assert_true(is_ok, "result from calling " + method.name + " should be OK");
 	
+	// assert return type and cleanup if on heap
 	if(is_ok)
 	{
 		var returny = unwrap(result);
 		call_unwrap(rt, "assert_type", returny);
-		if(rt.is_on_heap)
-		{
-			switch(rt.type)
-			{
-				case TYPE.INTERFACE:
-					destroy(returny);
-					break;
-				case TYPE.OBJECT:
-					instance_destroy(returny);
-					break;
-				case TYPE.LIST:
-					ds_list_destroy(returny);
-					break;
-				case TYPE.MAP:
-					ds_map_destroy(returny);
-					break;
-			}
-		}
+		in(here, "cleanup_if_on_heap", [returny, rt]);
 	}
-	// assert cleanup dummy params
+	
+	// assert cleanup of parameters
 	for(var m = 0; m < scr_length(params); m++)
 	{
 		var next_param = params[m];
@@ -121,10 +106,37 @@ case "test_run_method":
 	break;
 #endregion
 
+#region cleanup_if_on_heap
+case "cleanup_if_on_heap":
+	var returny = args[0];
+	var info = args[1];
+	call_unwrap(info, "assert_type", returny);
+	if(info.is_on_heap)
+	{
+		switch(info.type)
+		{
+			case TYPE.INTERFACE:
+				destroy(returny);
+				break;
+			case TYPE.OBJECT:
+			case TYPE.OBJECT_ANY:
+				instance_destroy(returny);
+				break;
+			case TYPE.LIST:
+				ds_list_destroy(returny);
+				break;
+			case TYPE.MAP:
+				ds_map_destroy(returny);
+				break;
+		}
+	}
+	break;
+#endregion
+
 #region assert_argument_cleanup
 case "assert_argument_cleanup":
 	var value = args[0];
-	var should_exist = args[1];
+	var should_exist = args[1];  // should the argument still exist after method call or destructor
 	var type = args[2];
 	var assertion = should_exist ? assert_true : assert_false;
 	var thing_string = "undefined";
@@ -138,6 +150,7 @@ case "assert_argument_cleanup":
 			if(should_exist) destroy(value);
 			break;
 		case TYPE.OBJECT:
+		case TYPE.OBJECT_ANY:
 			exists = instance_exists(value);
 			thing_string = "object";
 			if(should_exist) instance_destroy(value);

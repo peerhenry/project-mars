@@ -16,6 +16,7 @@ for(var n = 0; n < scr_length(data_props); n++)
 				destroy(value);
 				break;
 			case TYPE.OBJECT:
+			case TYPE.OBJECT_ANY:
 				instance_destroy(value);
 				break;
 			case TYPE.LIST:

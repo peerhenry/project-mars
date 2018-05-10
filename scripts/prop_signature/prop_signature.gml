@@ -1,3 +1,4 @@
+// Use this when parameter names are irrelevant
 /// @arg name
 /// @arg return_type_info
 /// @arg param_type_infos
