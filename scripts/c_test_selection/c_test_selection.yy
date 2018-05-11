@@ -1,8 +1,8 @@
 {
-    "id": "967fd6ea-0700-40a3-b2f4-7e5d2a09d610",
+    "id": "92d5d5e9-47ca-4f46-95c6-d94f5e4bf3bb",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "f_astro",
+    "name": "c_test_selection",
     "IsCompatibility": false,
     "IsDnD": false
 }

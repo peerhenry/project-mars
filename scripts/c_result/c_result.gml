@@ -24,6 +24,9 @@ switch(method)
 	case constructor:
 		this.status = args[0];
 		this.refused_request = false;
+		this.is_exception = false;
+		this.is_error = false;
+		this.value = noone;
 		switch(this.status)
 		{
 			case STATUS.OK:
@@ -34,7 +37,12 @@ switch(method)
 				if(arg_count > 1) this.value = args[1];
 				if(arg_count == 3) this.message = args[2]; // 3 arguments: (status, problem, message)
 				else this.message = "Unspecified";
-				this.refused_request = this.value == PROBLEM.REFUSED;
+				switch(this.value)
+				{
+					case PROBLEM.REFUSED: this.refused_request = true; break;
+					case PROBLEM.EXCEPTION: this.is_exception = true; break;
+					case PROBLEM.ERROR: this.is_error = true; break;
+				}
 				break;
 		}
 		return this;

@@ -6,21 +6,19 @@ var arg_astronaut = argument1;
 
 #region new code
 
-/*
 var ioc_container = arg_astronaut.ioc_container;
 var factory_result = call(ioc_container, "resolve", "interaction_factory");
 if(factory_result.status == STATUS.OK)
 {
 	var factory = unwrap(factory_result);
 	var interaction = call_unwrap(factory, "create_interaction", [arg_assignable, arg_astronaut]);
-	in(f_astro, "set_end_path_action", [arg_astronaut, interaction]);
+	in(fs_astro, "set_end_path_action", [arg_astronaut, interaction]);
 }
 else
 {
-	scr_notify_player(factory_result.value);
+	resolve_execute(global.script_container, "alert_player", factory_result.value);
 	destroy(factory_result);
 }
-*/
 
 #endregion
 

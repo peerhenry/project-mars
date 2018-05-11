@@ -12,7 +12,7 @@ switch(method)
 		return ok();
 	
 	case get_class_info:
-		return ok_class_info([]);
+		return exception_skip_standards();
 	
 	case get_clients:
 		return ok(noone);

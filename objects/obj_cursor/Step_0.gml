@@ -81,7 +81,7 @@ else // hovers over selectable
 {
 	#region set hover over selectable cursor
 	
-	if(scr_any_task_actors_selected() && component != noone && scr_instance_inherits(component, obj_assignable))
+	if(scr_any_task_actors_selected() && component != noone && scr_instance_inherits(component, obj_interactable))
 	{
 		sprite_index = spr_cursor_assign;
 	}

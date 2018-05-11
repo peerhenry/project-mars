@@ -1,8 +1,8 @@
 {
-    "id": "c5d97f46-cfeb-48a9-9688-9f4866675988",
+    "id": "0627e727-f6af-4196-9bc1-6885f832c0ca",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "c_interaction_embarkable",
+    "name": "new_action",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -1,6 +1,6 @@
 var function = argument[0];
 var args = argument[1];
-var here = f_astro;
+var here = fs_astro;
 switch(function)
 {
 	case "set_end_path_action":

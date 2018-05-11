@@ -19,3 +19,5 @@ test_class(c_action_script);
 test_class(c_delay);
 test_class(c_tuple);
 test_class(c_ioc_container);
+// custom tests
+test_class(c_test_selection);

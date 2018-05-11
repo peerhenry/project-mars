@@ -11,7 +11,8 @@
         "e19393e8-e99d-4c3e-9958-ca5ef0a2b668",
         "f2ad0507-dfa2-4237-a53a-553ee4d040b9",
         "7459e4f7-ead8-4508-b1ce-5d34d8f92ce3",
-        "c792c078-667e-4c8d-9b35-9f3f960c234f"
+        "c792c078-667e-4c8d-9b35-9f3f960c234f",
+        "0627e727-f6af-4196-9bc1-6885f832c0ca"
     ],
     "filterType": "GMScript",
     "folderName": "factories",

@@ -35,8 +35,7 @@ with(obj_movable)
 if(!any_selected) exit;
 
 // Set possible clickables
-var el_assignable = instance_position(arg_x, arg_y, obj_assignable);
-if(el_assignable == noone) el_assignable = instance_position(arg_x, arg_y, obj_atm); // astro transit module
+var interactable = instance_position(arg_x, arg_y, obj_interactable);
 var component = instance_position(arg_x, arg_y, obj_base_component);
 var movable = instance_position(arg_x, arg_y, obj_movable);
 var wall = instance_position(arg_x, arg_y, obj_wall);
@@ -49,9 +48,9 @@ if(selection_contains_task_actor)
 	else if(wall != noone && wall.owner == macro_enemy) enemy = wall;
 	else if(component != noone && component.owner == macro_enemy) enemy = component;	
 	
-	if(el_assignable != noone && el_assignable.owner == macro_player)	// Assign a task
+	if(interactable != noone && interactable.owner == macro_player)	// Assign a task
 	{
-		orders_given = scr_command_assign(el_assignable);
+		orders_given = scr_command_assign(interactable);
 	}
 	else if( enemy != noone )	// Or attack an enemy
 	{

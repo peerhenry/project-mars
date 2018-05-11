@@ -50,7 +50,6 @@ switch method
 		var name = args[0];
 		var class = args[1];
 		this.class_container[? name] = class;
-		show_debug_message("just registered " + name); // DEBUG
 		return ok();
 
 	case "register_instance":
@@ -114,12 +113,19 @@ switch method
 		break;
 	
 	case "test_register_resolve":
+		show_debug_message("1 eyo:" + string(scr_count_instances(obj_result)));
 		var container = new(c_ioc_container);
+		show_debug_message("2 eyo:" + string(scr_count_instances(obj_result)));
 		call_unwrap(container, "register", ["dummy", c_object]);
+		show_debug_message("3 eyo:" + string(scr_count_instances(obj_result)));
 		var result = call_unwrap(container, "resolve", "dummy");
+		show_debug_message("4 eyo:" + string(scr_count_instances(obj_result)));
 		assert_equal(c_object, result.class, "resolved class");
+		show_debug_message("5 eyo:" + string(scr_count_instances(obj_result)));
 		destroy(result);
+		show_debug_message("6 eyo:" + string(scr_count_instances(obj_result)));
 		destroy(container);
+		show_debug_message("7 eyo:" + string(scr_count_instances(obj_result)));
 		break;
 	
 	#endregion

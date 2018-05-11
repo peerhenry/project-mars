@@ -1,8 +1,8 @@
 {
-    "id": "7b5ff629-f811-48fe-bdc2-45d544bd25d8",
+    "id": "2593df04-5798-4b87-9a9d-c5134d4643f9",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "c_interaction_notifier",
+    "name": "fs_assignment",
     "IsCompatibility": false,
     "IsDnD": false
 }
