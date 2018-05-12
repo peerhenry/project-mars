@@ -48,8 +48,11 @@ switch(method)
 	case "interact":
 		var interactable = args[0];
 		var actor = args[1];
-		var result;
-		var o_indx = interactable.object_index
+		
+		in(fs_astro, "set_end_path_action", [actor, noone]);
+		
+		var result = 0;
+		var o_indx = interactable.object_index;
 		switch(o_indx)
 		{
 			case obj_atm_small:
@@ -65,15 +68,26 @@ switch(method)
 				result = call(interactable, "enter", actor);
 				break;
 			case obj_hydroponics:
-				var was_inserted = scr_give_entity_new_item(assigned_astronaut, inv_space.food);
+				var was_inserted = scr_give_entity_new_item(actor, inv_space.food);
 				if(was_inserted)
 				{
-					food_level = 0;
+					interactable.food_level = 0;
 				}
+				break;
+			case obj_fridge:
+				var actor_carries_food = scr_inventory_has_item_type(actor.inventory, inv_space.food);
+				if( actor_carries_food )
+				{
+					scr_inventory_transfer(actor.inventory, interactable.inventory, inv_space.food);
+				}
+				else
+				{
+					scr_inventory_transfer(interactable.inventory, actor.inventory, inv_space.food);
+				}
+				result = ok();
 				break;
 			case obj_printer:
 			case obj_mdu_pile:
-			case obj_fridge:
 			default:
 				resolve_execute(global.script_container, "alert_player", "interaction not implemented for " + object_get_name(o_indx));
 				result = ok();

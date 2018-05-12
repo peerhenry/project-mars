@@ -11,16 +11,6 @@ if(occupant != noone)
 		}
 		// var spot = scr_find_free_spot_around(id);
 		//in(f_astro_disappear, "disappear", occupant);
-		var result = call(id, "disembark", occupant);
-		if(result.status == STATUS.OK)
-		{
-			occupant = noone;
-			image_index++;
-		}
-		else
-		{
-			resolve_execute(script_container, "alert_player", "Astronaut cannot leave bed: " + result.value);
-		}
-		destroy(result);
+		uvoid(id, "eject");
 	}
 }

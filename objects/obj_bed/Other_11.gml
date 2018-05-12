@@ -1,6 +1,6 @@
 /// @description Interact with assigned astronaut
-occupant = assigned_astronaut;
-image_index++;
+// occupant = assigned_astronaut;
+// image_index++;
 /*with(assigned_astronaut)
 {
 	x = other.x;

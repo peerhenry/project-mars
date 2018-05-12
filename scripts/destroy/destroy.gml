@@ -5,7 +5,7 @@ var class = argument_count == 2 ? argument[1] : instance.class; // this is used 
 var trace_it = debug_mode && class != c_result;
 if(trace_it)
 {
-	show_debug_message("[DESTROY] " + script_get_name(class));
+	// show_debug_message("[DESTROY] " + script_get_name(class));
 }
 #endregion trace call
 

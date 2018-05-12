@@ -1,12 +1,11 @@
-#region set here, method and this
-var here = c_astro_container; // bed/med_bed
+var here = c_astro_container; // bed / med_bed
 var method = argument0;
 var this = argument1;
 var args = argument2;
-#endregion
 
 switch(method)
 {
+	#region standard methods
 	case constructor:
 		this.appear_setter = args[0];
 		this.occupant = noone;
@@ -14,21 +13,23 @@ switch(method)
 		return this;
 	
 	case destructor:
-		ds_list_destroy(this.embarked_astronauts);
 		return ok();
-	
-	/*case get_dependencies:
-		return ok_class_info([
-			prop_interface("appear_setter", [
-				prop_signature("disappear", t_void(), t_object(obj_astronaut)),
-				prop_signature("reappear", t_void(), t_object(obj_astronaut))
-			]),
-			prop_object("occupant", t_object(obj_astronaut)) // example of a prop that does not get injected
-		]);*/
 	
 	case get_clients:
-		// todo: depend on relevant interaction
 		return ok();
+	
+	case get_class_info:
+		return ok_class_info([
+			prop_interface("appear_setter", [
+				prop_method("disappear", t_void(), p_object("astro", obj_astronaut)),
+				prop_method("reappear", t_void(), p_object("astro", obj_astronaut))
+			]),
+			prop_object("occupant", obj_astronaut, NOT_INJECTED),
+			prop_string("full_message", NOT_INJECTED),
+			prop_method("enter", t_void(), p_object("arg_astronaut", obj_astronaut)),
+			prop_method_void("eject", t_void()),
+		]);
+	#endregion
 	
 	#region METHODS
 	
@@ -37,13 +38,14 @@ switch(method)
 		if(this.occupant == noone)
 		{
 			this.occupant = arg_astronaut;
+			this.image_index++;
 			call_unwrap(this.appear_setter, "disappear", arg_astronaut);
 			return ok();
 		}
 		else return exception(this.full_message);
 	
 	case "eject":
-		if(occupant == noone) return ok(); // Don't do anything if container has no occupant
+		if(this.occupant == noone) return ok(); // Don't do anything if container has no occupant
 		var result = call(this.appear_setter, "reappear", this.occupant);
 		if(result.status != STATUS.OK)
 		{
@@ -63,7 +65,7 @@ switch(method)
 		else
 		{
 			this.occupant = noone;
-			image_index++;
+			this.image_index++;
 		}
 		destroy(result);
 		return ok();
@@ -73,19 +75,19 @@ switch(method)
 	#region UNIT TESTS
 	
 	case test:
-		test_method(here, "disembark_test");
-		test_method(here, "embark_test");
-		test_method(here, "embark_atm_is_full");
+		test_method(here, "eject_test");
+		test_method(here, "enter_test");
+		test_method(here, "enter_is_full");
 		break;
 	
-	case "disembark_test":
+	case "eject_test":
 		// setup
 		var object = setup_testable(here);
 		var mock_setter = object.appear_setter;
 		var astro = instance_create_depth(0,0,0,obj_astronaut);
-		call_unwrap(object, "embark", astro);
+		call_unwrap(object, "enter", astro);
 		// act
-		call_unwrap(object, "disembark", astro);
+		uvoid(object, "eject");
 		// assert
 		mock_verify(mock_setter, "reappear", Times.Once); // in mock_setter, verify that stub for "reappear" has been called once
 		// cleanup
@@ -93,13 +95,13 @@ switch(method)
 		cleanup_testable(object);
 		break;
 	
-	case "embark_test":
+	case "enter_test":
 		// setup
 		var object = setup_testable(here);
 		var mock_setter = object.appear_setter;
 		var astro = instance_create_depth(0,0,0,obj_astronaut);
 		// act
-		call_unwrap(object, "embark", astro);
+		call_unwrap(object, "enter", astro);
 		// assert
 		mock_verify(mock_setter, "disappear", Times.Once);
 		// cleanup
@@ -107,16 +109,14 @@ switch(method)
 		cleanup_testable(object);
 		break;
 	
-	case "embark_atm_is_full":
+	case "enter_is_full":
 		// setup
 		var object = setup_testable(here);
 		var mock_setter = object.appear_setter;
 		var astro = instance_create_depth(0,0,0,obj_astronaut);
-		ds_list_add(object.embarked_astronauts, 13);
-		ds_list_add(object.embarked_astronauts, 14);
-		ds_list_add(object.embarked_astronauts, 15);
+		object.occupant = 12;
 		// act
-		var result = call(object, "embark", astro);
+		var result = call(object, "enter", astro);
 		// assert
 		mock_verify(mock_setter, "disappear", Times.Never);
 		assert_equal(STATUS.PROBLEM, result.status, "status");

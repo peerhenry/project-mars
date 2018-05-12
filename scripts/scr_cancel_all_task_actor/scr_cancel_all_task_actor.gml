@@ -26,3 +26,5 @@ with(arg_entity)
 	
 	if(path_exists(path)) scr_cancel_walking(id);
 }
+
+fs_astro("set_end_path_action", [arg_entity, noone]);
