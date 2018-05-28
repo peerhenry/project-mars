@@ -4,8 +4,6 @@
 var arg_astronaut = argument0;
 debug_instance_inherits(arg_astronaut, obj_astronaut);
 
-show_debug_message("LOOKING FOR CONSTRUCTION");
-
 var found_one = false;
 var constr_queue = scr_get_construction_queue(arg_astronaut.owner);
 if(constr_queue == noone || is_undefined(constr_queue))

@@ -11,14 +11,20 @@ switch(method)
 		this.delay = args[1];
 		return this;
 
-	case destructor: 
+	case destructor:
+		destroy(this.action);
 		return ok();
 	
 	case get_object_index:
-		return obj_alarm_action;
+		return ok(obj_alarm_action);
 	
 	case get_class_info:
-		return exception_skip_standards();
+		return ok_class_info([
+			owned_interface("action", [
+				prop_method_void("execute", t_any())
+			]),
+			prop_number("delay")
+		]);
 	
 	// methods
 	case "set":

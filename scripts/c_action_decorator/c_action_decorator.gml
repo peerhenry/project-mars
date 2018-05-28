@@ -8,11 +8,12 @@ switch(method)
 {
 	case constructor: // can be remove if not needed
 		this.action = args[0];
-		if(scr_length(args) == 1) this.previous = args[1];
+		if(scr_length(args) == 2) this.previous = args[1];
+		else this.previous = noone;
 		return this;
 	
 	case get_class_info:
-		/*return ok_class_info([
+		return ok_class_info([
 			owned_interface("action", [
 				prop_method_void("execute", t_any())
 			]),
@@ -20,9 +21,8 @@ switch(method)
 				prop_method_void("execute", t_any())
 			], OWNED | NOT_INJECTED),
 			
-			prop_method("then", ) // todo: implement any args
-		]);*/
-		return exception_skip_standards();
+			prop_method_void("execute", t_any())
+		]);
 	
 	case destructor:
 		destroy(this.action);

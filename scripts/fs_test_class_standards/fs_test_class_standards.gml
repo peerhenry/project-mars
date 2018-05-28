@@ -207,7 +207,7 @@ case "destroy_assert_cleanup":
 		var prop_value = prop_values[n];
 		var exists = false;
 		#region check if heap thing exists
-		if(next_prop.type_info.is_on_heap)
+		if(next_prop.type_info.is_on_heap && !is_undefined(prop_value))
 		{
 			switch(next_prop.type_info.type)
 			{

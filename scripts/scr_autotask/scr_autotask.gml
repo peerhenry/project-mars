@@ -5,8 +5,6 @@ var arg_astronaut = argument0;
 
 var auto_task_found = false;
 
-show_debug_message("AUTOTASKING");
-
 with(arg_astronaut)
 {
 	// food
@@ -25,7 +23,5 @@ with(arg_astronaut)
 		auto_task_found  = scr_look_for_construction(arg_astronaut);
 	}
 }
-
-show_debug_message("auto_task_found: " + string(auto_task_found));
 
 return auto_task_found;
