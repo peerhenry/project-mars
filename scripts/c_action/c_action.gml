@@ -9,7 +9,8 @@ switch(method)
 	case constructor: // can be remove if not needed
 		this.instance = args[0];
 		this.method = args[1];
-		this.arguments = (scr_length(args) == 3) ? args[2] : [];
+		// beware, naming this thing "arguments" will cause variable_instance_exists to return false.
+		this.action_arguments = (scr_length(args) == 3) ? args[2] : [];
 		return this;
 
 	case destructor: 
@@ -19,7 +20,7 @@ switch(method)
 		return ok_class_info([
 			prop_number("instance")	// doing number here instead of object because it can have any object_index
 			, prop_string("method")
-			, prop_array("arguments")
+			, prop_array("action_arguments")
 		]);
 	
 	// methods
@@ -27,13 +28,13 @@ switch(method)
 		if(scr_length(args) == 1)
 		{
 			var value = args[0];
-			var final_args = args_placemarker_finalize(this.arguments, value);
+			var final_args = args_placemarker_finalize(this.action_arguments, value);
 			return call(this.instance, this.method, final_args);
 		}
-		return call(this.instance, this.method, this.arguments);
+		return call(this.instance, this.method, this.action_arguments);
 	
 	case "execute_destroy":
-		call_unwrap(this.instance, this.method, this.arguments);
+		call_unwrap(this.instance, this.method, this.action_arguments);
 		destroy(this);
 		return ok();
 	

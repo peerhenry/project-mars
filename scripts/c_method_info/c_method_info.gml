@@ -34,6 +34,9 @@ switch(method)
 		var param = args[0];
 		if(param.class != c_parameter) scr_panic("Method info received a parameter that did not have class c_paramater!");
 		return ok();
+		
+	case "to_string":
+		return ok("method");
 
 	case get_class_info:
 		return ok_class_info([

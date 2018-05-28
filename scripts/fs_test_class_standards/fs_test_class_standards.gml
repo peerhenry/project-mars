@@ -23,15 +23,23 @@ case "run":
 	}
 
 	var info = unwrap(info_result);
-	var instance = in(here, "create_instance", [class, info]);
-	var prop_values = in(here, "assert_data_props", [instance, info]);
-	in(here, "test_run_methods", [instance, info]);
-	in(here, "destroy_assert_cleanup", [instance, info, prop_values]);
+	in(here, "test_create_cleanup", [class, info]);
+	in(here, "test_run_methods", [class, info]);
 	in(here, "assert_serves_clients", [class, info]);
 
 	destroy(info);
 	test_result();
 	break;
+
+#region test_create_cleanup
+case "test_create_cleanup":
+	var class = args[0];
+	var info = args[1];
+	var instance = in(here, "create_instance", [class, info]);
+	var prop_values = in(here, "assert_data_props", [instance, info]);
+	in(here, "destroy_assert_cleanup", [instance, info, prop_values]);
+	break;
+#endregion
 
 #region create_instance
 case "create_instance":
@@ -48,12 +56,12 @@ case "assert_data_props":
 	var instance = args[0];
 	var info = args[1];
 	var data_props = void_unwrap(info, "get_data_props");
+	
 	var prop_values = [];
 	for(var n = 0; n < array_length_1d(data_props); n++)
 	{
 		var ndp = data_props[n];
-		// skip arrays because sadly GMS returns false in variable_instance_exists for empty arrays :(
-		if(!ndp.type_info.type == TYPE.ARRAY) assert_true(variable_instance_exists(instance, ndp.name), "variable \"" + ndp.name + "\" exists.");
+		assert_true(variable_instance_exists(instance, ndp.name), "variable \"" + ndp.name + "\" exists.");
 		prop_values[n] = variable_instance_get(instance, ndp.name);
 	}
 	return prop_values;
@@ -61,26 +69,38 @@ case "assert_data_props":
 
 #region test_run_methods
 case "test_run_methods":
-	var instance = args[0];
+	var class = args[0];
 	var info = args[1];
 	var method_props = void_unwrap(info, "get_method_props");
-	foreach_f_ap(method_props, here, "test_run_method", [arg_mark(), instance]); // foreach thing, apply a function with arguments
+	foreach_f_ap(method_props, here, "test_run_method", [arg_mark(), class, info]); // foreach thing, apply a function with arguments
 	break;
 #endregion
 
 #region test_run_method
 case "test_run_method":
 	var method = args[0];
-	var instance = args[1];
-	// show_debug_message("test_run_method, method class: " + script_get_name(method.class // DEBUG
+	var class = args[1];
+	var info = args[2];
+	// create new instance for testing the method
+	var instance = in(here, "create_instance", [class, info]);
+	
+	// get parameter type info
 	var rt = method.type_info.return_type_info;
 	var params = method.type_info.parameters;
 	var param_type_infos = scr_from_select(params, "type_info");
+	
+	// display class, method and parameter types
+	var param_type_names = morph(param_type_infos, "to_string");
+	var param_types_string = scr_flatten_string_array(param_type_names, ", ");
+	show_debug_message("test_run_method: " + script_get_name(instance.class) + "." + method.name + "(" + param_types_string + ")");
+	
+	// create dummy parameters
 	var dummy_params = morph(param_type_infos, "create_dummy");
 	var result = call(instance, method.name, dummy_params);
 	var expect_exception = method.type_info.throws_exception;
 	var is_ok = STATUS.OK == result.status;
-		
+	
+	// assert result
 	if(expect_exception)
 	{
 		assert_false(is_ok, "result from calling " + method.name + " should not be OK");
@@ -88,7 +108,7 @@ case "test_run_method":
 	}
 	else assert_true(is_ok, "result from calling " + method.name + " should be OK");
 	
-	// assert return type and cleanup if on heap
+	// assert return type and cleanup if the return thing lives on the heap
 	if(is_ok)
 	{
 		var returny = unwrap(result);
@@ -103,6 +123,7 @@ case "test_run_method":
 		var val = dummy_params[m];
 		if(next_param.type_info.is_on_heap) in(here, "assert_argument_cleanup", [val, !next_param.is_consumed, next_param.type_info.type]);
 	}
+	in(here, "cleanup_instance", [instance, info]);
 	break;
 #endregion
 
@@ -178,15 +199,49 @@ case "destroy_assert_cleanup":
 	var instance = args[0];
 	var info = args[1];
 	var prop_values = args[2];
-	var data_props = void_unwrap(info, "get_data_props");
+	var data_props = void_unwrap(info, "get_data_props"); // more like prop_info
+	var existings = [];
+	for(var n = 0; n < array_length_1d(data_props); n++)
+	{
+		var next_prop = data_props[n];
+		var prop_value = prop_values[n];
+		var exists = false;
+		#region check if heap thing exists
+		if(next_prop.type_info.is_on_heap)
+		{
+			switch(next_prop.type_info.type)
+			{
+				case TYPE.INTERFACE:
+					exists = instance_exists(prop_value);
+					break;
+				case TYPE.OBJECT:
+				case TYPE.OBJECT_ANY:
+					exists = instance_exists(prop_value);
+					break;
+				case TYPE.LIST:
+					exists = ds_exists(prop_value, ds_type_list)
+					break;
+				case TYPE.MAP:
+					exists = ds_exists(prop_value, ds_type_map);
+					break;
+				default:
+					scr_panic("class standards, destroy_assert_cleanup: Type info has something on heap but no matching heap type.");
+			}
+		}
+		#endregion
+		existings[n] = exists;
+	}
 	
 	destroy(instance);
 	assert_false(instance_exists(instance), "thing was destroyed with destroy function");
 	for(var n = 0; n < array_length_1d(data_props); n++)
 	{
-		var ndp = data_props[n];
-		var dp_val = prop_values[n];
-		if(ndp.type_info.is_on_heap) in(here, "assert_argument_cleanup", [dp_val, ndp.is_borrowed, ndp.type_info.type]);
+		if(existings[n]) // Only check cleanup if the prop existed before destroying the instance.
+		{
+			var ndp = data_props[n];
+			var dp_val = prop_values[n];
+			if(ndp.type_info.is_on_heap) in(here, "assert_argument_cleanup", [dp_val, ndp.is_borrowed, ndp.type_info.type]);
+		}
 	}
 	break;
 #endregion
@@ -237,4 +292,43 @@ case "assert_serves_clients":
 	}
 	break;
 #endregion
+
+#region cleanup_instance
+case "cleanup_instance":
+	var instance = args[0];
+	var info = args[1];
+	var data_props = void_unwrap(info, "get_data_props");
+	for(var n = 0; n < array_length_1d(data_props); n++)
+	{
+		var ndp = data_props[n];
+		if(ndp.type_info.is_on_heap)
+		{
+			var value = variable_instance_get(instance, ndp.name);
+			if(ndp.is_borrowed)
+			{
+				switch(ndp.type_info.type)
+				{
+					case TYPE.INTERFACE:
+						destroy(value);
+						break;
+					case TYPE.OBJECT:
+					case TYPE.OBJECT_ANY:
+						instance_destroy(value);
+						break;
+					case TYPE.LIST:
+						ds_list_destroy(value);
+						break;
+					case TYPE.MAP:
+						ds_map_destroy(value);
+						break;
+					default:
+						scr_panic("expecting a cleanup on a thing that does not cleanup");
+				}
+			}
+		}
+	}
+	destroy(instance);
+	break;
+#endregion
+
 }

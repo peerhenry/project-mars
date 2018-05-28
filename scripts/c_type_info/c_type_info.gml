@@ -57,6 +57,31 @@ switch(method)
 	case "copy":
 		var copy = (this.type == TYPE.OBJECT) ? new(here, [this.type, this.object_type]) : new(here, this.type);
 		return ok(copy);
+	
+	#region to_string
+	case "to_string":
+		var output = "any";
+		switch(this.type)
+		{
+			case TYPE.ANY: output = "any"; break;
+			case TYPE.VOID: output = "void"; break;
+			case TYPE.NUMBER: output = "number"; break;
+			case TYPE.INTEGER: output = "integer"; break;
+			case TYPE.STRING: output = "string"; break;
+			case TYPE.BOOL: output = "bool"; break;
+			case TYPE.ARRAY: output = "array"; break;
+			case TYPE.OBJECT: output = "object"; break;
+			case TYPE.OBJECT_ANY: output = "object_any"; break;
+			case TYPE.OBJECT_INDEX: output = "object_index"; break;
+			case TYPE.SCRIPT: output = "void"; break;
+			case TYPE.MAP: output = "map"; break;
+			case TYPE.LIST: output = "list"; break;
+			case TYPE.STACK: output = "stack"; break;
+			case TYPE.METHOD: scr_panic("Dedicated class c_method_info");
+			case TYPE.INTERFACE: scr_panic("Dedicated class c_class_info");
+		}
+		return ok(output);
+	#endregion
 
 	#region assert_type
 	case "assert_match":
@@ -100,15 +125,15 @@ switch(method)
 				assert_true(true_or_false, "typeof(arg)");
 				break;
 			case TYPE.SCRIPT:
-				assert_true(script_exists(value), "script_exists(arg)");
+				assert_true(script_exists(value), "c_type_info: value should be an existing script");
 				break;
 			// types with context:
 			case TYPE.OBJECT_INDEX:
-				assert_true(object_exists(value), "object_exists(arg)");
+				assert_true(object_exists(value), "c_type_info: value should be an existing object index");
 				break;
 			case TYPE.OBJECT:
 				var exists = instance_exists(value); // value must be an instance
-				assert_true(exists, "instance_exists(arg)");
+				assert_true(exists, "c_type_info: value should be an existing instance");
 				if(exists)
 				{
 					var type_matches = scr_instance_inherits(value, this.object_type);
@@ -119,13 +144,13 @@ switch(method)
 				assert_equal("array", typeof(value), "typeof(arg)");
 				break;
 			case TYPE.MAP:
-				assert_true(ds_exists(value, ds_type_map), "ds_exists(arg, ds_type_map)");
+				assert_true(ds_exists(value, ds_type_map), "c_type_info: value should be a map");
 				break;
 			case TYPE.LIST:
-				assert_true(ds_exists(value, ds_type_list), "ds_exists(arg, ds_type_list)");
+				assert_true(ds_exists(value, ds_type_list), "c_type_info: value should be a list");
 				break;
 			case TYPE.STACK:
-				assert_true(ds_exists(value, ds_type_stack), "ds_exists(arg, ds_type_list)");
+				assert_true(ds_exists(value, ds_type_stack), "c_type_info: value should be a stack");
 				break;
 			// todo: add grid, queue, priority	
 			case TYPE.METHOD:

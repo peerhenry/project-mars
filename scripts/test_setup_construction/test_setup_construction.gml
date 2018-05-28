@@ -1,0 +1,1 @@
+return scr_create_dummy_mdu_construction();

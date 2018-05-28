@@ -39,7 +39,11 @@ switch(method)
 		var actor = args[1];
 		var interaction = noone;
 		call_unwrap(this.notifier, "notify_player", "creating interaction for : " + object_get_name(interactable.object_index)); // DEBUG
-		var interaction = new_action(this, "interact", [ interactable, actor ]);
+		var interaction = new_override(
+			c_action, 
+			obj_interaction, 
+			[this, "interact", [ interactable, actor ]] // instance, method, arguments
+		);
 		return ok(interaction);
 	#endregion
 	
@@ -86,8 +90,10 @@ switch(method)
 				}
 				result = ok();
 				break;
-			case obj_printer:
 			case obj_mdu_pile:
+				// todo: pickup mdu
+			case obj_printer:
+				// todo: pickup printed item
 			default:
 				resolve_execute(global.script_container, "alert_player", "interaction not implemented for " + object_get_name(o_indx));
 				result = ok();
@@ -111,8 +117,8 @@ switch(method)
 		var action = call_unwrap(testable, "create_interaction", [atm, astro]);
 		// assert
 		assert_equal(c_action, action.class, "interaction class");
-		assert_equal(atm, action.arguments[0], "interaction embarkable");
-		assert_equal(astro, action.arguments[1], "interaction astro");
+		assert_equal(atm, action.action_arguments[0], "interaction embarkable");
+		assert_equal(astro, action.action_arguments[1], "interaction astro");
 		// cleanup
 		destroy(action);
 		instance_destroy(astro);

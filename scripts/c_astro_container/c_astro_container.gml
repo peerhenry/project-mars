@@ -13,6 +13,7 @@ switch(method)
 		return this;
 	
 	case destructor:
+		
 		return ok();
 	
 	case get_clients:
@@ -24,7 +25,7 @@ switch(method)
 				prop_method("disappear", t_void(), p_object("astro", obj_astronaut)),
 				prop_method("reappear", t_void(), p_object("astro", obj_astronaut))
 			]),
-			prop_object("occupant", obj_astronaut, NOT_INJECTED),
+			prop_object("occupant", obj_astronaut, NOT_INJECTED), // thing is not injected, but it's not owned, so test standards expects it to exist after destroy but it dont :(
 			prop_string("full_message", NOT_INJECTED),
 			prop_method("enter", t_void(), p_object("arg_astronaut", obj_astronaut)),
 			prop_method_void("eject", t_void()),

@@ -120,6 +120,9 @@ switch(method)
 			}
 		}
 		return ok();
+	
+	case "to_string":
+		return ok("interface");
 	#endregion
 	
 	#region tests

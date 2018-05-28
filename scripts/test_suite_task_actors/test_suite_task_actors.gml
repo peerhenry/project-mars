@@ -1,0 +1,1 @@
+test_run(test_astro_pickup_mdu_and_deliver);

@@ -7,8 +7,8 @@ var here = c_action_decorator;
 switch(method)
 {
 	case constructor: // can be remove if not needed
-		this.action = args[0]
-		this.previous = noone;
+		this.action = args[0];
+		if(scr_length(args) == 1) this.previous = args[1];
 		return this;
 	
 	case get_class_info:
