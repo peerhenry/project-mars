@@ -20,7 +20,7 @@ with(arg_entity)
 				// it's handled in scr_perform(assigned_object)
 				break;
 			case astronaut_action.delivering_mdu:
-				scr_transfer_mdu(arg_entity.script_container, id, construction);
+				scr_transfer_mdu(script_container, id, construction);
 				if(scr_construction_is_ready(construction))
 				{
 					scr_update_astro_and_construction(id, construction, astronaut_action.constructing);

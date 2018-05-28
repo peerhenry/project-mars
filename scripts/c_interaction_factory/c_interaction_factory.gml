@@ -39,6 +39,7 @@ switch(method)
 		var actor = args[1];
 		var interaction = noone;
 		call_unwrap(this.notifier, "notify_player", "creating interaction for : " + object_get_name(interactable.object_index)); // DEBUG
+		
 		var interaction = new_override(
 			c_action, 
 			obj_interaction, 
@@ -68,8 +69,11 @@ switch(method)
 				result = ok();
 				break;
 			case obj_bed:
+				result = call(interactable, "enter", actor);
+				break;
 			case obj_med_bed:
 				result = call(interactable, "enter", actor);
+				if(interactable.occupant != noone) scr_set_grid_prop(interactable, macro_grid_electric, macro_grid_prop_can_perform_role, true);
 				break;
 			case obj_hydroponics:
 				var was_inserted = scr_give_entity_new_item(actor, inv_space.food);

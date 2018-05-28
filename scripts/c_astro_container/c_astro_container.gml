@@ -55,7 +55,7 @@ switch(method)
 			// create an alarm for when to try again to eject again
 			
 			// make eject action
-			var eject = new(c_action_decorator, [this, "eject"]);
+			var eject = new(c_action, [this, "eject"]);
 			// put it in a decorator
 			var dec = new(c_action_decorator, eject);
 			// append destruction of the eject action
@@ -67,6 +67,7 @@ switch(method)
 		{
 			this.occupant = noone;
 			this.image_index++;
+			if(this.object_index == obj_med_bed) scr_set_grid_prop(id, macro_grid_electric, macro_grid_prop_can_perform_role, false);
 		}
 		destroy(result);
 		return ok();
