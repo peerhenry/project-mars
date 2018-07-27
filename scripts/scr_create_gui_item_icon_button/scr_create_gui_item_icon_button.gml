@@ -11,7 +11,7 @@ var arg_sprite = argument3;
 var arg_pad = argument4;
 var arg_action = argument5;
 
-var item = instance_create_depth(arg_container, 0, 0, dto_gui_item);
+var item = instance_create_depth(arg_container, 0, 0, obj_gui_item);
 with(item)
 {
 	class = gui_item_class.button;

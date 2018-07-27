@@ -1,7 +1,7 @@
 scr_trace("constructable destroy event");
 if(icon != noone) instance_destroy(icon);
 scr_destroy_instance_grid_logic(id);
-with(dto_hud_details_panel) if(unit == other.id) instance_destroy();
+with(obj_gui_details_panel) if(unit == other.id) instance_destroy();
 
 if(object_index != obj_cable && object_index != obj_pipe)
 {

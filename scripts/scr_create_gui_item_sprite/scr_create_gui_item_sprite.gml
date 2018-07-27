@@ -7,7 +7,7 @@ var arg_left = argument1;
 var arg_top = argument2;
 var arg_sprite = argument3;
 
-var item = instance_create_depth(arg_container, 0, 0, dto_gui_item);
+var item = instance_create_depth(arg_container, 0, 0, obj_gui_item);
 with(item)
 {
 	class = gui_item_class.none;

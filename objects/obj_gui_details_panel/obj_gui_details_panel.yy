@@ -2,7 +2,7 @@
     "id": "7599a1f6-381b-40ba-a21b-db8cc76322eb",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "dto_hud_details_panel",
+    "name": "obj_gui_details_panel",
     "eventList": [
         {
             "id": "56895cfa-ade0-48a0-808e-ef52448b3543",

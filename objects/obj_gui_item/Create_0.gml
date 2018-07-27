@@ -22,7 +22,7 @@ var container_is_correct =
 	container != noone
 	&& instance_exists(container)
 	&& (
-		scr_instance_inherits(container, dto_gui_container)
+		scr_instance_inherits(container, obj_gui_container)
 		|| scr_instance_inherits(container, obj_gui)
 	);
 if(container_is_correct)

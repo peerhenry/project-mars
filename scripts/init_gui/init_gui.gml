@@ -1,10 +1,10 @@
 /// @arg gui
 
 // gui containers
-instance_create_depth(argument0, 0, 0, dto_hud_construction_menu);
+instance_create_depth(argument0, 0, 0, obj_gui_construction_menu);
 
 // container for objectives and player alert
-var gui_topleft = instance_create_depth(argument0, 0, 0, dto_gui_container_autosize);
+var gui_topleft = instance_create_depth(argument0, 0, 0, obj_gui_container_autosize);
 global.gui_topleft = gui_topleft;
 
 with(obj_level)

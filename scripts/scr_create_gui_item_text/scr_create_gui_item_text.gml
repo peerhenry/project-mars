@@ -9,7 +9,7 @@ var arg_top = argument2;
 var arg_font = argument3;
 var arg_text = argument4;
 
-var item = instance_create_depth(arg_container, 0, 0, dto_gui_item);
+var item = instance_create_depth(arg_container, 0, 0, obj_gui_item);
 with(item)
 {
 	class = gui_item_class.label;

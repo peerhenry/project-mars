@@ -10,6 +10,7 @@ var arg_tooltip = argument3;
 #region Create Category button
 
 var cat_btn = scr_create_gui_item_sprite(arg_container, 0, 0, arg_sprite);
+//var cat_btn = scr_create_gui_item_icon_button(arg_container, 0, 0, arg_sprite, 0, 0);
 with(cat_btn)
 {
 	should_draw_panel = true;
@@ -19,6 +20,9 @@ with(cat_btn)
 	valign = align_v.mid;
 	width = 32; // important to set because sprite may be smaller
 	height = 32;
+	
+	sprite_button_color = c_white;
+	click_script = scr_click_select_construction_category;
 }
 
 #endregion
@@ -27,7 +31,7 @@ with(cat_btn)
 
 var gui_w = display_get_gui_width();
 var gui_h = display_get_gui_height();
-var build_select_panel = instance_create_depth(global.gui, 0, 0, dto_gui_container_autosize);
+var build_select_panel = instance_create_depth(global.gui, 0, 0, obj_gui_container_autosize);
 
 with(build_select_panel)
 {

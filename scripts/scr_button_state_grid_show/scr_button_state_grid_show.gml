@@ -3,7 +3,7 @@ var arg_button = argument0;
 
 var active = false;
 var this_grid = arg_button.grid;
-with(obj_HUD_grid_details_panel)
+with(obj_gui_grid_details_panel)
 {
 	active = (this_grid == grid);
 }

@@ -21,14 +21,14 @@ switch(callback_item.click_action)
 	case details_panel_action.show_grid_details:
 		var make_new_one = true;
 		var this_grid = callback_item.grid;
-		with(obj_HUD_grid_details_panel)
+		with(obj_gui_grid_details_panel)
 		{
 			if(this_grid == grid) make_new_one = false;
 			instance_destroy();
 		}
 		if(make_new_one)
 		{
-			var grid_panel = instance_create_depth(id, this_grid, 0, obj_HUD_grid_details_panel);
+			var grid_panel = instance_create_depth(id, this_grid, 0, obj_gui_grid_details_panel);
 			callback_item.sprite_button_color = c_aqua;
 		}
 		else callback_item.sprite_button_color = c_black;

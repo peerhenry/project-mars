@@ -6,8 +6,8 @@ var gui_list = gui.gui_item_list;
 
 // assert
 assert_equal(0, ds_list_size(gui.gui_item_list), "gui_item_list size");
-assert_equal(0, scr_count_instances(dto_gui_item), "count dto_gui_item");
-assert_equal(0, scr_count_instances(dto_gui_container), "count dto_gui_container");
+assert_equal(0, scr_count_instances(obj_gui_item), "count obj_gui_item");
+assert_equal(0, scr_count_instances(obj_gui_container), "count obj_gui_container");
 assert_true(ds_exists(gui.gui_item_list, ds_type_list), "container.gui_item_list exists");
 
 // cleanup

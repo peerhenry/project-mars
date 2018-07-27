@@ -11,7 +11,7 @@ var arg_height = argument4;
 var right = arg_left + arg_width;
 var bottom = arg_top + arg_height;
 
-var item = instance_create_depth(arg_container, 0, 0, dto_gui_item);
+var item = instance_create_depth(arg_container, 0, 0, obj_gui_item);
 item.left = arg_left;
 item.top = arg_top;
 item.width = arg_width;

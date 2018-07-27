@@ -1,0 +1,1 @@
+scr_alert_player("aloha!")

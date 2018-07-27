@@ -14,7 +14,7 @@
         "d9c154da-fe72-48e3-9ad5-cc0e774c8662"
     ],
     "filterType": "GMObject",
-    "folderName": "dto",
+    "folderName": "gui_items",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

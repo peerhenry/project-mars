@@ -1,6 +1,6 @@
 /// @arg unit;
 var arg_unit = argument0;
-var container = instance_create_depth(global.gui, arg_unit, 0, dto_hud_details_panel);
+var container = instance_create_depth(global.gui, arg_unit, 0, obj_gui_details_panel);
 
 with(container)
 {
@@ -160,7 +160,7 @@ with(container)
 	
 	if( scr_instance_inherits(arg_unit, obj_task_actor) || arg_unit.object_index == obj_fridge )
 	{
-		var gui_inv = instance_create_depth(container, 0, 0, dto_gui_item);
+		var gui_inv = instance_create_depth(container, 0, 0, obj_gui_item);
 		with(gui_inv)
 		{
 			sprite = arg_unit.object_index == obj_fridge ? spr_fridge_inventory_grid : spr_inventory_grid;

@@ -13,7 +13,7 @@ var arg_height = argument4;
 var arg_unit = argument5;
 var arg_prop = argument6;
 
-var item = instance_create_depth(arg_container, 0, 0, dto_gui_item);
+var item = instance_create_depth(arg_container, 0, 0, obj_gui_item);
 with(item)
 {
 	unit = arg_unit;
