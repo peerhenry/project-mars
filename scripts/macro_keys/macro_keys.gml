@@ -11,6 +11,7 @@
 #macro key_settings_sound_volume_voice		"sound_volume_voice"
 #macro key_settings_sound_volume_sfx		"sound_volume_sfx"
 #macro key_settings_sound_volume_music		"sound_volume_music"
+#macro key_settings_sound_continuous_music	"sound_continuous_music"
 
 #macro key_window_resolutions_list			"resolutions_list"
 #macro key_window_resolutions_current		"resolutions_current"

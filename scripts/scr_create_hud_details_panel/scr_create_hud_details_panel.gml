@@ -102,8 +102,9 @@ with(container)
 		
 		#region food bar
 		
-		scr_create_gui_item_text(container, content_left, next_y_offset + (line_height - font_h)/2, panel_font, "Food");
-		// flabel.tooltip_text = "Shows how well fed an astronaut is. Astronauts will lose health if this reaches zero.";
+		food_label = scr_create_gui_item_text(container, content_left, next_y_offset + (line_height - font_h)/2, panel_font, "Food");
+		food_label.tooltip_title = "If food level reaches zero astronauts will start to lose health.";
+		food_label.tooltip_description = "If food level reaches zero astronauts will start to lose health.";
 		scr_create_gui_item_healthbar(
 			container, 
 			bar_left, 

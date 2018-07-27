@@ -14,8 +14,10 @@ global.room_origin = noone;
 // -- Set environment flags --
 global.enable_trace = debug_mode;
 global.dev_env = false;
-if(environment_get_variable("__PIONEERS_DEV") != "") global.dev_env = true;
-else if(file_exists("dev_env.flag")) global.dev_env = true;
+
+// debug: this if/else is temporary disabled, enable it and remove comment
+// if(environment_get_variable("__PIONEERS_DEV") != "") global.dev_env = true; 
+// else if(file_exists("dev_env.flag")) global.dev_env = true;
 
 // -- Print info to log --
 debug_format_header(scr_get_application_info());

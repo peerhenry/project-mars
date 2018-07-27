@@ -33,6 +33,7 @@ settings[? key_settings_sound_volume_master] = init_global_real("sound", "volume
 settings[? key_settings_sound_volume_voice] = init_global_real("sound", "volume_voice", default_sound_volume_voice);
 settings[? key_settings_sound_volume_sfx] = init_global_real("sound", "volume_sfx", default_sound_volume_sfx);
 settings[? key_settings_sound_volume_music] = init_global_real("sound", "volume_music", default_sound_volume_music);
+settings[? key_settings_sound_continuous_music] = init_global_real("sound", "continuous_music", default_sound_continuous_music);
 
 ini_close();
 

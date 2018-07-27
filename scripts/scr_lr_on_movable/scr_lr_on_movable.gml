@@ -14,7 +14,7 @@ if(arg_movable.is_selected)
 	if(scr_instance_inherits(arg_movable, obj_astronaut)) scr_play_astro_selection_sound(); // play a random selection sound; todo: DI
 	else resolve_execute(arg_movable.script_container, "play_sound", sound_robot_ask);
 	
-	// todo: check if this is supposed to be here
+	// todo: check if this is even supposed to be here
 	/*
 	if(
 		single_select_ent.object_index == obj_cart 

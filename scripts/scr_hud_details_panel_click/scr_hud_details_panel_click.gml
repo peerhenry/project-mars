@@ -47,6 +47,6 @@ switch(callback_item.click_action)
 		break;
 	
 	case details_panel_action.takeoff:
-		f_transit_modules("takeoff", unit);
+		f_transit_modules("takeoff", [unit]);
 		break;
 }

@@ -1,2 +1,5 @@
-audio_stop_sound(global.current_song);
-global.music_is_playing = false;
+if(I_am_the_one)
+{
+	audio_stop_sound(global.current_song);
+	global.music_is_playing = false;
+}

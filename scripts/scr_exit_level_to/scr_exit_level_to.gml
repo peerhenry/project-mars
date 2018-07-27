@@ -1,4 +1,5 @@
-if(global.music_is_playing)
+var continuous_music = global.settings[? key_settings_sound_continuous_music]
+if(global.music_is_playing && !continuous_music)
 {
 	global.music_is_playing = false;
 	audio_stop_sound(global.current_song);
@@ -12,7 +13,8 @@ with(obj_constructable)
 }
 with(all)
 {
-	if(object_index == obj_persistent_listener) continue; //exclude	
+	if(object_index == obj_persistent_listener) continue; //exclude
+	if(continuous_music && object_index == obj_music) continue; // dont destroy obj_music if it's supposed to be continuous
 	instance_destroy();
 }
 

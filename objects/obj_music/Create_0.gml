@@ -1,4 +1,10 @@
-if( instance_number(object_index) > 1 ) show_error("more than one: " + string( object_get_name(object_index) ), true);
+if( instance_number(object_index) > 1 )
+{
+	I_am_the_one = false;
+	instance_destroy();
+	exit;
+}
+I_am_the_one = true;
 audio_stop_sound(song_menu);
 global.music_is_playing = !global.dev_env;
 index = -1; // song starts at 0

@@ -1,3 +1,4 @@
+event_inherited();
 depth = - (occ_j + 2);
 image_speed = 0;
 
