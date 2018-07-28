@@ -89,7 +89,7 @@ rectangle_down_color_top = c_black;
 rectangle_down_color_bottom = c_black;
 click_script = noone;
 pressed = false;
-get_state = noone; // for toggle buttons
+get_state_script = noone; // for toggle buttons that depend on some state
 
 // healthbar
 bar_color = c_white;

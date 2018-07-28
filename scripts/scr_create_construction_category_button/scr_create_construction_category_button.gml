@@ -7,26 +7,6 @@ var arg_sprite = argument1;
 var arg_category = argument2;
 var arg_tooltip = argument3;
 
-#region Create Category button
-
-var cat_btn = scr_create_gui_item_sprite(arg_container, 0, 0, arg_sprite);
-//var cat_btn = scr_create_gui_item_icon_button(arg_container, 0, 0, arg_sprite, 0, 0);
-with(cat_btn)
-{
-	should_draw_panel = true;
-	tooltip_title = arg_tooltip;
-	category = arg_category;
-	halign = align_h.center;
-	valign = align_v.mid;
-	width = 32; // important to set because sprite may be smaller
-	height = 32;
-	
-	sprite_button_color = c_white;
-	click_script = scr_click_select_construction_category;
-}
-
-#endregion
-
 #region Create Category Build Selection Panel
 
 var gui_w = display_get_gui_width();
@@ -45,6 +25,32 @@ with(build_select_panel)
 	spacing = 2;
 	orientation = stack.horizontal;
 }
+
+#endregion
+
+#region Create Category button
+
+var cat_btn = scr_create_gui_item_icon_button(arg_container, 0, 0, arg_sprite, 0, 0);
+with(cat_btn)
+{
+	should_draw_panel = true;
+	tooltip_title = arg_tooltip;
+	category = arg_category;
+	halign = align_h.center;
+	valign = align_v.mid;
+	width = 32; // important to set because sprite may be smaller
+	height = 32;
+	right = left + width;
+	bottom = top + height;
+	
+	sprite_button_color = c_white;
+	
+	// draw outline when when category is locked
+	rectangle_color_top = c_white;
+	rectangle_color_bottom = c_white;
+	draw_script = scr_gui_draw_build_category_button;
+}
+cat_btn.build_select_panel = build_select_panel;
 
 #endregion
 
@@ -74,5 +80,3 @@ for(var n = 0; n < ds_list_size(construction_list); n++)
 }
 
 #endregion
-
-cat_btn.build_select_panel = build_select_panel;

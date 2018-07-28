@@ -12,6 +12,7 @@ should_draw_panel = true;
 orientation = stack.horizontal;
 height = 32 + 2*padding; // required by build_select_panel in scr_create_construction_category_button
 active_build_panel = noone;
+locked_build_panel = noone; // lock a panel if clicked
 
 // these scripts create the construction category button as well as the construction category panel
 scr_create_construction_category_button(id, spr_category_landers, macro_category_landers, "Landing Modules");

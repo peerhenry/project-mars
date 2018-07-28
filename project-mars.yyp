@@ -8223,6 +8223,14 @@
             }
         },
         {
+            "Key": "891814ae-03de-4409-b788-0c28325d4791",
+            "Value": {
+                "id": "bb6ccb58-02a4-493f-9d28-2c08a1408b25",
+                "resourcePath": "scripts\\scr_gui_draw_build_category_button\\scr_gui_draw_build_category_button.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "89816bd4-9c80-4e45-a294-ba1002c38167",
             "Value": {
                 "id": "8dff2e03-c525-4a51-97ca-017f022cb577",
@@ -13159,14 +13167,6 @@
             }
         },
         {
-            "Key": "df7533f8-b597-474f-9324-fcd7a282a255",
-            "Value": {
-                "id": "a563452f-2cc0-44f3-a9e3-e9400f355a73",
-                "resourcePath": "scripts\\scr_click_select_construction_category\\scr_click_select_construction_category.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "e01f35b0-d389-40ed-a79a-8142d86cb079",
             "Value": {
                 "id": "e2143871-ae57-40ff-80ec-5c15b1a54ad7",
@@ -15514,6 +15514,7 @@
         "24b1ad00-152b-463a-8089-5e8a7e6a66bd",
         "4ea7e87c-4eef-4357-a341-6ad6ee068a4f",
         "9d7e3e87-1705-46c3-8460-f805e17f2834",
+        "891814ae-03de-4409-b788-0c28325d4791",
         "0e99d05b-f3d0-426d-a51f-50eb6e64ac44",
         "2da4cc28-b62f-40dd-b928-5e64e452ee33",
         "64728a81-be80-4de3-831a-f55753b99085",
@@ -15535,7 +15536,6 @@
         "36d4e163-8418-438f-affd-886eaa284236",
         "eaac55fd-1d53-4773-a3eb-9897b02ace01",
         "791dba2e-8546-41b0-b49c-68492483fdeb",
-        "df7533f8-b597-474f-9324-fcd7a282a255",
         "8b9493ac-21e1-4fc3-9b41-ca0f3206d614",
         "d9b6f6b7-f390-472d-b7e3-5591c3bd5a79",
         "8525e2a3-0bc7-4e69-bfc9-d386765db3af",

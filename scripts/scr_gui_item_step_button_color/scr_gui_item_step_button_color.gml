@@ -20,5 +20,5 @@ with(argument0)
 		rectangle_color_bottom = rectangle_button_color_bottom;
 	}
 	
-	if(get_state != noone) scr_gui_item_step_state_button_color(id);
+	if(get_state_script != noone) scr_gui_item_step_state_button_color(id);
 }

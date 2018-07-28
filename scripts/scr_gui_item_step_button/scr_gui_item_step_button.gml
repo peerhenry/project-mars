@@ -21,7 +21,7 @@ with(argument0)
 		with(container)
 		{
 			callback_item = other.id;
-			event_user(macro_gui_container_click_callback);
+			event_user( macro_gui_container_click_callback );
 		}
 	}
 	
