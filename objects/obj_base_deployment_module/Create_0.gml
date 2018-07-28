@@ -1,6 +1,7 @@
 event_inherited();
 depth = - (occ_j + 2);
 image_speed = 0;
+under_construction = false;
 
 for(var i = -2; i <= 2; i++)
 {

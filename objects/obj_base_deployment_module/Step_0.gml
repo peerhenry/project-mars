@@ -28,7 +28,7 @@ if(is_landing)
 			}
 		}
 		
-		scr_setup_room(occ_i - 1, occ_j - 2, 3, 3);
+		scr_setup_room(occ_i - 1, occ_j - 1, 3, 3);
 		
 		instance_destroy();
 	}
