@@ -1,4 +1,4 @@
-msg = "Running tests.";
+msg = "Running tests...";
 color = c_yellow;
 done = false;
 passed = false;

@@ -1,6 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
-// draw gui tooltip here
+/// @description Draw tooltip
 
 var hover_item = global.gui_hover_item;
 if(

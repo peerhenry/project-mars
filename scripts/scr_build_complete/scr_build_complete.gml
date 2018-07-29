@@ -12,7 +12,6 @@ var piles = arg_construction[? construction_mdu_piles];
 for(var n = 0; n < ds_list_size(piles); n++)
 {
 	var next_pile = ds_list_find_value(piles, n);
-	show_debug_message("destroying pile that is a: " + object_get_name(next_pile.object_index));
 	instance_destroy(next_pile);
 }
 ds_list_destroy(piles);
@@ -55,7 +54,12 @@ ds_list_delete(construction_queue, index);
 // Stop astronaut
 with(obj_task_actor)
 {
-	if(construction == arg_construction) scr_stop_construction(id);
+	if(construction == arg_construction)
+	{
+		scr_stop_construction(id);
+		instance_destroy(end_path_action);
+		end_path_action = noone;
+	}
 }
 
 ds_map_replace(arg_construction, construction_astronaut, noone);

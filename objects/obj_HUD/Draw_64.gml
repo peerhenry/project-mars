@@ -20,6 +20,9 @@ scr_draw_shiny_line(0, hud_bar_h, gui_w, hud_bar_h, hud_border_color);
 
 #region TOOLTIPS
 
+// moved to draw gui end
+
+/*
 // gui tooltip
 if(hover_button != noone)
 {
@@ -28,16 +31,20 @@ if(hover_button != noone)
 if(global.hovering_over_gui) exit;
 
 // map tooltip
-var tile = instance_position(mouse_x, mouse_y, obj_base_tile);
 var comp = instance_position(mouse_x, mouse_y, obj_base_component);
-if(tile != noone && comp == noone && !tile.under_construction)
-{
-	var le_room = scr_room_at(mouse_x, mouse_y);
-	if(le_room != noone) scr_draw_tooltip("oxygen: " + string( floor(le_room.oxygen_level) ) + "%");
-}
 if(comp != noone)
 {
 	scr_draw_tooltip(string( comp.name ));
 }
+else
+{
+	var tile = instance_position(mouse_x, mouse_y, obj_base_tile);
+	if(tile != noone && !tile.under_construction)
+	{
+		var le_room = scr_room_at(mouse_x, mouse_y);
+		if(le_room != noone) scr_draw_tooltip("oxygen: " + string( floor(le_room.oxygen_level) ) + "%");
+	}
+}
+*/
 
 #endregion
