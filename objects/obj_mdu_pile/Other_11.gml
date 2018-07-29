@@ -23,16 +23,13 @@ else
 	}
 }
 
-var astro = assigned_astronaut;
-var action = astro.current_action;
-scr_unassign_task(id);
-
-with(astro)
+// for now, keeping assignment logic for mdu piles is the easy way.
+is_assigned = false;
+assigned_astronaut = noone;
+if(icon != noone)
 {
-	if(action == astronaut_action.fetching_mdu)
-	{
-		scr_deliver_mdu_after_fetch(astro);
-	}
+	instance_destroy(icon);
+	icon = noone;
 }
 
 if(mdu_count == 0)

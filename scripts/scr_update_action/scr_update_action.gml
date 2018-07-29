@@ -31,6 +31,7 @@ with(arg_astronaut)
 			if(construction[? construction_completion] >= 100)
 			{
 				scr_build_complete(construction);
+				scr_set_pistol_sprite(id, move_dir, false); // holster pistol
 			}
 			break;
 		case astronaut_action.in_combat:

@@ -38,7 +38,6 @@ switch(method)
 		var interactable = args[0];
 		var actor = args[1];
 		var interaction = noone;
-		call_unwrap(this.notifier, "notify_player", "creating interaction for : " + object_get_name(interactable.object_index)); // DEBUG
 		
 		var interaction = new_override(
 			c_action, 
@@ -95,7 +94,9 @@ switch(method)
 				result = ok();
 				break;
 			case obj_mdu_pile:
-				// todo: pickup mdu
+				with(interactable) event_user(macro_event_interact);
+				result = ok();
+				break;
 			case obj_printer:
 				// todo: pickup printed item
 			default:

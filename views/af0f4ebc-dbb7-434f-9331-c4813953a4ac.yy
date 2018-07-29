@@ -14,7 +14,8 @@
         "f66242a3-36de-4e28-955b-e0a582c3eb19",
         "b9ecbbf7-76ac-4769-8af3-4cef97916200",
         "68095268-9d64-4573-8d68-41a31f40d40f",
-        "0f61a80d-e177-4512-ab7d-504e339b66cd"
+        "0f61a80d-e177-4512-ab7d-504e339b66cd",
+        "9276410f-72eb-461e-bb10-24d9f51fb09a"
     ],
     "filterType": "GMSprite",
     "folderName": "character",

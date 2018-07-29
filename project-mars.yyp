@@ -351,6 +351,14 @@
             }
         },
         {
+            "Key": "05f0f7a0-e5af-4761-bca6-d3997d5b4e43",
+            "Value": {
+                "id": "c7d27c64-24a5-484d-9c07-5a37b701526b",
+                "resourcePath": "scripts\\test_astro_pickup_last_mdu\\test_astro_pickup_last_mdu.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0627e727-f6af-4196-9bc1-6885f832c0ca",
             "Value": {
                 "id": "af46d2a6-cd6c-4fd2-b7e9-54e7977e6e1a",
@@ -1988,6 +1996,14 @@
                 "id": "6e420adf-025e-4197-9fae-74d44ee1ac3f",
                 "resourcePath": "views\\22d26dbd-e985-4a0b-8e8d-c11c893bfe9e.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "22db7e9d-a034-47e0-bb22-88c356abb47f",
+            "Value": {
+                "id": "a5da95fd-93d5-498c-827a-ed472cbc8406",
+                "resourcePath": "scripts\\scr_set_pistol_sprite\\scr_set_pistol_sprite.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -4164,6 +4180,14 @@
                 "id": "920d1b79-6316-4ded-b56d-e34cb8527f71",
                 "resourcePath": "scripts\\scr_main_menu\\scr_main_menu.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "43e5421b-b671-4174-863e-c910c7ccab18",
+            "Value": {
+                "id": "865d7ca5-f73c-4c96-a522-d490e50b886a",
+                "resourcePath": "sprites\\spr_male_up_pistol\\spr_male_up_pistol.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -8652,6 +8676,14 @@
                 "id": "cce9c525-c8a7-4155-8817-cc735cb4ee3f",
                 "resourcePath": "views\\927330e0-543e-481b-b6fc-31dea465fe38.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "9276410f-72eb-461e-bb10-24d9f51fb09a",
+            "Value": {
+                "id": "facd1937-b3da-46a4-9cd8-61a17f4ddf39",
+                "resourcePath": "sprites\\spr_construction_beam\\spr_construction_beam.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -15258,6 +15290,7 @@
         "2353e0d0-3741-4174-9afc-107c72d1a835",
         "9d1941f5-4c88-4267-874f-36b7368ca2d4",
         "7ffd6956-cc98-4f19-a3af-14d9ab1ad9f1",
+        "22db7e9d-a034-47e0-bb22-88c356abb47f",
         "dd6f4c6a-3125-422d-8782-5b5f249b0485",
         "3dc32fcc-7042-49df-8b3f-b9259c02766d",
         "bb6c1aeb-7a01-476c-a67d-d5fc38d508b7",
@@ -15940,6 +15973,7 @@
         "6a74d12e-ab42-4239-ae7d-8fe8e7daaadb",
         "f31ab4a4-20fe-4164-9cea-7f20282919c0",
         "63074685-04e4-422c-af61-f11999fb5d1b",
+        "05f0f7a0-e5af-4761-bca6-d3997d5b4e43",
         "fed38e95-115b-45a9-b1cf-2818bf076199",
         "40d0ace9-db0a-4d40-a465-94fba9910083",
         "b1ebf62f-32eb-41df-b407-116e3fc2f8dd",

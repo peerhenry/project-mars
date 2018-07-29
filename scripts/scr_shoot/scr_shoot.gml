@@ -33,39 +33,20 @@ with(shooter)
 {
 	var dx = target.x - x;
 	var dy = target.y - y;
+	var shoot_direction;
 
 	if(dy > dx)
 	{
-		if(dy > -dx)
-		{
-			// look south
-			sprite_index = sprite_down_pistol;
-			mask_sprite = sprite_mask_down;
-		}
-		else
-		{
-			// look east
-			sprite_index = sprite_right_pistol;
-			mask_sprite = sprite_mask_right;
-			image_xscale = -1;
-		}
+		if(dy > -dx) shoot_direction = macro_down;
+		else shoot_direction = macro_right;
 	}
 	else
 	{
-		if(dy > -dx)
-		{
-			// look west
-			sprite_index = sprite_right_pistol;
-			mask_sprite = sprite_mask_right;
-			image_xscale = 1;
-		}
-		else
-		{
-			// look north
-			sprite_index = sprite_up_pistol;
-			mask_sprite = sprite_mask_up;
-		}
+		if(dy > -dx) shoot_direction = macro_left;
+		else shoot_direction = macro_up;
 	}
+	
+	scr_set_pistol_sprite(id, shoot_direction, true);
 }
 
 return true;
