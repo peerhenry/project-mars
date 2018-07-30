@@ -18,11 +18,20 @@ borderless_height = height - (2 * border_size);
 
 var room_ar = room_width / room_height;
 var map_ar = width / height;
-if(room_ar >= map_ar) scale = borderless_width / room_width;
-else if(room_ar < map_ar) scale = borderless_height / room_height;
+scale_x = borderless_width / room_width;
+scale_y = borderless_height / room_height;
 
-inner_width = room_width * scale;
-inner_height = room_height * scale;
+/*
+// previous way of doing things: universal scaling
+// caused a white band on minimap for non-square maps
+if(room_ar >= map_ar) scale = scale_x;
+else if(room_ar < map_ar) scale = scale_y;
+scale_x = scale;
+scale_y = scale;
+*/
+
+inner_width = room_width * scale_x;
+inner_height = room_height * scale_y;
 inner_left = (borderless_width / 2) - (inner_width / 2);
 inner_top = (borderless_height / 2) - (inner_height / 2);
 
@@ -50,6 +59,10 @@ for(var xx = 0; xx < tilemap_width; xx++)
 }
 ds_map_destroy(colormap);
 
+show_debug_message("@# MINIMAP DETAILS"); // DEBUG
+show_debug_message("borderless_width: " + string(borderless_width)); // DEBUG
+show_debug_message("borderless_height: " + string(borderless_height)); // DEBUG
+
 var surf_bg = surface_create(borderless_width, borderless_height);
 surface_set_target(surf_bg);
 if(background_color != noone) draw_clear(background_color);
@@ -57,6 +70,10 @@ else draw_clear(c_black);
 
 var scaled_width = tilemap_get_tile_width(tilemap) * (inner_width / room_width);
 var scaled_height = tilemap_get_tile_height(tilemap) * (inner_height / room_height);
+
+show_debug_message("scaled_width: " + string(scaled_width)); // DEBUG
+show_debug_message("scaled_height: " + string(scaled_height)); // DEBUG
+
 for(var xx = 0; xx < tilemap_width; xx++)
 {
 	for(var yy = 0; yy < tilemap_height; yy++)

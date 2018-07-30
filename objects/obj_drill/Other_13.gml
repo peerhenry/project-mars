@@ -1,5 +1,4 @@
 /// @description Init
-show_debug_message("drill init"); // DEBUG
 event_inherited();
 name = "drill";
 scr_execute_map_buffer_action(occ_i, occ_j, map_buffer_action.occupy);

@@ -28,7 +28,7 @@ for(var grid_type = 0; grid_type < macro_grid_type_count; grid_type++)
 			}
 			else
 			{
-				debug_grid(grid); // DEBUG
+				if(global.dev_env) debug_grid(grid); // DEBUG
 				var grid_may_part_here = scr_grid_could_part(id, grid_type);
 				
 				if(cell_was_removed && grid_may_part_here) // Check if any adjacents in surrounding components are disconnected

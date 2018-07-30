@@ -3,8 +3,6 @@ var wave_size = power(20, wave_number/7); // 20 enemies on wave number 7
 wave_size = min(wave_size, cancel_spawn_count);
 if(instance_number(obj_astronaut) > 100) exit;
 
-wave_size = 3; // DEBUG
-
 repeat(wave_size)
 {
 	var spawn_x = x;

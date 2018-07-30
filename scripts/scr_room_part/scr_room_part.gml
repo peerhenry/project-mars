@@ -173,9 +173,7 @@ while(!ds_queue_empty(tile_queue))
 var tiles_remain = ds_list_size(tiles_remaining) > 0;
 
 if(tiles_remain)
-{
-	// show_message("A discrepancy between the count of connected tiles and total tiles of a room was detected; connected " + string(connected_tiles_count) + " total: " + string(tile_count)); // DEBUG
-	
+{	
 	// make a room from remaining tiles:
 	var get_layer = script_container_resolve(global.script_container, "get_layer_for");
 	var rooms_layer = script_execute(get_layer, obj_room);
@@ -194,9 +192,7 @@ if(tiles_remain)
 }
 
 if(tiles_remain || force_new_room)
-{
-	// show_message("making a new room of size " + string(ds_list_size(tiles_visited))); // DEBUG
-	
+{	
 	// THIS IS WHERE THE ACTUAL PARTED ROOM IS CREATED
 	var new_room = scr_create_room_with_tiles(tiles_visited, min_left, min_top, max_right, max_bottom);
 	with(new_room)

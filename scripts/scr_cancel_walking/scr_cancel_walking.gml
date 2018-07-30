@@ -46,7 +46,6 @@ if(dx < 2 && dy < 2)
 		var can_go_to_center = scr_navigate(arg_entity, center_x, center_y);
 		if(!can_go_to_center)
 		{
-			show_debug_message("WARNIG! not able to nav to center of tile..."); // DEBUG
 			scr_stop_moving(arg_entity);
 			result = cancel_walking_result.failure;
 		}
@@ -58,7 +57,6 @@ else
 	var can_go_to_center = scr_navigate(arg_entity, center_x, center_y);
 	if(!can_go_to_center)
 	{
-		show_debug_message("WARNIG! not able to nav to center of tile..."); // DEBUG
 		scr_stop_moving(arg_entity);
 		result = cancel_walking_result.failure;
 	}

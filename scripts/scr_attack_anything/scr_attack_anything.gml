@@ -1,8 +1,6 @@
 /// @arg attacker
 var arg_attacker = argument0;
 
-scr_trace("attack anything: " + string(arg_attacker)); // DEBUG
-
 var last_time = current_time;
 
 var attacking = false;
@@ -19,13 +17,11 @@ with(arg_attacker)
 			if(can_reach)
 			{
 				new_target = id;
-				show_debug_message("can navigate evaluated to true..."); // DEBUG
 				break;
 			}
 		}
 	}
 	
-	show_debug_message("dt to movable: " + string(current_time-last_time));
 	last_time = current_time;
 	
 	if(new_target != noone)
@@ -34,7 +30,6 @@ with(arg_attacker)
 		break;
 	}
 	
-	show_debug_message("dt to attack: " + string(current_time-last_time));
 	last_time = current_time;
 	
 	// try to attack construction
@@ -48,7 +43,6 @@ with(arg_attacker)
 		}
 	}
 	
-	show_debug_message("dt to constructable: " + string(current_time-last_time));
 	last_time = current_time;
 }
 

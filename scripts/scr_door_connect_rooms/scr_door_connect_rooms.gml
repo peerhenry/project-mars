@@ -84,7 +84,6 @@ with(door)
 		door2.room1 = room2;
 	}
 	
-	if(room1 == noone) show_debug_message("room1 is noone"); // DEBUG
 	if(room1 == noone || room2 == noone) scr_panic("room1 or room2 did not exist for door in scr_door_connect_rooms");
 	
 	// Add this door the the adjacent rooms if it aint there yet.

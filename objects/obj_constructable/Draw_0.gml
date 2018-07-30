@@ -10,7 +10,6 @@ if(under_construction)
 	
 	// set tex uvs
 	var uvs_tex = sprite_get_uvs(sprite_index, image_index);
-	//show_debug_message("setting uvs for: " + sprite_get_name(sprite_index)); // DEBUG
 	var uvs_tex_handle = shader_get_uniform(shader_noise, "uvs_tex");
 	//if(uvs_tex[2] - uvs_tex[0] < 0 || uvs_tex[3] - uvs_tex[1] < 0) show_error("w/h < 0", true);
 	shader_set_uniform_f(

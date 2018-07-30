@@ -159,7 +159,7 @@ if(keyboard_check_pressed(vk_numpad4))
 			var text = next_trigger.name;
 			if(next_trigger.type == trigger_type.objective) text = text + " - accomplished: " + string(next_trigger.accomplished);
 			show_debug_message(text);
-			show_debug_message("trigger count: " + string(next_trigger.trigger_count)); // DEBUG
+			show_debug_message("trigger count: " + string(next_trigger.trigger_count));
 		}
 		
 		show_debug_message("");

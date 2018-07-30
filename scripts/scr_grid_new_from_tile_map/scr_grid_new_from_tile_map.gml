@@ -56,7 +56,7 @@ with(new_grid)
 	}
 }
 
-debug_grid(new_grid); // DEBUG
+if(global.dev_env) debug_grid(new_grid); // DEBUG
 
 ds_list_destroy(found_rooms);
 return new_grid;
