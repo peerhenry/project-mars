@@ -1455,6 +1455,14 @@
             }
         },
         {
+            "Key": "18c62fb7-e32e-4d17-99c5-d82f289fe987",
+            "Value": {
+                "id": "65d7cec2-9618-4438-b310-fced7650d88f",
+                "resourcePath": "scripts\\test_finish_closet_with_mdus\\test_finish_closet_with_mdus.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "18c968ad-b343-40b8-8710-2c11c8e22e0d",
             "Value": {
                 "id": "42307f2a-7020-4f6b-989e-98d762421f5c",
@@ -4855,6 +4863,14 @@
             }
         },
         {
+            "Key": "4d120b48-0d5c-4427-bc32-4d8f72a0b55c",
+            "Value": {
+                "id": "739c7c1c-7bfc-4ebe-b163-64c0c340be83",
+                "resourcePath": "scripts\\test_finish_closet_occupies_navgrid\\test_finish_closet_occupies_navgrid.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "4d3a8e4c-cb93-4618-acc0-153fa0ffe09c",
             "Value": {
                 "id": "f1194a79-af05-49a8-9d5f-420b03df212b",
@@ -5660,6 +5676,14 @@
                 "id": "681e85f2-5219-4e5b-8734-072f6811eaee",
                 "resourcePath": "objects\\setup_drill\\setup_drill.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "5ccf6918-0a01-45c0-ad99-ba1207a403f5",
+            "Value": {
+                "id": "d999d954-980e-4db0-81c2-f58475415130",
+                "resourcePath": "scripts\\scr_delta_construction_completion\\scr_delta_construction_completion.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -7228,6 +7252,14 @@
                 "id": "eb249cb0-af1b-4db9-bde2-06e32b7d8ec3",
                 "resourcePath": "views\\76e5fe76-a32a-414a-8ba5-74efed6ddccc.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "777fc8ab-7227-4ff0-b165-560428b75a36",
+            "Value": {
+                "id": "f23e8cc7-1e16-40a8-8638-19c886a1dc92",
+                "resourcePath": "scripts\\test_suite_scenarios_construction\\test_suite_scenarios_construction.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -15266,6 +15298,7 @@
         "6eadfeb5-737c-492c-aaaf-2f5cbbda10db",
         "a3f54bc0-e1d8-4a1d-9172-139e942bd72e",
         "1f3fd3a9-054b-4fc6-a568-a4ab8b358780",
+        "5ccf6918-0a01-45c0-ad99-ba1207a403f5",
         "0776ed7b-00bb-46df-a1db-572a19b811be",
         "cd2d1ef8-586b-40d4-8c89-4425663ee013",
         "19f68941-b29d-43e4-8d48-ae61301a70ae",
@@ -16006,7 +16039,10 @@
         "31320da5-82b8-425a-a61d-9f953c148192",
         "3ea63ad9-3b64-411b-b050-4f0b31055288",
         "9f68b34a-c2ff-456c-821b-9fac2a93376b",
+        "777fc8ab-7227-4ff0-b165-560428b75a36",
         "3675f3f8-e05d-4474-ae4d-d412eb297726",
+        "4d120b48-0d5c-4427-bc32-4d8f72a0b55c",
+        "18c62fb7-e32e-4d17-99c5-d82f289fe987",
         "e6f9af78-5419-4f51-9637-4a496bcbfb3a",
         "2febcc22-458c-41db-b912-ec27e4b0aa0d",
         "8ad3b847-52a3-4a58-b820-625cec89b502"

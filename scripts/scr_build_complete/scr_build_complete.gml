@@ -75,6 +75,7 @@ if(ciz != noone)
 	ds_map_replace(arg_construction, construction_object, noone);
 }
 
+// # Finalize all instances related to construction
 while(!ds_stack_empty(instances_to_finalize))
 {
 	var next_instance = ds_stack_pop(instances_to_finalize);
@@ -86,6 +87,7 @@ while(!ds_stack_empty(instances_to_finalize))
 }
 ds_stack_destroy(instances_to_finalize);
 
+// # Recalculate paths
 if(needs_path_recalc)
 {
 	scr_recalculate_paths();

@@ -5,7 +5,7 @@ var construction = scr_create_dummy_construction();
 ds_map_replace(construction, construction_time, 50);
 astro.current_action = astronaut_action.constructing;
 astro.construction = construction;
-var expect = 100/(30*construction[? construction_time]); // todo: put this calculation in a script
+var expect = scr_delta_construction_completion(construction);
 // act
 scr_update_action(astro);
 // assert

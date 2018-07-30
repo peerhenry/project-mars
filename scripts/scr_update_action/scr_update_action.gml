@@ -26,8 +26,7 @@ with(arg_astronaut)
 			}
 			break;
 		case astronaut_action.constructing:
-			var construction_speed = 10; // 100;
-			var completion = construction[? construction_completion] + construction_speed/(30*construction[? construction_time]);
+			var completion = construction[? construction_completion] + scr_delta_construction_completion(construction);
 			ds_map_replace(construction, construction_completion, completion);
 			if(construction[? construction_completion] >= 100)
 			{

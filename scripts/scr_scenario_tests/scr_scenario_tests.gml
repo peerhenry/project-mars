@@ -3,8 +3,7 @@ global.script_container = container;
 test_message("Running scenario tests...");
 
 test_suite_setup();
-test_suite_destruct();
-test_hatch_clears_navgrid();
+test_suite_scenarios_construction();
 test_destroy_from_damage_wall_door();
 test_suite_objects();
 

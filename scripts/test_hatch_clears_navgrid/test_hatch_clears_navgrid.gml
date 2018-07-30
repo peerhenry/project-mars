@@ -1,5 +1,3 @@
-test_init(test_hatch_clears_navgrid);
-
 // arrange
 var x_tl = scr_gi_to_rc(3);
 var y_tl = scr_gi_to_rc(3);
