@@ -7655,6 +7655,14 @@
             }
         },
         {
+            "Key": "7f3fcc2d-b5c9-46dd-8b46-3116e299b00c",
+            "Value": {
+                "id": "eef5f2bb-8c90-4cb6-a5c2-8532b8e87671",
+                "resourcePath": "scripts\\scr_play_sound_at\\scr_play_sound_at.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "7f471e96-0177-47ee-b152-99017e386239",
             "Value": {
                 "id": "9c1fbe88-b3eb-4bca-8448-d21134b19cc2",
@@ -8732,6 +8740,14 @@
                 "id": "b69bfa83-b2f4-4fb8-8f9f-89adad03f789",
                 "resourcePath": "sprites\\spr_magic_pump\\spr_magic_pump.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "92e03918-d14f-4270-8297-137aaf28d239",
+            "Value": {
+                "id": "af4f8d29-1a33-41b4-a07f-ed7d4ca3349c",
+                "resourcePath": "sounds\\sound_fx_constructing\\sound_fx_constructing.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -12706,7 +12722,7 @@
             "Key": "d5388aeb-d0d3-4001-ab37-6b0b92b2c373",
             "Value": {
                 "id": "1e58107b-b526-4809-830c-6fbeeb676f99",
-                "resourcePath": "scripts\\scr_update_astro_props\\scr_update_astro_props.yy",
+                "resourcePath": "scripts\\scr_update_astro_construction_action\\scr_update_astro_construction_action.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -15113,6 +15129,7 @@
         "4f5384c4-abd8-4bbe-8565-712094e5c332",
         "185c41ef-a9ed-4a58-a27d-896daa69cf4e",
         "715c8367-2483-4648-81bf-7e3d0d552aa4",
+        "7f3fcc2d-b5c9-46dd-8b46-3116e299b00c",
         "26043699-0779-42dc-907b-0273c7fe6964",
         "596e4f76-3d01-455e-bad6-b7295f7a7d24",
         "c8eaf9f7-f3cc-4bbf-89c3-56c5423c4889",

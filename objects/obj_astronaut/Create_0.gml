@@ -28,13 +28,13 @@ auto_sleep = (owner == macro_player) ? global.auto_sleep_player : global.auto_sl
 auto_eat_level = global.auto_eat_hunger_level;
 auto_sleep_level = global.auto_sleep_level;
 
+// other stuff
 var inside = position_meeting(x, y, obj_base_tile);
 is_outside = !inside;
 scr_set_suit(id, is_outside);
-
 scr_give_entity_new_item(id, inv_space.pistol);
-
 oxygen_bar_color = global.oxygen_bar_color;
+construction_sound = noone;
 
 // autotask
 alarm[1] = 30 + round(random_range(-5,5));

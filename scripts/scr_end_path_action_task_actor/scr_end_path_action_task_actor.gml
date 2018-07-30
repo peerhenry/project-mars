@@ -9,7 +9,8 @@ with(arg_entity)
 	{
 		case astronaut_action.moving_to_construction:
 			current_action = astronaut_action.constructing;
-			scr_set_pistol_sprite(arg_entity, move_dir, true);
+			scr_set_pistol_sprite(id, move_dir, true);
+			construction_sound = resolve_execute(script_container, "play_sound_at", sound_fx_constructing, x, y, true);
 			break;
 		case astronaut_action.fetching_mdu:
 			scr_deliver_mdu_after_fetch(id);
@@ -19,6 +20,8 @@ with(arg_entity)
 			if(scr_construction_is_ready(construction))
 			{
 				scr_update_astro_and_construction(id, construction, astronaut_action.constructing);
+				scr_set_pistol_sprite(id, move_dir, true);
+				construction_sound = resolve_execute(script_container, "play_sound_at", sound_fx_constructing, x, y, true);
 			}
 			break;
 		case astronaut_action.moving_by_command:

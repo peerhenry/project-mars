@@ -32,7 +32,7 @@
         "build": 0,
         "major": 0,
         "minor": 0,
-        "revision": 4
+        "revision": 5
     },
     "option_windows_vsync": false
 }

@@ -6,7 +6,7 @@ var script_container = arg_astronaut.script_container;
 
 if(construction == noone || construction[? construction_build_state] != construction_state.awaiting_mdus)
 {
-	scr_update_astro_props(arg_astronaut, noone, astronaut_action.idle);
+	scr_update_astro_construction_action(arg_astronaut, noone, astronaut_action.idle);
 	arg_astronaut.autotasking = false;
 	exit;
 }
@@ -25,7 +25,7 @@ switch(state)
 	case reach_state.unreachable:
 		var deliveries_decr = construction[? construction_mdu_deliveries] - 1;
 		ds_map_replace(construction, construction_mdu_deliveries, deliveries_decr);
-		scr_update_astro_props(arg_astronaut, noone, astronaut_action.idle);
+		scr_update_astro_construction_action(arg_astronaut, noone, astronaut_action.idle);
 		arg_astronaut.autotasking = false;
 		break;
 }

@@ -46,4 +46,5 @@ if(moveLeft && camx > scroll_speed ){
 
 if( dx != 0 || dy != 0){
 	camera_set_view_pos(cam, camx + dx, camy + dy);
+	audio_listener_position(camx + camW/2, camy + camH/2, 0);
 }

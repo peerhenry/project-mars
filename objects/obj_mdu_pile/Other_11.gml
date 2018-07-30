@@ -25,6 +25,7 @@ else
 
 // for now, keeping assignment logic for mdu piles is the easy way.
 is_assigned = false;
+assigned_astronaut.assigned_object = noone;
 assigned_astronaut = noone;
 if(icon != noone)
 {

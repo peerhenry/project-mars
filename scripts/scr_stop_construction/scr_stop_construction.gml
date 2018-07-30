@@ -11,4 +11,5 @@ with(arg_astronaut)
 	current_action = astronaut_action.idle;
 	construction = noone;
 	if(path_exists(path)) scr_cancel_walking(arg_astronaut);
+	if(construction_sound != noone) audio_stop_sound(construction_sound);
 }

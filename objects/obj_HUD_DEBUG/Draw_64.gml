@@ -1,10 +1,12 @@
 /*
 draw_set_font(font_hud);
-draw_set_color(c_white);
+draw_set_color(c_yellow);
 draw_set_valign(fa_middle);
 draw_set_halign(fa_center);
 
 var drag = false;
+
+audio_listener_position()
 
 with(obj_mouse_listener)
 {

@@ -1,2 +1,2 @@
 /// @arg sound
-audio_play_sound(argument0, 0, 0);
+return audio_play_sound(argument0, 0, 0);
