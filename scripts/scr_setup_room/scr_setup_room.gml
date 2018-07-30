@@ -14,6 +14,6 @@ var y_br = scr_gi_to_rc(j_tl + height - 1);
 
 // ds_map_replace(global.construction_ghost, macro_ghost_rotation, rot); // rotation doesn't matter
 scr_update_ghost(x_tl, y_tl, x_br, y_br, macro_basetile, 0, true);
-scr_build_new();
-debug_finish_all_constructions();
+var new_construction = scr_build_new();
+debug_finish_construction(new_construction);
 scr_ghost_reset();
