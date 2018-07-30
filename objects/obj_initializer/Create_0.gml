@@ -15,6 +15,7 @@ var singletons = ds_list_create();
 ds_list_add(singletons, obj_map_initializer);
 var level = global.level_object_index;
 if(level != noone) ds_list_add(singletons, level);
+else scr_warn("No level is set for this mission");
 ds_list_add(singletons, obj_music);
 ds_list_add(singletons, obj_ambient_sound);
 ds_list_add(singletons, obj_sensor_range_draw);

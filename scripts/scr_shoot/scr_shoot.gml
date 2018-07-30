@@ -21,8 +21,7 @@ else if( weapon.type == inv_space.pistol  && weapon.charge > 0 )
 	{
 		// play laser 1
 		weapon.charge -= 1;
-		var play_sound = script_container_resolve(shooter.script_container, "play_sound");
-		script_execute(play_sound, sound_fx_laser);
+		resolve_execute(container, "play_sound_at", sound_fx_laser, shooter.x, shooter.y, false);
 	}
 }
 

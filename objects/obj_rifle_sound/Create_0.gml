@@ -1,3 +1,2 @@
-var play_sound = script_container_resolve(global.script_container, "play_sound");
-script_execute(play_sound, sound_fx_laser_2);
+resolve_execute(global.script_container, "play_sound_at", sound_fx_laser_2, x, y, false);
 alarm[0] = 1;

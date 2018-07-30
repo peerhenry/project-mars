@@ -7,7 +7,7 @@ switch(func)
 	// functions
 	case "engage_thrusters": // lander => void
 		var arg_lander = args[0];
-		if(!audio_is_playing(sound_fx_exhaust)) resolve_execute(global.script_container, "play_sound", sound_fx_exhaust);
+		arg_lander.exhaust_sound = resolve_execute(global.script_container, "play_sound_at", sound_fx_exhaust, arg_lander.x, arg_lander.y, false);
 		with(arg_lander)
 		{
 			if(object_index == obj_base_deployment_module) image_index = 0;
@@ -17,9 +17,12 @@ switch(func)
 	
 	case "disengage_thrusters": // lander => void
 		var arg_lander = args[0];
-		var no_other_thrusters = true;
-		with(obj_lander) if(id != arg_lander && path_exists(path)) no_other_thrusters = false;
-		if(no_other_thrusters && audio_is_playing(sound_fx_exhaust)) audio_stop_sound(sound_fx_exhaust);
+		if(arg_lander.exhaust_sound != noone)
+		{
+			audio_stop_sound(arg_lander.exhaust_sound);
+			arg_lander.exhaust_sound = noone;
+		}
+		
 		if(arg_lander.object_index == obj_base_deployment_module)
 		{
 			image_speed = 2; // animation to retract pipes

@@ -2,7 +2,7 @@
 
 if(file_exists(macro_settings_file))
 {
-	var reset = file_exists("reset_settings.flag");
+	var reset = file_exists("reset_settings.flag") || true; // DEBUG: Reset is enabled
 	if(reset) //reset settings
 	{
 		show_debug_message("Resetting settings file: " + macro_settings_file);

@@ -15,7 +15,7 @@ return audio_play_sound_at(
 	arg_x, 
 	arg_y, 
 	1,					// z
-	200,				// falloff reference	: "the distance under which the volume for the source would normally drop by half"
+	300,				// falloff reference	: "the distance under which the volume for the source would normally drop by half"
 	1000,				// falloff max			: "the distance where there will no longer be any attenuation of the source sound"
 	1,					// falloff factor
 	arg_should_loop,	// loop

@@ -1,6 +1,7 @@
 // @arg gui_container
 var arg_container = argument0;
 var inst = instance_create_depth(noone, 0, 0, obj_gui_item);
+inst.level = noone;
 with(obj_level)
 {
 	inst.level = id;

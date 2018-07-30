@@ -63,7 +63,7 @@ switch( arg_action )
 		}
 		break;
 	case hud_action.toggle_objectives:
-		if(instance_exists(global.gui_objectives_panel))
+		if(variable_global_exists("gui_objectives_panel") && instance_exists(global.gui_objectives_panel))
 		{
 			instance_destroy(global.gui_objectives_panel);
 			global.gui_objectives_panel = noone;

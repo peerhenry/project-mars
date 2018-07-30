@@ -43,5 +43,4 @@ for(var n = 0; n < 3; n++)
 global.setup_mdu_pile_size = 1;
 
 // center camera on starting position
-camera_set_view_pos(view_camera[0], 32*32 - view_wport[0]/2, 32*32 - view_hport[0]/2);
-//camera_set_view_pos(view_camera[0], 32*80 - view_wport[0]/2, 32*70 - view_hport[0]/2); // attack check
+scr_set_cam_pos_safe(32*32 - view_wport[0]/2, 32*32 - view_hport[0]/2);

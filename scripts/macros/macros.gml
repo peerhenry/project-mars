@@ -2,6 +2,7 @@
 //todo: responsive or keep aspect ratio
 
 #macro macro_settings_file "game_settings.ini"
+#macro macro_rules_file "game_rules.ini"
 
 // # layers
 #macro macro_grid_layer "logic"

@@ -12,4 +12,5 @@ else if(new_x < 0) new_x = 0;
 if(new_y + cam_h > room_height) new_y = room_height - cam_h;
 else if(new_y < 0) new_y = 0;
 
+audio_listener_position(new_x + cam_w/2, new_y + cam_h/2, 0);
 camera_set_view_pos(cam, new_x, new_y);

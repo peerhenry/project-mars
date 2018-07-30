@@ -145,8 +145,7 @@ if(cell_count > 0 && new_instance_count > 0)
 	
 	if(!global.init_stage)
 	{
-		var play_sound = resolve_script(script_container, "play_sound");
-		script_execute(play_sound, sound_fx_build_1);
+		resolve_execute(script_container, "play_sound_at", sound_fx_build_1, right, top, false);
 	}
 }
 else

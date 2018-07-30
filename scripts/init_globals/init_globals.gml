@@ -9,7 +9,7 @@ global.draw_room_bb = false;
 global.debug_start_messages = false; // obsolete?
 global.debug_gameplay_messages = true; // obsolete?
 
-ini_open(macro_settings_file);
+ini_open(macro_rules_file);
 var section = "common";
 
 // %LOCALAPPDATA%/project_mars
@@ -76,10 +76,10 @@ global.sleep_bar_color = c_yellow; // make_color_rgb(s_r, s_g, s_b);
 global.food_bar_color = c_orange; // make_color_rgb(f_r, f_g, f_b);
 
 // -- SHOOTING -- // todo: replace this section with "weapons"
-section = "shooting";
+section = "weapons";
 global.time_to_shoot = init_global_real(section, "time_to_shoot", 1);
 global.projectile_speed  = init_global_real(section, "projectile_speed", 30);
-global.projectile_damage = init_global_real(section, "projectile_damage", 10);
+global.projectile_damage = init_global_real(section, "projectile_damage", 1); // 10
 var shooting_range = init_global_real(section, "astronaut_shooting_range", 10); // todo: use weapon range instead
 global.shooting_range = shooting_range;
 global.shooting_range_squared = shooting_range*shooting_range;

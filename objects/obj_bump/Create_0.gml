@@ -1,1 +1,1 @@
-resolve_execute(global.script_container, "play_sound", sound_fx_bump);
+resolve_execute(global.script_container, "play_sound_at", sound_fx_bump, x, y, false);

@@ -1,1 +1,1 @@
-audio_play_sound(sound_fx_destroy, 1, 0);
+resolve_execute(global.script_container, "play_sound_at", sound_fx_destroy, x, y, false);
