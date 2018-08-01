@@ -1,8 +1,8 @@
 {
-    "id": "46abbdeb-19a9-4826-b308-406bc5c69e53",
+    "id": "3c4daae6-afc2-483a-88a8-b5d001caa8c3",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_get_delta_j",
+    "name": "f_spiral_square",
     "IsCompatibility": false,
     "IsDnD": false
 }

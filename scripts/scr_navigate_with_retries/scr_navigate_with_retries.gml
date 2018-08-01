@@ -14,7 +14,6 @@ var end_i = (arg_end_x - 16) div 32;
 var end_j = (arg_end_y - 16) div 32;
 var snap_end_x = scr_gi_to_rc(end_i);
 var snap_end_y = scr_gi_to_rc(end_j);
-var counter = 0;
 var navigation_grid = scr_get_nav_grid();
 
 if(start_x == snap_end_x && start_y = snap_end_y)
@@ -55,18 +54,20 @@ if( scr_destination_is_legal(snap_end_x, snap_end_y, arg_entity) )
 	path_found = mp_grid_path(navigation_grid, arg_entity.path, start_x, start_y, snap_end_x, snap_end_y, true);
 }
 
+var counter = 0;
+var delta_ij;
 while ( !path_found && counter < arg_max_loop )
 {
-	end_i += scr_get_delta_i(counter);
-	end_j += scr_get_delta_j(counter);
-	
+	// delta_ij = in(f_spiral_flawed_diamond, "get_delta_ij", [counter]); 
+	delta_ij = in(f_spiral_square, "get_delta_ij", [counter]);
+	end_i += delta_ij[0];
+	end_j += delta_ij[1];
 	snap_end_x = (end_i + 1)*32;
 	snap_end_y = (end_j + 1)*32;
 	if(scr_destination_is_legal(snap_end_x, snap_end_y, arg_entity))
 	{
 		path_found = mp_grid_path(navigation_grid, arg_entity.path, start_x, start_y, snap_end_x, snap_end_y, true);
 	}
-	
 	counter++;
 }
 

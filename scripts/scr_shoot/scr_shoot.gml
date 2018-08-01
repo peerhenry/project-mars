@@ -37,11 +37,11 @@ with(shooter)
 	if(dy > dx)
 	{
 		if(dy > -dx) shoot_direction = macro_down;
-		else shoot_direction = macro_right;
+		else shoot_direction = macro_left;
 	}
 	else
 	{
-		if(dy > -dx) shoot_direction = macro_left;
+		if(dy > -dx) shoot_direction = macro_right;
 		else shoot_direction = macro_up;
 	}
 	

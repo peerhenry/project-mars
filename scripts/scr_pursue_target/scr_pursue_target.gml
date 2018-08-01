@@ -1,6 +1,6 @@
 /// @param astronaut
 var arg_attacker = argument0;
-debug_instance_inherits(arg_attacker, obj_astronaut);
+debug_instance_inherits(arg_attacker, obj_task_actor);
 
 var can_pursue = false;
 
@@ -12,7 +12,7 @@ with(arg_attacker)
 	var distance = sqrt(dx*dx + dy*dy);
 	var shooting_range_pixels = scr_get_shooting_range(id)*32;
 	
-	// determine the fraction of current distance the attacker has to move to get into shooting range
+	// determine the fraction of the current distance to target that the attacker has to move to get into shooting range
 	var fraction = 1;
 	if(distance < shooting_range_pixels) fraction = 0;
 	else fraction = (1 - (shooting_range_pixels/distance));
@@ -30,8 +30,9 @@ with(arg_attacker)
 	// try to find a shooting spot among 50 tiles surrounding the first nearest tile
 	while ( !can_pursue && counter < 50 ) // 50 is an arbitrary limit
 	{
-		end_i += scr_get_delta_i(counter);
-		end_j += scr_get_delta_j(counter);
+		var delta_ij = in(f_spiral_square, "get_delta_ij", counter);
+		end_i += delta_ij[0];
+		end_j += delta_ij[1];
 		if(end_i == target.occ_i && end_j == target.occ_j)
 		{
 			counter++;
@@ -39,6 +40,7 @@ with(arg_attacker)
 		}
 		var snap_end_x = scr_gi_to_rc(end_i);
 		var snap_end_y = scr_gi_to_rc(end_j);
+		// the tile is a shooting spot if it's within range as well as unobstructed to hit
 		var is_a_shooting_spot = false;
 		var in_range = scr_points_are_within_range(snap_end_x, snap_end_y, target.x, target.y, scr_get_shooting_range(id));
 		if(in_range) is_a_shooting_spot = scr_can_shoot_unobstructed_from(id, snap_end_x, snap_end_y, target);

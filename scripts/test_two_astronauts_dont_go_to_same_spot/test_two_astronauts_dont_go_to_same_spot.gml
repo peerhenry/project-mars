@@ -12,9 +12,7 @@ var can_navigate2 = scr_navigate_with_retries(astro2, 512, 512, 10);
 assert_true(can_navigate1, "can_navigate");
 assert_true(can_navigate2, "can_navigate");
 var expected = scr_rc_to_gi(512);
-assert_equal(expected, astro1.dest_i, "dest_i");
-assert_equal(expected, astro1.dest_j, "dest_j");
-assert_false(astro1.dest_i == astro2.dest_i && astro2.dest_j == astro2.dest_j, "equal destination");
+assert_false(astro1.dest_i == astro2.dest_i && astro1.dest_j == astro2.dest_j, "equal destination");
 
 // cleanup
 instance_destroy(astro1);
