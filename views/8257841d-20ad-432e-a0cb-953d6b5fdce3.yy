@@ -11,7 +11,8 @@
         "09daa3ea-93d1-4d45-b71a-d3afdcd7dc4b",
         "ca4a170e-6dae-455d-8f3c-d3afee922fb5",
         "bd7dccff-7cda-4347-9929-b5d08c275f4d",
-        "9fb555d6-fa80-42ee-b103-09cc236f2477"
+        "9fb555d6-fa80-42ee-b103-09cc236f2477",
+        "922740fa-25c9-48d0-b213-db438cfbc817"
     ],
     "filterType": "GMObject",
     "folderName": "entities",

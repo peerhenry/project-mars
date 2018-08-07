@@ -19,13 +19,14 @@ if(target_exists)
 	{
 		target_is_shootable = target.damage < 100;
 	}
-	else {
+	else 
+	{
 		target_is_shootable = true;
 	}
 }
 else target = noone;
 
-// if astronaut has a shootable target, persue it.
+// if astronaut has a shootable target, pursue it.
 if(target_is_shootable)
 {
 	can_shoot = scr_attack(id, target);
@@ -40,10 +41,10 @@ else	// See if there is an enemy around to shoot
 		}
 		if(instance_exists(auto_target))
 		{
-			if(scr_target_is_within_range(id, auto_target))
+			can_shoot = scr_can_shoot(id, auto_target);
+			if(can_shoot)
 			{
 				shootable = auto_target;
-				can_shoot = mp_linear_path(shoot_path, auto_target.x, auto_target.y, global.projectile_speed, false);
 			}
 			else auto_target = noone;
 		}

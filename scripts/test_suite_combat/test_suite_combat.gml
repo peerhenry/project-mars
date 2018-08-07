@@ -1,6 +1,8 @@
+// suites
+test_suite_can_shoot();
+// tests
 test_get_shooting_range();
 test_target_is_within_range();
-test_can_shoot_unobstructed();
 test_alarm_shoot();
 test_alarm_shoot_target();
 test_attack();

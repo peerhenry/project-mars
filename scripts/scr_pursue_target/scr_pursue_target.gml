@@ -2,6 +2,9 @@
 var arg_attacker = argument0;
 debug_instance_inherits(arg_attacker, obj_task_actor);
 
+// 1. find the nearest tile in range of target, spiral around that one to find a shooting spot
+// 2. navigate to a spot adjacent to with 1 retry
+
 var can_pursue = false;
 
 // calculate tile from which attacker will shoot
@@ -27,7 +30,7 @@ with(arg_attacker)
 	var end_j = scr_decode_grid_coord_j(dest_ij);
 
 	var counter = 0;
-	// try to find a shooting spot among 50 tiles surrounding the first nearest tile
+	// spiral around the in-range tile to find a shooting spot
 	while ( !can_pursue && counter < 50 ) // 50 is an arbitrary limit
 	{
 		var delta_ij = in(f_spiral_square, "get_delta_ij", counter);
@@ -40,10 +43,7 @@ with(arg_attacker)
 		}
 		var snap_end_x = scr_gi_to_rc(end_i);
 		var snap_end_y = scr_gi_to_rc(end_j);
-		// the tile is a shooting spot if it's within range as well as unobstructed to hit
-		var is_a_shooting_spot = false;
-		var in_range = scr_points_are_within_range(snap_end_x, snap_end_y, target.x, target.y, scr_get_shooting_range(id));
-		if(in_range) is_a_shooting_spot = scr_can_shoot_unobstructed_from(id, snap_end_x, snap_end_y, target);
+		var is_a_shooting_spot = scr_can_shoot_from(id, target, snap_end_x, snap_end_y);
 		if(is_a_shooting_spot)
 		{
 			can_pursue = scr_navigate_once(id, snap_end_x, snap_end_y);
@@ -52,7 +52,10 @@ with(arg_attacker)
 		counter++;
 	}
 	
-	// if astro still can't pursue, try to go to a spot adjacent to target
+	// var could_pursue = can_pursue;
+	// if(can_pursue) show_debug_message("scr_pusrue_target: spiral found a spot after " + string(counter) + " tries."); // DEBUG
+	
+	// if astro still can't pursue, just try to go to a spot adjacent to target
 	counter = 0;
 	while(!can_pursue && counter < 4)
 	{
@@ -62,6 +65,8 @@ with(arg_attacker)
 		can_pursue = scr_navigate_with_retries(id, target.x + dx, target.y + dy, 1);
 		counter++;
 	}
+	
+	// if(!could_pursue && can_pursue) show_debug_message("scr_pusrue_target: simply moving to target after " + string(counter) + " tries."); // DEBUG
 	
 	// Set action
 	if(can_pursue) current_action = astronaut_action.moving_to_shoot;

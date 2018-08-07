@@ -1,8 +1,8 @@
 {
-    "id": "b7908597-968b-4e3d-84f2-d91339e12432",
+    "id": "c41d1b6d-9d8e-4403-bc3b-e03bef483e41",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_can_shoot_unobstructed",
+    "name": "test_has_line_of_sight_from",
     "IsCompatibility": false,
     "IsDnD": false
 }

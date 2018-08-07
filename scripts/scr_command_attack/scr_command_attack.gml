@@ -17,15 +17,17 @@ with(obj_task_actor)
 	}
 }
 
-// selected non-task acctors simply move to target
+// those that can't attack and non-task actors simply move to target, but only if other selected task actors will attack
 if(at_least_one_attacks)
 {
 	with(obj_movable)
 	{
-		if(is_selected && !object_is_ancestor(object_index, obj_task_actor)) scr_command_move_to(id, arg_enemy.x, arg_enemy.y);
+		if(is_selected)
+		{
+			if(!object_is_ancestor(object_index, obj_task_actor)) scr_command_move_to(id, arg_enemy.x, arg_enemy.y);
+			else if(target == noone) scr_command_move_to(id, arg_enemy.x, arg_enemy.y);
+		}
 	}
 }
-
-with(obj_HUD_DEBUG) message_lines = ["can_attack_count: " + string(can_attack_count)]
 
 return at_least_one_attacks;

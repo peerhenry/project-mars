@@ -12,7 +12,7 @@ with(arg_astronaut)
 	switch(current_action)
 	{
 		case astronaut_action.idle:
-			if(is_rampaging)
+			if(is_rampaging) // todo: fix this because how can an astro_action be idle while it is rampaging? :/ also, what is this rampaging for?
 			{
 				var attacking = scr_attack_anything(id);
 				if(!attacking) is_rampaging = false;
