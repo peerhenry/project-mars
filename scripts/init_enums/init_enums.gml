@@ -79,7 +79,18 @@ enum hud_action
 	toggle_outliner_carts,
 }
 
+// todo: this is to become obsolete
 enum inv_space
+{
+	empty = 0,
+	occupied = 1,
+	pistol = 2,
+	rifle = 3,
+	food = 4,
+	mdu = 5
+}
+// and to be replaced by this
+enum item_type
 {
 	empty = 0,
 	occupied = 1,

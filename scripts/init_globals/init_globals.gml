@@ -75,24 +75,7 @@ global.health_bar_color = c_lime; // make_color_rgb(h_r, h_g, h_b);
 global.sleep_bar_color = c_yellow; // make_color_rgb(s_r, s_g, s_b);
 global.food_bar_color = c_orange; // make_color_rgb(f_r, f_g, f_b);
 
-// -- SHOOTING -- // todo: replace this section with "weapons"
-section = "weapons";
-global.time_to_shoot = init_global_real(section, "time_to_shoot", 1);
-global.projectile_speed  = init_global_real(section, "projectile_speed", 30);
-global.projectile_damage = init_global_real(section, "projectile_damage", 1); // 10
-var shooting_range = init_global_real(section, "astronaut_shooting_range", 10); // todo: use weapon range instead
-global.shooting_range = shooting_range;
-global.shooting_range_squared = shooting_range*shooting_range;
-
 // -- GRIDS --
-section = "grids";
-global.sensor_energy_consumption = init_global_real(section, "sensor_energy_consumption", 1);
-global.drill_energy_consumption = init_global_real(section, "drill_energy_consumption", 5);
-global.pump_energy_consumption = init_global_real(section, "pump_energy_consumption", 2);
-global.pump_water_production = init_global_real(section, "pump_water_production", 20);
-global.electrolyser_energy_consumption = init_global_real(section, "electrolyser_energy_consumption", 1);
-global.hydroponics_water_consumption = init_global_real(section, "hydroponics_water_consumption", 1);
-global.solar_panel_energy_production = init_global_real(section, "solar_panel_energy_production", 2);
 
 // -- ROBOTS --
 section = "robots"

@@ -5,21 +5,29 @@ new_item.type = arg_item_type;
 new_item.size = scr_item_type_size(arg_item_type);
 switch(arg_item_type)
 {
-	case inv_space.pistol:
+	case item_type.pistol:
 		new_item.name = "Pistol";
 		new_item.charge = 100;
 		new_item.class = item_class.weapon;
+		new_item.range = scr_rules_get("pistol", "range");
+		new_item.burst = scr_rules_get("pistol", "burst");
+		new_item.damage = scr_rules_get("pistol", "damage");
+		new_item.projectile_speed = scr_rules_get("pistol", "projectile_speed");
 		break;
-	case inv_space.rifle:
+	case item_type.rifle:
 		new_item.name = "Rifle";
 		new_item.charge = 100;
 		new_item.class = item_class.weapon;
+		new_item.range = scr_rules_get("rifle", "range");
+		new_item.burst = scr_rules_get("rifle", "burst");
+		new_item.damage = scr_rules_get("rifle", "damage");
+		new_item.projectile_speed = scr_rules_get("rifle", "projectile_speed");
 		break;
-	case inv_space.food:
+	case item_type.food:
 		new_item.name = "Food (restores food level 100%)";
 		new_item.class = item_class.food;
 		break;
-	case inv_space.mdu:
+	case item_type.mdu:
 		new_item.name = "MDU";
 		new_item.class = item_class.construction;
 		break;
