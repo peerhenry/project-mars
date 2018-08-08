@@ -2,6 +2,7 @@
 var arg_item = argument0;
 with(arg_item)
 {
+	if(nr_of_objectives == 0) exit;
 	scr_draw_panel(left, top, left + width, top + height);
 
 	draw_set_font(font);

@@ -3,7 +3,7 @@ var arg_item = argument0;
 
 with(arg_item)
 {
-	var nr_of_objectives = 0;
+	nr_of_objectives = 0;
 	var max_w = 0;
 	with(level)
 	{

@@ -11,6 +11,7 @@ with(inst)
 	container = arg_container;
 	ds_list_insert(arg_container.gui_item_list, 0, id); // prepend objectives panel so it's always drawn above a player notification
 	
+	nr_of_objectives = 0;
 	prev_nr_of_objectives = 0; // height is recalculated when nr of objectives change
 	padding = 8;
 	font = font_small_bold;
