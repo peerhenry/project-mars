@@ -1,1 +1,1 @@
-scr_draw_panel(left, top, right, bottom);
+scr_draw_panel_colors(left, top, right, bottom, color_body, color_top, color_bottom, alpha);

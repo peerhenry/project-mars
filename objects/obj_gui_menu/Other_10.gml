@@ -1,4 +1,6 @@
 /// @description Toggle
+with(obj_mission_end) exit; // no menu with a mission end panel
+
 is_active = !is_active;
 
 if(is_active)
@@ -8,6 +10,7 @@ if(is_active)
 	var right = left + width;
 	var bottom = top + height;
 	panel = scr_create_panel(left, top, right, bottom);
+	panel.depth = panel.depth - 1;
 	
 	var counter = 0;
 	repeat(button_count)
@@ -18,7 +21,7 @@ if(is_active)
 		button.callback = object_to_create[1];
 		if(array_length_1d(object_to_create) > 2) button.callback_arg = object_to_create[2];
 		button.width = width - 16;
-		button.depth = panel.depth - 1;
+		button.depth = panel.depth - 2;
 		ds_list_add(button_list, button);
 		counter++;
 	}

@@ -5,13 +5,14 @@
 /// @param col_body
 /// @param col_top
 /// @param col_bottom
+/// @param alpha
 
 var arg_col_body = argument4;
 var arg_col_top = argument5;
 var arg_col_bottom = argument6;
 
 draw_set_color(arg_col_body);
-draw_set_alpha(0.8);
+draw_set_alpha(argument7);
 draw_rectangle(argument0, argument1, argument2, argument3, false);
 	
 draw_set_color(arg_col_top);

@@ -10,7 +10,7 @@ with(arg_item)
 		for(var n = 0; n < ds_list_size(trigger_list); n++)
 		{
 			var next_trigger = trigger_list[|n];
-			if(next_trigger.type == trigger_type.objective) nr_of_objectives++;
+			if(next_trigger.type == trigger_type.objective) other.nr_of_objectives++;
 			
 			draw_set_font(other.font);
 			var line_w = string_width(next_trigger.name);

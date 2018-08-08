@@ -3,4 +3,4 @@
 /// @param x_right
 /// @param y_bottom
 
-scr_draw_panel_colors(argument0, argument1, argument2, argument3, c_dkgray, c_black, c_ltgray);
+scr_draw_panel_colors(argument0, argument1, argument2, argument3, c_dkgray, c_black, c_ltgray, 0.8);

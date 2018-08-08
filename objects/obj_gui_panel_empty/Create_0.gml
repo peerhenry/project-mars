@@ -3,3 +3,7 @@ bottom = 0;
 left = 0;
 right = 0;
 hover = false;
+color_body = c_dkgray;
+color_top = c_ltgray;
+color_bottom = c_black;
+alpha = 0.8;

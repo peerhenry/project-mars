@@ -1,3 +1,8 @@
+if(!enabled)
+{
+	hover = false;
+	exit;
+}
 var window_mouse_x = window_mouse_get_x();
 var window_mouse_y = window_mouse_get_y();
 

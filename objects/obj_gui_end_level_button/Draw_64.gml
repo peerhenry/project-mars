@@ -1,3 +1,5 @@
+if(!enabled) exit;
+
 if(hover)
 {
 	if(mouse_check_button_pressed(mb_left)) scr_draw_panel_inverse(left, top, right, bottom);
