@@ -1,1 +1,1 @@
-return argument < global.resource_amount_metal;
+return argument0 < global.resource_amount_metal;
