@@ -3,7 +3,7 @@ test_init(test_bed_one_free_space);
 // arrange
 scr_setup_room(1,1,1,3);
 var xx = scr_gi_to_rc(1);
-var yy = scr_gi_to_rc(1);
+var yy = scr_gi_to_rc(2);
 var bed = instance_create_depth(xx,yy,0,obj_bed);
 var astro = instance_create_depth(0,0,0,obj_astronaut);
 bed.occupant = astro;

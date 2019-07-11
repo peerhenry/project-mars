@@ -33,7 +33,7 @@ if(instance != noone && scr_instance_inherits(instance, obj_task_actor))
 		{
 			if(
 				equipped_item != noone 
-				&& (equipped_item.type == inv_space.pistol || equipped_item.type == inv_space.rifle))
+				&& (equipped_item.type == item_type.pistol || equipped_item.type == item_type.rifle))
 				&& equipped_item.charge < 100
 			{
 				equipped_item.charge += 0.1;

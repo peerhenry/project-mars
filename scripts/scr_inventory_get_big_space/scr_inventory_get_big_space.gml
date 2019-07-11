@@ -17,10 +17,10 @@ for(var j = 0; j < q_height; j++)
 		var quad_can_be_valid = true;
 		if(quad_can_be_valid)
 		{
-			var tl = ds_grid_get(arg_inventory.space, i, j) == inv_space.empty;
-			var tr = ds_grid_get(arg_inventory.space, i+1, j) == inv_space.empty;
-			var bl = ds_grid_get(arg_inventory.space, i, j+1) == inv_space.empty;
-			var br = ds_grid_get(arg_inventory.space, i+1, j+1) == inv_space.empty;
+			var tl = ds_grid_get(arg_inventory.space, i, j) == item_type.empty;
+			var tr = ds_grid_get(arg_inventory.space, i+1, j) == item_type.empty;
+			var bl = ds_grid_get(arg_inventory.space, i, j+1) == item_type.empty;
+			var br = ds_grid_get(arg_inventory.space, i+1, j+1) == item_type.empty;
 			if(tl && tr && bl && br) return ((i << 8) + j);
 			if(!br)	// if the bottom right cell of the quad is not empty
 			{

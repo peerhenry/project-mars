@@ -6,7 +6,7 @@ var arg_script_container = argument0;
 var arg_astronaut = argument1;
 var arg_construction = argument2;
 
-var mdu = scr_inventory_extract(arg_astronaut.inventory, inv_space.mdu);
+var mdu = scr_inventory_extract(arg_astronaut.inventory, item_type.mdu);
 instance_destroy(mdu);
 scr_incr_construction_mdu(arg_script_container, arg_construction);
 

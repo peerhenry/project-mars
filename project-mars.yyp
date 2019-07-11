@@ -2783,6 +2783,14 @@
             }
         },
         {
+            "Key": "2de5cb45-f43c-433c-ae7c-c68fcecedbf1",
+            "Value": {
+                "id": "3d835f77-68ad-4d64-a18e-44f046817827",
+                "resourcePath": "scripts\\test_hydroponics_pickup\\test_hydroponics_pickup.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2de5dca4-95ce-495f-a8d9-13902aa1e178",
             "Value": {
                 "id": "8f11787b-60a4-41ba-b1c3-6f256447804e",
@@ -5279,6 +5287,14 @@
             }
         },
         {
+            "Key": "5422ee26-ad7f-452a-aed6-28a76132cb13",
+            "Value": {
+                "id": "d8e47a50-11db-4168-a212-bf091e147343",
+                "resourcePath": "views\\5422ee26-ad7f-452a-aed6-28a76132cb13.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "542dbb9d-b017-4988-a266-d11e89a6b014",
             "Value": {
                 "id": "2900fe6d-1b19-49dc-8707-e374d5780f04",
@@ -5611,6 +5627,14 @@
             "Value": {
                 "id": "79e13973-222b-4bfd-a609-d5e8a2ca8219",
                 "resourcePath": "scripts\\scr_connect_wall\\scr_connect_wall.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "5ad9e9d4-ad84-47e3-9f3f-2aaf4c4ccc00",
+            "Value": {
+                "id": "ac78f0fa-35f0-494c-ab79-57fc6e1eaad3",
+                "resourcePath": "scripts\\test_suite_hydroponics\\test_suite_hydroponics.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -16188,6 +16212,8 @@
         "ea44a4c7-893c-4954-8277-ed740caf8c81",
         "74568def-b953-4bf6-b85e-f9f2a21e0aa8",
         "b1e59ab2-5395-4f46-9fb5-52f7d2143acf",
+        "5ad9e9d4-ad84-47e3-9f3f-2aaf4c4ccc00",
+        "2de5cb45-f43c-433c-ae7c-c68fcecedbf1",
         "3e63a08a-00e7-4e21-a419-f92f94614d04",
         "b849a459-dbb5-4aaa-9c3f-458060d8261d",
         "c263f654-ef6b-44b1-92a3-5d9f9c25c9af",

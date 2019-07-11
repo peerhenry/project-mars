@@ -75,21 +75,21 @@ switch(method)
 				if(interactable.occupant != noone) scr_set_grid_prop(interactable, macro_grid_electric, macro_grid_prop_can_perform_role, true);
 				break;
 			case obj_hydroponics:
-				var was_inserted = scr_give_entity_new_item(actor, inv_space.food);
+				var was_inserted = scr_give_entity_new_item(actor, item_type.food);
 				if(was_inserted)
 				{
 					interactable.food_level = 0;
 				}
 				break;
 			case obj_fridge:
-				var actor_carries_food = scr_inventory_has_item_type(actor.inventory, inv_space.food);
+				var actor_carries_food = scr_inventory_has_item_type(actor.inventory, item_type.food);
 				if( actor_carries_food )
 				{
-					scr_inventory_transfer(actor.inventory, interactable.inventory, inv_space.food);
+					scr_inventory_transfer(actor.inventory, interactable.inventory, item_type.food);
 				}
 				else
 				{
-					scr_inventory_transfer(interactable.inventory, actor.inventory, inv_space.food);
+					scr_inventory_transfer(interactable.inventory, actor.inventory, item_type.food);
 				}
 				result = ok();
 				break;
