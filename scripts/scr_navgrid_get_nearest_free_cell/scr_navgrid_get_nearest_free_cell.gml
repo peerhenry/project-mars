@@ -9,7 +9,7 @@ var free = scr_navgrid_cell_is_free(target_i, target_j);
 var counter = 0;
 while(!free && counter < 100)
 {
-	var delta_ij = in(f_spiral_square, "get_delta_ij");
+	var delta_ij = in(f_spiral_square, "get_delta_ij", [counter]);
 	target_i += delta_ij[0];
 	target_j += delta_ij[1];
 	free = scr_navgrid_cell_is_free(target_i, target_j);
