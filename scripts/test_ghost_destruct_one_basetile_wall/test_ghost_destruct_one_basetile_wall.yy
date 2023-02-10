@@ -1,8 +1,11 @@
 {
-    "id": "d1e585c4-c12e-432c-8a0a-f8863f77fb3a",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "test_ghost_destruct_one_basetile_wall",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "test_ghost_destruct_one_basetile_wall",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "ghost_destruct",
+    "path": "folders/Scripts/TESTS/suites/construction/ghost_destruct.yy",
+  },
 }

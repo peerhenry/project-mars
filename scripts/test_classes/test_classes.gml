@@ -1,8 +1,12 @@
-test_oop_framework();
+function test_classes() {
+	test_oop_framework();
 
-test_class(c_leak);
-test_class(c_astro_appear_setter);
-test_class(c_embarkable);
-test_class(c_navgrid);
-test_class(c_interaction_factory);
-test_class(c_astro_container);
+	test_class(c_leak);
+	test_class(c_astro_appear_setter);
+	test_class(c_embarkable);
+	test_class(c_navgrid);
+	test_class(c_interaction_factory);
+	test_class(c_astro_container);
+
+
+}

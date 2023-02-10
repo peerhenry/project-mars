@@ -1,59 +1,63 @@
 /// @arg astronaut
-var arg_astronaut = argument0;
+function scr_step_oxygen_and_health(argument0) {
+	var arg_astronaut = argument0;
 
-with(arg_astronaut)
-{
-	var oxygen_around = !is_outside;
-	var inside_room = scr_room_at(x, y);
-	if(!is_moving_through_gate)
+	with(arg_astronaut)
 	{
-		oxygen_around = !is_outside && inside_room.oxygen_level >= global.oxygen_empty_level;
-	}
-	var state = 0;
-	if(oxygen_around) state = 1;
-	if(wears_suit) state += 2;
+		var oxygen_around = !is_outside;
+		var inside_room = scr_room_at(x, y);
+		if(!is_moving_through_gate)
+		{
+			oxygen_around = !is_outside && inside_room.oxygen_level >= global.oxygen_empty_level;
+		}
+		var state = 0;
+		if(oxygen_around) state = 1;
+		if(wears_suit) state += 2;
 
-	switch(state)
-	{
-		case 0: // no suit, no oxygen
-			entity_health -= global.suffocation_speed; // suffocate
-			break;
-		case 1: // no suit, oxygen around
-			if(!is_moving_through_gate)
-			{
-				if(inside_room.oxygen_level < 50)
+		switch(state)
+		{
+			case 0: // no suit, no oxygen
+				entity_health -= global.suffocation_speed; // suffocate
+				break;
+			case 1: // no suit, oxygen around
+				if(!is_moving_through_gate)
 				{
-					entity_health -= global.suffocation_speed*(1 - inside_room.oxygen_level/100)*0.25; // health drainage is linear to 25% of O2 shortage
+					if(inside_room.oxygen_level < 50)
+					{
+						entity_health -= global.suffocation_speed*(1 - inside_room.oxygen_level/100)*0.25; // health drainage is linear to 25% of O2 shortage
+						if(entity_health < 0) entity_health = 0;
+					}
+					else if(entity_health < 100 && inside_room.oxygen_level > 90) // good oxygen, astronaut will slowly regenerate
+					{
+						entity_health += global.regeneration_speed;
+					}
+					// Consume oxygen from room:
+					inside_room.oxygen_level -= oxygen_consumption/ds_list_size(inside_room.tiles);
+					if(inside_room.oxygen_level < 0) inside_room.oxygen_level = 0;
+				}
+				break;
+			case 2: // suit, no oxygen
+				if(suit_oxygen > 0) // check suit
+				{
+					suit_oxygen -= global.suit_o2_depletion_speed;
+					if(suit_oxygen < 0) suit_oxygen = 0;
+				}
+				else
+				{
+					entity_health -= global.suffocation_speed; // suffocate
 					if(entity_health < 0) entity_health = 0;
 				}
-				else if(entity_health < 100 && inside_room.oxygen_level > 90) // good oxygen, astronaut will slowly regenerate
-				{
-					entity_health += global.regeneration_speed;
-				}
+				break;
+			case 3: // suit, oxygen
 				// Consume oxygen from room:
-				inside_room.oxygen_level -= oxygen_consumption/ds_list_size(inside_room.tiles);
-				if(inside_room.oxygen_level < 0) inside_room.oxygen_level = 0;
-			}
-			break;
-		case 2: // suit, no oxygen
-			if(suit_oxygen > 0) // check suit
-			{
-				suit_oxygen -= global.suit_o2_depletion_speed;
-				if(suit_oxygen < 0) suit_oxygen = 0;
-			}
-			else
-			{
-				entity_health -= global.suffocation_speed; // suffocate
-				if(entity_health < 0) entity_health = 0;
-			}
-			break;
-		case 3: // suit, oxygen
-			// Consume oxygen from room:
-			if(inside_room != noone)
-			{
-				inside_room.oxygen_level -= oxygen_consumption/ds_list_size(inside_room.tiles);
-				if(inside_room.oxygen_level < 0) inside_room.oxygen_level = 0;
-			}
-			break;
+				if(inside_room != noone)
+				{
+					inside_room.oxygen_level -= oxygen_consumption/ds_list_size(inside_room.tiles);
+					if(inside_room.oxygen_level < 0) inside_room.oxygen_level = 0;
+				}
+				break;
+		}
 	}
+
+
 }

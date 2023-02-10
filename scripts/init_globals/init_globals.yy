@@ -1,8 +1,11 @@
 {
-    "id": "4c4601dc-20fc-4359-93f4-422ba9ccbb2a",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "init_globals",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "init_globals",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "INITIALIZATION",
+    "path": "folders/Scripts/GAME/INITIALIZATION.yy",
+  },
 }

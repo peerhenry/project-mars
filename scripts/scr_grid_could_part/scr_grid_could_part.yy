@@ -1,8 +1,11 @@
 {
-    "id": "5fc34be9-db94-4080-8961-b0cd1a4da082",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_grid_could_part",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_grid_could_part",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "destroy_instance",
+    "path": "folders/Scripts/GAME/GRID/destroy_instance.yy",
+  },
 }

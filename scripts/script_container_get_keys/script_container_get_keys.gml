@@ -1,3 +1,7 @@
 /// @arg container
-var container = argument0;
-return container[0];
+function script_container_get_keys(argument0) {
+	var container = argument0;
+	return container[0];
+
+
+}

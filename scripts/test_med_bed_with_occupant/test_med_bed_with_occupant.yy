@@ -1,8 +1,11 @@
 {
-    "id": "e241f7e9-f324-4022-9295-2d550c2a8d7f",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "test_med_bed_with_occupant",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "test_med_bed_with_occupant",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "med_bed",
+    "path": "folders/Scripts/TESTS/scenario/objects/construcables/med_bed.yy",
+  },
 }

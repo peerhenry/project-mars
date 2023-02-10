@@ -1,8 +1,11 @@
 {
-    "id": "c1cccebb-f54b-4df1-b134-9942b59e30db",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "test_suite_update_ghost_destruct",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "test_suite_update_ghost_destruct",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "ghost_destruct",
+    "path": "folders/Scripts/TESTS/suites/construction/ghost_destruct.yy",
+  },
 }

@@ -1,1 +1,5 @@
-// mock script that does nothing
+function scr_mock() {
+	// mock script that does nothing
+
+
+}

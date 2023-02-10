@@ -1,1 +1,5 @@
-return global.nav_grid;
+function scr_get_nav_grid() {
+	return global.nav_grid;
+
+
+}

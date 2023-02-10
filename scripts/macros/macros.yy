@@ -1,8 +1,11 @@
 {
-    "id": "599b424d-fcba-4054-9d12-3601d378ecc2",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "macros",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "macros",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "BOOT",
+    "path": "folders/Scripts/BOOT.yy",
+  },
 }

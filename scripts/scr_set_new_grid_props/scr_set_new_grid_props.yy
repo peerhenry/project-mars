@@ -1,8 +1,11 @@
 {
-    "id": "42c3c1bf-4235-4dfb-9f97-33b94ddfebbd",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_set_new_grid_props",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_set_new_grid_props",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "grid_props",
+    "path": "folders/Scripts/GAME/GRID/grid_props.yy",
+  },
 }

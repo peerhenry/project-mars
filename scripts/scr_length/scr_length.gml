@@ -1,3 +1,7 @@
 /// @descr Length resolver for array
 /// @arg array
-return array_length_1d(argument0);
+function scr_length(argument0) {
+	return array_length_1d(argument0);
+
+
+}

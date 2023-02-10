@@ -1,8 +1,11 @@
 {
-    "id": "858eed39-c774-4fd1-a064-baae36f07af7",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_check_tile_in_room",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_check_tile_in_room",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "room tiles",
+    "path": "folders/Scripts/GAME/CONSTRUCTION/room logic/room tiles.yy",
+  },
 }

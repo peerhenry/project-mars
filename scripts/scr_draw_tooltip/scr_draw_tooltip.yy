@@ -1,8 +1,11 @@
 {
-    "id": "ef5cb8f8-e583-4a34-bc85-b75c6e68e141",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_draw_tooltip",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_draw_tooltip",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "drawing",
+    "path": "folders/Scripts/GAME/GUI/drawing.yy",
+  },
 }

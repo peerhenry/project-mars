@@ -1,17 +1,21 @@
-// init script container and ioc container
-var container = test_register_scripts();
-global.script_container = container;
+function scr_tests() {
+	// init script container and ioc container
+	var container = test_register_scripts();
+	global.script_container = container;
 
-test_message("Running tests...");
+	test_message("Running tests...");
 
-test_run(test_array_prop);
+	test_run(test_array_prop);
 
-test_suite_grid();
-test_suite_get_owner();
-test_suite_construction();
-test_suite_astronauts();
-test_suite_rooms();
-test_suite_misc();
-test_suite_gui();
+	test_suite_grid();
+	test_suite_get_owner();
+	test_suite_construction();
+	test_suite_astronauts();
+	test_suite_rooms();
+	test_suite_misc();
+	test_suite_gui();
 
-script_container_destroy(container);
+	script_container_destroy(container);
+
+
+}

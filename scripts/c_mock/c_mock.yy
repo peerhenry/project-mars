@@ -1,8 +1,11 @@
 {
-    "id": "677134a3-7966-4b91-9f64-6a0acf6fa785",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "c_mock",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "c_mock",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "ioc",
+    "path": "folders/Scripts/OOP/framework/standard classes/ioc.yy",
+  },
 }

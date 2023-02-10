@@ -1,4 +1,5 @@
-// global settings map
+function macro_keys() {
+	// global settings map
 #macro key_settings_creation_date			"settings_creation_date"
 #macro key_settings_window_width			"window_width"
 #macro key_settings_window_height			"window_height"
@@ -23,3 +24,6 @@
 #macro key_window_x							"x"
 #macro key_window_y							"y"
 #macro key_window_revert					"revert"
+
+
+}

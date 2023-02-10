@@ -1,8 +1,11 @@
 {
-    "id": "4137783b-8ea9-4c2f-a747-31dc65a21735",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_add_metal",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_add_metal",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "resource_cloud",
+    "path": "folders/Scripts/GAME/GAMEPLAY/resource_cloud.yy",
+  },
 }

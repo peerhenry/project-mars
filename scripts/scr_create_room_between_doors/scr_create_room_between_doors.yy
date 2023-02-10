@@ -1,8 +1,11 @@
 {
-    "id": "a047a1ec-a411-4d9b-9121-f7326dfa6581",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_create_room_between_doors",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_create_room_between_doors",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "room logic",
+    "path": "folders/Scripts/GAME/CONSTRUCTION/room logic.yy",
+  },
 }

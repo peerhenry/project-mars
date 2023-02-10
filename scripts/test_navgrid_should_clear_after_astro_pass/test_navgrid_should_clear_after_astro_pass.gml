@@ -1,16 +1,20 @@
-test_init(test_navgrid_should_clear_after_astro_pass);
+function test_navgrid_should_clear_after_astro_pass() {
+	test_init(test_navgrid_should_clear_after_astro_pass);
 
-var test_i = 23;
-var test_j = 23;
+	var test_i = 23;
+	var test_j = 23;
 
-var result = scr_navgrid_should_clear_after_astro_pass(1, test_i, test_j);
-assert_true(result, "cell without astronaut");
+	var result = scr_navgrid_should_clear_after_astro_pass(1, test_i, test_j);
+	assert_true(result, "cell without astronaut");
 
-var astro = instance_create_depth(scr_gi_to_rc(test_i), scr_gi_to_rc(test_j), 0, obj_astronaut);
-var result2 = scr_navgrid_should_clear_after_astro_pass(astro+1, test_i, test_j);
-assert_false(result2, "cell with astronaut");
+	var astro = instance_create_depth(scr_gi_to_rc(test_i), scr_gi_to_rc(test_j), 0, obj_astronaut);
+	var result2 = scr_navgrid_should_clear_after_astro_pass(astro+1, test_i, test_j);
+	assert_false(result2, "cell with astronaut");
 
-//cleanup
-instance_destroy(astro);
+	//cleanup
+	instance_destroy(astro);
 
-test_result();
+	test_result();
+
+
+}

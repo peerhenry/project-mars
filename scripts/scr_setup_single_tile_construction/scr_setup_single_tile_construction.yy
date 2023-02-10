@@ -1,8 +1,11 @@
 {
-    "id": "0db5f5a1-2499-419a-a009-d1f45f0cc8ac",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_setup_single_tile_construction",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_setup_single_tile_construction",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "level setup",
+    "path": "folders/Scripts/GAME/COMMON/level setup.yy",
+  },
 }

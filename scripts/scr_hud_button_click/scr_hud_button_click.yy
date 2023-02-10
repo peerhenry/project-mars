@@ -1,8 +1,11 @@
 {
-    "id": "65ceeace-6227-49da-8d82-81837626afbc",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_hud_button_click",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_hud_button_click",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "GUI",
+    "path": "folders/Scripts/GAME/GUI.yy",
+  },
 }

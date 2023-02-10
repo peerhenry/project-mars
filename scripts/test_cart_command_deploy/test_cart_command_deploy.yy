@@ -1,8 +1,11 @@
 {
-    "id": "0a3833df-b952-4d1b-8685-19f11e73a4cc",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "test_cart_command_deploy",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "test_cart_command_deploy",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "cart",
+    "path": "folders/Scripts/TESTS/scenario/objects/cart.yy",
+  },
 }

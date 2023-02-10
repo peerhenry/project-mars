@@ -1,8 +1,11 @@
 {
-    "id": "60c84142-57c3-46ec-b183-222ce74b7d2e",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "owned_map",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "owned_map",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "props",
+    "path": "folders/Scripts/OOP/framework/factories/types/props.yy",
+  },
 }

@@ -1,8 +1,11 @@
 {
-    "id": "0776ed7b-00bb-46df-a1db-572a19b811be",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_navigate",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_navigate",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "navigagtion",
+    "path": "folders/Scripts/GAME/GAMEPLAY/entities/navigagtion.yy",
+  },
 }

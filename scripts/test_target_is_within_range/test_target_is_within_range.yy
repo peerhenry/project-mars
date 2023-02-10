@@ -1,8 +1,11 @@
 {
-    "id": "934ad0ef-b94c-43ea-ae72-2dbced6ce2aa",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "test_target_is_within_range",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "test_target_is_within_range",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "combat",
+    "path": "folders/Scripts/TESTS/suites/astronauts/combat.yy",
+  },
 }

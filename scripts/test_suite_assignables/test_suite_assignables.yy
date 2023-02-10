@@ -1,8 +1,11 @@
 {
-    "id": "88cb600e-6ff3-4db5-9858-3e92a1024110",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "test_suite_assignables",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "test_suite_assignables",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "assignables",
+    "path": "folders/Scripts/TESTS/suites/astronauts/assignables.yy",
+  },
 }

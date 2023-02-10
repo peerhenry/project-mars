@@ -1,8 +1,11 @@
 {
-    "id": "dd4566ff-9b23-4870-9f40-5511b3e302af",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_set_cable_image",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_set_cable_image",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "BASE",
+    "path": "folders/Scripts/GAME/BASE.yy",
+  },
 }

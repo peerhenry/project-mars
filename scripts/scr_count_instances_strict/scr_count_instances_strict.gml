@@ -1,7 +1,11 @@
 /// @arg object_index
-var count = 0;
-with(argument0)
-{
-	if(object_index == argument0) count++;
+function scr_count_instances_strict(argument0) {
+	var count = 0;
+	with(argument0)
+	{
+		if(object_index == argument0) count++;
+	}
+	return count;
+
+
 }
-return count;

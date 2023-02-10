@@ -1,8 +1,11 @@
 {
-    "id": "23bfe3fc-703a-46dc-8ae8-d1b54b67bb15",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_filter",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_filter",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "helper",
+    "path": "folders/Scripts/LIB/helper.yy",
+  },
 }

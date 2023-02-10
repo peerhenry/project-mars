@@ -1,8 +1,11 @@
 {
-    "id": "48eccedb-bd9a-4fd7-aa0e-258fb55d6587",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "c_parameter",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "c_parameter",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "parameters",
+    "path": "folders/Scripts/OOP/framework/standard classes/ioc/types/parameters.yy",
+  },
 }

@@ -1,8 +1,11 @@
 {
-    "id": "22db7e9d-a034-47e0-bb22-88c356abb47f",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_set_pistol_sprite",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_set_pistol_sprite",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "misc",
+    "path": "folders/Scripts/GAME/GAMEPLAY/entities/misc.yy",
+  },
 }

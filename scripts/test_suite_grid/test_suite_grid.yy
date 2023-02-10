@@ -1,8 +1,11 @@
 {
-    "id": "5db0945c-b9c5-468a-8172-8009b25a7cee",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "test_suite_grid",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "test_suite_grid",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "grid",
+    "path": "folders/Scripts/TESTS/suites/grid.yy",
+  },
 }

@@ -1,8 +1,11 @@
 {
-    "id": "96959605-9cf1-412e-af09-b1ee18cd71b2",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_add_outside_wall",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_add_outside_wall",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "helper scripts",
+    "path": "folders/Scripts/GAME/CONSTRUCTION/helper scripts.yy",
+  },
 }

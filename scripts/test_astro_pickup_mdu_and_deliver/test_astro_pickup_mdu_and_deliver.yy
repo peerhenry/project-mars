@@ -1,8 +1,11 @@
 {
-    "id": "63074685-04e4-422c-af61-f11999fb5d1b",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "test_astro_pickup_mdu_and_deliver",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "test_astro_pickup_mdu_and_deliver",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "task_actors",
+    "path": "folders/Scripts/TESTS/scenario/objects/task_actors.yy",
+  },
 }

@@ -1,8 +1,11 @@
 {
-    "id": "74893a55-4563-4563-91b5-d19d0582cac5",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "test_three_h_pipes_destroy_center",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "test_three_h_pipes_destroy_center",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "cables_and_pipes",
+    "path": "folders/Scripts/TESTS/scenario/objects/construcables/cables_and_pipes.yy",
+  },
 }

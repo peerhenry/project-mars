@@ -2,8 +2,12 @@
 /// @arg instance
 /// @arg method
 /// @arg arguments_array
-var instance = argument0;
-var method = argument1;
-var arguments = argument2;
-var result = call(instance, method, arguments);
-return unwrap(result);
+function call_unwrap(argument0, argument1, argument2) {
+	var instance = argument0;
+	var func = argument1;
+	var arguments = argument2;
+	var result = call(instance, func, arguments);
+	return unwrap(result);
+
+
+}

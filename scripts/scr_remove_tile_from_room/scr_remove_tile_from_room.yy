@@ -1,8 +1,11 @@
 {
-    "id": "2829f992-74fe-4d39-b772-a5434f89f88a",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_remove_tile_from_room",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_remove_tile_from_room",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "room tiles",
+    "path": "folders/Scripts/GAME/CONSTRUCTION/room logic/room tiles.yy",
+  },
 }

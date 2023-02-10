@@ -1,1 +1,5 @@
-return new(c_arg_placemarker);
+function arg_mark() {
+	return fnew(c_arg_placemarker);
+
+
+}

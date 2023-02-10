@@ -1,8 +1,11 @@
 {
-    "id": "c5143dab-3d4d-4e44-8926-e42429f81511",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "test_create_corpse_without_suit",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "test_create_corpse_without_suit",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "combat",
+    "path": "folders/Scripts/TESTS/suites/astronauts/combat.yy",
+  },
 }

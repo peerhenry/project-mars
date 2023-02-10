@@ -1,8 +1,11 @@
 {
-    "id": "1169929b-5da5-4469-88ae-791c1e5a3686",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "test_deliver_mdu_after_combat",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "test_deliver_mdu_after_combat",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "actions",
+    "path": "folders/Scripts/TESTS/suites/astronauts/actions.yy",
+  },
 }

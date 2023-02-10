@@ -1,4 +1,8 @@
-test_can_assign_noone();
-test_adjacent_closet();
-test_assign_bed();
-test_assign_bed_obstructed();
+function test_suite_assignables() {
+	test_can_assign_noone();
+	test_adjacent_closet();
+	test_assign_bed();
+	test_assign_bed_obstructed();
+
+
+}

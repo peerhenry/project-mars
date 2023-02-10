@@ -1,8 +1,11 @@
 {
-    "id": "ac98c2ec-83e2-4f39-8334-3377f1264fe3",
-    "modelName": "GMScript",
-    "mvc": "1.0",
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "test_update_action",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
     "name": "test_update_action",
-    "IsCompatibility": false,
-    "IsDnD": false
+    "path": "folders/Scripts/TESTS/suites/astronauts/step/test_update_action.yy",
+  },
 }

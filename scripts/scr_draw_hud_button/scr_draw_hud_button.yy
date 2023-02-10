@@ -1,8 +1,11 @@
 {
-    "id": "9d4f893e-7bd7-4a8a-ba6a-2633e6922496",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_draw_hud_button",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_draw_hud_button",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "drawing",
+    "path": "folders/Scripts/GAME/GUI/drawing.yy",
+  },
 }

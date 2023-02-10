@@ -1,4 +1,8 @@
 /// @arg trigger
-var arg_trigger = argument0;
+function scr_condition_no_player_astronauts(argument0) {
+	var arg_trigger = argument0;
 
-return scr_count_live_astronauts(macro_player) == 0; // todo: once other owners come in, this should be fixed
+	return scr_count_live_astronauts(macro_player) == 0; // todo: once other owners come in, this should be fixed
+
+
+}

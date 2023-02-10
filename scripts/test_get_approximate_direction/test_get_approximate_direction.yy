@@ -1,8 +1,11 @@
 {
-    "id": "1b8cf1c5-442d-485a-8835-999aa96fae5c",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "test_get_approximate_direction",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "test_get_approximate_direction",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "navigation",
+    "path": "folders/Scripts/TESTS/suites/astronauts/navigation.yy",
+  },
 }

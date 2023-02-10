@@ -1,8 +1,11 @@
 {
-    "id": "20b1d26f-c16e-4310-9fd0-4de659464d08",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "init_construction_set_surrounder",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "init_construction_set_surrounder",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "constructions",
+    "path": "folders/Scripts/GAME/INITIALIZATION/constructions.yy",
+  },
 }

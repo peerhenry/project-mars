@@ -1,8 +1,11 @@
 {
-    "id": "d561d661-9835-4259-bcba-5e7ab717e612",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_get_spots_square",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_get_spots_square",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "assignables",
+    "path": "folders/Scripts/GAME/GAMEPLAY/entities/assignables.yy",
+  },
 }

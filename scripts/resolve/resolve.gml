@@ -1,3 +1,7 @@
 /// @arg container
 /// @arg name
-return resolve_script(argument0, argument1);
+function resolve(argument0, argument1) {
+	return resolve_script(argument0, argument1);
+
+
+}

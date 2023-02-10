@@ -1,8 +1,11 @@
 {
-    "id": "a49bb1d5-1276-45dc-9474-c2a343526dfd",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_create_hud_details_panel",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_create_hud_details_panel",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "hud_details_panel",
+    "path": "folders/Scripts/GAME/GUI/gui_items/create/hud_details_panel.yy",
+  },
 }

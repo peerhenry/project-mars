@@ -1,6 +1,10 @@
 /// @arg script
 /// @arg method
-var class = argument0;
-var method = argument1;
-var res = call_class(class, noone, method, []);
-return unwrap(res);
+function void_static_unwrap(argument0, argument1) {
+	var class = argument0;
+	var func = argument1;
+	var res = call_class(class, noone, func, []);
+	return unwrap(res);
+
+
+}

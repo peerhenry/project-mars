@@ -1,1 +1,5 @@
-return new_override(c_type_info, obj_type_info, TYPE.STRING);
+function t_string() {
+	return new_override(c_type_info, obj_type_info, TYPE.STRING);
+
+
+}

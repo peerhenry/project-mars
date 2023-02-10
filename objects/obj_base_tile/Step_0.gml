@@ -6,7 +6,7 @@ if(damage >= 100 && !is_broken)
 	// scr_destroy_from_damage(id); // this is the standard for constructables
 	
 	// add leak to room
-	var tile_leak = new(c_leak, 1); // drainage per step, todo: move to config global
+	var tile_leak = fnew(c_leak, 1); // drainage per step, todo: move to config global
 	var base_room = scr_room_at(x,y);
 	ds_list_add(base_room.leaks, tile_leak);
 }

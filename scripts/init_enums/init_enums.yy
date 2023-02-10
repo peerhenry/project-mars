@@ -1,8 +1,11 @@
 {
-    "id": "2098a558-efa7-43bb-8402-341e21443579",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "init_enums",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "init_enums",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "INITIALIZATION",
+    "path": "folders/Scripts/GAME/INITIALIZATION.yy",
+  },
 }

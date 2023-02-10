@@ -1,8 +1,11 @@
 {
-    "id": "ae94f697-d3ff-4020-8d73-79ea97f793bf",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_astro_update",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_astro_update",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "script injections",
+    "path": "folders/Scripts/GAME/GAMEPLAY/entities/script injections.yy",
+  },
 }

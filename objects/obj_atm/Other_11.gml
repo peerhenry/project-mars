@@ -23,4 +23,4 @@
 // that way, the click event can check if its an interactable with
 // variable_instance_exists(thing, class) && class == c_interactable
 // also in create event, set the interaction
-// interaction = new(c_interaction_closet)
+// interaction = fnew(c_interaction_closet)

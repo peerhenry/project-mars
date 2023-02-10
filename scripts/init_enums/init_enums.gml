@@ -1,142 +1,146 @@
+function init_enums() {
 
-enum wall_type
-{
-	horizontal,
-	vertical,
-	other,
-	none
-}
+	enum wall_type
+	{
+		horizontal,
+		vertical,
+		other,
+		none
+	}
 
-enum resource
-{
-	water,
-	metal
-}
+	enum resource
+	{
+		water,
+		metal
+	}
 
-enum astronaut_action // these are assigned to astronaut objects
-{
-	idle,
-	moving_by_command,
-	moving_to_construction,
-	moving_to_shoot,
-	fetching_mdu,
-	delivering_mdu,
-	constructing,
-	executing_assignment,
-	in_combat,
-	repairing
-}
+	enum astronaut_action // these are assigned to astronaut objects
+	{
+		idle,
+		moving_by_command,
+		moving_to_construction,
+		moving_to_shoot,
+		fetching_mdu,
+		delivering_mdu,
+		constructing,
+		executing_assignment,
+		in_combat,
+		repairing
+	}
 
-enum cart_action
-{
-	idle,
-	move,
-	pickup,
-	deploy
-}
+	enum cart_action
+	{
+		idle,
+		move,
+		pickup,
+		deploy
+	}
 
-enum victory{
-	sandbox,
-	domination
-}; // to add: escape, return to earth
+	enum victory{
+		sandbox,
+		domination
+	}; // to add: escape, return to earth
 
-enum reach_state
-{
-	unreachable,
-	reachable,
-	adjacent
-}
+	enum reach_state
+	{
+		unreachable,
+		reachable,
+		adjacent
+	}
 
-// astronaut hud panel
-enum hud_part
-{
-	none,
-	auto_attack,
-	auto_construct,
-	auto_eat,
-	auto_sleep,
-	food_bar,
-	sleep_bar,
-	oxygen_bar
-}
+	// astronaut hud panel
+	enum hud_part
+	{
+		none,
+		auto_attack,
+		auto_construct,
+		auto_eat,
+		auto_sleep,
+		food_bar,
+		sleep_bar,
+		oxygen_bar
+	}
 
-enum hud_action
-{
-	none,
-	// toggle_astro_panels,
-	// toggle_robot_panels,
-	toggle_menu,
-	toggle_zoom,
-	toggle_high_walls,
-	toggle_minimap,
-	toggle_objectives,
-	mission_control,
-	toggle_outliner,
+	enum hud_action
+	{
+		none,
+		// toggle_astro_panels,
+		// toggle_robot_panels,
+		toggle_menu,
+		toggle_zoom,
+		toggle_high_walls,
+		toggle_minimap,
+		toggle_objectives,
+		mission_control,
+		toggle_outliner,
 	
-	// outliner
-	toggle_outliner_astronauts,
-	toggle_outliner_robots,
-	toggle_outliner_carts,
-}
+		// outliner
+		toggle_outliner_astronauts,
+		toggle_outliner_robots,
+		toggle_outliner_carts,
+	}
 
-// todo: this is to become obsolete
-enum inv_space
-{
-	empty = 0,
-	occupied = 1,
-	pistol = 2,
-	rifle = 3,
-	food = 4,
-	mdu = 5
-}
-// and to be replaced by this
-enum item_type
-{
-	empty = 0,
-	occupied = 1,
-	pistol = 2,
-	rifle = 3,
-	food = 4,
-	mdu = 5
-}
+	// todo: this is to become obsolete
+	enum inv_space
+	{
+		empty = 0,
+		occupied = 1,
+		pistol = 2,
+		rifle = 3,
+		food = 4,
+		mdu = 5
+	}
+	// and to be replaced by this
+	enum item_type
+	{
+		empty = 0,
+		occupied = 1,
+		pistol = 2,
+		rifle = 3,
+		food = 4,
+		mdu = 5
+	}
 
-enum item_class
-{
-	none,
-	food,
-	weapon,
-	construction,
-	resource
-}
+	enum item_class
+	{
+		none,
+		food,
+		weapon,
+		construction,
+		resource
+	}
 
-enum mousedrag_from
-{
-	none = 0,
-	world = 1,
-	minimap = 2,
-	gui = 3
-}
+	enum mousedrag_from
+	{
+		none = 0,
+		world = 1,
+		minimap = 2,
+		gui = 3
+	}
 
-enum details_panel_action
-{
-	none,
-	// top buttons
-	center,
-	deselect,
-	// grid section
-	show_grid_details,
-	// unit actions
-	deploy,
-	takeoff
-}
+	enum details_panel_action
+	{
+		none,
+		// top buttons
+		center,
+		deselect,
+		// grid section
+		show_grid_details,
+		// unit actions
+		deploy,
+		takeoff
+	}
 
-enum unit_prop
-{
-	none,
-	entity_health,
-	integrity,
-	sleep,
-	food,
-	battery_charge,
-	suit_oxygen
+	enum unit_prop
+	{
+		none,
+		entity_health,
+		integrity,
+		sleep,
+		food,
+		battery_charge,
+		suit_oxygen
+	}
+
+
 }

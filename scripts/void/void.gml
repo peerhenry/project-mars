@@ -1,5 +1,9 @@
 /// @arg instance
 /// @arg method
-var instance = argument0;
-var method = argument1;
-return call(instance, method, []);
+function void(argument0, argument1) {
+	var instance = argument0;
+	var func = argument1;
+	return call(instance, func, []);
+
+
+}

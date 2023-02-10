@@ -1,8 +1,11 @@
 {
-    "id": "8af00ed2-db86-4bed-a86d-498525dbbe49",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "cs_get_parent_class",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "cs_get_parent_class",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "class scripts",
+    "path": "folders/Scripts/OOP/framework/functions/class scripts.yy",
+  },
 }

@@ -1,8 +1,11 @@
 {
-    "id": "a31ddfc2-2166-4a49-bd5c-c4df17cc3a78",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "c_delay",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "c_delay",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "actions",
+    "path": "folders/Scripts/OOP/framework/standard classes/actions.yy",
+  },
 }

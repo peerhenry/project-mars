@@ -1,8 +1,11 @@
 {
-    "id": "7684a3a2-e481-4c96-8b10-88c8a83cf7bf",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_command_move",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_command_move",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "commands",
+    "path": "folders/Scripts/GAME/INPUT/commands.yy",
+  },
 }

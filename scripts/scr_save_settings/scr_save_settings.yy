@@ -1,8 +1,11 @@
 {
-    "id": "1dd37cb6-f98e-4133-8a5d-952bc1778aed",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_save_settings",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_save_settings",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "MAIN_MENU",
+    "path": "folders/Scripts/MAIN_MENU.yy",
+  },
 }

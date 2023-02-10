@@ -1,8 +1,11 @@
 {
-    "id": "b387b18a-74c5-42c9-a37b-7e48cdb95700",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_grid_new_from_tile_map",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_grid_new_from_tile_map",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "destroy_instance",
+    "path": "folders/Scripts/GAME/GRID/destroy_instance.yy",
+  },
 }

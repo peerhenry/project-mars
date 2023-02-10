@@ -1,8 +1,11 @@
 {
-    "id": "fed38e95-115b-45a9-b1cf-2818bf076199",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "test_suite_objects",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "test_suite_objects",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "objects",
+    "path": "folders/Scripts/TESTS/scenario/objects.yy",
+  },
 }

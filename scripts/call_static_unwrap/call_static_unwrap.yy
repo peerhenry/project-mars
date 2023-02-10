@@ -1,8 +1,11 @@
 {
-    "id": "beca3532-0ab2-415d-9191-625f10fa36b6",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "call_static_unwrap",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "call_static_unwrap",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "method calling",
+    "path": "folders/Scripts/OOP/framework/functions/method calling.yy",
+  },
 }

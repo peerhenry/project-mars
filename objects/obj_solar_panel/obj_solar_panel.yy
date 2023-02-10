@@ -1,59 +1,42 @@
 {
-    "id": "2f881597-244e-4a43-9111-a93fd858509e",
-    "modelName": "GMObject",
-    "mvc": "1.0",
-    "name": "obj_solar_panel",
-    "eventList": [
-        {
-            "id": "8b0ac5ec-a4d7-4e85-91c1-b677e628e7fd",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 1,
-            "m_owner": "2f881597-244e-4a43-9111-a93fd858509e"
-        },
-        {
-            "id": "1a4104c9-06c6-4bf0-b680-9efa48b54a05",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 13,
-            "eventtype": 7,
-            "m_owner": "2f881597-244e-4a43-9111-a93fd858509e"
-        }
-    ],
-    "maskSpriteId": "00000000-0000-0000-0000-000000000000",
-    "overriddenProperties": [
-        {
-            "id": "dbd2395e-ff8e-4b7d-b24a-67652bc1eb09",
-            "modelName": "GMOverriddenProperty",
-            "mvc": "1.0",
-            "objectId": "80d008b6-7a1e-4322-8302-8269bb250150",
-            "propertyId": "80f7914b-62ae-46cb-8ebf-9776a148eb90",
-            "value": "True"
-        }
-    ],
-    "parentObjectId": "4edd00e6-b691-472f-b6b8-3601b4e5ddfd",
-    "persistent": false,
-    "physicsAngularDamping": 0.1,
-    "physicsDensity": 0.5,
-    "physicsFriction": 0.2,
-    "physicsGroup": 0,
-    "physicsKinematic": false,
-    "physicsLinearDamping": 0.1,
-    "physicsObject": false,
-    "physicsRestitution": 0.1,
-    "physicsSensor": false,
-    "physicsShape": 1,
-    "physicsShapePoints": null,
-    "physicsStartAwake": true,
-    "properties": [
-        
-    ],
-    "solid": false,
-    "spriteId": "0c99d921-036d-4b94-b516-bab0aed1d4a9",
-    "visible": true
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_solar_panel",
+  "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":13,"eventType":7,"isDnD":false,},
+  ],
+  "managed": true,
+  "overriddenProperties": [
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_constructable","path":"objects/obj_constructable/obj_constructable.yy",},"propertyId":{"name":"occupy_navgrid","path":"objects/obj_constructable/obj_constructable.yy",},"value":"True",},
+  ],
+  "parent": {
+    "name": "outside",
+    "path": "folders/Objects/GAME/units/base/outside.yy",
+  },
+  "parentObjectId": {
+    "name": "obj_base_component",
+    "path": "objects/obj_base_component/obj_base_component.yy",
+  },
+  "persistent": false,
+  "physicsAngularDamping": 0.1,
+  "physicsDensity": 0.5,
+  "physicsFriction": 0.2,
+  "physicsGroup": 0,
+  "physicsKinematic": false,
+  "physicsLinearDamping": 0.1,
+  "physicsObject": false,
+  "physicsRestitution": 0.1,
+  "physicsSensor": false,
+  "physicsShape": 1,
+  "physicsShapePoints": [],
+  "physicsStartAwake": true,
+  "properties": [],
+  "solid": false,
+  "spriteId": {
+    "name": "spr_solar_panel",
+    "path": "sprites/spr_solar_panel/spr_solar_panel.yy",
+  },
+  "spriteMaskId": null,
+  "visible": true,
 }

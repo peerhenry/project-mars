@@ -1,8 +1,11 @@
 {
-    "id": "90eb4e9d-8cb4-44bf-bace-06735f6828eb",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "test_decr_deliveries_after_fetch",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "test_decr_deliveries_after_fetch",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "deliver_mdu_after_fetch",
+    "path": "folders/Scripts/TESTS/suites/astronauts/actions/construction/deliver_mdu_after_fetch.yy",
+  },
 }

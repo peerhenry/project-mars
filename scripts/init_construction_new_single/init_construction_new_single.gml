@@ -3,31 +3,35 @@
 /// @param hud_sprite
 /// @param action_count 
 /// @param category
+function init_construction_new_single(argument0, argument1, argument2, argument3, argument4) {
 
-// This script initializes a construction that has a single build tile.
-// construction -> build tiles -> build tile -> build actions -> build action
+	// This script initializes a construction that has a single build tile.
+	// construction -> build tiles -> build tile -> build actions -> build action
 
-var arg_id = argument0;
-var arg_name = argument1;
-var arg_hud_sprite = argument2;
-var arg_action_count = argument3;
-var arg_category = argument4;
+	var arg_id = argument0;
+	var arg_name = argument1;
+	var arg_hud_sprite = argument2;
+	var arg_action_count = argument3;
+	var arg_category = argument4;
 
-// array of build actions
-var build_actions;
-build_actions[ arg_action_count-1 ] = 0;
-global.init_next_action_index = 0;
-global.init_active_actions = build_actions;
+	// array of build actions
+	var build_actions;
+	build_actions[ arg_action_count-1 ] = 0;
+	global.init_next_action_index = 0;
+	global.init_active_actions = build_actions;
 
-// build tile
-var build_tile;
-build_tile[macro_build_tile_actions] = build_actions;
-build_tile[macro_build_tile_di] = 0;
-build_tile[macro_build_tile_dj] = 0;
+	// build tile
+	var build_tile;
+	build_tile[macro_build_tile_actions] = build_actions;
+	build_tile[macro_build_tile_di] = 0;
+	build_tile[macro_build_tile_dj] = 0;
 
-// array of build tiles
-var build_tiles;
-build_tiles[0] = build_tile;
-global.init_active_tiles = build_tiles;
+	// array of build tiles
+	var build_tiles;
+	build_tiles[0] = build_tile;
+	global.init_active_tiles = build_tiles;
 
-init_construction_new(arg_id, arg_name, arg_hud_sprite, build_tiles, arg_category);
+	init_construction_new(arg_id, arg_name, arg_hud_sprite, build_tiles, arg_category);
+
+
+}

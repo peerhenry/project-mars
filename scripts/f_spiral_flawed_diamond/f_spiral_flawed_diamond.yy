@@ -1,8 +1,11 @@
 {
-    "id": "1cc1fbf7-dc69-4875-8de3-a7595bc60da0",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "f_spiral_flawed_diamond",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "f_spiral_flawed_diamond",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "spiral algorithms",
+    "path": "folders/Scripts/GAME/GAMEPLAY/entities/navigagtion/spiral algorithms.yy",
+  },
 }

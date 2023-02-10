@@ -1,5 +1,4 @@
 /// @arg props
-return ok(new(
-	c_class_info,
-	argument0
-));
+function ok_class_info() {
+	return ok(fnew(c_class_info, argument0));
+}

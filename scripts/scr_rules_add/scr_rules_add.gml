@@ -1,8 +1,12 @@
 /// @arg section
 /// @arg key
 /// @arg default
-var arg_section = argument0;
-var arg_key = argument1;
-var arg_default = argument2;
+function scr_rules_add(argument0, argument1, argument2) {
+	var arg_section = argument0;
+	var arg_key = argument1;
+	var arg_default = argument2;
 
-scr_rules_add_with_global(arg_section, arg_key, arg_default, true);
+	scr_rules_add_with_global(arg_section, arg_key, arg_default, true);
+
+
+}

@@ -1,8 +1,11 @@
 {
-    "id": "3d79e7ff-b539-4816-96f4-819f3d25555a",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "test_ghost_and_build",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "test_ghost_and_build",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "construction",
+    "path": "folders/Scripts/TESTS/suites/construction.yy",
+  },
 }

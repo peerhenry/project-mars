@@ -1,8 +1,11 @@
 {
-    "id": "7c05267a-f0b5-4805-8443-087886dbc675",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "test_register_scripts",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "test_register_scripts",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "script_container",
+    "path": "folders/Scripts/LIB/script_container.yy",
+  },
 }

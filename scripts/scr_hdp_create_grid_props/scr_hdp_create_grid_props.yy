@@ -1,8 +1,11 @@
 {
-    "id": "791dba2e-8546-41b0-b49c-68492483fdeb",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_hdp_create_grid_props",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_hdp_create_grid_props",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "hud_details_panel",
+    "path": "folders/Scripts/GAME/GUI/gui_items/create/hud_details_panel.yy",
+  },
 }

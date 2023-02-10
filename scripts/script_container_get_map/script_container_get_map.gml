@@ -1,2 +1,6 @@
 /// @arg container
-return argument0[1];
+function script_container_get_map(argument0) {
+	return argument0[1];
+
+
+}

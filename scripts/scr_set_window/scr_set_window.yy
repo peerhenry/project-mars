@@ -1,8 +1,11 @@
 {
-    "id": "51183cf0-6135-4c95-a626-c1c71c2bf44e",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_set_window",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_set_window",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "COMMON",
+    "path": "folders/Scripts/GAME/COMMON.yy",
+  },
 }

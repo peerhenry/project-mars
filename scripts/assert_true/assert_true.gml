@@ -1,3 +1,7 @@
 /// @arg result
 /// @arg message
-assert_equal(true, argument0, argument1);
+function assert_true(argument0, argument1) {
+	assert_equal(true, argument0, argument1);
+
+
+}

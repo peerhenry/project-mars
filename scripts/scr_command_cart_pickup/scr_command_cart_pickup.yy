@@ -1,8 +1,11 @@
 {
-    "id": "c3029259-213f-46c7-8714-3bebe5d572ab",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_command_cart_pickup",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_command_cart_pickup",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "commands",
+    "path": "folders/Scripts/GAME/INPUT/commands.yy",
+  },
 }

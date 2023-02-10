@@ -1,7 +1,11 @@
-/*var deps = new(c_dependencies);
-deps.skip_class_standards = true;
-return deps;*/
+function skip_standards() {
+	/*var deps = fnew(c_dependencies);
+	deps.skip_class_standards = true;
+	return deps;*/
 
-// todo remove this script
+	// todo remove this script
 
-return noone;
+	return noone;
+
+
+}

@@ -1,8 +1,11 @@
 {
-    "id": "21c68eb5-ccd2-40f2-81c1-622f1e42de48",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_boot_window",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_boot_window",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "BOOT",
+    "path": "folders/Scripts/BOOT.yy",
+  },
 }

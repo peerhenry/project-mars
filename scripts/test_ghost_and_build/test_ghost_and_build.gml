@@ -1,25 +1,29 @@
-test_init(test_ghost_and_build);
+function test_ghost_and_build() {
+	test_init(test_ghost_and_build);
 
-// arrange
-scr_ghost_reset_with_constr_type(macro_basetile);
+	// arrange
+	scr_ghost_reset_with_constr_type(macro_basetile);
 
-// act
-scr_update_ghost_single(10, 10, macro_basetile, 0);
-scr_build_new(); // creates the construction
+	// act
+	scr_update_ghost_single(10, 10, macro_basetile, 0);
+	scr_build_new(); // creates the construction
 
-// assert
-assert_object_count(1, obj_base_tile);
-assert_object_count(8, obj_wall);
+	// assert
+	assert_object_count(1, obj_base_tile);
+	assert_object_count(8, obj_wall);
 
-// cleanup
-with(obj_base_tile){
-	instance_destroy();
+	// cleanup
+	with(obj_base_tile){
+		instance_destroy();
+	}
+	with(obj_wall){
+		instance_destroy();
+	}
+	var cq = scr_get_construction_queue(macro_player);
+	ds_list_clear(cq);
+	scr_ghost_reset();
+
+	test_result();
+
+
 }
-with(obj_wall){
-	instance_destroy();
-}
-var cq = scr_get_construction_queue(macro_player);
-ds_list_clear(cq);
-scr_ghost_reset();
-
-test_result();

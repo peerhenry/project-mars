@@ -1,8 +1,11 @@
 {
-    "id": "901aaa60-f5c8-4ade-8bbb-ce91a3f42984",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "init_global_real_overwrite",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "init_global_real_overwrite",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "INITIALIZATION",
+    "path": "folders/Scripts/GAME/INITIALIZATION.yy",
+  },
 }

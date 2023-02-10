@@ -1,9 +1,13 @@
 /// @arg button
-var arg_button = argument0;
+function scr_button_state_cart_deploy(argument0) {
+	var arg_button = argument0;
 
-var active = false;
-with(arg_button.cart)
-{
-	active = deploy;
+	var active = false;
+	with(arg_button.cart)
+	{
+		active = deploy;
+	}
+	return active;
+
+
 }
-return active;

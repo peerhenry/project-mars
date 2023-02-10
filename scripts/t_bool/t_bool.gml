@@ -1,1 +1,5 @@
-return new_override(c_type_info, obj_type_info, TYPE.BOOL);
+function t_bool() {
+	return new_override(c_type_info, obj_type_info, TYPE.BOOL);
+
+
+}

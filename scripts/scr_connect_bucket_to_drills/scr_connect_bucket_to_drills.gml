@@ -1,21 +1,25 @@
-var arg_bucket = argument0;
-// actually no need to implement, drill connects to buckets during drill mine alarm
-with(arg_bucket)
-{
-	var drills = scr_get_adjacent_instances(arg_bucket, obj_drill);
-	for(var n = 0; n < 4; n++) // ENWS
+function scr_connect_bucket_to_drills(argument0) {
+	var arg_bucket = argument0;
+	// actually no need to implement, drill connects to buckets during drill mine alarm
+	with(arg_bucket)
 	{
-		var drill = drills[n];
-		if(drill != noone && !drill.under_construction)
+		var drills = scr_get_adjacent_instances(arg_bucket, obj_drill);
+		for(var n = 0; n < 4; n++) // ENWS
 		{
-			with(drill)
+			var drill = drills[n];
+			if(drill != noone && !drill.under_construction)
 			{
-				if(active_bucket == noone)
+				with(drill)
 				{
-					active_bucket = other.id;
-					event_user(macro_event_drill_mine_check);
+					if(active_bucket == noone)
+					{
+						active_bucket = other.id;
+						event_user(macro_event_drill_mine_check);
+					}
 				}
 			}
 		}
 	}
+
+
 }

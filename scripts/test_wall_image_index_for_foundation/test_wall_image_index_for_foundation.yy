@@ -1,8 +1,11 @@
 {
-    "id": "2eabd4bd-30e2-41cf-8f34-f65ee737ff7d",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "test_wall_image_index_for_foundation",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "test_wall_image_index_for_foundation",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "construction",
+    "path": "folders/Scripts/TESTS/suites/construction.yy",
+  },
 }

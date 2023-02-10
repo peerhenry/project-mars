@@ -1,13 +1,17 @@
 /// @arg astronaut
-var arg_astronaut = argument0;
+function scr_step_sleep_and_speed(argument0) {
+	var arg_astronaut = argument0;
 
-with(arg_astronaut)
-{
-	var dE = global.sleep_level_depletion;
-	if(floor(sleep_level) - floor(sleep_level - dE) != 0)
+	with(arg_astronaut)
 	{
-		movement_speed = scr_calculate_movement_speed(sleep_level);
+		var dE = global.sleep_level_depletion;
+		if(floor(sleep_level) - floor(sleep_level - dE) != 0)
+		{
+			movement_speed = scr_calculate_movement_speed(sleep_level);
+		}
+		if(sleep_level > 0) sleep_level -= dE;
+		if(sleep_level <= 0) sleep_level = 0;
 	}
-	if(sleep_level > 0) sleep_level -= dE;
-	if(sleep_level <= 0) sleep_level = 0;
+
+
 }

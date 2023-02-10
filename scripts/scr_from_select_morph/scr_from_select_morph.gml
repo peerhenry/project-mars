@@ -2,39 +2,43 @@
 /// @arg collection
 /// @arg variable
 /// @arg method
-var collection = argument0;
-var variable = argument1;
-var method = argument2;
+function scr_from_select_morph(argument0, argument1, argument2) {
+	var collection = argument0;
+	var variable = argument1;
+	var func = argument2;
 
-if(is_array(collection))
-{
-	var output = [];
-	var head = 0;
-	for(var n = 0; n < array_length_1d(collection); n++)
+	if(is_array(collection))
 	{
-		var elem = collection[n];
-		if(variable_instance_exists(elem, variable))
+		var output = [];
+		var head = 0;
+		for(var n = 0; n < array_length_1d(collection); n++)
 		{
-			var thing = variable_instance_get(elem, variable);
-			output[head] = void_unwrap(thing, method);
-			head ++;
+			var elem = collection[n];
+			if(variable_instance_exists(elem, variable))
+			{
+				var thing = variable_instance_get(elem, variable);
+				output[head] = void_unwrap(thing, func);
+				head ++;
+			}
 		}
+		return output;
 	}
-	return output;
-}
-else if(ds_exists(collection, ds_type_list))
-{
-	var output = ds_list_create();
-	for(var n = 0; n < ds_list_size(collection); n++)
+	else if(ds_exists(collection, ds_type_list))
 	{
-		var elem = collection[|n];
-		if(variable_instance_exists(elem, variable))
+		var output = ds_list_create();
+		for(var n = 0; n < ds_list_size(collection); n++)
 		{
-			var thing = variable_instance_get(elem, variable);
-			var val = void_unwrap(thing, method);
-			ds_list_add(output, val);
+			var elem = collection[|n];
+			if(variable_instance_exists(elem, variable))
+			{
+				var thing = variable_instance_get(elem, variable);
+				var val = void_unwrap(thing, func);
+				ds_list_add(output, val);
+			}
 		}
+		return output;
 	}
-	return output;
+	scr_panic("Argument0 was not a valid collection");
+
+
 }
-scr_panic("Argument0 was not a valid collection");

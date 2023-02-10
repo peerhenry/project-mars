@@ -1,8 +1,11 @@
 {
-    "id": "ca684d7a-1a85-453d-ac7f-6a5f39ad83a6",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "c_type_info",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "c_type_info",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "types",
+    "path": "folders/Scripts/OOP/framework/standard classes/ioc/types.yy",
+  },
 }

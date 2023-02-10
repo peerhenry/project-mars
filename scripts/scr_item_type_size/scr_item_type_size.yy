@@ -1,8 +1,11 @@
 {
-    "id": "d8160bbd-ea5d-4a8b-a4b6-43cabc0a3d38",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_item_type_size",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_item_type_size",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "inventory",
+    "path": "folders/Scripts/GAME/GAMEPLAY/inventory.yy",
+  },
 }

@@ -1,13 +1,17 @@
 /// @description Debug supported AA-levels
+function debug_supported_aa_levels() {
 
-var supported = "";
-for(var aa = 2; aa <= display_aa; aa *= 2)
-{
-	if((aa & display_aa) == aa)
+	var supported = "";
+	for(var aa = 2; aa <= display_aa; aa *= 2)
 	{
-		if(supported != "") supported += ", ";
-		supported += string(aa)
+		if((aa & display_aa) == aa)
+		{
+			if(supported != "") supported += ", ";
+			supported += string(aa)
+		}
 	}
+	if(supported == "") supported = "none";
+	show_debug_message("Supported AA-levels: " + supported);
+
+
 }
-if(supported == "") supported = "none";
-show_debug_message("Supported AA-levels: " + supported);

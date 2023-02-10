@@ -1,8 +1,11 @@
 {
-    "id": "777fc8ab-7227-4ff0-b165-560428b75a36",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "test_suite_scenarios_construction",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "test_suite_scenarios_construction",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "construction",
+    "path": "folders/Scripts/TESTS/scenario/construction.yy",
+  },
 }

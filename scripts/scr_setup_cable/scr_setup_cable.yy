@@ -1,8 +1,11 @@
 {
-    "id": "f0fc534a-39fd-4e05-9b90-47001c4a185f",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_setup_cable",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_setup_cable",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "level setup",
+    "path": "folders/Scripts/GAME/COMMON/level setup.yy",
+  },
 }

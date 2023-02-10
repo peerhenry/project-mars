@@ -1,8 +1,11 @@
 {
-    "id": "c3299e77-0351-4617-8b4b-5629a15db78f",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "script_container_reset",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "script_container_reset",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "framework",
+    "path": "folders/Scripts/LIB/script_container/framework.yy",
+  },
 }

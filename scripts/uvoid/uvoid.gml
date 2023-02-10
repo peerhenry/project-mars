@@ -1,3 +1,7 @@
 /// @arg instance
 /// @arg method
-return void_unwrap(argument0, argument1);
+function uvoid(argument0, argument1) {
+	return void_unwrap(argument0, argument1);
+
+
+}

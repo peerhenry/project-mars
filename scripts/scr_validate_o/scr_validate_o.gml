@@ -1,61 +1,65 @@
-// validate occupation: is there a required occupation on the cell?
-validation_o = argument0;
-map_o = argument1;
-arg_i = argument2;
-arg_j = argument3;
+function scr_validate_o(argument0, argument1, argument2, argument3) {
+	// validate occupation: is there a required occupation on the cell?
+	validation_o = argument0;
+	map_o = argument1;
+	arg_i = argument2;
+	arg_j = argument3;
 
-var result = false;
+	var result = false;
 
-switch(validation_o)
-{
-	case build_validation_o.vacant:
-		result = map_o == map_value_vacant && scr_navgrid_cell_is_free(arg_i, arg_j);
-		break;
-	case build_validation_o.vacant_or_reserved:
-		result = (map_o == map_value_vacant || map_o == map_value_reserved) && scr_navgrid_cell_is_free(arg_i, arg_j);
-		break;
-	case build_validation_o.vacant_or_cable:
-		result = (map_o == map_value_vacant || map_o == map_value_cable) && scr_navgrid_cell_is_free(arg_i, arg_j);
-		break;
-	case build_validation_o.vacant_or_pipe:
-		result = (map_o == map_value_vacant || map_o == map_value_pipe) && scr_navgrid_cell_is_free(arg_i, arg_j);
-		break;
-	case build_validation_o.wall_like:
-		result = map_o == map_value_wall_like || map_o == map_value_wall_pure;
-		break;
-	case build_validation_o.any:
-		result = true;
-		break;
-	case build_validation_o.wall:
-		result = map_o == map_value_wall_pure;
-		break;
-	case build_validation_o.cable:
-		result = map_o == map_value_cable || map_o == map_value_pipe_and_cable;
-		break;
-	case build_validation_o.pipe:
-		result = map_o == map_value_pipe || map_o == map_value_pipe_and_cable;
-		break;
-	case build_validation_o.for_pipe:
-		with(obj_movable)
-		{
-			scr_navgrid_clear_cell(occ_i, occ_j);
-		}
-		result = (map_o == map_value_vacant && scr_navgrid_cell_is_free(arg_i, arg_j)) || map_o == map_value_cable;
-		with(obj_movable)
-		{
-			scr_navgrid_occupy(occ_i, occ_j);
-		}
-		break;
-	case build_validation_o.for_cable:
-		with(obj_movable)
-		{
-			scr_navgrid_clear_cell(occ_i, occ_j);
-		}
-		result = (map_o == map_value_vacant && scr_navgrid_cell_is_free(arg_i, arg_j)) || map_o == map_value_pipe;
-		with(obj_movable)
-		{
-			scr_navgrid_occupy(occ_i, occ_j);
-		}
-		break;
+	switch(validation_o)
+	{
+		case build_validation_o.vacant:
+			result = map_o == map_value_vacant && scr_navgrid_cell_is_free(arg_i, arg_j);
+			break;
+		case build_validation_o.vacant_or_reserved:
+			result = (map_o == map_value_vacant || map_o == map_value_reserved) && scr_navgrid_cell_is_free(arg_i, arg_j);
+			break;
+		case build_validation_o.vacant_or_cable:
+			result = (map_o == map_value_vacant || map_o == map_value_cable) && scr_navgrid_cell_is_free(arg_i, arg_j);
+			break;
+		case build_validation_o.vacant_or_pipe:
+			result = (map_o == map_value_vacant || map_o == map_value_pipe) && scr_navgrid_cell_is_free(arg_i, arg_j);
+			break;
+		case build_validation_o.wall_like:
+			result = map_o == map_value_wall_like || map_o == map_value_wall_pure;
+			break;
+		case build_validation_o.any:
+			result = true;
+			break;
+		case build_validation_o.wall:
+			result = map_o == map_value_wall_pure;
+			break;
+		case build_validation_o.cable:
+			result = map_o == map_value_cable || map_o == map_value_pipe_and_cable;
+			break;
+		case build_validation_o.pipe:
+			result = map_o == map_value_pipe || map_o == map_value_pipe_and_cable;
+			break;
+		case build_validation_o.for_pipe:
+			with(obj_movable)
+			{
+				scr_navgrid_clear_cell(occ_i, occ_j);
+			}
+			result = (map_o == map_value_vacant && scr_navgrid_cell_is_free(arg_i, arg_j)) || map_o == map_value_cable;
+			with(obj_movable)
+			{
+				scr_navgrid_occupy(occ_i, occ_j);
+			}
+			break;
+		case build_validation_o.for_cable:
+			with(obj_movable)
+			{
+				scr_navgrid_clear_cell(occ_i, occ_j);
+			}
+			result = (map_o == map_value_vacant && scr_navgrid_cell_is_free(arg_i, arg_j)) || map_o == map_value_pipe;
+			with(obj_movable)
+			{
+				scr_navgrid_occupy(occ_i, occ_j);
+			}
+			break;
+	}
+	return result;
+
+
 }
-return result;

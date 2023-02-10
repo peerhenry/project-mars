@@ -1,1 +1,5 @@
-return new_override(c_type_info, obj_type_info, TYPE.SCRIPT);
+function t_script() {
+	return new_override(c_type_info, obj_type_info, TYPE.SCRIPT);
+
+
+}

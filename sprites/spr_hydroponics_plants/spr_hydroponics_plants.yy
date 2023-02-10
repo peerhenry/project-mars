@@ -1,175 +1,81 @@
 {
-    "id": "8e31dbe0-7cf4-4515-9e43-e5157583bae1",
-    "modelName": "GMSprite",
-    "mvc": "1.12",
-    "name": "spr_hydroponics_plants",
-    "For3D": false,
-    "HTile": false,
-    "VTile": false,
-    "bbox_bottom": 42,
-    "bbox_left": 0,
-    "bbox_right": 31,
-    "bbox_top": 6,
-    "bboxmode": 0,
-    "colkind": 1,
-    "coltolerance": 0,
-    "edgeFiltering": false,
-    "frames": [
-        {
-            "id": "e5072f64-cadc-45bd-bb91-139ae849bed2",
-            "modelName": "GMSpriteFrame",
-            "mvc": "1.0",
-            "SpriteId": "8e31dbe0-7cf4-4515-9e43-e5157583bae1",
-            "compositeImage": {
-                "id": "26c13c2a-521c-40f2-a424-88e0fbf9f364",
-                "modelName": "GMSpriteImage",
-                "mvc": "1.0",
-                "FrameId": "e5072f64-cadc-45bd-bb91-139ae849bed2",
-                "LayerId": "00000000-0000-0000-0000-000000000000"
-            },
-            "images": [
-                {
-                    "id": "8252bb96-c390-4e18-8cba-34456cc2c148",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "e5072f64-cadc-45bd-bb91-139ae849bed2",
-                    "LayerId": "ec3177e3-a590-4b43-8fde-faff1f38cd16"
-                },
-                {
-                    "id": "8edc4e99-ffc3-473a-ae82-f02b3c454e3e",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "e5072f64-cadc-45bd-bb91-139ae849bed2",
-                    "LayerId": "308945ae-5b37-4c39-ae92-4d4623136222"
-                }
-            ]
-        },
-        {
-            "id": "c2be5ffb-66f9-4d2c-ae81-dc2d9a27eb8d",
-            "modelName": "GMSpriteFrame",
-            "mvc": "1.0",
-            "SpriteId": "8e31dbe0-7cf4-4515-9e43-e5157583bae1",
-            "compositeImage": {
-                "id": "a220384e-56bb-4e27-95a1-6f73a586bd27",
-                "modelName": "GMSpriteImage",
-                "mvc": "1.0",
-                "FrameId": "c2be5ffb-66f9-4d2c-ae81-dc2d9a27eb8d",
-                "LayerId": "00000000-0000-0000-0000-000000000000"
-            },
-            "images": [
-                {
-                    "id": "63379a23-0b9b-4d51-ae5c-a9c6b8ef9e05",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "c2be5ffb-66f9-4d2c-ae81-dc2d9a27eb8d",
-                    "LayerId": "ec3177e3-a590-4b43-8fde-faff1f38cd16"
-                },
-                {
-                    "id": "085b774f-1288-4f39-8fbf-918a30754099",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "c2be5ffb-66f9-4d2c-ae81-dc2d9a27eb8d",
-                    "LayerId": "308945ae-5b37-4c39-ae92-4d4623136222"
-                }
-            ]
-        },
-        {
-            "id": "e4a1834d-9b38-49c1-90a5-48304d057d89",
-            "modelName": "GMSpriteFrame",
-            "mvc": "1.0",
-            "SpriteId": "8e31dbe0-7cf4-4515-9e43-e5157583bae1",
-            "compositeImage": {
-                "id": "3133615b-8f91-4c5a-8a6c-2bcc8234c961",
-                "modelName": "GMSpriteImage",
-                "mvc": "1.0",
-                "FrameId": "e4a1834d-9b38-49c1-90a5-48304d057d89",
-                "LayerId": "00000000-0000-0000-0000-000000000000"
-            },
-            "images": [
-                {
-                    "id": "72e22df2-4076-48ea-9ae5-a7b514b97923",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "e4a1834d-9b38-49c1-90a5-48304d057d89",
-                    "LayerId": "ec3177e3-a590-4b43-8fde-faff1f38cd16"
-                },
-                {
-                    "id": "f33d6906-6386-4a7f-96f8-98327b54d714",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "e4a1834d-9b38-49c1-90a5-48304d057d89",
-                    "LayerId": "308945ae-5b37-4c39-ae92-4d4623136222"
-                }
-            ]
-        },
-        {
-            "id": "08676b3b-9da9-4643-a5dd-561291a6ae6c",
-            "modelName": "GMSpriteFrame",
-            "mvc": "1.0",
-            "SpriteId": "8e31dbe0-7cf4-4515-9e43-e5157583bae1",
-            "compositeImage": {
-                "id": "eca77fb0-b659-4f06-8e7c-9edb8238daec",
-                "modelName": "GMSpriteImage",
-                "mvc": "1.0",
-                "FrameId": "08676b3b-9da9-4643-a5dd-561291a6ae6c",
-                "LayerId": "00000000-0000-0000-0000-000000000000"
-            },
-            "images": [
-                {
-                    "id": "b4660074-ae8c-4d89-89c6-549225dd9116",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "08676b3b-9da9-4643-a5dd-561291a6ae6c",
-                    "LayerId": "ec3177e3-a590-4b43-8fde-faff1f38cd16"
-                },
-                {
-                    "id": "7bcafcb5-a91f-4498-9ecf-3a016761881d",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "08676b3b-9da9-4643-a5dd-561291a6ae6c",
-                    "LayerId": "308945ae-5b37-4c39-ae92-4d4623136222"
-                }
-            ]
-        }
-    ],
-    "gridX": 0,
-    "gridY": 0,
-    "height": 48,
-    "layers": [
-        {
-            "id": "ec3177e3-a590-4b43-8fde-faff1f38cd16",
-            "modelName": "GMImageLayer",
-            "mvc": "1.0",
-            "SpriteId": "8e31dbe0-7cf4-4515-9e43-e5157583bae1",
-            "blendMode": 0,
-            "isLocked": false,
-            "name": "plants",
-            "opacity": 100,
-            "visible": true
-        },
-        {
-            "id": "308945ae-5b37-4c39-ae92-4d4623136222",
-            "modelName": "GMImageLayer",
-            "mvc": "1.0",
-            "SpriteId": "8e31dbe0-7cf4-4515-9e43-e5157583bae1",
-            "blendMode": 0,
-            "isLocked": false,
-            "name": "default",
-            "opacity": 100,
-            "visible": false
-        }
-    ],
-    "origin": 9,
-    "originLocked": false,
-    "playbackSpeed": 15,
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "spr_hydroponics_plants",
+  "bbox_bottom": 42,
+  "bbox_left": 0,
+  "bbox_right": 31,
+  "bbox_top": 6,
+  "bboxMode": 0,
+  "collisionKind": 1,
+  "collisionTolerance": 0,
+  "DynamicTexturePage": false,
+  "edgeFiltering": false,
+  "For3D": false,
+  "frames": [
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e5072f64-cadc-45bd-bb91-139ae849bed2",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c2be5ffb-66f9-4d2c-ae81-dc2d9a27eb8d",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e4a1834d-9b38-49c1-90a5-48304d057d89",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"08676b3b-9da9-4643-a5dd-561291a6ae6c",},
+  ],
+  "gridX": 0,
+  "gridY": 0,
+  "height": 48,
+  "HTile": false,
+  "layers": [
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"ec3177e3-a590-4b43-8fde-faff1f38cd16","blendMode":0,"displayName":"plants","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"308945ae-5b37-4c39-ae92-4d4623136222","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":false,},
+  ],
+  "nineSlice": null,
+  "origin": 9,
+  "parent": {
+    "name": "inside",
+    "path": "folders/Sprites/GAME/BASE/inside.yy",
+  },
+  "preMultiplyAlpha": false,
+  "sequence": {
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "",
+    "autoRecord": true,
+    "backdropHeight": 1080,
+    "backdropImageOpacity": 0.5,
+    "backdropImagePath": "",
+    "backdropWidth": 1920,
+    "backdropXOffset": 0.0,
+    "backdropYOffset": 0.0,
+    "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
+    "eventStubScript": null,
+    "eventToFunction": {},
+    "length": 4.0,
+    "lockOrigin": false,
+    "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
+    "playback": 1,
+    "playbackSpeed": 15.0,
     "playbackSpeedType": 0,
-    "premultiplyAlpha": false,
-    "sepmasks": false,
-    "swatchColours": null,
-    "swfPrecision": 2.525,
-    "textureGroupId": "1225f6b0-ac20-43bd-a82e-be73fa0b6f4f",
-    "type": 0,
-    "width": 32,
-    "xorig": 16,
-    "yorig": 32
+    "showBackdrop": true,
+    "showBackdropImage": false,
+    "timeUnits": 1,
+    "tracks": [
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e5072f64-cadc-45bd-bb91-139ae849bed2","path":"sprites/spr_hydroponics_plants/spr_hydroponics_plants.yy",},},},"Disabled":false,"id":"824d3f74-d754-452c-a25f-bd1b55908643","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c2be5ffb-66f9-4d2c-ae81-dc2d9a27eb8d","path":"sprites/spr_hydroponics_plants/spr_hydroponics_plants.yy",},},},"Disabled":false,"id":"36f285fa-e835-4f3f-97bd-59382031ab12","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e4a1834d-9b38-49c1-90a5-48304d057d89","path":"sprites/spr_hydroponics_plants/spr_hydroponics_plants.yy",},},},"Disabled":false,"id":"5c5902aa-76cd-4148-84ca-204ffc5f5677","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"08676b3b-9da9-4643-a5dd-561291a6ae6c","path":"sprites/spr_hydroponics_plants/spr_hydroponics_plants.yy",},},},"Disabled":false,"id":"82c1d267-4c44-466a-88ad-a0d7d71ec6a8","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
+          ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
+    ],
+    "visibleRange": null,
+    "volume": 1.0,
+    "xorigin": 16,
+    "yorigin": 32,
+  },
+  "swatchColours": null,
+  "swfPrecision": 2.525,
+  "textureGroupId": {
+    "name": "Default",
+    "path": "texturegroups/Default",
+  },
+  "type": 0,
+  "VTile": false,
+  "width": 32,
 }

@@ -1,3 +1,7 @@
 /// @description show message to the player
 /// @param message
-scr_alert_player(argument0);
+function scr_notify_player(argument0) {
+	scr_alert_player(argument0);
+
+
+}

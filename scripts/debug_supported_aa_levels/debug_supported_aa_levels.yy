@@ -1,8 +1,11 @@
 {
-    "id": "34c88e7a-050e-48d9-9e80-4f56b15e1863",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "debug_supported_aa_levels",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "debug_supported_aa_levels",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "console",
+    "path": "folders/Scripts/GAME/DEBUG/console.yy",
+  },
 }

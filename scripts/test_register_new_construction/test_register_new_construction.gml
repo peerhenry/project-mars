@@ -1,18 +1,22 @@
-test_init(test_register_new_construction);
+function test_register_new_construction() {
+	test_init(test_register_new_construction);
 
-// arrange
-var constr = scr_create_dummy_construction();
+	// arrange
+	var constr = scr_create_dummy_construction();
 
-// act
-scr_register_new_construction(constr);
+	// act
+	scr_register_new_construction(constr);
 
-// assert
-var cq = scr_get_construction_queue(constr[? construction_owner]);
-assert_list_contains(cq, constr);
+	// assert
+	var cq = scr_get_construction_queue(constr[? construction_owner]);
+	assert_list_contains(cq, constr);
 
-// cleanup
-scr_destroy_construction(constr);
-ds_list_clear(cq);
+	// cleanup
+	scr_destroy_construction(constr);
+	ds_list_clear(cq);
 
-// return result
-test_result();
+	// return result
+	test_result();
+
+
+}

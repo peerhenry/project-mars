@@ -1,8 +1,11 @@
 {
-    "id": "d0bceaed-302b-40f9-9f03-7b729e5ae6f3",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_grid_new",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_grid_new",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "helper",
+    "path": "folders/Scripts/GAME/GRID/construction_finalization/helper.yy",
+  },
 }

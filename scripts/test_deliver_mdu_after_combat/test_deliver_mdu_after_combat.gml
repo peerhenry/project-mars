@@ -1,31 +1,35 @@
-test_init(test_deliver_mdu_after_combat);
+function test_deliver_mdu_after_combat() {
+	test_init(test_deliver_mdu_after_combat);
 
-// arrange
-var constr = scr_create_dummy_mdu_construction();
-scr_register_new_construction(constr);
-var astro = instance_create_depth(0,0,0,obj_astronaut);
-astro.auto_construct = true;
-scr_give_entity_new_item(astro, inv_space.mdu);
-var enemy = scr_create_astronaut_safe(64, 64, macro_enemy);
-enemy.entity_health = 1;
-astro.target = enemy;
-enemy.entity_health = 0;
-with(enemy) event_perform(ev_step, 0); // should kill the enemy
-with(astro) event_perform(ev_alarm, 0); // should cancel combat state with enemy
+	// arrange
+	var constr = scr_create_dummy_mdu_construction();
+	scr_register_new_construction(constr);
+	var astro = instance_create_depth(0,0,0,obj_astronaut);
+	astro.auto_construct = true;
+	scr_give_entity_new_item(astro, inv_space.mdu);
+	var enemy = scr_create_astronaut_safe(64, 64, macro_enemy);
+	enemy.entity_health = 1;
+	astro.target = enemy;
+	enemy.entity_health = 0;
+	with(enemy) event_perform(ev_step, 0); // should kill the enemy
+	with(astro) event_perform(ev_alarm, 0); // should cancel combat state with enemy
 
-// act
-with(astro) event_perform(ev_alarm, 1); // should autotask acquire construction
+	// act
+	with(astro) event_perform(ev_alarm, 1); // should autotask acquire construction
 
-// assert
-assert_true(astro.auto_construct, "astro.auto_construct");
-assert_false(instance_exists(enemy), "dead enemy is destroyed");
-assert_equal(noone, astro.assigned_object, "assigned_object");
-assert_equal(noone, astro.target, "target");
-assert_equal(astronaut_action.delivering_mdu, astro.current_action, "current_action");
-assert_equal(constr, astro.construction, "construction");
+	// assert
+	assert_true(astro.auto_construct, "astro.auto_construct");
+	assert_false(instance_exists(enemy), "dead enemy is destroyed");
+	assert_equal(noone, astro.assigned_object, "assigned_object");
+	assert_equal(noone, astro.target, "target");
+	assert_equal(astronaut_action.delivering_mdu, astro.current_action, "current_action");
+	assert_equal(constr, astro.construction, "construction");
 
-// cleanup
-scr_destroy_construction(constr);
-instance_destroy(astro);
+	// cleanup
+	scr_destroy_construction(constr);
+	instance_destroy(astro);
 
-test_result();
+	test_result();
+
+
+}

@@ -1,8 +1,11 @@
 {
-    "id": "7624a2c6-2d62-4879-b1af-a5c625162579",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_gui_item_step_grid_demand_label",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_gui_item_step_grid_demand_label",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "step",
+    "path": "folders/Scripts/GAME/GUI/gui_items/step.yy",
+  },
 }

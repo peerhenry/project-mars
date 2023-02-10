@@ -1,8 +1,11 @@
 {
-    "id": "f31ab4a4-20fe-4164-9cea-7f20282919c0",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "test_suite_task_actors",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "test_suite_task_actors",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "task_actors",
+    "path": "folders/Scripts/TESTS/scenario/objects/task_actors.yy",
+  },
 }

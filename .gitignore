@@ -1,3 +1,0 @@
-# ignore build debug tool input and output packages
-/.build_debug/input/
-/.build_debug/output/

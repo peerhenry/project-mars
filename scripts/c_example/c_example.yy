@@ -1,8 +1,11 @@
 {
-    "id": "0ba50c7a-d08b-4ada-a640-8dc7a7c40214",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "c_example",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "c_example",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "class examples",
+    "path": "folders/Scripts/OOP/framework/class examples.yy",
+  },
 }

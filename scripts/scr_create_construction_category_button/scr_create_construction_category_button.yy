@@ -1,8 +1,11 @@
 {
-    "id": "9c888ad3-0e13-4cea-9d54-d362888263b3",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_create_construction_category_button",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_create_construction_category_button",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "specific gui items",
+    "path": "folders/Scripts/GAME/GUI/gui_items/create/specific gui items.yy",
+  },
 }

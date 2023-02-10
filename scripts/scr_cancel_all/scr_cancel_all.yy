@@ -1,8 +1,11 @@
 {
-    "id": "068ba830-90f2-4ddb-9498-cc3a79ba9e93",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_cancel_all",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_cancel_all",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "actions",
+    "path": "folders/Scripts/GAME/GAMEPLAY/entities/actions.yy",
+  },
 }

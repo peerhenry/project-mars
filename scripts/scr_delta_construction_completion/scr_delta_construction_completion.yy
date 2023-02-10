@@ -1,8 +1,11 @@
 {
-    "id": "5ccf6918-0a01-45c0-ad99-ba1207a403f5",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_delta_construction_completion",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_delta_construction_completion",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "step",
+    "path": "folders/Scripts/GAME/GAMEPLAY/entities/step.yy",
+  },
 }

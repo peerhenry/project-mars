@@ -1,8 +1,11 @@
 {
-    "id": "2598b657-bc3b-4231-8e3d-e00edcd3c194",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_goto_menu_settings_confirm",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_goto_menu_settings_confirm",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "MAIN_MENU",
+    "path": "folders/Scripts/MAIN_MENU.yy",
+  },
 }

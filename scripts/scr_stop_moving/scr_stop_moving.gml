@@ -1,16 +1,20 @@
 /// @arg entity
-var arg_entity = argument0;
-with(arg_entity)
-{
-	if(path_exists(path))
+function scr_stop_moving(argument0) {
+	var arg_entity = argument0;
+	with(arg_entity)
 	{
-		path_position = 1;
-		path_delete(path);
-		path = noone;
-		path_end();
+		if(path_exists(path))
+		{
+			path_position = 1;
+			path_delete(path);
+			path = noone;
+			path_end();
+		}
+		image_speed = 0;
+		image_index = 0;
+		x = scr_gi_to_rc(occ_i);
+		y = scr_gi_to_rc(occ_j);
 	}
-	image_speed = 0;
-	image_index = 0;
-	x = scr_gi_to_rc(occ_i);
-	y = scr_gi_to_rc(occ_j);
+
+
 }

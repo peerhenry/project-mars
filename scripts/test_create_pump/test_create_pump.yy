@@ -1,8 +1,11 @@
 {
-    "id": "a1d4ea8f-3a8c-4a72-ae94-827f5f52245c",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "test_create_pump",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "test_create_pump",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "pump",
+    "path": "folders/Scripts/TESTS/scenario/objects/construcables/pump.yy",
+  },
 }

@@ -1,8 +1,11 @@
 {
-    "id": "37f13ff7-93f0-4e32-bfb0-db7a644918bc",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_add_base_tile_with_walls",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_add_base_tile_with_walls",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "helper scripts",
+    "path": "folders/Scripts/GAME/CONSTRUCTION/helper scripts.yy",
+  },
 }

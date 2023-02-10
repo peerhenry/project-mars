@@ -1,11 +1,12 @@
-// construction categories
+function init_construction_macros() {
+	// construction categories
 #macro macro_category_deconstruction 1
 #macro macro_category_foundation 2
 #macro macro_category_inside 3
 #macro macro_category_outside 4
 #macro macro_category_landers 5
 
-// the different constructions
+	// the different constructions
 #macro macro_basetile 0
 #macro macro_wall 1
 #macro macro_door 2
@@ -43,7 +44,7 @@
 #macro macro_destruct_safe 102
 #macro macro_destruct_room 103
 
-// construction properties
+	// construction properties
 #macro macro_id 0
 #macro macro_name 1
 #macro macro_hud_sprite 3
@@ -55,7 +56,7 @@
 #macro macro_surround_actions 9
 #macro macro_category 10
 
-// build action properties
+	// build action properties
 #macro macro_validation_i 0
 #macro macro_validation_o 1
 #macro macro_map_buffer_action 2
@@ -64,7 +65,7 @@
 #macro macro_object_to_remove 5
 #macro macro_metal_cost 6
 
-// used for map buffer
+	// used for map buffer
 #macro map_value_vacant 0
 #macro map_value_reserved 1
 #macro map_value_occupied 2
@@ -75,7 +76,7 @@
 #macro map_value_pipe 7
 #macro map_value_pipe_and_cable 8
 
-// properties for build cells
+	// properties for build cells
 #macro build_cell_i 0
 #macro build_cell_j 1
 #macro build_cell_object_to_add 2
@@ -88,19 +89,19 @@
 #macro build_cell_object_angle 9
 #macro build_cell_required_object 10
 
-// properties for construction cells
+	// properties for construction cells
 #macro c_cell_i 0
 #macro c_cell_j 1
 #macro c_cell_new_instance 2
 #macro c_cell_object_to_remove 3
 #macro c_cell_layer 4
 
-// props for build tiles
+	// props for build tiles
 #macro macro_build_tile_di 0
 #macro macro_build_tile_dj 1
 #macro macro_build_tile_actions 2
 
-// linear drag parameters
+	// linear drag parameters
 #macro macro_drag_horizontal 0
 #macro macro_drag_vertical 1
 #macro macro_drag_top 2 
@@ -108,18 +109,18 @@
 #macro macro_drag_left 4 
 #macro macro_drag_right 5
 
-// rotation parameters
+	// rotation parameters
 #macro macro_rotation_0 0
 #macro macro_rotation_1 1
 #macro macro_rotation_2 2
 #macro macro_rotation_3 3
 
-// drawing paramaters
+	// drawing paramaters
 #macro macro_sprite 0
 #macro macro_image 1
 #macro macro_angle 2
 
-// construction instance properties
+	// construction instance properties
 #macro construction_build_state 0
 #macro construction_completion 1
 #macro construction_type 2
@@ -139,7 +140,7 @@
 #macro construction_required_metal 16
 #macro construction_object 17
 
-// construction ghost
+	// construction ghost
 #macro macro_ghost_stack 0
 #macro macro_ghost_invalid_stack 1
 #macro macro_ghost_constr_type 2
@@ -148,3 +149,6 @@
 #macro macro_ghost_payable 5
 #macro macro_ghost_rotation 6
 #macro macro_ghost_owner 7
+
+
+}

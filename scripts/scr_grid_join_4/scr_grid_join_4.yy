@@ -1,8 +1,11 @@
 {
-    "id": "4424e2a7-ca16-45b6-8d50-870cb20f8027",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_grid_join_4",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_grid_join_4",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "construction_finalization",
+    "path": "folders/Scripts/GAME/GRID/construction_finalization.yy",
+  },
 }

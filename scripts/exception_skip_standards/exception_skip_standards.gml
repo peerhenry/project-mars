@@ -1,1 +1,5 @@
-return exception("skip_standards");
+function exception_skip_standards() {
+	return exception("skip_standards");
+
+
+}

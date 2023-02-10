@@ -1,25 +1,26 @@
+function c_boilerplate_regions(argument0, argument1, argument2) {
 #region set method and this
-var method = argument0;
-var this = argument1;
-var args = argument2;
-var here = c_boilerplate; // <=== CHANGE THIS
+	var func = argument0;
+	var this = argument1;
+	var args = argument2;
+	var here = c_boilerplate; // <=== CHANGE THIS
 #endregion
 
-switch(method)
-{
+	switch(func)
+	{
 	#region CONSTRUCTOR / DESTRUCTOR
 	
-	case constructor:
-		return this;
+		case constructor:
+			return this;
 	
-	case get_class_info:
-		return ok_class_info([]);
+		case get_class_info:
+			return ok_class_info([]);
 	
-	case get_clients:
-		return ok(noone);
+		case get_clients:
+			return ok(noone);
 	
-	case destructor:
-		return ok();
+		case destructor:
+			return ok();
 		
 	#endregion
 
@@ -31,11 +32,14 @@ switch(method)
 	
 	#region UNIT TESTS
 	
-	case test:
-		break;
+		case test:
+			break;
 		
 	#endregion
 	
-	default:
-		return refused();
+		default:
+			return refused();
+	}
+
+
 }

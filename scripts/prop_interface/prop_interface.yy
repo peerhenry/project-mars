@@ -1,8 +1,11 @@
 {
-    "id": "9a736450-9dda-4135-ad18-690e8194af6d",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "prop_interface",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "prop_interface",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "props",
+    "path": "folders/Scripts/OOP/framework/factories/types/props.yy",
+  },
 }

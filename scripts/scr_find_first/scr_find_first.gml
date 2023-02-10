@@ -2,33 +2,38 @@
 /// @arg collection
 /// @arg variable
 /// @arg value
-var collection = argument0;
-var variable = argument1;
-var value = argument2;
+function scr_find_first(argument0, argument1, argument2) {
+	var collection = argument0;
+	var variable = argument1;
+	var value = argument2;
 
-if(is_array(collection))
-{
-	for(var n = 0; n < array_length_1d(collection); n++)
+	if(is_array(collection))
 	{
-		var elem = collection[n];
-		if(variable_instance_exists(elem, variable) && variable_instance_get(elem, variable) == value)
+		for(var n = 0; n < array_length_1d(collection); n++)
 		{
-			return elem;
+			var elem = collection[n];
+			if(variable_instance_exists(elem, variable) && variable_instance_get(elem, variable) == value)
+			{
+				return elem;
+			}
 		}
+		return noone;
 	}
-	return noone;
-}
-else if(ds_exists(collection, ds_type_list))
-{
-	var output = ds_list_create();
-	for(var n = 0; n < ds_list_size(collection); n++)
+	else if(ds_exists(collection, ds_type_list))
 	{
-		var elem = collection[|n];
-		if(variable_instance_exists(elem, variable) && variable_instance_get(elem, variable) == value)
+		var output = ds_list_create();
+		for(var n = 0; n < ds_list_size(collection); n++)
 		{
-			return elem;
+			var elem = collection[|n];
+			if(variable_instance_exists(elem, variable) && variable_instance_get(elem, variable) == value)
+			{
+				return elem;
+			}
 		}
+		return noone;
 	}
-	return noone;
+	scr_panic("Argument0 was not a valid collection");
+
+
+
 }
-scr_panic("Argument0 was not a valid collection");

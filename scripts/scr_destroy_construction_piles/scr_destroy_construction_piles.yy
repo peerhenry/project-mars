@@ -1,8 +1,11 @@
 {
-    "id": "c2027a7c-ef9a-41c7-ad57-17135dbfb562",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_destroy_construction_piles",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_destroy_construction_piles",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "destroy construction",
+    "path": "folders/Scripts/GAME/CONSTRUCTION/destroy construction.yy",
+  },
 }

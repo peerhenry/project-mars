@@ -1,20 +1,25 @@
-test_init(test_alarm_shoot);
+function test_alarm_shoot() {
+	test_init(test_alarm_shoot);
 
-// arrange
-var astro = instance_create_depth(32, 32, 0, obj_astronaut);
-var enemy = scr_create_astronaut_safe(100, 100, macro_enemy);
+	// arrange
+	var astro = instance_create_depth(32, 32, 0, obj_astronaut);
+	var enemy = scr_create_astronaut_safe(100, 100, macro_enemy);
 
-// act
-with(astro) event_perform(ev_alarm, 0);
+	// act
+	with(astro) event_perform(ev_alarm, 0);
 
-// assert
-assert_equal(enemy, astro.auto_target, "auto target");
-assert_equal(noone, astro.target, "target");
-assert_equal(astronaut_action.in_combat, astro.current_action, "current_action");
+	// assert
+	assert_equal(enemy, astro.auto_target, "auto target");
+	assert_equal(noone, astro.target, "target");
+	assert_equal(astronaut_action.in_combat, astro.current_action, "current_action");
 
-// cleanup
-instance_destroy( astro );
-instance_destroy( enemy );
-with(obj_projectile) instance_destroy();
+	// cleanup
+	instance_destroy( astro );
+	instance_destroy( enemy );
+	with(obj_projectile) instance_destroy();
 
-test_result();
+	test_result();
+
+
+
+}

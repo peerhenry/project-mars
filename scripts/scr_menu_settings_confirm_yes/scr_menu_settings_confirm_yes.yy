@@ -1,8 +1,11 @@
 {
-    "id": "bdfb4019-acd5-416c-a630-5f8094ed88e5",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_menu_settings_confirm_yes",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_menu_settings_confirm_yes",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "MAIN_MENU",
+    "path": "folders/Scripts/MAIN_MENU.yy",
+  },
 }
